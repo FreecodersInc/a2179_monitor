@@ -1,0 +1,184 @@
+{
+  "rows": 350,
+  "labeler": {
+    "bot": 350
+  },
+  "unsure": 18,
+  "strata": {
+    "hard_neg": {
+      "pool": 3,
+      "kept": 3
+    },
+    "matcher": {
+      "pool": 206,
+      "kept": 206
+    },
+    "random": {
+      "pool": 2977,
+      "kept": 141
+    }
+  },
+  "seed": 0,
+  "esci_by_stratum": {
+    "hard_neg": {
+      "I": 1,
+      "C": 2
+    },
+    "matcher": {
+      "C": 41,
+      "S": 64,
+      "I": 18,
+      "E": 83
+    },
+    "random": {
+      "I": 52,
+      "E": 6,
+      "S": 44,
+      "C": 39
+    }
+  },
+  "E+S": {
+    "matcher_rows": 206,
+    "tp": 147,
+    "fp": 59,
+    "precision": 0.714,
+    "precision_ci95": [
+      0.648,
+      0.771
+    ],
+    "random_pos": "50/141 of a pool of 2977",
+    "hard_neg_pos": "0/3 of a pool of 3",
+    "missed_est": 1056,
+    "missed_ci95": [
+      835,
+      1301
+    ],
+    "recall_est": 0.122,
+    "recall_ci95": [
+      0.102,
+      0.15
+    ]
+  },
+  "E": {
+    "matcher_rows": 206,
+    "tp": 83,
+    "fp": 123,
+    "precision": 0.403,
+    "precision_ci95": [
+      0.338,
+      0.471
+    ],
+    "random_pos": "6/141 of a pool of 2977",
+    "hard_neg_pos": "0/3 of a pool of 3",
+    "missed_est": 127,
+    "missed_ci95": [
+      58,
+      269
+    ],
+    "recall_est": 0.396,
+    "recall_ci95": [
+      0.236,
+      0.587
+    ]
+  },
+  "E+S_unsure_as_pos": {
+    "matcher_rows": 206,
+    "tp": 149,
+    "fp": 57,
+    "precision": 0.723,
+    "precision_ci95": [
+      0.659,
+      0.78
+    ],
+    "random_pos": "51/141 of a pool of 2977",
+    "hard_neg_pos": "0/3 of a pool of 3",
+    "missed_est": 1077,
+    "missed_ci95": [
+      854,
+      1323
+    ],
+    "recall_est": 0.122,
+    "recall_ci95": [
+      0.101,
+      0.148
+    ]
+  },
+  "E+S_unsure_as_neg": {
+    "matcher_rows": 206,
+    "tp": 135,
+    "fp": 71,
+    "precision": 0.655,
+    "precision_ci95": [
+      0.588,
+      0.717
+    ],
+    "random_pos": "47/141 of a pool of 2977",
+    "hard_neg_pos": "0/3 of a pool of 3",
+    "missed_est": 992,
+    "missed_ci95": [
+      777,
+      1236
+    ],
+    "recall_est": 0.12,
+    "recall_ci95": [
+      0.098,
+      0.148
+    ]
+  },
+  "families": {
+    "data engineer / analytics engineer": {
+      "matcher_pos": 79,
+      "matcher_neg": 1,
+      "missed_pos": 0,
+      "ok_neg": 0
+    },
+    "data scientist / analyst": {
+      "matcher_pos": 0,
+      "matcher_neg": 4,
+      "missed_pos": 0,
+      "ok_neg": 30
+    },
+    "machine learning / ai engineer": {
+      "matcher_pos": 17,
+      "matcher_neg": 8,
+      "missed_pos": 19,
+      "ok_neg": 11
+    },
+    "manager / director": {
+      "matcher_pos": 0,
+      "matcher_neg": 5,
+      "missed_pos": 0,
+      "ok_neg": 8
+    },
+    "other": {
+      "matcher_pos": 0,
+      "matcher_neg": 26,
+      "missed_pos": 1,
+      "ok_neg": 19
+    },
+    "platform / infrastructure / cloud": {
+      "matcher_pos": 31,
+      "matcher_neg": 15,
+      "missed_pos": 18,
+      "ok_neg": 26
+    },
+    "site reliability / devops": {
+      "matcher_pos": 9,
+      "matcher_neg": 0,
+      "missed_pos": 6,
+      "ok_neg": 0
+    },
+    "software engineer + data platform/infra": {
+      "matcher_pos": 4,
+      "matcher_neg": 0,
+      "missed_pos": 5,
+      "ok_neg": 0
+    },
+    "solutions architect": {
+      "matcher_pos": 7,
+      "matcher_neg": 0,
+      "missed_pos": 1,
+      "ok_neg": 0
+    }
+  }
+}

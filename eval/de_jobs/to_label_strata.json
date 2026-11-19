@@ -1,0 +1,18 @@
+{
+  "seed": 0,
+  "max_rows": 350,
+  "strata": {
+    "hard_neg": {
+      "pool": 3,
+      "kept": 3
+    },
+    "matcher": {
+      "pool": 206,
+      "kept": 206
+    },
+    "random": {
+      "pool": 2977,
+      "kept": 141
+    }
+  }
+}

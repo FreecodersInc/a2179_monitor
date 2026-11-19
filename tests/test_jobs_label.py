@@ -1,5 +1,6 @@
 """eval/jobs_label.py: sheet from CI review reports, merge only reviewed ESCI rows (T-019)."""
 import csv
+import json
 import shutil
 import sys
 import tempfile
@@ -65,6 +66,25 @@ class TestJobsLabel(unittest.TestCase):
         self.assertNotIn("labeler", by["Senior Data Engineer"])
         self.assertEqual(J.merge(out), [])   # idempotent
         self.assertEqual(len(J.sheet(self.tmp / "reports", out)), 1)   # labeled rows leave the sheet
+
+    def test_capped_batch_keeps_matcher_rows_and_writes_strata(self):
+        out = self.tmp / "to_label.csv"
+        rows = J.sheet(self.tmp / "reports", out, max_rows=2, seed=0)
+        self.assertEqual({r["stratum"] for r in rows if r["title"] == "Senior Data Engineer"}, {"matcher"})
+        self.assertEqual(len(rows), 2)
+        strata = json.loads((self.tmp / "to_label_strata.json").read_text())["strata"]
+        self.assertEqual(strata["matcher"], {"pool": 1, "kept": 1})
+        self.assertEqual(sum(v["pool"] for v in strata.values()), 3)
+        again = J.sheet(self.tmp / "reports", out, max_rows=2, seed=0)   # seeded: same batch
+        self.assertEqual([r["title"] for r in rows], [r["title"] for r in again])
+        sheet = J.read_csv(out)
+        for r in sheet:
+            r.update(reviewed="1", esci="E" if r["stratum"] == "matcher" else "I")
+        with out.open("w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=J.COLS)
+            w.writeheader()
+            w.writerows(sheet)
+        self.assertEqual({r["stratum"] for r in J.merge(out)} - {"matcher", "random", "hard_neg"}, set())
 
 
 class TestText(unittest.TestCase):
