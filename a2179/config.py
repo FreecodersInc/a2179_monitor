@@ -38,6 +38,10 @@ DEFAULTS = {
     # processes), adaptive delay per host on 429 (AIMD, see README); workers=0 is the old sequential pass
     "parallel": {"workers": 3, "max_concurrency": 10, "delay_s": 0, "delay_min_s": 0, "delay_max_s": 30,
                  "delay_up": 2.0, "delay_down_s": 0.05, "delay_on_429_s": 0.5},
+    # searches are followed to the last page; max_pages is only a high safety ceiling
+    "pagination": {"enabled": True, "max_pages": 500, "kp_page_param": "page"},
+    # shop cards that matched once are re-checked every pass (data/tracked.shelve)
+    "tracked": {"enabled": True, "file": "tracked.shelve", "drop_after_misses": 3},
     "kp_block_alert_after_runs": 6,
     "telegram": {"enabled": True},
     "desktop_notify": True,

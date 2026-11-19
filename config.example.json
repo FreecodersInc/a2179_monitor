@@ -29,6 +29,8 @@
   "http": {"min_delay_s": 4, "jitter_s": 2, "timeout_s": 20, "retries": 3, "retry_403": 1, "backoff_s": 5, "backoff_max_s": 60, "user_agent": ""},
   "parallel": {"workers": 3, "max_concurrency": 10, "delay_s": 0, "delay_min_s": 0, "delay_max_s": 30,
                "delay_up": 2.0, "delay_down_s": 0.05, "delay_on_429_s": 0.5},
+  "pagination": {"enabled": true, "max_pages": 500, "kp_page_param": "page"},
+  "tracked": {"enabled": true, "file": "tracked.shelve", "drop_after_misses": 3},
   "kp_block_alert_after_runs": 6,
   "telegram": {"enabled": true},
   "desktop_notify": true,

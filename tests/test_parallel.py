@@ -208,7 +208,7 @@ class TestParallelRun(unittest.TestCase):
         self.assertEqual([l.key for l in r_par["listings"]], [l.key for l in r_seq["listings"]])
         self.assertEqual(r_par["kp"], "ok")
         m = json.loads((par_dir / "metrics.json").read_text())
-        self.assertEqual(m["counters"]["fetch.requests"], 2)
+        self.assertEqual(m["counters"]["fetch.requests"], 3)  # product, KP page 1, guessed KP page 2 (404 = end)
         self.assertIn("fetch=parallel processes=2 max_concurrency=10 (one shared limiter)", m["notes"])
         log = (self.tmp / "logs" / "monitor.jsonl").read_text()
         self.assertIn('"worker": 1', log)  # worker log lines land in the main log file

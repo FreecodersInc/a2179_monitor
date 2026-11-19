@@ -10,7 +10,9 @@ from .fetch import Fetcher
 from .matcher import Matcher
 from .obs import Metrics, ev
 from . import parallel
-from .parsers import parse_kp_search, parse_woo_product, parse_woo_search, kp_is_blocked
+from .paginate import Pager
+from .parsers import Listing, parse_woo_product
+from .tracked import TrackedStore, settings as tracked_settings
 from .prices import to_usd
 from .embedder import load_similarity
 from .similarity import TfidfSim
@@ -21,56 +23,84 @@ def _host(url):
     return urlparse(url).netloc.lower().removeprefix("www.")
 
 
-def collect(cfg, fetcher, metrics, log, deadline=None):
-    """Fetch all sources. Returns (listings, kp_status)."""
+def _product(metrics, log, url, st, l, kind="shop_product"):
+    """Bookkeeping for one product page (configured shop product or tracked card)."""
+    out = []
+    if st == 200:
+        if l:
+            out.append(l)
+            metrics.inc(f"parse.{kind}.ok")
+        else:
+            metrics.inc(f"parse.{kind}.empty")
+    elif st == 404:
+        metrics.inc(f"parse.{kind}.gone")
+        ev(log, "product_gone", logging.WARNING, url=url, tracked=kind == "tracked")
+    return out
+
+
+def _kp_result(metrics, log, kp_status, items, pages_url, nbytes):
+    metrics.inc("parse.kp.items", len(items))
+    if items:
+        return "ok"
+    if kp_status != "ok":
+        ev(log, "kp_no_items", logging.WARNING, url=pages_url, bytes=nbytes)
+        return "ok_but_empty"
+    return kp_status
+
+
+def collect(cfg, fetcher, metrics, log, deadline=None, store=None):
+    """Fetch all sources (sequential pass). Returns (listings, kp_status).
+    Searches are followed page by page (paginate.Pager). Tracked cards (store) are fetched
+    like shop products and their price/stock is written back to the store."""
     src = cfg["sources"]
     out = []
 
     def time_left():
         return deadline is None or time.monotonic() < deadline
 
-    for url in src.get("shop_products", []):
+    products = [("shop_product", u) for u in src.get("shop_products", [])]
+    have = {Listing("", u, "").key for _, u in products}
+    products += [("tracked", u) for k, u in (store.active() if store is not None else []) if k not in have]
+    for kind, url in products:
         if not time_left():
             metrics.notes.append("time budget reached, skipped remaining sources")
             break
         st, html = fetcher.get(url)
-        if st == 200:
-            l = parse_woo_product(html, url, _host(url))
-            if l:
-                out.append(l)
-                metrics.inc("parse.shop_product.ok")
-            else:
-                metrics.inc("parse.shop_product.empty")
-        elif st == 404:
-            metrics.inc("parse.shop_product.gone")
-            ev(log, "product_gone", logging.WARNING, url=url)
+        l = parse_woo_product(html, url, _host(url)) if st == 200 else None
+        out.extend(_product(metrics, log, url, st, l, kind))
+        if kind == "tracked":
+            store.record(Listing("", url, "").key, st, l)
+
+    def follow(kind, url):
+        pager = Pager(kind, url, cfg)
+        while pager.url and time_left():
+            st, html = fetcher.get(pager.url)
+            pager.feed(st, html)
+        pager.note_metrics(metrics)
+        return pager
+
     for url in src.get("shop_searches", []):
         if not time_left():
             break
-        st, html = fetcher.get(url)
-        if st == 200:
-            items = parse_woo_search(html, url, _host(url))
-            metrics.inc("parse.shop_search.items", len(items))
-            out.extend(items)
+        pg = follow("shop_search", url)
+        if pg.status == 200:
+            metrics.inc("parse.shop_search.items", len(pg.items))
+            out.extend(pg.items)
     kp_status = "skipped"
     for q in src.get("kp_keywords", []):
         if not time_left():
             break
         url = src["kp_search_url"].format(q=quote_plus(q))
-        st, html = fetcher.get(url)
-        if kp_is_blocked(st if isinstance(st, int) else 0, html) or st != 200:
-            kp_status = f"blocked({st})"
+        pg = follow("kp", url)
+        out.extend(pg.items)
+        if pg.blocked:
+            if pg.items:
+                metrics.inc("parse.kp.items", len(pg.items))
+            kp_status = f"blocked({pg.last_status})"
             metrics.inc("kp.blocked")
-            ev(log, "kp_blocked", logging.WARNING, url=url, status=st)
+            ev(log, "kp_blocked", logging.WARNING, url=url, status=pg.last_status, page=pg.pages)
             break  # be polite: do not hammer a site that is refusing us
-        items = parse_kp_search(html, url)
-        metrics.inc("parse.kp.items", len(items))
-        if items:
-            kp_status = "ok"
-        elif kp_status != "ok":
-            kp_status = "ok_but_empty"
-            ev(log, "kp_no_items", logging.WARNING, url=url, bytes=len(html))
-        out.extend(items)
+        kp_status = _kp_result(metrics, log, kp_status, pg.items, url, pg.bytes)
     return _dedupe(out), kp_status
 
 
@@ -83,46 +113,61 @@ def _dedupe(out):
     return list(best.values())
 
 
-def collect_parallel(cfg, metrics, log, time_budget_s=None, workers=None, max_concurrency=None):
+def open_tracked(cfg, ddir, dry_run=False):
+    """TrackedStore for this pass, or None when tracked.enabled is false."""
+    t = tracked_settings(cfg)
+    if not t.get("enabled", True):
+        return None
+    return TrackedStore(ddir / t.get("file", "tracked.shelve"), read_only=dry_run,
+                        drop_after_misses=t.get("drop_after_misses", 3))
+
+
+def track_matches(store, matched, cfg, metrics, log):
+    """Shop cards from search results that matched (regex or by meaning) join the tracked set.
+    KP ads are not tracked as pages (no verified KP ad page parser), the paginated KP search
+    covers them."""
+    if store is None:
+        return []
+    shop = {Listing("", u, "").key for u in cfg["sources"].get("shop_products", [])}
+    cand = [l for l, _, _ in matched if l.source != "kupujemprodajem" and l.key not in shop]
+    added = store.add(cand)
+    if added:
+        metrics.inc("tracked.added", len(added))
+        ev(log, "tracked_added", keys=added)
+    return added
+
+
+def collect_parallel(cfg, metrics, log, time_budget_s=None, workers=None, max_concurrency=None, store=None):
     """Same result as collect(), but fetched and parsed by parallel.fetch_all (processes + asyncio).
     Raises parallel.ParallelUnavailable when aiohttp is missing."""
-    results = parallel.fetch_all(cfg, metrics, log, time_budget_s, workers, max_concurrency)
+    results = parallel.fetch_all(cfg, metrics, log, time_budget_s, workers, max_concurrency, store)
     out = []
     if any(r["skipped"] == "time" for r in results):
         metrics.notes.append("time budget reached, skipped remaining sources")
     for r in results:
         if r["kind"] == "kp" or r["skipped"]:
             continue
-        if r["kind"] == "shop_product":
+        if r["kind"] in ("shop_product", "tracked"):
+            out.extend(_product(metrics, log, r["url"], r["status"], (r["items"] or [None])[0], r["kind"]))
+        else:
             if r["status"] == 200:
-                if r["items"]:
-                    out.extend(r["items"])
-                    metrics.inc("parse.shop_product.ok")
-                else:
-                    metrics.inc("parse.shop_product.empty")
-            elif r["status"] == 404:
-                metrics.inc("parse.shop_product.gone")
-                ev(log, "product_gone", logging.WARNING, url=r["url"])
-        elif r["status"] == 200:
-            metrics.inc("parse.shop_search.items", len(r["items"]))
-            out.extend(r["items"])
+                metrics.inc("parse.shop_search.items", len(r["items"]))
+                out.extend(r["items"])
     kp = [r for r in results if r["kind"] == "kp" and r["skipped"] != "time"]
     kp_status = "skipped"
     first_block = next((r for r in kp if r["blocked"]), None)
     for r in kp:
         if r["blocked"] or r["skipped"] == "kp_blocked":
             # as in collect(): KP refused us, nothing after the refusal counts in this pass
+            out.extend(r["items"])  # pages fetched before the refusal
+            if r["items"]:
+                metrics.inc("parse.kp.items", len(r["items"]))
             b = first_block or r
-            kp_status = f"blocked({b['status']})"
+            kp_status = f"blocked({b['last_status']})"
             metrics.inc("kp.blocked")
-            ev(log, "kp_blocked", logging.WARNING, url=b["url"], status=b["status"])
+            ev(log, "kp_blocked", logging.WARNING, url=b["url"], status=b["status"], page=b["pages"])
             break
-        metrics.inc("parse.kp.items", len(r["items"]))
-        if r["items"]:
-            kp_status = "ok"
-        elif kp_status != "ok":
-            kp_status = "ok_but_empty"
-            ev(log, "kp_no_items", logging.WARNING, url=r["url"], bytes=r["bytes"])
+        kp_status = _kp_result(metrics, log, kp_status, r["items"], r["url"], r["bytes"])
         out.extend(r["items"])
     return _dedupe(out), kp_status
 
@@ -152,11 +197,13 @@ def run_once(cfg, log, dry_run=False, seed=False, no_embed=False, fetcher=None, 
     sim, mode = similarity or prepare_similarity(cfg, log, no_embed, require_embedder)
     metrics.notes.append(f"filter=regex+{mode}")
     matcher = Matcher(sim, mode, cfg.get("thresholds"), cfg.get("accept_a1932", True))
+    store = open_tracked(cfg, ddir, dry_run)
     n_workers = parallel.settings(cfg, workers, max_concurrency)[0]
     listings = None
     if fetcher is None and n_workers >= 1:
         try:
-            listings, kp_status = collect_parallel(cfg, metrics, log, time_budget_s, workers, max_concurrency)
+            listings, kp_status = collect_parallel(cfg, metrics, log, time_budget_s, workers, max_concurrency,
+                                                   store)
         except parallel.ParallelUnavailable as e:
             ev(log, "parallel_unavailable", logging.WARNING, error=str(e))
             print("[parallel] aiohttp не установлен (pip install -r requirements.txt), "
@@ -166,7 +213,7 @@ def run_once(cfg, log, dry_run=False, seed=False, no_embed=False, fetcher=None, 
         if fetcher.metrics is not metrics:
             fetcher.metrics = metrics
         deadline = time.monotonic() + time_budget_s if time_budget_s else None
-        listings, kp_status = collect(cfg, fetcher, metrics, log, deadline)
+        listings, kp_status = collect(cfg, fetcher, metrics, log, deadline, store)
     metrics.notes.append(f"kp={kp_status}")
     metrics.inc("listings.seen", len(listings))
 
@@ -210,6 +257,11 @@ def run_once(cfg, log, dry_run=False, seed=False, no_embed=False, fetcher=None, 
                 metrics.inc(f"events.{k}")
                 state.log_alert(l.key, k, msg)
         state.upsert(l, usd, True, alerted)
+    track_matches(store, matched, cfg, metrics, log)
+    if store is not None:
+        n = len(store.active())
+        metrics.inc("tracked.active", n)
+        metrics.notes.append(f"tracked={n}")
 
     # KP blocked for many runs in a row: tell the user once
     if not dry_run:

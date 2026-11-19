@@ -24,12 +24,15 @@ import importlib.util
 import multiprocessing
 import os
 import time
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from urllib.parse import quote_plus, urlparse
 
 from .afetch import AsyncFetcher, Limiter, Pacer, make_session
 from .obs import Metrics
-from .parsers import Listing, kp_is_blocked, parse_kp_search, parse_woo_product, parse_woo_search
+from . import paginate
+from .paginate import Pager
+from .parsers import Listing, parse_woo_product
+from .tracked import TrackedStore
 
 DEFAULT_WORKERS = 3
 DEFAULT_MAX_CONCURRENCY = 10
@@ -41,6 +44,7 @@ _LAST_DELAY = {}    # host -> delay learned in the previous pass (main process)
 _KP_BLOCKED = None  # multiprocessing.Event, set in every worker by _init_worker
 _SLOTS = None       # multiprocessing.BoundedSemaphore(max_concurrency), shared by all workers
 _PACE = None        # (hosts, delay Array, next-start Array, Lock), shared by all workers
+_STATE_LOCK = None  # multiprocessing.Lock around every tracked.shelve access, shared by all workers
 
 
 class ParallelUnavailable(RuntimeError):
@@ -56,10 +60,13 @@ def settings(cfg: dict, workers=None, max_concurrency=None):
     return max(0, w), max(1, mc), pace, str(p.get("start_method") or "spawn")
 
 
-def build_tasks(cfg: dict) -> list:
-    """[(index, kind, url)] in the same order as the sequential collect()."""
+def build_tasks(cfg: dict, tracked=None) -> list:
+    """[(index, kind, url)] in the same order as the sequential collect():
+    shop products, tracked cards (not already a shop product), shop searches, KP searches."""
     src = cfg["sources"]
     urls = [("shop_product", u) for u in src.get("shop_products", [])]
+    have = {Listing("", u, "").key for _, u in urls}
+    urls += [("tracked", u) for k, u in (tracked or []) if k not in have]
     urls += [("shop_search", u) for u in src.get("shop_searches", [])]
     urls += [("kp", src["kp_search_url"].format(q=quote_plus(q))) for q in src.get("kp_keywords", [])]
     return [(i, kind, url) for i, (kind, url) in enumerate(urls)]
@@ -78,15 +85,22 @@ class _BufLog:
         self.records.append((time.time(), level, event, dict((extra or {}).get("fields") or {})))
 
 
-def _init_worker(kp_event, slots, pace):
-    global _KP_BLOCKED, _SLOTS, _PACE
-    _KP_BLOCKED, _SLOTS, _PACE = kp_event, slots, pace
+def _init_worker(kp_event, slots, pace, state_lock=None):
+    global _KP_BLOCKED, _SLOTS, _PACE, _STATE_LOCK
+    _KP_BLOCKED, _SLOTS, _PACE, _STATE_LOCK = kp_event, slots, pace, state_lock
 
 
-async def _run_task(fetcher, task, deadline):
+def _store(opts):
+    t = (opts or {}).get("tracked")
+    if not t:
+        return None
+    return TrackedStore(t["path"], _STATE_LOCK, read_only=t["read_only"], drop_after_misses=t["drop_after"])
+
+
+async def _run_task(fetcher, task, deadline, opts=None, store=None, io=None):
     i, kind, url = task
     res = {"i": i, "kind": kind, "url": url, "status": None, "items": [], "skipped": None, "bytes": 0,
-           "blocked": False}
+           "blocked": False, "pages": 0, "stop": None}
 
     def gate():  # checked when a slot is free, right before the request goes out
         if deadline is not None and time.time() >= deadline:
@@ -95,42 +109,53 @@ async def _run_task(fetcher, task, deadline):
             return "kp_blocked"  # be polite: KP already refused us in this pass
         return None
 
+    if kind in ("shop_search", "kp"):
+        pager = Pager(kind, url, {"pagination": (opts or {}).get("pagination")})
+        while pager.url:
+            st, html = await fetcher.get(pager.url, gate=gate)
+            if st == "skipped":
+                if pager.pages == 0:
+                    res["skipped"] = html
+                    return res
+                pager.stop, pager.url = html, None
+                break
+            pager.feed(st, html)
+        pager.note_metrics(fetcher.metrics)
+        res.update(status=pager.status, last_status=pager.last_status, bytes=pager.bytes, pages=pager.pages,
+                   stop=pager.stop,
+                   blocked=pager.blocked, items=[dataclasses.asdict(l) for l in pager.items])
+        if pager.blocked and _KP_BLOCKED is not None:
+            _KP_BLOCKED.set()
+        return res
     st, html = await fetcher.get(url, gate=gate)
     if st == "skipped":
         res["skipped"] = html
         return res
     res["status"], res["bytes"] = st, len(html)
-    if kind == "shop_product":
-        if st == 200:
-            l = parse_woo_product(html, url, _src_host(url))
-            res["items"] = [l] if l else []
-    elif kind == "shop_search":
-        if st == 200:
-            res["items"] = parse_woo_search(html, url, _src_host(url))
-    else:
-        if kp_is_blocked(st if isinstance(st, int) else 0, html) or st != 200:
-            res["blocked"] = True
-            if _KP_BLOCKED is not None:
-                _KP_BLOCKED.set()
-        else:
-            res["items"] = parse_kp_search(html, url)
-    res["items"] = [dataclasses.asdict(l) for l in res["items"]]
+    l = parse_woo_product(html, url, _src_host(url)) if st == 200 else None
+    res["items"] = [dataclasses.asdict(l)] if l else []
+    if kind == "tracked" and store is not None:
+        key = Listing("", url, "").key
+        # shelve write under the cross-process lock, off the event loop (one IO thread per process)
+        await asyncio.get_running_loop().run_in_executor(io, store.record, key, st, l)
     return res
 
 
-async def _worker_async(tasks, max_concurrency, http_cfg, pace_cfg, deadline, metrics, log):
+async def _worker_async(tasks, max_concurrency, http_cfg, pace_cfg, deadline, metrics, log, opts=None):
     import aiohttp
     hosts, delay, nxt, lock = _PACE
     pacer = Pacer(hosts, delay, nxt, lock, pace_cfg)
-    async with make_session(aiohttp, http_cfg, max_concurrency) as session:
-        f = AsyncFetcher(http_cfg, metrics, log, session, Limiter(_SLOTS), pacer)
-        return await asyncio.gather(*(_run_task(f, t, deadline) for t in tasks))
+    store = _store(opts)
+    with ThreadPoolExecutor(max_workers=1) as io:
+        async with make_session(aiohttp, http_cfg, max_concurrency) as session:
+            f = AsyncFetcher(http_cfg, metrics, log, session, Limiter(_SLOTS), pacer)
+            return await asyncio.gather(*(_run_task(f, t, deadline, opts, store, io) for t in tasks))
 
 
-def worker(idx, tasks, max_concurrency, http_cfg, pace_cfg, deadline):
+def worker(idx, tasks, max_concurrency, http_cfg, pace_cfg, deadline, opts=None):
     """Runs in a worker process. Returns plain data only (picklable)."""
     metrics, log = Metrics(), _BufLog()
-    results = asyncio.run(_worker_async(tasks, max_concurrency, http_cfg, pace_cfg, deadline, metrics, log))
+    results = asyncio.run(_worker_async(tasks, max_concurrency, http_cfg, pace_cfg, deadline, metrics, log, opts))
     return {
         "worker": idx,
         "results": results,
@@ -159,9 +184,11 @@ def _replay_log(log, out):
         log.handle(rec)
 
 
-def fetch_all(cfg, metrics, log, time_budget_s=None, workers=None, max_concurrency=None):
-    """Fetch and parse every source in parallel. Returns task results sorted by source order."""
-    tasks = build_tasks(cfg)
+def fetch_all(cfg, metrics, log, time_budget_s=None, workers=None, max_concurrency=None, store=None):
+    """Fetch and parse every source in parallel. Returns task results sorted by source order.
+    store: TrackedStore (its file path is used; the workers get their own lock-guarded handle)."""
+    tracked = store.active() if store is not None else []
+    tasks = build_tasks(cfg, tracked)
     w, mc, pace_cfg, start_method = settings(cfg, workers, max_concurrency)
     if not tasks:
         return []
@@ -177,7 +204,10 @@ def fetch_all(cfg, metrics, log, time_budget_s=None, workers=None, max_concurren
     delay = ctx.Array("d", [max(lo, min(hi, _LAST_DELAY.get(h, pace_cfg["delay_s"]))) for h in hosts], lock=False)
     nxt = ctx.Array("d", [0.0] * len(hosts), lock=False)
     pace = (hosts, delay, nxt, ctx.Lock())
-    kp_event, slots = ctx.Event(), ctx.BoundedSemaphore(mc)
+    kp_event, slots, state_lock = ctx.Event(), ctx.BoundedSemaphore(mc), ctx.Lock()
+    opts = {"pagination": paginate.settings(cfg),
+            "tracked": None if store is None else {"path": str(store.path), "read_only": store.read_only,
+                                                   "drop_after": store.drop_after}}
     outs = []
     # workers only fetch and parse: no BLAS thread pools (numpy gets imported with the CLI module)
     saved = {k: os.environ.get(k) for k in _ONE_THREAD}
@@ -185,12 +215,14 @@ def fetch_all(cfg, metrics, log, time_budget_s=None, workers=None, max_concurren
         os.environ.setdefault(k, "1")
     try:
         with ProcessPoolExecutor(max_workers=n, mp_context=ctx, initializer=_init_worker,
-                                 initargs=(kp_event, slots, pace)) as pool:
-            futs = [pool.submit(worker, k, shards[k], mc, cfg.get("http"), pace_cfg, deadline)
+                                 initargs=(kp_event, slots, pace, state_lock)) as pool:
+            futs = [pool.submit(worker, k, shards[k], mc, cfg.get("http"), pace_cfg, deadline, opts)
                     for k in range(n)]
             for fu in futs:
                 outs.append(fu.result())
     finally:
+        if store is not None:
+            store.lock = state_lock  # later writes of this pass (main process) use the same mutex
         for k, v in saved.items():
             if v is None:
                 os.environ.pop(k, None)
