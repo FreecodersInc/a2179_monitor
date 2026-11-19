@@ -5,7 +5,7 @@ The sweep picks the threshold t and the fusion weight lam on all 430 rows and re
 those same rows. Here every choice is made on the training part only:
   * outer: K folds, stratified by label, grouped by near-duplicate title (normalised title), R repeats
   * min-max of every channel fitted on the training part, applied (clipped) to the test part
-  * lam (grid 0.0..1.0) and t picked on the training part: recall 1.0 there, then best F1, ties stricter
+  * lam (grid 0.0..1.0) and t picked on the training part: recall 1.0 there, then best F1, ties: smallest lam (as the sweep), then stricter t
   * test part scored once with the frozen (lo, hi, lam, t)
 Output: pooled P / R / F1 / FP / FN over the test folds, mean and sd over repeats, the same on the
 real rows of the test folds only, and paired differences between channels on identical folds.
@@ -68,8 +68,10 @@ def apply_mm(x, lo, hi):
     return min(1.0, max(0.0, (x - lo) / (hi - lo))) if hi > lo else 0.0
 
 
-def pick(y, regex, gate, base, feat, tr, use_feat):
-    """(lam, t, lo, hi) chosen on tr only. base: raw channel or None (feat only)."""
+def pick(y, regex, gate, base, feat, tr, use_feat, tie="sweep"):
+    """(lam, t, lo, hi) chosen on tr only. base: raw channel or None (feat only).
+    tie on F1: "sweep" = smallest lam, then strictest t (what eval/sweep.py does), "strict" = strictest t
+    across all lam (larger lam wins, the feature channel dominates). EXP-004 reports both."""
     lo, hi = fit_mm(base, tr) if base is not None else (0.0, 1.0)
     best = None
     for lam in (LAMS if use_feat and base is not None else ([1.0] if base is None else [0.0])):
@@ -79,7 +81,7 @@ def pick(y, regex, gate, base, feat, tr, use_feat):
             m = S.prf([y[i] for i in tr], p)
             if m["R"] < 1.0:
                 continue
-            key = (m["F1"], t, -lam)
+            key = (m["F1"], -lam, t) if tie == "sweep" else (m["F1"], t, -lam)
             if best is None or key > best[0]:
                 best = (key, lam, t)
     if best is None:
@@ -95,7 +97,7 @@ def predict(regex, gate, base, feat, te, lam, t, lo, hi):
     return out
 
 
-def run(rows, channels, feat, regex, gate, k=5, repeats=20, seed=0):
+def run(rows, channels, feat, regex, gate, k=5, repeats=20, seed=0, tie="sweep"):
     y = [bool(r["label"]) for r in rows]
     real = [r.get("source") != "synthetic" for r in rows]
     groups = [normalize(r["title"])[:60] for r in rows]
@@ -111,7 +113,7 @@ def run(rows, channels, feat, regex, gate, k=5, repeats=20, seed=0):
                 if name == "regex":
                     pred.update({i: bool(regex[i]) for i in te})
                     continue
-                ch = pick(y, regex, gate, base, feat, tr, use_feat)
+                ch = pick(y, regex, gate, base, feat, tr, use_feat, tie)
                 if ch is None:
                     pred.update({i: True for i in te})
                     continue
@@ -151,6 +153,8 @@ def main(argv=None):
     ap.add_argument("--repeats", type=int, default=20)
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--out", default=str(ROOT / "reports" / "exp004"))
+    ap.add_argument("--tie", choices=["sweep", "strict"], default="sweep")
+    ap.add_argument("--name", default="nested_cv", help="output file stem")
     a = ap.parse_args(argv)
     tg = load_target(a.target)
     rows = [json.loads(l) for l in eval_data_path(tg).read_text(encoding="utf-8").splitlines() if l.strip()]
@@ -173,7 +177,7 @@ def main(argv=None):
     for k_, v in raw.items():
         channels[k_] = (v, False)
         channels[f"{k_}+feat"] = (v, True)
-    res = run(rows, channels, feat, sw.regex, sw.gate, a.folds, a.repeats, a.seed)
+    res = run(rows, channels, feat, sw.regex, sw.gate, a.folds, a.repeats, a.seed, a.tie)
     summ = summarise(res)
     pairs = {}
     for b in [c for c in channels if c.endswith("+feat") and c != "tfidf+feat"]:
@@ -182,10 +186,10 @@ def main(argv=None):
     out.mkdir(parents=True, exist_ok=True)
     meta = {"target": tg.name, "n": len(rows), "positives": sum(sw.y), "real_rows": sum(r.get("source") != "synthetic" for r in rows),
             "real_positives": sum(1 for r in rows if r.get("source") != "synthetic" and r["label"]),
-            "folds": a.folds, "repeats": a.repeats, "seed": a.seed, "dense_dir": str(dd)}
-    (out / "nested_cv.json").write_text(json.dumps({"meta": meta, "summary": summ, "paired": pairs}, indent=1), encoding="utf-8")
+            "folds": a.folds, "repeats": a.repeats, "seed": a.seed, "tie": a.tie, "dense_dir": str(dd)}
+    (out / f"{a.name}.json").write_text(json.dumps({"meta": meta, "summary": summ, "paired": pairs}, indent=1), encoding="utf-8")
     lines = [f"# Nested CV, {tg.label}: {meta['n']} rows, {meta['positives']} positives "
-             f"({meta['real_positives']} of them real), {a.folds} folds x {a.repeats} repeats, seed {a.seed}", "",
+             f"({meta['real_positives']} of them real), {a.folds} folds x {a.repeats} repeats, seed {a.seed}, F1 ties: {a.tie}", "",
              "Hybrid mode (regex OR gate and score >= t). t, lam and min-max chosen on the training folds only. "
              "mean ± sd over repeats of the pooled test folds.", "",
              "| channel | P | R | F1 | FP | FN | real P | real R | real FP | real FN |",
@@ -203,7 +207,7 @@ def main(argv=None):
         r_, f_ = v["real_fp"], v["all_F1"]
         lines.append(f"| {k_} | {r_['mean']} ± {r_['sd']} | {r_['a_better']} / {r_['tie']} / {r_['b_better']} | "
                      f"{f_['mean']} ± {f_['sd']} |")
-    (out / "nested_cv.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (out / f"{a.name}.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n".join(lines))
     return 0
 

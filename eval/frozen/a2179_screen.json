@@ -1,0 +1,49 @@
+{
+ "version": 1,
+ "target": "a2179_screen",
+ "profile_sha": "3de05a7e43ad47b3",
+ "data": {
+  "path": "eval/labeled.jsonl",
+  "rows": 430,
+  "positives": 48,
+  "sha256": "f0248ee0b1dce32e0f794b0117f2e9b2fbabeadea925ba63ee2ec6c6f240abda"
+ },
+ "rule": "recall 1.0 on the freeze set, then best F1, ties: smallest lam then strictest t (@strict: strictest t)",
+ "variants": {
+  "regex": {
+   "kind": "regex"
+  },
+  "tfidf+feat": {
+   "kind": "hybrid",
+   "base": "tfidf",
+   "tie": "sweep",
+   "lam": 0.4,
+   "t": 0.767274,
+   "lo": -0.7314902909123757,
+   "hi": 0.7718759247598165
+  },
+  "tfidf+feat@strict": {
+   "kind": "hybrid",
+   "base": "tfidf",
+   "tie": "strict",
+   "lam": 0.9,
+   "t": 0.961212,
+   "lo": -0.7314902909123757,
+   "hi": 0.7718759247598165
+  },
+  "dense:mpnet+feat": {
+   "kind": "hybrid",
+   "base": "dense:mpnet",
+   "tie": "sweep",
+   "lam": 0.4,
+   "t": 0.795246,
+   "lo": -0.2817,
+   "hi": 0.18651000000000006,
+   "model": {
+    "id": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+    "proto_prefix": "",
+    "text_prefix": ""
+   }
+  }
+ }
+}
