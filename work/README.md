@@ -43,7 +43,7 @@
 | [T-004](T-004_ci-per-target.md) | CI по всем целям | M-001 | review | ADR-0009 |
 | [T-005](T-005_alerts-region.md) | уведомления и валюта по профилю | M-001 | todo | ADR-0010 |
 | [T-006](T-006_ranking-metrics-and-charts.md) | метрики точного ретрива и графики EDA в каждом прогоне | M-002 | done | все H-12…H-29 (метрики) |
-| [T-007](T-007_close-exp-002.md) | закрыть EXP-002 на 430 строках | M-002 | in progress | H-01, H-08, H-15 |
+| [T-007](T-007_close-exp-002.md) | закрыть EXP-002 на 430 строках | M-002 | review | H-01, H-08, H-15 |
 | [T-008](T-008_dense-model-zoo.md) | dense модели: E5 с префиксами, BGE-M3, ColBERT, Contriever против MiniLM | M-002 | todo | H-01, H-11, H-17, H-23, H-28 |
 | [T-009](T-009_rerank-stage.md) | вторая стадия: кандидаты при бюджете, cross-encoder и LLM реранк | M-002 | todo | H-04, H-12, H-13, H-22, H-25 |
 | [T-010](T-010_lexical-tuning.md) | лексика: BM25 k1 и b, вес полей, нормализация, число прототипов, SPLADE | M-002 | todo | H-06, H-10, H-16, H-19 |
