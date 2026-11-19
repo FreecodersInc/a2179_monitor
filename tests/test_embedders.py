@@ -91,6 +91,9 @@ class TestPrefixes(unittest.TestCase):
 
 
 class TestOomFallback(unittest.TestCase):
+    def test_runner_dense_cache_is_not_seen_by_tests(self):
+        self.assertNotIn("A2179_DENSE_CACHE", os.environ)
+
     def test_big_model_on_small_gpu_reruns_on_cpu(self):
         from a2179 import embedder as E
         devices = []
