@@ -19,13 +19,18 @@ on:
     branches: [main]
     paths-ignore:
       - "results/**"
+      - "docs/**"
+      - "reports/**"
+      - "experiments/**"
+      - "work/**"
+      - "**/*.md"
 
 permissions:
   contents: write
 
 concurrency:
   group: experiments-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   experiments:
