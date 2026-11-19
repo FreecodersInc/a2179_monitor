@@ -2,10 +2,10 @@
   "case": "de_jobs",
   "date": "2026-11-19",
   "n": 112,
-  "n_matches": 2,
+  "n_matches": 3,
   "notes": [
-    "Remotive: 15 jobs",
-    "Remote OK: 97 jobs"
+    "Remotive: 15 jobs (cache)",
+    "Remote OK: 97 jobs (cache)"
   ],
   "files": [
     "matches.csv",

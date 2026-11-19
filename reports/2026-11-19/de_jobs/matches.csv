@@ -1,3 +1,4 @@
 title,company,location,score,decision,url,fetched_at,source,reasons
-Data Engineer,Addepto,,0.1051,match,https://remoteOK.com/remote-jobs/remote-data-engineer-addepto-1137714,2026-11-19T21:31:05Z,remoteok,model=strong; part=scala
+Senior Data Engineer,Lemon.io,"LATAM, Europe, USA, Canada, APAC",0.1419,match,https://remotive.com/remote-jobs/data/senior-data-engineer-2091137,2026-11-19T21:31:05Z,remotive,model=strong; strong_part=data engineer
+Data Engineer,Addepto,,0.1051,match,https://remoteOK.com/remote-jobs/remote-data-engineer-addepto-1137714,2026-11-19T21:31:05Z,remoteok,model=strong; strong_part=data engineer
 Software Engineer,Mirantis,,0.1048,match,https://remoteOK.com/remote-jobs/remote-software-engineer-mirantis-1137387,2026-11-19T21:31:05Z,remoteok,model=weak; part=kubernetes

@@ -2,15 +2,15 @@
 
 112 rows.
 
-- Remotive: 15 jobs
-- Remote OK: 97 jobs
+- Remotive: 15 jobs (cache)
+- Remote OK: 97 jobs (cache)
 
 | title | company | location | score | decision | url | fetched_at |
 | --- | --- | --- | --- | --- | --- | --- |
+| Senior Data Engineer | Lemon.io | LATAM, Europe, USA, Canada, APAC | 0.142 | match | [link](https://remotive.com/remote-jobs/data/senior-data-engineer-2091137) | 2026-11-19T21:31:05Z |
 | Data Engineer | Addepto |  | 0.105 | match | [link](https://remoteOK.com/remote-jobs/remote-data-engineer-addepto-1137714) | 2026-11-19T21:31:05Z |
 | Software Engineer | Mirantis |  | 0.105 | match | [link](https://remoteOK.com/remote-jobs/remote-software-engineer-mirantis-1137387) | 2026-11-19T21:31:05Z |
 | Senior Software Engineer â Kubernetes Control Plane | Buoyant |  | 0.205 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-software-engineer-kubernetes-control-plane-buoyant-1137713) | 2026-11-19T21:31:05Z |
-| Senior Data Engineer | Lemon.io | LATAM, Europe, USA, Canada, APAC | 0.142 | no | [link](https://remotive.com/remote-jobs/data/senior-data-engineer-2091137) | 2026-11-19T21:31:05Z |
 | Senior DevOps Engineer | Lemon.io |  | 0.138 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-devops-engineer-lemon-io-1137557) | 2026-11-19T21:31:05Z |
 | AWS Cloud Solutions Architect | Cloudary SAS |  | 0.133 | no | [link](https://remoteOK.com/remote-jobs/remote-aws-cloud-solutions-architect-cloudary-sas-1137606) | 2026-11-19T21:31:05Z |
 | Senior Software Engineer LATAM | Wagmo |  | 0.133 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-software-engineer-latam-wagmo-1137572) | 2026-11-19T21:31:05Z |
