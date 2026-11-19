@@ -81,7 +81,7 @@ def main(argv=None):
     ap.add_argument("--out", default=str(ROOT / "ci_out"))
     ap.add_argument("--python", default=sys.executable)
     ap.add_argument("--dense", default=os.environ.get("A2179_CI_DENSE", "auto"), choices=["auto", "on", "off"])
-    ap.add_argument("--skip-tests", action="store_true")
+    ap.add_argument("--skip-tests", action="store_true", default=bool(os.environ.get("A2179_CI_SKIP_TESTS")))
     ap.add_argument("--step-timeout", type=int, default=int(os.environ.get("A2179_CI_STEP_TIMEOUT", "1800")))
     a = ap.parse_args(argv)
     out = Path(a.out)
