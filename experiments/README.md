@@ -31,7 +31,7 @@ python --version && pip freeze | grep -iE "torch|sentence|transformers|numpy"
 Статусы: `planned` (записан, не прогонялся), `running`, `done`, `awaiting data` (код готов, ждём прогона или данных), `superseded by EXP-NNN`.
 
 ## Гипотезы
-Бэклог гипотез с критериями опровержения, метриками и нужными данными: [`HYPOTHESES.md`](HYPOTHESES.md).
+Бэклог гипотез с критериями опровержения, метриками и нужными данными: [`HYPOTHESES.md`](HYPOTHESES.md). Карта факторов гибридного поиска, взаимодействия и проверенные ссылки: [`RESEARCH_MAP.md`](RESEARCH_MAP.md). План работ по гипотезам: [`work/M-002_research-plan.md`](../work/M-002_research-plan.md).
 
 ## Индекс
 
@@ -39,4 +39,4 @@ python --version && pip freeze | grep -iE "torch|sentence|transformers|numpy"
 |---|---|---|---|---|---|---|
 | [EXP-000](EXP-000_embedder-native-crash.md) | инженерия | почему эмбеддер роняет процесс на WSL2 + CUDA и как не дать ему уронить монитор | fix shipped, ждём подтверждения на машине, где падало | a9fb3cd, d8cc345 | n/a | крэш в transformers `is_cuda_stream_capturing` даже на cpu, изоляция в дочернем процессе + cpu guard |
 | [EXP-001](EXP-001_matcher-sweep.md) | сопоставление | что лучше отличает нужный товар от «того же по теме»: regex, TF-IDF, BM25, MiniLM, их смеси, явные признаки | done (dense часть частично) | 7bd8ef1 | labeled.jsonl blob 7dcab24ea726, 99 строк | hybrid regex+TF-IDF P 0.977 R 1.000, чистый MiniLM P 0.600 (28 FP из 57 негативов): косинус меряет тему, а не товар |
-| [EXP-002](EXP-002_dataset-enrichment.md) | данные | меняются ли выводы EXP-001 на большом реальном наборе с трудными негативами | awaiting data | ac0e7ce | будет новая версия labeled.jsonl | ещё нет чисел |
+| [EXP-002](EXP-002_dataset-enrichment.md) | данные | меняются ли выводы EXP-001 на большом реальном наборе с трудными негативами | done (первый круг) | ac0e7ce, 3b678fa, ca9820f | labeled.jsonl blob 89e2f32dfd8b, 430 строк | на реальных трудных негативах MiniLM pure P 0.239, tfidf hybrid 0.667, tfidf+feat hybrid 0.857 (8 FP) |

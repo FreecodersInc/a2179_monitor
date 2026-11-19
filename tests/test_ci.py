@@ -35,9 +35,9 @@ def ci_out(tmp: Path, steps, dense=None, env=None, eval_report=True, sweep=True)
                                                 "dense": dense or {"enabled": True, "reason": "cuda"},
                                                 "steps": steps}))
     if eval_report:
-        shutil.copy(ROOT / "reports" / "eval_report.json", tmp / "eval" / "eval_report.json")
+        shutil.copy(ROOT / "tests" / "fixtures" / "eval_report_99.json", tmp / "eval" / "eval_report.json")
     if sweep:
-        shutil.copy(ROOT / "reports" / "sweep_2026-11-19.json", tmp / "sweep" / "sweep.json")
+        shutil.copy(ROOT / "tests" / "fixtures" / "sweep_99.json", tmp / "sweep" / "sweep.json")
 
 
 class TestRun(unittest.TestCase):
@@ -576,7 +576,10 @@ class TestOwnVenvWithTorch(unittest.TestCase):
             for req in ("requirements.txt", "requirements-embed.txt"):
                 (venv / f".stamp_{req}").write_text(hashlib.sha256((ROOT / req).read_bytes()).hexdigest() + "\n")
             env = {**os.environ, "A2179_CI_VENV": str(venv), "A2179_CI_INSTALL_TORCH": "cu126",
-                   "A2179_CI_PYTHON": "/nonexistent/python3.14", "PYTHONPATH": str(site), "A2179_CI_MODEL": "m"}
+                   "A2179_CI_PYTHON": "/nonexistent/python3.14", "PYTHONPATH": str(site), "A2179_CI_MODEL": "m",
+                   # hermetic: no model download from a test (red run 3b678fa: the runner's venv has the real
+                   # huggingface_hub, the cache step went online for the fake model "m" and failed setup)
+                   "A2179_CI_CACHE_MODEL": "0"}
             p = subprocess.run(["bash", "ci/setup_venv.sh"], cwd=ROOT, env=env, capture_output=True, text=True,
                                timeout=60)
             self.assertEqual(p.returncode, 0, p.stdout + p.stderr)
@@ -584,6 +587,33 @@ class TestOwnVenvWithTorch(unittest.TestCase):
             self.assertNotIn("installing torch", p.stdout)
             self.assertNotIn("creating venv", p.stdout)   # existing venv kept, A2179_CI_PYTHON not used
             self.assertIn("requirements-embed.txt unchanged", p.stdout)
+            self.assertIn("model cache step off", p.stdout)
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_failed_model_download_does_not_fail_setup(self):
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            venv, site = tmp / ".venv", tmp / "site"
+            (venv / "bin").mkdir(parents=True)
+            (site / "torch").mkdir(parents=True)
+            (site / "torch" / "__init__.py").write_text("__version__ = '9.9+fake'\n")
+            # a huggingface_hub that has nothing cached and fails every download, no network touched
+            (site / "huggingface_hub").mkdir()
+            (site / "huggingface_hub" / "__init__.py").write_text(
+                "def snapshot_download(name, local_files_only=False):\n"
+                "    raise OSError('offline test: ' + name)\n")
+            (venv / "bin" / "python").write_text(f'#!/bin/sh\nexec "{sys.executable}" "$@"\n')
+            (venv / "bin" / "python").chmod(0o755)
+            import hashlib
+            for req in ("requirements.txt", "requirements-embed.txt"):
+                (venv / f".stamp_{req}").write_text(hashlib.sha256((ROOT / req).read_bytes()).hexdigest() + "\n")
+            env = {**os.environ, "A2179_CI_VENV": str(venv), "PYTHONPATH": str(site), "A2179_CI_MODEL": "m",
+                   "A2179_CI_CACHE_MODEL": "1"}
+            p = subprocess.run(["bash", "ci/setup_venv.sh"], cwd=ROOT, env=env, capture_output=True, text=True,
+                               timeout=60)
+            self.assertEqual(p.returncode, 0, p.stdout + p.stderr)
+            self.assertIn("model cache step failed", p.stdout)
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
 
@@ -644,7 +674,7 @@ class TestRunSh(unittest.TestCase):
             self.assertEqual(len(res), 1)
             r = json.loads(res[0].read_text())
             names = [s["name"] for s in r["steps"]]
-            self.assertEqual(names, ["setup_venv", "env_probe", "eval", "sweep", "tg_integration"])
+            self.assertEqual(names, ["setup_venv", "env_probe", "eval", "sweep", "plots", "tg_integration"])
             self.assertTrue(r["ok"], [(s["name"], s["exit_code"], s.get("stderr_tail")) for s in r["steps"]
                                       if not s.get("ok")])
             self.assertEqual(r["secrets"]["TG_BOT_TOKEN"], "absent")
@@ -653,6 +683,10 @@ class TestRunSh(unittest.TestCase):
             rep = res[0].with_suffix("")
             self.assertTrue((rep / "eval_report.md").is_file())
             self.assertTrue((rep / "sweep.tables.md").is_file())
+            # charts (or, without matplotlib, the ranking table) land next to the tables and inside them
+            self.assertTrue((rep / "plots.md").is_file())
+            self.assertIn("Ranking metrics", (rep / "sweep.tables.md").read_text())
+            self.assertIn("tfidf hybrid", r["metrics"]["ranking"])
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
 

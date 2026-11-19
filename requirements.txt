@@ -3,3 +3,4 @@ beautifulsoup4>=4.12
 lxml>=5.0
 numpy>=1.26
 aiohttp>=3.9
+matplotlib>=3.8

@@ -117,7 +117,7 @@ schtasks /Create /SC HOURLY /TN a2179_monitor /TR "C:\путь\a2179_monitor\.ve
 - эксперименты: [`experiments/`](experiments/README.md)
 - архитектурные решения (ADR, MADR): [`docs/adr/`](docs/adr/README.md)
 - майлстоуны и задачи: [`work/`](work/README.md)
-- гипотезы для проверки: [`experiments/HYPOTHESES.md`](experiments/HYPOTHESES.md)
+- гипотезы для проверки: [`experiments/HYPOTHESES.md`](experiments/HYPOTHESES.md), карта факторов гибридного поиска со ссылками: [`experiments/RESEARCH_MAP.md`](experiments/RESEARCH_MAP.md), план работ: [`work/`](work/README.md)
 - CI экспериментов на своём раннере (метка `a2179-gpu`, только push в main, тонкий workflow в `ci/experiments.yml`, логика в `ci/run.sh`): [`docs/ci.md`](docs/ci.md), результаты в [`results/`](results/README.md)
 
 Проект шире одного экрана: это площадка для исследований сопоставления и поиска (что объявление или документ это *то самое*, а не «про то же»). Каждый эксперимент записан по научному методу (вопрос и гипотеза, условия, процедура, числа, выводы, угрозы валидности) с commit, версией данных, параметрами и командой: [`experiments/README.md`](experiments/README.md), шаблон [`experiments/TEMPLATE.md`](experiments/TEMPLATE.md).
@@ -134,6 +134,8 @@ python eval/run_eval.py              # regex, tfidf, hybrid_tfidf, и embed/hybr
 python eval/run_eval.py --no-a1932   # если считать A1932 несовместимым
 python eval/sweep.py                 # перебор порогов и fusion: BM25, TF-IDF, MiniLM, RRF, явные признаки (отчёт reports/sweep_2026-11-19.md)
 python eval/sweep.py --compute-dense # то же, плюс посчитать косинусы MiniLM (нужен эмбеддер)
+python eval/sweep.py --plots reports/sweep_plots   # плюс графики EDA и метрики ранжирования (P@R1, R@k, nDCG), нужен matplotlib
+python eval/plots.py --sweep reports/sweep_2026-11-19.json --out reports/sweep_2026-11-19_plots   # графики по готовому свипу
 ```
 Размеченный набор `eval/labeled.jsonl`: 97 заголовков (40 подходящих, 57 нет), сербский латиницей и кириллицей, английский, русский. 38 из них реальные заголовки с KP и сайтов магазинов (19.11.2026), остальные составлены вручную, включая трудные отрицательные (A2337, чехлы, шлейфы LCD, услуги, целые ноутбуки).
 Отчёт: `reports/eval_report.md` (precision, recall, F1, матрица ошибок, список ошибок, проверка 2-fold).

@@ -14,13 +14,14 @@ import argparse
 import datetime as dt
 import json
 import os
+import shutil
 import subprocess
 import sys
 import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SCHEMA = 2  # 2: secrets (present / absent), skipped steps, values scrubbed
+SCHEMA = 3  # 2: secrets (present / absent), skipped steps, values scrubbed. 3: metrics.ranking, advisory steps
 sys.path.insert(0, str(ROOT / "ci"))
 import redact  # noqa: E402
 EVAL_KEYS = ("precision", "recall", "f1", "tp", "fp", "fn", "tn", "thresholds", "twofold", "ms_per_item", "note")
@@ -88,9 +89,10 @@ def build(ci_out: Path, env=os.environ, now=None, cwd=ROOT):
         "dense": steps.get("dense") or {},
         "secrets": steps.get("secrets") or (_load(ci_out / "secrets.json") or redact.presence(env)),
         "steps": [{k: s.get(k) for k in ("name", "cmd", "exit_code", "signal", "timed_out", "duration_s", "ok",
-                                         "fallback", "skipped", "stderr_tail")} for s in st],
+                                         "fallback", "skipped", "advisory", "stderr_tail")} for s in st],
         "metrics": {"eval": eval_metrics(_load(ci_out / "eval" / "eval_report.json")),
-                    "sweep": sweep_metrics(_load(ci_out / "sweep" / "sweep.json"))},
+                    "sweep": sweep_metrics(_load(ci_out / "sweep" / "sweep.json")),
+                    "ranking": (_load(ci_out / PLOTS / "plots.json") or {}).get("ranking")},
     }
     for s in res["steps"]:  # keep only a short tail of stderr for failed steps
         s["stderr_tail"] = (s.get("stderr_tail") or "")[-1500:] if not s.get("ok") else None
@@ -98,8 +100,10 @@ def build(ci_out: Path, env=os.environ, now=None, cwd=ROOT):
     last = {}
     for s in st:  # a rerun (fallback) of a step replaces its first try
         last[s.get("name")] = s
-    # check_embedder only decides whether dense runs, its failure is reported under "dense"
-    res["ok"] = bool(last) and all(s.get("ok") for k, s in last.items() if k != "check_embedder")
+    # check_embedder only decides whether dense runs, its failure is reported under "dense",
+    # advisory steps (plots) are reported but never make the run red
+    res["ok"] = bool(last) and all(s.get("ok") for k, s in last.items()
+                                   if k != "check_embedder" and not s.get("advisory"))
     res["tests_ok"] = tests[-1].get("ok") if tests else None
     active, source = Path(cwd) / ".github" / "workflows" / "experiments.yml", Path(cwd) / "ci" / "experiments.yml"
     res["workflow_in_sync"] = (active.read_bytes() == source.read_bytes()) if active.is_file() and source.is_file() else None
@@ -128,16 +132,37 @@ REPORTS = ("eval/eval_report.json", "eval/eval_report.md", "sweep/sweep.tables.m
            "setup.log")
 
 
+PLOTS = "plots"   # ci_out/plots/: *.png, plots.md, plots.json from eval/plots.py
+
+
 def attach_reports(ci_out: Path, result: Path) -> Path | None:
     """Copy the human readable reports (and dense scores, if computed) next to the result JSON:
-    results/<base>/. The big sweep.json is left out (recomputable from dense_scores.jsonl)."""
+    results/<base>/. The big sweep.json is left out (recomputable from dense_scores.jsonl).
+    Charts from eval/plots.py land in the same folder and are embedded at the end of
+    sweep.tables.md, so the tables and their charts read as one report."""
     files = [ci_out / r for r in REPORTS if (ci_out / r).is_file()]
-    if not files:
+    pdir = ci_out / PLOTS
+    pngs = sorted(pdir.glob("*.png")) if pdir.is_dir() else []
+    pmd = pdir / "plots.md"
+    if not files and not pngs:
         return None
     d = result.with_suffix("")
     d.mkdir(parents=True, exist_ok=True)
     for f in files:
         (d / f.name).write_text(redact.scrub(f.read_text(encoding="utf-8", errors="replace")), encoding="utf-8")
+    for f in pngs:   # pixels only, rendered from scores and labels, no environment text in them
+        shutil.copyfile(f, d / f.name)
+    for name in ("plots.md", "plots.json"):
+        if (pdir / name).is_file():
+            (d / name).write_text(redact.scrub((pdir / name).read_text(encoding="utf-8", errors="replace")),
+                                  encoding="utf-8")
+    if pmd.is_file() and (d / "sweep.tables.md").is_file():
+        with (d / "sweep.tables.md").open("a", encoding="utf-8") as fh:
+            fh.write("\n" + redact.scrub(pmd.read_text(encoding="utf-8", errors="replace")))
+    if pmd.is_file() and (d / "eval_report.md").is_file():
+        with (d / "eval_report.md").open("a", encoding="utf-8") as fh:
+            fh.write("\nCharts and ranking metrics (recall@k, precision at recall 1.0 / 0.95, nDCG): "
+                     "[plots.md](plots.md), also embedded at the end of [sweep.tables.md](sweep.tables.md)\n")
     return d
 
 

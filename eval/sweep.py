@@ -21,7 +21,8 @@ Threshold choice = recall first: best F1 among thresholds with recall 1.0, ties 
 Honesty checks: 2-fold (odd/even rows, like run_eval.py) and 5-fold (row index mod 5), the
 threshold tuned on the train part only, plus the full-set threshold applied to real rows only.
 
-Usage: python eval/sweep.py [--dense-scores eval/dense_scores.jsonl] [--compute-dense]
+Usage: python eval/sweep.py [--dense-scores eval/dense_scores.jsonl] [--compute-dense] [--plots DIR]
+Charts and ranking metrics (recall@k, precision at recall 1.0 / 0.95, nDCG): eval/plots.py
 """
 import argparse
 import json
@@ -301,6 +302,7 @@ def main():
     ap.add_argument("--compute-dense", action="store_true")
     ap.add_argument("--model", default="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
     ap.add_argument("--out", default=str(ROOT / "reports" / f"sweep_{DATE}.json"))
+    ap.add_argument("--plots", default=None, metavar="DIR", help="also draw the charts (eval/plots.py) into DIR")
     a = ap.parse_args()
     rows = [json.loads(l) for l in Path(a.data).read_text(encoding="utf-8").splitlines() if l.strip()]
     if a.compute_dense:
@@ -369,6 +371,7 @@ def main():
     res["features"] = {r["id"]: g for r, (_, g) in zip(rows, feats)}
     res["scores"] = {r["id"]: {k: [round(v[i][0], 4), round(v[i][1], 4)] for k, v in ch.items()}
                      | {"feat": feats[i][0]} for i, r in enumerate(rows)}
+    Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     Path(a.out).write_text(json.dumps(res, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
     md = Path(a.out).with_suffix(".tables.md")
     md.write_text(tables_md(res, rows, sw), encoding="utf-8")
@@ -381,6 +384,10 @@ def main():
             print(fmt(m))
     print(f"\ndense channel: {dense_src or 'MISSING (no eval/dense_scores.jsonl), dense rows skipped'}")
     print(f"json -> {a.out}\ntables -> {md}")
+    if a.plots:
+        import plots
+        meta = plots.build(a.out, a.data, a.plots)
+        print(f"{len(meta['charts'])} charts -> {a.plots}" + (f" ({meta['note']})" if meta["note"] else ""))
 
 
 if __name__ == "__main__":

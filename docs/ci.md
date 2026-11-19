@@ -26,12 +26,16 @@ Run #1 (коммит 4ee8426) упал на старте (`startup_failure`, н�
      - `eval/run_eval.py` (с эмбеддером, если проверка прошла, иначе `--no-embed`)
      - `eval/sweep.py --compute-dense` (иначе без dense)
      - если dense шаг всё равно упал, он перезапускается без эмбеддера и помечается `fallback`
-   - `ci/write_results.py` системным python (только stdlib, работает даже если venv сломался): `results/<UTC дата>_<short sha>.json` и папка `results/<UTC дата>_<short sha>/` с отчётами (eval_report.md/json, sweep.tables.md, dense_scores.jsonl, setup.log). Коммит только этих файлов с `[skip ci]`, push в `main`, при отказе `git pull --rebase` и ещё раз, до 5 попыток
+     - `eval/plots.py` (шаг `plots`, `advisory`: его падение видно в результате, но крестик не краснеет): графики EDA и метрики ранжирования (P@R1, P@R95, R@k, nDCG) по оценкам свипа
+   - `ci/write_results.py` системным python (только stdlib, работает даже если venv сломался): `results/<UTC дата>_<short sha>.json` и папка `results/<UTC дата>_<short sha>/` с отчётами (eval_report.md/json, sweep.tables.md, dense_scores.jsonl, setup.log) и графиками (`01_dataset.png` … `09_errors_by_kind.png`, `plots.md`, `plots.json`). Графики вклеены в конец `sweep.tables.md`, так что таблицы и картинки читаются одним отчётом. Коммит только этих файлов с `[skip ci]`, push в `main`, при отказе `git pull --rebase` и ещё раз, до 5 попыток
 3. Красный крестик: если упала установка venv, unit тесты, интеграционный тест Telegram или пуш результатов. Результат пишется в любом случае.
 
 Петли нет: `results/**` в `paths-ignore`, в сообщении `[skip ci]`, и push через `GITHUB_TOKEN` вообще не запускает workflow.
 
 Локально (без пуша): `A2179_CI_NO_PUSH=1 A2179_CI_RESULTS_DIR=/tmp/res bash ci/run.sh`.
+
+## Почему прогон 3b678fa был красный
+Опять тест, не код: `test_ci ... TestOwnVenvWithTorch.test_install_flag_is_noop_when_torch_imports`. В 3b678fa кэш модели стал включён по умолчанию, а этот тест подкладывает фейковый torch в venv, сделанный из python раннера. В venv Лёни настоящий `huggingface_hub`, поэтому шаг кэша пошёл в сеть за фейковой моделью `m`, получил 401 и уронил setup внутри теста. Починка: тест выключает шаг кэша (`A2179_CI_CACHE_MODEL=0`), а сам `setup_venv.sh` больше не падает, если скачать модель не вышло (warning, dense дальше откатывается как без модели). Новый тест проверяет это с подложным `huggingface_hub`, который падает без сети. Плюс тесты CI и графиков читают замороженные отчёты из `tests/fixtures/`, а не `reports/`, которые Лёня перезаписывает своими прогонами (иначе следующий прогон был бы красным на `ev["dataset"]["n"] == 99`).
 
 ## Почему второй прогон был красный (ebaed9c)
 Сам CI отработал: venv, eval, свип, результат закоммичен (`results/2026-11-19_ebaed9c.json`). Красным был шаг unit тестов, 3 теста из 179, все из за моих тестов, не из за кода:
@@ -94,6 +98,7 @@ Job идёт с `environment: experiment`, оттуда приходят `TG_BOT
 | `A2179_CI_CACHE_MODEL` | `1` | положить модель в `HF_HOME`, если её там нет; `0` выключает |
 | `A2179_CI_MODEL` | модель из конфига | какую модель кэшировать |
 | `A2179_CI_TG_SEND` | `1` | интеграционный тест шлёт одно сообщение через Alerter; `0` только читает |
+| `A2179_CI_PLOTS` | `1` | графики и метрики ранжирования после свипа (около 1 МБ PNG на прогон в `results/`); `0` выключает |
 | `A2179_CI_NO_PUSH` | не задано | `1`: результат не коммитится, остаётся в `ci_out/` |
 
 Любая новая `A2179_CI_*` переменная доходит до `ci/run.sh` без правки YAML.

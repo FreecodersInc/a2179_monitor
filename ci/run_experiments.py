@@ -102,6 +102,7 @@ def main(argv=None):
     out = Path(a.out)
     (out / "eval").mkdir(parents=True, exist_ok=True)
     (out / "sweep").mkdir(parents=True, exist_ok=True)
+    (out / "plots").mkdir(parents=True, exist_ok=True)
     py, T = a.python, a.step_timeout
     offline = os.environ.get("HF_HUB_OFFLINE", "") in ("1", "true", "yes")
 
@@ -137,6 +138,13 @@ def main(argv=None):
         (out / "sweep" / "dense_scores.jsonl").unlink(missing_ok=True)
         rec = run("sweep", sw, T)
         rec["fallback"] = "rerun without dense scores"
+        steps.append(rec)
+
+    # charts + ranking metrics from the sweep scores, advisory: a failure here never turns CI red
+    if os.environ.get("A2179_CI_PLOTS", "1") not in ("0", "false", "no") and (out / "sweep" / "sweep.json").is_file():
+        rec = run("plots", [py, "eval/plots.py", "--sweep", str(out / "sweep" / "sweep.json"),
+                            "--out", str(out / "plots")], T)
+        rec["advisory"] = True
         steps.append(rec)
 
     # Telegram integration: only with both secrets, the only step that gets them

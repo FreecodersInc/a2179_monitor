@@ -21,3 +21,8 @@
 | [0009](0009-thin-workflow-wrapper.md) | workflow как тонкая обёртка без `uses:`, вся логика в `ci/run.sh` | accepted | 2026-11-19 | этот коммит |
 | [0010](0010-configurable-targets.md) | цель поиска как профиль `targets/<name>.json`, A2179 по умолчанию без изменений | accepted | 2026-11-19 | этот коммит |
 | [0011](0011-ci-secrets.md) | секреты CI по имени из environment experiment, значения нигде не оседают | accepted | 2026-11-19 | этот коммит |
+| [0012](0012-transparent-hybrid-retrieval.md) | прозрачный гибрид без векторной БД: TF-IDF, BM25, MiniLM косинус к прототипам, min-max, convex combination по сетке w, RRF как контроль, признаки отдельным членом lam | accepted | 2026-11-19 | 7bd8ef1, этот коммит |
+| [0013](0013-eval-driven-decisions.md) | решения по качеству только по eval таблицам: recall first порог, FP/FN, 5-fold, real only, ранжирующие метрики и графики | accepted | 2026-11-19 | 7bd8ef1, этот коммит |
+| [0014](0014-eval-enrichment-human-review.md) | набор растёт через `eval/enrich.py`, авто метки правилами с причиной, каждую смотрит человек | accepted | 2026-11-19 | ac0e7ce, 3b678fa |
+| [0015](0015-ci-config-repo-variables.md) | настройки CI переменными репы (`toJSON(vars)`), дефолты CACHE_MODEL, TG_SEND, PLOTS = 1 | accepted | 2026-11-19 | 186c47d, 3b678fa, этот коммит |
+| [0016](0016-working-standards.md) | стандарты работы: гипотеза → задача → EXP → прогон → ADR, где что лежит | accepted | 2026-11-19 | этот коммит |

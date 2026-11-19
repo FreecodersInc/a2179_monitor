@@ -46,7 +46,9 @@ if has torch; then
   # model into the HF cache (HF_HOME or ~/.cache/huggingface), the only download of the run
   # on by default: a no-op when the model is already in the cache, downloads it once otherwise
   case "${A2179_CI_CACHE_MODEL:-1}" in
-    1|true|yes) HF_HUB_OFFLINE=0 TRANSFORMERS_OFFLINE=0 "$VENV/bin/python" ci/cache_model.py ;;
+    # a failed download never fails setup: dense then falls back like any missing model
+    1|true|yes) HF_HUB_OFFLINE=0 TRANSFORMERS_OFFLINE=0 "$VENV/bin/python" ci/cache_model.py \
+                  || echo "::warning::model cache step failed (exit $?), dense steps will fall back" ;;
     *) echo "model cache step off (A2179_CI_CACHE_MODEL=$A2179_CI_CACHE_MODEL)" ;;
   esac
 else
