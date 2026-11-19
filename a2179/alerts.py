@@ -34,6 +34,11 @@ class Alerter:
         self.token = os.environ.get("TG_BOT_TOKEN", "").strip()
         self.chat = os.environ.get("TG_CHAT_ID", "").strip()
         self.tg = bool(cfg.get("telegram", {}).get("enabled", True) and self.token and self.chat)
+        try:
+            from .target import target_of
+            self.label = target_of(cfg).label
+        except Exception:  # a broken profile must not stop alerts
+            self.label = "monitor"
 
     def send(self, messages: list, metrics=None) -> dict:
         res = {"console": 0, "telegram": 0, "telegram_errors": 0, "desktop": 0}
@@ -54,7 +59,7 @@ class Alerter:
                 else:
                     res["telegram_errors"] += 1
         if self.cfg.get("desktop_notify", True):
-            if self._desktop(f"A2179: {len(messages)} событ.", messages[0].split("\n")[0]):
+            if self._desktop(f"{self.label}: {len(messages)} событ.", messages[0].split("\n")[0]):
                 res["desktop"] = 1
         if metrics:
             for k, v in res.items():

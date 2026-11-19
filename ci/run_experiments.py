@@ -5,7 +5,8 @@ Every step records command, exit code, duration and the tail of its output into
 crashed. The dense (embedder) steps run only when torch + sentence-transformers import
 and `monitor.py --check-embedder` passes (that check loads the model in a child process
 first, see ADR-0005). If a dense step still fails, the same step is rerun without the
-embedder and marked as a fallback. Exit code: 1 when the unit tests fail, else 0.
+embedder and marked as a fallback. Exit code: 1 when the unit tests or the Telegram integration
+test fail, else 0. Secrets reach only the integration step, all output is scrubbed (ci/redact.py).
 
 Nothing here talks to the network by itself. With HF_HUB_OFFLINE=1 (the workflow default)
 the model must already be in the Hugging Face cache of the runner user.
@@ -21,14 +22,27 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TAIL = 4000
+sys.path.insert(0, str(ROOT / "ci"))
+import redact  # noqa: E402
 
 
-def run(name, cmd, timeout, env=None):
+def step_env(with_secrets=False):
+    """Environment for a step. Secrets reach only the steps that need them (the TG integration
+    test); tests, eval and sweep never see TG_BOT_TOKEN, so no test can send by accident."""
+    env = dict(os.environ)
+    if not with_secrets:
+        for n in redact.names():
+            env.pop(n, None)
+        env.pop("A2179_CI_SECRET_NAMES", None)
+    return env
+
+
+def run(name, cmd, timeout, env=None, with_secrets=False):
     t0 = time.time()
     rec = {"name": name, "cmd": cmd, "exit_code": None, "signal": None, "timed_out": False}
     try:
         p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, timeout=timeout,
-                           env={**os.environ, **(env or {})})
+                           env={**step_env(with_secrets), **(env or {})})
         rec["exit_code"] = p.returncode
         if p.returncode < 0:
             try:
@@ -41,6 +55,7 @@ def run(name, cmd, timeout, env=None):
         out = e.stdout.decode(errors="replace") if isinstance(e.stdout, bytes) else (e.stdout or "")
         err = e.stderr.decode(errors="replace") if isinstance(e.stderr, bytes) else (e.stderr or "")
     rec["duration_s"] = round(time.time() - t0, 2)
+    out, err = redact.scrub(out), redact.scrub(err)
     rec["stdout_tail"] = out[-TAIL:]
     rec["stderr_tail"] = err[-TAIL:]
     rec["ok"] = rec["exit_code"] == 0
@@ -124,12 +139,22 @@ def main(argv=None):
         rec["fallback"] = "rerun without dense scores"
         steps.append(rec)
 
-    summary = {"env": info, "dense": {"enabled": dense, "reason": reason, "mode": a.dense, "hf_offline": offline},
+    # Telegram integration: only with both secrets, the only step that gets them
+    have = redact.presence()
+    if have.get("TG_BOT_TOKEN", "absent") != "absent" and have.get("TG_CHAT_ID", "absent") != "absent":
+        steps.append(run("tg_integration", [py, "-m", "unittest", "-v", "integration.test_telegram"], 300,
+                         with_secrets=True))
+    else:
+        steps.append({"name": "tg_integration", "cmd": None, "exit_code": None, "signal": None,
+                      "timed_out": False, "duration_s": 0, "ok": True,
+                      "skipped": "TG_BOT_TOKEN / TG_CHAT_ID absent", "stdout_tail": "", "stderr_tail": ""})
+
+    summary = {"env": info, "secrets": have, "dense": {"enabled": dense, "reason": reason, "mode": a.dense, "hf_offline": offline},
                "steps": steps}
     (out / "steps.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"dense: {dense} ({reason}) -> {out / 'steps.json'}")
-    tests = [s for s in steps if s["name"] == "tests"]
-    return 1 if tests and not tests[-1]["ok"] else 0
+    gating = [s for s in steps if s["name"] in ("tests", "tg_integration")]
+    return 1 if any(not s["ok"] for s in gating) else 0
 
 
 if __name__ == "__main__":

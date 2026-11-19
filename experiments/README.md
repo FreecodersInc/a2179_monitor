@@ -30,6 +30,9 @@ python --version && pip freeze | grep -iE "torch|sentence|transformers|numpy"
 
 Статусы: `planned` (записан, не прогонялся), `running`, `done`, `awaiting data` (код готов, ждём прогона или данных), `superseded by EXP-NNN`.
 
+## Гипотезы
+Бэклог гипотез с критериями опровержения, метриками и нужными данными: [`HYPOTHESES.md`](HYPOTHESES.md).
+
 ## Индекс
 
 | id | тема | вопрос | статус | код | данные | главный результат |

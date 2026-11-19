@@ -125,7 +125,9 @@ class TestDense(unittest.TestCase):
             names = [c[0] for c in calls]
             self.assertEqual(names, ["tests", "check_embedder", "eval", "eval", "sweep", "sweep"])
             s = json.loads((Path(d) / "steps.json").read_text())
-            self.assertEqual([x.get("fallback") is not None for x in s["steps"]][-4:], [False, True, False, True])
+            ev_sw = [x for x in s["steps"] if x["name"] in ("eval", "sweep")]
+            self.assertEqual([x.get("fallback") is not None for x in ev_sw], [False, True, False, True])
+            self.assertEqual(s["steps"][-1]["skipped"], "TG_BOT_TOKEN / TG_CHAT_ID absent")
 
     def test_tests_fail_exit_1(self):
         with tempfile.TemporaryDirectory() as d:
@@ -305,12 +307,16 @@ class TestWorkflowText(unittest.TestCase):
         self.assertIn("concurrency:", self.wf)
         self.assertNotIn("sudo", self.wf)
 
-    def test_no_actions_only_github_token(self):
+    def test_no_actions_only_named_secrets(self):
         # org policy: only FreecodersInc actions; run #1 died on actions/checkout + upload-artifact
         code = [ln for ln in self.wf.splitlines() if not ln.lstrip().startswith("#")]
         self.assertFalse([ln for ln in code if "uses:" in ln])
-        secrets = [w for w in self.wf.replace("${{", " ").split() if w.startswith("secrets.")]
-        self.assertEqual(set(secrets), {"secrets.GITHUB_TOKEN"})
+        secrets = {w.rstrip("}") for w in self.wf.replace("${{", " ").split() if w.startswith("secrets.")}
+        self.assertEqual(secrets, {"secrets.GITHUB_TOKEN", "secrets.TG_BOT_TOKEN", "secrets.TG_CHAT_ID",
+                                   "secrets.A2179_CI_SECRETS"})
+        self.assertFalse([ln for ln in code if "toJSON(secrets)" in ln])
+        self.assertIn("    environment: experiment\n", self.wf)
+        self.assertNotIn(".git/config", self.wf)
 
     def test_thin(self):
         self.assertEqual(self.wf.count("- name:"), 1)
@@ -354,6 +360,248 @@ class TestWorkflowText(unittest.TestCase):
             shutil.rmtree(tmp, ignore_errors=True)
 
 
+import redact  # noqa: E402
+import secrets_env  # noqa: E402
+
+
+class TestRedact(unittest.TestCase):
+    ENV = {"TG_BOT_TOKEN": "123456:ABC-secret-token", "TG_CHAT_ID": "206751209", "GITHUB_TOKEN": "",
+           "A2179_CI_SECRET_NAMES": "SECRET_X TG_SHORT", "SECRET_X": "hunter22", "TG_SHORT": "7"}
+
+    def test_presence_only(self):
+        self.assertEqual(redact.presence(self.ENV), {
+            "GITHUB_TOKEN": "absent", "TG_BOT_TOKEN": "present", "TG_CHAT_ID": "present",
+            "SECRET_X": "present", "TG_SHORT": "present (short, not scrubbed)"})
+
+    def test_scrub_everywhere(self):
+        text = "GET https://api.telegram.org/bot123456:ABC-secret-token/getChat?chat_id=206751209 pw hunter22"
+        out = redact.scrub(text, self.ENV)
+        for v in ("123456:ABC-secret-token", "206751209", "hunter22"):
+            self.assertNotIn(v, out)
+        self.assertIn("***", out)
+        obj = redact.scrub_obj({"a": [text, 3], "b": {"c": text}}, self.ENV)
+        self.assertNotIn("hunter22", json.dumps(obj))
+        self.assertEqual(obj["a"][1], 3)
+
+    def test_results_file_never_contains_values(self):
+        env = {**ENV, **self.ENV}
+        with tempfile.TemporaryDirectory() as d:
+            ci_out(Path(d), [step("tests"), {**step("eval", ok=False),
+                                              "stderr_tail": "boom bot123456:ABC-secret-token chat 206751209"}])
+            (Path(d) / "setup.log").write_text("token 123456:ABC-secret-token\n")
+            res = wr.build(Path(d), env=env, now=NOW)
+            old = dict(os.environ)
+            os.environ.update(self.ENV)
+            try:
+                p = wr.write(Path(d) / "results", res)
+                rep = wr.attach_reports(Path(d), p)
+                blob = p.read_text() + "".join(f.read_text() for f in rep.iterdir())
+            finally:
+                os.environ.clear()
+                os.environ.update(old)
+        for v in ("123456:ABC-secret-token", "206751209", "hunter22"):
+            self.assertNotIn(v, blob)
+        self.assertEqual(res["secrets"]["TG_BOT_TOKEN"], "present")
+
+    def test_steps_do_not_get_secrets(self):
+        old = dict(os.environ)
+        os.environ.update(self.ENV)
+        try:
+            plain, full = rx.step_env(), rx.step_env(with_secrets=True)
+        finally:
+            os.environ.clear()
+            os.environ.update(old)
+        for n in ("TG_BOT_TOKEN", "TG_CHAT_ID", "SECRET_X"):
+            self.assertNotIn(n, plain)
+            self.assertIn(n, full)
+
+    def test_run_scrubs_output(self):
+        old = dict(os.environ)
+        os.environ.update(self.ENV)
+        try:
+            r = rx.run("x", [sys.executable, "-c", "print('leak 123456:ABC-secret-token')"], 30, with_secrets=True)
+        finally:
+            os.environ.clear()
+            os.environ.update(old)
+        self.assertNotIn("ABC-secret-token", r["stdout_tail"])
+
+
+class TestSecretsEnv(unittest.TestCase):
+    def test_blob_masked_and_exported(self):
+        out = secrets_env.lines(json.dumps({"SECRET_DB": "pa ss", "TG_OTHER": "x1y2", "PATH": "/evil",
+                                            "GITHUB_TOKEN": "no", "A2179_CI_DENSE": "off"}), env={})
+        self.assertIn("echo '::add-mask::pa ss'", out)
+        self.assertIn("export SECRET_DB='pa ss'", out)
+        self.assertIn("export TG_OTHER=x1y2", out)
+        self.assertFalse([ln for ln in out if ln.startswith(("export PATH", "export GITHUB_TOKEN", "export A2179_CI_DENSE"))])
+        self.assertEqual(out[-1], "export A2179_CI_SECRET_NAMES='SECRET_DB TG_OTHER'")
+        self.assertEqual(sum("ignored" in ln for ln in out), 3)
+        # the warning about ignored keys never carries a value
+        self.assertFalse([ln for ln in out if "/evil" in ln])
+
+    def test_explicit_secret_wins(self):
+        out = secrets_env.lines(json.dumps({"TG_BOT_TOKEN": "fromblob"}), env={"TG_BOT_TOKEN": "explicit"})
+        self.assertFalse([ln for ln in out if "fromblob" in ln])
+
+    def test_empty_and_bad(self):
+        self.assertEqual(secrets_env.lines(""), ["export A2179_CI_SECRET_NAMES=''"])
+        self.assertTrue(secrets_env.lines("[1]")[0].startswith("echo '::warning::"))
+
+
+class TestTelegramIntegration(unittest.TestCase):
+    def test_skips_without_secrets(self):
+        env = {k: v for k, v in os.environ.items() if k not in ("TG_BOT_TOKEN", "TG_CHAT_ID")}
+        p = subprocess.run([sys.executable, "-m", "unittest", "-v", "integration.test_telegram"], cwd=ROOT,
+                           env=env, capture_output=True, text=True, timeout=60)
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("skipped", p.stderr)
+
+    def test_failure_message_has_no_token(self):
+        import importlib
+        old = dict(os.environ)
+        os.environ.update({"TG_BOT_TOKEN": "999:SECRETTOKEN", "TG_CHAT_ID": "42424242"})
+        try:
+            import integration.test_telegram as tt
+            tt = importlib.reload(tt)
+
+            class R:
+                status_code = 401
+
+                def json(self):
+                    return {"ok": False, "description": "Unauthorized for bot999:SECRETTOKEN"}
+            import requests
+            orig = requests.get
+            requests.get = lambda url, **kw: R()
+            try:
+                status, ok, desc = tt.call("getMe")
+            finally:
+                requests.get = orig
+        finally:
+            os.environ.clear()
+            os.environ.update(old)
+        self.assertEqual((status, ok), (401, False))
+        self.assertNotIn("SECRETTOKEN", desc)
+
+
+class TestCacheModel(unittest.TestCase):
+    def run_with(self, fake, env):
+        import importlib
+        import types
+        import cache_model
+        mod = types.ModuleType("huggingface_hub")
+        mod.snapshot_download = fake
+        old_mod, old_env = sys.modules.get("huggingface_hub"), dict(os.environ)
+        sys.modules["huggingface_hub"] = mod
+        os.environ.update(env)
+        try:
+            return importlib.reload(cache_model).main()
+        finally:
+            os.environ.clear()
+            os.environ.update(old_env)
+            if old_mod is None:
+                sys.modules.pop("huggingface_hub", None)
+            else:
+                sys.modules["huggingface_hub"] = old_mod
+
+    def test_cached_no_download(self):
+        calls = []
+
+        def fake(name, local_files_only=False):
+            calls.append(local_files_only)
+            return "/hf/x"
+        self.assertEqual(self.run_with(fake, {"A2179_CI_MODEL": "m", "HF_HUB_OFFLINE": "0"}), 0)
+        self.assertEqual(calls, [True])
+
+    def test_missing_downloads_only_when_online(self):
+        calls = []
+
+        def fake(name, local_files_only=False):
+            calls.append(local_files_only)
+            if local_files_only:
+                raise FileNotFoundError(name)
+            return "/hf/x"
+        self.assertEqual(self.run_with(fake, {"A2179_CI_MODEL": "m", "HF_HUB_OFFLINE": "1"}), 4)
+        self.assertEqual(calls, [True])
+        self.assertEqual(self.run_with(fake, {"A2179_CI_MODEL": "m", "HF_HUB_OFFLINE": "0"}), 0)
+        self.assertEqual(calls, [True, True, False])
+
+    def test_default_model_from_config(self):
+        import cache_model
+        old = os.environ.pop("A2179_CI_MODEL", None)
+        try:
+            self.assertEqual(cache_model.model_name(), "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+        finally:
+            if old:
+                os.environ["A2179_CI_MODEL"] = old
+
+
+class TestSetupVenvTorchFlag(unittest.TestCase):
+    def test_bad_torch_value_refused(self):
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            venv = tmp / "venv"
+            (venv / "bin").mkdir(parents=True)
+            (venv / "bin" / "python").write_text(f'#!/bin/sh\nexec "{sys.executable}" "$@"\n')
+            (venv / "bin" / "python").chmod(0o755)
+            import hashlib
+            (venv / ".stamp_requirements.txt").write_text(
+                hashlib.sha256((ROOT / "requirements.txt").read_bytes()).hexdigest() + "\n")
+            env = {**os.environ, "A2179_CI_VENV": str(venv), "A2179_CI_INSTALL_TORCH": "cu126; curl evil"}
+            p = subprocess.run(["bash", "ci/setup_venv.sh"], cwd=ROOT, env=env, capture_output=True, text=True,
+                               timeout=60)
+            self.assertEqual(p.returncode, 3, p.stdout + p.stderr)
+            self.assertIn("expected cu126", p.stdout)
+            env["A2179_CI_INSTALL_TORCH"] = ""
+            p = subprocess.run(["bash", "ci/setup_venv.sh"], cwd=ROOT, env=env, capture_output=True, text=True,
+                               timeout=60)
+            self.assertEqual(p.returncode, 0, p.stdout + p.stderr)
+            self.assertIn("A2179_CI_INSTALL_TORCH=cu126", p.stdout)
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+
+class TestOwnVenvWithTorch(unittest.TestCase):
+    def test_install_flag_is_noop_when_torch_imports(self):
+        # A2179_CI_VENV pointing at an existing venv that already has torch (Leonid's .venv)
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            venv, site = tmp / ".venv", tmp / "site"
+            (venv / "bin").mkdir(parents=True)
+            (site / "torch").mkdir(parents=True)
+            (site / "torch" / "__init__.py").write_text("__version__ = '9.9+fake'\n")
+            (venv / "bin" / "python").write_text(f'#!/bin/sh\nexec "{sys.executable}" "$@"\n')
+            (venv / "bin" / "python").chmod(0o755)
+            import hashlib
+            for req in ("requirements.txt", "requirements-embed.txt"):
+                (venv / f".stamp_{req}").write_text(hashlib.sha256((ROOT / req).read_bytes()).hexdigest() + "\n")
+            env = {**os.environ, "A2179_CI_VENV": str(venv), "A2179_CI_INSTALL_TORCH": "cu126",
+                   "A2179_CI_PYTHON": "/nonexistent/python3.14", "PYTHONPATH": str(site), "A2179_CI_MODEL": "m"}
+            p = subprocess.run(["bash", "ci/setup_venv.sh"], cwd=ROOT, env=env, capture_output=True, text=True,
+                               timeout=60)
+            self.assertEqual(p.returncode, 0, p.stdout + p.stderr)
+            self.assertIn("torch already in", p.stdout)
+            self.assertNotIn("installing torch", p.stdout)
+            self.assertNotIn("creating venv", p.stdout)   # existing venv kept, A2179_CI_PYTHON not used
+            self.assertIn("requirements-embed.txt unchanged", p.stdout)
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_run_sh_passes_ci_python_to_setup(self):
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            env = {**os.environ, "A2179_CI_VARS": json.dumps({"A2179_CI_VENV": str(tmp / "new" / "venv"),
+                                                              "A2179_CI_PYTHON": "/nonexistent/python3.14"}),
+                   "A2179_CI_OUT": str(tmp / "out"), "A2179_CI_RESULTS_DIR": str(tmp / "results"),
+                   "A2179_CI_NO_PUSH": "1"}
+            env.pop("A2179_CI_PYTHON", None)
+            subprocess.run(["bash", str(ROOT / "ci" / "run.sh")], cwd=tmp, env=env, capture_output=True,
+                           text=True, timeout=60)
+            log = (tmp / "out" / "setup.log").read_text()
+            self.assertIn("/nonexistent/python3.14", log)   # setup_venv.sh tried exactly that python
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+
 class TestVarsEnv(unittest.TestCase):
     def test_only_ci_keys_quoted(self):
         import vars_env
@@ -377,7 +625,10 @@ class TestRunSh(unittest.TestCase):
         try:
             venv = tmp / "venv"
             (venv / "bin").mkdir(parents=True)
-            (venv / "bin" / "python").symlink_to(sys.executable)
+            # a wrapper, not a symlink: a symlink to a venv python outside its venv starts the bare
+            # base interpreter without the venv packages (seen on the CI runner, red run ebaed9c)
+            (venv / "bin" / "python").write_text(f'#!/bin/sh\nexec "{sys.executable}" "$@"\n')
+            (venv / "bin" / "python").chmod(0o755)
             import hashlib
             (venv / ".stamp_requirements.txt").write_text(
                 hashlib.sha256((ROOT / "requirements.txt").read_bytes()).hexdigest() + "\n")
@@ -391,8 +642,11 @@ class TestRunSh(unittest.TestCase):
             res = list((tmp / "results").glob("*_0123456.json"))
             self.assertEqual(len(res), 1)
             r = json.loads(res[0].read_text())
-            self.assertEqual([s["name"] for s in r["steps"]], ["setup_venv", "env_probe", "eval", "sweep"])
-            self.assertTrue(r["ok"])
+            names = [s["name"] for s in r["steps"]]
+            self.assertEqual(names, ["setup_venv", "env_probe", "eval", "sweep", "tg_integration"])
+            self.assertTrue(r["ok"], [(s["name"], s["exit_code"], s.get("stderr_tail")) for s in r["steps"]
+                                      if not s.get("ok")])
+            self.assertEqual(r["secrets"]["TG_BOT_TOKEN"], "absent")
             self.assertEqual(r["dense"]["reason"], "disabled (A2179_CI_DENSE=off)")
             self.assertTrue(r["dense"]["hf_offline"])
             rep = res[0].with_suffix("")

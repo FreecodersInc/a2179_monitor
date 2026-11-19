@@ -22,16 +22,19 @@ class Decision:
 
 
 class Matcher:
-    def __init__(self, sim=None, mode: str = "regex", thresholds: dict = None, accept_a1932: bool = True):
+    def __init__(self, sim=None, mode: str = "regex", thresholds: dict = None, accept_a1932: bool = True,
+                 target=None, options: dict = None):
         self.sim = sim
         self.mode = mode if sim is not None else "regex"
         th = dict(DEFAULT_THRESHOLDS)
         th.update(thresholds or {})
         self.th = th.get(self.mode, {"pos": 1.1, "margin": 1.1})
         self.accept_a1932 = accept_a1932
+        self.target = target            # None = default profile
+        self.options = options or {}    # accept_* switches of the profile's model tiers
 
     def decide(self, title: str, snippet: str = "", scores=None) -> Decision:
-        rr = classify(title, snippet, self.accept_a1932)
+        rr = classify(title, snippet, self.accept_a1932, self.target, self.options)
         sp = sn = 0.0
         sim_hit = False
         if self.sim is not None:

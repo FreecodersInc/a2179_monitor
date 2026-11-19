@@ -83,9 +83,12 @@ schtasks /Create /SC HOURLY /TN a2179_monitor /TR "C:\путь\a2179_monitor\.ve
 Чаще раза в 30 минут не надо: KP и магазины не любят частые запросы.
 
 ## Конфиг (`config.json`, все поля необязательны)
+Порядок: общие defaults ← профиль цели ← `config.json` ← переменные окружения. **Цель** (что ищем: правила regex, прототипы, источники, цена, пороги) это профиль `targets/<name>.json`, по умолчанию [`targets/a2179_screen.json`](targets/a2179_screen.json), см. [ADR-0010](docs/adr/0010-configurable-targets.md). Другая цель: `"target": "my_target"` (файл `targets/my_target.json`) или путь к .json, либо `A2179_TARGET=...`.
+
 | поле | что |
 |---|---|
-| `target_usd` | цель по цене, $ (по умолчанию 20) |
+| `target` | профиль цели (по умолчанию `a2179_screen`) |
+| `target_usd` | цель по цене, $ (по умолчанию из профиля, 20) |
 | `rates.rsd_per_eur`, `rates.usd_per_eur` | курсы для пересчёта |
 | `price_drop_min_pct` | минимальное падение цены для 📉 |
 | `alert_on` | какие события слать |
@@ -114,6 +117,7 @@ schtasks /Create /SC HOURLY /TN a2179_monitor /TR "C:\путь\a2179_monitor\.ve
 - эксперименты: [`experiments/`](experiments/README.md)
 - архитектурные решения (ADR, MADR): [`docs/adr/`](docs/adr/README.md)
 - майлстоуны и задачи: [`work/`](work/README.md)
+- гипотезы для проверки: [`experiments/HYPOTHESES.md`](experiments/HYPOTHESES.md)
 - CI экспериментов на своём раннере (метка `a2179-gpu`, только push в main, тонкий workflow в `ci/experiments.yml`, логика в `ci/run.sh`): [`docs/ci.md`](docs/ci.md), результаты в [`results/`](results/README.md)
 
 Проект шире одного экрана: это площадка для исследований сопоставления и поиска (что объявление или документ это *то самое*, а не «про то же»). Каждый эксперимент записан по научному методу (вопрос и гипотеза, условия, процедура, числа, выводы, угрозы валидности) с commit, версией данных, параметрами и командой: [`experiments/README.md`](experiments/README.md), шаблон [`experiments/TEMPLATE.md`](experiments/TEMPLATE.md).

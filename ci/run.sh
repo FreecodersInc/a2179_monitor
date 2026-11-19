@@ -2,9 +2,10 @@
 # Everything the experiments workflow does, after the thin YAML (ci/experiments.yml) has
 # checked out the pushed commit. Changing CI = changing files in ci/, never the YAML.
 #
-# 1. repo variables A2179_CI_* from $A2179_CI_VARS (JSON of all repo variables) -> env
+# 1. repo variables A2179_CI_* from $A2179_CI_VARS (JSON of all repo variables) -> env,
+#    secrets: names recorded present/absent, values masked and scrubbed (ci/redact.py)
 # 2. Hugging Face offline unless A2179_CI_ALLOW_DOWNLOAD=true
-# 3. ci/setup_venv.sh (persistent venv in $HOME), its output in ci_out/setup.log
+# 3. ci/setup_venv.sh (persistent venv in $HOME, optional torch + model cache), log ci_out/setup.log
 # 4. ci/run_experiments.py in that venv (tests, embedder check, eval, sweep)
 # 5. ci/write_results.py with the system python (stdlib only, runs even if the venv broke):
 #    results/<UTC date>_<sha>.json + results/<UTC date>_<sha>/ reports, commit [skip ci], push
@@ -23,22 +24,36 @@ fi
 if [[ -n "${A2179_CI_VARS:-}" && "${A2179_CI_VARS}" != "null" ]]; then
   eval "$("$SYS_PY" ci/vars_env.py)"
 fi
-# 2. model downloads only when allowed
+# secrets: TG_BOT_TOKEN / TG_CHAT_ID come by name from the workflow (environment experiment),
+# more can ride in the one secret A2179_CI_SECRETS (JSON), masked and exported by ci/secrets_env.py.
+# Only names and present/absent are ever recorded (ci_out/secrets.json), never values.
+eval "$("$SYS_PY" ci/secrets_env.py)"
+unset A2179_CI_SECRETS
+"$SYS_PY" -c "import json,sys; sys.path.insert(0,'ci'); import redact; json.dump(redact.presence(), open(sys.argv[1],'w'))" "$OUT/secrets.json"
+
+# 2. model downloads only when allowed (the model cache step in setup_venv.sh opens it for itself)
 if [[ "${A2179_CI_ALLOW_DOWNLOAD:-}" != "true" ]]; then
   export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
 fi
 export A2179_CI_DENSE="${A2179_CI_DENSE:-auto}" A2179_CI_STEP_TIMEOUT="${A2179_CI_STEP_TIMEOUT:-1800}"
 
-# 3. venv
+# 3. venv (A2179_CI_VENV, e.g. your own .venv with torch, or the default one), python for a new
+#    venv from A2179_CI_PYTHON (exported above from the repo variables, read by setup_venv.sh).
+#    Hugging Face cache: HF_HOME if set, else the standard ~/.cache/huggingface of the runner
+#    user, the same cache your own runs with that venv use.
 VENV="${A2179_CI_VENV:-$HOME/.cache/a2179-ci/venv}"
 export A2179_CI_VENV="$VENV"
+[[ -n "${A2179_CI_PYTHON:-}" ]] && export A2179_CI_PYTHON
 t0=$(date +%s)
 bash ci/setup_venv.sh > >(tee "$OUT/setup.log") 2>&1
 setup_rc=$?
 "$SYS_PY" - "$OUT" "$setup_rc" "$(( $(date +%s) - t0 ))" <<'PY'
 import json, sys
+sys.path.insert(0, "ci")
+import redact
 out, rc, dur = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])
-log = open(f"{out}/setup.log", encoding="utf-8", errors="replace").read()
+log = redact.scrub(open(f"{out}/setup.log", encoding="utf-8", errors="replace").read())
+open(f"{out}/setup.log", "w", encoding="utf-8").write(log)
 json.dump({"name": "setup_venv", "cmd": ["bash", "ci/setup_venv.sh"], "exit_code": rc, "ok": rc == 0,
            "duration_s": dur, "log_tail": log[-3000:]}, open(f"{out}/setup.json", "w"))
 PY

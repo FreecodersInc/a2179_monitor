@@ -228,13 +228,18 @@ class TestParallelRun(unittest.TestCase):
         # A per-process split (2+2+1) would give process 2 one slot: 5 x 0.4 s = 2 s. Shared: about 0.4 s.
         urls = [f"https://ifix.rs/?s=q{i}&post_type=product" for i in range(15)]
         page = fixture("ifix_search.html.gz")
-        routes = {u: (200, page, 0.4 if i % 3 == 2 else 0.0) for i, u in enumerate(urls)}
-        with FA.fake_aiohttp(routes) as st:
-            t0 = time.monotonic()
-            parallel.fetch_all(shop_cfg(self.tmp, urls, workers=3, mc=5), Metrics(), self.log)
-            dt = time.monotonic() - t0
-        self.assertEqual(st["calls"].value, 15)
-        self.assertLess(dt, 1.3, dt)
+        # Timing is measured against the same pass with no delays, so process start up (slow on
+        # WSL2 / Python 3.14, seen 3+ s on the CI runner) does not count, only the waiting does.
+        def timed(delay):
+            routes = {u: (200, page, delay if i % 3 == 2 else 0.0) for i, u in enumerate(urls)}
+            with FA.fake_aiohttp(routes) as st:
+                t0 = time.monotonic()
+                parallel.fetch_all(shop_cfg(self.tmp, urls, workers=3, mc=5), Metrics(), self.log)
+                return time.monotonic() - t0, st["calls"].value
+        base, _ = timed(0.0)
+        dt, calls = timed(0.4)
+        self.assertEqual(calls, 15)
+        self.assertLess(dt - base, 1.3, (dt, base))
 
     def test_429_delay_is_shared_and_decays(self):
         urls = [f"https://ifix.rs/?s=q{i}&post_type=product" for i in range(6)]
@@ -360,11 +365,17 @@ class TestRealAiohttpLocal(unittest.TestCase):
         return cfg, setup_logging(tmp / "logs")
 
     def test_local_server(self):
+        # baseline: the same pass against a server with no latency (process start up, parsing)
+        url0, _ = self.serve(latency_s=0.0)
+        cfg0, log0 = self.cfg(url0, 12)
+        t0 = time.monotonic()
+        run_once(cfg0, log0, dry_run=True)
+        overhead = time.monotonic() - t0
         base, state = self.serve()
         cfg, log = self.cfg(base, 12)
         t0 = time.monotonic()
         r = run_once(cfg, log, dry_run=True)
-        dt = time.monotonic() - t0
+        dt = time.monotonic() - t0 - overhead
         self.assertEqual(r["metrics"]["counters"]["fetch.requests"], 12)
         self.assertEqual(r["metrics"]["counters"].get("fetch.errors", 0), 0)
         self.assertLessEqual(state["peak"], 4)

@@ -444,8 +444,10 @@ def load_similarity(cfg: dict, log=None, require: bool = False, console=sys.stde
     """Returns (sim, mode, error). mode is 'embed' or 'tfidf'.
     Raises EmbedderUnavailable only if the embedder is required (CLI flag or config)."""
     want = "required" if require else embedder_wanted(cfg)
+    from .target import target_of
+    tg = target_of(cfg)
     if want == "off":
-        return TfidfSim(), "tfidf", None
+        return TfidfSim(tg.positive, tg.negative), "tfidf", None
     e = _emb_cfg(cfg)
     try:
         device = e["device"]
@@ -458,7 +460,8 @@ def load_similarity(cfg: dict, log=None, require: bool = False, console=sys.stde
             if not r.get("ok"):
                 raise _probe_error(r)
             device = r.get("device") or device  # load in-process on exactly the device that passed
-        sim = EmbedSim(e["model"], bool(e.get("local_only", False)), device=device, backend=e.get("backend"))
+        sim = EmbedSim(e["model"], bool(e.get("local_only", False)), tg.positive, tg.negative,
+                       device=device, backend=e.get("backend"))
         if log:
             ev(log, "embedder_ready", model=sim.model_name, load_s=round(sim.load_s, 2), device=sim.device,
                backend=sim.backend)
@@ -473,7 +476,7 @@ def load_similarity(cfg: dict, log=None, require: bool = False, console=sys.stde
             raise
         if console:
             print(err.console(), file=console)
-        return TfidfSim(), "tfidf", err
+        return TfidfSim(tg.positive, tg.negative), "tfidf", err
 
 
 # ---------------------------------------------------------------- diagnostics

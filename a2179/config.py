@@ -1,17 +1,19 @@
-"""Config: built-in defaults <- config.json (or config.example.json) <- environment variables."""
+"""Config: built-in defaults <- target profile defaults (targets/<name>.json) <- config.json <- environment."""
 import copy
 import json
 import os
 from pathlib import Path
 
 from . import PROJECT_ROOT
+from .target import load_target
 
-DEFAULTS = {
-    "target_usd": 20.0,
+# Generic defaults. Everything specific to one search case (sources, target price, thresholds,
+# accept_* options, regex rules, prototypes) comes from the target profile, see a2179/target.py.
+BASE = {
+    "target": "a2179_screen",   # targets/<name>.json: rules, prototypes, sources, price, thresholds
     "rates": {"usd_per_eur": 1.16, "rsd_per_eur": 117.2},
     "price_drop_min_pct": 3.0,
     "alert_on": {"new": True, "price_drop": True, "below_target": True},
-    "accept_a1932": True,
     "embedder": {"enabled": "auto",
                  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
                  "local_only": False,
@@ -19,23 +21,6 @@ DEFAULTS = {
                  "backend": "torch",        # torch | onnx | openvino (sentence-transformers >= 3.2)
                  "probe": True,             # load + test encode in a child process first (crash-safe)
                  "probe_timeout_s": 600},
-    "thresholds": {"tfidf": {"pos": 0.34, "margin": 0.16, "calibrated": True}, "embed": {"pos": 0.60, "margin": 0.03, "calibrated": False}},
-    "sources": {
-        "shop_products": [
-            "https://ifix.rs/proizvodi/ekran-za-apple-macbook-air-13-a1932-a2179-2019-2020/",
-            "https://ihelp.rs/prodavnica/rezervni-delovi-elektronika/rezervni-delovi-za-racunare-i-laptopove/lcd/lcd-panel-macbook-a2179-lcd/",
-            "https://ihelp.rs/prodavnica/rezervni-delovi-elektronika/rezervni-delovi-za-racunare-i-laptopove/lcd/lcd-panel-macbook-a2179-komplet/",
-            "https://laptop-punjaci.com/product/lcd-panel-macbook-a2179-lcd/",
-            "https://laptop-punjaci.com/product/lcd-panel-macbook-a2179-komplet/",
-        ],
-        "shop_searches": [
-            "https://ifix.rs/?s=a2179&post_type=product",
-            "https://ihelp.rs/?s=a2179&post_type=product",
-            "https://laptop-punjaci.com/?s=a2179&post_type=product",
-        ],
-        "kp_search_url": "https://www.kupujemprodajem.com/pretraga?keywords={q}",
-        "kp_keywords": ["macbook air a2179", "a2179 ekran", "a2179 lcd", "macbook air 2020 ekran"],
-    },
     "http": {"min_delay_s": 4, "jitter_s": 2, "timeout_s": 20, "retries": 3, "retry_403": 1, "backoff_s": 5,
              "backoff_max_s": 60, "user_agent": ""},
     # parallel fetch: worker processes, GET requests in flight in total (one limiter shared by all
@@ -52,7 +37,19 @@ DEFAULTS = {
     "data_dir": "data",
 }
 
+
+
+def with_target(base: dict, target_spec) -> dict:
+    """base <- defaults of the target profile."""
+    cfg = copy.deepcopy(base)
+    t = load_target(target_spec)
+    _merge(cfg, copy.deepcopy(t.defaults))
+    cfg["target"] = target_spec if isinstance(target_spec, str) else t.name
+    return cfg
+
+
 ENV_MAP = {
+    "A2179_TARGET": ("target", str),
     "A2179_TARGET_USD": ("target_usd", float),
     "A2179_USD_PER_EUR": ("rates.usd_per_eur", float),
     "A2179_RSD_PER_EUR": ("rates.rsd_per_eur", float),
@@ -81,12 +78,16 @@ def _set(d, dotted, v):
 
 
 def load_config(path: str = None) -> dict:
-    cfg = copy.deepcopy(DEFAULTS)
+    """defaults <- target profile defaults <- config.json <- environment variables.
+    The target is picked by A2179_TARGET, else "target" in config.json, else a2179_screen."""
     p = Path(path) if path else PROJECT_ROOT / "config.json"
     if not p.is_absolute():
         p = PROJECT_ROOT / p
-    if p.exists():
-        _merge(cfg, json.loads(p.read_text(encoding="utf-8")))
+    user = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    spec = os.environ.get("A2179_TARGET") or user.get("target") or BASE["target"]
+    cfg = with_target(BASE, spec)
+    _merge(cfg, user)
+    cfg["target"] = spec
     for env, (key, typ) in ENV_MAP.items():
         if os.environ.get(env):
             _set(cfg, key, typ(os.environ[env]))
@@ -97,3 +98,7 @@ def load_config(path: str = None) -> dict:
 def data_dir(cfg) -> Path:
     d = Path(cfg.get("data_dir", "data"))
     return d if d.is_absolute() else PROJECT_ROOT / d
+
+
+# Full defaults for the default target (kept for code and tests that read DEFAULTS directly).
+DEFAULTS = with_target(BASE, BASE["target"])

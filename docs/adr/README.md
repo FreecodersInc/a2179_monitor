@@ -19,3 +19,5 @@
 | [0007](0007-embedder-off-tfidf-thresholds.md) | эмбеддер выключен в примере конфига, пороги TF-IDF 0.34/0.16 по EXP-001 | accepted | 2026-11-19 | 7bd8ef1 |
 | [0008](0008-ci-on-self-hosted-runner.md) | эксперименты в CI на своём раннере (`a2179-gpu`), только push в main, результаты в `results/`, копия `ci/experiments.yml` в `.github/workflows/` | accepted | 2026-11-19 | этот коммит |
 | [0009](0009-thin-workflow-wrapper.md) | workflow как тонкая обёртка без `uses:`, вся логика в `ci/run.sh` | accepted | 2026-11-19 | этот коммит |
+| [0010](0010-configurable-targets.md) | цель поиска как профиль `targets/<name>.json`, A2179 по умолчанию без изменений | accepted | 2026-11-19 | этот коммит |
+| [0011](0011-ci-secrets.md) | секреты CI по имени из environment experiment, значения нигде не оседают | accepted | 2026-11-19 | этот коммит |

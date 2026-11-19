@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Persistent venv for the self-hosted runner, outside the checkout so torch (GBs) is installed once.
-# Installs requirements.txt only when it changed (sha256 stamp). requirements-embed.txt is installed
-# only when torch is already in the venv: CI never picks a torch build for you (CUDA build by hand,
-# see docs/ci.md). No sudo, nothing outside $HOME.
+# Installs requirements.txt only when it changed (sha256 stamp). torch only on opt in
+# (A2179_CI_INSTALL_TORCH=cu126), requirements-embed.txt and the model cache only when torch is
+# there. See docs/ci.md. No sudo, nothing outside $HOME.
 set -euo pipefail
 VENV="${A2179_CI_VENV:-$HOME/.cache/a2179-ci/venv}"
 PY="${A2179_CI_PYTHON:-python3}"
@@ -23,10 +23,32 @@ stamp_install() {  # $1 requirements file
     echo "$req unchanged, skip pip"
   fi
 }
+has() { "$VENV/bin/python" -c "import importlib.util,sys; sys.exit(0 if importlib.util.find_spec('$1') else 1)"; }
 stamp_install requirements.txt
-if "$VENV/bin/python" -c "import importlib.util,sys; sys.exit(0 if importlib.util.find_spec('torch') else 1)"; then
+
+# Optional, opt in: A2179_CI_INSTALL_TORCH=cu126 (or cu128, cpu, rocm6.2) installs that torch
+# build into this venv once, when torch is missing. Never touches a torch that is already there.
+TORCH="${A2179_CI_INSTALL_TORCH:-}"
+if [[ -n "$TORCH" ]]; then
+  if [[ ! "$TORCH" =~ ^(cu[0-9]{3}|cpu|rocm[0-9]+(\.[0-9]+)?)$ ]]; then
+    echo "::error::A2179_CI_INSTALL_TORCH=$TORCH: expected cu126, cu128, cpu or rocm6.2"
+    exit 3
+  fi
+  if has torch; then
+    echo "torch already in $VENV, A2179_CI_INSTALL_TORCH ignored"
+  else
+    echo "installing torch ($TORCH build) into $VENV, a few GB, once"
+    "$VENV/bin/python" -m pip install --quiet torch --index-url "https://download.pytorch.org/whl/$TORCH"
+  fi
+fi
+if has torch; then
   stamp_install requirements-embed.txt
+  # model into the HF cache (HF_HOME or ~/.cache/huggingface), the only download of the run
+  case "${A2179_CI_CACHE_MODEL:-${TORCH:+1}}" in
+    1|true|yes) HF_HUB_OFFLINE=0 TRANSFORMERS_OFFLINE=0 "$VENV/bin/python" ci/cache_model.py ;;
+    *) echo "model cache step off (set A2179_CI_CACHE_MODEL=1 or A2179_CI_INSTALL_TORCH)" ;;
+  esac
 else
-  echo "no torch in $VENV: dense steps will be skipped (see docs/ci.md to install the CUDA build)"
+  echo "no torch in $VENV: dense steps will be skipped (set repo variable A2179_CI_INSTALL_TORCH=cu126, see docs/ci.md)"
 fi
 "$VENV/bin/python" --version

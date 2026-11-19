@@ -1,0 +1,247 @@
+{
+ "name": "a2179_screen",
+ "label": "A2179",
+ "description": "MacBook Air 13 2020 Intel (A2179) display, lid assembly or donor laptop, Serbia (KupujemProdajem + local shops)",
+ "rules": {
+  "models": [
+   {
+    "name": "strong",
+    "regex": "\\ba2179\\b|\\bemc3302\\b|\\b661[\\s\\-]?15389\\b|\\b661[\\s\\-]?15390\\b"
+   },
+   {
+    "name": "a1932",
+    "regex": "\\ba1932\\b|\\bemc3184\\b|\\bemc3331\\b",
+    "accept_option": "accept_a1932",
+    "alert_note": "A1932, совместимость уточни у продавца"
+   }
+  ],
+  "family": "\\b(mac\\s?book|macbook|makbuk|mekbuk|mak\\s?buk|mek\\s?buk)\\s?(air|ejr|er|eir|ejr)\\b|\\bmba\\b",
+  "conflict": "\\ba2337\\b|\\bemc3598\\b|\\bm1\\b|\\bapple silicon\\b",
+  "weak": [
+   {
+    "all": [
+     "\\b2020\\b",
+     "\\bintel\\b|\\bcore\\s?i[357]\\b|\\bi[357]\\b"
+    ]
+   },
+   {
+    "all": [
+     "\\b2018\\s?-?\\s?2020\\b|\\b2019\\s?-?\\s?2020\\b"
+    ]
+   },
+   {
+    "all": [
+     "\\b2020\\b"
+    ],
+    "unless_conflict": true
+   },
+   {
+    "all": [
+     "retina"
+    ],
+    "unless_conflict": true
+   }
+  ],
+  "no_model_reason": "no A2179-compatible model",
+  "part_terms": [
+   "ekran",
+   "ekrana",
+   "ekranom",
+   "displej",
+   "displeja",
+   "display",
+   "lcd",
+   "panel",
+   "matrica",
+   "matricu",
+   "screen",
+   "lid",
+   "assembly",
+   "sklop",
+   "retina display",
+   "екран",
+   "дисплеј",
+   "дисплей",
+   "экран",
+   "матрица",
+   "матрицу",
+   "крышка",
+   "крышку",
+   "в сборе",
+   "лцд",
+   "панел",
+   "панель",
+   "kuciste",
+   "kucistem",
+   "kucista",
+   "gornji deo",
+   "gornji poklopac",
+   "top lid",
+   "komplet ekran"
+  ],
+  "strong_part": "\\b(ekran|displej|display|lcd|panel|matric[au]|screen|lid|ekrana)\\b(\\s+\\S+){0,2}?\\s+(za|for|dl\\s?ja|dlja|assembly|komplet|kompletu|sklop|v sbore|panel|ekran|lcd)\\b|^\\s*(\\d+[.,]?\\d*\\s*(\\\"|inca|incni|inch|in)?\\s*)?(lcd|ekran|displej|display|panel|matric[au]|screen)\\b|\\b(lcd|display|screen|ekran|displej)\\s+(panel|assembly|komplet|sklop)\\b|\\bkomplet\\b.{0,30}\\b(ekran|lcd|displej)\\b|\\b(ekran|lcd|displej)\\b.{0,30}\\bkomplet\\b|\\bkrysk[au]\\b|\\bv sbore\\b|\\bgornji (deo|poklopac)\\b|\\btop lid\\b",
+  "donor_terms": [
+   "u delove",
+   "za delove",
+   "na delove",
+   "delovi",
+   "dijelovi",
+   "делови",
+   "for parts",
+   "parts only",
+   "donor",
+   "донор",
+   "на запчасти",
+   "запчасти",
+   "на детали",
+   "neispravan",
+   "neispravna",
+   "ne radi",
+   "pokvaren",
+   "pokvarena",
+   "ne pali",
+   "не работает",
+   "не включается",
+   "ne ukljucuje",
+   "ispravan ekran",
+   "ekran ispravan",
+   "ekran radi",
+   "zdrav ekran",
+   "rabotaet ekran",
+   "экран целый"
+  ],
+  "hard_excl": "\\b(zastita|zastitna|zastitno|zastitni|folija|folije|staklo|kaljeno|protector|protektor|plenka|zascitnaja|zascitnoe|steklo|nalepnica|stiker|skin|lepak|traka|adhesive|backlight kabl)\\b|\\b(flet|flex|flat|fleks)\\s?(kabl|kabal|cable|kabel)?\\b|\\b(lcd|edp|lvds)\\s+(kabl|kabal|cable|kabel|sajl)\\b|\\b(kabl|kabal|cable|kabel)\\s+(za\\s+)?(lcd|ekran|edp|lvds|displej)\\b|\\b(zamena|zamenu|popravka|popravak|servis|service|repair|ugradnja|zamina|zamena ekrana|remont|zamena displeja)\\b|\\b(trazim|kupujem|otkup)\\b|\\b(futrola|futrolu|maska|torba|case|sleeve|cehol|cohol|cexol|navlaka)\\b|\\bcover\\b(?!.{0,15}\\b(lcd|display|ekran)\\b)",
+  "soft_excl_terms": [
+   "tastatura",
+   "tastaturu",
+   "keyboard",
+   "palmrest",
+   "topcase",
+   "top case",
+   "baterija",
+   "bateriju",
+   "battery",
+   "punjac",
+   "charger",
+   "adapter",
+   "srafovi",
+   "srafove",
+   "screws",
+   "konektor",
+   "connector",
+   "kuler",
+   "fan",
+   "ventilator",
+   "antena",
+   "antene",
+   "trackpad",
+   "touchpad",
+   "tacpad",
+   "zvucnik",
+   "zvucnici",
+   "speaker",
+   "kamera",
+   "camera",
+   "maticna",
+   "maticnu",
+   "motherboard",
+   "logic board",
+   "ploca",
+   "plocu",
+   "ssd",
+   "ram",
+   "donji poklopac",
+   "bottom case",
+   "donje kuciste",
+   "sarke",
+   "hinge",
+   "hinges",
+   "клавиатура",
+   "аккумулятор",
+   "батарея",
+   "зарядка",
+   "зарядно",
+   "кулер",
+   "тастатура",
+   "батерија",
+   "пуњач"
+  ],
+  "specs": "\\b\\d{1,4}\\s?(gb|tb)\\b|\\bssd\\b|\\bram\\b|\\bciklus\\w*|\\bcycle\\w*|\\bcore\\s?i[357]\\b|\\bi[357]\\b|\\bstanje\\b|\\bkao nov\\w*|\\bkutij\\w*|\\bgarancij\\w*\\s+\\d|\\bmacos\\b|\\bodlicn\\w*"
+ },
+ "prototypes": {
+  "positive": [
+   "LCD ekran za MacBook Air 13 2020 A2179",
+   "Displej MacBook Air A2179 Retina 13.3 nov",
+   "Ekran komplet gornji deo MacBook Air A2179 sa kamerom",
+   "MacBook Air 2020 Intel A2179 LCD panel matrica",
+   "Kompletan ekran assembly MacBook Air 13 A2179 EMC 3302 space gray",
+   "LCD display assembly for MacBook Air 13 A2179 2020 Intel",
+   "MacBook Air A2179 screen replacement panel full lid",
+   "Экран в сборе MacBook Air A2179 2020 крышка",
+   "Матрица для MacBook Air 13 A2179 Intel 2020",
+   "Екран дисплеј за MacBook Air A2179",
+   "MacBook Air A2179 za delove, ekran ispravan",
+   "MacBook Air 2020 Intel neispravna maticna, ekran radi, donor",
+   "Polovan originalan ekran sa MacBook Air A2179",
+   "Retina panel 13.3 MacBook Air 2018 2020 A1932 A2179 LCD",
+   "Gornji poklopac sa ekranom MacBook Air 2020 i3 A2179"
+  ],
+  "negative": [
+   "Futrola za MacBook Air 13 A2179 A2337 providna",
+   "Zastitna folija za ekran MacBook Air 13 A2179",
+   "Tastatura za MacBook Air A2179 US layout",
+   "Baterija A1965 za MacBook Air A1932 A2179",
+   "Punjac 30W USB-C za MacBook Air",
+   "MacBook Air 2020 i5 8GB 512GB SSD odlicno stanje",
+   "MacBook Air M1 A2337 8GB 256GB space gray",
+   "LCD ekran za MacBook Air M1 A2337 2020",
+   "Flet kabl LVDS LCD za MacBook Air A2179",
+   "Zamena ekrana MacBook Air servis ugradnja",
+   "Srafovi donji poklopac MacBook Air A2179",
+   "Ventilator kuler MacBook Air A2179",
+   "Чехол для MacBook Air 13 A2179 A2337",
+   "Клавиатура для MacBook Air A2179",
+   "LCD ekran MacBook Pro 13 A2338 M1",
+   "Maticna ploca MacBook Air A2179 i3",
+   "Trackpad flet MacBook Air A2179",
+   "Cover hard shell za MacBook Air 13 2020"
+  ]
+ },
+ "defaults": {
+  "target_usd": 20.0,
+  "accept_a1932": true,
+  "thresholds": {
+   "tfidf": {
+    "pos": 0.34,
+    "margin": 0.16,
+    "calibrated": true
+   },
+   "embed": {
+    "pos": 0.6,
+    "margin": 0.03,
+    "calibrated": false
+   }
+  },
+  "sources": {
+   "shop_products": [
+    "https://ifix.rs/proizvodi/ekran-za-apple-macbook-air-13-a1932-a2179-2019-2020/",
+    "https://ihelp.rs/prodavnica/rezervni-delovi-elektronika/rezervni-delovi-za-racunare-i-laptopove/lcd/lcd-panel-macbook-a2179-lcd/",
+    "https://ihelp.rs/prodavnica/rezervni-delovi-elektronika/rezervni-delovi-za-racunare-i-laptopove/lcd/lcd-panel-macbook-a2179-komplet/",
+    "https://laptop-punjaci.com/product/lcd-panel-macbook-a2179-lcd/",
+    "https://laptop-punjaci.com/product/lcd-panel-macbook-a2179-komplet/"
+   ],
+   "shop_searches": [
+    "https://ifix.rs/?s=a2179&post_type=product",
+    "https://ihelp.rs/?s=a2179&post_type=product",
+    "https://laptop-punjaci.com/?s=a2179&post_type=product"
+   ],
+   "kp_search_url": "https://www.kupujemprodajem.com/pretraga?keywords={q}",
+   "kp_keywords": [
+    "macbook air a2179",
+    "a2179 ekran",
+    "a2179 lcd",
+    "macbook air 2020 ekran"
+   ]
+  }
+ }
+}

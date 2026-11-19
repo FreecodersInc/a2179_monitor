@@ -1,0 +1,92 @@
+{
+ "target_usd": 20.0,
+ "rates": {
+  "usd_per_eur": 1.16,
+  "rsd_per_eur": 117.2
+ },
+ "price_drop_min_pct": 3.0,
+ "alert_on": {
+  "new": true,
+  "price_drop": true,
+  "below_target": true
+ },
+ "accept_a1932": true,
+ "embedder": {
+  "enabled": "auto",
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "local_only": false,
+  "device": "auto",
+  "backend": "torch",
+  "probe": true,
+  "probe_timeout_s": 600
+ },
+ "thresholds": {
+  "tfidf": {
+   "pos": 0.34,
+   "margin": 0.16,
+   "calibrated": true
+  },
+  "embed": {
+   "pos": 0.6,
+   "margin": 0.03,
+   "calibrated": false
+  }
+ },
+ "sources": {
+  "shop_products": [
+   "https://ifix.rs/proizvodi/ekran-za-apple-macbook-air-13-a1932-a2179-2019-2020/",
+   "https://ihelp.rs/prodavnica/rezervni-delovi-elektronika/rezervni-delovi-za-racunare-i-laptopove/lcd/lcd-panel-macbook-a2179-lcd/",
+   "https://ihelp.rs/prodavnica/rezervni-delovi-elektronika/rezervni-delovi-za-racunare-i-laptopove/lcd/lcd-panel-macbook-a2179-komplet/",
+   "https://laptop-punjaci.com/product/lcd-panel-macbook-a2179-lcd/",
+   "https://laptop-punjaci.com/product/lcd-panel-macbook-a2179-komplet/"
+  ],
+  "shop_searches": [
+   "https://ifix.rs/?s=a2179&post_type=product",
+   "https://ihelp.rs/?s=a2179&post_type=product",
+   "https://laptop-punjaci.com/?s=a2179&post_type=product"
+  ],
+  "kp_search_url": "https://www.kupujemprodajem.com/pretraga?keywords={q}",
+  "kp_keywords": [
+   "macbook air a2179",
+   "a2179 ekran",
+   "a2179 lcd",
+   "macbook air 2020 ekran"
+  ]
+ },
+ "http": {
+  "min_delay_s": 4,
+  "jitter_s": 2,
+  "timeout_s": 20,
+  "retries": 3,
+  "retry_403": 1,
+  "backoff_s": 5,
+  "backoff_max_s": 60,
+  "user_agent": ""
+ },
+ "parallel": {
+  "workers": 3,
+  "max_concurrency": 10,
+  "delay_s": 0,
+  "delay_min_s": 0,
+  "delay_max_s": 30,
+  "delay_up": 2.0,
+  "delay_down_s": 0.05,
+  "delay_on_429_s": 0.5
+ },
+ "pagination": {
+  "enabled": true,
+  "max_pages": 500,
+  "kp_page_param": "page"
+ },
+ "tracked": {
+  "enabled": true,
+  "file": "tracked.shelve",
+  "drop_after_misses": 3
+ },
+ "kp_block_alert_after_runs": 6,
+ "telegram": {
+  "enabled": true
+ },
+ "desktop_notify": true,
+ "data_dir": "data"
+}

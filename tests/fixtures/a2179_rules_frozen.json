@@ -1,0 +1,15 @@
+{
+ "STRONG_MODEL": "\\ba2179\\b|\\bemc3302\\b|\\b661[\\s\\-]?15389\\b|\\b661[\\s\\-]?15390\\b",
+ "A1932": "\\ba1932\\b|\\bemc3184\\b|\\bemc3331\\b",
+ "A2337": "\\ba2337\\b|\\bemc3598\\b|\\bm1\\b|\\bapple silicon\\b",
+ "MACBOOK_AIR": "\\b(mac\\s?book|macbook|makbuk|mekbuk|mak\\s?buk|mek\\s?buk)\\s?(air|ejr|er|eir|ejr)\\b|\\bmba\\b",
+ "YEAR_2020": "\\b2020\\b",
+ "INTEL": "\\bintel\\b|\\bcore\\s?i[357]\\b|\\bi[357]\\b",
+ "RANGE_2018_2020": "\\b2018\\s?-?\\s?2020\\b|\\b2019\\s?-?\\s?2020\\b",
+ "PART": "\\b(?:gornji\\ poklopac|retina\\ display|komplet\\ ekran|gornji\\ deo|top\\ lid|kucistem|assembly|v\\ sbore|displeja|kuciste|matricu|displej|kucista|ekranom|display|matrica|krysku|screen|ekrana|kryska|ekran|panel|sklop|lcd|lid)",
+ "STRONG_PART": "\\b(ekran|displej|display|lcd|panel|matric[au]|screen|lid|ekrana)\\b(\\s+\\S+){0,2}?\\s+(za|for|dl\\s?ja|dlja|assembly|komplet|kompletu|sklop|v sbore|panel|ekran|lcd)\\b|^\\s*(\\d+[.,]?\\d*\\s*(\\\"|inca|incni|inch|in)?\\s*)?(lcd|ekran|displej|display|panel|matric[au]|screen)\\b|\\b(lcd|display|screen|ekran|displej)\\s+(panel|assembly|komplet|sklop)\\b|\\bkomplet\\b.{0,30}\\b(ekran|lcd|displej)\\b|\\b(ekran|lcd|displej)\\b.{0,30}\\bkomplet\\b|\\bkrysk[au]\\b|\\bv sbore\\b|\\bgornji (deo|poklopac)\\b|\\btop lid\\b",
+ "DONOR": "\\b(?:ne\\ vkljucaetsja|ekran\\ ispravan|rabotaet\\ ekran|ispravan\\ ekran|ne\\ ukljucuje|na\\ zapcasti|ekran\\ celyj|ne\\ rabotaet|zdrav\\ ekran|ekran\\ radi|parts\\ only|neispravan|neispravna|na\\ delove|na\\ detali|za\\ delove|for\\ parts|u\\ delove|pokvarena|zapcasti|ne\\ radi|pokvaren|dijelovi|ne\\ pali|delovi|donor)",
+ "HARD_EXCL": "\\b(zastita|zastitna|zastitno|zastitni|folija|folije|staklo|kaljeno|protector|protektor|plenka|zascitnaja|zascitnoe|steklo|nalepnica|stiker|skin|lepak|traka|adhesive|backlight kabl)\\b|\\b(flet|flex|flat|fleks)\\s?(kabl|kabal|cable|kabel)?\\b|\\b(lcd|edp|lvds)\\s+(kabl|kabal|cable|kabel|sajl)\\b|\\b(kabl|kabal|cable|kabel)\\s+(za\\s+)?(lcd|ekran|edp|lvds|displej)\\b|\\b(zamena|zamenu|popravka|popravak|servis|service|repair|ugradnja|zamina|zamena ekrana|remont|zamena displeja)\\b|\\b(trazim|kupujem|otkup)\\b|\\b(futrola|futrolu|maska|torba|case|sleeve|cehol|cohol|cexol|navlaka)\\b|\\bcover\\b(?!.{0,15}\\b(lcd|display|ekran)\\b)",
+ "SOFT_EXCL": "\\b(?:donji\\ poklopac|donje\\ kuciste|bottom\\ case|akkumuljator|logic\\ board|motherboard|klaviatura|ventilator|top\\ case|tastaturu|connector|tastatura|palmrest|bateriju|zvucnici|zarjadno|konektor|baterija|zarjadka|touchpad|batareja|trackpad|keyboard|topcase|charger|zvucnik|speaker|srafove|maticnu|maticna|adapter|battery|srafovi|antene|punjac|tacpad|screws|camera|hinges|kamera|antena|hinge|plocu|sarke|ploca|kuler|ram|ssd|fan)",
+ "LAPTOP_SPECS": "\\b\\d{1,4}\\s?(gb|tb)\\b|\\bssd\\b|\\bram\\b|\\bciklus\\w*|\\bcycle\\w*|\\bcore\\s?i[357]\\b|\\bi[357]\\b|\\bstanje\\b|\\bkao nov\\w*|\\bkutij\\w*|\\bgarancij\\w*\\s+\\d|\\bmacos\\b|\\bodlicn\\w*"
+}

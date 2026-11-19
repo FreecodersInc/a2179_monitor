@@ -20,7 +20,9 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SCHEMA = 1
+SCHEMA = 2  # 2: secrets (present / absent), skipped steps, values scrubbed
+sys.path.insert(0, str(ROOT / "ci"))
+import redact  # noqa: E402
 EVAL_KEYS = ("precision", "recall", "f1", "tp", "fp", "fn", "tn", "thresholds", "twofold", "ms_per_item", "note")
 SWEEP_KEYS = ("variant", "hybrid", "t", "w", "lam", "P", "R", "F1", "tp", "fp", "fn", "tn", "cv2", "cv5", "real",
               "note")
@@ -84,8 +86,9 @@ def build(ci_out: Path, env=os.environ, now=None, cwd=ROOT):
         "runner": {"name": env.get("RUNNER_NAME"), "os": env.get("RUNNER_OS"), "arch": env.get("RUNNER_ARCH"),
                    **(steps.get("env") or {})},
         "dense": steps.get("dense") or {},
+        "secrets": steps.get("secrets") or (_load(ci_out / "secrets.json") or redact.presence(env)),
         "steps": [{k: s.get(k) for k in ("name", "cmd", "exit_code", "signal", "timed_out", "duration_s", "ok",
-                                         "fallback", "stderr_tail")} for s in st],
+                                         "fallback", "skipped", "stderr_tail")} for s in st],
         "metrics": {"eval": eval_metrics(_load(ci_out / "eval" / "eval_report.json")),
                     "sweep": sweep_metrics(_load(ci_out / "sweep" / "sweep.json"))},
     }
@@ -101,7 +104,7 @@ def build(ci_out: Path, env=os.environ, now=None, cwd=ROOT):
     active, source = Path(cwd) / ".github" / "workflows" / "experiments.yml", Path(cwd) / "ci" / "experiments.yml"
     res["workflow_in_sync"] = (active.read_bytes() == source.read_bytes()) if active.is_file() and source.is_file() else None
     res["total_duration_s"] = round(sum(s.get("duration_s") or 0 for s in st), 2)
-    return res
+    return redact.scrub_obj(res, env)
 
 
 def target_path(results_dir: Path, res: dict) -> Path:
@@ -117,7 +120,7 @@ def target_path(results_dir: Path, res: dict) -> Path:
 def write(results_dir: Path, res: dict) -> Path:
     results_dir.mkdir(parents=True, exist_ok=True)
     p = target_path(results_dir, res)
-    p.write_text(json.dumps(res, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    p.write_text(redact.scrub(json.dumps(res, ensure_ascii=False, indent=1)) + "\n", encoding="utf-8")
     return p
 
 
@@ -134,7 +137,7 @@ def attach_reports(ci_out: Path, result: Path) -> Path | None:
     d = result.with_suffix("")
     d.mkdir(parents=True, exist_ok=True)
     for f in files:
-        (d / f.name).write_bytes(f.read_bytes())
+        (d / f.name).write_text(redact.scrub(f.read_text(encoding="utf-8", errors="replace")), encoding="utf-8")
     return d
 
 

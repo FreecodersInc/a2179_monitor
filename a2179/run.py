@@ -6,6 +6,7 @@ from urllib.parse import quote_plus, urlparse
 
 from .alerts import Alerter, format_event
 from .config import data_dir
+from .target import target_of
 from .fetch import Fetcher
 from .matcher import Matcher
 from .obs import Metrics, ev
@@ -175,7 +176,8 @@ def collect_parallel(cfg, metrics, log, time_budget_s=None, workers=None, max_co
 def prepare_similarity(cfg, log, no_embed=False, require_embedder=False, verbose=False):
     """(sim, mode). Raises EmbedderUnavailable only when the embedder is required."""
     if no_embed and not require_embedder:
-        return TfidfSim(), "tfidf"
+        t = target_of(cfg)
+        return TfidfSim(t.positive, t.negative), "tfidf"
     sim, mode, _err = load_similarity(cfg, log, require=require_embedder, verbose=verbose)
     if mode == "embed":
         th = (cfg.get("thresholds") or {}).get("embed") or {}
@@ -196,7 +198,9 @@ def run_once(cfg, log, dry_run=False, seed=False, no_embed=False, fetcher=None, 
     ddir = data_dir(cfg)
     sim, mode = similarity or prepare_similarity(cfg, log, no_embed, require_embedder)
     metrics.notes.append(f"filter=regex+{mode}")
-    matcher = Matcher(sim, mode, cfg.get("thresholds"), cfg.get("accept_a1932", True))
+    target = target_of(cfg)
+    options = {m.accept_option: cfg.get(m.accept_option, True) for m in target.rules.models if m.accept_option}
+    matcher = Matcher(sim, mode, cfg.get("thresholds"), cfg.get("accept_a1932", True), target, options)
     store = open_tracked(cfg, ddir, dry_run)
     n_workers = parallel.settings(cfg, workers, max_concurrency)[0]
     listings = None
@@ -218,7 +222,7 @@ def run_once(cfg, log, dry_run=False, seed=False, no_embed=False, fetcher=None, 
     metrics.inc("listings.seen", len(listings))
 
     state = State(ddir / "state.sqlite", read_only=dry_run)
-    rates, target = cfg["rates"], float(cfg["target_usd"])
+    rates, target_usd = cfg["rates"], float(cfg["target_usd"])
     drop_pct = float(cfg.get("price_drop_min_pct", 3))
     on = cfg.get("alert_on", {})
     messages, matched = [], []
@@ -240,14 +244,15 @@ def run_once(cfg, log, dry_run=False, seed=False, no_embed=False, fetcher=None, 
         elif usd is not None and prev["price_usd"] and usd < prev["price_usd"] * (1 - drop_pct / 100):
             if on.get("price_drop", True):
                 kinds.append("price_drop")
-        if (usd is not None and usd <= target and on.get("below_target", True)
+        if (usd is not None and usd <= target_usd and on.get("below_target", True)
                 and (prev is None or prev["last_alert_price_usd"] is None or usd < prev["last_alert_price_usd"])):
             kinds.append("below_target")
         alerted = usd if "below_target" in kinds else None
         if kinds and not seed:
             extra = "" if d.regex else " · (похоже по смыслу, проверь)"
-            if d.model == "a1932":
-                extra += " · A1932, совместимость уточни у продавца"
+            tier = target.tier(d.model)
+            if tier is not None and tier.alert_note:
+                extra += f" · {tier.alert_note}"
             msg = format_event(kinds[0], l, usd, extra)
             if len(kinds) > 1:
                 names = {"price_drop": "цена упала", "below_target": "ниже цели"}
