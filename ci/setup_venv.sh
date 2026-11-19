@@ -2,7 +2,7 @@
 # Persistent venv for the self-hosted runner, outside the checkout so torch (GBs) is installed once.
 # Installs requirements.txt only when it changed (sha256 stamp). requirements-embed.txt is installed
 # only when torch is already in the venv: CI never picks a torch build for you (CUDA build by hand,
-# see docs/ci.md). Prints the venv bin dir to $GITHUB_PATH. No sudo, nothing outside $HOME.
+# see docs/ci.md). No sudo, nothing outside $HOME.
 set -euo pipefail
 VENV="${A2179_CI_VENV:-$HOME/.cache/a2179-ci/venv}"
 PY="${A2179_CI_PYTHON:-python3}"
@@ -29,5 +29,4 @@ if "$VENV/bin/python" -c "import importlib.util,sys; sys.exit(0 if importlib.uti
 else
   echo "no torch in $VENV: dense steps will be skipped (see docs/ci.md to install the CUDA build)"
 fi
-if [[ -n "${GITHUB_PATH:-}" ]]; then echo "$VENV/bin" >> "$GITHUB_PATH"; fi
 "$VENV/bin/python" --version

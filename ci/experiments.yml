@@ -1,0 +1,57 @@
+# Experiments on Leonid's self-hosted runner (ADR-0008, ADR-0009, docs/ci.md).
+#
+# THIN WRAPPER: this file only fetches the pushed commit and hands over to ci/run.sh.
+# All logic (venv, tests, eval, sweep, results commit + push) lives in ci/, so changes
+# there need no new copy of this file. Source of truth: ci/experiments.yml, active copy:
+# .github/workflows/experiments.yml (cp ci/experiments.yml .github/workflows/experiments.yml).
+#
+# No `uses:` at all: the FreecodersInc policy allows only actions owned by FreecodersInc
+# (actions/checkout and actions/upload-artifact were refused, run #1 startup_failure).
+#
+# Fires ONLY on a push to main of this repo. No pull_request / pull_request_target /
+# workflow_run / schedule / dispatch triggers: code from forks or PRs never runs here.
+# Results commit back to results/ with [skip ci], and results/** is ignored: no loops.
+name: experiments
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "results/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: experiments-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  experiments:
+    if: >-
+      github.repository == 'FreecodersInc/a2179_monitor' &&
+      github.event_name == 'push' &&
+      !contains(github.event.head_commit.message, '[skip ci]')
+    runs-on: [self-hosted, linux, a2179-gpu]
+    timeout-minutes: 180
+    steps:
+      - name: Fetch the pushed commit and run ci/run.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # every repository variable, ci/run.sh picks the A2179_CI_* ones (no YAML change for new knobs)
+          A2179_CI_VARS: ${{ toJSON(vars) }}
+          PYTHONUNBUFFERED: "1"
+        run: |
+          set -euo pipefail
+          # token only in this process environment, never written to .git/config
+          export GIT_CONFIG_COUNT=1
+          export GIT_CONFIG_KEY_0="http.${GITHUB_SERVER_URL}/.extraheader"
+          export GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64 | tr -d '\n')"
+          cd "$GITHUB_WORKSPACE"
+          [ -d .git ] || git init -q .
+          git remote remove origin 2>/dev/null || true
+          git remote add origin "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+          git fetch --no-tags --prune origin "+refs/heads/main:refs/remotes/origin/main" "$GITHUB_SHA"
+          git checkout -q -f -B main "$GITHUB_SHA"
+          git clean -q -ffdx
+          exec bash ci/run.sh

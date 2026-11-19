@@ -19,10 +19,10 @@ commits: см. git log ci/experiments.yml, включение коммитом �
 ## Рассмотренные варианты
 * GitHub hosted runner (нет GPU, модель качается каждый раз)
 * Лёня гоняет руками и кидает вывод в чат (как было с eval.txt)
-* свой раннер, триггер только push в main, результаты JSON коммитом в `results/` и артефактом
+* свой раннер, триггер только push в main, результаты JSON коммитом в `results/`
 
 ## Решение
-Свой раннер на машине Лёни с меткой `a2179-gpu` под отдельным пользователем без sudo, зарегистрирован на эту репу. Workflow `experiments.yml` (поставляется как `ci/experiments.yml`, потому что токен Telega не может писать в `.github/workflows`, Лёня включает его одним `git mv` в `.github/workflows/`, команда в docs/ci.md) только на `push` в `main`, `permissions: contents: write`, `concurrency`, `timeout-minutes: 120`. Шаги в отдельных процессах (`ci/run_experiments.py`), dense только после успешного `--check-embedder`, при падении повтор без эмбеддера. `ci/write_results.py` пишет `results/<UTC дата>_<sha>.json` и пушит с `[skip ci]` и rebase retry, `results/**` в `paths-ignore`.
+Свой раннер на машине Лёни с меткой `a2179-gpu` под отдельным пользователем без sudo, зарегистрирован на эту репу. Workflow `experiments.yml` (поставляется как `ci/experiments.yml`, потому что токен Telega не может писать в `.github/workflows`, Лёня копирует его в `.github/workflows/`, команда в docs/ci.md) только на `push` в `main`, `permissions: contents: write`, `concurrency`, `timeout-minutes` (сейчас 180). Как устроен сам YAML, см. ADR-0009 (тонкая обёртка без actions). Шаги в отдельных процессах (`ci/run_experiments.py`), dense только после успешного `--check-embedder`, при падении повтор без эмбеддера. `ci/write_results.py` пишет `results/<UTC дата>_<sha>.json` и пушит с `[skip ci]` и rebase retry, `results/**` в `paths-ignore`.
 
 ### Последствия
 * Хорошо: dense числа на GPU на каждый push, история результатов в git, видно окружение каждого прогона.

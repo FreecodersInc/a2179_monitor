@@ -175,6 +175,17 @@ class TestBuild(unittest.TestCase):
         self.assertFalse(r["ok"])
         self.assertFalse(r["tests_ok"])
 
+    def test_workflow_in_sync(self):
+        with tempfile.TemporaryDirectory() as d:
+            repo = Path(d)
+            (repo / "ci").mkdir()
+            (repo / ".github" / "workflows").mkdir(parents=True)
+            (repo / "ci" / "experiments.yml").write_text("new\n")
+            (repo / ".github" / "workflows" / "experiments.yml").write_text("old\n")
+            self.assertFalse(wr.build(repo / "none", env=ENV, now=NOW, cwd=repo)["workflow_in_sync"])
+            (repo / ".github" / "workflows" / "experiments.yml").write_text("new\n")
+            self.assertTrue(wr.build(repo / "none", env=ENV, now=NOW, cwd=repo)["workflow_in_sync"])
+
     def test_missing_ci_out(self):
         with tempfile.TemporaryDirectory() as d:
             r = wr.build(Path(d) / "nothing", env=ENV, now=NOW)
@@ -237,6 +248,18 @@ class TestPush(unittest.TestCase):
         subjects = self.g("log", "--format=%s", "main", cwd=self.remote).stdout.split("\n")[:2]
         self.assertEqual(subjects, ["results: 2026-11-19_abc1234 [skip ci]", "meanwhile"])
 
+    def test_reports_dir_committed_with_result(self):
+        p = self.result(self.a)
+        co = self.tmp / "co"
+        (co / "eval").mkdir(parents=True)
+        (co / "eval" / "eval_report.md").write_text("# r\n")
+        (co / "setup.log").write_text("ok\n")
+        d = wr.attach_reports(co, p)
+        wr.commit_and_push(p, "main", cwd=self.a, pause=0, extra=[d])
+        files = sorted(self.g("show", "--name-only", "--format=", "main", cwd=self.remote).stdout.split())
+        self.assertEqual(files, ["results/2026-11-19_abc1234.json", "results/2026-11-19_abc1234/eval_report.md",
+                                 "results/2026-11-19_abc1234/setup.log"])
+
     def test_only_the_result_file_is_committed(self):
         (self.a / "ci_out").mkdir()
         (self.a / "ci_out" / "junk").write_text("x")
@@ -247,16 +270,24 @@ class TestPush(unittest.TestCase):
         self.assertEqual(files, ["results/2026-11-19_abc1234.json"])
 
 
+WF = ROOT / "ci" / "experiments.yml"  # source of truth, Leonid copies it to .github/workflows/
+
+
+def run_block(text: str) -> str:
+    """The shell script under `run: |` of the only step (no YAML dependency)."""
+    lines = text.split("run: |\n", 1)[1].splitlines()
+    ind = len(lines[0]) - len(lines[0].lstrip())
+    out = []
+    for ln in lines:
+        if ln.strip() and len(ln) - len(ln.lstrip()) < ind:
+            break
+        out.append(ln[ind:])
+    return "\n".join(out) + "\n"
+
+
 class TestWorkflowText(unittest.TestCase):
-    """Structural checks without a YAML dependency (the box parses it with PyYAML separately).
-
-    The workflow ships as ci/experiments.yml (our token cannot write .github/workflows), Leonid
-    moves it into .github/workflows/ with one git mv. Whichever exists is checked."""
-    _active = ROOT / ".github" / "workflows" / "experiments.yml"
-    wf = (_active if _active.exists() else ROOT / "ci" / "experiments.yml").read_text()
-
-    def test_shipped_in_ci_or_activated(self):
-        self.assertTrue((ROOT / "ci" / "experiments.yml").exists() or self._active.exists())
+    """Structural checks of the thin wrapper (the box parses it with PyYAML separately)."""
+    wf = WF.read_text()
 
     def test_triggers(self):
         on = self.wf.split("\non:\n", 1)[1].split("\npermissions:", 1)[0]
@@ -265,14 +296,128 @@ class TestWorkflowText(unittest.TestCase):
         self.assertIn("  push:\n    branches: [main]", on)
         self.assertIn('"results/**"', on)
         self.assertIn("!contains(github.event.head_commit.message, '[skip ci]')", self.wf)
+        self.assertIn("github.repository == 'FreecodersInc/a2179_monitor'", self.wf)
 
     def test_permissions_and_runner(self):
         self.assertIn("permissions:\n  contents: write\n\n", self.wf)
         self.assertIn("runs-on: [self-hosted, linux, a2179-gpu]", self.wf)
         self.assertIn("timeout-minutes:", self.wf)
         self.assertIn("concurrency:", self.wf)
-        self.assertNotIn("secrets.", self.wf)
         self.assertNotIn("sudo", self.wf)
+
+    def test_no_actions_only_github_token(self):
+        # org policy: only FreecodersInc actions; run #1 died on actions/checkout + upload-artifact
+        code = [ln for ln in self.wf.splitlines() if not ln.lstrip().startswith("#")]
+        self.assertFalse([ln for ln in code if "uses:" in ln])
+        secrets = [w for w in self.wf.replace("${{", " ").split() if w.startswith("secrets.")]
+        self.assertEqual(set(secrets), {"secrets.GITHUB_TOKEN"})
+
+    def test_thin(self):
+        self.assertEqual(self.wf.count("- name:"), 1)
+        self.assertIn("A2179_CI_VARS: ${{ toJSON(vars) }}", self.wf)
+        self.assertTrue(run_block(self.wf).rstrip().endswith("exec bash ci/run.sh"))
+        self.assertNotIn("git config --", run_block(self.wf))  # token never written to .git/config
+
+    @unittest.skipUnless(GIT, "git not installed")
+    def test_bootstrap_checks_out_pushed_sha_and_execs_run_sh(self):
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            env = {**os.environ, "GIT_CONFIG_GLOBAL": str(tmp / "gc"), "GIT_CONFIG_NOSYSTEM": "1", "HOME": str(tmp)}
+            (tmp / "gc").write_text("[user]\n\tname = t\n\temail = t@t\n[init]\n\tdefaultBranch = main\n")
+            g = lambda *a, cwd: subprocess.run(["git", *a], cwd=cwd, env=env, check=True, capture_output=True,
+                                               text=True).stdout.strip()
+            bare = tmp / "org" / "repo.git"
+            bare.parent.mkdir()
+            g("init", "--bare", "-b", "main", str(bare), cwd=tmp)
+            src = tmp / "src"
+            g("clone", str(bare), str(src), cwd=tmp)
+            (src / "ci").mkdir()
+            (src / "ci" / "run.sh").write_text('echo "run.sh at $(git rev-parse HEAD) on $(git branch --show-current)"\n'
+                                               'test -z "$(git config --get http.extraheader)" && echo clean\n')
+            g("add", ".", cwd=src)
+            g("commit", "-m", "one", cwd=src)
+            g("push", "origin", "HEAD:main", cwd=src)
+            sha = g("rev-parse", "HEAD", cwd=src)
+            ws = tmp / "ws"
+            ws.mkdir()
+            (ws / "stale.txt").write_text("from an old run")
+            run_env = {**env, "GITHUB_WORKSPACE": str(ws), "GITHUB_SERVER_URL": f"file://{tmp}",
+                       "GITHUB_REPOSITORY": "org/repo", "GITHUB_SHA": sha, "GITHUB_TOKEN": "t0ken"}
+            for _ in range(2):  # second run reuses the workspace
+                p = subprocess.run(["bash", "-c", run_block(self.wf)], env=run_env, capture_output=True, text=True)
+                self.assertEqual(p.returncode, 0, p.stderr)
+                self.assertIn(f"run.sh at {sha} on main", p.stdout)
+                self.assertIn("clean", p.stdout)
+                self.assertFalse((ws / "stale.txt").exists())
+                self.assertNotIn("t0ken", (ws / ".git" / "config").read_text())
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+
+class TestVarsEnv(unittest.TestCase):
+    def test_only_ci_keys_quoted(self):
+        import vars_env
+        out = vars_env.lines(json.dumps({"A2179_CI_DENSE": "off", "HF_HOME": "/data/hf", "OTHER": "x",
+                                         "A2179_CI_PYTHON": "python3.14; rm -rf /"}))
+        self.assertEqual(out, ["export A2179_CI_DENSE=off", "export A2179_CI_PYTHON='python3.14; rm -rf /'",
+                               "export HF_HOME=/data/hf"])
+
+    def test_bad_json(self):
+        import vars_env
+        self.assertEqual(len(vars_env.lines("not json")), 1)
+        self.assertTrue(vars_env.lines("not json")[0].startswith("echo"))
+        self.assertEqual(vars_env.lines("null"), [])
+
+
+class TestRunSh(unittest.TestCase):
+    """ci/run.sh end to end with a ready venv (this python), no pip, no tests, no push."""
+
+    def test_writes_result_and_reports(self):
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            venv = tmp / "venv"
+            (venv / "bin").mkdir(parents=True)
+            (venv / "bin" / "python").symlink_to(sys.executable)
+            import hashlib
+            (venv / ".stamp_requirements.txt").write_text(
+                hashlib.sha256((ROOT / "requirements.txt").read_bytes()).hexdigest() + "\n")
+            env = {**os.environ, "A2179_CI_VARS": json.dumps({"A2179_CI_VENV": str(venv), "A2179_CI_DENSE": "off"}),
+                   "A2179_CI_OUT": str(tmp / "out"), "A2179_CI_RESULTS_DIR": str(tmp / "results"),
+                   "A2179_CI_NO_PUSH": "1", "A2179_CI_SKIP_TESTS": "1", "GITHUB_SHA": ENV["GITHUB_SHA"]}
+            env.pop("GITHUB_PATH", None)
+            p = subprocess.run(["bash", str(ROOT / "ci" / "run.sh")], cwd=tmp, env=env, capture_output=True,
+                               text=True, timeout=90)
+            self.assertEqual(p.returncode, 0, p.stdout[-2000:] + p.stderr[-2000:])
+            res = list((tmp / "results").glob("*_0123456.json"))
+            self.assertEqual(len(res), 1)
+            r = json.loads(res[0].read_text())
+            self.assertEqual([s["name"] for s in r["steps"]], ["setup_venv", "env_probe", "eval", "sweep"])
+            self.assertTrue(r["ok"])
+            self.assertEqual(r["dense"]["reason"], "disabled (A2179_CI_DENSE=off)")
+            self.assertTrue(r["dense"]["hf_offline"])
+            rep = res[0].with_suffix("")
+            self.assertTrue((rep / "eval_report.md").is_file())
+            self.assertTrue((rep / "sweep.tables.md").is_file())
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_setup_failure_still_writes_result(self):
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            env = {**os.environ, "A2179_CI_VARS": json.dumps({"A2179_CI_VENV": str(tmp / "nope" / "venv"),
+                                                              "A2179_CI_PYTHON": "/nonexistent/python"}),
+                   "A2179_CI_OUT": str(tmp / "out"), "A2179_CI_RESULTS_DIR": str(tmp / "results"),
+                   "A2179_CI_NO_PUSH": "1", "GITHUB_SHA": ENV["GITHUB_SHA"]}
+            p = subprocess.run(["bash", str(ROOT / "ci" / "run.sh")], cwd=tmp, env=env, capture_output=True,
+                               text=True, timeout=60)
+            self.assertNotEqual(p.returncode, 0)
+            r = json.loads(next((tmp / "results").glob("*.json")).read_text())
+            self.assertFalse(r["ok"])
+            self.assertEqual(r["steps"][0]["name"], "setup_venv")
+            self.assertFalse(r["steps"][0]["ok"])
+            self.assertIn("nonexistent", r["steps"][0]["stderr_tail"])
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
 
 
 if __name__ == "__main__":

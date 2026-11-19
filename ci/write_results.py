@@ -5,7 +5,9 @@ sweep/sweep.json). Output: one JSON per run with the commit, the runner, every c
 with exit code and duration, and the metrics. The commit message carries [skip ci] and the
 workflow ignores results/**, so pushing a result never starts another run.
 
-Push: git push to the branch, on rejection `git pull --rebase` and try again (a few times,
+Called by ci/run.sh with the system python: stdlib only, so it still writes a result when
+the venv setup broke. Git auth comes from the environment the workflow sets (GIT_CONFIG_*),
+nothing is stored. Push: git push to the branch, on rejection `git pull --rebase` and try again (a few times,
 with a short growing pause). Only git and the token the checkout left behind are used.
 """
 import argparse
@@ -73,7 +75,8 @@ def sweep_metrics(sw):
 def build(ci_out: Path, env=os.environ, now=None, cwd=ROOT):
     now = now or dt.datetime.now(dt.timezone.utc)
     steps = _load(ci_out / "steps.json") or {"env": {}, "dense": {}, "steps": []}
-    st = steps.get("steps", [])
+    setup = _load(ci_out / "setup.json")  # written by ci/run.sh
+    st = ([{**setup, "stderr_tail": setup.get("log_tail")}] if setup else []) + steps.get("steps", [])
     res = {
         "schema": SCHEMA,
         "generated_utc": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -95,6 +98,8 @@ def build(ci_out: Path, env=os.environ, now=None, cwd=ROOT):
     # check_embedder only decides whether dense runs, its failure is reported under "dense"
     res["ok"] = bool(last) and all(s.get("ok") for k, s in last.items() if k != "check_embedder")
     res["tests_ok"] = tests[-1].get("ok") if tests else None
+    active, source = Path(cwd) / ".github" / "workflows" / "experiments.yml", Path(cwd) / "ci" / "experiments.yml"
+    res["workflow_in_sync"] = (active.read_bytes() == source.read_bytes()) if active.is_file() and source.is_file() else None
     res["total_duration_s"] = round(sum(s.get("duration_s") or 0 for s in st), 2)
     return res
 
@@ -116,18 +121,37 @@ def write(results_dir: Path, res: dict) -> Path:
     return p
 
 
-def commit_and_push(path: Path, branch: str, cwd=ROOT, remote="origin", tries=5, pause=2.0, push=True):
+REPORTS = ("eval/eval_report.json", "eval/eval_report.md", "sweep/sweep.tables.md", "sweep/dense_scores.jsonl",
+           "setup.log")
+
+
+def attach_reports(ci_out: Path, result: Path) -> Path | None:
+    """Copy the human readable reports (and dense scores, if computed) next to the result JSON:
+    results/<base>/. The big sweep.json is left out (recomputable from dense_scores.jsonl)."""
+    files = [ci_out / r for r in REPORTS if (ci_out / r).is_file()]
+    if not files:
+        return None
+    d = result.with_suffix("")
+    d.mkdir(parents=True, exist_ok=True)
+    for f in files:
+        (d / f.name).write_bytes(f.read_bytes())
+    return d
+
+
+def commit_and_push(path: Path, branch: str, cwd=ROOT, remote="origin", tries=5, pause=2.0, push=True,
+                    extra=()):
     git("config", "user.name", "a2179-ci", cwd=cwd)
     git("config", "user.email", "a2179-ci@users.noreply.github.com", cwd=cwd)
-    rel = path.resolve().relative_to(Path(cwd).resolve())
-    git("add", "--", str(rel), cwd=cwd)
-    git("commit", "-m", f"results: {path.stem} [skip ci]", "--", str(rel), cwd=cwd)
+    root = Path(cwd).resolve()
+    rels = [str(x.resolve().relative_to(root)) for x in (path, *extra) if x]
+    git("add", "--", *rels, cwd=cwd)
+    git("commit", "-m", f"results: {path.stem} [skip ci]", "--", *rels, cwd=cwd)
     if not push:
         return 0
     for i in range(1, tries + 1):
         p = git("push", remote, f"HEAD:{branch}", cwd=cwd, check=False)
         if p.returncode == 0:
-            print(f"pushed {rel} to {remote}/{branch} (try {i})")
+            print(f"pushed {' '.join(rels)} to {remote}/{branch} (try {i})")
             return i
         print(f"push rejected (try {i}): {p.stderr.strip()[-300:]}", file=sys.stderr)
         r = git("pull", "--rebase", remote, branch, cwd=cwd, check=False)
@@ -145,16 +169,18 @@ def main(argv=None):
     ap.add_argument("--commit", action="store_true")
     ap.add_argument("--push", action="store_true")
     ap.add_argument("--branch", default="main")
+    ap.add_argument("--attach-reports", action="store_true", help="copy reports into results/<base>/")
     a = ap.parse_args(argv)
     res = build(Path(a.ci_out))
     p = write(Path(a.results_dir), res)
-    print(f"results -> {p}")
+    extra = attach_reports(Path(a.ci_out), p) if a.attach_reports else None
+    print(f"results -> {p}" + (f" + {extra}/" if extra else ""))
     gh_out = os.environ.get("GITHUB_OUTPUT")
     if gh_out:
         with open(gh_out, "a", encoding="utf-8") as f:
             f.write(f"results_file={p.relative_to(ROOT) if p.is_relative_to(ROOT) else p}\n")
     if a.commit:
-        commit_and_push(p, a.branch, push=a.push)
+        commit_and_push(p, a.branch, push=a.push, extra=[extra] if extra else [])
     return 0
 
 
