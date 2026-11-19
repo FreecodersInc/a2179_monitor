@@ -1,0 +1,11 @@
+# Optional local multilingual embedder. Without it the monitor runs on regex + TF-IDF.
+# Install torch FIRST for your OS (see README «Эмбеддер не работает»), otherwise pip on Linux
+# pulls the multi-GB CUDA build as a dependency of sentence-transformers.
+#   Linux / Windows (CPU):  pip install "torch>=2.2" --index-url https://download.pytorch.org/whl/cpu
+#   macOS Apple Silicon:    pip install "torch>=2.2"
+#   macOS Intel (x86_64):   Python 3.11 or 3.12 only:  pip install "torch==2.2.2" "numpy<2"
+# Model (~470 MB) downloads on first run into the Hugging Face cache (HF_HOME), not into this folder.
+sentence-transformers>=3.0,<6
+transformers>=4.41,<6
+huggingface-hub>=0.23
+numpy>=1.26,<3

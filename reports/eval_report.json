@@ -1,0 +1,189 @@
+{
+  "dataset": {
+    "n": 97,
+    "positives": 40,
+    "negatives": 57,
+    "by_source": {
+      "kp_live_2026-11-19": 26,
+      "shop_live_2026-11-19": 12,
+      "synthetic": 59
+    },
+    "by_lang": {
+      "sr": 74,
+      "en": 10,
+      "ru": 9,
+      "sr_cyr": 4
+    },
+    "by_kind": {
+      "donor": 6,
+      "whole_laptop": 3,
+      "service": 3,
+      "other_part": 24,
+      "display": 15,
+      "accessory": 10,
+      "lid": 15,
+      "a2337": 5,
+      "a1932_display": 2,
+      "other_model": 8,
+      "giveaway": 2,
+      "broken_screen_laptop": 2,
+      "wanted": 2
+    }
+  },
+  "modes": {
+    "regex": {
+      "precision": 0.975,
+      "recall": 0.975,
+      "f1": 0.975,
+      "tp": 39,
+      "fp": 1,
+      "fn": 1,
+      "tn": 56
+    },
+    "tfidf": {
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "tp": 40,
+      "fp": 10,
+      "fn": 0,
+      "tn": 47,
+      "thresholds": {
+        "pos": 0.2,
+        "margin": 0.02
+      },
+      "ms_per_item": 0.18,
+      "twofold": {
+        "precision": 0.8222,
+        "recall": 0.925,
+        "f1": 0.8706,
+        "tp": 37,
+        "fp": 8,
+        "fn": 3,
+        "tn": 49
+      }
+    },
+    "hybrid_tfidf": {
+      "precision": 0.9756,
+      "recall": 1.0,
+      "f1": 0.9877,
+      "tp": 40,
+      "fp": 1,
+      "fn": 0,
+      "tn": 56,
+      "thresholds": {
+        "pos": 0.38,
+        "margin": 0.18
+      },
+      "ms_per_item": 0.18,
+      "twofold": {
+        "precision": 0.975,
+        "recall": 0.975,
+        "f1": 0.975,
+        "tp": 39,
+        "fp": 1,
+        "fn": 1,
+        "tn": 56
+      }
+    }
+  },
+  "generated": "2026-11-19 10:02 UTC",
+  "embedder": "unavailable (not_installed): ModuleNotFoundError: No module named 'sentence_transformers'",
+  "errors": {
+    "regex": [
+      [
+        62,
+        1,
+        "Prodajem LCD od Macbook Air 2020 (Intel i5), ispravan",
+        "model=weak; laptop_specs=i5"
+      ],
+      [
+        96,
+        0,
+        "MacBook Air A2179 ne pali, ekran razbijen",
+        "model=strong; donor=ne pali"
+      ]
+    ],
+    "tfidf": [
+      [
+        5,
+        0,
+        "Konektori MacBook Air a2179 (2020)",
+        0.251,
+        0.163
+      ],
+      [
+        7,
+        0,
+        "WiFi antene MacBook Air a2179 (2020)",
+        0.249,
+        0.161
+      ],
+      [
+        75,
+        0,
+        "MacBook Air 2020 i3 sa slomljenim ekranom, ostalo radi",
+        0.302,
+        0.159
+      ],
+      [
+        79,
+        0,
+        "Kaljeno staklo za ekran MacBook Air A2179",
+        0.27,
+        0.184
+      ],
+      [
+        88,
+        0,
+        "Tražim ekran za MacBook Air A2179",
+        0.37,
+        0.252
+      ],
+      [
+        90,
+        0,
+        "Kamera FaceTime HD za MacBook Air A2179",
+        0.212,
+        0.114
+      ],
+      [
+        92,
+        0,
+        "MacBook Air 13 2017 A1466 ekran",
+        0.291,
+        0.202
+      ],
+      [
+        93,
+        0,
+        "Šarke za ekran MacBook Air A2179",
+        0.399,
+        0.272
+      ],
+      [
+        94,
+        0,
+        "Lepak traka za LCD MacBook Air A2179",
+        0.282,
+        0.188
+      ],
+      [
+        96,
+        0,
+        "MacBook Air A2179 ne pali, ekran razbijen",
+        0.237,
+        0.156
+      ]
+    ],
+    "hybrid_tfidf": [
+      [
+        96,
+        0,
+        "MacBook Air A2179 ne pali, ekran razbijen",
+        0.237,
+        0.156
+      ]
+    ]
+  }
+}
