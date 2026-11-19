@@ -3,12 +3,32 @@
 Weights are downloaded into the user's Hugging Face cache (HF_HOME), never into this folder.
 Any failure is classified into one stage, reported once (log line + console line with the fix)
 and the monitor falls back to regex + TF-IDF, unless the user demanded the embedder.
+
+Native crashes (segfault in torch/CUDA, abort, hang) cannot be caught in-process, so the
+embedder is first loaded in a probe child process (a2179/embed_probe.py, see run_probe):
+same model, same device, load plus a test encode. Only if the child reports success does
+the main process load the model itself, on the device the child used. A child that dies by
+a signal, exits non-zero or runs past embedder.probe_timeout_s is reported as stage
+`crashed` / `probe_timeout` / `probe_failed` and the monitor falls back like for any other
+failure. Chosen design: the probe gates the in-process load, encoding during the run stays
+in-process (fast, no IPC per listing). A setup that passes load + encode in the child and
+still crashes later in the main process is not covered; embedder.enabled=false or
+embedder.device=cpu is the switch then.
+
+Device: embedder.device = auto | cuda | cpu (or any torch device string such as cuda:1 or
+mps). auto = cuda if torch.cuda.is_available() else cpu.
+Import order: torch is imported before sentence_transformers (which pulls sklearn and its
+OpenMP runtime), so torch's libgomp is loaded first.
 """
 import importlib
 import importlib.metadata as md
+import importlib.util
+import json
 import logging
 import os
 import platform
+import signal
+import subprocess
 import sys
 import time
 import traceback
@@ -31,11 +51,19 @@ STAGES = {
     "cache_permission": "нет прав на папку кэша",
     "load_failed": "не загрузилась модель",
     "encode_failed": "ошибка при кодировании",
+    "crashed": "процесс проверки эмбеддера упал (нативный крэш)",
+    "probe_timeout": "проверка эмбеддера зависла",
+    "probe_failed": "процесс проверки эмбеддера завершился с ошибкой",
 }
 
-FIX_INSTALL = ("pip install -r requirements-embed.txt (torch для CPU: "
-               "pip install torch --index-url https://download.pytorch.org/whl/cpu), "
-               "подробности в README, раздел «Эмбеддер не работает»")
+FIX_CRASH = ("крэш внутри torch или драйвера (часто сборка torch не под ту версию CUDA или драйвер WSL2). "
+             "Проверь nvidia-smi и python -c \"import torch; print(torch.__version__, torch.version.cuda, "
+             "torch.cuda.is_available())\", поставь сборку torch под свою CUDA (pytorch.org), "
+             "для проверки можно embedder.device=cpu. Монитор при этом работает на regex + TF-IDF")
+PROBE_MARK = "@@A2179_PROBE@@ "
+
+FIX_INSTALL = ("сначала torch под свою ОС и CUDA (команда с pytorch.org), потом "
+               "pip install -r requirements-embed.txt, подробности в README, раздел «Эмбеддер не работает»")
 
 
 class EmbedderUnavailable(RuntimeError):
@@ -44,6 +72,8 @@ class EmbedderUnavailable(RuntimeError):
         super().__init__(f"{stage}: {cause}")
 
     def traceback_text(self) -> str:
+        if getattr(self, "child_traceback", None):
+            return self.child_traceback.strip()
         c = self.__cause__ or self
         return "".join(traceback.format_exception(type(c), c, c.__traceback__)).strip()
 
@@ -79,7 +109,7 @@ def classify_import_error(e: BaseException) -> EmbedderUnavailable:
     if isinstance(e, OSError):  # e.g. Windows DLL load failure in torch
         return EmbedderUnavailable("import_failed", _short(e),
                                    "torch не грузит свои библиотеки. Windows: поставь Microsoft Visual C++ "
-                                   "Redistributable x64 и переустанови CPU torch. Проверь, что Python 64 bit")
+                                   "Redistributable x64 и переустанови torch. Проверь, что Python 64 bit")
     return EmbedderUnavailable("import_failed", _short(e), "переустанови: " + FIX_INSTALL)
 
 
@@ -149,21 +179,31 @@ def _to_matrix(out, n: int) -> np.ndarray:
 class EmbedSim:
     name = "embed"
 
-    def __init__(self, model_name: str = DEFAULT_MODEL, local_only: bool = False, pos=None, neg=None):
+    def __init__(self, model_name: str = DEFAULT_MODEL, local_only: bool = False, pos=None, neg=None,
+                 device: str = "auto", backend: str = "torch"):
         try:
+            import_torch_first()
             st = importlib.import_module("sentence_transformers")
             ST = st.SentenceTransformer
         except Exception as e:
             raise classify_import_error(e) from e
         self.model_name = model_name
+        self.device = resolve_device(device)
+        self.backend = (backend or "torch").strip().lower()
         t0 = time.monotonic()
         try:
-            kw = {"device": "cpu"}
+            kw = {"device": self.device}
+            if self.backend not in ("", "torch"):
+                kw["backend"] = self.backend  # sentence-transformers >= 3.2: "onnx" or "openvino"
             if local_only:
                 kw["local_files_only"] = True
             try:
                 self.model = ST(model_name, **kw)
             except TypeError as e:
+                if "backend" in str(e) and "backend" in kw:
+                    raise EmbedderUnavailable("load_failed", _short(e),
+                                              "embedder.backend нужен sentence-transformers>=3.2: "
+                                              "pip install -U \"sentence-transformers>=3.2,<6\"") from e
                 if "local_files_only" not in str(e):
                     raise
                 os.environ["HF_HUB_OFFLINE"] = "1"  # old versions: same effect via env
@@ -214,6 +254,113 @@ class EmbedSim:
         return list(zip((V @ self.P.T).max(axis=1).tolist(), (V @ self.N.T).max(axis=1).tolist()))
 
 
+def import_torch_first():
+    """Import torch (if installed) before sentence_transformers: sentence_transformers pulls in
+    sklearn, whose OpenMP runtime (libgomp via loky/threadpoolctl) clashes with torch's when it
+    is loaded first. A failing torch import propagates (classified by the caller)."""
+    if "torch" not in sys.modules and importlib.util.find_spec("torch") is not None:
+        importlib.import_module("torch")
+
+
+def resolve_device(requested: str = "auto") -> str:
+    """auto -> cuda if torch.cuda.is_available() else cpu. Anything else is passed through."""
+    req = str(requested or "auto").strip().lower()
+    if req != "auto":
+        return req
+    torch = sys.modules.get("torch")
+    if torch is None:
+        try:
+            import_torch_first()
+            torch = sys.modules.get("torch")
+        except Exception:
+            torch = None
+    try:
+        return "cuda" if torch is not None and torch.cuda.is_available() else "cpu"
+    except Exception:
+        return "cpu"
+
+
+def _emb_cfg(cfg: dict) -> dict:
+    e = dict(cfg.get("embedder") or {})
+    e.setdefault("model", DEFAULT_MODEL)
+    e.setdefault("device", "auto")
+    e.setdefault("backend", "torch")
+    return e
+
+
+def run_probe(cfg: dict, mode: str = "probe", timeout_s: float = None, cmd=None) -> dict:
+    """Load + test encode in a child process. Never raises, never crashes the caller.
+
+    Returns {"ok": bool, "device", "dim", "load_s", "stage", "cause", "fix", "traceback",
+    "report": [lines printed by the child], "returncode", "stderr_tail"}.
+    cmd: argv override (tests use it to simulate crashing or hanging children)."""
+    e = _emb_cfg(cfg)
+    timeout = float(timeout_s if timeout_s is not None else e.get("probe_timeout_s", 600))
+    sub = {"embedder": e, "thresholds": cfg.get("thresholds") or {}}
+    root = Path(__file__).resolve().parent.parent
+    argv = cmd or [sys.executable, "-X", "faulthandler", "-m", "a2179.embed_probe", mode, json.dumps(sub)]
+    env = dict(os.environ, PYTHONFAULTHANDLER="1", PYTHONUNBUFFERED="1")
+    env["PYTHONPATH"] = os.pathsep.join([str(root)] + [x for x in [os.environ.get("PYTHONPATH")] if x])
+    res = {"ok": False, "report": [], "returncode": None, "stderr_tail": ""}
+    t0 = time.monotonic()
+    try:
+        cp = subprocess.run(argv, cwd=str(root), env=env, capture_output=True, text=True, timeout=timeout,
+                            errors="replace")
+    except subprocess.TimeoutExpired as te:
+        res.update(stage="probe_timeout",
+                   cause=f"нет ответа за {timeout:.0f} с (embedder.probe_timeout_s), процесс убит",
+                   fix="первый запуск качает модель ~470 МБ: подними embedder.probe_timeout_s. Если зависает "
+                       "всегда, это драйвер или torch: " + FIX_CRASH,
+                   stderr_tail=_tail(te.stderr))
+        return res
+    except Exception as ex:  # could not even start the child
+        res.update(stage="probe_failed", cause=_short(ex), fix="проверь python и права на папку проекта")
+        return res
+    res["probe_s"] = round(time.monotonic() - t0, 2)
+    res["returncode"] = cp.returncode
+    res["stderr_tail"] = _tail(cp.stderr)
+    data = None
+    for line in (cp.stdout or "").splitlines():
+        if line.startswith(PROBE_MARK):
+            try:
+                data = json.loads(line[len(PROBE_MARK):])
+            except ValueError:
+                data = None
+        else:
+            res["report"].append(line)
+    # killed by a signal (POSIX: negative code) or a Windows crash code (0xC0000005 and friends)
+    if cp.returncode < 0 or cp.returncode > 255:
+        rc = cp.returncode
+        try:
+            how = f"сигнал {signal.Signals(-rc).name}" if rc < 0 else f"код {rc} ({rc & 0xFFFFFFFF:#x})"
+        except ValueError:
+            how = f"код {rc}"
+        late = " уже после успешной проверки (при выходе)" if data and data.get("ok") else ""
+        res.update(stage="crashed", cause=f"процесс проверки умер: {how}{late}", fix=FIX_CRASH,
+                   device=(data or {}).get("device"))
+        return res
+    if data is None or cp.returncode not in (0, 3):
+        last = (res["stderr_tail"].strip().splitlines() or [""])[-1][:240]
+        res.update(stage="probe_failed", cause=f"процесс проверки не вернул результат (код {cp.returncode}) {last}".strip(),
+                   fix="пришли вывод python monitor.py --check-embedder")
+        return res
+    res.update(data)
+    return res
+
+
+def _tail(text, n=4000) -> str:
+    if isinstance(text, bytes):
+        text = text.decode("utf-8", "replace")
+    return (text or "")[-n:]
+
+
+def _probe_error(r: dict) -> EmbedderUnavailable:
+    err = EmbedderUnavailable(r.get("stage") or "probe_failed", r.get("cause") or "?", r.get("fix") or FIX_CRASH)
+    err.child_traceback = (r.get("traceback") or "") + (("\n--- stderr ---\n" + r["stderr_tail"])
+                                                        if r.get("stderr_tail") else "")
+    return err
+
+
 def embedder_wanted(cfg: dict) -> str:
     """'off' | 'auto' | 'required'."""
     e = cfg.get("embedder", {})
@@ -231,11 +378,22 @@ def load_similarity(cfg: dict, log=None, require: bool = False, console=sys.stde
     want = "required" if require else embedder_wanted(cfg)
     if want == "off":
         return TfidfSim(), "tfidf", None
-    e = cfg.get("embedder", {})
+    e = _emb_cfg(cfg)
     try:
-        sim = EmbedSim(e.get("model") or DEFAULT_MODEL, bool(e.get("local_only", False)))
+        device = e["device"]
+        if e.get("probe", True):
+            r = run_probe(cfg)
+            if log:
+                ev(log, "embedder_probe", logging.INFO if r.get("ok") else logging.WARNING,
+                   ok=bool(r.get("ok")), stage=r.get("stage"), device=r.get("device"), dim=r.get("dim"),
+                   returncode=r.get("returncode"), probe_s=r.get("probe_s"), stderr_tail=r.get("stderr_tail", "")[-2000:])
+            if not r.get("ok"):
+                raise _probe_error(r)
+            device = r.get("device") or device  # load in-process on exactly the device that passed
+        sim = EmbedSim(e["model"], bool(e.get("local_only", False)), device=device, backend=e.get("backend"))
         if log:
-            ev(log, "embedder_ready", model=sim.model_name, load_s=round(sim.load_s, 2))
+            ev(log, "embedder_ready", model=sim.model_name, load_s=round(sim.load_s, 2), device=sim.device,
+               backend=sim.backend)
         return sim, "embed", None
     except EmbedderUnavailable as err:
         if log:
@@ -271,10 +429,35 @@ def hf_cache_dir() -> Path:
     return Path(home).expanduser() / "hub"
 
 
-def check_embedder(cfg: dict, out=sys.stdout) -> int:
-    """Print a diagnostic report. Returns 0 if the embedder works, 3 if not."""
+def check_embedder(cfg: dict, out=sys.stdout, isolate: bool = True, cmd=None) -> int:
+    """Print a diagnostic report. Returns 0 if the embedder works, 3 if not.
+    isolate=True: the report is produced by a child process (run_probe "check"), so a native
+    crash there is reported instead of killing this process."""
+    if not isolate:
+        return check_inprocess(cfg, out)[0]
     p = lambda *a: print(*a, file=out)  # noqa: E731
-    e = cfg.get("embedder", {})
+    r = run_probe(cfg, "check", cmd=cmd)
+    for line in r.get("report", []):
+        p(line)
+    if r.get("ok"):
+        return 0
+    if r.get("stage") in ("crashed", "probe_timeout", "probe_failed"):
+        err = _probe_error(r)
+        p("== A2179 embedder check ==" if not r.get("report") else "-------------------")
+        p(f"probe:      FAILED, {STAGES[err.stage]} ({err.stage}): {err.cause}")
+        if r.get("stderr_tail"):
+            p("---- child stderr (tail) ----")
+            p(r["stderr_tail"].rstrip())
+            p("-----------------------------")
+        p(err.console())
+        p("mode:       tfidf (fallback)")
+    return 3
+
+
+def check_inprocess(cfg: dict, out=sys.stdout):
+    """The report itself (runs in the probe child). Returns (rc, info dict)."""
+    p = lambda *a: print(*a, file=out)  # noqa: E731
+    e = _emb_cfg(cfg)
     model = e.get("model") or DEFAULT_MODEL
     cache = hf_cache_dir()
     p("== A2179 embedder check ==")
@@ -282,7 +465,8 @@ def check_embedder(cfg: dict, out=sys.stdout) -> int:
     p(f"os:         {platform.system()} {platform.release()} {platform.machine()}")
     for pkg in ("torch", "sentence-transformers", "transformers", "huggingface-hub", "numpy", "tokenizers"):
         p(f"{pkg + ':':<23} {_ver(pkg)}")
-    p(f"model:      {model}  (local_only={bool(e.get('local_only', False))})")
+    p(f"model:      {model}  (local_only={bool(e.get('local_only', False))}, backend={e.get('backend')})")
+    p(f"device:     embedder.device={e.get('device')}")
     p(f"config:     embedder.enabled={e.get('enabled', 'auto')}  -> {embedder_wanted(cfg)}")
     writable = os.access(cache if cache.exists() else cache.parent if cache.parent.exists() else Path.home(), os.W_OK)
     p(f"cache dir:  {cache}  (exists={cache.exists()}, writable={writable})")
@@ -291,7 +475,7 @@ def check_embedder(cfg: dict, out=sys.stdout) -> int:
             p(f"env:        {k}={'set' if 'PROXY' in k else os.environ[k]}")
     t0 = time.monotonic()
     try:
-        sim = EmbedSim(model, bool(e.get("local_only", False)))
+        sim = EmbedSim(model, bool(e.get("local_only", False)), device=e.get("device"), backend=e.get("backend"))
     except EmbedderUnavailable as err:
         p(f"load:       FAILED after {time.monotonic() - t0:.1f} s")
         p("---- traceback ----")
@@ -299,8 +483,8 @@ def check_embedder(cfg: dict, out=sys.stdout) -> int:
         p("-------------------")
         p(err.console())
         p("mode:       tfidf (fallback)")
-        return 3
-    p(f"load:       ok in {sim.load_s:.1f} s (first run includes the ~470 MB download)")
+        return 3, _err_info(err)
+    p(f"load:       ok in {sim.load_s:.1f} s on device {sim.device} (first run includes the ~470 MB download)")
     try:
         t1 = time.monotonic()
         a = sim.score("LCD ekran za MacBook Air A2179 2020")
@@ -313,9 +497,14 @@ def check_embedder(cfg: dict, out=sys.stdout) -> int:
         p(err.traceback_text())
         p(err.console())
         p("mode:       tfidf (fallback)")
-        return 3
+        return 3, _err_info(err)
     th = cfg.get("thresholds", {}).get("embed", {})
     p(f"thresholds: embed pos={th.get('pos')} margin={th.get('margin')} "
       f"({'calibrated' if th.get('calibrated') else 'NOT calibrated: run python eval/run_eval.py --write-thresholds'})")
-    p("mode:       embed")
-    return 0
+    p(f"mode:       embed (device {sim.device})")
+    return 0, {"ok": True, "device": sim.device, "dim": int(dim), "load_s": round(sim.load_s, 2)}
+
+
+def _err_info(err: EmbedderUnavailable) -> dict:
+    return {"ok": False, "stage": err.stage, "cause": err.cause, "fix": err.fix,
+            "traceback": err.traceback_text()[-4000:]}

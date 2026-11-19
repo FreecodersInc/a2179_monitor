@@ -93,6 +93,9 @@ schtasks /Create /SC HOURLY /TN a2179_monitor /TR "C:\путь\a2179_monitor\.ve
 | `embedder.enabled` | `auto` или `true` (пробовать, при ошибке откат на TF-IDF), `false` (не трогать), `required` (без него выход с кодом 3) |
 | `embedder.local_only` | `true`: не ходить в сеть, брать модель только из кэша HF |
 | `embedder.model` | модель sentence-transformers, по умолчанию `paraphrase-multilingual-MiniLM-L12-v2` |
+| `embedder.device` | `auto` (по умолчанию: `cuda`, если `torch.cuda.is_available()`, иначе `cpu`), `cuda`, `cuda:1`, `cpu`, `mps`. Env `A2179_DEVICE` |
+| `embedder.backend` | `torch` (по умолчанию), `onnx` или `openvino` (нужен sentence-transformers 3.2+ и `optimum`), см. «Эмбеддер не работает» |
+| `embedder.probe`, `embedder.probe_timeout_s` | `true`, `600`: сначала грузить модель в отдельном процессе, падение там не роняет монитор |
 | `thresholds` | пороги канала похожести (подобраны eval-скриптом) |
 | `sources` | URL товаров, поисков и ключевые слова KP |
 | `http` | пауза между запросами к одному сайту (последовательный режим), ретраи (`retries` 3, `backoff_s`, `backoff_max_s`, `retry_403`), таймаут, User-Agent |
@@ -137,7 +140,14 @@ python -m unittest discover -s tests -t .
 ```bash
 python monitor.py --check-embedder
 ```
-Печатает версии Python, ОС, torch, sentence-transformers, transformers, numpy, имя модели, папку кэша, время загрузки, тестовый encode и итоговый режим. Код выхода 0, если всё ок, 3 если нет.
+Печатает версии Python, ОС, torch, CUDA, sentence-transformers, transformers, numpy, устройство, имя модели, папку кэша, время загрузки, тестовый encode и итоговый режим. Код выхода 0, если всё ок, 3 если нет.
+
+Защита от падений (segfault в torch/CUDA, например Python 3.14 + WSL2):
+- и `--check-embedder`, и обычный запуск сначала грузят модель и делают тестовый encode в отдельном процессе (`python -m a2179.embed_probe`, с `faulthandler`). Если он умер по сигналу (SIGSEGV, SIGABRT), вернул ошибку или висит дольше `embedder.probe_timeout_s`, монитор пишет `[embedder] ... (crashed)` и событие `embedder_probe` с кодом выхода и хвостом stderr в `data/logs/monitor.jsonl`, а дальше работает на regex + TF-IDF. torch в основной процесс при этом не грузится вообще.
+- если проверка прошла, модель грузится в основном процессе на том же устройстве, что отчитался дочерний (`device` в выводе и в событии `embedder_ready`). Encode во время прогона идёт в основном процессе: проверка только пропускает или не пропускает эмбеддер. Падение, которое случается только позже на каких то текстах, это не ловит, такого пока не видели.
+- выключить проверку: `"probe": false` (на секунды быстрее старт, но без защиты).
+- порядок импорта: torch всегда импортируется раньше sentence-transformers (а значит и sklearn с его loky/OpenMP), иначе на части Linux/WSL сборок две копии OpenMP дают segfault.
+- Python 3.14 поддерживается, если под него есть сборка torch.
 
 | stage | что значит | что делать |
 |---|---|---|
@@ -148,10 +158,16 @@ python monitor.py --check-embedder
 | `download_failed` | нет сети, прокси, лимит 429 | `HTTPS_PROXY=...`, подождать или задать `HF_TOKEN` |
 | `cache_permission` | нет прав на кэш HF | `HF_HOME` на папку с правами записи |
 | `load_failed`, `encode_failed` | несовместимые версии | `pip install -U -r requirements-embed.txt`, прислать вывод `--check-embedder` |
+| `crashed` | процесс проверки упал по сигналу (обычно torch/CUDA) | `nvidia-smi`, `python -c "import torch; print(torch.__version__, torch.version.cuda, torch.cuda.is_available())"`, сборка torch под свою CUDA с pytorch.org. Для проверки можно `"device": "cpu"` |
+| `probe_timeout` | проверка висит дольше `probe_timeout_s` | первая загрузка модели долгая: поднять `probe_timeout_s` или запустить ещё раз |
+| `probe_failed` | процесс проверки вышел без результата | прислать вывод `--check-embedder` |
 
 Установка torch (сначала torch, потом `requirements-embed.txt`):
 ```bash
-# Linux и Windows, только CPU (иначе pip потянет CUDA на несколько ГБ):
+# Linux, WSL2, Windows с NVIDIA: сборка под свою CUDA, команду бери в селекторе на https://pytorch.org/get-started/locally/
+pip install torch --index-url https://download.pytorch.org/whl/cu128   # пример для CUDA 12.8
+python -c "import torch; print(torch.__version__, torch.version.cuda, torch.cuda.is_available())"   # должно быть True
+# по желанию, машина без GPU: CPU сборка, она меньше
 pip install "torch>=2.2" --index-url https://download.pytorch.org/whl/cpu
 # macOS Apple Silicon (M1 и новее):
 pip install "torch>=2.2"
@@ -160,7 +176,11 @@ python3.12 -m venv .venv && source .venv/bin/activate
 pip install "torch==2.2.2" "numpy<2" "transformers>=4.41,<4.50" "sentence-transformers>=3.0,<4"
 pip install -r requirements.txt "numpy<2"
 ```
-Python 3.13 поддерживается свежими torch (2.5 и новее). На Intel Mac бери 3.11 или 3.12.
+Python 3.13 поддерживается свежими torch (2.5 и новее), 3.14 тоже, если под него есть колесо torch. На Intel Mac бери 3.11 или 3.12.
+
+Устройство: `embedder.device` в `config.json` (или `A2179_DEVICE=cuda`). `auto` берёт `cuda`, если torch её видит, иначе `cpu`. `--check-embedder` показывает, что выбрано и почему.
+
+ONNX: `"backend": "onnx"` (нужны `sentence-transformers>=3.2` и `pip install "optimum[onnxruntime]"`, для GPU `optimum[onnxruntime-gpu]`). Encode тогда идёт через onnxruntime, но sentence-transformers всё равно импортирует torch, так что от падения при импорте torch это не спасает. Следующий шаг, если понадобится: путь совсем без torch (onnxruntime + tokenizers напрямую).
 
 Кэш и офлайн:
 - модель (~470 МБ) один раз качается в `~/.cache/huggingface` (Windows: `%USERPROFILE%\.cache\huggingface`). Другая папка: `export HF_HOME=/путь` (Windows: `set HF_HOME=D:\hf`).

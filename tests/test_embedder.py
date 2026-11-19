@@ -16,7 +16,10 @@ from a2179.obs import setup_logging
 
 
 def cfg_with(**emb):
+    """In-process paths (the fake sentence_transformers lives in this process): no probe child.
+    The probe child itself is tested in tests/test_embed_probe.py."""
     c = load_config("does-not-exist.json")
+    c["embedder"]["probe"] = False
     c["embedder"].update(emb)
     return c
 
@@ -139,7 +142,7 @@ class TestCheckEmbedder(unittest.TestCase):
     def test_ok(self):
         out = io.StringIO()
         with F.fake_module(F.GoodST):
-            rc = check_embedder(cfg_with(), out)
+            rc = check_embedder(cfg_with(), out, isolate=False)
         s = out.getvalue()
         self.assertEqual(rc, 0, s)
         for k in ("python:", "os:", "torch:", "sentence-transformers:", "numpy:", "model:", "cache dir:",
@@ -149,7 +152,7 @@ class TestCheckEmbedder(unittest.TestCase):
     def test_missing(self):
         out = io.StringIO()
         with F.fake_module(None):
-            rc = check_embedder(cfg_with(), out)
+            rc = check_embedder(cfg_with(), out, isolate=False)
         self.assertEqual(rc, 3)
         self.assertIn("not_installed", out.getvalue())
         self.assertIn("mode:       tfidf (fallback)", out.getvalue())
@@ -190,6 +193,7 @@ class TestRunWithEmbedder(unittest.TestCase):
         log = setup_logging(tmp / "logs")
         cfg = make_cfg(tmp)
         cfg["embedder"]["enabled"] = "auto"
+        cfg["embedder"]["probe"] = False  # the fake module exists only in this process
         routes = {IFIX: (200, fixture("ifix_product.html.gz")), KPQ: (200, fixture("kp_search_synthetic.html"))}
         f = Fetcher({"min_delay_s": 0, "jitter_s": 0, "retries": 0}, Metrics(), log, sleep=lambda s: None,
                     session=FakeSession(routes))

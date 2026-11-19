@@ -7,7 +7,11 @@
   "embedder": {
     "enabled": "auto",
     "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-    "local_only": false
+    "local_only": false,
+    "device": "auto",
+    "backend": "torch",
+    "probe": true,
+    "probe_timeout_s": 600
   },
   "thresholds": {"tfidf": {"pos": 0.38, "margin": 0.18, "calibrated": true}, "embed": {"pos": 0.60, "margin": 0.03, "calibrated": false}},
   "sources": {

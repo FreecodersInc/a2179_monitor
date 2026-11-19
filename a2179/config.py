@@ -14,7 +14,11 @@ DEFAULTS = {
     "accept_a1932": True,
     "embedder": {"enabled": "auto",
                  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-                 "local_only": False},
+                 "local_only": False,
+                 "device": "auto",          # auto (cuda if available, else cpu) | cuda | cpu | cuda:1 | mps
+                 "backend": "torch",        # torch | onnx | openvino (sentence-transformers >= 3.2)
+                 "probe": True,             # load + test encode in a child process first (crash-safe)
+                 "probe_timeout_s": 600},
     "thresholds": {"tfidf": {"pos": 0.38, "margin": 0.18, "calibrated": True}, "embed": {"pos": 0.60, "margin": 0.03, "calibrated": False}},
     "sources": {
         "shop_products": [
@@ -54,6 +58,7 @@ ENV_MAP = {
     "A2179_RSD_PER_EUR": ("rates.rsd_per_eur", float),
     "A2179_EMBEDDER": ("embedder.enabled", str),
     "A2179_MODEL": ("embedder.model", str),
+    "A2179_DEVICE": ("embedder.device", str),
     "A2179_WORKERS": ("parallel.workers", int),
     "A2179_MAX_CONCURRENCY": ("parallel.max_concurrency", int),
 }
