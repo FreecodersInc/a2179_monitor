@@ -47,6 +47,17 @@ class TestProfilePaths(unittest.TestCase):
         self.assertEqual(load_target("a2179_screen").eval.get("data"), "eval/labeled.jsonl")
 
 
+class TestDeJobsRules(unittest.TestCase):
+    def test_geography_and_bare_title(self):
+        # CI run 2cf7478: "Senior Data Engineer" was dropped (no part term) and any title with
+        # Toronto / Canada was dropped as "laptop_specs" (the A2179 whole laptop exclusion)
+        from a2179.rules import classify
+        for t in ("Senior Data Engineer", "Data Engineer, Python, Toronto", "Data Engineer (SQL) remote Canada"):
+            self.assertTrue(classify(t, "", target="de_jobs").match, t)
+        for t in ("Data Analyst, SQL, Toronto", "Data Engineering Bootcamp Toronto"):
+            self.assertFalse(classify(t, "", target="de_jobs").match, t)
+
+
 class TestFeatureGroups(unittest.TestCase):
     def test_profile_groups(self):
         import sweep as S

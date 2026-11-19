@@ -35,3 +35,5 @@
 ## Заметки и итог
 Код готов, ждём модели в кэше у Лёни (`python scripts/download_embedders.py multilingual english`).
 T-008 (зоопарк dense моделей: ColBERT, Contriever, ранги MTEB) идёт после этой задачи и берёт отсюда реестр и таблицу.
+
+Итог A2179 (прогон 2cf7478, EXP-003): база без ML tfidf+feat F1 0.923 при recall 1.0, лучший эмбеддер mpnet+feat 0.914, minilm монитора 0.881. Эмбеддер на A2179 не нужен. Кейс de_jobs ждёт набор T-019.

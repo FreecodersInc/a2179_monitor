@@ -172,7 +172,7 @@
       "sagemaker",
       "feast"
     ],
-    "strong_part": "\\b(apache\\s*spark|spark|airflow|dbt|kafka|snowflake|databricks|redshift)\\b",
+    "strong_part": "\\b(apache\\s*spark|spark|airflow|dbt|kafka|snowflake|databricks|redshift)\\b|\\b(data|analytics|big\\s*data|etl|data\\s*platform)\\s*engineers?\\b",
     "donor_terms": [],
     "hard_excl": "\\b(bootcamps?|online\\s*course|certificate\\s*program|data\\s*entry|unpaid\\s*internships?|hiring\\s*our\\s*graduates)\\b",
     "soft_excl_terms": [
@@ -180,8 +180,7 @@
       "only excel",
       "power bi only",
       "tableau only"
-    ],
-    "specs": "\\b(toronto|vancouver|canada|eu\\s*remote|remote\\s*(canada|eu|europe)|hybrid)\\b"
+    ]
   },
   "prototypes": {
     "positive": [

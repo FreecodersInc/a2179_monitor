@@ -58,8 +58,8 @@ class TestJobsLabel(unittest.TestCase):
             w.writeheader()
             w.writerows(sheet)
         new = J.merge(out)
-        self.assertEqual([(r["title"], r["label"], r["esci"]) for r in new],
-                         [("Senior Data Engineer", 1, "E"), ("Data Analyst", 0, "C")])
+        self.assertEqual(sorted((r["title"], r["label"], r["esci"]) for r in new),
+                         [("Data Analyst", 0, "C"), ("Senior Data Engineer", 1, "E")])
         self.assertEqual(J.merge(out), [])   # idempotent
         self.assertEqual(len(J.sheet(self.tmp / "reports", out)), 1)   # labeled rows leave the sheet
 
