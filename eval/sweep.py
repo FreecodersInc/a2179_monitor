@@ -27,6 +27,7 @@ Charts and ranking metrics (recall@k, precision at recall 1.0 / 0.95, nDCG): eva
 import argparse
 import json
 import math
+import os
 import re
 import sys
 import time
@@ -206,15 +207,82 @@ def tfidf_2d(sw, sc, hybrid):
     return best, table
 
 
-def compute_dense(rows, out: Path, model: str):
+def compute_dense(rows, out: Path, model: str, proto_prefix: str = "", text_prefix: str = "", local_only=False,
+                  device="auto"):
     from a2179.embedder import EmbedSim
-    sim = EmbedSim(model, device="auto")
-    t0 = time.time()
-    sc = sim.score_many([f"{r['title']} {r['snippet']}".strip() for r in rows])
+    texts = [f"{r['title']} {r['snippet']}".strip() for r in rows]
+    try:
+        sim = EmbedSim(model, local_only=local_only, device=device, proto_prefix=proto_prefix, text_prefix=text_prefix)
+        t0 = time.time()
+        sc = sim.score_many(texts)
+    except Exception as e:  # noqa: BLE001
+        # a big model on a small GPU (bge-m3 or e5-large on a 2 GB MX130): same model on the CPU
+        why = f"{e} {getattr(e, 'detail', '')} {e.__cause__ or ''}".lower()   # EmbedderUnavailable wraps the torch error
+        if device == "cpu" or "out of memory" not in why:
+            raise
+        print(f"dense {model}: CUDA out of memory, rerun on cpu")
+        try:
+            import torch
+            torch.cuda.empty_cache()
+        except Exception:  # noqa: BLE001
+            pass
+        sim = EmbedSim(model, local_only=local_only, device="cpu", proto_prefix=proto_prefix, text_prefix=text_prefix)
+        t0 = time.time()
+        sc = sim.score_many(texts)
+    out.parent.mkdir(parents=True, exist_ok=True)
     with out.open("w", encoding="utf-8") as f:
         for r, (a, b) in zip(rows, sc):
             f.write(json.dumps({"id": r["id"], "pos": round(a, 5), "neg": round(b, 5)}) + "\n")
-    print(f"dense scores for {len(rows)} rows -> {out} ({time.time() - t0:.1f} s, device {sim.device})")
+    print(f"dense scores for {len(rows)} rows -> {out} ({time.time() - t0:.1f} s, device {sim.device}, "
+          f"model {model}, prefixes {proto_prefix!r} / {text_prefix!r})")
+
+
+# ------------------------------------------------------------------ several embedders (EXP-003, H-30)
+REGISTRY = ROOT / "eval" / "embedders.json"
+
+
+def registry(path=REGISTRY):
+    return json.loads(Path(path).read_text(encoding="utf-8"))["models"]
+
+
+def hf_cached(model_id: str) -> bool:
+    """Is the model in the local Hugging Face cache? Looks at the cache folder only, no network."""
+    hub = os.environ.get("HF_HUB_CACHE") or os.path.join(
+        os.environ.get("HF_HOME") or os.path.join(os.path.expanduser("~"), ".cache", "huggingface"), "hub")
+    snap = Path(hub) / ("models--" + model_id.replace("/", "--")) / "snapshots"
+    return snap.is_dir() and any(snap.iterdir())
+
+
+def select_embedders(spec, reg=None, default_model=None):
+    """spec: none | all | cached | comma list of short names or ids. Returns registry entries,
+    the default model (the plain "dense" channel) left out, so it is never scored twice."""
+    reg = registry() if reg is None else reg
+    spec = (spec or "none").strip()
+    if spec in ("", "none", "default"):
+        return []
+    if spec == "all":
+        out = list(reg)
+    elif spec == "cached":
+        out = [m for m in reg if hf_cached(m["id"])]
+    else:
+        want = [x.strip() for x in spec.split(",") if x.strip()]
+        by = {m["short"]: m for m in reg} | {m["id"]: m for m in reg if m["id"] not in {x["short"] for x in reg}}
+        unknown = [w for w in want if w not in by]
+        if unknown:
+            raise SystemExit(f"unknown embedders {unknown}, known: {[m['short'] for m in reg]} (eval/embedders.json)")
+        out = [by[w] for w in want]
+    return [m for m in out if not (m["id"] == default_model and not m["proto_prefix"] and not m["text_prefix"])]
+
+
+def extra_scores_path(dense_scores: Path, short: str) -> Path:
+    return dense_scores.with_name(f"{dense_scores.stem}_{short}{dense_scores.suffix}")
+
+
+def read_scores(path: Path, rows):
+    if not path.exists():
+        return None
+    d = {j["id"]: (j["pos"], j["neg"]) for j in map(json.loads, path.read_text().splitlines()) if j}
+    return [d[r["id"]] for r in rows] if all(r["id"] in d for r in rows) else None
 
 
 def fmt(m):
@@ -279,6 +347,18 @@ def tables_md(res, rows, sw):
             L += [f"| {x[key]} | {x.get('t', '')} | {x.get('P', '')} | {x.get('R', '')} | {x.get('F1', '')} | "
                   f"{x.get('fp', '')} | {x.get('cv5', {}).get('F1', '')} |" for x in c]
             L.append("")
+    dv = [m for m in res["variants"] if m["variant"].startswith(("dense", "dense:")) and "cv5" in m]
+    if any(m["variant"].startswith("dense:") for m in dv):
+        L += ["### Dense models side by side (EXP-003, H-30)", "",
+              f"default dense = {res.get('dense_model')}, others from eval/embedders.json. P at R 1.0 with the "
+              "recall first threshold, 5-fold P/R, real rows only. Bootstrap CIs for P@R1 / P@R95: plots.md.", "",
+              "| model | mode | threshold | P | FP | 5-fold P/R | real only P |", "|---|---|---|---|---|---|---|"]
+        for m in sorted(dv, key=lambda m: (not m["hybrid"], -m["P"])):
+            L.append(f"| {m['variant']} | {'hybrid' if m['hybrid'] else 'pure'} | {m['t']} | {m['P']:.3f} | {m['fp']} | "
+                     f"{m['cv5']['P']:.3f}/{m['cv5']['R']:.3f} | {m['real']['P']:.3f} |")
+        if res.get("embedders_skipped"):
+            L += ["", "Skipped: " + ", ".join(f"{k} ({v})" for k, v in res["embedders_skipped"].items())]
+        L.append("")
     cd = committed_dense(rows)
     if cd:
         L += ["### MiniLM from the committed run (reports/eval_report.json, computed on Leonid's machine)", "",
@@ -295,7 +375,7 @@ def tables_md(res, rows, sw):
     return "\n".join(L) + "\n"
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", default=str(ROOT / "eval" / "labeled.jsonl"))
     ap.add_argument("--dense-scores", default=str(ROOT / "eval" / "dense_scores.jsonl"))
@@ -303,10 +383,23 @@ def main():
     ap.add_argument("--model", default="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
     ap.add_argument("--out", default=str(ROOT / "reports" / f"sweep_{DATE}.json"))
     ap.add_argument("--plots", default=None, metavar="DIR", help="also draw the charts (eval/plots.py) into DIR")
-    a = ap.parse_args()
+    ap.add_argument("--embedders", default=os.environ.get("A2179_EMBEDDERS", "none"),
+                    help="more dense channels from eval/embedders.json: none | all | cached | e5-base,bge-m3,... "
+                         "each is scored into <dense-scores>_<short>.jsonl and becomes channel dense:<short>")
+    a = ap.parse_args(argv)
     rows = [json.loads(l) for l in Path(a.data).read_text(encoding="utf-8").splitlines() if l.strip()]
+    extras = select_embedders(a.embedders, default_model=a.model)
+    skipped = {}
     if a.compute_dense:
         compute_dense(rows, Path(a.dense_scores), a.model)
+        for m in extras:
+            try:   # one model that is missing or fails must not cost the others
+                compute_dense(rows, extra_scores_path(Path(a.dense_scores), m["short"]), m["id"],
+                              m["proto_prefix"], m["text_prefix"],
+                              local_only=os.environ.get("HF_HUB_OFFLINE", "") in ("1", "true", "yes"))
+            except Exception as e:  # noqa: BLE001
+                skipped[m["short"]] = f"{type(e).__name__}: {str(e)[:200]}"
+                print(f"dense {m['short']} skipped: {skipped[m['short']]}")
     sw = Sweep(rows)
     texts = [f"{r['title']} {r['snippet']}".strip() for r in rows]
     tf = TfidfSim()
@@ -319,11 +412,20 @@ def main():
         if all(r["id"] in d for r in rows):
             ch["dense"] = [d[r["id"]] for r in rows]
             dense_src = str(dp.relative_to(ROOT) if dp.is_relative_to(ROOT) else dp)
+    embedders = {}
+    for m in extras:
+        sc = read_scores(extra_scores_path(dp, m["short"]), rows)
+        if sc is None:
+            skipped.setdefault(m["short"], "no scores file for every row (run with --compute-dense)")
+            continue
+        ch[f"dense:{m['short']}"] = sc
+        embedders[m["short"]] = {k: m.get(k) for k in ("id", "proto_prefix", "text_prefix", "params_m", "weights_mb")}
     feats = [features(r["title"], r["snippet"]) for r in rows]
     F = [(f + 1) / 2 for f, _ in feats]
     D = {k: minmax([p - n for p, n in v]) for k, v in ch.items()}
 
     res = {"generated": time.strftime("%Y-%m-%d %H:%M %Z"), "n": len(rows), "dense": dense_src,
+           "dense_model": a.model if dense_src else None, "embedders": embedders, "embedders_skipped": skipped,
            "variants": [], "w_curves": {}, "lam_curves": {}, "tfidf_2d": {}, "steps": {}}
     V = res["variants"]
     V.append({"variant": "regex", "hybrid": False, **prf(sw.y, sw.regex),
@@ -354,7 +456,7 @@ def main():
             ra, rb = ranks(D[A]), ranks(D[B])
             rrf = minmax([1 / (60 + x) + 1 / (60 + z) for x, z in zip(ra, rb)])
             V.append(sw.evaluate(f"rrf({A},{B})", rrf, hybrid))
-        for base in [k for k in ("bm25", "tfidf", "dense") if k in D]:
+        for base in [k for k in ("bm25", "tfidf", "dense") if k in D] + [k for k in D if k.startswith("dense:")]:
             curve = []
             for lam in WS:
                 s = [(1 - lam) * x + lam * f for x, f in zip(D[base], F)]

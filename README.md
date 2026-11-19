@@ -136,6 +136,8 @@ python eval/sweep.py                 # перебор порогов и fusion: 
 python eval/sweep.py --compute-dense # то же, плюс посчитать косинусы MiniLM (нужен эмбеддер)
 python eval/sweep.py --plots reports/sweep_plots   # плюс графики EDA и метрики ранжирования (P@R1, R@k, nDCG), нужен matplotlib
 python eval/plots.py --sweep reports/sweep_2026-11-19.json --out reports/sweep_2026-11-19_plots   # графики по готовому свипу
+python ci/cache_model.py intfloat/multilingual-e5-base BAAI/bge-m3   # модели в кэш HF_HOME, только нужные файлы (реестр: eval/embedders.json)
+python eval/sweep.py --compute-dense --embedders cached --plots reports/exp003_plots   # все модели из кэша в одном прогоне (EXP-003)
 ```
 Размеченный набор `eval/labeled.jsonl`: 97 заголовков (40 подходящих, 57 нет), сербский латиницей и кириллицей, английский, русский. 38 из них реальные заголовки с KP и сайтов магазинов (19.11.2026), остальные составлены вручную, включая трудные отрицательные (A2337, чехлы, шлейфы LCD, услуги, целые ноутбуки).
 Отчёт: `reports/eval_report.md` (precision, recall, F1, матрица ошибок, список ошибок, проверка 2-fold).

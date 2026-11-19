@@ -506,7 +506,7 @@ class TestCacheModel(unittest.TestCase):
     def test_cached_no_download(self):
         calls = []
 
-        def fake(name, local_files_only=False):
+        def fake(name, local_files_only=False, **kw):
             calls.append(local_files_only)
             return "/hf/x"
         self.assertEqual(self.run_with(fake, {"A2179_CI_MODEL": "m", "HF_HUB_OFFLINE": "0"}), 0)
@@ -515,7 +515,7 @@ class TestCacheModel(unittest.TestCase):
     def test_missing_downloads_only_when_online(self):
         calls = []
 
-        def fake(name, local_files_only=False):
+        def fake(name, local_files_only=False, **kw):
             calls.append(local_files_only)
             if local_files_only:
                 raise FileNotFoundError(name)
@@ -524,6 +524,33 @@ class TestCacheModel(unittest.TestCase):
         self.assertEqual(calls, [True])
         self.assertEqual(self.run_with(fake, {"A2179_CI_MODEL": "m", "HF_HUB_OFFLINE": "0"}), 0)
         self.assertEqual(calls, [True, True, False])
+
+    def test_model_list_only_needed_files(self):
+        seen = []
+
+        def fake(name, local_files_only=False, allow_patterns=None):
+            seen.append((name, local_files_only, tuple(allow_patterns or ())))
+            if local_files_only and name == "BAAI/bge-m3":
+                raise FileNotFoundError(name)
+            return "/hf/x"
+        rc = self.run_with(fake, {"A2179_CI_MODELS": "e5-base, BAAI/bge-m3", "HF_HUB_OFFLINE": "0"})
+        self.assertEqual(rc, 0)
+        self.assertEqual([x[0] for x in seen], ["intfloat/multilingual-e5-base", "BAAI/bge-m3", "BAAI/bge-m3"])
+        self.assertIn("model.safetensors", seen[0][2])
+        self.assertNotIn("*.onnx", seen[0][2])
+        self.assertIn("pytorch_model.bin", seen[-1][2])     # bge-m3 has no safetensors
+        self.assertFalse(seen[-1][1])                       # downloaded only the missing one
+
+    def test_one_failing_model_does_not_stop_the_rest(self):
+        seen = []
+
+        def fake(name, local_files_only=False, **kw):
+            seen.append(name)
+            if name == "bad/model":
+                raise RuntimeError("401 gated")
+            return "/hf/x"
+        self.assertEqual(self.run_with(fake, {"A2179_CI_MODELS": "bad/model,e5-small", "HF_HUB_OFFLINE": "0"}), 5)
+        self.assertIn("intfloat/multilingual-e5-small", seen)
 
     def test_default_model_from_config(self):
         import cache_model
@@ -601,7 +628,7 @@ class TestOwnVenvWithTorch(unittest.TestCase):
             # a huggingface_hub that has nothing cached and fails every download, no network touched
             (site / "huggingface_hub").mkdir()
             (site / "huggingface_hub" / "__init__.py").write_text(
-                "def snapshot_download(name, local_files_only=False):\n"
+                "def snapshot_download(name, local_files_only=False, **kw):\n"
                 "    raise OSError('offline test: ' + name)\n")
             (venv / "bin" / "python").write_text(f'#!/bin/sh\nexec "{sys.executable}" "$@"\n')
             (venv / "bin" / "python").chmod(0o755)

@@ -132,7 +132,10 @@ def main(argv=None):
 
     sw = [py, "eval/sweep.py", "--out", str(out / "sweep" / "sweep.json"),
           "--dense-scores", str(out / "sweep" / "dense_scores.jsonl")]
-    rec = run("sweep", sw + ["--compute-dense"] if dense else sw, T)
+    # extra embedders for the side by side table (EXP-003): by default every model of
+    # eval/embedders.json that is already in the HF cache, nothing is downloaded here
+    emb = ["--embedders", os.environ.get("A2179_CI_EMBEDDERS", "cached")]
+    rec = run("sweep", sw + ["--compute-dense"] + emb if dense else sw, T)
     steps.append(rec)
     if dense and not rec["ok"]:
         (out / "sweep" / "dense_scores.jsonl").unlink(missing_ok=True)

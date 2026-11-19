@@ -41,6 +41,7 @@ Without matplotlib the ranking metrics and plots.md are still written, charts ar
 import argparse
 import json
 import math
+import os
 import sys
 from collections import Counter
 from pathlib import Path
@@ -52,7 +53,7 @@ sys.path.insert(0, str(ROOT / "eval"))
 import sweep as S  # noqa: E402
 
 POS_C, NEG_C = "#1b7837", "#b2182b"   # positives green, negatives red, everywhere
-CH_ORDER = ("tfidf", "bm25", "dense", "feat", "rrf(tfidf,bm25)", "rrf(dense,bm25)")
+CH_ORDER = ("tfidf", "bm25", "dense", "feat", "rrf(tfidf,bm25)", "rrf(dense,bm25)")   # then dense:<short>, +feat
 
 
 def load_rows(path):
@@ -68,7 +69,9 @@ def channels(sw_res, rows):
         raise SystemExit(f"sweep.json has no scores for {len(missing)} rows of the data (e.g. {missing[:5]}), "
                          "run the sweep on the same file")
     get = lambda i: sc.get(i, sc.get(int(i)) if i.isdigit() else None)  # noqa: E731
-    raw = {k: [get(i)[k] for i in ids] for k in ("tfidf", "bm25", "dense") if k in get(ids[0])}
+    first = get(ids[0])
+    raw = {k: [get(i)[k] for i in ids] for k in ["tfidf", "bm25", "dense"] + sorted(x for x in first if x.startswith("dense:"))
+           if k in first}
     D = {k: S.minmax([p - n for p, n in v]) for k, v in raw.items()}
     D["feat"] = [(get(i)["feat"] + 1) / 2 for i in ids]
     for a, b in (("tfidf", "bm25"), ("dense", "bm25")):
@@ -78,10 +81,12 @@ def channels(sw_res, rows):
     # the sweep's best feature fusion per base (hybrid), the strongest transparent variants so far
     for v in sw_res.get("variants", []):
         name = v.get("variant", "")
-        if v.get("hybrid") and "+feat lam=" in name and name.split("+")[0] in D:
-            base, lam = name.split("+")[0], float(name.rsplit("=", 1)[1])
+        if v.get("hybrid") and "+feat lam=" in name and name.split("+feat")[0] in D:
+            base, lam = name.split("+feat")[0], float(name.rsplit("=", 1)[1])
             D[f"{base}+feat lam={lam}"] = [(1 - lam) * x + lam * f for x, f in zip(D[base], D["feat"])]
-    return raw, {k: D[k] for k in list(CH_ORDER) + sorted(D) if k in D and (k in CH_ORDER or "+feat" in k)}
+    keep = list(CH_ORDER) + sorted(k for k in D if k.startswith("dense:") and "+feat" not in k) + sorted(
+        k for k in D if "+feat" in k)
+    return raw, {k: D[k] for k in dict.fromkeys(keep) if k in D}
 
 
 # ------------------------------------------------------------------ curves and ranking metrics
@@ -126,6 +131,32 @@ def ranking_metrics(y, ordr):
             "P@R95": round(math.ceil(0.95 * npos - 1e-9) / depth[0.95], 3),
             "P@R1": round(npos / depth[1.0], 3), "depth@R1": depth[1.0],
             "AP": round(ap / npos, 3), "nDCG@npos": round(dcg / idcg, 3), "MRR": round(1 / first, 3)}
+
+
+def bootstrap(y, s, sw, hybrid, B=1000, seed=0):
+    """95% percentile interval of P@R1 and P@R95 over B row resamples (seeded, reproducible).
+    Each resample keeps the scores and reorders, nothing is retuned."""
+    import random
+    rnd = random.Random(seed)
+    n = len(y)
+    out = {"P@R1": [], "P@R95": []}
+    for _ in range(B):
+        idx = [rnd.randrange(n) for _ in range(n)]
+        yy = [y[i] for i in idx]
+        if not any(yy):
+            continue
+        if hybrid:
+            key = lambda j: (-int(sw.regex[idx[j]]), -int(sw.gate[idx[j]]), -s[idx[j]], j)  # noqa: E731
+        else:
+            key = lambda j: (-s[idx[j]], j)  # noqa: E731
+        m = ranking_metrics(yy, sorted(range(n), key=key))
+        out["P@R1"].append(m["P@R1"])
+        out["P@R95"].append(m["P@R95"])
+    ci = {}
+    for k, v in out.items():
+        v.sort()
+        ci[k] = [round(v[int(0.025 * (len(v) - 1))], 3), round(v[int(0.975 * (len(v) - 1))], 3)] if v else None
+    return ci
 
 
 def recall_at(y, ordr, ks):
@@ -405,6 +436,15 @@ def build(sweep_path, data_path, out, label=None):
     for k, s in D.items():
         for hybrid in (False, True):
             rk[f"{k} {'hybrid' if hybrid else 'pure'}"] = ranking_metrics(sw.y, order(sw, s, hybrid))
+    # dense models side by side with bootstrap intervals (EXP-003, H-30)
+    dense_keys = [k for k in D if k == "dense" or k.startswith("dense:")]
+    cmp_ = {}
+    if len(dense_keys) > 1 or os.environ.get("A2179_PLOTS_CI_ALWAYS"):
+        for k in dense_keys:
+            for hybrid in (False, True):
+                name = f"{k} {'hybrid' if hybrid else 'pure'}"
+                cmp_[name] = {**{x: rk[name][x] for x in ("P@R1", "P@R95", "depth@R1", "nDCG@npos")},
+                              "ci95": bootstrap(sw.y, D[k], sw, hybrid)}
     pngs, note = [], ""
     try:
         plt = _plt()
@@ -420,7 +460,8 @@ def build(sweep_path, data_path, out, label=None):
             if p:
                 pngs.append(p)
     meta = {"label": label, "n": len(rows), "positives": sum(sw.y), "channels": list(D),
-            "dense": "dense" in D, "ranking": rk, "charts": pngs, "note": note}
+            "dense": "dense" in D, "ranking": rk, "dense_compare": cmp_, "embedders": res.get("embedders", {}),
+            "dense_model": res.get("dense_model"), "charts": pngs, "note": note}
     (out / "plots.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
     (out / "plots.md").write_text(markdown(meta), encoding="utf-8")
     return meta
@@ -459,6 +500,17 @@ def markdown(meta, prefix=""):
             L.append(f"| {ch} | {mode} | {m['R@npos']:.3f} | {m['R@2npos']:.3f} | {m['P@R95']:.3f} | {m['P@R1']:.3f} | "
                      f"{m['depth@R1']} | {m['AP']:.3f} | {m['nDCG@npos']:.3f} |")
     L.append("")
+    if meta.get("dense_compare"):
+        L += ["### Dense models side by side (EXP-003, H-30)", "",
+              f"dense = {meta.get('dense_model')}, dense:<short> = eval/embedders.json. "
+              "95% bootstrap interval over 1000 row resamples (seed 0, scores fixed, nothing retuned).", "",
+              "| model | order | P@R1 | 95% CI | P@R95 | 95% CI | depth@R1 | nDCG@npos |", "|---|---|---|---|---|---|---|---|"]
+        for k, m in sorted(meta["dense_compare"].items(), key=lambda kv: (kv[0].endswith("pure"), -kv[1]["P@R1"])):
+            ch, mode = k.rsplit(" ", 1)
+            c1, c2 = m["ci95"]["P@R1"], m["ci95"]["P@R95"]
+            L.append(f"| {ch} | {mode} | {m['P@R1']:.3f} | {c1[0]:.3f}…{c1[1]:.3f} | {m['P@R95']:.3f} | "
+                     f"{c2[0]:.3f}…{c2[1]:.3f} | {m['depth@R1']} | {m['nDCG@npos']:.3f} |")
+        L.append("")
     for p in meta["charts"]:
         stem = Path(p).stem
         L += [f"### {stem}", "", CAPTIONS.get(stem, ""), "", f"![{stem}]({prefix}{p})", ""]

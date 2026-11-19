@@ -75,7 +75,7 @@ flowchart LR
 |---|---|---|---|---|---|
 | 1 | лексика | TF-IDF char 3..5, BM25 word (k1, b), BM25F по полям | TF-IDF в мониторе, BM25 k1 1.5 b 0.75 в `eval/sweep.py` | 430 строк, прогон Лёни ca9820f: hybrid tfidf P 0.667, bm25 P 0.558 при R 1.0 | H-06, H-10, H-16, H-19 |
 | 2 | learned sparse | SPLADE, SPLADE v2 | нет | нет | H-19 |
-| 3 | dense модель | MiniLM (paraphrase-multilingual), multilingual E5, BGE-M3, Contriever | MiniLM, выключен по умолчанию (ADR-0007) | ca9820f: MiniLM pure P 0.239 при R 1.0, 153 FP, depth@R1 310 из 430 | H-01, H-17, H-23, H-28 |
+| 3 | dense модель | MiniLM (paraphrase-multilingual), multilingual E5, BGE-M3, Contriever | MiniLM, выключен по умолчанию (ADR-0007) | ca9820f: MiniLM pure P 0.239 при R 1.0, 153 FP, depth@R1 310 из 430 | H-01, H-17, H-23, H-28, H-30, H-31. Реестр моделей с префиксами и размерами: `eval/embedders.json`, сравнение в один прогон: EXP-003 |
 | 4 | префиксы и инструкции | `query:` / `passage:` у E5, инструкции у INSTRUCTOR | нет (MiniLM без префиксов) | нет | H-17 |
 | 5 | нормализация текста | транслит lat / cyr / ru в одно | `a2179/normalize.py` везде | нет ablation | H-10 |
 | 6 | слияние | convex combination с весом w, RRF (k 60), нормализация min-max | sweep: lin w 0..1 шаг 0.1, RRF как контроль | ca9820f hybrid: lin(dense,bm25) w 0.8 P 0.667 против rrf(dense,bm25) P 0.600 | H-14, H-26 |

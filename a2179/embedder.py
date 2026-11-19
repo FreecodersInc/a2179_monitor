@@ -190,7 +190,10 @@ class EmbedSim:
     name = "embed"
 
     def __init__(self, model_name: str = DEFAULT_MODEL, local_only: bool = False, pos=None, neg=None,
-                 device: str = "auto", backend: str = "torch"):
+                 device: str = "auto", backend: str = "torch", proto_prefix: str = "", text_prefix: str = ""):
+        # prefixes some models need (E5: "query: " / "passage: ", instruct models: an instruction),
+        # proto_prefix goes before every prototype phrase, text_prefix before every listing
+        self.proto_prefix, self.text_prefix = proto_prefix or "", text_prefix or ""
         self.cpu_guard = cpu_guard(device)  # before torch is imported
         try:
             import_torch_first()
@@ -231,8 +234,8 @@ class EmbedSim:
                     "batch_size": 32}
         self.pos = list(pos or prototypes.POSITIVE)
         self.neg = list(neg or prototypes.NEGATIVE)
-        self.P = self._enc(self.pos)
-        self.N = self._enc(self.neg)
+        self.P = self._enc([self.proto_prefix + t for t in self.pos])
+        self.N = self._enc([self.proto_prefix + t for t in self.neg])
         if self.P.shape[1] != self.N.shape[1]:
             raise EmbedderUnavailable("encode_failed", "prototype dims differ", "переустанови модель")
 
@@ -259,11 +262,11 @@ class EmbedSim:
             raise classify_encode_error(e) from e
 
     def score(self, text: str):
-        v = self._enc([text])[0]
+        v = self._enc([self.text_prefix + text])[0]
         return float(np.max(self.P @ v)), float(np.max(self.N @ v))
 
     def score_many(self, texts):
-        V = self._enc(texts)
+        V = self._enc([self.text_prefix + t for t in texts])
         return list(zip((V @ self.P.T).max(axis=1).tolist(), (V @ self.N.T).max(axis=1).tolist()))
 
 
@@ -461,7 +464,8 @@ def load_similarity(cfg: dict, log=None, require: bool = False, console=sys.stde
                 raise _probe_error(r)
             device = r.get("device") or device  # load in-process on exactly the device that passed
         sim = EmbedSim(e["model"], bool(e.get("local_only", False)), tg.positive, tg.negative,
-                       device=device, backend=e.get("backend"))
+                       device=device, backend=e.get("backend"), proto_prefix=e.get("proto_prefix", ""),
+                       text_prefix=e.get("text_prefix", ""))
         if log:
             ev(log, "embedder_ready", model=sim.model_name, load_s=round(sim.load_s, 2), device=sim.device,
                backend=sim.backend)

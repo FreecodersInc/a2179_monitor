@@ -21,7 +21,8 @@ def probe(cfg: dict) -> dict:
     try:
         t0 = time.monotonic()
         sim = EmbedSim(e.get("model") or DEFAULT_MODEL, bool(e.get("local_only", False)),
-                       device=e.get("device"), backend=e.get("backend"))
+                       device=e.get("device"), backend=e.get("backend"),
+                       proto_prefix=e.get("proto_prefix", ""), text_prefix=e.get("text_prefix", ""))
         a = sim.score("LCD ekran za MacBook Air A2179 2020")
         sim.score("Futrola za MacBook Air A2179")
         return {"ok": True, "device": sim.device, "dim": int(sim.P.shape[1]), "load_s": round(sim.load_s, 2),

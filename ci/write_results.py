@@ -141,6 +141,7 @@ def attach_reports(ci_out: Path, result: Path) -> Path | None:
     Charts from eval/plots.py land in the same folder and are embedded at the end of
     sweep.tables.md, so the tables and their charts read as one report."""
     files = [ci_out / r for r in REPORTS if (ci_out / r).is_file()]
+    files += sorted((ci_out / "sweep").glob("dense_scores_*.jsonl")) if (ci_out / "sweep").is_dir() else []
     pdir = ci_out / PLOTS
     pngs = sorted(pdir.glob("*.png")) if pdir.is_dir() else []
     pmd = pdir / "plots.md"

@@ -6,3 +6,6 @@ __pycache__/
 .venv/
 ci_out/
 /actions-runner
+# personal data (CVs, private profiles): never committed, the repo is public
+private/
+targets/*.local.json
