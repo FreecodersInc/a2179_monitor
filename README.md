@@ -110,6 +110,19 @@ schtasks /Create /SC HOURLY /TN a2179_monitor /TR "C:\путь\a2179_monitor\.ve
 - `data/tracked.shelve`: отслеживаемые карточки (см. выше).
 - `data/metrics.json` и `data/metrics_history.jsonl`: число запросов, ошибки по сайтам и HTTP статусам, задержки (avg/p95/max), сколько объявлений, совпадений, событий и отправок. При `--dry-run` пишется `data/metrics_dryrun.json`.
 
+## Эксперименты, решения, планы
+- эксперименты: [`experiments/`](experiments/README.md)
+- архитектурные решения (ADR, MADR): [`docs/adr/`](docs/adr/README.md)
+- майлстоуны и задачи: [`work/`](work/README.md)
+
+Проект шире одного экрана: это площадка для исследований сопоставления и поиска (что объявление или документ это *то самое*, а не «про то же»). Каждый эксперимент записан по научному методу (вопрос и гипотеза, условия, процедура, числа, выводы, угрозы валидности) с commit, версией данных, параметрами и командой: [`experiments/README.md`](experiments/README.md), шаблон [`experiments/TEMPLATE.md`](experiments/TEMPLATE.md).
+
+| id | вопрос | статус | главный результат |
+|---|---|---|---|
+| [EXP-000](experiments/EXP-000_embedder-native-crash.md) | почему эмбеддер роняет процесс на WSL2 + CUDA | fix shipped, ждём подтверждения | изоляция в дочернем процессе, cpu guard |
+| [EXP-001](experiments/EXP-001_matcher-sweep.md) | тема против товара: regex, TF-IDF, BM25, MiniLM, смеси, признаки | done | hybrid P 0.977 R 1.000, MiniLM pure P 0.600 |
+| [EXP-002](experiments/EXP-002_dataset-enrichment.md) | держатся ли выводы на большом реальном наборе | awaiting data | ещё нет чисел |
+
 ## Оценка качества
 ```bash
 python eval/run_eval.py              # regex, tfidf, hybrid_tfidf, и embed/hybrid_embed если эмбеддер установлен
