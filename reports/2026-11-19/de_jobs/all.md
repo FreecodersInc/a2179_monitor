@@ -10,7 +10,7 @@
 | Senior Data Engineer | Lemon.io | LATAM, Europe, USA, Canada, APAC | 0.142 | match | [link](https://remotive.com/remote-jobs/data/senior-data-engineer-2091137) | 2026-11-19T21:31:05Z |
 | Data Engineer | Addepto |  | 0.105 | match | [link](https://remoteOK.com/remote-jobs/remote-data-engineer-addepto-1137714) | 2026-11-19T21:31:05Z |
 | Software Engineer | Mirantis |  | 0.105 | match | [link](https://remoteOK.com/remote-jobs/remote-software-engineer-mirantis-1137387) | 2026-11-19T21:31:05Z |
-| Senior Software Engineer â Kubernetes Control Plane | Buoyant |  | 0.205 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-software-engineer-kubernetes-control-plane-buoyant-1137713) | 2026-11-19T21:31:05Z |
+| Senior Software Engineer — Kubernetes Control Plane | Buoyant |  | 0.207 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-software-engineer-kubernetes-control-plane-buoyant-1137713) | 2026-11-19T21:31:05Z |
 | Senior DevOps Engineer | Lemon.io |  | 0.138 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-devops-engineer-lemon-io-1137557) | 2026-11-19T21:31:05Z |
 | AWS Cloud Solutions Architect | Cloudary SAS |  | 0.133 | no | [link](https://remoteOK.com/remote-jobs/remote-aws-cloud-solutions-architect-cloudary-sas-1137606) | 2026-11-19T21:31:05Z |
 | Senior Software Engineer LATAM | Wagmo |  | 0.133 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-software-engineer-latam-wagmo-1137572) | 2026-11-19T21:31:05Z |
@@ -24,7 +24,7 @@
 | Senior React Full-stack Developer | Lemon.io | LATAM, Europe, USA, Canada, APAC | 0.119 | no | [link](https://remotive.com/remote-jobs/software-development/senior-react-full-stack-developer-2091136) | 2026-11-19T21:31:05Z |
 | Principal Software Engineer | Vytalize Health | Kansas | 0.112 | no | [link](https://remoteOK.com/remote-jobs/remote-principal-software-engineer-vytalize-health-1137508) | 2026-11-19T21:31:05Z |
 | Software Engineer AI Tooling | Supabase |  | 0.107 | no | [link](https://remoteOK.com/remote-jobs/remote-software-engineer-ai-tooling-supabase-1137793) | 2026-11-19T21:31:05Z |
-| Senior Software Engineer | Sothebyâs |  | 0.106 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-software-engineer-sothebys-1137545) | 2026-11-19T21:31:05Z |
+| Senior Software Engineer | Sotheby’s |  | 0.106 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-software-engineer-sothebys-1137545) | 2026-11-19T21:31:05Z |
 | Cloud Engineer Automation | Smile Digital Health | Toronto, Ontario | 0.103 | no | [link](https://remoteOK.com/remote-jobs/remote-cloud-engineer-automation-smile-digital-health-1137600) | 2026-11-19T21:31:05Z |
 | Senior Software Engineer II Applied AI | Wrapbook |  | 0.103 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-software-engineer-ii-applied-ai-wrapbook-1137527) | 2026-11-19T21:31:05Z |
 | Senior Staff Infrastructure & Security Engineer | CivilGrid | Boston | 0.099 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-staff-infrastructure-security-engineer-civilgrid-1137687) | 2026-11-19T21:31:05Z |
@@ -36,14 +36,14 @@
 | Accountant | Serve Robotics | los angeles | 0.090 | no | [link](https://remoteOK.com/remote-jobs/remote-accountant-serve-robotics-1137694) | 2026-11-19T21:31:05Z |
 | Senior Backend Engineer | Rain |  | 0.089 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-backend-engineer-rain-1137544) | 2026-11-19T21:31:05Z |
 | Senior Agentic AI Engineer NDA | GT | Warsaw | 0.088 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-agentic-ai-engineer-nda-gt-1137710) | 2026-11-19T21:31:05Z |
-| ML Inference Engineer â Terminal-Bench Task Designer (vLLM / SGLang / TensorRT-LLM) | Toptal | Anywhere in the World | 0.087 | no | [link](https://remoteOK.com/remote-jobs/remote-ml-inference-engineer-terminal-bench-task-designer-vllm-sglang-tensorrt-llm-toptal-1137689) | 2026-11-19T21:31:05Z |
+| ML Inference Engineer – Terminal-Bench Task Designer (vLLM / SGLang / TensorRT-LLM) | Toptal | Anywhere in the World | 0.088 | no | [link](https://remoteOK.com/remote-jobs/remote-ml-inference-engineer-terminal-bench-task-designer-vllm-sglang-tensorrt-llm-toptal-1137689) | 2026-11-19T21:31:05Z |
 | Tier III Service Desk Engineer | Unio Digital | Worldwide | 0.087 | no | [link](https://remotive.com/remote-jobs/information-technology/tier-iii-service-desk-engineer-2091045) | 2026-11-19T21:31:05Z |
 | Senior Back-end Developer | Lemon.io | Europe, USA, Canada, Australia, Singapore, Mexico, Saudi Arabia | 0.085 | no | [link](https://remotive.com/remote-jobs/software-development/senior-back-end-developer-2091135) | 2026-11-19T21:31:05Z |
 | Platform and Integration Engineer Security Telemetry | RedMimicry |  | 0.085 | no | [link](https://remoteOK.com/remote-jobs/remote-platform-and-integration-engineer-security-telemetry-redmimicry-1137465) | 2026-11-19T21:31:05Z |
 | APAC Python | Kodland |  | 0.084 | no | [link](https://remoteOK.com/remote-jobs/remote-apac-python-kodland-1137534) | 2026-11-19T21:31:05Z |
-| Oracle Fusion Cloud Lead â Logistics & Supply Chain Management | Tessera Labs |  | 0.082 | no | [link](https://remoteOK.com/remote-jobs/remote-oracle-fusion-cloud-lead-logistics-supply-chain-management-tessera-labs-1137155) | 2026-11-19T21:31:05Z |
+| Oracle Fusion Cloud Lead — Logistics & Supply Chain Management | Tessera Labs |  | 0.082 | no | [link](https://remoteOK.com/remote-jobs/remote-oracle-fusion-cloud-lead-logistics-supply-chain-management-tessera-labs-1137155) | 2026-11-19T21:31:05Z |
 | Patient Care Specialist I | Boston Scientific |  | 0.082 | no | [link](https://remoteOK.com/remote-jobs/remote-patient-care-specialist-i-boston-scientific-1137719) | 2026-11-19T21:31:05Z |
-| Technical Account Manager | DEUNA | Ciudad de MÃ©xico, Mexico | 0.081 | no | [link](https://remoteOK.com/remote-jobs/remote-technical-account-manager-deuna-1137482) | 2026-11-19T21:31:05Z |
+| Technical Account Manager | DEUNA | Ciudad de México, Mexico | 0.081 | no | [link](https://remoteOK.com/remote-jobs/remote-technical-account-manager-deuna-1137482) | 2026-11-19T21:31:05Z |
 | Principal Engineer | The AI Whistleblower Initiative |  | 0.081 | no | [link](https://remoteOK.com/remote-jobs/remote-principal-engineer-the-ai-whistleblower-initiative-1137162) | 2026-11-19T21:31:05Z |
 | Freelance Question Reviewers | AMBOSS | New York | 0.079 | no | [link](https://remoteOK.com/remote-jobs/remote-freelance-question-reviewers-amboss-1137791) | 2026-11-19T21:31:05Z |
 | Global Partnerships BD Lead | Fuku | Paris | 0.079 | no | [link](https://remoteOK.com/remote-jobs/remote-global-partnerships-bd-lead-fuku-1137796) | 2026-11-19T21:31:05Z |
@@ -113,11 +113,11 @@
 | Technical Account Manager | Yuno | Brazil | 0.040 | no | [link](https://remoteOK.com/remote-jobs/remote-technical-account-manager-yuno-1137540) | 2026-11-19T21:31:05Z |
 | Accounting Operations | Plaid |  | 0.037 | no | [link](https://remoteOK.com/remote-jobs/remote-accounting-operations-plaid-1137554) | 2026-11-19T21:31:05Z |
 | Customer Success Associate | Voltus | Remote | 0.036 | no | [link](https://remoteOK.com/remote-jobs/remote-customer-success-associate-voltus-1137529) | 2026-11-19T21:31:05Z |
-| Business Development Manager | Libertex Group | ÙØ³ÙØ·, ÙØ³ÙØ· ÙØ³ÙØ· Ø¹ÙØ§Ù | 0.036 | no | [link](https://remoteOK.com/remote-jobs/remote-business-development-manager-libertex-group-1137373) | 2026-11-19T21:31:05Z |
+| Business Development Manager | Libertex Group | مسقط, مسقط مسقط عمان | 0.036 | no | [link](https://remoteOK.com/remote-jobs/remote-business-development-manager-libertex-group-1137373) | 2026-11-19T21:31:05Z |
 | UI Developer | RainFocus | Any State | 0.035 | no | [link](https://remoteOK.com/remote-jobs/remote-ui-developer-rainfocus-1137704) | 2026-11-19T21:31:05Z |
 | Telehealth Endocrinologist Evenings Fridays and or Weekends | Allara |  | 0.034 | no | [link](https://remoteOK.com/remote-jobs/remote-telehealth-endocrinologist-evenings-fridays-and-or-weekends-allara-1137709) | 2026-11-19T21:31:05Z |
 | Principal Product Manager Strategic Initiatives | Thyme Care | Remote | 0.033 | no | [link](https://remoteOK.com/remote-jobs/remote-principal-product-manager-strategic-initiatives-thyme-care-1137510) | 2026-11-19T21:31:05Z |
 | Director Payment Integrity | SIHO Insurance Services | SIHO - Columbus, IN | 0.023 | no | [link](https://remoteOK.com/remote-jobs/remote-director-payment-integrity-siho-insurance-services-1137434) | 2026-11-19T21:31:05Z |
-| M&A Praktikum Intern | Vogel | MÃ¼nchen | 0.017 | no | [link](https://remoteOK.com/remote-jobs/remote-ma-praktikum-intern-vogel-1137677) | 2026-11-19T21:31:05Z |
+| M&A Praktikum Intern | Vogel | München | 0.017 | no | [link](https://remoteOK.com/remote-jobs/remote-ma-praktikum-intern-vogel-1137677) | 2026-11-19T21:31:05Z |
 
 Sources: [Remotive](https://remotive.com) and [Remote OK](https://remoteok.com). Title, company, location and a link only, not a republication of the full posting.

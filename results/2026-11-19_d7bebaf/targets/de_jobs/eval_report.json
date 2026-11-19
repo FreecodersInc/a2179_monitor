@@ -1,0 +1,98 @@
+{
+  "target": "de_jobs",
+  "dataset": {
+    "n": 112,
+    "positives": 10,
+    "negatives": 102,
+    "by_source": {
+      "real:remotive": 15,
+      "real:remoteok": 97
+    },
+    "by_lang": {
+      "en": 112
+    },
+    "by_kind": {
+      "esci_E": 2,
+      "esci_I": 95,
+      "esci_S": 8,
+      "esci_C": 7
+    }
+  },
+  "modes": {
+    "regex": {
+      "precision": 1.0,
+      "recall": 0.2,
+      "f1": 0.3333,
+      "tp": 2,
+      "fp": 0,
+      "fn": 8,
+      "tn": 102
+    },
+    "tfidf": {
+      "note": "no threshold reaches recall 1.0"
+    },
+    "hybrid_tfidf": {
+      "note": "no threshold reaches recall 1.0"
+    },
+    "embed": {
+      "note": "no threshold reaches recall 1.0"
+    },
+    "hybrid_embed": {
+      "note": "no threshold reaches recall 1.0"
+    }
+  },
+  "generated": "2026-11-20 00:11 CET",
+  "embedder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "errors": {
+    "regex": [
+      [
+        4,
+        1,
+        "Senior DevOps Engineer",
+        "model=devops; no part term"
+      ],
+      [
+        5,
+        1,
+        "AWS Cloud Solutions Architect",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        19,
+        1,
+        "Cloud Engineer Automation",
+        "model=devops; no part term"
+      ],
+      [
+        22,
+        1,
+        "AI ML Engineer",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        29,
+        1,
+        "Senior Agentic AI Engineer NDA",
+        "model=ai_platform; no part term"
+      ],
+      [
+        33,
+        1,
+        "Platform and Integration Engineer Security Telemetry",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        42,
+        1,
+        "AI Engineer Data APIs",
+        "model=ai_platform; no part term"
+      ],
+      [
+        92,
+        1,
+        "Feltsense AI Engineer",
+        "model=ai_platform; no part term"
+      ]
+    ]
+  }
+}
