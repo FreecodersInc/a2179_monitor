@@ -9,8 +9,12 @@
   "feat",
   "rrf(tfidf,bm25)",
   "rrf(dense,bm25)",
+  "dense:e5-small",
+  "dense:mpnet",
   "bm25+feat lam=0.3",
   "dense+feat lam=0.4",
+  "dense:e5-small+feat lam=0.4",
+  "dense:mpnet+feat lam=0.4",
   "tfidf+feat lam=0.4"
  ],
  "dense": true,
@@ -147,6 +151,50 @@
    "nDCG@npos": 0.97,
    "MRR": 1.0
   },
+  "dense:e5-small pure": {
+   "npos": 48,
+   "R@npos": 0.646,
+   "R@2npos": 0.833,
+   "P@R95": 0.232,
+   "P@R1": 0.22,
+   "depth@R1": 218,
+   "AP": 0.692,
+   "nDCG@npos": 0.721,
+   "MRR": 1.0
+  },
+  "dense:e5-small hybrid": {
+   "npos": 48,
+   "R@npos": 0.938,
+   "R@2npos": 0.958,
+   "P@R95": 0.939,
+   "P@R1": 0.302,
+   "depth@R1": 159,
+   "AP": 0.959,
+   "nDCG@npos": 0.955,
+   "MRR": 1.0
+  },
+  "dense:mpnet pure": {
+   "npos": 48,
+   "R@npos": 0.479,
+   "R@2npos": 0.75,
+   "P@R95": 0.232,
+   "P@R1": 0.202,
+   "depth@R1": 238,
+   "AP": 0.41,
+   "nDCG@npos": 0.474,
+   "MRR": 1.0
+  },
+  "dense:mpnet hybrid": {
+   "npos": 48,
+   "R@npos": 0.938,
+   "R@2npos": 1.0,
+   "P@R95": 0.939,
+   "P@R1": 0.716,
+   "depth@R1": 67,
+   "AP": 0.985,
+   "nDCG@npos": 0.957,
+   "MRR": 1.0
+  },
   "bm25+feat lam=0.3 pure": {
    "npos": 48,
    "R@npos": 0.688,
@@ -191,6 +239,50 @@
    "nDCG@npos": 0.953,
    "MRR": 1.0
   },
+  "dense:e5-small+feat lam=0.4 pure": {
+   "npos": 48,
+   "R@npos": 0.708,
+   "R@2npos": 0.875,
+   "P@R95": 0.333,
+   "P@R1": 0.214,
+   "depth@R1": 224,
+   "AP": 0.796,
+   "nDCG@npos": 0.783,
+   "MRR": 1.0
+  },
+  "dense:e5-small+feat lam=0.4 hybrid": {
+   "npos": 48,
+   "R@npos": 0.938,
+   "R@2npos": 1.0,
+   "P@R95": 0.939,
+   "P@R1": 0.64,
+   "depth@R1": 75,
+   "AP": 0.973,
+   "nDCG@npos": 0.955,
+   "MRR": 1.0
+  },
+  "dense:mpnet+feat lam=0.4 pure": {
+   "npos": 48,
+   "R@npos": 0.625,
+   "R@2npos": 0.833,
+   "P@R95": 0.289,
+   "P@R1": 0.211,
+   "depth@R1": 227,
+   "AP": 0.625,
+   "nDCG@npos": 0.667,
+   "MRR": 1.0
+  },
+  "dense:mpnet+feat lam=0.4 hybrid": {
+   "npos": 48,
+   "R@npos": 0.938,
+   "R@2npos": 1.0,
+   "P@R95": 0.939,
+   "P@R1": 0.842,
+   "depth@R1": 57,
+   "AP": 0.988,
+   "nDCG@npos": 0.956,
+   "MRR": 1.0
+  },
   "tfidf+feat lam=0.4 pure": {
    "npos": 48,
    "R@npos": 0.688,
@@ -214,8 +306,184 @@
    "MRR": 1.0
   }
  },
- "dense_compare": {},
- "embedders": {},
+ "dense_compare": {
+  "dense pure": {
+   "P@R1": 0.155,
+   "P@R95": 0.172,
+   "depth@R1": 310,
+   "nDCG@npos": 0.403,
+   "ci95": {
+    "P@R1": [
+     0.118,
+     0.242
+    ],
+    "P@R95": [
+     0.121,
+     0.338
+    ]
+   }
+  },
+  "dense hybrid": {
+   "P@R1": 0.64,
+   "P@R95": 0.958,
+   "depth@R1": 75,
+   "nDCG@npos": 0.967,
+   "ci95": {
+    "P@R1": [
+     0.543,
+     0.979
+    ],
+    "P@R95": [
+     0.586,
+     1.0
+    ]
+   }
+  },
+  "dense:e5-small pure": {
+   "P@R1": 0.22,
+   "P@R95": 0.232,
+   "depth@R1": 218,
+   "nDCG@npos": 0.721,
+   "ci95": {
+    "P@R1": [
+     0.175,
+     0.287
+    ],
+    "P@R95": [
+     0.177,
+     0.341
+    ]
+   }
+  },
+  "dense:e5-small hybrid": {
+   "P@R1": 0.302,
+   "P@R95": 0.939,
+   "depth@R1": 159,
+   "nDCG@npos": 0.955,
+   "ci95": {
+    "P@R1": [
+     0.245,
+     0.962
+    ],
+    "P@R95": [
+     0.26,
+     1.0
+    ]
+   }
+  },
+  "dense:mpnet pure": {
+   "P@R1": 0.202,
+   "P@R95": 0.232,
+   "depth@R1": 238,
+   "nDCG@npos": 0.474,
+   "ci95": {
+    "P@R1": [
+     0.158,
+     0.299
+    ],
+    "P@R95": [
+     0.16,
+     0.359
+    ]
+   }
+  },
+  "dense:mpnet hybrid": {
+   "P@R1": 0.716,
+   "P@R95": 0.939,
+   "depth@R1": 67,
+   "nDCG@npos": 0.957,
+   "ci95": {
+    "P@R1": [
+     0.615,
+     0.964
+    ],
+    "P@R95": [
+     0.655,
+     1.0
+    ]
+   }
+  },
+  "dense:e5-small+feat lam=0.4 pure": {
+   "P@R1": 0.214,
+   "P@R95": 0.333,
+   "depth@R1": 224,
+   "nDCG@npos": 0.783,
+   "ci95": {
+    "P@R1": [
+     0.172,
+     0.393
+    ],
+    "P@R95": [
+     0.198,
+     0.5
+    ]
+   }
+  },
+  "dense:e5-small+feat lam=0.4 hybrid": {
+   "P@R1": 0.64,
+   "P@R95": 0.939,
+   "depth@R1": 75,
+   "nDCG@npos": 0.955,
+   "ci95": {
+    "P@R1": [
+     0.55,
+     0.964
+    ],
+    "P@R95": [
+     0.582,
+     1.0
+    ]
+   }
+  },
+  "dense:mpnet+feat lam=0.4 pure": {
+   "P@R1": 0.211,
+   "P@R95": 0.289,
+   "depth@R1": 227,
+   "nDCG@npos": 0.667,
+   "ci95": {
+    "P@R1": [
+     0.169,
+     0.342
+    ],
+    "P@R95": [
+     0.179,
+     0.409
+    ]
+   }
+  },
+  "dense:mpnet+feat lam=0.4 hybrid": {
+   "P@R1": 0.842,
+   "P@R95": 0.939,
+   "depth@R1": 57,
+   "nDCG@npos": 0.956,
+   "ci95": {
+    "P@R1": [
+     0.75,
+     0.981
+    ],
+    "P@R95": [
+     0.8,
+     1.0
+    ]
+   }
+  }
+ },
+ "embedders": {
+  "mpnet": {
+   "id": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+   "proto_prefix": "",
+   "text_prefix": "",
+   "params_m": 278,
+   "weights_mb": 1112
+  },
+  "e5-small": {
+   "id": "intfloat/multilingual-e5-small",
+   "proto_prefix": "query: ",
+   "text_prefix": "query: ",
+   "params_m": 118,
+   "weights_mb": 471
+  }
+ },
  "dense_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
  "charts": [
   "01_dataset.png",

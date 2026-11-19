@@ -20,12 +20,37 @@
 | rrf(tfidf,bm25) | hybrid | 0.958 | 1.000 | 0.979 | 0.632 | 76 | 0.985 | 0.971 |
 | rrf(dense,bm25) | pure | 0.521 | 0.833 | 0.357 | 0.314 | 153 | 0.612 | 0.609 |
 | rrf(dense,bm25) | hybrid | 0.958 | 1.000 | 0.979 | 0.600 | 80 | 0.979 | 0.970 |
+| dense:e5-small | pure | 0.646 | 0.833 | 0.232 | 0.220 | 218 | 0.692 | 0.721 |
+| dense:e5-small | hybrid | 0.938 | 0.958 | 0.939 | 0.302 | 159 | 0.959 | 0.955 |
+| dense:mpnet | pure | 0.479 | 0.750 | 0.232 | 0.202 | 238 | 0.410 | 0.474 |
+| dense:mpnet | hybrid | 0.938 | 1.000 | 0.939 | 0.716 | 67 | 0.985 | 0.957 |
 | bm25+feat lam=0.3 | pure | 0.688 | 0.875 | 0.397 | 0.220 | 218 | 0.686 | 0.683 |
 | bm25+feat lam=0.3 | hybrid | 0.938 | 1.000 | 0.939 | 0.738 | 65 | 0.987 | 0.956 |
 | dense+feat lam=0.4 | pure | 0.562 | 0.833 | 0.228 | 0.203 | 237 | 0.608 | 0.627 |
 | dense+feat lam=0.4 | hybrid | 0.938 | 1.000 | 0.939 | 0.787 | 61 | 0.972 | 0.953 |
+| dense:e5-small+feat lam=0.4 | pure | 0.708 | 0.875 | 0.333 | 0.214 | 224 | 0.796 | 0.783 |
+| dense:e5-small+feat lam=0.4 | hybrid | 0.938 | 1.000 | 0.939 | 0.640 | 75 | 0.973 | 0.955 |
+| dense:mpnet+feat lam=0.4 | pure | 0.625 | 0.833 | 0.289 | 0.211 | 227 | 0.625 | 0.667 |
+| dense:mpnet+feat lam=0.4 | hybrid | 0.938 | 1.000 | 0.939 | 0.842 | 57 | 0.988 | 0.956 |
 | tfidf+feat lam=0.4 | pure | 0.688 | 0.854 | 0.309 | 0.207 | 232 | 0.720 | 0.726 |
 | tfidf+feat lam=0.4 | hybrid | 0.938 | 1.000 | 0.939 | 0.857 | 56 | 0.988 | 0.956 |
+
+### Dense models side by side (EXP-003, H-30)
+
+dense = sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2, dense:<short> = eval/embedders.json. 95% bootstrap interval over 1000 row resamples (seed 0, scores fixed, nothing retuned).
+
+| model | order | P@R1 | 95% CI | P@R95 | 95% CI | depth@R1 | nDCG@npos |
+|---|---|---|---|---|---|---|---|
+| dense:mpnet+feat lam=0.4 | hybrid | 0.842 | 0.750…0.981 | 0.939 | 0.800…1.000 | 57 | 0.956 |
+| dense:mpnet | hybrid | 0.716 | 0.615…0.964 | 0.939 | 0.655…1.000 | 67 | 0.957 |
+| dense | hybrid | 0.640 | 0.543…0.979 | 0.958 | 0.586…1.000 | 75 | 0.967 |
+| dense:e5-small+feat lam=0.4 | hybrid | 0.640 | 0.550…0.964 | 0.939 | 0.582…1.000 | 75 | 0.955 |
+| dense:e5-small | hybrid | 0.302 | 0.245…0.962 | 0.939 | 0.260…1.000 | 159 | 0.955 |
+| dense:e5-small | pure | 0.220 | 0.175…0.287 | 0.232 | 0.177…0.341 | 218 | 0.721 |
+| dense:e5-small+feat lam=0.4 | pure | 0.214 | 0.172…0.393 | 0.333 | 0.198…0.500 | 224 | 0.783 |
+| dense:mpnet+feat lam=0.4 | pure | 0.211 | 0.169…0.342 | 0.289 | 0.179…0.409 | 227 | 0.667 |
+| dense:mpnet | pure | 0.202 | 0.158…0.299 | 0.232 | 0.160…0.359 | 238 | 0.474 |
+| dense | pure | 0.155 | 0.118…0.242 | 0.172 | 0.121…0.338 | 310 | 0.403 |
 
 ### 01_dataset
 
