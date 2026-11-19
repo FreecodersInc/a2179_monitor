@@ -5,3 +5,4 @@ __pycache__/
 *.pyc
 .venv/
 ci_out/
+/actions-runner
