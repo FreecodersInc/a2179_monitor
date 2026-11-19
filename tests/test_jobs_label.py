@@ -67,5 +67,18 @@ class TestJobsLabel(unittest.TestCase):
         self.assertEqual(len(J.sheet(self.tmp / "reports", out)), 1)   # labeled rows leave the sheet
 
 
+class TestText(unittest.TestCase):
+    def test_mojibake_repaired_and_lines_stay_whole(self):
+        import json
+        from a2179.jobs import fix_text
+        bad = "Senior Software Engineer \u00e2\u0080\u0094 Kubernetes"
+        self.assertEqual(fix_text(bad), "Senior Software Engineer \u2014 Kubernetes")
+        self.assertEqual(fix_text("M\u00fcnchen"), "M\u00fcnchen")   # real Latin-1 text stays
+        self.assertEqual(fix_text("M\u00c3\u00bcnchen"), "M\u00fcnchen")
+        line = J.jsonl_line({"title": "a\x85b\u2028c"})
+        self.assertEqual(len(line.splitlines()), 1)
+        self.assertEqual(json.loads(line)["title"], "a\x85b\u2028c")
+
+
 if __name__ == "__main__":
     unittest.main()

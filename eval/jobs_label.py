@@ -29,6 +29,7 @@ sys.path.insert(0, str(ROOT))
 
 from a2179.normalize import normalize  # noqa: E402
 from a2179.rules import classify  # noqa: E402
+from a2179.jobs import fix_text  # noqa: E402
 from a2179.target import eval_data_path, load_target  # noqa: E402
 
 CASE = "de_jobs"
@@ -96,6 +97,14 @@ def sheet(reports: Path, out: Path, target=CASE) -> list[dict]:
     return rows
 
 
+def jsonl_line(r: dict) -> str:
+    """One JSON line that every reader's splitlines() keeps whole: escape the separators it splits on."""
+    s = json.dumps(r, ensure_ascii=False)
+    for c in ("\x0b", "\x0c", "\x1c", "\x1d", "\x1e", "\x85", "\u2028", "\u2029"):
+        s = s.replace(c, f"\\u{ord(c):04x}")
+    return s + "\n"
+
+
 def merge(sheet_path: Path, target=CASE) -> list[dict]:
     tg = load_target(target)
     dest = eval_data_path(tg)
@@ -109,9 +118,9 @@ def merge(sheet_path: Path, target=CASE) -> list[dict]:
             continue
         nid += 1
         seen.add(key(r))
-        new.append({"id": nid, "title": r["title"], "snippet": "", "label": ESCI[e], "esci": e, "lang": "en",
-                    "kind": f"esci_{e}", "source": f"real:{r.get('source') or 'jobs'}", "company": r.get("company", ""),
-                    "location": r.get("location", ""), "url": r.get("url", ""), "fetched_at": r.get("fetched_at", ""),
+        new.append({"id": nid, "title": fix_text(r["title"]), "snippet": "", "label": ESCI[e], "esci": e, "lang": "en",
+                    "kind": f"esci_{e}", "source": f"real:{r.get('source') or 'jobs'}",
+                    "company": fix_text(r.get("company", "")), "location": fix_text(r.get("location", "")), "url": r.get("url", ""), "fetched_at": r.get("fetched_at", ""),
                     **({"note": r["note"]} if r.get("note") else {}),
                     **({"labeler": r["labeler"].strip()} if (r.get("labeler") or "").strip() else {}),
                     **({"review_unsure": True} if str(r.get("unsure", "")).strip() in ("1", "true", "yes") else {})})
@@ -119,7 +128,7 @@ def merge(sheet_path: Path, target=CASE) -> list[dict]:
         dest.parent.mkdir(parents=True, exist_ok=True)
         with dest.open("a", encoding="utf-8") as f:
             for r in new:
-                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+                f.write(jsonl_line(r))
     return new
 
 

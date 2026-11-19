@@ -116,7 +116,20 @@ def default_get(url: str, timeout: float = 20.0) -> tuple:
         "User-Agent": USER_AGENT,
         "Accept": "application/json, text/plain;q=0.8, */*;q=0.5",
     })
-    return r.status_code, r.text
+    # JSON is UTF-8 (RFC 8259). r.text guesses ISO-8859-1 when the header has no charset, and Remote OK
+    # then came out as mojibake ("â\x80\x94" for an em dash), whose \x85 broke splitlines() readers.
+    return r.status_code, r.content.decode("utf-8", "replace")
+
+
+def fix_text(s: str) -> str:
+    """Undo UTF-8 read as Latin-1 (bodies cached before the fix). Unchanged when it does not round trip."""
+    if not s or not any("\x80" <= c <= "\xff" for c in s):
+        return s
+    try:
+        fixed = s.encode("latin-1").decode("utf-8")
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        return s
+    return fixed
 
 
 def cache_paths(cache_dir: Path, name: str) -> tuple[Path, Path, Path]:
@@ -218,7 +231,7 @@ def parse_remotive(body: str, fetched_at: str = "", now=None, delay_s: int = PUB
         if not isinstance(j, dict):
             continue
         url = (j.get("url") or j.get("url_short") or "").strip()
-        title = (j.get("title") or "").strip()
+        title = fix_text((j.get("title") or "").strip())
         if not url or not title:
             continue
         pub = parse_dt(j.get("publication_date") or j.get("publication_date_utc"))
@@ -228,8 +241,8 @@ def parse_remotive(body: str, fetched_at: str = "", now=None, delay_s: int = PUB
             source="remotive",
             url=url,
             title=title,
-            company=(j.get("company_name") or j.get("company") or "").strip(),
-            location=(j.get("candidate_required_location") or j.get("location") or "").strip(),
+            company=fix_text((j.get("company_name") or j.get("company") or "").strip()),
+            location=fix_text((j.get("candidate_required_location") or j.get("location") or "").strip()),
             snippet=snippet_of(j.get("description") or ""),
             fetched_at=fetched_at,
             published_at=pub.strftime("%Y-%m-%dT%H:%M:%SZ") if pub else "",
@@ -254,7 +267,7 @@ def parse_remoteok(body: str, fetched_at: str = "", now=None) -> list[Job]:
         # First element is the legal notice (keys like "legal"), not a job.
         if "legal" in j and not (j.get("position") or j.get("title")):
             continue
-        title = (j.get("position") or j.get("title") or "").strip()
+        title = fix_text((j.get("position") or j.get("title") or "").strip())
         # Prefer the board URL so the report links back to Remote OK, as their terms ask.
         jid = j.get("id") or j.get("slug") or ""
         url = (j.get("url") or "").strip()
@@ -270,9 +283,9 @@ def parse_remoteok(body: str, fetched_at: str = "", now=None) -> list[Job]:
             source="remoteok",
             url=url,
             title=title,
-            company=(j.get("company") or j.get("company_name") or "").strip(),
-            location=(loc or "").strip(),
-            snippet=snippet_of(j.get("description") or ""),
+            company=fix_text((j.get("company") or j.get("company_name") or "").strip()),
+            location=fix_text((loc or "").strip()),
+            snippet=fix_text(snippet_of(j.get("description") or "")),
             fetched_at=fetched_at,
             published_at=pub.strftime("%Y-%m-%dT%H:%M:%SZ") if pub else "",
             source_id=str(jid),

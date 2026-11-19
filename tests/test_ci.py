@@ -772,7 +772,9 @@ class TestRunSh(unittest.TestCase):
             self.assertEqual(len(res), 1)
             r = json.loads(res[0].read_text())
             names = [s["name"] for s in r["steps"]]
-            self.assertEqual(names, ["setup_venv", "env_probe", "eval", "sweep", "eval[de_jobs]", "plots", "review",
+            # sweep[de_jobs] only runs once eval/de_jobs/labeled.jsonl exists (eval[de_jobs] skipped otherwise)
+            de = ["sweep[de_jobs]"] if (ROOT / "eval" / "de_jobs" / "labeled.jsonl").is_file() else []
+            self.assertEqual(names, ["setup_venv", "env_probe", "eval", "sweep", "eval[de_jobs]", *de, "plots", "review",
                                      "tg_integration"])
             self.assertTrue(r["ok"], [(s["name"], s["exit_code"], s.get("stderr_tail")) for s in r["steps"]
                                       if not s.get("ok")])
