@@ -1,0 +1,4 @@
+pip install -r requirements.txt
+pip install -r requirements-embed.txt
+model cache step off (set A2179_CI_CACHE_MODEL=1 or A2179_CI_INSTALL_TORCH)
+Python 3.14.4
