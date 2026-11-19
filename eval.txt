@@ -1,0 +1,14 @@
+thresholds written to config.json: {'tfidf': {'pos': 0.38, 'margin': 0.18, 'calibrated': True}, 'embed': {'pos': 0.84, 'margin': 0.0, 'calibrated': True, 'model': 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2'}}
+# Eval report (2026-11-19 17:20 CET)
+
+Set: 99 items, 42 positive, 57 negative. Sources: {'kp_live_2026-11-19': 26, 'shop_live_2026-11-19': 12, 'synthetic': 59, 'kp_dryrun_2026-11-19': 2}. Languages: {'sr': 76, 'en': 10, 'ru': 9, 'sr_cyr': 4}.
+
+Embedder: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+
+| mode | precision | recall | F1 | TP | FP | FN | TN | thresholds | 2-fold P/R/F1 |
+|---|---|---|---|---|---|---|---|---|---|
+| regex | 0.976 | 0.976 | 0.976 | 41 | 1 | 1 | 56 |  |  |
+| tfidf | 0.808 | 1.000 | 0.894 | 42 | 10 | 0 | 47 | {'pos': 0.2, 'margin': 0.02} | 0.830/0.929/0.876 |
+| hybrid_tfidf | 0.977 | 1.000 | 0.988 | 42 | 1 | 0 | 56 | {'pos': 0.38, 'margin': 0.18} | 0.976/0.976/0.976 |
+| embed | 0.600 | 1.000 | 0.750 | 42 | 28 | 0 | 29 | {'pos': 0.66, 'margin': -0.06} | 0.615/0.952/0.748 |
+| hybrid_embed | 0.840 | 1.000 | 0.913 | 42 | 8 | 0 | 49 | {'pos': 0.84, 'margin': 0.0} | 0.911/0.976/0.943 |
