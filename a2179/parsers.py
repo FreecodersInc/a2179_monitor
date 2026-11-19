@@ -173,6 +173,20 @@ _KP_PRICE = re.compile(r"(?<![\w.,])(\d{1,3}(?:[.\s\u00a0]\d{3})+|\d+)(?:,\d+)?\
                        r"|\b(dogovor|kontakt|besplatno|poklanjam)\b", re.I)
 
 
+_KP_FREE = re.compile(r"\b(besplatno|poklanjam|gratis|бесплатно|поклањам)\b", re.I)
+
+
+def _kp_json_free(n: dict, name: str) -> bool:
+    """A zero price in KP JSON is free only with an explicit giveaway marker."""
+    for k, v in n.items():
+        kl = str(k).lower()
+        if kl in ("isfree", "free", "giveaway", "isgiveaway") and v is True:
+            return True
+        if "price" in kl and isinstance(v, str) and _KP_FREE.search(v):
+            return True
+    return bool(_KP_FREE.search(name or ""))
+
+
 def _kp_from_next_data(soup, base_url):
     sc = soup.find("script", id="__NEXT_DATA__")
     if not sc:
@@ -195,7 +209,13 @@ def _kp_from_next_data(soup, base_url):
             price = n.get("price")
             cur = n.get("currency") or n.get("priceCurrency") or ""
             pv = parse_number(str(price)) if price not in (None, "") else None
-            cur = {"rsd": "RSD", "din": "RSD", "eur": "EUR", "€": "EUR"}.get(str(cur).lower(), "RSD" if pv else None)
+            if pv is not None and pv <= 0:
+                # KP sends price 0 for "Kontakt" / "Dogovor" ads (seen live 19.11.2026: a parts laptop
+                # at "0 RSD" fired a below target alert). Only an explicit giveaway counts as free.
+                pv = 0.0 if _kp_json_free(n, name) else None
+            cur = {"rsd": "RSD", "din": "RSD", "eur": "EUR", "€": "EUR"}.get(str(cur).lower(), "RSD" if pv is not None else None)
+            if pv is None:
+                cur = None
             out.append(Listing("kupujemprodajem", urljoin(base_url, link), name.strip(),
                                snippet=str(n.get("description") or n.get("text") or "")[:300],
                                price=pv, currency=cur,
@@ -233,7 +253,8 @@ def parse_kp_search(html: str, base_url: str) -> list:
                 if m:
                     pm = m
                     break
-            pm = pm or _KP_PRICE.search(text.replace(title, " ", 1))
+            if pm is None:  # no standalone price node: first number with a currency in the card text
+                pm = next((m for m in _KP_PRICE.finditer(text.replace(title, " ", 1)) if m.group(1)), None)
             pp = parse_price(pm.group(0)) if pm else None
             free = bool(pm and re.search(r"besplatno|poklanjam", pm.group(0), re.I))
             snippet = text.replace(title, "", 1)[:300]

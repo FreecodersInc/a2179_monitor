@@ -133,6 +133,7 @@ python eval/run_eval.py --no-a1932   # если считать A1932 несов�
 python -m unittest discover -s tests -t .
 ```
 Тесты сеть не трогают, путь эмбеддера проверяется на поддельном модуле sentence_transformers (все ошибки выше): HTML магазинов сохранён в `tests/fixtures` (снимки 19.11.2026), KP заменён синтетической страницей.
+Реальные данные: `tests/fixtures/dryrun_2026-11-19.jsonl` (17 совпадений из живого `--dry-run --list` с сербского IP: заголовок, цена, $, источник, ссылка) и `tests/fixtures/kp_next_data_dryrun.html` (12 объявлений KP из того же прогона), тесты в `tests/test_real_dryrun.py`: каждое реальное объявление должно ловиться regex и гибридом, KP разбирается с теми же ценами и городами, «0 RSD» не даёт 🎯.
 
 ## Эмбеддер не работает
 Монитор без эмбеддера работает полностью (regex + TF-IDF). Если эмбеддер включён, но не поднялся, при каждом запуске будет три строки `[embedder] ...` с причиной и что делать, а в `data/logs/monitor.jsonl` событие `embedder_unavailable` с полем `stage`.
@@ -148,6 +149,7 @@ python monitor.py --check-embedder
 - выключить проверку: `"probe": false` (на секунды быстрее старт, но без защиты).
 - порядок импорта: torch всегда импортируется раньше sentence-transformers (а значит и sklearn с его loky/OpenMP), иначе на части Linux/WSL сборок две копии OpenMP дают segfault.
 - Python 3.14 поддерживается, если под него есть сборка torch.
+- `"device": "cpu"`: до импорта torch ставится `CUDA_VISIBLE_DEVICES=""` (и в процессе проверки, и в основном, если torch там ещё не импортирован), а `torch.cuda.is_current_stream_capturing` и `transformers.utils.import_utils.is_cuda_stream_capturing` подменяются на «нет» до загрузки модели. Причина: transformers 5.x даже на cpu спрашивает CUDA (is_tracing), и на WSL2 инициализация CUDA падала с segfault. `--check-embedder` печатает строку `cpu guard`.
 
 | stage | что значит | что делать |
 |---|---|---|
@@ -158,7 +160,7 @@ python monitor.py --check-embedder
 | `download_failed` | нет сети, прокси, лимит 429 | `HTTPS_PROXY=...`, подождать или задать `HF_TOKEN` |
 | `cache_permission` | нет прав на кэш HF | `HF_HOME` на папку с правами записи |
 | `load_failed`, `encode_failed` | несовместимые версии | `pip install -U -r requirements-embed.txt`, прислать вывод `--check-embedder` |
-| `crashed` | процесс проверки упал по сигналу (обычно torch/CUDA) | `nvidia-smi`, `python -c "import torch; print(torch.__version__, torch.version.cuda, torch.cuda.is_available())"`, сборка torch под свою CUDA с pytorch.org. Для проверки можно `"device": "cpu"` |
+| `crashed` | процесс проверки упал по сигналу (обычно torch/CUDA) | драйвер: `nvidia-smi` (максимальная CUDA драйвера), `python -c "import torch; print(torch.__version__, torch.version.cuda, torch.cuda.is_available())"`, `python -c "import torch; torch.zeros(1).cuda()"`. WSL2: драйвер NVIDIA ставится на Windows (внутри WSL не ставить), CUDA сборки torch (cuXXX) не новее, чем у драйвера. Пока можно `"device": "cpu"` |
 | `probe_timeout` | проверка висит дольше `probe_timeout_s` | первая загрузка модели долгая: поднять `probe_timeout_s` или запустить ещё раз |
 | `probe_failed` | процесс проверки вышел без результата | прислать вывод `--check-embedder` |
 
@@ -193,5 +195,5 @@ ONNX: `"backend": "onnx"` (нужны `sentence-transformers>=3.2` и `pip insta
 ## Ограничения
 - KupujemProdajem часто отвечает 403 ботам и серверным IP («Uskoro ćemo ponovo biti dostupni»). Монитор делает один вежливый повтор и пропускает KP до следующего запуска. С домашнего сербского IP шансы лучше. Разметка KP не проверена вживую, парсер ищет данные в `__NEXT_DATA__` и ссылки вида `/oglas/<id>`. Если KP отдаёт страницу, но 0 объявлений, в логе будет `kp_no_items`, пришли мне кусок HTML.
 - Пагинация KP построена на догадке про параметр `page`, разметка KP вживую не проверена.
-- Цена «Dogovor» или «Kontakt» сохраняется без цены, придёт только уведомление о новом объявлении.
+- Цена «Dogovor» или «Kontakt» сохраняется без цены, придёт только уведомление о новом объявлении. KP в JSON отдаёт такие объявления с ценой 0: это тоже «без цены», бесплатным считается только явное «Besplatno» или «Poklanjam».
 - Курс валют задаётся вручную в конфиге.

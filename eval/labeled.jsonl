@@ -95,3 +95,5 @@
 {"id": 95, "title": "Folija za ekran MacBook Air 13", "snippet": "", "label": 0, "lang": "sr", "kind": "accessory", "source": "synthetic"}
 {"id": 96, "title": "MacBook Air A2179 ne pali, ekran razbijen", "snippet": "", "label": 0, "lang": "sr", "kind": "broken_screen_laptop", "source": "synthetic"}
 {"id": 97, "title": "Apple MacBook Air 13 A2337 M1 screen assembly", "snippet": "", "label": 0, "lang": "en", "kind": "a2337", "source": "synthetic"}
+{"id": 98, "title": "LCD Panel Macbook A2179 komplet - NOVO GARANCIJA", "snippet": "", "label": 1, "lang": "sr", "kind": "panel", "source": "kp_dryrun_2026-11-19"}
+{"id": 99, "title": "LCD Panel Macbook A2179 LCD - NOVO GARANCIJA", "snippet": "", "label": 1, "lang": "sr", "kind": "panel", "source": "kp_dryrun_2026-11-19"}

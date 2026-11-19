@@ -56,10 +56,20 @@ STAGES = {
     "probe_failed": "процесс проверки эмбеддера завершился с ошибкой",
 }
 
-FIX_CRASH = ("крэш внутри torch или драйвера (часто сборка torch не под ту версию CUDA или драйвер WSL2). "
-             "Проверь nvidia-smi и python -c \"import torch; print(torch.__version__, torch.version.cuda, "
-             "torch.cuda.is_available())\", поставь сборку torch под свою CUDA (pytorch.org), "
-             "для проверки можно embedder.device=cpu. Монитор при этом работает на regex + TF-IDF")
+FIX_CRASH = ("крэш внутри torch при работе с CUDA, обычно драйвер NVIDIA (в WSL2 он ставится на Windows, "
+             "внутри WSL свой драйвер не ставить) не тянет CUDA сборки torch. Проверь: nvidia-smi (справа вверху "
+             "максимальная CUDA драйвера), python -c \"import torch; print(torch.__version__, torch.version.cuda, "
+             "torch.cuda.is_available())\" и python -c \"import torch; torch.zeros(1).cuda()\". Версия CUDA у "
+             "torch (cuXXX) не должна быть новее, чем показывает nvidia-smi: обнови драйвер NVIDIA для WSL на "
+             "Windows или поставь torch под CUDA постарше (pytorch.org). Пока можно embedder.device=cpu. "
+             "Монитор при этом работает на regex + TF-IDF")
+FIX_CRASH_CPU = ("крэш даже на cpu, хотя CUDA спрятана (CUDA_VISIBLE_DEVICES пусто). Пришли вывод "
+                 "python monitor.py --check-embedder и pip freeze | grep -iE \"torch|sentence|transformers|numpy\". "
+                 "Монитор при этом работает на regex + TF-IDF")
+
+
+def fix_crash(device) -> str:
+    return FIX_CRASH_CPU if str(device or "").strip().lower() == "cpu" else FIX_CRASH
 PROBE_MARK = "@@A2179_PROBE@@ "
 
 FIX_INSTALL = ("сначала torch под свою ОС и CUDA (команда с pytorch.org), потом "
@@ -181,6 +191,7 @@ class EmbedSim:
 
     def __init__(self, model_name: str = DEFAULT_MODEL, local_only: bool = False, pos=None, neg=None,
                  device: str = "auto", backend: str = "torch"):
+        self.cpu_guard = cpu_guard(device)  # before torch is imported
         try:
             import_torch_first()
             st = importlib.import_module("sentence_transformers")
@@ -189,6 +200,8 @@ class EmbedSim:
             raise classify_import_error(e) from e
         self.model_name = model_name
         self.device = resolve_device(device)
+        if self.device == "cpu":
+            patch_cuda_capture_checks(self.cpu_guard)  # before the model is built
         self.backend = (backend or "torch").strip().lower()
         t0 = time.monotonic()
         try:
@@ -262,6 +275,59 @@ def import_torch_first():
         importlib.import_module("torch")
 
 
+def cpu_guard(requested) -> dict:
+    """embedder.device=cpu: hide CUDA from torch, so nothing can initialise the CUDA runtime.
+
+    Seen on WSL2 (torch 2.15 cu132, transformers 5.23, Python 3.14): even with device='cpu',
+    transformers asks torch.cuda.is_current_stream_capturing() (utils/import_utils.py
+    is_cuda_stream_capturing, via is_tracing), which initialises CUDA and segfaults there.
+    CUDA_VISIBLE_DEVICES="" works only before torch is imported, so it is set only then;
+    otherwise patch_cuda_capture_checks() is the guard. Returns what was done."""
+    info = {"cuda_hidden": False, "patched": []}
+    if str(requested or "").strip().lower() == "cpu":
+        if "torch" not in sys.modules:
+            os.environ["CUDA_VISIBLE_DEVICES"] = ""
+            info["cuda_hidden"] = True
+        else:
+            info["cuda_hidden"] = os.environ.get("CUDA_VISIBLE_DEVICES") == ""
+    return info
+
+
+def _never_capturing():
+    return False
+
+
+_never_capturing._a2179_cpu = True
+
+
+def patch_cuda_capture_checks(info: dict = None) -> list:
+    """For a cpu run: make the CUDA graph capture checks answer False without touching CUDA.
+    Patches torch.cuda.is_current_stream_capturing (every caller goes through it) and
+    transformers.utils.import_utils.is_cuda_stream_capturing (exists in transformers 4.x and
+    5.x, is_tracing looks it up there). Each one only if present, never raises."""
+    done = []
+    torch = sys.modules.get("torch")
+    try:
+        tc = getattr(torch, "cuda", None)
+        if tc is not None and hasattr(tc, "is_current_stream_capturing") \
+                and not getattr(tc.is_current_stream_capturing, "_a2179_cpu", False):
+            tc.is_current_stream_capturing = _never_capturing
+            done.append("torch.cuda.is_current_stream_capturing")
+    except Exception:
+        pass
+    iu = sys.modules.get("transformers.utils.import_utils")
+    try:
+        if iu is not None and hasattr(iu, "is_cuda_stream_capturing") \
+                and not getattr(iu.is_cuda_stream_capturing, "_a2179_cpu", False):
+            iu.is_cuda_stream_capturing = _never_capturing
+            done.append("transformers.utils.import_utils.is_cuda_stream_capturing")
+    except Exception:
+        pass
+    if info is not None:
+        info.setdefault("patched", []).extend(done)
+    return done
+
+
 def resolve_device(requested: str = "auto") -> str:
     """auto -> cuda if torch.cuda.is_available() else cpu. Anything else is passed through."""
     req = str(requested or "auto").strip().lower()
@@ -300,6 +366,8 @@ def run_probe(cfg: dict, mode: str = "probe", timeout_s: float = None, cmd=None)
     root = Path(__file__).resolve().parent.parent
     argv = cmd or [sys.executable, "-X", "faulthandler", "-m", "a2179.embed_probe", mode, json.dumps(sub)]
     env = dict(os.environ, PYTHONFAULTHANDLER="1", PYTHONUNBUFFERED="1")
+    if str(e.get("device") or "").strip().lower() == "cpu":
+        env["CUDA_VISIBLE_DEVICES"] = ""  # see cpu_guard: the child never sees a GPU
     env["PYTHONPATH"] = os.pathsep.join([str(root)] + [x for x in [os.environ.get("PYTHONPATH")] if x])
     res = {"ok": False, "report": [], "returncode": None, "stderr_tail": ""}
     t0 = time.monotonic()
@@ -310,7 +378,7 @@ def run_probe(cfg: dict, mode: str = "probe", timeout_s: float = None, cmd=None)
         res.update(stage="probe_timeout",
                    cause=f"нет ответа за {timeout:.0f} с (embedder.probe_timeout_s), процесс убит",
                    fix="первый запуск качает модель ~470 МБ: подними embedder.probe_timeout_s. Если зависает "
-                       "всегда, это драйвер или torch: " + FIX_CRASH,
+                       "всегда, это драйвер или torch: " + fix_crash(e.get("device")),
                    stderr_tail=_tail(te.stderr))
         return res
     except Exception as ex:  # could not even start the child
@@ -336,7 +404,7 @@ def run_probe(cfg: dict, mode: str = "probe", timeout_s: float = None, cmd=None)
         except ValueError:
             how = f"код {rc}"
         late = " уже после успешной проверки (при выходе)" if data and data.get("ok") else ""
-        res.update(stage="crashed", cause=f"процесс проверки умер: {how}{late}", fix=FIX_CRASH,
+        res.update(stage="crashed", cause=f"процесс проверки умер: {how}{late}", fix=fix_crash(e.get("device")),
                    device=(data or {}).get("device"))
         return res
     if data is None or cp.returncode not in (0, 3):
@@ -485,6 +553,10 @@ def check_inprocess(cfg: dict, out=sys.stdout):
         p("mode:       tfidf (fallback)")
         return 3, _err_info(err)
     p(f"load:       ok in {sim.load_s:.1f} s on device {sim.device} (first run includes the ~470 MB download)")
+    if sim.device == "cpu":
+        g = sim.cpu_guard
+        p(f"cpu guard:  CUDA_VISIBLE_DEVICES={'empty' if g.get('cuda_hidden') else 'not changed (torch was already imported)'}, "
+          f"patched: {', '.join(g.get('patched') or []) or 'nothing to patch'}")
     try:
         t1 = time.monotonic()
         a = sim.score("LCD ekran za MacBook Air A2179 2020")

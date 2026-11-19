@@ -25,6 +25,7 @@ def probe(cfg: dict) -> dict:
         a = sim.score("LCD ekran za MacBook Air A2179 2020")
         sim.score("Futrola za MacBook Air A2179")
         return {"ok": True, "device": sim.device, "dim": int(sim.P.shape[1]), "load_s": round(sim.load_s, 2),
+                "cuda_hidden": sim.cpu_guard.get("cuda_hidden"), "patched": sim.cpu_guard.get("patched"),
                 "total_s": round(time.monotonic() - t0, 2), "sanity_pos": round(float(a[0]), 3)}
     except EmbedderUnavailable as err:
         return _err_info(err)

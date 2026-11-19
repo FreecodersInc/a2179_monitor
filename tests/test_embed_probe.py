@@ -278,5 +278,118 @@ class TestImportOrder(unittest.TestCase):
         self.assertEqual(sim.device, "cpu")
 
 
+class _Boom(Exception):
+    pass
+
+
+def _crash_if_called():
+    raise _Boom("CUDA runtime touched on a cpu run")  # stands in for the WSL2 segfault
+
+
+class TestCpuGuard(unittest.TestCase):
+    """WSL2 + torch cu132 + transformers 5.23: device='cpu' still segfaulted in
+    transformers.utils.import_utils.is_cuda_stream_capturing -> torch.cuda.is_current_stream_capturing."""
+
+    def setUp(self):
+        self.saved_env = os.environ.get("CUDA_VISIBLE_DEVICES", "absent")
+        self.saved_mods = {k: sys.modules.get(k, "absent")
+                           for k in ("torch", "transformers", "transformers.utils", "transformers.utils.import_utils")}
+
+    def tearDown(self):
+        if self.saved_env == "absent":
+            os.environ.pop("CUDA_VISIBLE_DEVICES", None)
+        else:
+            os.environ["CUDA_VISIBLE_DEVICES"] = self.saved_env
+        for k, v in self.saved_mods.items():
+            sys.modules.pop(k, None) if v == "absent" else sys.modules.__setitem__(k, v)
+
+    def fake_stack(self):
+        torch = types.ModuleType("torch")
+        torch.cuda = types.SimpleNamespace(is_available=_crash_if_called, is_current_stream_capturing=_crash_if_called)
+        iu = types.ModuleType("transformers.utils.import_utils")
+        iu.is_cuda_stream_capturing = lambda: torch.cuda.is_current_stream_capturing()
+        iu.is_tracing = lambda: iu.is_cuda_stream_capturing()  # looks the name up at call time, like 5.23
+        sys.modules["transformers.utils.import_utils"] = iu
+        return torch, iu
+
+    def test_env_hidden_before_torch_import(self):
+        sys.modules.pop("torch", None)
+        os.environ.pop("CUDA_VISIBLE_DEVICES", None)
+        g = E.cpu_guard("cpu")
+        self.assertTrue(g["cuda_hidden"])
+        self.assertEqual(os.environ["CUDA_VISIBLE_DEVICES"], "")
+
+    def test_env_left_alone_when_torch_already_imported_or_not_cpu(self):
+        os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+        sys.modules["torch"] = types.ModuleType("torch")
+        self.assertFalse(E.cpu_guard("cpu")["cuda_hidden"])
+        self.assertEqual(os.environ["CUDA_VISIBLE_DEVICES"], "0")
+        sys.modules.pop("torch")
+        for dev in ("cuda", "auto", "cuda:1"):
+            self.assertFalse(E.cpu_guard(dev)["cuda_hidden"])
+        self.assertEqual(os.environ["CUDA_VISIBLE_DEVICES"], "0")
+
+    def test_patch_applied_before_model_load_on_cpu(self):
+        torch, iu = self.fake_stack()
+        calls = []
+
+        class ST(F.GoodST):
+            def __init__(self, name, device=None, **kw):
+                calls.append(iu.is_tracing())  # transformers asks during load ...
+                super().__init__(name, device=device, **kw)
+
+            def encode(self, texts, **kw):
+                calls.append(iu.is_tracing())  # ... and during encode
+                return super().encode(texts, **kw)
+        sys.modules["torch"] = torch
+        with F.fake_module(ST):
+            sim = E.EmbedSim("x", device="cpu")
+        self.assertEqual(sim.device, "cpu")
+        self.assertTrue(calls and not any(calls))
+        self.assertIn("torch.cuda.is_current_stream_capturing", sim.cpu_guard["patched"])
+        self.assertIn("transformers.utils.import_utils.is_cuda_stream_capturing", sim.cpu_guard["patched"])
+        self.assertFalse(torch.cuda.is_current_stream_capturing())
+        self.assertEqual(E.patch_cuda_capture_checks(), [])  # idempotent
+
+    def test_no_patch_on_cuda(self):
+        torch, iu = self.fake_stack()
+        torch.cuda.is_available = lambda: True
+        sys.modules["torch"] = torch
+        with F.fake_module(F.GoodST):
+            sim = E.EmbedSim("x", device="cuda")
+        self.assertEqual(sim.cpu_guard["patched"], [])
+        self.assertIs(torch.cuda.is_current_stream_capturing, _crash_if_called)
+
+    def test_patch_missing_targets_is_harmless(self):
+        sys.modules["torch"] = types.ModuleType("torch")  # no torch.cuda at all
+        sys.modules.pop("transformers.utils.import_utils", None)
+        self.assertEqual(E.patch_cuda_capture_checks(), [])
+
+    def test_probe_child_gets_hidden_cuda_on_cpu_only(self):
+        code = (f"import os, json; print({E.PROBE_MARK!r} + json.dumps({{'ok': True, 'device': 'cpu', "
+                "'cvd': os.environ.get('CUDA_VISIBLE_DEVICES', 'unset')}))")
+        os.environ.pop("CUDA_VISIBLE_DEVICES", None)
+        self.assertEqual(E.run_probe(cfg_probe(device="cpu"), cmd=child(code))["cvd"], "")
+        self.assertEqual(E.run_probe(cfg_probe(device="cuda"), cmd=child(code))["cvd"], "unset")
+
+
+class TestCrashHint(unittest.TestCase):
+    @unittest.skipUnless(POSIX, "signals")
+    def test_cuda_hint_points_to_driver(self):
+        for dev in ("cuda", "auto"):
+            fix = E.run_probe(cfg_probe(device=dev), cmd=SEGV)["fix"]
+            for k in ("nvidia-smi", "torch.cuda.is_available()", "torch.zeros(1).cuda()", "WSL", "драйвер"):
+                self.assertIn(k, fix, dev)
+
+    @unittest.skipUnless(POSIX, "signals")
+    def test_cpu_hint_is_different(self):
+        fix = E.run_probe(cfg_probe(device="cpu"), cmd=SEGV)["fix"]
+        self.assertIn("CUDA_VISIBLE_DEVICES", fix)
+        self.assertNotIn("torch.zeros(1).cuda()", fix)
+
+    def test_timeout_hint_follows_device(self):
+        self.assertIn("torch.zeros(1).cuda()", E.run_probe(cfg_probe(device="cuda"), timeout_s=1, cmd=HANG)["fix"])
+
+
 if __name__ == "__main__":
     unittest.main()
