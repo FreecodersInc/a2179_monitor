@@ -190,7 +190,8 @@ class EmbedSim:
     name = "embed"
 
     def __init__(self, model_name: str = DEFAULT_MODEL, local_only: bool = False, pos=None, neg=None,
-                 device: str = "auto", backend: str = "torch", proto_prefix: str = "", text_prefix: str = ""):
+                 device: str = "auto", backend: str = "torch", proto_prefix: str = "", text_prefix: str = "",
+                 batch_size: int = None):
         # prefixes some models need (E5: "query: " / "passage: ", instruct models: an instruction),
         # proto_prefix goes before every prototype phrase, text_prefix before every listing
         self.proto_prefix, self.text_prefix = proto_prefix or "", text_prefix or ""
@@ -231,7 +232,7 @@ class EmbedSim:
             raise classify_load_error(e, model_name) from e
         self.load_s = time.monotonic() - t0
         self._kw = {"normalize_embeddings": True, "convert_to_numpy": True, "show_progress_bar": False,
-                    "batch_size": 32}
+                    "batch_size": int(batch_size or os.environ.get("A2179_EMBED_BATCH") or 32)}
         self.pos = list(pos or prototypes.POSITIVE)
         self.neg = list(neg or prototypes.NEGATIVE)
         self.P = self._enc([self.proto_prefix + t for t in self.pos])

@@ -26,10 +26,27 @@ sys.path.insert(0, str(ROOT / "ci"))
 import redact  # noqa: E402
 
 
+# Compute limits for every step (set by main from A2179_CI_DEVICE, default cpu). A 2 GB MX130
+# with several embedders in a row overflowed VRAM into shared RAM and hung the whole machine, so
+# CI embeds on the CPU by default: CUDA hidden, few threads, small batches, one model at a time.
+COMPUTE_ENV = {}
+
+
+def compute_env(env=os.environ):
+    device = (env.get("A2179_CI_DEVICE") or "cpu").strip().lower()
+    threads = str(env.get("A2179_CI_THREADS") or max(1, min(4, (os.cpu_count() or 2) // 2)))
+    out = {"A2179_DEVICE": device, "A2179_EMBED_BATCH": str(env.get("A2179_CI_EMBED_BATCH") or 16),
+           "OMP_NUM_THREADS": threads, "MKL_NUM_THREADS": threads, "OPENBLAS_NUM_THREADS": threads,
+           "TOKENIZERS_PARALLELISM": "false"}
+    if device == "cpu":
+        out["CUDA_VISIBLE_DEVICES"] = ""   # nothing can touch the GPU, torch reports cuda_available False
+    return out
+
+
 def step_env(with_secrets=False):
     """Environment for a step. Secrets reach only the steps that need them (the TG integration
     test); tests, eval and sweep never see TG_BOT_TOKEN, so no test can send by accident."""
-    env = dict(os.environ)
+    env = {**os.environ, **COMPUTE_ENV}
     if not with_secrets:
         for n in redact.names():
             env.pop(n, None)
@@ -146,6 +163,11 @@ def main(argv=None):
     (out / "sweep").mkdir(parents=True, exist_ok=True)
     (out / "plots").mkdir(parents=True, exist_ok=True)
     py, T = a.python, a.step_timeout
+    COMPUTE_ENV.clear()
+    COMPUTE_ENV.update(compute_env())
+    print(f"compute: device={COMPUTE_ENV['A2179_DEVICE']} threads={COMPUTE_ENV['OMP_NUM_THREADS']} "
+          f"batch={COMPUTE_ENV['A2179_EMBED_BATCH']} embedders={os.environ.get('A2179_CI_EMBEDDERS', 'cached-small')}",
+          flush=True)
     offline = os.environ.get("HF_HUB_OFFLINE", "") in ("1", "true", "yes")
 
     steps = []
@@ -176,7 +198,10 @@ def main(argv=None):
           "--dense-scores", str(out / "sweep" / "dense_scores.jsonl")]
     # extra embedders for the side by side table (EXP-003): by default every model of
     # eval/embedders.json that is already in the HF cache, nothing is downloaded here
-    emb = ["--embedders", os.environ.get("A2179_CI_EMBEDDERS", "cached")]
+    # (cached-small: cached and at most A2179_MAX_PARAMS_M, default 300 M params, so bge-m3,
+    # e5-large, LaBSE only when listed by name in A2179_CI_EMBEDDERS)
+    emb = ["--embedders", os.environ.get("A2179_CI_EMBEDDERS", "cached-small"),
+           "--device", COMPUTE_ENV.get("A2179_DEVICE", "cpu")]
     rec = run("sweep", sw + ["--compute-dense"] + emb if dense else sw, T)
     steps.append(rec)
     if dense and not rec["ok"]:

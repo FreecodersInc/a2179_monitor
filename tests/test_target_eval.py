@@ -132,3 +132,23 @@ class TestCiTargets(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestCpuDefaults(unittest.TestCase):
+    def test_compute_env_cpu_by_default(self):
+        e = rx.compute_env({})
+        self.assertEqual((e["A2179_DEVICE"], e["CUDA_VISIBLE_DEVICES"], e["A2179_EMBED_BATCH"]), ("cpu", "", "16"))
+        self.assertLessEqual(int(e["OMP_NUM_THREADS"]), 4)
+        g = rx.compute_env({"A2179_CI_DEVICE": "cuda", "A2179_CI_THREADS": "2", "A2179_CI_EMBED_BATCH": "8"})
+        self.assertNotIn("CUDA_VISIBLE_DEVICES", g)
+        self.assertEqual((g["OMP_NUM_THREADS"], g["A2179_EMBED_BATCH"]), ("2", "8"))
+
+    def test_cached_small_skips_large_models(self):
+        import sweep as S
+        from unittest import mock
+        with mock.patch.object(S, "hf_cached", lambda mid: True):
+            short = [m["short"] for m in S.select_embedders("cached-small")]
+        self.assertIn("e5-base", short)
+        for big in ("bge-m3", "e5-large", "labse", "e5-large-instruct"):
+            self.assertNotIn(big, short)
+        self.assertEqual([m["short"] for m in S.select_embedders("bge-m3")], ["bge-m3"])   # by name: allowed

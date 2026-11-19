@@ -169,7 +169,8 @@ def main(argv=None):
         report["embedder"] = "skipped (--no-embed)"
     else:
         try:
-            sim = EmbedSim(a.model, a.local_only, pos=tg.positive, neg=tg.negative)
+            sim = EmbedSim(a.model, a.local_only, pos=tg.positive, neg=tg.negative,
+                           device=os.environ.get("A2179_DEVICE") or "auto")
             report["embedder"] = a.model
             run_sim("embed", sim, rows, y, regex, gates, report, errors)
         except EmbedderUnavailable as e:

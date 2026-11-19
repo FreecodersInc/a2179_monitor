@@ -225,6 +225,18 @@ def tfidf_2d(sw, sc, hybrid):
     return best, table
 
 
+def free_memory():
+    """Between models: drop the last model's tensors (gc) and the CUDA cache, if torch is loaded."""
+    import gc
+    gc.collect()
+    torch = sys.modules.get("torch")
+    try:
+        if torch is not None and torch.cuda.is_available():
+            torch.cuda.empty_cache()
+    except Exception:  # noqa: BLE001
+        pass
+
+
 def compute_dense(rows, out: Path, model: str, proto_prefix: str = "", text_prefix: str = "", local_only=False,
                   device="auto", pos=None, neg=None):
     from a2179.embedder import EmbedSim
@@ -249,12 +261,14 @@ def compute_dense(rows, out: Path, model: str, proto_prefix: str = "", text_pref
                        pos=pos, neg=neg)
         t0 = time.time()
         sc = sim.score_many(texts)
+    dev = sim.device
+    del sim   # one model in memory at a time
     out.parent.mkdir(parents=True, exist_ok=True)
     with out.open("w", encoding="utf-8") as f:
         for r, (a, b) in zip(rows, sc):
             f.write(json.dumps({"id": r["id"], "pos": round(a, 5), "neg": round(b, 5)}) + "\n")
-    print(f"dense scores for {len(rows)} rows -> {out} ({time.time() - t0:.1f} s, device {sim.device}, "
-          f"model {model}, prefixes {proto_prefix!r} / {text_prefix!r})")
+    print(f"dense scores for {len(rows)} rows -> {out} ({time.time() - t0:.1f} s, device {dev}, "
+          f"model {model}, prefixes {proto_prefix!r} / {text_prefix!r})", flush=True)
 
 
 # ------------------------------------------------------------------ several embedders (EXP-003, H-30)
@@ -284,6 +298,9 @@ def select_embedders(spec, reg=None, default_model=None):
         out = list(reg)
     elif spec == "cached":
         out = [m for m in reg if hf_cached(m["id"])]
+    elif spec == "cached-small":   # CI default: no large models unless listed by name
+        cap = float(os.environ.get("A2179_MAX_PARAMS_M") or 300)
+        out = [m for m in reg if (m.get("params_m") or 0) <= cap and hf_cached(m["id"])]
     else:
         want = [x.strip() for x in spec.split(",") if x.strip()]
         by = {m["short"]: m for m in reg} | {m["id"]: m for m in reg if m["id"] not in {x["short"] for x in reg}}
@@ -405,6 +422,8 @@ def main(argv=None):
     ap.add_argument("--model", default="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
     ap.add_argument("--out", default=str(ROOT / "reports" / f"sweep_{DATE}.json"))
     ap.add_argument("--plots", default=None, metavar="DIR", help="also draw the charts (eval/plots.py) into DIR")
+    ap.add_argument("--device", default=os.environ.get("A2179_DEVICE") or "auto",
+                    help="auto | cpu | cuda for every dense model (CI: cpu)")
     ap.add_argument("--embedders", default=os.environ.get("A2179_EMBEDDERS", "none"),
                     help="more dense channels from eval/embedders.json: none | all | cached | e5-base,bge-m3,... "
                          "each is scored into <dense-scores>_<short>.jsonl and becomes channel dense:<short>")
@@ -420,16 +439,21 @@ def main(argv=None):
     extras = select_embedders(a.embedders, default_model=a.model)
     skipped = {}
     if a.compute_dense:
-        compute_dense(rows, Path(a.dense_scores), a.model, pos=tg.positive, neg=tg.negative)
-        for m in extras:
+        n_all = 1 + len(extras)
+        print(f"dense 1/{n_all} {a.model} on {a.device}", flush=True)
+        compute_dense(rows, Path(a.dense_scores), a.model, pos=tg.positive, neg=tg.negative, device=a.device)
+        free_memory()
+        for i, m in enumerate(extras, 2):
+            print(f"dense {i}/{n_all} {m['short']} ({m.get('params_m')} M params) on {a.device}", flush=True)
             try:   # one model that is missing or fails must not cost the others
                 compute_dense(rows, extra_scores_path(Path(a.dense_scores), m["short"]), m["id"],
                               m["proto_prefix"], m["text_prefix"],
                               local_only=os.environ.get("HF_HUB_OFFLINE", "") in ("1", "true", "yes"),
-                              pos=tg.positive, neg=tg.negative)
+                              pos=tg.positive, neg=tg.negative, device=a.device)
             except Exception as e:  # noqa: BLE001
                 skipped[m["short"]] = f"{type(e).__name__}: {str(e)[:200]}"
-                print(f"dense {m['short']} skipped: {skipped[m['short']]}")
+                print(f"dense {m['short']} skipped: {skipped[m['short']]}", flush=True)
+            free_memory()
     sw = Sweep(rows, target=tg)
     texts = [f"{r['title']} {r['snippet']}".strip() for r in rows]
     tf = TfidfSim(tg.positive, tg.negative)
