@@ -30,6 +30,14 @@ fi
 if [[ -n "${A2179_CI_VARS:-}" && "${A2179_CI_VARS}" != "null" ]]; then
   eval "$("$SYS_PY" ci/vars_env.py)"
 fi
+
+# 1b. which steps this push needs (ci/select_steps.py, ADR-0026): docs only -> done here, shared code
+#     -> full regression, anything else -> lint + tests for the touched files + the touched experiment
+eval "$("$SYS_PY" ci/select_steps.py)"
+if [[ "${A2179_CI_SELECT_MODE:-full}" == "skip" ]]; then
+  echo "docs only since ${A2179_CI_SELECT_BASE:-?}: nothing to run, no results commit"
+  exit 0
+fi
 # secrets: TG_BOT_TOKEN / TG_CHAT_ID come by name from the workflow (environment experiment),
 # more can ride in the one secret A2179_CI_SECRETS (JSON), masked and exported by ci/secrets_env.py.
 # Only names and present/absent are ever recorded (ci_out/secrets.json), never values.

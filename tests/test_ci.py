@@ -99,10 +99,10 @@ class TestDense(unittest.TestCase):
                 rx.run, rx.env_info = orig_run, orig_env
             names = [c[0] for c in calls]
             self.assertEqual(code, 0)
-            self.assertEqual(names, ["tests", "eval", "sweep", "eval[de_jobs]", "sweep[de_jobs]", "review"])
-            self.assertIn("--no-embed", calls[3][1])   # the second target follows the same dense decision
-            self.assertIn("--no-embed", calls[1][1])
-            self.assertNotIn("--compute-dense", calls[2][1])
+            self.assertEqual(names, ["lint", "tests", "eval", "sweep", "eval[de_jobs]", "sweep[de_jobs]", "review"])
+            self.assertIn("--no-embed", calls[4][1])   # the second target follows the same dense decision
+            self.assertIn("--no-embed", calls[2][1])
+            self.assertNotIn("--compute-dense", calls[3][1])
             s = json.loads((Path(d) / "steps.json").read_text())
             self.assertFalse(s["dense"]["enabled"])
 
@@ -124,7 +124,7 @@ class TestDense(unittest.TestCase):
             finally:
                 rx.run, rx.env_info = orig_run, orig_env
             names = [c[0] for c in calls]
-            self.assertEqual(names, ["tests", "check_embedder", "eval", "eval", "sweep", "sweep",
+            self.assertEqual(names, ["lint", "tests", "check_embedder", "eval", "eval", "sweep", "sweep",
                                      "eval[de_jobs]", "sweep[de_jobs]", "review"])
             s = json.loads((Path(d) / "steps.json").read_text())
             ev_sw = [x for x in s["steps"] if x["name"] in ("eval", "sweep")]
@@ -774,7 +774,7 @@ class TestRunSh(unittest.TestCase):
             names = [s["name"] for s in r["steps"]]
             # sweep[de_jobs] only runs once eval/de_jobs/labeled.jsonl exists (eval[de_jobs] skipped otherwise)
             de = ["sweep[de_jobs]"] if (ROOT / "eval" / "de_jobs" / "labeled.jsonl").is_file() else []
-            self.assertEqual(names, ["setup_venv", "env_probe", "eval", "sweep", "eval[de_jobs]", *de, "plots", "review",
+            self.assertEqual(names, ["setup_venv", "env_probe", "lint", "eval", "sweep", "eval[de_jobs]", *de, "plots", "review",
                                      "tg_integration"])
             self.assertTrue(r["ok"], [(s["name"], s["exit_code"], s.get("stderr_tail")) for s in r["steps"]
                                       if not s.get("ok")])
@@ -810,6 +810,34 @@ class TestRunSh(unittest.TestCase):
             self.assertIn("nonexistent", r["steps"][0]["stderr_tail"])
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
+
+
+class TestSelectSteps(unittest.TestCase):
+    """ci/select_steps.py (ADR-0026): docs skip, shared code full, the rest targeted."""
+    def setUp(self):
+        import select_steps
+        self.S = select_steps
+
+    def test_docs_only_skips(self):
+        d = self.S.decide(["docs/ci.md", "docs/adr/0026-x.md", "experiments/EXP-005.md", "reports/exp004/a.json",
+                           "work/T-019.md", "README.md"])
+        self.assertEqual(d["mode"], "skip")
+
+    def test_shared_code_runs_everything(self):
+        for p in ("a2179/ats.py", "ci/run.sh", "eval/sweep.py", "targets/de_jobs.json", "tests/__init__.py"):
+            self.assertEqual(self.S.decide([p, "docs/x.md"])["mode"], "full", p)
+
+    def test_targeted_picks_tests_and_the_experiment(self):
+        d = self.S.decide(["eval/jobs_label.py", "eval/de_jobs/labeled.jsonl", "docs/x.md"])
+        self.assertEqual(d["mode"], "targeted")
+        self.assertIn("tests.test_jobs_label", d["tests"])
+        self.assertEqual(d["steps"], ["review", "targets"])
+        d = self.S.decide(["eval/nested_cv.py"])
+        self.assertEqual((d["tests"], d["steps"]), (["tests.test_nested_cv"], []))
+
+    def test_forced_or_empty_is_full(self):
+        self.assertEqual(self.S.decide(["docs/x.md"], forced="full")["mode"], "full")
+        self.assertEqual(self.S.decide([])["mode"], "full")
 
 
 if __name__ == "__main__":

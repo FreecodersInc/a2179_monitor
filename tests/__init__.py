@@ -5,3 +5,5 @@ temp dir themselves."""
 import os
 
 os.environ.pop("A2179_DENSE_CACHE", None)
+# no real ATS company list in tests: a mocked get_fn must not be walked through 150 boards with pauses
+os.environ["A2179_ATS_COMPANIES"] = "off"

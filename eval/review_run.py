@@ -78,7 +78,9 @@ def run(cases, out_root: Path, date: str, fetch: str, jobs_cache: Path, listings
         matcher, _mode = make_matcher(target)
         notes = []
         if case == "de_jobs":
-            jobs, jnotes = collect_jobs(Path(jobs_cache), fetch=fetch, get_fn=get_fn, now=now)
+            apis = tuple(((getattr(target, "defaults", None) or {}).get("sources") or {}).get("job_apis")
+                         or ("remotive", "remoteok"))
+            jobs, jnotes = collect_jobs(Path(jobs_cache), sources=apis, fetch=fetch, get_fn=get_fn, now=now)
             rows = [row_from_job(j) for j in jobs]
             for n in jnotes:
                 bit = f"{n['label']}: {n['n']} jobs"

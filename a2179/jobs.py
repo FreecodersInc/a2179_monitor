@@ -1,6 +1,7 @@
 """Official job-board APIs for the DE vacancies case (T-018, ADR-0017).
 
-Only Remotive and Remote OK, both official JSON APIs. Terms, checked 2026-11-19:
+Remotive and Remote OK, both official JSON APIs, plus public ATS company boards (Greenhouse, Lever,
+Ashby) in a2179/ats.py. Terms, checked 2026-11-19:
 
 * Remotive (`https://remotive.com/api/remote-jobs`): mention Remotive and link back,
   do not republish the jobs on other boards, at most 4 requests per day, listings
@@ -17,6 +18,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import os
 import re
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -39,7 +41,9 @@ BLOCKED_HOSTS = ("linkedin.com", "indeed.com", "glassdoor.com")
 GetFn = Callable[[str], tuple]  # (status, text)
 
 # Hosts we are allowed to call. Anything else, including the blocked boards, is refused.
-ALLOWED_HOSTS = frozenset({"remotive.com", "www.remotive.com", "remoteok.com", "www.remoteok.com"})
+ALLOWED_HOSTS = frozenset({"remotive.com", "www.remotive.com", "remoteok.com", "www.remoteok.com",
+                           # public ATS job board APIs, one board per company (a2179/ats.py, ADR-0025)
+                           "boards-api.greenhouse.io", "api.lever.co", "api.ashbyhq.com"})
 
 
 @dataclass
@@ -302,11 +306,20 @@ SOURCES = {
 
 
 def collect_jobs(cache_dir: Path, sources=("remotive", "remoteok"), fetch: str = "auto",
-                 get_fn: GetFn = None, now=None) -> tuple[list[Job], list[dict]]:
-    """Fetch (or load cache) and parse the configured official APIs."""
+                 get_fn: GetFn = None, now=None, ats_kw: dict | None = None) -> tuple[list[Job], list[dict]]:
+    """Fetch (or load cache) and parse the configured official APIs. "ats" = every company board in
+    targets/ats_companies.json (a2179/ats.py). Jobs are deduplicated across sources, first one wins."""
     now = utcnow(now)
     jobs, notes = [], []
     for name in sources:
+        if name == "ats":
+            from a2179 import ats
+            kw = {"budget_s": float(os.environ.get("A2179_ATS_BUDGET_S", ats.BUDGET_S))}
+            kw.update(ats_kw or {})
+            aj, an = ats.collect_ats(cache_dir, fetch=fetch, get_fn=get_fn, now=now, **kw)
+            jobs.extend(aj)
+            notes.extend(an)
+            continue
         if name not in SOURCES:
             notes.append({"source": name, "ok": False, "note": f"unknown job source {name}"})
             continue
@@ -322,4 +335,5 @@ def collect_jobs(cache_dir: Path, sources=("remotive", "remoteok"), fetch: str =
             "note": meta.get("note") or meta.get("cap_hit") and f"{name} daily cap, used cache" or "",
             "home": spec["home"], "label": spec["label"],
         })
-    return jobs, notes
+    from a2179.ats import dedup
+    return dedup(jobs), notes

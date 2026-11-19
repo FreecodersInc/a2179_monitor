@@ -175,10 +175,27 @@ def main(argv=None):
     steps = []
     probe, info = env_info(py)
     steps.append(probe)
+    # ADR-0026: A2179_CI_SELECT_* from ci/select_steps.py. full = everything (default), targeted =
+    # lint + the tests of the touched files + only the experiment steps the commit touched
+    mode = os.environ.get("A2179_CI_SELECT_MODE", "full")
+    sel_tests = os.environ.get("A2179_CI_SELECT_TESTS", "").split()
+    sel_steps = {s for s in os.environ.get("A2179_CI_SELECT_STEPS", "").split(",") if s}
+    want = (lambda s: True) if mode != "targeted" else (lambda s: s in sel_steps)
+    lint = run("lint", [py, "-m", "compileall", "-q", "a2179", "eval", "ci", "tests", "monitor.py"], T)
+    steps.append(lint)
     if not a.skip_tests:
-        steps.append(run("tests", [py, "-m", "unittest", "discover", "-s", "tests", "-t", "."], T))
+        if mode == "targeted":
+            if sel_tests:
+                steps.append(run("tests", [py, "-m", "unittest", *sel_tests], T))
+        else:
+            steps.append(run("tests", [py, "-m", "unittest", "discover", "-s", "tests", "-t", "."], T))
+    if mode == "targeted":
+        print(f"targeted run ({os.environ.get('A2179_CI_SELECT_WHY', '')}): tests {sel_tests or 'none'}, "
+              f"steps {sorted(sel_steps) or 'none'}", flush=True)
 
     check = None
+    if mode == "targeted" and not ({"eval", "sweep", "targets"} & sel_steps):
+        a.dense = "off"
     if a.dense != "off" and info.get("torch") and info.get("sentence_transformers"):
         check = run("check_embedder", [py, "monitor.py", "--check-embedder"], T)
         steps.append(check)
@@ -186,47 +203,48 @@ def main(argv=None):
     if a.dense == "on" and not dense:
         reason += " (A2179_CI_DENSE=on, but not available)"
 
-    ev = [py, "eval/run_eval.py", "--out-dir", str(out / "eval"), "--config", str(out / "eval" / "config.unused.json")]
-    if offline:
-        ev.append("--local-only")
-    rec = run("eval", ev if dense else ev + ["--no-embed"], T)
-    steps.append(rec)
-    if dense and not rec["ok"]:
-        rec = run("eval", ev + ["--no-embed"], T)
-        rec["fallback"] = "rerun without the embedder"
+    if want("eval") or want("sweep"):
+        ev = [py, "eval/run_eval.py", "--out-dir", str(out / "eval"), "--config", str(out / "eval" / "config.unused.json")]
+        if offline:
+            ev.append("--local-only")
+        rec = run("eval", ev if dense else ev + ["--no-embed"], T)
         steps.append(rec)
+        if dense and not rec["ok"]:
+            rec = run("eval", ev + ["--no-embed"], T)
+            rec["fallback"] = "rerun without the embedder"
+            steps.append(rec)
 
-    sw = [py, "eval/sweep.py", "--out", str(out / "sweep" / "sweep.json"),
-          "--dense-scores", str(out / "sweep" / "dense_scores.jsonl")]
-    # extra embedders for the side by side table (EXP-003): by default every model of
-    # eval/embedders.json that is already in the HF cache, nothing is downloaded here
-    # (cached-small: cached and at most A2179_MAX_PARAMS_M, default 300 M params, so bge-m3,
-    # e5-large, LaBSE only when listed by name in A2179_CI_EMBEDDERS)
-    emb = ["--embedders", os.environ.get("A2179_CI_EMBEDDERS", "cached-small"),
-           "--device", COMPUTE_ENV.get("A2179_DEVICE", "cpu")]
-    rec = run("sweep", sw + ["--compute-dense"] + emb if dense else sw, T)
-    steps.append(rec)
-    if dense and not rec["ok"]:
-        (out / "sweep" / "dense_scores.jsonl").unlink(missing_ok=True)
-        rec = run("sweep", sw, T)
-        rec["fallback"] = "rerun without dense scores"
+        sw = [py, "eval/sweep.py", "--out", str(out / "sweep" / "sweep.json"),
+              "--dense-scores", str(out / "sweep" / "dense_scores.jsonl")]
+        # extra embedders for the side by side table (EXP-003): by default every model of
+        # eval/embedders.json that is already in the HF cache, nothing is downloaded here
+        # (cached-small: cached and at most A2179_MAX_PARAMS_M, default 300 M params, so bge-m3,
+        # e5-large, LaBSE only when listed by name in A2179_CI_EMBEDDERS)
+        emb = ["--embedders", os.environ.get("A2179_CI_EMBEDDERS", "cached-small"),
+               "--device", COMPUTE_ENV.get("A2179_DEVICE", "cpu")]
+        rec = run("sweep", sw + ["--compute-dense"] + emb if dense else sw, T)
         steps.append(rec)
+        if dense and not rec["ok"]:
+            (out / "sweep" / "dense_scores.jsonl").unlink(missing_ok=True)
+            rec = run("sweep", sw, T)
+            rec["fallback"] = "rerun without dense scores"
+            steps.append(rec)
 
     # the other targets (T-004, ADR-0017): same eval + sweep per profile into <out>/targets/<name>/,
     # skipped with a reason while a target has no labeled set (exit 4). Advisory: a new case
     # must not turn the A2179 run red. The default target above keeps its old paths.
-    for name in other_targets(os.environ.get("A2179_CI_TARGETS", "a2179_screen,de_jobs")):
+    for name in other_targets(os.environ.get("A2179_CI_TARGETS", "a2179_screen,de_jobs")) if want("targets") else []:
         steps.extend(target_steps(name, py, out, dense, offline, T))
 
     # charts + ranking metrics from the sweep scores, advisory: a failure here never turns CI red
-    if os.environ.get("A2179_CI_PLOTS", "1") not in ("0", "false", "no") and (out / "sweep" / "sweep.json").is_file():
+    if want("plots") and os.environ.get("A2179_CI_PLOTS", "1") not in ("0", "false", "no") and (out / "sweep" / "sweep.json").is_file():
         rec = run("plots", [py, "eval/plots.py", "--sweep", str(out / "sweep" / "sweep.json"),
                             "--out", str(out / "plots")], T)
         rec["advisory"] = True
         steps.append(rec)
 
     # two-case review reports (ADR-0017): reports/<date>/<case>/matches.csv + all.csv, with source links
-    if os.environ.get("A2179_CI_REVIEW", "1") not in ("0", "false", "no"):
+    if want("review") and os.environ.get("A2179_CI_REVIEW", "1") not in ("0", "false", "no"):
         date = time.strftime("%Y-%m-%d", time.gmtime())
         cache = os.environ.get("A2179_JOBS_CACHE") or str(Path.home() / ".cache" / "a2179-ci" / "jobs")
         rv = [py, "eval/review_run.py",
@@ -249,11 +267,13 @@ def main(argv=None):
                       "timed_out": False, "duration_s": 0, "ok": True,
                       "skipped": "TG_BOT_TOKEN / TG_CHAT_ID absent", "stdout_tail": "", "stderr_tail": ""})
 
-    summary = {"env": info, "secrets": have, "dense": {"enabled": dense, "reason": reason, "mode": a.dense, "hf_offline": offline},
+    summary = {"select": {"mode": mode, "tests": sel_tests, "steps": sorted(sel_steps),
+                          "base": os.environ.get("A2179_CI_SELECT_BASE", ""), "why": os.environ.get("A2179_CI_SELECT_WHY", "")},
+               "env": info, "secrets": have, "dense": {"enabled": dense, "reason": reason, "mode": a.dense, "hf_offline": offline},
                "steps": steps}
     (out / "steps.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"dense: {dense} ({reason}) -> {out / 'steps.json'}")
-    gating = [s for s in steps if s["name"] in ("tests", "tg_integration")]
+    gating = [s for s in steps if s["name"] in ("lint", "tests", "tg_integration")]
     return 1 if any(not s["ok"] for s in gating) else 0
 
 

@@ -1,0 +1,689 @@
+{
+ "_doc": "Public ATS boards polled by a2179/ats.py (ADR-0025). Every slug answered 200 to one request on the checked date, candidates that answered 404 on all three ATS were dropped. Names and slugs from public knowledge, no personal data.",
+ "checked": "2026-11-19",
+ "counts": {
+  "greenhouse": 84,
+  "lever": 9,
+  "ashby": 20
+ },
+ "companies": [
+  {
+   "slug": "amplitude",
+   "ats": "ashby",
+   "name": "amplitude",
+   "jobs_at_check": 47
+  },
+  {
+   "slug": "astronomer",
+   "ats": "ashby",
+   "name": "astronomer",
+   "jobs_at_check": 19
+  },
+  {
+   "slug": "benchling",
+   "ats": "ashby",
+   "name": "benchling",
+   "jobs_at_check": 58
+  },
+  {
+   "slug": "bolt",
+   "ats": "ashby",
+   "name": "bolt",
+   "jobs_at_check": 0
+  },
+  {
+   "slug": "buffer",
+   "ats": "ashby",
+   "name": "buffer",
+   "jobs_at_check": 2
+  },
+  {
+   "slug": "clickhouse",
+   "ats": "ashby",
+   "name": "clickhouse",
+   "jobs_at_check": null
+  },
+  {
+   "slug": "cohere",
+   "ats": "ashby",
+   "name": "cohere",
+   "jobs_at_check": null
+  },
+  {
+   "slug": "hopper",
+   "ats": "ashby",
+   "name": "hopper",
+   "jobs_at_check": 29
+  },
+  {
+   "slug": "klue",
+   "ats": "ashby",
+   "name": "klue",
+   "jobs_at_check": 6
+  },
+  {
+   "slug": "koho",
+   "ats": "ashby",
+   "name": "koho",
+   "jobs_at_check": 9
+  },
+  {
+   "slug": "lightspeedhq",
+   "ats": "ashby",
+   "name": "lightspeedhq",
+   "jobs_at_check": null
+  },
+  {
+   "slug": "materialize",
+   "ats": "ashby",
+   "name": "materialize",
+   "jobs_at_check": 4
+  },
+  {
+   "slug": "miro",
+   "ats": "ashby",
+   "name": "miro",
+   "jobs_at_check": 14
+  },
+  {
+   "slug": "montecarlodata",
+   "ats": "ashby",
+   "name": "montecarlodata",
+   "jobs_at_check": 10
+  },
+  {
+   "slug": "niantic",
+   "ats": "ashby",
+   "name": "niantic",
+   "jobs_at_check": 0
+  },
+  {
+   "slug": "plaid",
+   "ats": "ashby",
+   "name": "plaid",
+   "jobs_at_check": null
+  },
+  {
+   "slug": "sentry",
+   "ats": "ashby",
+   "name": "sentry",
+   "jobs_at_check": 42
+  },
+  {
+   "slug": "sonder",
+   "ats": "ashby",
+   "name": "sonder",
+   "jobs_at_check": 4
+  },
+  {
+   "slug": "trulioo",
+   "ats": "ashby",
+   "name": "trulioo",
+   "jobs_at_check": 27
+  },
+  {
+   "slug": "visier",
+   "ats": "ashby",
+   "name": "visier",
+   "jobs_at_check": 1
+  },
+  {
+   "slug": "abcellera",
+   "ats": "greenhouse",
+   "name": "abcellera",
+   "jobs_at_check": 37
+  },
+  {
+   "slug": "adyen",
+   "ats": "greenhouse",
+   "name": "adyen",
+   "jobs_at_check": 243
+  },
+  {
+   "slug": "affirm",
+   "ats": "greenhouse",
+   "name": "affirm",
+   "jobs_at_check": 227
+  },
+  {
+   "slug": "airbnb",
+   "ats": "greenhouse",
+   "name": "airbnb",
+   "jobs_at_check": 201
+  },
+  {
+   "slug": "airtable",
+   "ats": "greenhouse",
+   "name": "airtable",
+   "jobs_at_check": 11
+  },
+  {
+   "slug": "algolia",
+   "ats": "greenhouse",
+   "name": "algolia",
+   "jobs_at_check": 27
+  },
+  {
+   "slug": "anthropic",
+   "ats": "greenhouse",
+   "name": "anthropic",
+   "jobs_at_check": 636
+  },
+  {
+   "slug": "asana",
+   "ats": "greenhouse",
+   "name": "asana",
+   "jobs_at_check": 113
+  },
+  {
+   "slug": "attentive",
+   "ats": "greenhouse",
+   "name": "attentive",
+   "jobs_at_check": 30
+  },
+  {
+   "slug": "betterment",
+   "ats": "greenhouse",
+   "name": "betterment",
+   "jobs_at_check": 26
+  },
+  {
+   "slug": "braze",
+   "ats": "greenhouse",
+   "name": "braze",
+   "jobs_at_check": 332
+  },
+  {
+   "slug": "brex",
+   "ats": "greenhouse",
+   "name": "brex",
+   "jobs_at_check": 250
+  },
+  {
+   "slug": "calendly",
+   "ats": "greenhouse",
+   "name": "calendly",
+   "jobs_at_check": 5
+  },
+  {
+   "slug": "carta",
+   "ats": "greenhouse",
+   "name": "carta",
+   "jobs_at_check": 78
+  },
+  {
+   "slug": "celonis",
+   "ats": "greenhouse",
+   "name": "celonis",
+   "jobs_at_check": 262
+  },
+  {
+   "slug": "chime",
+   "ats": "greenhouse",
+   "name": "chime",
+   "jobs_at_check": 78
+  },
+  {
+   "slug": "circleci",
+   "ats": "greenhouse",
+   "name": "circleci",
+   "jobs_at_check": 14
+  },
+  {
+   "slug": "cloudflare",
+   "ats": "greenhouse",
+   "name": "cloudflare",
+   "jobs_at_check": 498
+  },
+  {
+   "slug": "cockroachlabs",
+   "ats": "greenhouse",
+   "name": "cockroachlabs",
+   "jobs_at_check": 12
+  },
+  {
+   "slug": "coinbase",
+   "ats": "greenhouse",
+   "name": "coinbase",
+   "jobs_at_check": 253
+  },
+  {
+   "slug": "collibra",
+   "ats": "greenhouse",
+   "name": "collibra",
+   "jobs_at_check": 22
+  },
+  {
+   "slug": "contentful",
+   "ats": "greenhouse",
+   "name": "contentful",
+   "jobs_at_check": 50
+  },
+  {
+   "slug": "databricks",
+   "ats": "greenhouse",
+   "name": "databricks",
+   "jobs_at_check": 899
+  },
+  {
+   "slug": "datadog",
+   "ats": "greenhouse",
+   "name": "datadog",
+   "jobs_at_check": 379
+  },
+  {
+   "slug": "deliveroo",
+   "ats": "greenhouse",
+   "name": "deliveroo",
+   "jobs_at_check": 189
+  },
+  {
+   "slug": "discord",
+   "ats": "greenhouse",
+   "name": "discord",
+   "jobs_at_check": 27
+  },
+  {
+   "slug": "dropbox",
+   "ats": "greenhouse",
+   "name": "dropbox",
+   "jobs_at_check": 47
+  },
+  {
+   "slug": "duolingo",
+   "ats": "greenhouse",
+   "name": "duolingo",
+   "jobs_at_check": 55
+  },
+  {
+   "slug": "elastic",
+   "ats": "greenhouse",
+   "name": "elastic",
+   "jobs_at_check": 372
+  },
+  {
+   "slug": "epicgames",
+   "ats": "greenhouse",
+   "name": "epicgames",
+   "jobs_at_check": 140
+  },
+  {
+   "slug": "faire",
+   "ats": "greenhouse",
+   "name": "faire",
+   "jobs_at_check": 73
+  },
+  {
+   "slug": "figma",
+   "ats": "greenhouse",
+   "name": "figma",
+   "jobs_at_check": 145
+  },
+  {
+   "slug": "fivetran",
+   "ats": "greenhouse",
+   "name": "fivetran",
+   "jobs_at_check": 187
+  },
+  {
+   "slug": "flexport",
+   "ats": "greenhouse",
+   "name": "flexport",
+   "jobs_at_check": 209
+  },
+  {
+   "slug": "geotab",
+   "ats": "greenhouse",
+   "name": "geotab",
+   "jobs_at_check": 60
+  },
+  {
+   "slug": "getyourguide",
+   "ats": "greenhouse",
+   "name": "getyourguide",
+   "jobs_at_check": 0
+  },
+  {
+   "slug": "gitlab",
+   "ats": "greenhouse",
+   "name": "gitlab",
+   "jobs_at_check": 246
+  },
+  {
+   "slug": "grafanalabs",
+   "ats": "greenhouse",
+   "name": "grafanalabs",
+   "jobs_at_check": 137
+  },
+  {
+   "slug": "gusto",
+   "ats": "greenhouse",
+   "name": "gusto",
+   "jobs_at_check": 83
+  },
+  {
+   "slug": "hubspotjobs",
+   "ats": "greenhouse",
+   "name": "hubspotjobs",
+   "jobs_at_check": 141
+  },
+  {
+   "slug": "instacart",
+   "ats": "greenhouse",
+   "name": "instacart",
+   "jobs_at_check": 85
+  },
+  {
+   "slug": "klaviyo",
+   "ats": "greenhouse",
+   "name": "klaviyo",
+   "jobs_at_check": 126
+  },
+  {
+   "slug": "later",
+   "ats": "greenhouse",
+   "name": "later",
+   "jobs_at_check": 33
+  },
+  {
+   "slug": "launchdarkly",
+   "ats": "greenhouse",
+   "name": "launchdarkly",
+   "jobs_at_check": 33
+  },
+  {
+   "slug": "lyft",
+   "ats": "greenhouse",
+   "name": "lyft",
+   "jobs_at_check": 146
+  },
+  {
+   "slug": "mejuri",
+   "ats": "greenhouse",
+   "name": "mejuri",
+   "jobs_at_check": 177
+  },
+  {
+   "slug": "mixpanel",
+   "ats": "greenhouse",
+   "name": "mixpanel",
+   "jobs_at_check": 39
+  },
+  {
+   "slug": "mongodb",
+   "ats": "greenhouse",
+   "name": "mongodb",
+   "jobs_at_check": 415
+  },
+  {
+   "slug": "monzo",
+   "ats": "greenhouse",
+   "name": "monzo",
+   "jobs_at_check": 60
+  },
+  {
+   "slug": "mozilla",
+   "ats": "greenhouse",
+   "name": "mozilla",
+   "jobs_at_check": 137
+  },
+  {
+   "slug": "n26",
+   "ats": "greenhouse",
+   "name": "n26",
+   "jobs_at_check": 25
+  },
+  {
+   "slug": "narvar",
+   "ats": "greenhouse",
+   "name": "narvar",
+   "jobs_at_check": 4
+  },
+  {
+   "slug": "newrelic",
+   "ats": "greenhouse",
+   "name": "newrelic",
+   "jobs_at_check": 42
+  },
+  {
+   "slug": "nextdoor",
+   "ats": "greenhouse",
+   "name": "nextdoor",
+   "jobs_at_check": 24
+  },
+  {
+   "slug": "nubank",
+   "ats": "greenhouse",
+   "name": "nubank",
+   "jobs_at_check": 0
+  },
+  {
+   "slug": "okta",
+   "ats": "greenhouse",
+   "name": "okta",
+   "jobs_at_check": 365
+  },
+  {
+   "slug": "pagerduty",
+   "ats": "greenhouse",
+   "name": "pagerduty",
+   "jobs_at_check": 47
+  },
+  {
+   "slug": "pinterest",
+   "ats": "greenhouse",
+   "name": "pinterest",
+   "jobs_at_check": 175
+  },
+  {
+   "slug": "reddit",
+   "ats": "greenhouse",
+   "name": "reddit",
+   "jobs_at_check": 144
+  },
+  {
+   "slug": "remotecom",
+   "ats": "greenhouse",
+   "name": "remotecom",
+   "jobs_at_check": 0
+  },
+  {
+   "slug": "riotgames",
+   "ats": "greenhouse",
+   "name": "riotgames",
+   "jobs_at_check": 203
+  },
+  {
+   "slug": "robinhood",
+   "ats": "greenhouse",
+   "name": "robinhood",
+   "jobs_at_check": 167
+  },
+  {
+   "slug": "roblox",
+   "ats": "greenhouse",
+   "name": "roblox",
+   "jobs_at_check": 264
+  },
+  {
+   "slug": "samsara",
+   "ats": "greenhouse",
+   "name": "samsara",
+   "jobs_at_check": 305
+  },
+  {
+   "slug": "scaleai",
+   "ats": "greenhouse",
+   "name": "scaleai",
+   "jobs_at_check": 168
+  },
+  {
+   "slug": "sigmacomputing",
+   "ats": "greenhouse",
+   "name": "sigmacomputing",
+   "jobs_at_check": 83
+  },
+  {
+   "slug": "singlestore",
+   "ats": "greenhouse",
+   "name": "singlestore",
+   "jobs_at_check": 42
+  },
+  {
+   "slug": "sofi",
+   "ats": "greenhouse",
+   "name": "sofi",
+   "jobs_at_check": 54
+  },
+  {
+   "slug": "squarespace",
+   "ats": "greenhouse",
+   "name": "squarespace",
+   "jobs_at_check": 19
+  },
+  {
+   "slug": "starburst",
+   "ats": "greenhouse",
+   "name": "starburst",
+   "jobs_at_check": 35
+  },
+  {
+   "slug": "stripe",
+   "ats": "greenhouse",
+   "name": "stripe",
+   "jobs_at_check": 770
+  },
+  {
+   "slug": "sumologic",
+   "ats": "greenhouse",
+   "name": "sumologic",
+   "jobs_at_check": 26
+  },
+  {
+   "slug": "sumup",
+   "ats": "greenhouse",
+   "name": "sumup",
+   "jobs_at_check": 309
+  },
+  {
+   "slug": "thinkific",
+   "ats": "greenhouse",
+   "name": "thinkific",
+   "jobs_at_check": 0
+  },
+  {
+   "slug": "toast",
+   "ats": "greenhouse",
+   "name": "toast",
+   "jobs_at_check": 332
+  },
+  {
+   "slug": "traderepublic",
+   "ats": "greenhouse",
+   "name": "traderepublic",
+   "jobs_at_check": 0
+  },
+  {
+   "slug": "twilio",
+   "ats": "greenhouse",
+   "name": "twilio",
+   "jobs_at_check": 107
+  },
+  {
+   "slug": "twitch",
+   "ats": "greenhouse",
+   "name": "twitch",
+   "jobs_at_check": 52
+  },
+  {
+   "slug": "unbounce",
+   "ats": "greenhouse",
+   "name": "unbounce",
+   "jobs_at_check": 0
+  },
+  {
+   "slug": "webflow",
+   "ats": "greenhouse",
+   "name": "webflow",
+   "jobs_at_check": 0
+  },
+  {
+   "slug": "wikimedia",
+   "ats": "greenhouse",
+   "name": "wikimedia",
+   "jobs_at_check": 16
+  },
+  {
+   "slug": "yext",
+   "ats": "greenhouse",
+   "name": "yext",
+   "jobs_at_check": 29
+  },
+  {
+   "slug": "yugabyte",
+   "ats": "greenhouse",
+   "name": "yugabyte",
+   "jobs_at_check": 21
+  },
+  {
+   "slug": "zscaler",
+   "ats": "greenhouse",
+   "name": "zscaler",
+   "jobs_at_check": 378
+  },
+  {
+   "slug": "kraken",
+   "ats": "lever",
+   "name": "kraken",
+   "jobs_at_check": 0
+  },
+  {
+   "slug": "palantir",
+   "ats": "lever",
+   "name": "palantir",
+   "jobs_at_check": 1
+  },
+  {
+   "slug": "pointclickcare",
+   "ats": "lever",
+   "name": "pointclickcare",
+   "jobs_at_check": 1
+  },
+  {
+   "slug": "spotify",
+   "ats": "lever",
+   "name": "spotify",
+   "jobs_at_check": 1
+  },
+  {
+   "slug": "tealbook",
+   "ats": "lever",
+   "name": "tealbook",
+   "jobs_at_check": 0
+  },
+  {
+   "slug": "wattpad",
+   "ats": "lever",
+   "name": "wattpad",
+   "jobs_at_check": 1
+  },
+  {
+   "slug": "waveapps",
+   "ats": "lever",
+   "name": "waveapps",
+   "jobs_at_check": 1
+  },
+  {
+   "slug": "wealthfront",
+   "ats": "lever",
+   "name": "wealthfront",
+   "jobs_at_check": 1
+  },
+  {
+   "slug": "wealthsimple",
+   "ats": "lever",
+   "name": "wealthsimple",
+   "jobs_at_check": 0
+  }
+ ]
+}

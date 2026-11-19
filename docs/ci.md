@@ -138,3 +138,34 @@ Job идёт с `environment: experiment`, оттуда приходят `TG_BOT
 
 ## Почему 634fa55 красный (тесты и кэш оценок)
 `tests` упал на `TestOomFallback`: CI экспортирует `A2179_DENSE_CACHE` всем шагам, тест в прогоне 247d60c записал свои фейковые оценки в кэш раннера, и в следующем прогоне `compute_dense` взял их из кэша и не вызвал эмбеддер (devices `[]`). Теперь `tests/__init__.py` убирает `A2179_DENSE_CACHE` из окружения тестов, тесты кэша ставят временную папку сами. Мусорные записи в `~/.cache/a2179-ci/dense` безвредны (ключ по строкам `a`, `b`, с реальным набором не совпадает). Сам кэш работает: sweep 90 s вместо 346 s.
+
+## Какие шаги гонит push (ADR-0026)
+`ci/run.sh` первым делом зовёт `ci/select_steps.py`. База сравнения: последний коммит, у которого уже есть `results/<дата>_<sha>.json` (то, что CI реально проверил), иначе `HEAD~1`.
+* **skip**: менялись только `docs/`, `experiments/`, `work/`, `reports/`, `results/`, `*.md`. `run.sh` выходит с 0 до venv, коммита результатов нет. Коммиты только с документами всё равно помечаем `[skip ci]`, это экономит запуск раннера.
+* **full**: тронут общий код (`a2179/`, `ci/`, `monitor.py`, `targets/`, `eval/run_eval.py`, `eval/sweep.py`, `eval/plots.py`, `eval/embedders.json`, `eval/labeled.jsonl`, `tests/helpers.py`, `tests/__init__.py`, `tests/fixtures/`). Полная регрессия и все шаги экспериментов.
+* **targeted**: всё остальное. Lint (`compileall`), только тесты тронутых файлов (тест с тем же именем или импортирующий модуль) и только эксперимент коммита (например `eval/de_jobs/` даёт шаги `eval[de_jobs]`, `sweep[de_jobs]`, `review`).
+* `A2179_CI_MODE=full` в переменных репо форсирует полный прогон.
+* выбор пишется в `steps.json` (`select`) и в лог.
+
+Локально перед каждым push: lint и быстрые тесты тронутых файлов. Красный CI, который не чинится за 15 минут, откатываем revert коммитом.
+
+### Что поправить в workflow руками (наш токен .github/workflows менять не может)
+Вставить в `.github/workflows/experiments.yml` (и в копию `ci/experiments.yml`) вместо текущих `on:` и `concurrency:`:
+
+```yaml
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "results/**"
+      - "docs/**"
+      - "reports/**"
+      - "experiments/**"
+      - "work/**"
+      - "**/*.md"
+
+concurrency:
+  group: experiments-${{ github.ref }}
+  cancel-in-progress: true
+```
+Тогда коммит только с документами раннер вообще не будит, а новый push отменяет идущий прогон старого.
