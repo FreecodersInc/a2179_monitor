@@ -1,0 +1,4 @@
+requirements.txt unchanged, skip pip
+requirements-embed.txt unchanged, skip pip
+model cache step off (set A2179_CI_CACHE_MODEL=1 or A2179_CI_INSTALL_TORCH)
+Python 3.14.4
