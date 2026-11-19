@@ -2,11 +2,23 @@
  "_doc": "Public ATS boards polled by a2179/ats.py (ADR-0025). Every slug answered 200 to one request on the checked date, candidates that answered 404 on all three ATS were dropped. Names and slugs from public knowledge, no personal data.",
  "checked": "2026-11-19",
  "counts": {
-  "greenhouse": 84,
-  "lever": 9,
-  "ashby": 20
+  "greenhouse": 87,
+  "lever": 17,
+  "ashby": 51
  },
  "companies": [
+  {
+   "slug": "1password",
+   "ats": "ashby",
+   "name": "1password",
+   "jobs_at_check": null
+  },
+  {
+   "slug": "airbyte",
+   "ats": "ashby",
+   "name": "airbyte",
+   "jobs_at_check": 16
+  },
   {
    "slug": "amplitude",
    "ats": "ashby",
@@ -50,6 +62,48 @@
    "jobs_at_check": null
   },
   {
+   "slug": "cursor",
+   "ats": "ashby",
+   "name": "cursor",
+   "jobs_at_check": 88
+  },
+  {
+   "slug": "deel",
+   "ats": "ashby",
+   "name": "deel",
+   "jobs_at_check": 0
+  },
+  {
+   "slug": "drata",
+   "ats": "ashby",
+   "name": "drata",
+   "jobs_at_check": 24
+  },
+  {
+   "slug": "elevenlabs",
+   "ats": "ashby",
+   "name": "elevenlabs",
+   "jobs_at_check": null
+  },
+  {
+   "slug": "harvey",
+   "ats": "ashby",
+   "name": "harvey",
+   "jobs_at_check": null
+  },
+  {
+   "slug": "hex",
+   "ats": "ashby",
+   "name": "hex",
+   "jobs_at_check": 42
+  },
+  {
+   "slug": "hightouch",
+   "ats": "ashby",
+   "name": "hightouch",
+   "jobs_at_check": 1
+  },
+  {
    "slug": "hopper",
    "ats": "ashby",
    "name": "hopper",
@@ -68,10 +122,22 @@
    "jobs_at_check": 9
   },
   {
+   "slug": "ledger",
+   "ats": "ashby",
+   "name": "ledger",
+   "jobs_at_check": 17
+  },
+  {
    "slug": "lightspeedhq",
    "ats": "ashby",
    "name": "lightspeedhq",
    "jobs_at_check": null
+  },
+  {
+   "slug": "linear",
+   "ats": "ashby",
+   "name": "linear",
+   "jobs_at_check": 32
   },
   {
    "slug": "materialize",
@@ -80,10 +146,22 @@
    "jobs_at_check": 4
   },
   {
+   "slug": "mercury",
+   "ats": "ashby",
+   "name": "mercury",
+   "jobs_at_check": 0
+  },
+  {
    "slug": "miro",
    "ats": "ashby",
    "name": "miro",
    "jobs_at_check": 14
+  },
+  {
+   "slug": "modal",
+   "ats": "ashby",
+   "name": "modal",
+   "jobs_at_check": 51
   },
   {
    "slug": "montecarlodata",
@@ -92,10 +170,40 @@
    "jobs_at_check": 10
   },
   {
+   "slug": "motherduck",
+   "ats": "ashby",
+   "name": "motherduck",
+   "jobs_at_check": 6
+  },
+  {
    "slug": "niantic",
    "ats": "ashby",
    "name": "niantic",
    "jobs_at_check": 0
+  },
+  {
+   "slug": "notion",
+   "ats": "ashby",
+   "name": "notion",
+   "jobs_at_check": null
+  },
+  {
+   "slug": "openai",
+   "ats": "ashby",
+   "name": "openai",
+   "jobs_at_check": null
+  },
+  {
+   "slug": "perplexity",
+   "ats": "ashby",
+   "name": "perplexity",
+   "jobs_at_check": null
+  },
+  {
+   "slug": "pinecone",
+   "ats": "ashby",
+   "name": "pinecone",
+   "jobs_at_check": 8
   },
   {
    "slug": "plaid",
@@ -104,10 +212,58 @@
    "jobs_at_check": null
   },
   {
+   "slug": "posthog",
+   "ats": "ashby",
+   "name": "posthog",
+   "jobs_at_check": 9
+  },
+  {
+   "slug": "prefect",
+   "ats": "ashby",
+   "name": "prefect",
+   "jobs_at_check": 4
+  },
+  {
+   "slug": "procurify",
+   "ats": "ashby",
+   "name": "procurify",
+   "jobs_at_check": 8
+  },
+  {
+   "slug": "quora",
+   "ats": "ashby",
+   "name": "quora",
+   "jobs_at_check": 8
+  },
+  {
+   "slug": "ramp",
+   "ats": "ashby",
+   "name": "ramp",
+   "jobs_at_check": null
+  },
+  {
+   "slug": "replit",
+   "ats": "ashby",
+   "name": "replit",
+   "jobs_at_check": 37
+  },
+  {
+   "slug": "runway",
+   "ats": "ashby",
+   "name": "runway",
+   "jobs_at_check": 3
+  },
+  {
    "slug": "sentry",
    "ats": "ashby",
    "name": "sentry",
    "jobs_at_check": 42
+  },
+  {
+   "slug": "snyk",
+   "ats": "ashby",
+   "name": "snyk",
+   "jobs_at_check": 39
   },
   {
    "slug": "sonder",
@@ -116,16 +272,46 @@
    "jobs_at_check": 4
   },
   {
+   "slug": "supabase",
+   "ats": "ashby",
+   "name": "supabase",
+   "jobs_at_check": null
+  },
+  {
+   "slug": "temporal",
+   "ats": "ashby",
+   "name": "temporal",
+   "jobs_at_check": null
+  },
+  {
    "slug": "trulioo",
    "ats": "ashby",
    "name": "trulioo",
    "jobs_at_check": 27
   },
   {
+   "slug": "vanta",
+   "ats": "ashby",
+   "name": "vanta",
+   "jobs_at_check": null
+  },
+  {
+   "slug": "vercel",
+   "ats": "ashby",
+   "name": "vercel",
+   "jobs_at_check": 0
+  },
+  {
    "slug": "visier",
    "ats": "ashby",
    "name": "visier",
    "jobs_at_check": 1
+  },
+  {
+   "slug": "zapier",
+   "ats": "ashby",
+   "name": "zapier",
+   "jobs_at_check": 10
   },
   {
    "slug": "abcellera",
@@ -392,6 +578,12 @@
    "jobs_at_check": 33
   },
   {
+   "slug": "lucidmotors",
+   "ats": "greenhouse",
+   "name": "lucidmotors",
+   "jobs_at_check": 480
+  },
+  {
    "slug": "lyft",
    "ats": "greenhouse",
    "name": "lyft",
@@ -438,6 +630,12 @@
    "ats": "greenhouse",
    "name": "narvar",
    "jobs_at_check": 4
+  },
+  {
+   "slug": "netlify",
+   "ats": "greenhouse",
+   "name": "netlify",
+   "jobs_at_check": 6
   },
   {
    "slug": "newrelic",
@@ -572,6 +770,12 @@
    "jobs_at_check": 0
   },
   {
+   "slug": "tide",
+   "ats": "greenhouse",
+   "name": "tide",
+   "jobs_at_check": 81
+  },
+  {
    "slug": "toast",
    "ats": "greenhouse",
    "name": "toast",
@@ -632,10 +836,34 @@
    "jobs_at_check": 378
   },
   {
+   "slug": "binance",
+   "ats": "lever",
+   "name": "binance",
+   "jobs_at_check": 1
+  },
+  {
+   "slug": "crypto",
+   "ats": "lever",
+   "name": "crypto",
+   "jobs_at_check": 1
+  },
+  {
+   "slug": "highspot",
+   "ats": "lever",
+   "name": "highspot",
+   "jobs_at_check": 0
+  },
+  {
    "slug": "kraken",
    "ats": "lever",
    "name": "kraken",
    "jobs_at_check": 0
+  },
+  {
+   "slug": "outreach",
+   "ats": "lever",
+   "name": "outreach",
+   "jobs_at_check": 1
   },
   {
    "slug": "palantir",
@@ -648,6 +876,18 @@
    "ats": "lever",
    "name": "pointclickcare",
    "jobs_at_check": 1
+  },
+  {
+   "slug": "rover",
+   "ats": "lever",
+   "name": "rover",
+   "jobs_at_check": 1
+  },
+  {
+   "slug": "shieldai",
+   "ats": "lever",
+   "name": "shieldai",
+   "jobs_at_check": 0
   },
   {
    "slug": "spotify",
@@ -684,6 +924,18 @@
    "ats": "lever",
    "name": "wealthsimple",
    "jobs_at_check": 0
+  },
+  {
+   "slug": "whoop",
+   "ats": "lever",
+   "name": "whoop",
+   "jobs_at_check": 0
+  },
+  {
+   "slug": "zoox",
+   "ats": "lever",
+   "name": "zoox",
+   "jobs_at_check": 1
   }
  ]
 }
