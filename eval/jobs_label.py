@@ -34,7 +34,10 @@ from a2179.target import eval_data_path, load_target  # noqa: E402
 CASE = "de_jobs"
 ESCI = {"E": 1, "S": 1, "C": 0, "I": 0}
 COLS = ["cand_id", "reviewed", "esci", "pre_esci", "title", "company", "location", "rule_match", "rule_model",
-        "matcher", "score", "reason", "url", "source", "fetched_at", "note"]
+        "matcher", "score", "reason", "url", "source", "fetched_at", "note", "labeler", "unsure"]
+# labeler: who set esci. "bot" = proposed by the assistant from title, company and location, not an
+# independent human label (eval/de_jobs/README.md). It is carried into labeled.jsonl so EXP records can
+# split or drop those rows. unsure = 1 goes in as review_unsure.
 
 
 def key(r: dict) -> str:
@@ -109,7 +112,9 @@ def merge(sheet_path: Path, target=CASE) -> list[dict]:
         new.append({"id": nid, "title": r["title"], "snippet": "", "label": ESCI[e], "esci": e, "lang": "en",
                     "kind": f"esci_{e}", "source": f"real:{r.get('source') or 'jobs'}", "company": r.get("company", ""),
                     "location": r.get("location", ""), "url": r.get("url", ""), "fetched_at": r.get("fetched_at", ""),
-                    **({"note": r["note"]} if r.get("note") else {})})
+                    **({"note": r["note"]} if r.get("note") else {}),
+                    **({"labeler": r["labeler"].strip()} if (r.get("labeler") or "").strip() else {}),
+                    **({"review_unsure": True} if str(r.get("unsure", "")).strip() in ("1", "true", "yes") else {})})
     if new:
         dest.parent.mkdir(parents=True, exist_ok=True)
         with dest.open("a", encoding="utf-8") as f:

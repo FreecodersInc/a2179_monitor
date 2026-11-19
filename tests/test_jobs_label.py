@@ -52,7 +52,7 @@ class TestJobsLabel(unittest.TestCase):
             if r["title"] == "Senior Data Engineer":
                 r.update(reviewed="1", esci="e")
             if r["title"] == "Data Analyst":
-                r.update(reviewed="1", esci="C")
+                r.update(reviewed="1", esci="C", labeler="bot", unsure="1")
         with out.open("w", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=J.COLS)
             w.writeheader()
@@ -60,6 +60,9 @@ class TestJobsLabel(unittest.TestCase):
         new = J.merge(out)
         self.assertEqual(sorted((r["title"], r["label"], r["esci"]) for r in new),
                          [("Data Analyst", 0, "C"), ("Senior Data Engineer", 1, "E")])
+        by = {r["title"]: r for r in new}
+        self.assertEqual((by["Data Analyst"]["labeler"], by["Data Analyst"]["review_unsure"]), ("bot", True))
+        self.assertNotIn("labeler", by["Senior Data Engineer"])
         self.assertEqual(J.merge(out), [])   # idempotent
         self.assertEqual(len(J.sheet(self.tmp / "reports", out)), 1)   # labeled rows leave the sheet
 
