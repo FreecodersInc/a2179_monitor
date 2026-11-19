@@ -229,5 +229,59 @@
         "remoteok"
       ]
     }
+  },
+  "eval": {
+    "data": "eval/de_jobs/labeled.jsonl",
+    "features": {
+      "display": [
+        "data engineer",
+        "data engineering",
+        "analytics engineer",
+        "data platform",
+        "etl",
+        "elt",
+        "pipeline",
+        "pipelines",
+        "spark",
+        "airflow",
+        "dbt",
+        "kafka",
+        "snowflake",
+        "databricks"
+      ],
+      "other": {
+        "analyst": [
+          "data analyst",
+          "business analyst",
+          "bi analyst",
+          "reporting analyst"
+        ],
+        "scientist_research": [
+          "research scientist",
+          "phd",
+          "researcher"
+        ],
+        "frontend_mobile": [
+          "frontend",
+          "front end",
+          "react",
+          "ios",
+          "android"
+        ],
+        "sales_support": [
+          "sales",
+          "account executive",
+          "customer support",
+          "customer success"
+        ],
+        "junior_intern": [
+          "intern",
+          "internship",
+          "junior",
+          "graduate"
+        ]
+      }
+    },
+    "_note": "features: a priori groups for the sweep feat channel (display = positive role words, other = negative title groups), a starting point, not tuned"
   }
 }

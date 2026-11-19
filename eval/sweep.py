@@ -41,6 +41,9 @@ from a2179 import prototypes  # noqa: E402
 from a2179.normalize import normalize  # noqa: E402
 from a2179.rules import classify  # noqa: E402
 from a2179.similarity import TfidfSim  # noqa: E402
+from a2179.target import DEFAULT_TARGET, eval_data_path, load_target  # noqa: E402
+
+NO_LABELS = 4   # the target has no labeled set yet
 
 DATE = "2026-11-19"
 WS = [round(x * 0.1, 1) for x in range(11)]
@@ -76,12 +79,27 @@ RX_DISPLAY = _words_rx(F_DISPLAY)
 RX_OTHER = {k: _words_rx(v) for k, v in F_OTHER.items()}
 
 
-def features(title: str, snippet: str = ""):
+def feature_rx(target=None):
+    """(display rx, {group: rx}) of a target: profile eval.features {"display": [...], "other": {...}},
+    else the fixed A2179 groups above (so the A2179 numbers stay the same)."""
+    tg = load_target(target) if target is not None else None
+    fe = (tg.eval.get("features") if tg else None) or {}
+    if not fe:
+        if tg is None or tg.name == DEFAULT_TARGET:
+            return RX_DISPLAY, RX_OTHER
+        return _words_rx([]), {}   # another target without groups: the feat channel stays flat
+    return _words_rx(fe.get("display") or []), {k: _words_rx(v) for k, v in (fe.get("other") or {}).items()}
+
+
+def features(title: str, snippet: str = "", rx=None):
     """(value in [-1, 1], which groups fired). Display words from title + snippet, the negative
-    groups from the title only (same split as the regex rules: a description may mention a service)."""
+    groups from the title only (same split as the regex rules: a description may mention a service).
+    rx: feature_rx(target), default the A2179 groups. For another target "display" means its
+    positive part words (profile eval.features.display)."""
+    rx_display, rx_other = rx or (RX_DISPLAY, RX_OTHER)
     tt, t = normalize(title), normalize(f"{title} {snippet}")
-    disp = 1 if RX_DISPLAY.search(t) else 0
-    other = [k for k, rx in RX_OTHER.items() if rx.search(tt)]
+    disp = 1 if rx_display.pattern != r"\b(?:)\b" and rx_display.search(t) else 0
+    other = [k for k, r_ in rx_other.items() if r_.search(tt)]
     return max(-1.0, min(1.0, disp - len(other))), (["display"] if disp else []) + other
 
 
@@ -138,10 +156,10 @@ def ranks(v):
 
 
 class Sweep:
-    def __init__(self, rows, accept_a1932=True):
+    def __init__(self, rows, accept_a1932=True, target=None):
         self.rows = rows
         self.y = [bool(r["label"]) for r in rows]
-        rr = [classify(r["title"], r["snippet"], accept_a1932) for r in rows]
+        rr = [classify(r["title"], r.get("snippet", ""), accept_a1932, target=target) for r in rows]
         self.regex = [x.match for x in rr]
         self.gate = [x.gate for x in rr]
 
@@ -179,7 +197,7 @@ class Sweep:
         return {"P": round(pr, 3), "R": round(rc, 3), "F1": round(2 * pr * rc / (pr + rc), 3) if pr + rc else 0.0}
 
     def subset(self, s, t, hybrid, real):
-        idx = [i for i, r in enumerate(self.rows) if (r["source"] != "synthetic") == real]
+        idx = [i for i, r in enumerate(self.rows) if (r.get("source") != "synthetic") == real]
         return prf([self.y[i] for i in idx], self.pred(s, t, hybrid, idx))
 
     def evaluate(self, name, s, hybrid, extra=None):
@@ -208,11 +226,12 @@ def tfidf_2d(sw, sc, hybrid):
 
 
 def compute_dense(rows, out: Path, model: str, proto_prefix: str = "", text_prefix: str = "", local_only=False,
-                  device="auto"):
+                  device="auto", pos=None, neg=None):
     from a2179.embedder import EmbedSim
-    texts = [f"{r['title']} {r['snippet']}".strip() for r in rows]
+    texts = [f"{r['title']} {r.get('snippet', '')}".strip() for r in rows]
     try:
-        sim = EmbedSim(model, local_only=local_only, device=device, proto_prefix=proto_prefix, text_prefix=text_prefix)
+        sim = EmbedSim(model, local_only=local_only, device=device, proto_prefix=proto_prefix, text_prefix=text_prefix,
+                       pos=pos, neg=neg)
         t0 = time.time()
         sc = sim.score_many(texts)
     except Exception as e:  # noqa: BLE001
@@ -226,7 +245,8 @@ def compute_dense(rows, out: Path, model: str, proto_prefix: str = "", text_pref
             torch.cuda.empty_cache()
         except Exception:  # noqa: BLE001
             pass
-        sim = EmbedSim(model, local_only=local_only, device="cpu", proto_prefix=proto_prefix, text_prefix=text_prefix)
+        sim = EmbedSim(model, local_only=local_only, device="cpu", proto_prefix=proto_prefix, text_prefix=text_prefix,
+                       pos=pos, neg=neg)
         t0 = time.time()
         sc = sim.score_many(texts)
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -307,7 +327,7 @@ def committed_dense(rows):
         return None
     rep = json.loads(p.read_text(encoding="utf-8"))
     kind = {r["id"]: r["kind"] for r in rows}
-    src = {r["id"]: r["source"] for r in rows}
+    src = {r["id"]: r.get("source") for r in rows}
     out = {"modes": {k: rep["modes"].get(k) for k in ("embed", "hybrid_embed")}, "errors": {}}
     for k in ("embed", "hybrid_embed"):
         out["errors"][k] = [{"id": e[0], "label": e[1], "title": e[2], "pos": e[3], "neg": e[4],
@@ -377,7 +397,9 @@ def tables_md(res, rows, sw):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("--data", default=str(ROOT / "eval" / "labeled.jsonl"))
+    ap.add_argument("--target", default=os.environ.get("A2179_TARGET") or DEFAULT_TARGET,
+                    help="profile in targets/: rules, prototypes, features and the labeled set")
+    ap.add_argument("--data", default=None, help="labeled JSONL (default: the target's labeled set)")
     ap.add_argument("--dense-scores", default=str(ROOT / "eval" / "dense_scores.jsonl"))
     ap.add_argument("--compute-dense", action="store_true")
     ap.add_argument("--model", default="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
@@ -387,23 +409,31 @@ def main(argv=None):
                     help="more dense channels from eval/embedders.json: none | all | cached | e5-base,bge-m3,... "
                          "each is scored into <dense-scores>_<short>.jsonl and becomes channel dense:<short>")
     a = ap.parse_args(argv)
+    tg = load_target(a.target)
+    a.data = a.data or str(eval_data_path(tg))
+    if not Path(a.data).is_file():
+        print(f"target {tg.name}: no labeled set at {a.data} (label one first, see work/T-019)", file=sys.stderr)
+        return NO_LABELS
     rows = [json.loads(l) for l in Path(a.data).read_text(encoding="utf-8").splitlines() if l.strip()]
+    for r in rows:
+        r.setdefault("snippet", "")
     extras = select_embedders(a.embedders, default_model=a.model)
     skipped = {}
     if a.compute_dense:
-        compute_dense(rows, Path(a.dense_scores), a.model)
+        compute_dense(rows, Path(a.dense_scores), a.model, pos=tg.positive, neg=tg.negative)
         for m in extras:
             try:   # one model that is missing or fails must not cost the others
                 compute_dense(rows, extra_scores_path(Path(a.dense_scores), m["short"]), m["id"],
                               m["proto_prefix"], m["text_prefix"],
-                              local_only=os.environ.get("HF_HUB_OFFLINE", "") in ("1", "true", "yes"))
+                              local_only=os.environ.get("HF_HUB_OFFLINE", "") in ("1", "true", "yes"),
+                              pos=tg.positive, neg=tg.negative)
             except Exception as e:  # noqa: BLE001
                 skipped[m["short"]] = f"{type(e).__name__}: {str(e)[:200]}"
                 print(f"dense {m['short']} skipped: {skipped[m['short']]}")
-    sw = Sweep(rows)
+    sw = Sweep(rows, target=tg)
     texts = [f"{r['title']} {r['snippet']}".strip() for r in rows]
-    tf = TfidfSim()
-    bm = BM25(prototypes.POSITIVE, prototypes.NEGATIVE)
+    tf = TfidfSim(tg.positive, tg.negative)
+    bm = BM25(tg.positive, tg.negative)
     ch = {"tfidf": [tf.score(t) for t in texts], "bm25": [bm.score(t) for t in texts]}
     dense_src = None
     dp = Path(a.dense_scores)
@@ -420,11 +450,12 @@ def main(argv=None):
             continue
         ch[f"dense:{m['short']}"] = sc
         embedders[m["short"]] = {k: m.get(k) for k in ("id", "proto_prefix", "text_prefix", "params_m", "weights_mb")}
-    feats = [features(r["title"], r["snippet"]) for r in rows]
+    frx = feature_rx(tg)
+    feats = [features(r["title"], r["snippet"], frx) for r in rows]
     F = [(f + 1) / 2 for f, _ in feats]
     D = {k: minmax([p - n for p, n in v]) for k, v in ch.items()}
 
-    res = {"generated": time.strftime("%Y-%m-%d %H:%M %Z"), "n": len(rows), "dense": dense_src,
+    res = {"generated": time.strftime("%Y-%m-%d %H:%M %Z"), "target": tg.name, "n": len(rows), "dense": dense_src,
            "dense_model": a.model if dense_src else None, "embedders": embedders, "embedders_skipped": skipped,
            "variants": [], "w_curves": {}, "lam_curves": {}, "tfidf_2d": {}, "steps": {}}
     V = res["variants"]
@@ -493,4 +524,4 @@ def main(argv=None):
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

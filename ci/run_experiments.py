@@ -91,6 +91,48 @@ def dense_decision(mode, info, check_rec):
     return True, "cuda" if info.get("cuda_available") else "cpu (no CUDA device visible)"
 
 
+DEFAULT_TARGET = "a2179_screen"
+NO_LABELS = 4   # eval/run_eval.py and eval/sweep.py: the target has no labeled set yet
+
+
+def other_targets(spec):
+    names = []
+    for n in (spec or "").split(","):
+        n = n.strip()
+        if n and n != DEFAULT_TARGET and n not in names and all(c.isalnum() or c in "_-" for c in n):
+            names.append(n)
+    return names
+
+
+def target_steps(name, py, out, dense, offline, T):
+    d = out / "targets" / name
+    (d / "eval").mkdir(parents=True, exist_ok=True)
+    (d / "sweep").mkdir(parents=True, exist_ok=True)
+    ev = [py, "eval/run_eval.py", "--target", name, "--out-dir", str(d / "eval"),
+          "--config", str(d / "eval" / "config.unused.json")] + (["--local-only"] if offline else [])
+    rec = run(f"eval[{name}]", ev if dense else ev + ["--no-embed"], T)
+    if rec["exit_code"] == NO_LABELS:
+        why = (rec["stderr_tail"].strip().splitlines() or ["no labeled set"])[-1][:300]
+        return [{**rec, "ok": True, "advisory": True, "skipped": why}]
+    rec["advisory"] = True
+    steps = [rec]
+    if dense and not rec["ok"]:
+        rec = run(f"eval[{name}]", ev + ["--no-embed"], T)
+        rec.update(advisory=True, fallback="rerun without the embedder")
+        steps.append(rec)
+    sw = [py, "eval/sweep.py", "--target", name, "--out", str(d / "sweep" / "sweep.json"),
+          "--dense-scores", str(d / "sweep" / "dense_scores.jsonl")]
+    rec = run(f"sweep[{name}]", sw + ["--compute-dense"] if dense else sw, T)
+    rec["advisory"] = True
+    steps.append(rec)
+    if dense and not rec["ok"]:
+        (d / "sweep" / "dense_scores.jsonl").unlink(missing_ok=True)
+        rec = run(f"sweep[{name}]", sw, T)
+        rec.update(advisory=True, fallback="rerun without dense scores")
+        steps.append(rec)
+    return steps
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=str(ROOT / "ci_out"))
@@ -142,6 +184,12 @@ def main(argv=None):
         rec = run("sweep", sw, T)
         rec["fallback"] = "rerun without dense scores"
         steps.append(rec)
+
+    # the other targets (T-004, ADR-0017): same eval + sweep per profile into <out>/targets/<name>/,
+    # skipped with a reason while a target has no labeled set (exit 4). Advisory: a new case
+    # must not turn the A2179 run red. The default target above keeps its old paths.
+    for name in other_targets(os.environ.get("A2179_CI_TARGETS", "a2179_screen,de_jobs")):
+        steps.extend(target_steps(name, py, out, dense, offline, T))
 
     # charts + ranking metrics from the sweep scores, advisory: a failure here never turns CI red
     if os.environ.get("A2179_CI_PLOTS", "1") not in ("0", "false", "no") and (out / "sweep" / "sweep.json").is_file():

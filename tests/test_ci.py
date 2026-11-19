@@ -99,7 +99,8 @@ class TestDense(unittest.TestCase):
                 rx.run, rx.env_info = orig_run, orig_env
             names = [c[0] for c in calls]
             self.assertEqual(code, 0)
-            self.assertEqual(names, ["tests", "eval", "sweep", "review"])
+            self.assertEqual(names, ["tests", "eval", "sweep", "eval[de_jobs]", "sweep[de_jobs]", "review"])
+            self.assertIn("--no-embed", calls[3][1])   # the second target follows the same dense decision
             self.assertIn("--no-embed", calls[1][1])
             self.assertNotIn("--compute-dense", calls[2][1])
             s = json.loads((Path(d) / "steps.json").read_text())
@@ -123,7 +124,8 @@ class TestDense(unittest.TestCase):
             finally:
                 rx.run, rx.env_info = orig_run, orig_env
             names = [c[0] for c in calls]
-            self.assertEqual(names, ["tests", "check_embedder", "eval", "eval", "sweep", "sweep", "review"])
+            self.assertEqual(names, ["tests", "check_embedder", "eval", "eval", "sweep", "sweep",
+                                     "eval[de_jobs]", "sweep[de_jobs]", "review"])
             s = json.loads((Path(d) / "steps.json").read_text())
             ev_sw = [x for x in s["steps"] if x["name"] in ("eval", "sweep")]
             self.assertEqual([x.get("fallback") is not None for x in ev_sw], [False, True, False, True])
@@ -770,7 +772,8 @@ class TestRunSh(unittest.TestCase):
             self.assertEqual(len(res), 1)
             r = json.loads(res[0].read_text())
             names = [s["name"] for s in r["steps"]]
-            self.assertEqual(names, ["setup_venv", "env_probe", "eval", "sweep", "plots", "review", "tg_integration"])
+            self.assertEqual(names, ["setup_venv", "env_probe", "eval", "sweep", "eval[de_jobs]", "plots", "review",
+                                     "tg_integration"])
             self.assertTrue(r["ok"], [(s["name"], s["exit_code"], s.get("stderr_tail")) for s in r["steps"]
                                       if not s.get("ok")])
             self.assertEqual(r["secrets"]["TG_BOT_TOKEN"], "absent")

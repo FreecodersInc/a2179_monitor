@@ -92,6 +92,7 @@ class Target:
     negative: list
     defaults: dict = field(default_factory=dict)
     source: str = ""
+    eval: dict = field(default_factory=dict)   # optional: data, features {display, other}, kinds
 
     def tier(self, name):
         return next((m for m in self.rules.models if m.name == name), None)
@@ -131,7 +132,7 @@ def from_dict(d: dict, source: str = "") -> Target:
     name = d.get("name") or Path(source).stem or "custom"
     return Target(name=name, label=d.get("label") or name, description=d.get("description", ""),
                   rules=compile_rules(d["rules"]), positive=pos, negative=neg,
-                  defaults=dict(d.get("defaults") or {}), source=source)
+                  defaults=dict(d.get("defaults") or {}), source=source, eval=dict(d.get("eval") or {}))
 
 
 def resolve(spec) -> Path:
@@ -159,6 +160,15 @@ def load_target(spec=None) -> Target:
     if isinstance(spec, dict):
         return from_dict(spec, spec.get("name", "inline"))
     return _load_path(str(resolve(spec)))
+
+
+def eval_data_path(target) -> Path:
+    """Labeled set of a target (T-002): profile eval.data, else eval/<name>/labeled.jsonl.
+    The A2179 set stays at eval/labeled.jsonl (its profile names it), so its numbers do not move."""
+    t = load_target(target)
+    rel = t.eval.get("data") or f"eval/{t.name}/labeled.jsonl"
+    p = Path(rel)
+    return p if p.is_absolute() else PROJECT_ROOT / p
 
 
 def default_target() -> Target:

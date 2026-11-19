@@ -6,10 +6,14 @@ Modes: regex | tfidf (similarity only, gated) | hybrid_tfidf (regex OR tfidf)
 Thresholds of the similarity channel are tuned for recall 1.0 (max F1 among those).
 A 2-fold check (tune on odd ids, test on even ids and back) shows how much of that is overfit.
 
-Usage: python eval/run_eval.py [--no-embed] [--model NAME] [--local-only]
+Usage: python eval/run_eval.py [--target NAME] [--no-embed] [--model NAME] [--local-only]
+--target picks the profile (targets/<name>.json): its rules, prototypes and labeled set
+(profile eval.data, else eval/<name>/labeled.jsonl). Default: A2179_TARGET or a2179_screen.
+Exit 4 when the target has no labeled set yet (nothing to measure).
 """
 import argparse
 import json
+import os
 import sys
 import time
 from collections import Counter
@@ -22,6 +26,9 @@ from a2179.matcher import Matcher  # noqa: E402
 from a2179.rules import classify  # noqa: E402
 from a2179.similarity import TfidfSim  # noqa: E402
 from a2179.embedder import EmbedSim, EmbedderUnavailable, DEFAULT_MODEL  # noqa: E402
+from a2179.target import DEFAULT_TARGET, eval_data_path, load_target  # noqa: E402
+
+NO_LABELS = 4
 
 GRID_POS = [round(x * 0.02, 2) for x in range(0, 50)]
 GRID_MARGIN = [round(-0.2 + x * 0.02, 2) for x in range(0, 26)]
@@ -116,9 +123,10 @@ def write_thresholds(path: Path, report: dict, model: str):
     print(f"thresholds written to {path.name}: {th}")
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("--data", default=str(ROOT / "eval" / "labeled.jsonl"))
+    ap.add_argument("--target", default=os.environ.get("A2179_TARGET") or DEFAULT_TARGET)
+    ap.add_argument("--data", default=None, help="labeled JSONL (default: the target's labeled set)")
     ap.add_argument("--no-embed", action="store_true")
     ap.add_argument("--model", default=DEFAULT_MODEL)
     ap.add_argument("--local-only", action="store_true")
@@ -127,35 +135,41 @@ def main():
     ap.add_argument("--config", default=str(ROOT / "config.json"))
     ap.add_argument("--out-dir", default=str(ROOT / "reports"))
     ap.add_argument("--no-a1932", action="store_true", help="treat A1932-only listings as negatives")
-    a = ap.parse_args()
+    a = ap.parse_args(argv)
 
-    rows = load(Path(a.data))
+    tg = load_target(a.target)
+    data = Path(a.data) if a.data else eval_data_path(tg)
+    if not data.is_file():
+        print(f"target {tg.name}: no labeled set at {data} (label one first, see work/T-019)", file=sys.stderr)
+        return NO_LABELS
+    rows = load(data)
     if a.no_a1932:
         for r in rows:
             if r["kind"] == "a1932_display":
                 r["label"] = 0
     y = [bool(r["label"]) for r in rows]
-    rr = [classify(r["title"], r["snippet"], not a.no_a1932) for r in rows]
+    rr = [classify(r["title"], r["snippet"], not a.no_a1932, target=tg) for r in rows]
     regex = [x.match for x in rr]
     gates = [x.gate for x in rr]
 
     report = {
+        "target": tg.name,
         "dataset": {"n": len(rows), "positives": sum(y), "negatives": len(y) - sum(y),
-                    "by_source": dict(Counter(r["source"] for r in rows)),
-                    "by_lang": dict(Counter(r["lang"] for r in rows)),
-                    "by_kind": dict(Counter(r["kind"] for r in rows))},
+                    "by_source": dict(Counter(r.get("source") for r in rows)),
+                    "by_lang": dict(Counter(r.get("lang") for r in rows)),
+                    "by_kind": dict(Counter(r.get("kind") for r in rows))},
         "modes": {"regex": prf(y, regex)},
         "generated": time.strftime("%Y-%m-%d %H:%M %Z"),
     }
     errors = {"regex": [(r["id"], r["label"], r["title"], "; ".join(x.reasons))
                         for r, x, t in zip(rows, rr, y) if x.match != t]}
 
-    run_sim("tfidf", TfidfSim(), rows, y, regex, gates, report, errors)
+    run_sim("tfidf", TfidfSim(tg.positive, tg.negative), rows, y, regex, gates, report, errors)
     if a.no_embed:
         report["embedder"] = "skipped (--no-embed)"
     else:
         try:
-            sim = EmbedSim(a.model, a.local_only)
+            sim = EmbedSim(a.model, a.local_only, pos=tg.positive, neg=tg.negative)
             report["embedder"] = a.model
             run_sim("embed", sim, rows, y, regex, gates, report, errors)
         except EmbedderUnavailable as e:
@@ -169,7 +183,7 @@ def main():
     out.mkdir(exist_ok=True)
     (out / "eval_report.json").write_text(json.dumps({**report, "errors": errors}, ensure_ascii=False, indent=2),
                                           encoding="utf-8")
-    lines = [f"# Eval report ({report['generated']})", "",
+    lines = [f"# Eval report: {tg.label} ({report['generated']})", "",
              f"Set: {report['dataset']['n']} items, {report['dataset']['positives']} positive, "
              f"{report['dataset']['negatives']} negative. Sources: {report['dataset']['by_source']}. "
              f"Languages: {report['dataset']['by_lang']}.", "",
@@ -184,7 +198,7 @@ def main():
         lines.append(f"| {mode} | {m['precision']:.3f} | {m['recall']:.3f} | {m['f1']:.3f} | {m['tp']} | {m['fp']} | "
                      f"{m['fn']} | {m['tn']} | {m.get('thresholds', '')} | "
                      + (f"{tf['precision']:.3f}/{tf['recall']:.3f}/{tf['f1']:.3f}" if tf else "") + " |")
-    lines += ["", "Confusion: TP/FP/FN/TN above (positive = A2179-compatible display, lid or donor offer).", ""]
+    lines += ["", f"Confusion: TP/FP/FN/TN above (positive = a match for {tg.label}: {tg.description}).", ""]
     for mode, errs in errors.items():
         lines.append(f"## Errors: {mode} ({len(errs)})")
         lines += [f"- id {e[0]} label={e[1]}: {e[2]}  ({', '.join(map(str, e[3:]))})" for e in errs]
@@ -194,4 +208,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

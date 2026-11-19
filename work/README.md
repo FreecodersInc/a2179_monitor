@@ -37,9 +37,9 @@
 | id | название | майлстоун | статус | ссылки |
 |---|---|---|---|---|
 | [T-001](T-001_target-profile-core.md) | профиль цели для монитора | M-001 | done | ADR-0010 |
-| [T-002](T-002_eval-per-target.md) | eval, enrich, sweep по профилю | M-001 | todo | ADR-0010 |
+| [T-002](T-002_eval-per-target.md) | eval, enrich, sweep по профилю | M-001 | in progress | ADR-0010 |
 | [T-003](T-003_second-target.md) | вторая цель с набором | M-001 | todo | H-01, H-02, H-03 |
-| [T-004](T-004_ci-per-target.md) | CI по всем целям | M-001 | todo | ADR-0009 |
+| [T-004](T-004_ci-per-target.md) | CI по всем целям | M-001 | review | ADR-0009 |
 | [T-005](T-005_alerts-region.md) | уведомления и валюта по профилю | M-001 | todo | ADR-0010 |
 | [T-006](T-006_ranking-metrics-and-charts.md) | метрики точного ретрива и графики EDA в каждом прогоне | M-002 | done | все H-12…H-29 (метрики) |
 | [T-007](T-007_close-exp-002.md) | закрыть EXP-002 на 430 строках | M-002 | in progress | H-01, H-08, H-15 |

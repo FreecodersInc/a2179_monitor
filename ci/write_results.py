@@ -92,6 +92,22 @@ def review_metrics(reports_root: Path):
 
 
 
+def target_metrics(ci_out: Path, steps):
+    """metrics.targets.<name>: eval + sweep of every non-default target (T-004), or why it was skipped."""
+    out = {}
+    for s in steps:
+        n = s.get("name") or ""
+        if n.startswith("eval[") and n.endswith("]") and s.get("skipped"):
+            out[n[5:-1]] = {"skipped": s["skipped"]}
+    root = ci_out / "targets"
+    if root.is_dir():
+        for d in sorted(p for p in root.iterdir() if p.is_dir()):
+            ev, sw = _load(d / "eval" / "eval_report.json"), _load(d / "sweep" / "sweep.json")
+            if ev or sw:
+                out[d.name] = {"eval": eval_metrics(ev), "sweep": sweep_metrics(sw)}
+    return out or None
+
+
 def build(ci_out: Path, env=os.environ, now=None, cwd=ROOT):
     now = now or dt.datetime.now(dt.timezone.utc)
     steps = _load(ci_out / "steps.json") or {"env": {}, "dense": {}, "steps": []}
@@ -110,7 +126,8 @@ def build(ci_out: Path, env=os.environ, now=None, cwd=ROOT):
         "metrics": {"eval": eval_metrics(_load(ci_out / "eval" / "eval_report.json")),
                     "sweep": sweep_metrics(_load(ci_out / "sweep" / "sweep.json")),
                     "ranking": (_load(ci_out / PLOTS / "plots.json") or {}).get("ranking"),
-                    "review": review_metrics(ci_out / "reports")},
+                    "review": review_metrics(ci_out / "reports"),
+                    "targets": target_metrics(ci_out, st)},
     }
     for s in res["steps"]:  # keep only a short tail of stderr for failed steps
         s["stderr_tail"] = (s.get("stderr_tail") or "")[-1500:] if not s.get("ok") else None
@@ -150,6 +167,7 @@ REPORTS = ("eval/eval_report.json", "eval/eval_report.md", "sweep/sweep.tables.m
            "setup.log")
 
 
+TARGET_REPORTS = ("eval_report.json", "eval_report.md", "sweep.tables.md", "dense_scores.jsonl")
 PLOTS = "plots"   # ci_out/plots/: *.png, plots.md, plots.json from eval/plots.py
 
 
@@ -164,7 +182,9 @@ def attach_reports(ci_out: Path, result: Path) -> Path | None:
     pngs = sorted(pdir.glob("*.png")) if pdir.is_dir() else []
     pmd = pdir / "plots.md"
     review = (ci_out / "reports").is_dir() and any((ci_out / "reports").rglob("matches.csv"))
-    if not files and not pngs and not review:
+    tfiles = [p for p in sorted((ci_out / "targets").rglob("*")) if p.is_file() and p.name in TARGET_REPORTS] \
+        if (ci_out / "targets").is_dir() else []
+    if not files and not pngs and not review and not tfiles:
         return None
     d = result.with_suffix("")
     d.mkdir(parents=True, exist_ok=True)
@@ -183,6 +203,10 @@ def attach_reports(ci_out: Path, result: Path) -> Path | None:
         with (d / "eval_report.md").open("a", encoding="utf-8") as fh:
             fh.write("\nCharts and ranking metrics (recall@k, precision at recall 1.0 / 0.95, nDCG): "
                      "[plots.md](plots.md), also embedded at the end of [sweep.tables.md](sweep.tables.md)\n")
+    for f in tfiles:   # results/<base>/targets/<name>/eval_report.md, sweep.tables.md, dense scores
+        dest = d / "targets" / f.relative_to(ci_out / "targets").parts[0] / f.name
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(redact.scrub(f.read_text(encoding="utf-8", errors="replace")), encoding="utf-8")
     # two-case manual review files: ci_out/reports/<date>/<case>/matches.csv
     src = ci_out / "reports"
     if src.is_dir():
