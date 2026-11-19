@@ -5,7 +5,7 @@ from .rules import classify
 
 # Tuned by eval/run_eval.py for recall 1.0 on eval/labeled.jsonl (see reports/).
 DEFAULT_THRESHOLDS = {
-    "tfidf": {"pos": 0.38, "margin": 0.18, "calibrated": True},
+    "tfidf": {"pos": 0.34, "margin": 0.16, "calibrated": True},  # middle of the plateau, reports/sweep_2026-11-19.md
     "embed": {"pos": 0.60, "margin": 0.03, "calibrated": False},
 }
 

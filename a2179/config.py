@@ -19,7 +19,7 @@ DEFAULTS = {
                  "backend": "torch",        # torch | onnx | openvino (sentence-transformers >= 3.2)
                  "probe": True,             # load + test encode in a child process first (crash-safe)
                  "probe_timeout_s": 600},
-    "thresholds": {"tfidf": {"pos": 0.38, "margin": 0.18, "calibrated": True}, "embed": {"pos": 0.60, "margin": 0.03, "calibrated": False}},
+    "thresholds": {"tfidf": {"pos": 0.34, "margin": 0.16, "calibrated": True}, "embed": {"pos": 0.60, "margin": 0.03, "calibrated": False}},
     "sources": {
         "shop_products": [
             "https://ifix.rs/proizvodi/ekran-za-apple-macbook-air-13-a1932-a2179-2019-2020/",

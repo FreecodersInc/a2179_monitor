@@ -5,7 +5,7 @@
   "alert_on": {"new": true, "price_drop": true, "below_target": true},
   "accept_a1932": true,
   "embedder": {
-    "enabled": "auto",
+    "enabled": "false",
     "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
     "local_only": false,
     "device": "auto",
@@ -13,7 +13,7 @@
     "probe": true,
     "probe_timeout_s": 600
   },
-  "thresholds": {"tfidf": {"pos": 0.38, "margin": 0.18, "calibrated": true}, "embed": {"pos": 0.60, "margin": 0.03, "calibrated": false}},
+  "thresholds": {"tfidf": {"pos": 0.34, "margin": 0.16, "calibrated": true}, "embed": {"pos": 0.84, "margin": 0.0, "calibrated": true, "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"}},
   "sources": {
     "shop_products": [
       "https://ifix.rs/proizvodi/ekran-za-apple-macbook-air-13-a1932-a2179-2019-2020/",
