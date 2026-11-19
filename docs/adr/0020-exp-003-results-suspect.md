@@ -31,5 +31,7 @@ commits: 634fa55
 ### Как проверяем
 Пометка стоит в `experiments/EXP-003_embedder-comparison.md` и в заметках T-023. Закрытие подозрения только после ADR-0021: метрики на свежем ручном наборе, без подбора на нём.
 
+Частичная проверка уже есть, [EXP-004](../../experiments/EXP-004_nested-cv.md): вложенная CV с подбором t, λ и min-max только на train (5 фолдов × 12 повторов, группы дублей). Утечка порогов небольшая (tfidf+feat 8 FP и F1 0.923 в EXP-003, чисто 7.6 ± 0.8 и 0.916 ± 0.005). Утечку авторства (признаки, прототипы и regex писались, глядя на эти строки) CV снять не может, поэтому подозрение остаётся до T-023.
+
 ## Дополнительно
-ADR-0013, ADR-0021, [experiments/EXP-003_embedder-comparison.md](../../experiments/EXP-003_embedder-comparison.md), [work/T-023_holdout-check.md](../../work/T-023_holdout-check.md), 634fa55.
+ADR-0013, ADR-0021, [experiments/EXP-004_nested-cv.md](../../experiments/EXP-004_nested-cv.md), [experiments/EXP-003_embedder-comparison.md](../../experiments/EXP-003_embedder-comparison.md), [work/T-023_holdout-check.md](../../work/T-023_holdout-check.md), 634fa55.
