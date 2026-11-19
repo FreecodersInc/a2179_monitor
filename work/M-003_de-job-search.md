@@ -68,7 +68,7 @@
 ## Задачи
 | id | название | статус |
 |---|---|---|
-| [T-017](T-017_de-profile.md) | профиль цели Data Engineer из утверждённых навыков | todo |
+| [T-017](T-017_de-profile.md) | профиль цели Data Engineer из утверждённых навыков | in progress |
 | [T-018](T-018_de-sources.md) | источники вакансий: ToS, коллекторы API и RSS | todo |
 | [T-019](T-019_de-labels.md) | набор вакансий и разметка в 4 класса | todo |
 | [T-020](T-020_de-eval-transfer.md) | eval на второй цели, перенос порогов и профиля | todo |

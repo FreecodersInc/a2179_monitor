@@ -41,7 +41,7 @@
 | [T-014](T-014_transfer-second-target.md) | перенос на вторую цель: профиль, пороги, стоимость | M-002 | blocked | H-02, H-03, H-29 |
 | [T-015](T-015_expansion-and-granularity.md) | расширение прототипов и гранулярность документа | M-002 | todo | H-20, H-24 |
 | [T-016](T-016_embedder-comparison.md) | сравнение эмбеддеров на сербском против no ML базы | M-002 | in progress | H-30, H-31, H-17 |
-| [T-017](T-017_de-profile.md) | профиль цели Data Engineer из утверждённых навыков | M-003 | todo | H-02 |
+| [T-017](T-017_de-profile.md) | профиль цели Data Engineer из утверждённых навыков | M-003 | in progress | H-02 |
 | [T-018](T-018_de-sources.md) | источники вакансий: ToS, коллекторы API и RSS | M-003 | todo | H-02 |
 | [T-019](T-019_de-labels.md) | набор вакансий и разметка в 4 класса | M-003 | todo | H-07, H-27, H-29 |
 | [T-020](T-020_de-eval-transfer.md) | eval на второй цели, перенос порогов и профиля | M-003 | todo | H-02, H-03, H-28 |
