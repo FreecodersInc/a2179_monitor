@@ -27,7 +27,7 @@ H-30 дословно: «Мини не тянет сербский»: мульт
 ## Процедура
 ```bash
 # один раз, кэш в HF_HOME (по умолчанию ~/.cache/huggingface), только нужные файлы:
-python ci/cache_model.py intfloat/multilingual-e5-base BAAI/bge-m3 sentence-transformers/paraphrase-multilingual-mpnet-base-v2 intfloat/multilingual-e5-small
+python scripts/download_embedders.py multilingual english
 # руками, все модели из кэша в одном прогоне:
 python eval/sweep.py --compute-dense --embedders cached --plots reports/exp003_plots
 ```

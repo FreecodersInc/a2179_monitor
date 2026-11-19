@@ -116,7 +116,7 @@ schtasks /Create /SC HOURLY /TN a2179_monitor /TR "C:\путь\a2179_monitor\.ve
 ## Эксперименты, решения, планы
 - эксперименты: [`experiments/`](experiments/README.md)
 - архитектурные решения (ADR, MADR): [`docs/adr/`](docs/adr/README.md)
-- майлстоуны и задачи: [`work/`](work/README.md)
+- майлстоуны и задачи: [`work/`](work/README.md) (сначала унификация M-001 и M-003, затем прогоны гипотез на двух кейсах, [ADR-0017](docs/adr/0017-two-case-eval.md))
 - гипотезы для проверки: [`experiments/HYPOTHESES.md`](experiments/HYPOTHESES.md), карта факторов гибридного поиска со ссылками: [`experiments/RESEARCH_MAP.md`](experiments/RESEARCH_MAP.md), план работ: [`work/`](work/README.md)
 - CI экспериментов на своём раннере (метка `a2179-gpu`, только push в main, тонкий workflow в `ci/experiments.yml`, логика в `ci/run.sh`): [`docs/ci.md`](docs/ci.md), результаты в [`results/`](results/README.md)
 
@@ -136,7 +136,7 @@ python eval/sweep.py                 # перебор порогов и fusion: 
 python eval/sweep.py --compute-dense # то же, плюс посчитать косинусы MiniLM (нужен эмбеддер)
 python eval/sweep.py --plots reports/sweep_plots   # плюс графики EDA и метрики ранжирования (P@R1, R@k, nDCG), нужен matplotlib
 python eval/plots.py --sweep reports/sweep_2026-11-19.json --out reports/sweep_2026-11-19_plots   # графики по готовому свипу
-python ci/cache_model.py intfloat/multilingual-e5-base BAAI/bge-m3   # модели в кэш HF_HOME, только нужные файлы (реестр: eval/embedders.json)
+python scripts/download_embedders.py multilingual english   # модели в кэш HF_HOME, только нужные файлы, уже скачанные пропускаются (реестр: eval/embedders.json)
 python eval/sweep.py --compute-dense --embedders cached --plots reports/exp003_plots   # все модели из кэша в одном прогоне (EXP-003)
 ```
 Размеченный набор `eval/labeled.jsonl`: 97 заголовков (40 подходящих, 57 нет), сербский латиницей и кириллицей, английский, русский. 38 из них реальные заголовки с KP и сайтов магазинов (19.11.2026), остальные составлены вручную, включая трудные отрицательные (A2337, чехлы, шлейфы LCD, услуги, целые ноутбуки).

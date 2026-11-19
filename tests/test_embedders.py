@@ -30,6 +30,17 @@ class TestRegistry(unittest.TestCase):
         self.assertEqual(e5["e5-base-qp"]["proto_prefix"], "passage: ")
         self.assertTrue(e5["e5-large-instruct"]["text_prefix"].startswith("Instruct: "))
         self.assertNotIn("jinaai/jina-embeddings-v3", [m["id"] for m in reg])   # cc-by-nc
+        en = {m["short"]: m for m in reg}
+        self.assertEqual(en["e5-base-en"]["id"], "intfloat/e5-base-v2")
+        self.assertEqual(en["e5-base-en"]["text_prefix"], "query: ")
+        self.assertEqual(en["bge-base-en"]["id"], "BAAI/bge-base-en-v1.5")
+        self.assertTrue(en["bge-base-en"]["text_prefix"].startswith("Represent this sentence"))
+        self.assertEqual(en["bge-base-en"]["license"], "mit")
+        self.assertFalse(en["bge-base-en"]["sr"])
+        self.assertEqual(en["bge-base-en"]["weights_mb"], 438)
+        import json
+        groups = json.loads((ROOT / "eval" / "embedders.json").read_text())["groups"]
+        self.assertEqual(set(groups), {"multilingual", "english"})
 
     def test_select(self):
         reg = S.registry()

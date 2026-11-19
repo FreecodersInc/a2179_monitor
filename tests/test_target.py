@@ -138,6 +138,15 @@ class TestSwap(unittest.TestCase):
     def test_named_profile_in_targets_dir(self):
         self.assertIn("a2179_screen", T.list_targets())
         self.assertEqual(T.load_target("a2179_screen").label, "A2179")
+        self.assertIn("de_jobs", T.list_targets())
+        self.assertNotIn("de_jobs.local", T.list_targets())
+        de = T.load_target("de_jobs")
+        self.assertTrue(de.positive and de.negative)
+        blob = (ROOT / "targets" / "de_jobs.json").read_text()
+        for needle in ("cv_base", "Novi Sad", "@", "Blokhin"):
+            self.assertNotIn(needle, blob)
+        self.assertTrue(classify("Senior Data Engineer Toronto Spark Airflow", target=de).match)
+        self.assertFalse(classify("Excel data entry clerk no SQL", target=de).match)
 
 
 class TestErrors(unittest.TestCase):

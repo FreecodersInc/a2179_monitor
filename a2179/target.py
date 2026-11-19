@@ -170,4 +170,5 @@ def target_of(cfg) -> Target:
 
 
 def list_targets():
-    return sorted(p.stem for p in TARGETS_DIR.glob("*.json"))
+    # *.local.json is gitignored personal data and is not a public target name
+    return sorted(p.stem for p in TARGETS_DIR.glob("*.json") if not p.name.endswith(".local.json"))

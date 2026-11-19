@@ -1,0 +1,235 @@
+{
+  "name": "de_jobs",
+  "label": "DE jobs",
+  "description": "English-language Data Engineer vacancies. Geography: Canada (Toronto, Vancouver, remote Canada) and EU remote in English. Public matching profile, no personal data.",
+  "location": {
+    "priority": "Canada",
+    "cities": [
+      "Toronto",
+      "Vancouver"
+    ],
+    "remote": [
+      "Canada",
+      "EU"
+    ],
+    "job_language": "English"
+  },
+  "skills": {
+    "required": [
+      "SQL",
+      "Python or Scala",
+      "one of Spark / Airflow / ETL / dbt"
+    ],
+    "plus": [
+      "Kafka",
+      "dbt",
+      "Snowflake",
+      "Databricks",
+      "AWS or another cloud",
+      "Redshift",
+      "PostgreSQL",
+      "S3",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "data quality",
+      "SageMaker",
+      "Feast",
+      "RAG"
+    ],
+    "not_a_target": [
+      "Excel only",
+      "BI reports only",
+      "courses and bootcamps",
+      "unpaid internships"
+    ],
+    "groups": {
+      "processing_and_languages": [
+        "Apache Spark",
+        "Scala",
+        "Python",
+        "SQL",
+        "Bash",
+        "Go",
+        "C++",
+        "pandas",
+        "NumPy"
+      ],
+      "pipelines_and_storage": [
+        "Airflow",
+        "ETL",
+        "Redshift",
+        "RDS",
+        "PostgreSQL",
+        "S3",
+        "DynamoDB",
+        "Kafka",
+        "dbt",
+        "Snowflake",
+        "Databricks"
+      ],
+      "services_and_reliability": [
+        "Flask",
+        "FastAPI",
+        "Celery",
+        "SQLAlchemy",
+        "Alembic",
+        "pytest",
+        "Pydantic",
+        "worker orchestration",
+        "retries",
+        "reproducibility"
+      ],
+      "cloud_and_delivery": [
+        "AWS",
+        "GCP",
+        "Azure",
+        "Linux",
+        "Docker",
+        "Kubernetes",
+        "EKS",
+        "Terraform",
+        "Jenkins",
+        "GitLab CI",
+        "Argo CD"
+      ],
+      "observability": [
+        "Prometheus",
+        "Grafana",
+        "Loki",
+        "OpenTelemetry"
+      ],
+      "ml_and_ai": [
+        "Amazon SageMaker",
+        "Feast",
+        "feature stores",
+        "RAG",
+        "embeddings",
+        "semantic search",
+        "LlamaIndex",
+        "Qdrant",
+        "sentence transformers",
+        "scikit-learn",
+        "SciPy"
+      ]
+    }
+  },
+  "rules": {
+    "models": [
+      {
+        "name": "strong",
+        "regex": "\\bdata\\s*engineers?\\b|\\banalytics\\s*engineers?\\b|\\bdata\\s*platform\\s*engineers?\\b|\\bbig\\s*data\\s*engineers?\\b|\\betl\\s*engineers?\\b|\\bdata\\s*platform\\b"
+      },
+      {
+        "name": "ai_platform",
+        "regex": "\\bai\\s*engineers?\\b|\\bllmops\\b|\\baiops\\b|\\bmlops\\s*engineers?\\b|\\bmlops\\b|\\bml\\s*platform\\s*engineers?\\b|\\bmachine\\s*learning\\s*platform\\b"
+      },
+      {
+        "name": "data_scientist",
+        "regex": "\\bdata\\s*scientists?\\b|\\bapplied\\s*scientists?\\b"
+      },
+      {
+        "name": "devops",
+        "regex": "\\bdevops\\s*engineers?\\b|\\bplatform\\s*engineers?\\b|\\bsite\\s*reliability\\s*engineers?\\b|\\bsre\\b|\\bcloud\\s*engineers?\\b"
+      },
+      {
+        "name": "lead",
+        "regex": "\\b(staff|principal|lead|head)\\s+(data|platform|mlops|devops|ai)\\b|\\bsolution\\s*architects?\\b|\\bdata\\s*architects?\\b"
+      }
+    ],
+    "family": "\\b(data\\s*engineer|analytics\\s*engineer|data\\s*platform|big\\s*data|etl\\s*engineer|mlops|llmops|aiops|ai\\s*engineer|data\\s*scientist|applied\\s*scientist|devops|platform\\s*engineer|site\\s*reliability|cloud\\s*engineer|machine\\s*learning|feature\\s*store|spark|airflow|databricks|snowflake)\\b",
+    "conflict": "\\b(i\\s*am\\s*looking\\s*for|looking\\s*for\\s*a\\s*(job|role|position)|open\\s*to\\s*work)\\b",
+    "weak": [
+      {
+        "all": [
+          "\\b(data|analytics|platform|mlops|devops|ai)\\b",
+          "\\b(engineer|engineering|architect)\\b"
+        ],
+        "unless_conflict": true
+      }
+    ],
+    "no_model_reason": "no matching engineering or data role",
+    "part_terms": [
+      "sql",
+      "python",
+      "scala",
+      "spark",
+      "apache spark",
+      "airflow",
+      "etl",
+      "dbt",
+      "kafka",
+      "snowflake",
+      "databricks",
+      "redshift",
+      "postgresql",
+      "s3",
+      "aws",
+      "kubernetes",
+      "terraform",
+      "docker",
+      "rag",
+      "sagemaker",
+      "feast"
+    ],
+    "strong_part": "\\b(apache\\s*spark|spark|airflow|dbt|kafka|snowflake|databricks|redshift)\\b",
+    "donor_terms": [],
+    "hard_excl": "\\b(bootcamps?|online\\s*course|certificate\\s*program|data\\s*entry|unpaid\\s*internships?|hiring\\s*our\\s*graduates)\\b",
+    "soft_excl_terms": [
+      "excel only",
+      "only excel",
+      "power bi only",
+      "tableau only"
+    ],
+    "specs": "\\b(toronto|vancouver|canada|eu\\s*remote|remote\\s*(canada|eu|europe)|hybrid)\\b"
+  },
+  "prototypes": {
+    "positive": [
+      "Senior Data Engineer Toronto Spark Airflow Kafka",
+      "Staff Data Engineer Vancouver dbt Snowflake Python SQL",
+      "Remote Canada Data Engineer Databricks Spark AWS",
+      "Lead Data Engineer Python Scala Apache Spark Redshift",
+      "Analytics Engineer dbt Snowflake EU remote",
+      "Data Platform Engineer Kafka Airflow Kubernetes",
+      "Cloud Data Engineer AWS S3 PostgreSQL Terraform",
+      "AI Engineer RAG Python FastAPI remote EU",
+      "MLOps Engineer SageMaker Kubernetes Terraform",
+      "LLMOps Engineer feature store embeddings model serving",
+      "DevOps Engineer Kubernetes EKS Terraform AWS Canada remote",
+      "Platform Engineer CI/CD Prometheus Grafana Linux",
+      "Applied Data Scientist Python SQL Spark scikit-learn",
+      "Senior Analytics Engineer Toronto dbt Airflow",
+      "Data Engineer hybrid Vancouver Spark Kafka dbt"
+    ],
+    "negative": [
+      "Excel data entry clerk no SQL",
+      "Power BI intern building only dashboards",
+      "Bootcamp graduate seeking first data job",
+      "Unpaid data internship recruiter post",
+      "Online course selling a Data Engineer certificate",
+      "I am looking for a Data Engineer job here is my resume",
+      "Frontend React developer Toronto",
+      "Customer support agent remote Canada",
+      "Bookkeeper accountant Excel only",
+      "Marketing copywriter remote",
+      "High school mathematics teacher",
+      "Junior Excel analyst unpaid internship",
+      "Sales development representative Toronto",
+      "WordPress web designer Vancouver",
+      "Career services bootcamp Data Engineering course"
+    ]
+  },
+  "defaults": {
+    "sources": {
+      "shop_products": [],
+      "shop_searches": [],
+      "kp_keywords": [
+        "data engineer Toronto",
+        "data engineer Vancouver",
+        "data engineer remote Canada",
+        "analytics engineer dbt Snowflake Canada",
+        "data engineer Databricks remote EU"
+      ]
+    }
+  }
+}

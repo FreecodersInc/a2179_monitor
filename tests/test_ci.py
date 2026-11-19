@@ -484,7 +484,7 @@ class TestTelegramIntegration(unittest.TestCase):
 
 
 class TestCacheModel(unittest.TestCase):
-    def run_with(self, fake, env):
+    def run_with(self, fake, env, argv=None):
         import importlib
         import types
         import cache_model
@@ -494,7 +494,7 @@ class TestCacheModel(unittest.TestCase):
         sys.modules["huggingface_hub"] = mod
         os.environ.update(env)
         try:
-            return importlib.reload(cache_model).main()
+            return importlib.reload(cache_model).main(argv)
         finally:
             os.environ.clear()
             os.environ.update(old_env)
@@ -560,6 +560,32 @@ class TestCacheModel(unittest.TestCase):
         finally:
             if old:
                 os.environ["A2179_CI_MODEL"] = old
+
+    def test_groups_and_dry_run_do_not_download(self):
+        import cache_model
+        ids = cache_model.resolve_specs(["multilingual", "english"])
+        self.assertEqual(ids, [
+            "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+            "intfloat/multilingual-e5-small",
+            "intfloat/multilingual-e5-base",
+            "BAAI/bge-m3",
+            "BAAI/bge-base-en-v1.5",
+            "intfloat/e5-base-v2",
+        ])
+        # unique ids: three e5-base shorts collapse, groups plus an id do not repeat
+        self.assertEqual(len(cache_model.resolve_specs(["e5-base", "multilingual"])), 5)
+        calls = []
+
+        def fake(name, local_files_only=False, allow_patterns=None):
+            calls.append((name, local_files_only))
+            raise FileNotFoundError(name)
+
+        rc = self.run_with(fake, {"HF_HUB_OFFLINE": "0", "A2179_CI_MODELS": ""},
+                           ["--dry-run", "english"])
+        self.assertEqual(rc, 0)
+        self.assertEqual([c[0] for c in calls], ["BAAI/bge-base-en-v1.5", "intfloat/e5-base-v2"])
+        self.assertTrue(all(c[1] for c in calls))  # only local_files_only probes
 
 
 class TestSetupVenvTorchFlag(unittest.TestCase):
