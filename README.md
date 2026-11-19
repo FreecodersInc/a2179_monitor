@@ -114,6 +114,7 @@ schtasks /Create /SC HOURLY /TN a2179_monitor /TR "C:\путь\a2179_monitor\.ve
 - эксперименты: [`experiments/`](experiments/README.md)
 - архитектурные решения (ADR, MADR): [`docs/adr/`](docs/adr/README.md)
 - майлстоуны и задачи: [`work/`](work/README.md)
+- CI экспериментов на своём раннере (метка `a2179-gpu`, только push в main, workflow в `ci/experiments.yml`, включение в docs/ci.md): [`docs/ci.md`](docs/ci.md), результаты в [`results/`](results/README.md)
 
 Проект шире одного экрана: это площадка для исследований сопоставления и поиска (что объявление или документ это *то самое*, а не «про то же»). Каждый эксперимент записан по научному методу (вопрос и гипотеза, условия, процедура, числа, выводы, угрозы валидности) с commit, версией данных, параметрами и командой: [`experiments/README.md`](experiments/README.md), шаблон [`experiments/TEMPLATE.md`](experiments/TEMPLATE.md).
 

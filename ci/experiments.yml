@@ -1,0 +1,63 @@
+# Experiments on Leonid's self-hosted runner (ADR-0008, docs/ci.md).
+# Fires ONLY on a push to main of this repo. No pull_request / pull_request_target /
+# workflow_run triggers, so code from forks or PRs never runs on the runner.
+# Results commit back to results/ with [skip ci], and results/** is ignored below: no loops.
+name: experiments
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "results/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: experiments-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  experiments:
+    if: >-
+      github.repository == 'FreecodersInc/a2179_monitor' &&
+      github.event_name == 'push' &&
+      !contains(github.event.head_commit.message, '[skip ci]')
+    runs-on: [self-hosted, linux, a2179-gpu]
+    timeout-minutes: 120
+    env:
+      PYTHONUNBUFFERED: "1"
+      # model must already be in the runner user's HF cache; set repo variable A2179_CI_ALLOW_DOWNLOAD=true to let it download
+      HF_HUB_OFFLINE: ${{ vars.A2179_CI_ALLOW_DOWNLOAD == 'true' && 'no' || '1' }}
+      TRANSFORMERS_OFFLINE: ${{ vars.A2179_CI_ALLOW_DOWNLOAD == 'true' && 'no' || '1' }}
+      A2179_CI_DENSE: ${{ vars.A2179_CI_DENSE || 'auto' }}
+      A2179_CI_VENV: ${{ vars.A2179_CI_VENV }}
+      A2179_CI_PYTHON: ${{ vars.A2179_CI_PYTHON || 'python3' }}
+      A2179_CI_STEP_TIMEOUT: ${{ vars.A2179_CI_STEP_TIMEOUT || '1800' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python venv (persistent, outside the checkout)
+        run: bash ci/setup_venv.sh
+
+      - name: Tests, embedder check, eval, sweep
+        run: python ci/run_experiments.py --out ci_out
+
+      - name: Write results/<UTC date>_<sha>.json, commit and push [skip ci]
+        id: results
+        if: always()
+        run: python ci/write_results.py --ci-out ci_out --results-dir results --commit --push --branch main
+
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: experiments-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            ci_out/
+            ${{ steps.results.outputs.results_file }}
+          retention-days: 30
+          if-no-files-found: warn

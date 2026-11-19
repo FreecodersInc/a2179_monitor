@@ -17,3 +17,4 @@
 | [0005](0005-embedder-subprocess-probe-and-fallback.md) | эмбеддер сначала в дочернем процессе, при падении откат на regex + TF-IDF, устройство из конфига, cpu без CUDA | accepted | 2026-11-19 | a9fb3cd, d8cc345 |
 | [0006](0006-kp-zero-price-is-unknown.md) | цена 0 в JSON KP значит «цена не указана», бесплатно только при явной отметке | accepted | 2026-11-19 | d8cc345 |
 | [0007](0007-embedder-off-tfidf-thresholds.md) | эмбеддер выключен в примере конфига, пороги TF-IDF 0.34/0.16 по EXP-001 | accepted | 2026-11-19 | 7bd8ef1 |
+| [0008](0008-ci-on-self-hosted-runner.md) | эксперименты в CI на своём раннере (`a2179-gpu`), только push в main, результаты в `results/`, включается `git mv ci/experiments.yml` | accepted | 2026-11-19 | этот коммит |
