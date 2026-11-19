@@ -1,0 +1,493 @@
+{
+  "dataset": {
+    "n": 99,
+    "positives": 42,
+    "negatives": 57,
+    "by_source": {
+      "kp_live_2026-11-19": 26,
+      "shop_live_2026-11-19": 12,
+      "synthetic": 59,
+      "kp_dryrun_2026-11-19": 2
+    },
+    "by_lang": {
+      "sr": 76,
+      "en": 10,
+      "ru": 9,
+      "sr_cyr": 4
+    },
+    "by_kind": {
+      "donor": 6,
+      "whole_laptop": 3,
+      "service": 3,
+      "other_part": 24,
+      "display": 15,
+      "accessory": 10,
+      "lid": 15,
+      "a2337": 5,
+      "a1932_display": 2,
+      "other_model": 8,
+      "giveaway": 2,
+      "broken_screen_laptop": 2,
+      "wanted": 2,
+      "panel": 2
+    }
+  },
+  "modes": {
+    "regex": {
+      "precision": 0.9762,
+      "recall": 0.9762,
+      "f1": 0.9762,
+      "tp": 41,
+      "fp": 1,
+      "fn": 1,
+      "tn": 56
+    },
+    "tfidf": {
+      "precision": 0.8077,
+      "recall": 1.0,
+      "f1": 0.8936,
+      "tp": 42,
+      "fp": 10,
+      "fn": 0,
+      "tn": 47,
+      "thresholds": {
+        "pos": 0.2,
+        "margin": 0.02
+      },
+      "ms_per_item": 1.23,
+      "twofold": {
+        "precision": 0.8298,
+        "recall": 0.9286,
+        "f1": 0.8764,
+        "tp": 39,
+        "fp": 8,
+        "fn": 3,
+        "tn": 49
+      }
+    },
+    "hybrid_tfidf": {
+      "precision": 0.9767,
+      "recall": 1.0,
+      "f1": 0.9882,
+      "tp": 42,
+      "fp": 1,
+      "fn": 0,
+      "tn": 56,
+      "thresholds": {
+        "pos": 0.38,
+        "margin": 0.18
+      },
+      "ms_per_item": 1.23,
+      "twofold": {
+        "precision": 0.9762,
+        "recall": 0.9762,
+        "f1": 0.9762,
+        "tp": 41,
+        "fp": 1,
+        "fn": 1,
+        "tn": 56
+      }
+    },
+    "embed": {
+      "precision": 0.6,
+      "recall": 1.0,
+      "f1": 0.75,
+      "tp": 42,
+      "fp": 28,
+      "fn": 0,
+      "tn": 29,
+      "thresholds": {
+        "pos": 0.66,
+        "margin": -0.06
+      },
+      "ms_per_item": 7.12,
+      "twofold": {
+        "precision": 0.6154,
+        "recall": 0.9524,
+        "f1": 0.7477,
+        "tp": 40,
+        "fp": 25,
+        "fn": 2,
+        "tn": 32
+      }
+    },
+    "hybrid_embed": {
+      "precision": 0.84,
+      "recall": 1.0,
+      "f1": 0.913,
+      "tp": 42,
+      "fp": 8,
+      "fn": 0,
+      "tn": 49,
+      "thresholds": {
+        "pos": 0.84,
+        "margin": 0.0
+      },
+      "ms_per_item": 7.12,
+      "twofold": {
+        "precision": 0.9111,
+        "recall": 0.9762,
+        "f1": 0.9425,
+        "tp": 41,
+        "fp": 4,
+        "fn": 1,
+        "tn": 53
+      }
+    }
+  },
+  "generated": "2026-11-19 19:46 CET",
+  "embedder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "errors": {
+    "regex": [
+      [
+        62,
+        1,
+        "Prodajem LCD od Macbook Air 2020 (Intel i5), ispravan",
+        "model=weak; laptop_specs=i5"
+      ],
+      [
+        96,
+        0,
+        "MacBook Air A2179 ne pali, ekran razbijen",
+        "model=strong; donor=ne pali"
+      ]
+    ],
+    "tfidf": [
+      [
+        5,
+        0,
+        "Konektori MacBook Air a2179 (2020)",
+        0.251,
+        0.163
+      ],
+      [
+        7,
+        0,
+        "WiFi antene MacBook Air a2179 (2020)",
+        0.249,
+        0.161
+      ],
+      [
+        75,
+        0,
+        "MacBook Air 2020 i3 sa slomljenim ekranom, ostalo radi",
+        0.302,
+        0.159
+      ],
+      [
+        79,
+        0,
+        "Kaljeno staklo za ekran MacBook Air A2179",
+        0.27,
+        0.184
+      ],
+      [
+        88,
+        0,
+        "Tražim ekran za MacBook Air A2179",
+        0.37,
+        0.252
+      ],
+      [
+        90,
+        0,
+        "Kamera FaceTime HD za MacBook Air A2179",
+        0.212,
+        0.114
+      ],
+      [
+        92,
+        0,
+        "MacBook Air 13 2017 A1466 ekran",
+        0.291,
+        0.202
+      ],
+      [
+        93,
+        0,
+        "Šarke za ekran MacBook Air A2179",
+        0.399,
+        0.272
+      ],
+      [
+        94,
+        0,
+        "Lepak traka za LCD MacBook Air A2179",
+        0.282,
+        0.188
+      ],
+      [
+        96,
+        0,
+        "MacBook Air A2179 ne pali, ekran razbijen",
+        0.237,
+        0.156
+      ]
+    ],
+    "hybrid_tfidf": [
+      [
+        96,
+        0,
+        "MacBook Air A2179 ne pali, ekran razbijen",
+        0.237,
+        0.156
+      ]
+    ],
+    "embed": [
+      [
+        2,
+        0,
+        "Apple MacBook Air A2179 (2020) – Core i3 / 8GB RAM / 256GB S",
+        0.729,
+        0.767
+      ],
+      [
+        4,
+        0,
+        "Srafovi MacBook Air a2179 (2020)",
+        0.891,
+        0.91
+      ],
+      [
+        5,
+        0,
+        "Konektori MacBook Air a2179 (2020)",
+        0.876,
+        0.901
+      ],
+      [
+        6,
+        0,
+        "Kuler MacBook Air a2179 (2020)",
+        0.864,
+        0.896
+      ],
+      [
+        7,
+        0,
+        "WiFi antene MacBook Air a2179 (2020)",
+        0.712,
+        0.728
+      ],
+      [
+        8,
+        0,
+        "Donji poklopac MacBook Air a2179 (2020)",
+        0.911,
+        0.92
+      ],
+      [
+        9,
+        0,
+        "Tastatura sa palmrest MacBook Air a2179 (2020)",
+        0.86,
+        0.869
+      ],
+      [
+        13,
+        0,
+        "UK zastita za tastaturu za MacBook Air 13\" M1 A2337/A2179",
+        0.705,
+        0.761
+      ],
+      [
+        16,
+        0,
+        "Cover za Macbook Air 13 2018/2020 (A2337 M1 A2179 A1932) crn",
+        0.805,
+        0.813
+      ],
+      [
+        19,
+        0,
+        "Zamena ekrana za MacBook Air 2018-2020 A1932 / A2179 ORG",
+        0.815,
+        0.825
+      ],
+      [
+        22,
+        0,
+        "Cover za Macbook Air 13 2018/2020 (A2337 M1 A2179 A1932) crni",
+        0.846,
+        0.871
+      ],
+      [
+        30,
+        0,
+        "Zastita za ekran za MacBook Air 13″ (2018-2021) A1932 A2179 A2337 M1",
+        0.932,
+        0.933
+      ],
+      [
+        35,
+        0,
+        "Flet kabl do ploce za audio i power dugme MacBook Air Retina 13″ A1932 | A2179",
+        0.8,
+        0.796
+      ],
+      [
+        74,
+        0,
+        "MacBook Air 2020 i5 16GB 512GB, ekran bez ogrebotina",
+        0.843,
+        0.834
+      ],
+      [
+        75,
+        0,
+        "MacBook Air 2020 i3 sa slomljenim ekranom, ostalo radi",
+        0.877,
+        0.843
+      ],
+      [
+        77,
+        0,
+        "Punjač 30W za MacBook Air 2020",
+        0.8,
+        0.837
+      ],
+      [
+        79,
+        0,
+        "Kaljeno staklo za ekran MacBook Air A2179",
+        0.851,
+        0.842
+      ],
+      [
+        81,
+        0,
+        "Зарядка для MacBook Air A2179 30W",
+        0.894,
+        0.951
+      ],
+      [
+        83,
+        0,
+        "Тастатура за MacBook Air A2179",
+        0.935,
+        0.966
+      ],
+      [
+        87,
+        0,
+        "Kupujem MacBook Air A2179 u bilo kom stanju",
+        0.858,
+        0.905
+      ],
+      [
+        88,
+        0,
+        "Tražim ekran za MacBook Air A2179",
+        0.945,
+        0.915
+      ],
+      [
+        89,
+        0,
+        "Servis za MacBook: zamena LCD ekrana A2179 za 1h",
+        0.901,
+        0.895
+      ],
+      [
+        90,
+        0,
+        "Kamera FaceTime HD za MacBook Air A2179",
+        0.786,
+        0.717
+      ],
+      [
+        92,
+        0,
+        "MacBook Air 13 2017 A1466 ekran",
+        0.945,
+        0.934
+      ],
+      [
+        93,
+        0,
+        "Šarke za ekran MacBook Air A2179",
+        0.959,
+        0.964
+      ],
+      [
+        94,
+        0,
+        "Lepak traka za LCD MacBook Air A2179",
+        0.917,
+        0.915
+      ],
+      [
+        95,
+        0,
+        "Folija za ekran MacBook Air 13",
+        0.904,
+        0.935
+      ],
+      [
+        96,
+        0,
+        "MacBook Air A2179 ne pali, ekran razbijen",
+        0.889,
+        0.868
+      ]
+    ],
+    "hybrid_embed": [
+      [
+        74,
+        0,
+        "MacBook Air 2020 i5 16GB 512GB, ekran bez ogrebotina",
+        0.843,
+        0.834
+      ],
+      [
+        75,
+        0,
+        "MacBook Air 2020 i3 sa slomljenim ekranom, ostalo radi",
+        0.877,
+        0.843
+      ],
+      [
+        79,
+        0,
+        "Kaljeno staklo za ekran MacBook Air A2179",
+        0.851,
+        0.842
+      ],
+      [
+        88,
+        0,
+        "Tražim ekran za MacBook Air A2179",
+        0.945,
+        0.915
+      ],
+      [
+        89,
+        0,
+        "Servis za MacBook: zamena LCD ekrana A2179 za 1h",
+        0.901,
+        0.895
+      ],
+      [
+        92,
+        0,
+        "MacBook Air 13 2017 A1466 ekran",
+        0.945,
+        0.934
+      ],
+      [
+        94,
+        0,
+        "Lepak traka za LCD MacBook Air A2179",
+        0.917,
+        0.915
+      ],
+      [
+        96,
+        0,
+        "MacBook Air A2179 ne pali, ekran razbijen",
+        0.889,
+        0.868
+      ]
+    ]
+  }
+}
