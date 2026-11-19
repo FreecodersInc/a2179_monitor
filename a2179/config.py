@@ -34,6 +34,9 @@ DEFAULTS = {
     },
     "http": {"min_delay_s": 4, "jitter_s": 2, "timeout_s": 20, "retries": 2, "retry_403": 1, "backoff_s": 5,
              "user_agent": ""},
+    # parallel fetch: worker processes, total GET requests in flight (split between processes),
+    # optional pause per host inside each process; workers=0 is the old sequential pass
+    "parallel": {"workers": 3, "max_concurrency": 10, "delay_s": 0},
     "kp_block_alert_after_runs": 6,
     "telegram": {"enabled": True},
     "desktop_notify": True,
@@ -46,6 +49,8 @@ ENV_MAP = {
     "A2179_RSD_PER_EUR": ("rates.rsd_per_eur", float),
     "A2179_EMBEDDER": ("embedder.enabled", str),
     "A2179_MODEL": ("embedder.model", str),
+    "A2179_WORKERS": ("parallel.workers", int),
+    "A2179_MAX_CONCURRENCY": ("parallel.max_concurrency", int),
 }
 
 

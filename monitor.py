@@ -6,6 +6,9 @@
   python monitor.py --seed          remember current listings silently (no alert flood on first run)
   python monitor.py --list          print every matched listing with price
   python monitor.py --every 60      loop every 60 min (run on YOUR machine only; cron is nicer)
+  python monitor.py --workers 3 --max-concurrency 10
+                                    parallel fetch (these are the defaults): 3 processes, at most
+                                    10 GET requests in flight in total; --workers 0 is sequential
   python monitor.py --test-alert    send one test message through the configured channels
   python monitor.py check             same as --check-embedder
   python monitor.py --check-embedder   diagnose the optional embedder (versions, cache, load, test encode)
@@ -53,6 +56,10 @@ def main(argv=None):
     ap.add_argument("--every", type=float, metavar="MIN")
     ap.add_argument("--time-budget", type=float, metavar="SEC", help="stop fetching after SEC seconds")
     ap.add_argument("--test-alert", action="store_true")
+    ap.add_argument("--workers", type=int, metavar="N",
+                    help="worker processes for fetching (default 3, env A2179_WORKERS; 0 = sequential)")
+    ap.add_argument("--max-concurrency", type=int, metavar="M",
+                    help="GET requests in flight in total over all workers (default 10, env A2179_MAX_CONCURRENCY)")
     ap.add_argument("-v", "--verbose", action="store_true")
     argv = list(sys.argv[1:] if argv is None else argv)
     if argv[:1] == ["check"]:  # short alias: python monitor.py check
@@ -69,6 +76,10 @@ def main(argv=None):
         return 0
     if a.check_embedder:
         return check_embedder(cfg)
+    if a.workers is not None and a.workers < 0:
+        ap.error("--workers must be 0 or more")
+    if a.max_concurrency is not None and a.max_concurrency < 1:
+        ap.error("--max-concurrency must be 1 or more")
     if a.require_embedder and a.no_embed:
         ap.error("--require-embedder and --no-embed contradict each other")
     try:
@@ -78,7 +89,8 @@ def main(argv=None):
         print("[embedder] эмбеддер обязателен (--require-embedder или embedder.enabled=required): выход с кодом 3", file=sys.stderr)
         return 3
     while True:
-        r = run_once(cfg, log, dry_run=a.dry_run, seed=a.seed, time_budget_s=a.time_budget, similarity=sim)
+        r = run_once(cfg, log, dry_run=a.dry_run, seed=a.seed, time_budget_s=a.time_budget, similarity=sim,
+                     workers=a.workers, max_concurrency=a.max_concurrency)
         m = r["metrics"]["counters"]
         print(f"filter: regex+{r['mode']} | listings: {len(r['listings'])} | matched: {len(r['matched'])} | "
               f"alerts: {len(r['messages'])} | KP: {r['kp']} | fetch errors: {m.get('fetch.errors', 0)}"

@@ -27,6 +27,7 @@
     "kp_keywords": ["macbook air a2179", "a2179 ekran", "a2179 lcd", "macbook air 2020 ekran"]
   },
   "http": {"min_delay_s": 4, "jitter_s": 2, "timeout_s": 20, "retries": 2, "retry_403": 1, "backoff_s": 5, "user_agent": ""},
+  "parallel": {"workers": 3, "max_concurrency": 10, "delay_s": 0},
   "kp_block_alert_after_runs": 6,
   "telegram": {"enabled": true},
   "desktop_notify": true,

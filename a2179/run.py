@@ -1,5 +1,6 @@
 """One monitor pass: fetch -> parse -> filter -> diff against state -> alerts -> metrics."""
 import logging
+import sys
 import time
 from urllib.parse import quote_plus, urlparse
 
@@ -8,6 +9,7 @@ from .config import data_dir
 from .fetch import Fetcher
 from .matcher import Matcher
 from .obs import Metrics, ev
+from . import parallel
 from .parsers import parse_kp_search, parse_woo_product, parse_woo_search, kp_is_blocked
 from .prices import to_usd
 from .embedder import load_similarity
@@ -69,12 +71,60 @@ def collect(cfg, fetcher, metrics, log, deadline=None):
             kp_status = "ok_but_empty"
             ev(log, "kp_no_items", logging.WARNING, url=url, bytes=len(html))
         out.extend(items)
+    return _dedupe(out), kp_status
+
+
+def _dedupe(out):
     # same listing from search + product page: keep the product page (has stock info)
     best = {}
     for l in out:
         if l.key not in best or (best[l.key].in_stock is None and l.in_stock is not None):
             best[l.key] = l
-    return list(best.values()), kp_status
+    return list(best.values())
+
+
+def collect_parallel(cfg, metrics, log, time_budget_s=None, workers=None, max_concurrency=None):
+    """Same result as collect(), but fetched and parsed by parallel.fetch_all (processes + asyncio).
+    Raises parallel.ParallelUnavailable when aiohttp is missing."""
+    results = parallel.fetch_all(cfg, metrics, log, time_budget_s, workers, max_concurrency)
+    out = []
+    if any(r["skipped"] == "time" for r in results):
+        metrics.notes.append("time budget reached, skipped remaining sources")
+    for r in results:
+        if r["kind"] == "kp" or r["skipped"]:
+            continue
+        if r["kind"] == "shop_product":
+            if r["status"] == 200:
+                if r["items"]:
+                    out.extend(r["items"])
+                    metrics.inc("parse.shop_product.ok")
+                else:
+                    metrics.inc("parse.shop_product.empty")
+            elif r["status"] == 404:
+                metrics.inc("parse.shop_product.gone")
+                ev(log, "product_gone", logging.WARNING, url=r["url"])
+        elif r["status"] == 200:
+            metrics.inc("parse.shop_search.items", len(r["items"]))
+            out.extend(r["items"])
+    kp = [r for r in results if r["kind"] == "kp" and r["skipped"] != "time"]
+    kp_status = "skipped"
+    first_block = next((r for r in kp if r["blocked"]), None)
+    for r in kp:
+        if r["blocked"] or r["skipped"] == "kp_blocked":
+            # as in collect(): KP refused us, nothing after the refusal counts in this pass
+            b = first_block or r
+            kp_status = f"blocked({b['status']})"
+            metrics.inc("kp.blocked")
+            ev(log, "kp_blocked", logging.WARNING, url=b["url"], status=b["status"])
+            break
+        metrics.inc("parse.kp.items", len(r["items"]))
+        if r["items"]:
+            kp_status = "ok"
+        elif kp_status != "ok":
+            kp_status = "ok_but_empty"
+            ev(log, "kp_no_items", logging.WARNING, url=r["url"], bytes=r["bytes"])
+        out.extend(r["items"])
+    return _dedupe(out), kp_status
 
 
 def prepare_similarity(cfg, log, no_embed=False, require_embedder=False, verbose=False):
@@ -93,17 +143,30 @@ def prepare_similarity(cfg, log, no_embed=False, require_embedder=False, verbose
 
 
 def run_once(cfg, log, dry_run=False, seed=False, no_embed=False, fetcher=None, time_budget_s=None,
-             require_embedder=False, similarity=None):
+             require_embedder=False, similarity=None, workers=None, max_concurrency=None):
+    """workers=0 (or a fetcher passed in, as the tests do): old sequential pass with requests.
+    Otherwise parallel: `workers` processes (default 3), at most `max_concurrency` GET in flight
+    in total (default 10). Both default to cfg['parallel']."""
     metrics = Metrics()
     ddir = data_dir(cfg)
     sim, mode = similarity or prepare_similarity(cfg, log, no_embed, require_embedder)
     metrics.notes.append(f"filter=regex+{mode}")
     matcher = Matcher(sim, mode, cfg.get("thresholds"), cfg.get("accept_a1932", True))
-    fetcher = fetcher or Fetcher(cfg.get("http"), metrics, log)
-    if fetcher.metrics is not metrics:
-        fetcher.metrics = metrics
-    deadline = time.monotonic() + time_budget_s if time_budget_s else None
-    listings, kp_status = collect(cfg, fetcher, metrics, log, deadline)
+    n_workers = parallel.settings(cfg, workers, max_concurrency)[0]
+    listings = None
+    if fetcher is None and n_workers >= 1:
+        try:
+            listings, kp_status = collect_parallel(cfg, metrics, log, time_budget_s, workers, max_concurrency)
+        except parallel.ParallelUnavailable as e:
+            ev(log, "parallel_unavailable", logging.WARNING, error=str(e))
+            print("[parallel] aiohttp не установлен (pip install -r requirements.txt), "
+                  "этот проход идёт последовательно", file=sys.stderr)
+    if listings is None:
+        fetcher = fetcher or Fetcher(cfg.get("http"), metrics, log)
+        if fetcher.metrics is not metrics:
+            fetcher.metrics = metrics
+        deadline = time.monotonic() + time_budget_s if time_budget_s else None
+        listings, kp_status = collect(cfg, fetcher, metrics, log, deadline)
     metrics.notes.append(f"kp={kp_status}")
     metrics.inc("listings.seen", len(listings))
 
