@@ -163,3 +163,43 @@ class TestCpuDefaults(unittest.TestCase):
         for big in ("bge-m3", "e5-large", "labse", "e5-large-instruct"):
             self.assertNotIn(big, short)
         self.assertEqual([m["short"] for m in S.select_embedders("bge-m3")], ["bge-m3"])   # by name: allowed
+
+
+class TestDenseCache(unittest.TestCase):
+    def test_second_run_reuses_scores(self):
+        import sweep as S
+        from unittest import mock
+        from a2179 import embedder as E
+        made = []
+
+        class Sim:
+            def __init__(self, model, **kw):
+                made.append(model)
+                self.device = "cpu"
+
+            def score_many(self, texts):
+                return [(0.5, 0.25)] * len(texts)
+        tmp = Path(tempfile.mkdtemp())
+        rows = [{"id": 1, "title": "a", "snippet": ""}, {"id": 2, "title": "b", "snippet": ""}]
+        try:
+            with mock.patch.dict(os.environ, {"A2179_DENSE_CACHE": str(tmp / "cache")}), \
+                    mock.patch.object(E, "EmbedSim", Sim):
+                self.assertEqual(S.compute_dense(rows, tmp / "1.jsonl", "m", "query: ", "query: "), "computed")
+                self.assertEqual(S.compute_dense(rows, tmp / "2.jsonl", "m", "query: ", "query: "), "cached")
+                self.assertEqual((tmp / "1.jsonl").read_text(), (tmp / "2.jsonl").read_text())
+                # another prefix, another row text: computed again
+                self.assertEqual(S.compute_dense(rows, tmp / "3.jsonl", "m", "passage: ", "query: "), "computed")
+                rows2 = [dict(rows[0], title="changed"), rows[1]]
+                self.assertEqual(S.compute_dense(rows2, tmp / "4.jsonl", "m", "query: ", "query: "), "computed")
+            self.assertEqual(made, ["m", "m", "m"])
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_mixed_embedder_spec(self):
+        import sweep as S
+        from unittest import mock
+        with mock.patch.object(S, "hf_cached", lambda mid: True):
+            short = [m["short"] for m in S.select_embedders("cached-small,bge-m3,e5-large,mpnet")]
+        self.assertIn("bge-m3", short)
+        self.assertIn("e5-large", short)
+        self.assertEqual(short.count("mpnet"), 1)

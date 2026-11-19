@@ -54,7 +54,8 @@ Run #1 (коммит 4ee8426) упал на старте (`startup_failure`, н�
 - `A2179_CI_THREADS` (по умолчанию половина ядер, не больше 4) для torch, MKL, OpenBLAS
 - `A2179_CI_EMBED_BATCH=16`
 - модели строго по одной, между ними `del` и `gc`, в логе строка `dense i/N <модель>` на каждую
-- `A2179_CI_EMBEDDERS=cached-small`: только модели из кэша до `A2179_MAX_PARAMS_M=300` M параметров (minilm, mpnet, e5-small, e5-base и варианты, bge-base-en, e5-base-en). bge-m3, e5-large, e5-large-instruct, LaBSE только если назвать их явно, например `A2179_CI_EMBEDDERS=bge-m3`
+- оценки моделей кэшируются в `~/.cache/a2179-ci/dense` (`A2179_CI_DENSE_CACHE`), ключ: id модели, префиксы, прототипы и строки (id + текст). Повторный прогон на тех же данных модель не грузит, в логе `reused cached scores`
+- `A2179_CI_EMBEDDERS=cached-small`: только модели из кэша до `A2179_MAX_PARAMS_M=300` M параметров (minilm, mpnet, e5-small, e5-base и варианты, bge-base-en, e5-base-en). bge-m3, e5-large, e5-large-instruct, LaBSE только если назвать их явно, например `A2179_CI_EMBEDDERS=cached-small,bge-m3,e5-large,e5-large-instruct,labse` (группы и имена можно смешивать)
 
 ## torch и модель (опционально, из CI)
 Ставить torch из CI тяжело (несколько ГБ), поэтому только по явной переменной репы. Settings → Secrets and variables → Actions → Variables → New repository variable:

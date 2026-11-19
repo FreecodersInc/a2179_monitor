@@ -26,6 +26,7 @@ Charts and ranking metrics (recall@k, precision at recall 1.0 / 0.95, nDCG): eva
 """
 import argparse
 import json
+import shutil
 import math
 import os
 import re
@@ -237,8 +238,39 @@ def free_memory():
         pass
 
 
+DENSE_CACHE_VERSION = 1
+
+
+def dense_cache_key(rows, model, proto_prefix="", text_prefix="", pos=None, neg=None) -> str:
+    """Same model id, prefixes, prototypes and the same rows (id + text) = same scores, so a rerun
+    can reuse them. The device is not in the key (CPU and CUDA differ only in the last digits)."""
+    import hashlib
+    if pos is None or neg is None:
+        pos, neg = prototypes.POSITIVE, prototypes.NEGATIVE
+    blob = json.dumps({"v": DENSE_CACHE_VERSION, "model": model, "pp": proto_prefix or "", "tp": text_prefix or "",
+                       "pos": list(pos), "neg": list(neg),
+                       "rows": [[r["id"], f"{r['title']} {r.get('snippet', '')}".strip()] for r in rows]},
+                      ensure_ascii=False, sort_keys=True)
+    return hashlib.sha256(blob.encode("utf-8")).hexdigest()[:24]
+
+
+def dense_cache_dir():
+    d = os.environ.get("A2179_DENSE_CACHE", "").strip()
+    return Path(os.path.expanduser(d)) if d else None
+
+
 def compute_dense(rows, out: Path, model: str, proto_prefix: str = "", text_prefix: str = "", local_only=False,
                   device="auto", pos=None, neg=None):
+    """Scores into `out`. With A2179_DENSE_CACHE set (CI: ~/.cache/a2179-ci/dense), scores already
+    computed for the same key are copied instead of loading the model. Returns "cached" or "computed"."""
+    cache = dense_cache_dir()
+    cfile = cache / f"{dense_cache_key(rows, model, proto_prefix, text_prefix, pos, neg)}.jsonl" if cache else None
+    if cfile and cfile.is_file() and read_scores(cfile, rows) is not None:
+        out.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(cfile, out)
+        print(f"dense {model}: reused cached scores {cfile.name} (same model, prefixes, prototypes and rows)",
+              flush=True)
+        return "cached"
     from a2179.embedder import EmbedSim
     texts = [f"{r['title']} {r.get('snippet', '')}".strip() for r in rows]
     try:
@@ -269,6 +301,12 @@ def compute_dense(rows, out: Path, model: str, proto_prefix: str = "", text_pref
             f.write(json.dumps({"id": r["id"], "pos": round(a, 5), "neg": round(b, 5)}) + "\n")
     print(f"dense scores for {len(rows)} rows -> {out} ({time.time() - t0:.1f} s, device {dev}, "
           f"model {model}, prefixes {proto_prefix!r} / {text_prefix!r})", flush=True)
+    if cfile:
+        cfile.parent.mkdir(parents=True, exist_ok=True)
+        tmp = cfile.with_suffix(".tmp")
+        shutil.copyfile(out, tmp)
+        tmp.replace(cfile)
+    return "computed"
 
 
 # ------------------------------------------------------------------ several embedders (EXP-003, H-30)
@@ -294,20 +332,29 @@ def select_embedders(spec, reg=None, default_model=None):
     spec = (spec or "none").strip()
     if spec in ("", "none", "default"):
         return []
-    if spec == "all":
-        out = list(reg)
-    elif spec == "cached":
-        out = [m for m in reg if hf_cached(m["id"])]
-    elif spec == "cached-small":   # CI default: no large models unless listed by name
-        cap = float(os.environ.get("A2179_MAX_PARAMS_M") or 300)
-        out = [m for m in reg if (m.get("params_m") or 0) <= cap and hf_cached(m["id"])]
-    else:
-        want = [x.strip() for x in spec.split(",") if x.strip()]
-        by = {m["short"]: m for m in reg} | {m["id"]: m for m in reg if m["id"] not in {x["short"] for x in reg}}
-        unknown = [w for w in want if w not in by]
-        if unknown:
-            raise SystemExit(f"unknown embedders {unknown}, known: {[m['short'] for m in reg]} (eval/embedders.json)")
-        out = [by[w] for w in want]
+    by = {m["short"]: m for m in reg} | {m["id"]: m for m in reg if m["id"] not in {x["short"] for x in reg}}
+    cap = float(os.environ.get("A2179_MAX_PARAMS_M") or 300)
+    out, unknown = [], []
+    # comma list, groups and names mixed: cached-small,bge-m3,e5-large
+    for w in [x.strip() for x in spec.split(",") if x.strip()]:
+        if w == "all":
+            out += list(reg)
+        elif w == "cached":
+            out += [m for m in reg if hf_cached(m["id"])]
+        elif w == "cached-small":   # CI default: no large models unless listed by name
+            out += [m for m in reg if (m.get("params_m") or 0) <= cap and hf_cached(m["id"])]
+        elif w in by:
+            out.append(by[w])
+        else:
+            unknown.append(w)
+    if unknown:
+        raise SystemExit(f"unknown embedders {unknown}, known: {[m['short'] for m in reg]} (eval/embedders.json)")
+    seen, uniq = set(), []
+    for m in out:
+        if m["short"] not in seen:
+            seen.add(m["short"])
+            uniq.append(m)
+    out = uniq
     return [m for m in out if not (m["id"] == default_model and not m["proto_prefix"] and not m["text_prefix"])]
 
 

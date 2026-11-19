@@ -37,7 +37,9 @@ def compute_env(env=os.environ):
     threads = str(env.get("A2179_CI_THREADS") or max(1, min(4, (os.cpu_count() or 2) // 2)))
     out = {"A2179_DEVICE": device, "A2179_EMBED_BATCH": str(env.get("A2179_CI_EMBED_BATCH") or 16),
            "OMP_NUM_THREADS": threads, "MKL_NUM_THREADS": threads, "OPENBLAS_NUM_THREADS": threads,
-           "TOKENIZERS_PARALLELISM": "false"}
+           "TOKENIZERS_PARALLELISM": "false",
+           # dense scores reused across runs for the same model + prefixes + prototypes + rows
+           "A2179_DENSE_CACHE": env.get("A2179_CI_DENSE_CACHE") or str(Path.home() / ".cache" / "a2179-ci" / "dense")}
     if device == "cpu":
         out["CUDA_VISIBLE_DEVICES"] = ""   # nothing can touch the GPU, torch reports cuda_available False
     return out
