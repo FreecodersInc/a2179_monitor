@@ -223,12 +223,10 @@
     "sources": {
       "shop_products": [],
       "shop_searches": [],
-      "kp_keywords": [
-        "data engineer Toronto",
-        "data engineer Vancouver",
-        "data engineer remote Canada",
-        "analytics engineer dbt Snowflake Canada",
-        "data engineer Databricks remote EU"
+      "kp_keywords": [],
+      "job_apis": [
+        "remotive",
+        "remoteok"
       ]
     }
   }

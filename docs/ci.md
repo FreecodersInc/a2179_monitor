@@ -27,7 +27,8 @@ Run #1 (коммит 4ee8426) упал на старте (`startup_failure`, н�
      - `eval/sweep.py --compute-dense` (иначе без dense)
      - если dense шаг всё равно упал, он перезапускается без эмбеддера и помечается `fallback`
      - `eval/plots.py` (шаг `plots`, `advisory`: его падение видно в результате, но крестик не краснеет): графики EDA и метрики ранжирования (P@R1, P@R95, R@k, nDCG) по оценкам свипа
-   - `ci/write_results.py` системным python (только stdlib, работает даже если venv сломался): `results/<UTC дата>_<short sha>.json` и папка `results/<UTC дата>_<short sha>/` с отчётами (eval_report.md/json, sweep.tables.md, dense_scores.jsonl, setup.log) и графиками (`01_dataset.png` … `09_errors_by_kind.png`, `plots.md`, `plots.json`). Графики вклеены в конец `sweep.tables.md`, так что таблицы и картинки читаются одним отчётом. Коммит только этих файлов с `[skip ci]`, push в `main`, при отказе `git pull --rebase` и ещё раз, до 5 попыток
+     - `eval/review_run.py` (шаг `review`, тоже `advisory`): оба кейса в `reports/<дата>/<кейс>/` и в `results/<base>/reports/`. Экран из `eval/candidates_*.jsonl`, вакансии из официальных API Remotive и Remote OK (кэш 24 часа в `~/.cache/a2179-ci/jobs`, не чаще 4 запросов Remotive в сутки). В `matches.csv` / `all.csv` есть title, company, location, score, decision, url, fetched_at
+   - `ci/write_results.py` системным python (только stdlib, работает даже если venv сломался): `results/<UTC дата>_<short sha>.json` и папка `results/<UTC дата>_<short sha>/` с отчётами (eval_report.md/json, sweep.tables.md, dense_scores.jsonl, setup.log, reviews в `reports/<дата>/<кейс>/`) и графиками (`01_dataset.png` … `09_errors_by_kind.png`, `plots.md`, `plots.json`). Графики вклеены в конец `sweep.tables.md`, так что таблицы и картинки читаются одним отчётом. Коммит только этих файлов с `[skip ci]`, push в `main`, при отказе `git pull --rebase` и ещё раз, до 5 попыток
 3. Красный крестик: если упала установка venv, unit тесты, интеграционный тест Telegram или пуш результатов. Результат пишется в любом случае.
 
 Петли нет: `results/**` в `paths-ignore`, в сообщении `[skip ci]`, и push через `GITHUB_TOKEN` вообще не запускает workflow.
@@ -101,6 +102,10 @@ Job идёт с `environment: experiment`, оттуда приходят `TG_BOT
 | `A2179_CI_EMBEDDERS` | `cached` | какие модели свип сравнивает рядом с MiniLM (EXP-003): `cached` все из реестра, что уже в кэше, `none`, `all` или список. Ничего не качает |
 | `A2179_CI_TG_SEND` | `1` | интеграционный тест шлёт одно сообщение через Alerter; `0` только читает |
 | `A2179_CI_PLOTS` | `1` | графики и метрики ранжирования после свипа (около 1 МБ PNG на прогон в `results/`); `0` выключает |
+| `A2179_CI_REVIEW` | `1` | шаг review: отчёты ручной проверки по обоим кейсам; `0` выключает |
+| `A2179_CI_FETCH_JOBS` | `auto` | `auto` один запрос к Remotive/Remote OK, если кэш старше 24 часов, `never` только кэш, `always` с дневным лимитом Remotive |
+| `A2179_CI_TARGETS` | `a2179_screen,de_jobs` | какие кейсы пишет review |
+| `A2179_JOBS_CACHE` | `~/.cache/a2179-ci/jobs` | где лежит кэш ответов API вакансий |
 | `A2179_CI_NO_PUSH` | не задано | `1`: результат не коммитится, остаётся в `ci_out/` |
 
 Любая новая `A2179_CI_*` переменная доходит до `ci/run.sh` без правки YAML.
@@ -110,9 +115,9 @@ Job идёт с `environment: experiment`, оттуда приходят `TG_BOT
 - Код на твоей машине может запустить только тот, у кого есть push в `main`. Это и есть граница доверия.
 - `permissions: contents: write`, больше ничего. Секреты: `GITHUB_TOKEN`, `TG_BOT_TOKEN`, `TG_CHAT_ID`, `A2179_CI_SECRETS`, все только в окружении шага, значения вычищаются из всего, что пишется (раздел «Секреты»).
 - Ни одного стороннего action: исполняется только код этой репы на пушнутом sha.
-- Сеть: workflow ходит в GitHub (fetch и push). pip ходит в PyPI, только когда поменялись requirements, и на download.pytorch.org только с `A2179_CI_INSTALL_TORCH`. Hugging Face только в шаге кэша модели или при `A2179_CI_ALLOW_DOWNLOAD=true`. api.telegram.org только шаг `tg_integration` с секретами. Одно сообщение в этот чат по умолчанию (`A2179_CI_TG_SEND=0` выключает), больше ничего никуда не отправляется.
+- Сеть: workflow ходит в GitHub (fetch и push). pip ходит в PyPI, только когда поменялись requirements, и на download.pytorch.org только с `A2179_CI_INSTALL_TORCH`. Hugging Face только в шаге кэша модели или при `A2179_CI_ALLOW_DOWNLOAD=true`. api.telegram.org только шаг `tg_integration` с секретами. Одно сообщение в этот чат по умолчанию (`A2179_CI_TG_SEND=0` выключает). Шаг review при пустом или старом кэше один раз в сутки ходит на `remotive.com/api` и `remoteok.com/api` (официальные JSON API, кэш в `$HOME`). LinkedIn, Indeed и Glassdoor не трогаем.
 - Без sudo, пишет только в чекаут и `$HOME` пользователя раннера.
 - Один прогон за раз (`concurrency`), следующий ждёт в очереди, не отменяет текущий.
 
 ## Где результаты
-`results/<UTC дата>_<short sha>.json` и рядом папка с отчётами, формат в [`results/README.md`](../results/README.md).
+`results/<UTC дата>_<short sha>.json` и рядом папка с отчётами, формат в [`results/README.md`](../results/README.md). Файлы ручной проверки ещё пишутся в `reports/<дата>/a2179_screen/` и `reports/<дата>/de_jobs/` (matches.csv / all.csv со ссылками) и коммитятся тем же `[skip ci]` коммитом.

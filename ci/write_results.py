@@ -75,6 +75,23 @@ def sweep_metrics(sw):
             "best_hybrid": best, "variants": V}
 
 
+def review_metrics(reports_root: Path):
+    """Per-case n / n_matches from summary.json written by eval/review_run.py."""
+    if not reports_root.is_dir():
+        return None
+    out = {}
+    for p in sorted(reports_root.glob("????-??-??/*/summary.json")):
+        try:
+            s = json.loads(p.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        case = s.get("case") or p.parent.name
+        out[case] = {"n": s.get("n"), "n_matches": s.get("n_matches"), "date": s.get("date"),
+                     "notes": s.get("notes") or []}
+    return out or None
+
+
+
 def build(ci_out: Path, env=os.environ, now=None, cwd=ROOT):
     now = now or dt.datetime.now(dt.timezone.utc)
     steps = _load(ci_out / "steps.json") or {"env": {}, "dense": {}, "steps": []}
@@ -92,7 +109,8 @@ def build(ci_out: Path, env=os.environ, now=None, cwd=ROOT):
                                          "fallback", "skipped", "advisory", "stderr_tail")} for s in st],
         "metrics": {"eval": eval_metrics(_load(ci_out / "eval" / "eval_report.json")),
                     "sweep": sweep_metrics(_load(ci_out / "sweep" / "sweep.json")),
-                    "ranking": (_load(ci_out / PLOTS / "plots.json") or {}).get("ranking")},
+                    "ranking": (_load(ci_out / PLOTS / "plots.json") or {}).get("ranking"),
+                    "review": review_metrics(ci_out / "reports")},
     }
     for s in res["steps"]:  # keep only a short tail of stderr for failed steps
         s["stderr_tail"] = (s.get("stderr_tail") or "")[-1500:] if not s.get("ok") else None
@@ -145,7 +163,8 @@ def attach_reports(ci_out: Path, result: Path) -> Path | None:
     pdir = ci_out / PLOTS
     pngs = sorted(pdir.glob("*.png")) if pdir.is_dir() else []
     pmd = pdir / "plots.md"
-    if not files and not pngs:
+    review = (ci_out / "reports").is_dir() and any((ci_out / "reports").rglob("matches.csv"))
+    if not files and not pngs and not review:
         return None
     d = result.with_suffix("")
     d.mkdir(parents=True, exist_ok=True)
@@ -164,6 +183,14 @@ def attach_reports(ci_out: Path, result: Path) -> Path | None:
         with (d / "eval_report.md").open("a", encoding="utf-8") as fh:
             fh.write("\nCharts and ranking metrics (recall@k, precision at recall 1.0 / 0.95, nDCG): "
                      "[plots.md](plots.md), also embedded at the end of [sweep.tables.md](sweep.tables.md)\n")
+    # two-case manual review files: ci_out/reports/<date>/<case>/matches.csv
+    src = ci_out / "reports"
+    if src.is_dir():
+        for f in src.rglob("*"):
+            if f.is_file():
+                dest = d / "reports" / f.relative_to(src)
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                dest.write_text(redact.scrub(f.read_text(encoding="utf-8", errors="replace")), encoding="utf-8")
     return d
 
 
@@ -202,14 +229,30 @@ def main(argv=None):
     a = ap.parse_args(argv)
     res = build(Path(a.ci_out))
     p = write(Path(a.results_dir), res)
-    extra = attach_reports(Path(a.ci_out), p) if a.attach_reports else None
-    print(f"results -> {p}" + (f" + {extra}/" if extra else ""))
+    extra = []
+    attached = attach_reports(Path(a.ci_out), p) if a.attach_reports else None
+    if attached:
+        extra.append(attached)
+    # copy CI review reports into reports/<YYYY-MM-DD>/ so they live in the repo too
+    if a.commit:
+        src = Path(a.ci_out) / "reports"
+        if src.is_dir():
+            for dated in src.glob("????-??-??"):
+                if dated.is_dir() and any(dated.glob("*/matches.csv")):
+                    dest = ROOT / "reports" / dated.name
+                    for f in dated.rglob("*"):
+                        if f.is_file():
+                            q = dest / f.relative_to(dated)
+                            q.parent.mkdir(parents=True, exist_ok=True)
+                            q.write_text(redact.scrub(f.read_text(encoding="utf-8", errors="replace")), encoding="utf-8")
+                    extra.append(dest)
+    print(f"results -> {p}" + (f" + {', '.join(str(x) for x in extra)}" if extra else ""))
     gh_out = os.environ.get("GITHUB_OUTPUT")
     if gh_out:
         with open(gh_out, "a", encoding="utf-8") as f:
             f.write(f"results_file={p.relative_to(ROOT) if p.is_relative_to(ROOT) else p}\n")
     if a.commit:
-        commit_and_push(p, a.branch, push=a.push, extra=[extra] if extra else [])
+        commit_and_push(p, a.branch, push=a.push, extra=extra)
     return 0
 
 

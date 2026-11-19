@@ -138,7 +138,9 @@ python eval/sweep.py --plots reports/sweep_plots   # плюс графики EDA
 python eval/plots.py --sweep reports/sweep_2026-11-19.json --out reports/sweep_2026-11-19_plots   # графики по готовому свипу
 python scripts/download_embedders.py multilingual english   # модели в кэш HF_HOME, только нужные файлы, уже скачанные пропускаются (реестр: eval/embedders.json)
 python eval/sweep.py --compute-dense --embedders cached --plots reports/exp003_plots   # все модели из кэша в одном прогоне (EXP-003)
+python eval/review_run.py   # оба кейса: экран из eval/candidates_*.jsonl, вакансии Remotive и Remote OK (кэш 24 часа). Пишет reports/<дата>/<кейс>/matches.csv и all.csv со ссылками
 ```
+Для ручной проверки вакансий и объявлений смотри `reports/<дата>/de_jobs/matches.md` (совпадения) и `all.md` (все скачанные, со ссылкой на источник). Тот же шаг делает CI на каждый push в main, копия ещё лежит в `results/<дата>_<sha>/reports/`.
 Размеченный набор `eval/labeled.jsonl`: 97 заголовков (40 подходящих, 57 нет), сербский латиницей и кириллицей, английский, русский. 38 из них реальные заголовки с KP и сайтов магазинов (19.11.2026), остальные составлены вручную, включая трудные отрицательные (A2337, чехлы, шлейфы LCD, услуги, целые ноутбуки).
 Отчёт: `reports/eval_report.md` (precision, recall, F1, матрица ошибок, список ошибок, проверка 2-fold).
 

@@ -1,0 +1,33 @@
+[
+  {
+    "legal": "Mention Remote OK and link back when using this API.",
+    "last_updated": 1732040000
+  },
+  {
+    "id": "9001",
+    "slug": "data-engineer-vancouver-9001",
+    "epoch": 1731860000,
+    "date": "2026-11-17T15:00:00Z",
+    "company": "Cedar Analytics",
+    "position": "Data Engineer Databricks Spark AWS",
+    "description": "<p>Remote Canada data engineer, Databricks, Spark, AWS.</p>",
+    "url": "https://remoteok.com/remote-jobs/9001",
+    "location": "Vancouver, Canada",
+    "tags": [
+      "data",
+      "python"
+    ]
+  },
+  {
+    "id": "9002",
+    "date": "2026-11-16T10:00:00Z",
+    "company": "Helpdesk Ltd",
+    "position": "Customer support agent remote Canada",
+    "description": "<p>Answer tickets.</p>",
+    "url": "https://remoteok.com/remote-jobs/9002",
+    "location": "Canada",
+    "tags": [
+      "support"
+    ]
+  }
+]

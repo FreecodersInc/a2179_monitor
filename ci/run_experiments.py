@@ -150,6 +150,20 @@ def main(argv=None):
         rec["advisory"] = True
         steps.append(rec)
 
+    # two-case review reports (ADR-0017): reports/<date>/<case>/matches.csv + all.csv, with source links
+    if os.environ.get("A2179_CI_REVIEW", "1") not in ("0", "false", "no"):
+        date = time.strftime("%Y-%m-%d", time.gmtime())
+        cache = os.environ.get("A2179_JOBS_CACHE") or str(Path.home() / ".cache" / "a2179-ci" / "jobs")
+        rv = [py, "eval/review_run.py",
+              "--out-root", str(out / "reports"),
+              "--date", date,
+              "--cases", os.environ.get("A2179_CI_TARGETS", "a2179_screen,de_jobs"),
+              "--fetch", os.environ.get("A2179_CI_FETCH_JOBS", "auto"),
+              "--jobs-cache", cache]
+        rec = run("review", rv, T)
+        rec["advisory"] = True  # a missing cache or a failed API call must not turn CI red
+        steps.append(rec)
+
     # Telegram integration: only with both secrets, the only step that gets them
     have = redact.presence()
     if have.get("TG_BOT_TOKEN", "absent") != "absent" and have.get("TG_CHAT_ID", "absent") != "absent":

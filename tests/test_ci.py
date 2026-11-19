@@ -99,7 +99,7 @@ class TestDense(unittest.TestCase):
                 rx.run, rx.env_info = orig_run, orig_env
             names = [c[0] for c in calls]
             self.assertEqual(code, 0)
-            self.assertEqual(names, ["tests", "eval", "sweep"])
+            self.assertEqual(names, ["tests", "eval", "sweep", "review"])
             self.assertIn("--no-embed", calls[1][1])
             self.assertNotIn("--compute-dense", calls[2][1])
             s = json.loads((Path(d) / "steps.json").read_text())
@@ -123,7 +123,7 @@ class TestDense(unittest.TestCase):
             finally:
                 rx.run, rx.env_info = orig_run, orig_env
             names = [c[0] for c in calls]
-            self.assertEqual(names, ["tests", "check_embedder", "eval", "eval", "sweep", "sweep"])
+            self.assertEqual(names, ["tests", "check_embedder", "eval", "eval", "sweep", "sweep", "review"])
             s = json.loads((Path(d) / "steps.json").read_text())
             ev_sw = [x for x in s["steps"] if x["name"] in ("eval", "sweep")]
             self.assertEqual([x.get("fallback") is not None for x in ev_sw], [False, True, False, True])
@@ -261,6 +261,18 @@ class TestPush(unittest.TestCase):
         files = sorted(self.g("show", "--name-only", "--format=", "main", cwd=self.remote).stdout.split())
         self.assertEqual(files, ["results/2026-11-19_abc1234.json", "results/2026-11-19_abc1234/eval_report.md",
                                  "results/2026-11-19_abc1234/setup.log"])
+
+    def test_review_reports_are_attached(self):
+        p = self.result(self.a)
+        co = self.tmp / "co2"
+        case = co / "reports" / "2026-11-19" / "de_jobs"
+        case.mkdir(parents=True)
+        (case / "matches.csv").write_text("title,company,location,score,decision,url,fetched_at\n")
+        (case / "summary.json").write_text('{"case":"de_jobs","n":3,"n_matches":1,"date":"2026-11-19"}')
+        d = wr.attach_reports(co, p)
+        self.assertTrue((d / "reports" / "2026-11-19" / "de_jobs" / "matches.csv").is_file())
+        met = wr.review_metrics(co / "reports")
+        self.assertEqual(met["de_jobs"]["n_matches"], 1)
 
     def test_only_the_result_file_is_committed(self):
         (self.a / "ci_out").mkdir()
@@ -716,7 +728,8 @@ class TestRunSh(unittest.TestCase):
             import hashlib
             (venv / ".stamp_requirements.txt").write_text(
                 hashlib.sha256((ROOT / "requirements.txt").read_bytes()).hexdigest() + "\n")
-            env = {**os.environ, "A2179_CI_VARS": json.dumps({"A2179_CI_VENV": str(venv), "A2179_CI_DENSE": "off"}),
+            env = {**os.environ, "A2179_CI_VARS": json.dumps({"A2179_CI_VENV": str(venv), "A2179_CI_DENSE": "off",
+                                                             "A2179_CI_FETCH_JOBS": "never"}),
                    "A2179_CI_OUT": str(tmp / "out"), "A2179_CI_RESULTS_DIR": str(tmp / "results"),
                    "A2179_CI_NO_PUSH": "1", "A2179_CI_SKIP_TESTS": "1", "GITHUB_SHA": ENV["GITHUB_SHA"]}
             env.pop("GITHUB_PATH", None)
@@ -727,7 +740,7 @@ class TestRunSh(unittest.TestCase):
             self.assertEqual(len(res), 1)
             r = json.loads(res[0].read_text())
             names = [s["name"] for s in r["steps"]]
-            self.assertEqual(names, ["setup_venv", "env_probe", "eval", "sweep", "plots", "tg_integration"])
+            self.assertEqual(names, ["setup_venv", "env_probe", "eval", "sweep", "plots", "review", "tg_integration"])
             self.assertTrue(r["ok"], [(s["name"], s["exit_code"], s.get("stderr_tail")) for s in r["steps"]
                                       if not s.get("ok")])
             self.assertEqual(r["secrets"]["TG_BOT_TOKEN"], "absent")
@@ -740,6 +753,8 @@ class TestRunSh(unittest.TestCase):
             self.assertTrue((rep / "plots.md").is_file())
             self.assertIn("Ranking metrics", (rep / "sweep.tables.md").read_text())
             self.assertIn("tfidf hybrid", r["metrics"]["ranking"])
+            self.assertTrue(any((rep / "reports").rglob("a2179_screen/matches.csv")))
+            self.assertIsNotNone(r["metrics"].get("review"))
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
 

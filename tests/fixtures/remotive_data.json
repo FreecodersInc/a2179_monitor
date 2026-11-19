@@ -1,0 +1,48 @@
+{
+  "00-legal-notice": "Mention Remotive and link back. Do not republish. Max 4 requests/day. Jobs may be delayed 24 hours.",
+  "job-count": 4,
+  "jobs": [
+    {
+      "id": 101,
+      "url": "https://remotive.com/remote-jobs/data/senior-data-engineer-toronto-101",
+      "title": "Senior Data Engineer",
+      "company_name": "Northwind Labs",
+      "category": "Data",
+      "job_type": "full_time",
+      "publication_date": "2026-11-17T12:00:00",
+      "candidate_required_location": "Toronto, Canada",
+      "salary": "",
+      "description": "<p>SQL, Python, Apache Spark and Airflow on a data platform in Toronto.</p>"
+    },
+    {
+      "id": 102,
+      "url": "https://remotive.com/remote-jobs/writing/marketing-copywriter-102",
+      "title": "Marketing copywriter remote",
+      "company_name": "Adverts Co",
+      "category": "Writing",
+      "publication_date": "2026-11-16T08:00:00",
+      "candidate_required_location": "Canada",
+      "description": "<p>Write ads. No SQL.</p>"
+    },
+    {
+      "id": 103,
+      "url": "https://remotive.com/remote-jobs/data/data-engineer-too-new-103",
+      "title": "Data Engineer",
+      "company_name": "Fresh Posting Inc",
+      "category": "Data",
+      "publication_date": "2026-11-19T19:00:00",
+      "candidate_required_location": "EU remote",
+      "description": "<p>Spark Airflow dbt. Posted just now, must be delayed 24h.</p>"
+    },
+    {
+      "id": 104,
+      "url": "https://remotive.com/remote-jobs/data/analytics-engineer-eu-104",
+      "title": "Analytics Engineer dbt Snowflake EU remote",
+      "company_name": "Lakehouse GmbH",
+      "category": "Data",
+      "publication_date": "2026-11-15T09:30:00",
+      "candidate_required_location": "EU remote",
+      "description": "<p>dbt and Snowflake for an analytics engineer, English-speaking, EU remote.</p>"
+    }
+  ]
+}
