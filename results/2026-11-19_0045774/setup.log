@@ -1,0 +1,4 @@
+pip install -r requirements.txt
+requirements-embed.txt unchanged, skip pip
+cache_model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 already cached in /home/vessyl-runner/.cache/huggingface/hub/models--sentence-transformers--paraphrase-multilingual-MiniLM-L12-v2/snapshots/e8f8c211226b894fcb81acc59f3b34ba3efd5f42
+Python 3.14.4

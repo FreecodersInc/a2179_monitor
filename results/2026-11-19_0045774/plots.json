@@ -1,0 +1,229 @@
+{
+ "label": "labeled.jsonl, 430 rows (371 real, 59 synthetic)",
+ "n": 430,
+ "positives": 48,
+ "channels": [
+  "tfidf",
+  "bm25",
+  "dense",
+  "feat",
+  "rrf(tfidf,bm25)",
+  "rrf(dense,bm25)",
+  "bm25+feat lam=0.3",
+  "dense+feat lam=0.4",
+  "tfidf+feat lam=0.4"
+ ],
+ "dense": true,
+ "ranking": {
+  "tfidf pure": {
+   "npos": 48,
+   "R@npos": 0.521,
+   "R@2npos": 0.75,
+   "P@R95": 0.317,
+   "P@R1": 0.304,
+   "depth@R1": 158,
+   "AP": 0.522,
+   "nDCG@npos": 0.562,
+   "MRR": 1.0
+  },
+  "tfidf hybrid": {
+   "npos": 48,
+   "R@npos": 0.958,
+   "R@2npos": 1.0,
+   "P@R95": 0.979,
+   "P@R1": 0.667,
+   "depth@R1": 72,
+   "AP": 0.985,
+   "nDCG@npos": 0.971,
+   "MRR": 1.0
+  },
+  "bm25 pure": {
+   "npos": 48,
+   "R@npos": 0.583,
+   "R@2npos": 0.938,
+   "P@R95": 0.465,
+   "P@R1": 0.216,
+   "depth@R1": 222,
+   "AP": 0.568,
+   "nDCG@npos": 0.578,
+   "MRR": 0.5
+  },
+  "bm25 hybrid": {
+   "npos": 48,
+   "R@npos": 0.958,
+   "R@2npos": 1.0,
+   "P@R95": 0.979,
+   "P@R1": 0.558,
+   "depth@R1": 86,
+   "AP": 0.983,
+   "nDCG@npos": 0.971,
+   "MRR": 1.0
+  },
+  "dense pure": {
+   "npos": 48,
+   "R@npos": 0.396,
+   "R@2npos": 0.667,
+   "P@R95": 0.172,
+   "P@R1": 0.155,
+   "depth@R1": 310,
+   "AP": 0.363,
+   "nDCG@npos": 0.403,
+   "MRR": 1.0
+  },
+  "dense hybrid": {
+   "npos": 48,
+   "R@npos": 0.958,
+   "R@2npos": 1.0,
+   "P@R95": 0.958,
+   "P@R1": 0.64,
+   "depth@R1": 75,
+   "AP": 0.967,
+   "nDCG@npos": 0.967,
+   "MRR": 1.0
+  },
+  "feat pure": {
+   "npos": 48,
+   "R@npos": 0.75,
+   "R@2npos": 0.896,
+   "P@R95": 0.418,
+   "P@R1": 0.198,
+   "depth@R1": 243,
+   "AP": 0.767,
+   "nDCG@npos": 0.788,
+   "MRR": 1.0
+  },
+  "feat hybrid": {
+   "npos": 48,
+   "R@npos": 0.938,
+   "R@2npos": 1.0,
+   "P@R95": 0.939,
+   "P@R1": 0.857,
+   "depth@R1": 56,
+   "AP": 0.989,
+   "nDCG@npos": 0.956,
+   "MRR": 1.0
+  },
+  "rrf(tfidf,bm25) pure": {
+   "npos": 48,
+   "R@npos": 0.521,
+   "R@2npos": 0.896,
+   "P@R95": 0.404,
+   "P@R1": 0.259,
+   "depth@R1": 185,
+   "AP": 0.579,
+   "nDCG@npos": 0.569,
+   "MRR": 1.0
+  },
+  "rrf(tfidf,bm25) hybrid": {
+   "npos": 48,
+   "R@npos": 0.958,
+   "R@2npos": 1.0,
+   "P@R95": 0.979,
+   "P@R1": 0.632,
+   "depth@R1": 76,
+   "AP": 0.985,
+   "nDCG@npos": 0.971,
+   "MRR": 1.0
+  },
+  "rrf(dense,bm25) pure": {
+   "npos": 48,
+   "R@npos": 0.521,
+   "R@2npos": 0.833,
+   "P@R95": 0.357,
+   "P@R1": 0.314,
+   "depth@R1": 153,
+   "AP": 0.612,
+   "nDCG@npos": 0.609,
+   "MRR": 1.0
+  },
+  "rrf(dense,bm25) hybrid": {
+   "npos": 48,
+   "R@npos": 0.958,
+   "R@2npos": 1.0,
+   "P@R95": 0.979,
+   "P@R1": 0.6,
+   "depth@R1": 80,
+   "AP": 0.979,
+   "nDCG@npos": 0.97,
+   "MRR": 1.0
+  },
+  "bm25+feat lam=0.3 pure": {
+   "npos": 48,
+   "R@npos": 0.688,
+   "R@2npos": 0.875,
+   "P@R95": 0.397,
+   "P@R1": 0.22,
+   "depth@R1": 218,
+   "AP": 0.686,
+   "nDCG@npos": 0.683,
+   "MRR": 0.5
+  },
+  "bm25+feat lam=0.3 hybrid": {
+   "npos": 48,
+   "R@npos": 0.938,
+   "R@2npos": 1.0,
+   "P@R95": 0.939,
+   "P@R1": 0.738,
+   "depth@R1": 65,
+   "AP": 0.987,
+   "nDCG@npos": 0.956,
+   "MRR": 1.0
+  },
+  "dense+feat lam=0.4 pure": {
+   "npos": 48,
+   "R@npos": 0.562,
+   "R@2npos": 0.833,
+   "P@R95": 0.228,
+   "P@R1": 0.203,
+   "depth@R1": 237,
+   "AP": 0.608,
+   "nDCG@npos": 0.627,
+   "MRR": 1.0
+  },
+  "dense+feat lam=0.4 hybrid": {
+   "npos": 48,
+   "R@npos": 0.938,
+   "R@2npos": 1.0,
+   "P@R95": 0.939,
+   "P@R1": 0.787,
+   "depth@R1": 61,
+   "AP": 0.972,
+   "nDCG@npos": 0.953,
+   "MRR": 1.0
+  },
+  "tfidf+feat lam=0.4 pure": {
+   "npos": 48,
+   "R@npos": 0.688,
+   "R@2npos": 0.854,
+   "P@R95": 0.309,
+   "P@R1": 0.207,
+   "depth@R1": 232,
+   "AP": 0.72,
+   "nDCG@npos": 0.726,
+   "MRR": 1.0
+  },
+  "tfidf+feat lam=0.4 hybrid": {
+   "npos": 48,
+   "R@npos": 0.938,
+   "R@2npos": 1.0,
+   "P@R95": 0.939,
+   "P@R1": 0.857,
+   "depth@R1": 56,
+   "AP": 0.988,
+   "nDCG@npos": 0.956,
+   "MRR": 1.0
+  }
+ },
+ "charts": [
+  "01_dataset.png",
+  "02_score_hist.png",
+  "03_pr_curves.png",
+  "04_threshold.png",
+  "05_confusion.png",
+  "06_tfidf_2d.png",
+  "07_fusion_weights.png",
+  "08_recall_budget.png",
+  "09_errors_by_kind.png"
+ ],
+ "note": ""
+}
