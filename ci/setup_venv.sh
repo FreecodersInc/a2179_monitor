@@ -4,10 +4,11 @@
 # (A2179_CI_INSTALL_TORCH=cu126), requirements-embed.txt and the model cache only when torch is
 # there. See docs/ci.md. No sudo, nothing outside $HOME.
 set -euo pipefail
-VENV="${A2179_CI_VENV:-$HOME/.cache/a2179-ci/venv}"
-PY="${A2179_CI_PYTHON:-python3}"
+source "$(dirname "$0")/home_path.sh"
+VENV="$(expand_home_path "${A2179_CI_VENV:-$HOME/.cache/a2179-ci/venv}")"
+PY="$(expand_home_path "${A2179_CI_PYTHON:-python3}")"
 if [[ ! -x "$VENV/bin/python" ]]; then
-  echo "creating venv $VENV with $($PY --version)"
+  echo "creating venv $VENV with $("$PY" --version)"
   mkdir -p "$(dirname "$VENV")"
   "$PY" -m venv "$VENV"
   "$VENV/bin/python" -m pip install --quiet --upgrade pip

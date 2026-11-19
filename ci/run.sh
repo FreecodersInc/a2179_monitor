@@ -12,6 +12,12 @@
 # Exit code: the first failure among setup, tests, results push (results are written anyway).
 set -uo pipefail
 cd "$(dirname "$0")/.."
+source ci/home_path.sh
+# This is the runner's configured work directory, not the venv. Moving a live
+# checkout would break Actions bookkeeping; leave it intact and diagnose it.
+if [[ "$PWD" == *'/~/'* ]]; then
+  echo '::warning::runner work directory contains a literal ~; use an absolute work directory when reconfiguring the runner (see docs/ci.md)'
+fi
 OUT="${A2179_CI_OUT:-ci_out}"
 mkdir -p "$OUT"
 SYS_PY="$(command -v python3 || command -v python || true)"
@@ -41,9 +47,11 @@ export A2179_CI_DENSE="${A2179_CI_DENSE:-auto}" A2179_CI_STEP_TIMEOUT="${A2179_C
 #    venv from A2179_CI_PYTHON (exported above from the repo variables, read by setup_venv.sh).
 #    Hugging Face cache: HF_HOME if set, else the standard ~/.cache/huggingface of the runner
 #    user, the same cache your own runs with that venv use.
-VENV="${A2179_CI_VENV:-$HOME/.cache/a2179-ci/venv}"
+VENV="$(expand_home_path "${A2179_CI_VENV:-$HOME/.cache/a2179-ci/venv}")"
 export A2179_CI_VENV="$VENV"
-[[ -n "${A2179_CI_PYTHON:-}" ]] && export A2179_CI_PYTHON
+if [[ -n "${A2179_CI_PYTHON:-}" ]]; then
+  export A2179_CI_PYTHON="$(expand_home_path "$A2179_CI_PYTHON")"
+fi
 t0=$(date +%s)
 bash ci/setup_venv.sh > >(tee "$OUT/setup.log") 2>&1
 setup_rc=$?

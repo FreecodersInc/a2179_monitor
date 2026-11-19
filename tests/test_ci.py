@@ -698,6 +698,19 @@ class TestOwnVenvWithTorch(unittest.TestCase):
             shutil.rmtree(tmp, ignore_errors=True)
 
 
+class TestHomePath(unittest.TestCase):
+    def test_leading_tilde_expands_without_eval(self):
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            p = subprocess.run(["bash", "-c", 'source ci/home_path.sh; expand_home_path "$1"; echo; '
+                                              'expand_home_path "$2"; echo; expand_home_path "$3"',
+                                "x", "~/a2179/.venv", "/abs/~/x", "~other/x"],
+                               cwd=ROOT, env={**os.environ, "HOME": str(tmp)}, capture_output=True, text=True)
+            self.assertEqual(p.stdout.splitlines(), [f"{tmp}/a2179/.venv", "/abs/~/x", "~other/x"])
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+
 class TestVarsEnv(unittest.TestCase):
     def test_only_ci_keys_quoted(self):
         import vars_env
@@ -723,7 +736,23 @@ class TestRunSh(unittest.TestCase):
             (venv / "bin").mkdir(parents=True)
             # a wrapper, not a symlink: a symlink to a venv python outside its venv starts the bare
             # base interpreter without the venv packages (seen on the CI runner, red run ebaed9c)
-            (venv / "bin" / "python").write_text(f'#!/bin/sh\nexec "{sys.executable}" "$@"\n')
+            # hermetic and fast on any runner: torch, sentence-transformers and matplotlib are hidden
+            # from the steps (red run 42447e5: on the MX130 runner the real torch probe plus real
+            # charts pushed this test past its 90 s timeout). The plumbing of run.sh is what is
+            # tested here, the real steps run in CI itself.
+            block = tmp / "block"
+            block.mkdir()
+            (block / "sitecustomize.py").write_text(
+                "import sys\n"
+                "HIDE = ('torch', 'sentence_transformers', 'transformers', 'matplotlib')\n"
+                "class _Hide:\n"
+                "    def find_spec(self, name, path=None, target=None):\n"
+                "        if name.split('.')[0] in HIDE:\n"
+                "            raise ModuleNotFoundError(f'hidden in test: {name}', name=name)\n"
+                "        return None\n"
+                "sys.meta_path.insert(0, _Hide())\n")
+            (venv / "bin" / "python").write_text(
+                f'#!/bin/sh\nPYTHONPATH="{block}${{PYTHONPATH:+:$PYTHONPATH}}" exec "{sys.executable}" "$@"\n')
             (venv / "bin" / "python").chmod(0o755)
             import hashlib
             (venv / ".stamp_requirements.txt").write_text(
@@ -734,8 +763,9 @@ class TestRunSh(unittest.TestCase):
                    "A2179_CI_NO_PUSH": "1", "A2179_CI_SKIP_TESTS": "1", "GITHUB_SHA": ENV["GITHUB_SHA"]}
             env.pop("GITHUB_PATH", None)
             p = subprocess.run(["bash", str(ROOT / "ci" / "run.sh")], cwd=tmp, env=env, capture_output=True,
-                               text=True, timeout=90)
+                               text=True, timeout=300)
             self.assertEqual(p.returncode, 0, p.stdout[-2000:] + p.stderr[-2000:])
+            self.assertIn("hidden in test: torch", (tmp / "out" / "steps.json").read_text())
             res = list((tmp / "results").glob("*_0123456.json"))
             self.assertEqual(len(res), 1)
             r = json.loads(res[0].read_text())
