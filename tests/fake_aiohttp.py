@@ -1,6 +1,8 @@
 """Fake aiohttp module to exercise the parallel fetch without the network (and without aiohttp).
 
-install(routes, delay_s) puts it into sys.modules. Worker processes started with the 'fork'
+install(routes, delay_s, rate_limit_first, retry_after) puts it into sys.modules.
+A route is (status, text) or (status, text, latency_s) or (status, text, latency_s, headers),
+a callable returning one, or an exception to raise. Worker processes started with the 'fork'
 method inherit it. In-flight requests are counted in shared memory, so the test can check
 the global limit over all processes.
 """
@@ -64,15 +66,24 @@ class _Ctx:
             st["inflight"].value += 1
             st["peak"].value = max(st["peak"].value, st["inflight"].value)
             st["calls"].value += 1
+            limited = st["rl_left"].value > 0
+            if limited:
+                st["rl_left"].value -= 1
         try:
-            await asyncio.sleep(st["delay"])
+            if limited:  # rate_limit_first: the site answers 429 to the first N requests overall
+                await asyncio.sleep(st["delay"])
+                h = {"Retry-After": st["retry_after"]} if st["retry_after"] is not None else {}
+                return _Resp(self.url, 429, "slow down", h)
             r = st["routes"].get(self.url)
             if callable(r):
                 r = r()
             if isinstance(r, Exception):
+                await asyncio.sleep(st["delay"])
                 raise r
-            status, text = r if r else (404, "not found")
-            return _Resp(self.url, status, text)
+            r = tuple(r) if r else (404, "not found")
+            status, text = r[0], r[1]
+            await asyncio.sleep(r[2] if len(r) > 2 else st["delay"])  # optional per-route latency
+            return _Resp(self.url, status, text, r[3] if len(r) > 3 else None)
         finally:
             with st["lock"]:
                 st["inflight"].value -= 1
@@ -97,11 +108,12 @@ class ClientSession:
         return False
 
 
-def install(routes, delay_s=0.0):
+def install(routes, delay_s=0.0, rate_limit_first=0, retry_after=None):
     ctx = multiprocessing.get_context("fork")
     STATE.clear()
     STATE.update(routes=routes, delay=delay_s, lock=ctx.Lock(), inflight=ctx.Value("i", 0),
-                 peak=ctx.Value("i", 0), calls=ctx.Value("i", 0), sessions=ctx.Value("i", 0))
+                 peak=ctx.Value("i", 0), calls=ctx.Value("i", 0), sessions=ctx.Value("i", 0),
+                 rl_left=ctx.Value("i", rate_limit_first), retry_after=retry_after)
     m = types.ModuleType("aiohttp")
     for name in ("ClientError", "ClientTimeout", "TCPConnector", "ClientSession"):
         setattr(m, name, globals()[name])
@@ -110,9 +122,9 @@ def install(routes, delay_s=0.0):
 
 
 @contextlib.contextmanager
-def fake_aiohttp(routes, delay_s=0.0):
+def fake_aiohttp(routes, delay_s=0.0, rate_limit_first=0, retry_after=None):
     saved = sys.modules.get("aiohttp", "absent")
-    sys.modules["aiohttp"] = install(routes, delay_s)
+    sys.modules["aiohttp"] = install(routes, delay_s, rate_limit_first, retry_after)
     try:
         yield STATE
     finally:

@@ -32,11 +32,12 @@ DEFAULTS = {
         "kp_search_url": "https://www.kupujemprodajem.com/pretraga?keywords={q}",
         "kp_keywords": ["macbook air a2179", "a2179 ekran", "a2179 lcd", "macbook air 2020 ekran"],
     },
-    "http": {"min_delay_s": 4, "jitter_s": 2, "timeout_s": 20, "retries": 2, "retry_403": 1, "backoff_s": 5,
-             "user_agent": ""},
-    # parallel fetch: worker processes, total GET requests in flight (split between processes),
-    # optional pause per host inside each process; workers=0 is the old sequential pass
-    "parallel": {"workers": 3, "max_concurrency": 10, "delay_s": 0},
+    "http": {"min_delay_s": 4, "jitter_s": 2, "timeout_s": 20, "retries": 3, "retry_403": 1, "backoff_s": 5,
+             "backoff_max_s": 60, "user_agent": ""},
+    # parallel fetch: worker processes, GET requests in flight in total (one limiter shared by all
+    # processes), adaptive delay per host on 429 (AIMD, see README); workers=0 is the old sequential pass
+    "parallel": {"workers": 3, "max_concurrency": 10, "delay_s": 0, "delay_min_s": 0, "delay_max_s": 30,
+                 "delay_up": 2.0, "delay_down_s": 0.05, "delay_on_429_s": 0.5},
     "kp_block_alert_after_runs": 6,
     "telegram": {"enabled": True},
     "desktop_notify": True,
