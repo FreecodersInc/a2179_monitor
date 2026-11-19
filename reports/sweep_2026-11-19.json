@@ -1,7 +1,10 @@
 {
- "generated": "2026-11-19 20:03 CET",
+ "generated": "2026-11-19 21:17 CET",
  "n": 430,
  "dense": "eval/dense_scores.jsonl",
+ "dense_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+ "embedders": {},
+ "embedders_skipped": {},
  "variants": [
   {
    "variant": "regex",
