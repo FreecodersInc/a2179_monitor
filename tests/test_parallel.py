@@ -225,7 +225,7 @@ class TestParallelRun(unittest.TestCase):
 
     def test_idle_processes_hold_no_slots(self):
         # round robin over 3 processes: every slow source lands in process 2, the others finish at once.
-        # A per-process split (2+2+1) would give process 2 one slot: 5 x 0.4 s = 2 s. Shared: about 0.4 s.
+        # A per-process split (2+2+1) would give process 2 one slot: 5 x 1 s = 5 s. Shared: about 1 s.
         urls = [f"https://ifix.rs/?s=q{i}&post_type=product" for i in range(15)]
         page = fixture("ifix_search.html.gz")
         # Timing is measured against the same pass with no delays, so process start up (slow on
@@ -236,10 +236,12 @@ class TestParallelRun(unittest.TestCase):
                 t0 = time.monotonic()
                 parallel.fetch_all(shop_cfg(self.tmp, urls, workers=3, mc=5), Metrics(), self.log)
                 return time.monotonic() - t0, st["calls"].value
+        # 1 s per slow page: shared slots wait about 1 s, a per-process split 5 x 1 s = 5 s, so start up
+        # jitter of a second or two on the runner cannot flip the result.
         base, _ = timed(0.0)
-        dt, calls = timed(0.4)
+        dt, calls = timed(1.0)
         self.assertEqual(calls, 15)
-        self.assertLess(dt - base, 1.3, (dt, base))
+        self.assertLess(dt - base, 3.0, (dt, base))
 
     def test_429_delay_is_shared_and_decays(self):
         urls = [f"https://ifix.rs/?s=q{i}&post_type=product" for i in range(6)]

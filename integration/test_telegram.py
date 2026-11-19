@@ -2,7 +2,7 @@
 
 Runs only with TG_BOT_TOKEN and TG_CHAT_ID in the environment (GitHub environment `experiment`),
 skips cleanly otherwise. Read only by default: getMe (token valid) and getChat (the bot can see
-the chat). It sends one message only when A2179_CI_TG_SEND=1, through the app's own Alerter.
+the chat). It sends one message through the app's own Alerter (default on, A2179_CI_TG_SEND=0 turns it off).
 The token is part of the API URL, so no URL, response body or exception text is printed: only
 status codes and Telegram's `ok` / `description` fields, scrubbed again by ci/redact.py.
 Not under tests/, so normal unit test discovery never touches the network.
@@ -46,7 +46,7 @@ class TestTelegram(unittest.TestCase):
         status, ok, desc = call("getChat", chat_id=CHAT)
         self.assertTrue(ok, f"getChat: status {status} {desc}")
 
-    @unittest.skipUnless(os.environ.get("A2179_CI_TG_SEND") == "1", "sending is off (A2179_CI_TG_SEND=1 to send)")
+    @unittest.skipUnless(os.environ.get("A2179_CI_TG_SEND", "1") == "1", "sending is off (A2179_CI_TG_SEND=0)")
     def test_send_through_alerter(self):
         import tempfile
         from a2179.alerts import Alerter

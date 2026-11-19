@@ -44,7 +44,9 @@ class TestRun(unittest.TestCase):
     def test_full_run_without_dense_says_so(self):
         out = Path(tempfile.mkdtemp()) / "s.json"
         old = sys.argv
-        sys.argv = ["sweep.py", "--out", str(out), "--dense-scores", str(out.parent / "none.jsonl")]
+        # frozen eval set: the fp pin below belongs to it, the live eval/labeled.jsonl keeps growing
+        sys.argv = ["sweep.py", "--out", str(out), "--dense-scores", str(out.parent / "none.jsonl"),
+                    "--data", str(ROOT / "tests" / "fixtures" / "labeled_base.jsonl")]
         try:
             S.main()
         finally:

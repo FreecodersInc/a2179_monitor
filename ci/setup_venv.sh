@@ -44,9 +44,10 @@ fi
 if has torch; then
   stamp_install requirements-embed.txt
   # model into the HF cache (HF_HOME or ~/.cache/huggingface), the only download of the run
-  case "${A2179_CI_CACHE_MODEL:-${TORCH:+1}}" in
+  # on by default: a no-op when the model is already in the cache, downloads it once otherwise
+  case "${A2179_CI_CACHE_MODEL:-1}" in
     1|true|yes) HF_HUB_OFFLINE=0 TRANSFORMERS_OFFLINE=0 "$VENV/bin/python" ci/cache_model.py ;;
-    *) echo "model cache step off (set A2179_CI_CACHE_MODEL=1 or A2179_CI_INSTALL_TORCH)" ;;
+    *) echo "model cache step off (A2179_CI_CACHE_MODEL=$A2179_CI_CACHE_MODEL)" ;;
   esac
 else
   echo "no torch in $VENV: dense steps will be skipped (set repo variable A2179_CI_INSTALL_TORCH=cu126, see docs/ci.md)"

@@ -541,7 +541,8 @@ class TestSetupVenvTorchFlag(unittest.TestCase):
         try:
             venv = tmp / "venv"
             (venv / "bin").mkdir(parents=True)
-            (venv / "bin" / "python").write_text(f'#!/bin/sh\nexec "{sys.executable}" "$@"\n')
+            # -S: no site-packages, so a torch in the runner's own venv cannot leak into this fake one
+            (venv / "bin" / "python").write_text(f'#!/bin/sh\nexec "{sys.executable}" -S "$@"\n')
             (venv / "bin" / "python").chmod(0o755)
             import hashlib
             (venv / ".stamp_requirements.txt").write_text(

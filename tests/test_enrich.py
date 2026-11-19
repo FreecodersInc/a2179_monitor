@@ -17,6 +17,7 @@ from a2179.obs import Metrics, setup_logging
 from a2179.parsers import Listing
 
 sys.path.insert(0, str(ROOT / "eval"))
+BASE_LABELED = FIX / "labeled_base.jsonl"
 import enrich as E  # noqa: E402
 
 KP_PAGES = ("kp_next_data_dryrun.html", "kp_search_synthetic.html", "kp_blocked_403.html.gz")
@@ -118,7 +119,7 @@ class TestCollectOffline(unittest.TestCase):
     def setUp(self):
         self.tmp = Path(tempfile.mkdtemp())
         self.labeled = self.tmp / "labeled.jsonl"
-        shutil.copy(ROOT / "eval" / "labeled.jsonl", self.labeled)
+        shutil.copy(BASE_LABELED, self.labeled)  # frozen copy: the live set grows, these tests must not move
 
     def collect(self, d, *extra):
         out = self.tmp / "cand.jsonl"
@@ -221,7 +222,7 @@ class TestMerge(unittest.TestCase):
     def setUp(self):
         self.tmp = Path(tempfile.mkdtemp())
         self.labeled = self.tmp / "labeled.jsonl"
-        shutil.copy(ROOT / "eval" / "labeled.jsonl", self.labeled)
+        shutil.copy(BASE_LABELED, self.labeled)  # frozen copy: the live set grows, these tests must not move
         self.before = read_jsonl(self.labeled)
 
     def cand(self):
