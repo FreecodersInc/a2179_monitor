@@ -1,0 +1,119 @@
+{
+ "id": "snapshots-2026-11-20c",
+ "rows": [
+  {
+   "url": "https://www.kupindo.com/pretraga.php?Pretraga=macbook+air",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": false,
+   "status": null,
+   "verdict": "disallowed",
+   "why": "robots.txt disallows this path"
+  },
+  {
+   "url": "https://www.limundo.com/pretraga?txtPretraga=macbook+air",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": false,
+   "status": null,
+   "verdict": "disallowed",
+   "why": "robots.txt disallows this path"
+  },
+  {
+   "url": "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-apple-oprema-i-delovi/macbook-air-2019-komplet-ekran/oglas/160727968",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": true,
+   "status": 200,
+   "bytes": 208296,
+   "title": "Macbook air 2019 komplet ekran - KupujemProdajem",
+   "verdict": "ok",
+   "forms": [],
+   "snapshot": "snap_03_kupujemprodajem.html"
+  },
+  {
+   "url": "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-apple/macbook-air-13-2018-neispravan-a1932/oglas/191871490",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": true,
+   "status": 200,
+   "bytes": 238795,
+   "title": "MacBook Air 13 2018 (neispravan) A1932 - KupujemProdajem",
+   "verdict": "ok",
+   "forms": [],
+   "snapshot": "snap_04_kupujemprodajem.html"
+  },
+  {
+   "url": "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-apple-oprema-i-delovi/ekran-lcd-za-macbook-air-13-a1932-2018-zamenski-hq/oglas/70054381",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": true,
+   "status": 200,
+   "bytes": 230209,
+   "title": "Ekran - LCD za MacBook Air 13&quot; A1932 (2018) - zamenski HQ - KupujemProdajem",
+   "verdict": "ok",
+   "forms": [],
+   "snapshot": "snap_05_kupujemprodajem.html"
+  },
+  {
+   "url": "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-za-delove/macbook-air-2020-i3-zakljucana-icloud-za-delove/oglas/197418528",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": true,
+   "status": 200,
+   "bytes": 210654,
+   "title": "MacBook Air 2020 I3 zakljucana icloud za delove - KupujemProdajem",
+   "verdict": "ok",
+   "forms": [],
+   "snapshot": "snap_06_kupujemprodajem.html"
+  },
+  {
+   "url": "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-apple-oprema-i-delovi/macbook-air-13-mid-2011-ispravan-delovi/oglas/132875764",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": true,
+   "status": 200,
+   "bytes": 217247,
+   "title": "Macbook AIR 13 Mid 2011 ispravan delovi - KupujemProdajem",
+   "verdict": "ok",
+   "forms": [],
+   "snapshot": "snap_07_kupujemprodajem.html"
+  },
+  {
+   "url": "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-apple-oprema-i-delovi/macbook-air-13-2012-a1466-komplet-gornji-deo-sa-ekranom/oglas/168023478",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": true,
+   "status": 200,
+   "bytes": 212985,
+   "title": "Macbook air 13 2012 A1466 komplet gornji deo sa ekranom - KupujemProdajem",
+   "verdict": "ok",
+   "forms": [],
+   "snapshot": "snap_08_kupujemprodajem.html"
+  },
+  {
+   "url": "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-apple-oprema-i-delovi/macbook-air-a1278-2009-ispravan-delovi/oglas/102457628",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": true,
+   "status": 200,
+   "bytes": 221456,
+   "title": "Macbook AIR A1278 2009 ispravan delovi - KupujemProdajem",
+   "verdict": "ok",
+   "forms": [],
+   "snapshot": "snap_09_kupujemprodajem.html"
+  },
+  {
+   "url": "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-apple-oprema-i-delovi/macbook-air-13-2021-za-delove/oglas/158935104",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": true,
+   "status": 200,
+   "bytes": 200206,
+   "title": "Macbook AIR 13 2021 za delove - KupujemProdajem",
+   "verdict": "ok",
+   "forms": [],
+   "snapshot": "snap_10_kupujemprodajem.html"
+  }
+ ]
+}
