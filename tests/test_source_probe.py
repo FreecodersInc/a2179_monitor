@@ -36,6 +36,10 @@ class Probe(unittest.TestCase):
         self.assertEqual(P.verdict(200, "<title>Just a moment...</title>"), "blocked")
         self.assertEqual(P.verdict(200, "<title>ok</title>"), "ok")
 
+    def test_forms(self):
+        html = '<form action="/Pretraga.php" method="get"><input name="Pretraga"><input type="submit"></form>'
+        self.assertEqual(P.forms_of(html), [{"action": "/Pretraga.php", "inputs": ["Pretraga"]}])
+
 
 if __name__ == "__main__":
     unittest.main()

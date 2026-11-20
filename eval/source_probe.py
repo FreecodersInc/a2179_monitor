@@ -4,7 +4,7 @@
 For every URL of the request: read the host's robots.txt (5 MiB cap), check that our user agent may
 fetch the path, and only then GET it once with the monitor's own Fetcher (per host delay, no retry
 on 403). A challenge page (Cloudflare «Just a moment», JS challenge) or 401/403/429 is recorded as
-blocked and never worked around. Only status, size, <title> and verdicts are written, no page text.
+blocked and never worked around. Only status, size, <title>, search form actions and verdicts are written, no page text.
 
   python eval/source_probe.py --request ci/requests/probe_sources.json --out reports/source_probe/<id>/probe.json
 """
@@ -43,6 +43,17 @@ def title_of(text: str) -> str:
     return re.sub(r"\s+", " ", m.group(1)).strip()[:120] if m else ""
 
 
+def forms_of(text: str) -> list[dict]:
+    """Search forms only (action + input names), so the next request can use the site's own search URL."""
+    out = []
+    for m in re.finditer(r"<form\b([^>]*)>(.*?)</form>", text, re.I | re.S):
+        act = re.search(r'action\s*=\s*["\']([^"\']*)', m.group(1), re.I)
+        names = re.findall(r'<input[^>]*\bname\s*=\s*["\']([^"\']+)', m.group(2), re.I)
+        if act and names:
+            out.append({"action": act.group(1)[:200], "inputs": names[:12]})
+    return out[:6]
+
+
 def probe(urls, fetcher, ua=DEFAULT_UA) -> list[dict]:
     robots, out = {}, []
     for u in urls:
@@ -63,7 +74,7 @@ def probe(urls, fetcher, ua=DEFAULT_UA) -> list[dict]:
             row.update(allowed=False, status=None, verdict="disallowed", why="robots.txt disallows this path")
         else:
             st, txt = fetcher.get(u, retry_403=0)
-            row.update(allowed=True, status=st, bytes=len(txt), title=title_of(txt), verdict=verdict(st, txt))
+            row.update(allowed=True, status=st, bytes=len(txt), title=title_of(txt), verdict=verdict(st, txt), forms=forms_of(txt))
         out.append(row)
     return out
 
