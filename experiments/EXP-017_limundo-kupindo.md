@@ -23,3 +23,4 @@ CI запускается только по push в main (workflow не трог
 
 Следующая проба `sources-2026-11-20d` записывает правила robots.txt и ссылки на разделы ноутбуков и Apple с главных страниц: если страницы разделов разрешены, сбор пойдёт по ним, иначе T-033 blocked.
 
+Проба `sources-2026-11-20d`: robots.txt KupindO запрещает `/pretraga.php`, `/pretragaLimundo.php`, `/pretragaKupindo.php`, сортировку по цене и `/*/Sledeci`, Limundo запрещает только `/pretraga`. Страницы разделов (`/Racunari-i-oprema/artikli/322`, `/Racunari-i-oprema/aukcije/g12`) разрешены. План: сбор по разделу ноутбуков и запчастей, без поиска и без листания через запрещённые пути.

@@ -67,7 +67,7 @@ def links_of(text: str, base: str) -> list[str]:
             v = urljoin(base, h)
             if urlparse(v).netloc == urlparse(base).netloc and v not in out:
                 out.append(v)
-    return out[:40]
+    return out[:80]
 
 
 def robots_rules(txt: str) -> list[str]:
@@ -105,8 +105,7 @@ def probe(urls, fetcher, ua=DEFAULT_UA, save_dir: Path | None = None) -> list[di
         else:
             st, txt = fetcher.get(u, retry_403=0)
             row.update(allowed=True, status=st, bytes=len(txt), title=title_of(txt), verdict=verdict(st, txt), forms=forms_of(txt))
-            if p.path in ("", "/"):
-                row["links"] = links_of(txt, u)
+            row["links"] = links_of(txt, u)
             if save_dir is not None and row["verdict"] == "ok":   # snapshot for parser fixtures (T-033, T-031)
                 save_dir.mkdir(parents=True, exist_ok=True)
                 name = f"snap_{len(out) + 1:02d}_{p.netloc.removeprefix('www.').split('.')[0]}.html"

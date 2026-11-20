@@ -1,8 +1,9 @@
 {
- "id": "sources-2026-11-20d",
- "why": "T-033: the own search pages of Limundo and KupindO are disallowed by robots.txt (snapshots-2026-11-20c). Record the robots rules and the laptop / Apple category links of the home pages, to see whether category listing pages are allowed. 1 GET per home page",
+ "id": "sources-2026-11-20e",
+ "why": "T-033: robots.txt of Limundo and KupindO disallows their search but allows category pages. Snapshot of the computers category of each (laptop subcategory links + listing markup for the parser). 1 GET per page",
+ "save_html": true,
  "urls": [
-  "https://www.kupindo.com/",
-  "https://www.limundo.com/"
+  "https://www.kupindo.com/Racunari-i-oprema/artikli/322",
+  "https://www.limundo.com/Racunari-i-oprema/aukcije/g12"
  ]
 }
