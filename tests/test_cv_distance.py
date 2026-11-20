@@ -48,6 +48,8 @@ class TestProfileV2AndRulesNow(unittest.TestCase):
                 {"title": "Account Executive", "esci": "I", "stratum": "random"},
                 {"title": "Data Platform Lead", "esci": "S", "stratum": "random"}]
         r = SE.ht_rules(rows, {"matcher": {"pool": 10}, "random": {"pool": 100}}, {"E", "S"}, reps=50)
-        self.assertEqual(r["matches_in_sample"], sum(1 for x in rows if __import__("a2179.rules", fromlist=["classify"]).classify(x["title"], "", target=load_target("de_jobs")).match))
+        from a2179.rules import classify
+        tg = load_target("de_jobs")
+        self.assertEqual(r["matches_in_sample"], sum(1 for x in rows if classify(x["title"], "", target=tg).match))
         self.assertGreaterEqual(r["precision"], 0.0)
         self.assertLessEqual(r["recall"], 1.0)
