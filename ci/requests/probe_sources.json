@@ -1,8 +1,17 @@
 {
- "id": "sources-2026-11-20b",
- "why": "T-033: first probe (sources-2026-11-20) found both homepages readable and allowed by robots.txt from the runner, the guessed search URLs were wrong. This one records the sites' own search form actions, 2 GET per host",
+ "id": "snapshots-2026-11-20c",
+ "why": "T-033 and T-031: one snapshot of each new site search page (their own search forms) and of 8 KP listing cards already in eval/labeled.jsonl (4 positive, 4 negative), as parser fixtures. robots.txt first, one GET per URL",
+ "save_html": true,
  "urls": [
-  "https://www.kupindo.com/",
-  "https://www.limundo.com/"
+  "https://www.kupindo.com/pretraga.php?Pretraga=macbook+air",
+  "https://www.limundo.com/pretraga?txtPretraga=macbook+air",
+  "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-apple-oprema-i-delovi/macbook-air-2019-komplet-ekran/oglas/160727968",
+  "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-apple/macbook-air-13-2018-neispravan-a1932/oglas/191871490",
+  "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-apple-oprema-i-delovi/ekran-lcd-za-macbook-air-13-a1932-2018-zamenski-hq/oglas/70054381",
+  "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-za-delove/macbook-air-2020-i3-zakljucana-icloud-za-delove/oglas/197418528",
+  "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-apple-oprema-i-delovi/macbook-air-13-mid-2011-ispravan-delovi/oglas/132875764",
+  "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-apple-oprema-i-delovi/macbook-air-13-2012-a1466-komplet-gornji-deo-sa-ekranom/oglas/168023478",
+  "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-apple-oprema-i-delovi/macbook-air-a1278-2009-ispravan-delovi/oglas/102457628",
+  "https://www.kupujemprodajem.com/kompjuteri-laptop-i-tablet/laptopovi-apple-oprema-i-delovi/macbook-air-13-2021-za-delove/oglas/158935104"
  ]
 }

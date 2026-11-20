@@ -36,6 +36,16 @@ class Probe(unittest.TestCase):
         self.assertEqual(P.verdict(200, "<title>Just a moment...</title>"), "blocked")
         self.assertEqual(P.verdict(200, "<title>ok</title>"), "ok")
 
+    def test_snapshot_only_when_ok(self):
+        import tempfile
+        d = Path(tempfile.mkdtemp())
+        f = FakeFetcher({"https://a.rs/robots.txt": (200, "User-agent: *\nAllow: /\n"),
+                         "https://a.rs/x": (200, "<title>A</title>"), "https://a.rs/y": (403, "no")})
+        rows = P.probe(["https://a.rs/x", "https://a.rs/y"], f, save_dir=d)
+        self.assertEqual(rows[0]["snapshot"], "snap_01_a.html")
+        self.assertNotIn("snapshot", rows[1])
+        self.assertEqual([x.name for x in d.iterdir()], ["snap_01_a.html"])
+
     def test_forms(self):
         html = '<form action="/Pretraga.php" method="get"><input name="Pretraga"><input type="submit"></form>'
         self.assertEqual(P.forms_of(html), [{"action": "/Pretraga.php", "inputs": ["Pretraga"]}])

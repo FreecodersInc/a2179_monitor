@@ -1,6 +1,7 @@
 {
- "id": "a2179-fresh-2026-11-20",
- "why": "T-023: fresh A2179 listings collected after the freeze (aaefbd6), Leonid asked for the fetch through CI on 2026-11-20",
+ "id": "a2179-fresh-2026-11-20-wide",
+ "why": "T-023 / EXP-015: wider query set (screens, A1932, donors) toward >= 100 fresh real lots after the freeze, same polite fetcher",
+ "queries_file": "ci/requests/kp_queries_wide.txt",
  "max_pages": 3,
- "time_budget_s": 600
+ "time_budget_s": 1200
 }

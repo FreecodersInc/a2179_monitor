@@ -4,7 +4,8 @@
 For every URL of the request: read the host's robots.txt (5 MiB cap), check that our user agent may
 fetch the path, and only then GET it once with the monitor's own Fetcher (per host delay, no retry
 on 403). A challenge page (Cloudflare «Just a moment», JS challenge) or 401/403/429 is recorded as
-blocked and never worked around. Only status, size, <title>, search form actions and verdicts are written, no page text.
+blocked and never worked around. Only status, size, <title>, search form actions and verdicts are written. Page HTML only with
+"save_html": true in the request, as parser fixtures (like the shop snapshots in tests/fixtures).
 
   python eval/source_probe.py --request ci/requests/probe_sources.json --out reports/source_probe/<id>/probe.json
 """
@@ -50,11 +51,11 @@ def forms_of(text: str) -> list[dict]:
         act = re.search(r'action\s*=\s*["\']([^"\']*)', m.group(1), re.I)
         names = re.findall(r'<input[^>]*\bname\s*=\s*["\']([^"\']+)', m.group(2), re.I)
         if act and names:
-            out.append({"action": act.group(1)[:200], "inputs": names[:12]})
+            out.append({"action": act.group(1)[:200], "inputs": names[:40]})
     return out[:6]
 
 
-def probe(urls, fetcher, ua=DEFAULT_UA) -> list[dict]:
+def probe(urls, fetcher, ua=DEFAULT_UA, save_dir: Path | None = None) -> list[dict]:
     robots, out = {}, []
     for u in urls:
         p = urlparse(u)
@@ -75,6 +76,11 @@ def probe(urls, fetcher, ua=DEFAULT_UA) -> list[dict]:
         else:
             st, txt = fetcher.get(u, retry_403=0)
             row.update(allowed=True, status=st, bytes=len(txt), title=title_of(txt), verdict=verdict(st, txt), forms=forms_of(txt))
+            if save_dir is not None and row["verdict"] == "ok":   # snapshot for parser fixtures (T-033, T-031)
+                save_dir.mkdir(parents=True, exist_ok=True)
+                name = f"snap_{len(out) + 1:02d}_{p.netloc.removeprefix('www.').split('.')[0]}.html"
+                (save_dir / name).write_text(txt, encoding="utf-8")
+                row["snapshot"] = name
         out.append(row)
     return out
 
@@ -86,7 +92,7 @@ def main(argv=None):
     a = ap.parse_args(argv)
     req = json.loads(Path(a.request).read_text(encoding="utf-8"))
     f = Fetcher({"min_delay_s": 6, "jitter_s": 3, "retries": 0, "retry_403": 0}, Metrics(), logging.getLogger("source_probe"))
-    rows = probe(req["urls"], f)
+    rows = probe(req["urls"], f, save_dir=Path(a.out).parent if req.get("save_html") else None)
     out = Path(a.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({"id": req.get("id"), "rows": rows}, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")

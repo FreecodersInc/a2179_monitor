@@ -183,6 +183,8 @@ def fetch_step(py, out: Path, T, req):
     cmd = [py, "eval/enrich.py", "collect", "--out", str(d / "candidates.jsonl"), "--csv",
            "--max-pages", str(int(req.get("max_pages", 3))),
            "--time-budget", str(float(req.get("time_budget_s", 600)))]
+    if req.get("queries_file"):   # T-023: wider query set, a file committed in the repo
+        cmd += ["--queries", str(ROOT / req["queries_file"])]
     rec = run("fetch_listings", cmd, min(T, int(float(req.get("time_budget_s", 600))) + 300))
     rec["advisory"] = True
     return rec
