@@ -83,5 +83,50 @@ class Metrics(unittest.TestCase):
             self.assertEqual(V[k], V["title"])
 
 
+
+class Exp028DryRun(unittest.TestCase):
+    def test_dry_run_writes_plan_without_torch(self):
+        import exp028_blocked_models as E
+        with tempfile.TemporaryDirectory() as d:
+            rc = E.main(["--out", d, "--dry-run"])
+            self.assertEqual(rc, 0)
+            doc = json.loads((Path(d) / "exp028.json").read_text())
+            self.assertEqual(doc["device"], "cpu")
+            self.assertTrue(doc["dry_run"])
+            self.assertEqual(len(doc["models"]), 4)
+            self.assertTrue(all(m["status"] == "dry-run" for m in doc["models"]))
+            self.assertEqual(os.environ.get("CUDA_VISIBLE_DEVICES"), "")
+            # no listing texts in the artifact
+            blob = (Path(d) / "exp028.json").read_text()
+            self.assertNotIn("snippet", blob.lower())
+
+    def test_runner_request_picks_exp028(self):
+        with tempfile.TemporaryDirectory() as d, mock.patch.dict(os.environ, {"A2179_CI_RUNNER_EXP": "auto"}):
+            p = Path(d) / "ci" / "requests"
+            p.mkdir(parents=True)
+            (p / "runner_experiments.json").write_text(json.dumps({"id": "v2", "steps": ["exp028"]}))
+            self.assertEqual(R.runner_request(d)["steps"], ["exp028"])
+            done = Path(d) / "results" / "x" / "reports" / "runner_exp" / "v2"
+            done.mkdir(parents=True)
+            (done / "exp028.json").write_text("{}")
+            self.assertIsNone(R.runner_request(d))
+
+
+class Exp029DryRun(unittest.TestCase):
+    def test_dry_run_or_no_cuda_is_clean(self):
+        import exp029_h11 as H
+        with tempfile.TemporaryDirectory() as d:
+            rc = H.main(["--out", d, "--dry-run"])
+            self.assertEqual(rc, 0)
+            doc = json.loads((Path(d) / "exp029_h11.json").read_text())
+            self.assertIn(doc["status"], ("blocked", "dry-run"))
+            if doc["status"] == "blocked":
+                self.assertEqual(doc.get("suggested_verdict"), "blocked")
+                self.assertIn("CUDA", (doc.get("reason") or ""))
+            blob = (Path(d) / "exp029_h11.json").read_text().lower()
+            self.assertNotIn("snippet", blob)
+            self.assertNotIn("ekran za macbook", blob)
+
+
 if __name__ == "__main__":
     unittest.main()

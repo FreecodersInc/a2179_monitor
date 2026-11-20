@@ -1,2 +1,2 @@
-{"id": "runner-exp-2026-11-20-v1", "steps": ["granularity", "rerank_jobs"],
- "note": "EXP-021 H-24 (MiniLM from the cache) and EXP-022 H-43 (TinyBERT-L2 cross-encoder, size checked against 50 MiB before download)"}
+{"id": "runner-exp-2026-11-20-v2", "steps": ["exp028"],
+ "note": "EXP-028 H-04, H-13, H-19, H-23 on the runner, CPU only, one model at a time, cache cleaned after each"}

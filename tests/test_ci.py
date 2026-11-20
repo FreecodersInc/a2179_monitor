@@ -334,10 +334,15 @@ class TestWorkflowText(unittest.TestCase):
         self.assertNotIn(".git/config", self.wf)
 
     def test_thin(self):
-        self.assertEqual(self.wf.count("- name:"), 1)
+        # two thin jobs: experiments (CPU, ci/run.sh) then h11 (CUDA, ci/run_h11.sh)
+        self.assertEqual(self.wf.count("- name:"), 2)
         self.assertIn("A2179_CI_VARS: ${{ toJSON(vars) }}", self.wf)
         self.assertTrue(run_block(self.wf).rstrip().endswith("exec bash ci/run.sh"))
         self.assertNotIn("git config --", run_block(self.wf))  # token never written to .git/config
+        self.assertIn("  h11:\n", self.wf)
+        self.assertIn("needs: experiments", self.wf)
+        self.assertIn("exec bash ci/run_h11.sh", self.wf)
+        self.assertEqual(self.wf.count("runs-on: [self-hosted, linux, a2179-gpu]"), 2)
 
     @unittest.skipUnless(GIT, "git not installed")
     def test_bootstrap_checks_out_pushed_sha_and_execs_run_sh(self):

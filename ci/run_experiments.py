@@ -259,11 +259,11 @@ def kp_daily_step(py, out: Path, T, req):
     return rec
 
 
-RUNNER_OUT = {"granularity": "granularity.json", "rerank_jobs": "rerank_jobs.json"}
+RUNNER_OUT = {"granularity": "granularity.json", "rerank_jobs": "rerank_jobs.json", "exp028": "exp028.json"}
 
 
 def runner_request(root=ROOT):
-    """EXP-021 H-24, EXP-022 H-43: ci/requests/runner_experiments.json {"id", "steps"} runs CPU experiments
+    """EXP-021/022/028: ci/requests/runner_experiments.json {"id", "steps"} runs CPU experiments
     that need the runner's model cache. Once per id and step: a step is done when its output file is in
     some results/<base>/reports/runner_exp/<id>/."""
     p = Path(root) / "ci" / "requests" / "runner_experiments.json"
@@ -290,6 +290,12 @@ def runner_steps(py, out: Path, T, req, dense):
         if s == "granularity":
             rec = run("runner_exp[granularity]", [py, "eval/granularity.py", "--out", str(d),
                                                   "--device", COMPUTE_ENV.get("A2179_DEVICE", "cpu")], min(T, 900))
+        elif s == "exp028":
+            # EXP-028: CPU only, one model at a time, runner may fetch weights. GPU stays hidden.
+            rec = run("runner_exp[exp028]", [py, "eval/exp028_blocked_models.py", "--out", str(d), "--device", "cpu"],
+                      min(max(T, 5400), 7200),
+                      env={"HF_HUB_OFFLINE": "0", "TRANSFORMERS_OFFLINE": "0", "CUDA_VISIBLE_DEVICES": "",
+                           "A2179_DEVICE": "cpu"})
         else:
             # the only download outside setup: eval/rerank_jobs.py checks the summed file size (Hub
             # metadata) against 50 MiB first and writes blocked instead of downloading when over
