@@ -1,0 +1,19 @@
+{
+ "rows": 462,
+ "with_text": 462,
+ "weights": {
+  "skills": 0.3,
+  "stack": 0.3,
+  "domain": 0.25,
+  "seniority": 0.15
+ },
+ "auc": {
+  "skills": 0.718,
+  "stack": 0.805,
+  "domain": 0.931,
+  "seniority": 0.67,
+  "cv_score": 0.902
+ },
+ "auc_with_text_only": 0.902,
+ "spearman_grade": 0.776
+}
