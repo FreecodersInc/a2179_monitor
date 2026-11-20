@@ -1,0 +1,10 @@
+{
+ "id": "sources-2026-11-20",
+ "why": "T-033: can the runner read Limundo and KupindO at all (robots.txt, one GET per page, no workaround if blocked). From the dev box both answer 403 or a challenge page",
+ "urls": [
+  "https://www.kupindo.com/",
+  "https://www.kupindo.com/Racunari-i-oprema/pretraga?Pretraga=a2179",
+  "https://www.limundo.com/",
+  "https://www.limundo.com/Racunari-i-oprema/pretraga?Pretraga=a2179"
+ ]
+}

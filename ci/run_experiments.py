@@ -188,6 +188,28 @@ def fetch_step(py, out: Path, T, req):
     return rec
 
 
+def probe_request(root=ROOT):
+    """T-033..T-035: ci/requests/probe_sources.json {"id": .., "urls": [..]} asks the runner for one polite
+    probe of new sources (robots.txt first, one GET per URL, blocked stays blocked). Once per id."""
+    p = Path(root) / "ci" / "requests" / "probe_sources.json"
+    if os.environ.get("A2179_CI_FETCH_LISTINGS", "auto") in ("off", "0", "no") or not p.is_file():
+        return None
+    req = json.loads(p.read_text(encoding="utf-8"))
+    rid = str(req.get("id", "")).strip()
+    if not rid or any((Path(root) / "results").glob(f"*/reports/source_probe/{rid}/probe.json")):
+        return None
+    return {**req, "id": rid}
+
+
+def probe_step(py, out: Path, T, req):
+    d = out / "reports" / "source_probe" / req["id"]
+    d.mkdir(parents=True, exist_ok=True)
+    rec = run("probe_sources", [py, "eval/source_probe.py", "--request", str(ROOT / "ci" / "requests" / "probe_sources.json"),
+                                "--out", str(d / "probe.json")], min(T, 300))
+    rec["advisory"] = True
+    return rec
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=str(ROOT / "ci_out"))
@@ -275,6 +297,9 @@ def main(argv=None):
     req = fetch_request()
     if req and (want("fetch") or mode != "targeted"):
         steps.append(fetch_step(py, out, T, req))
+    preq = probe_request()
+    if preq and (want("fetch") or mode != "targeted"):
+        steps.append(probe_step(py, out, T, preq))
 
     # charts + ranking metrics from the sweep scores, advisory: a failure here never turns CI red
     if want("plots") and os.environ.get("A2179_CI_PLOTS", "1") not in ("0", "false", "no") and (out / "sweep" / "sweep.json").is_file():
