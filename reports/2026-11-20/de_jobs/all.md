@@ -23,44 +23,81 @@
 | Data Engineer | sigmacomputing | New York City, NY | 0.231 | match | [link](https://job-boards.greenhouse.io/sigmacomputing/jobs/7809974003) | 2026-11-19T23:37:02Z |
 | Data Engineer | sigmacomputing | San Francisco, CA | 0.231 | match | [link](https://job-boards.greenhouse.io/sigmacomputing/jobs/7809973003) | 2026-11-19T23:37:02Z |
 | Staff Machine Learning Engineer | databricks | San Francisco, California | 0.223 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8401114002) | 2026-11-19T23:37:02Z |
+| Senior Software Engineer - Java (Media Platform) | squarespace | New York City | 0.210 | match | [link](http://www.squarespace.com/about/careers?gh_jid=6305471) | 2026-11-19T23:37:02Z |
 | Sr. Software Engineer- Databricks AI | databricks | Bengaluru, India | 0.209 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8924868002) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer- Databricks AI | databricks | Bengaluru, India | 0.209 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8926498002) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer - Search Platform | databricks | Bengaluru, India | 0.207 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7841778002) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer - Platform Team | sumup | Berlin, Germany | 0.205 | match | [link](https://sumup.com/careers/positions/8712443002?gh_jid=8712443002) | 2026-11-19T23:37:02Z |
 | Data Platform Engineer (Mid-Level) | sumup | Berlin, Germany | 0.204 | match | [link](https://sumup.com/careers/positions/8364212002?gh_jid=8364212002) | 2026-11-19T23:37:02Z |
+| Senior Platform Engineer | sumup | Boulder, Colorado, United States | 0.204 | match | [link](https://sumup.com/careers/positions/8656544002?gh_jid=8656544002) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Platform | astronomer | New York City, Remote | 0.204 | match | [link](https://jobs.ashbyhq.com/astronomer/1a7e12f6-efb9-4a72-9137-a3c409689abb) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Platform | astronomer | London, Remote | 0.204 | match | [link](https://jobs.ashbyhq.com/astronomer/7278ced1-0a50-498e-9876-fcb807447b7e) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Platform | astronomer | Dublin, Remote | 0.204 | match | [link](https://jobs.ashbyhq.com/astronomer/a7b09245-fd32-4a79-8abd-74d55e70c42d) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Core Platform | astronomer | New York City, Remote | 0.203 | match | [link](https://jobs.ashbyhq.com/astronomer/89a60cf7-cdde-45b4-b09c-c0e527217cb0) | 2026-11-19T23:37:02Z |
 | Senior Data Engineer, Public Sector | scaleai | Washington, DC | 0.201 | match | [link](https://job-boards.greenhouse.io/scaleai/jobs/4713597005) | 2026-11-19T23:37:02Z |
 | Member of Data Staff (Analytics Engineer) | perplexity | San Francisco, New York City, Remote | 0.200 | match | [link](https://jobs.ashbyhq.com/Perplexity/71abd198-5a69-4837-aa59-df8eeb9e02eb) | 2026-11-19T23:54:57Z |
+| Senior Platform Engineer - GenAI | adyen | Amsterdam; Madrid | 0.198 | match | [link](https://job-boards.greenhouse.io/adyen/jobs/8163866) | 2026-11-19T23:37:02Z |
 | Cloud Platform Engineer | supabase | Remote, Global | 0.198 | match | [link](https://jobs.ashbyhq.com/supabase/5d09daeb-2d7e-42de-9151-81a1341195c4) | 2026-11-19T23:54:57Z |
 | Customer Enablement Architect (Capability Engineering & AI Adoption) | databricks | Sydney, Australia | 0.194 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8792853002) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Platform Infrastructure | astronomer | New York City, Remote | 0.194 | match | [link](https://jobs.ashbyhq.com/astronomer/666377b7-a013-4163-bf4e-3f20d50a3a6e) | 2026-11-19T23:37:02Z |
+| Senior Software Engineer - Kubernetes platform | cloudflare | Distributed; Hybrid | 0.193 | match | [link](https://boards.greenhouse.io/cloudflare/jobs/8263016?gh_jid=8263016) | 2026-11-19T23:37:02Z |
 | Senior Applied ML Engineer - ML4Sys | databricks | San Francisco, California | 0.192 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8656900002) | 2026-11-19T23:37:02Z |
+| Senior / Staff Machine Learning Engineer - 3D Sensor Simulation | zoox | Foster City, CA, Seattle, WA | 0.192 | match | [link](https://jobs.lever.co/zoox/d6748d5e-b0ee-424b-b303-c5688713662a) | 2026-11-19T23:54:57Z |
 | Staff Software Engineer, Platform Infrastructure - Dublin | astronomer | Dublin, Remote | 0.192 | match | [link](https://jobs.ashbyhq.com/astronomer/0e7a8d92-5546-47cf-a3f1-ecab19088382) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Platform Infrastructure - London | astronomer | London, Remote | 0.192 | match | [link](https://jobs.ashbyhq.com/astronomer/bdb1db1a-5692-4ac0-99e6-7b396e845f52) | 2026-11-19T23:37:02Z |
+| Senior Client Platform Engineer, Endpoint Platform & Automation | dropbox | Remote - US: Select locations | 0.190 | match | [link](https://jobs.dropbox.com/listing/8356941?gh_jid=8356941) | 2026-11-19T23:37:02Z |
+| Senior Client Platform Engineer, Endpoint Platform & Automation | dropbox | Remote - Ireland | 0.190 | match | [link](https://jobs.dropbox.com/listing/8356939?gh_jid=8356939) | 2026-11-19T23:37:02Z |
+| Senior Client Platform Engineer, Endpoint Platform & Automation | dropbox | Remote - Canada: Select locations | 0.190 | match | [link](https://jobs.dropbox.com/listing/8356942?gh_jid=8356942) | 2026-11-19T23:37:02Z |
 | Staff SRE for K8s Platform Team (AWS, Kubernetes, Platform Creation, Helm, Karpenter, Istio) | okta | Bengaluru, India | 0.190 | match | [link](https://www.okta.com/company/careers/opportunity/8102369?gh_jid=8102369) | 2026-11-19T23:37:02Z |
+| Storage Platform Engineer | supabase | Remote, Global | 0.189 | match | [link](https://jobs.ashbyhq.com/supabase/463d8cd7-3092-44eb-b80e-8d21008e569e) | 2026-11-19T23:54:57Z |
 | Senior Solutions Architect (EDW Enterprise Data Warehouse Migrations) | databricks | Paris, France | 0.188 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8720251002) | 2026-11-19T23:37:02Z |
 | Senior Solutions Architect (EDW Enterprise Data Warehouse Migrations) | databricks | Milan, Italy | 0.188 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8720254002) | 2026-11-19T23:37:02Z |
 | Senior Solutions Architect (EDW Enterprise Data Warehouse Migrations) | databricks | Amsterdam, Netherlands | 0.188 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8720252002) | 2026-11-19T23:37:02Z |
 | Senior Solutions Architect (EDW Enterprise Data Warehouse Migrations) | databricks | Berlin, Germany; Munich, Germany | 0.188 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8720253002) | 2026-11-19T23:37:02Z |
 | Senior Solutions Architect (EDW Enterprise Data Warehouse Migrations) | databricks | London, United Kingdom | 0.188 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8704938002) | 2026-11-19T23:37:02Z |
+| Software Engineer, Infrastructure | chime | Chicago, IL, USA; New York, NY, USA; San Francisco, CA, USA | 0.186 | match | [link](https://boards.greenhouse.io/chime/jobs/8616359002?gh_jid=8616359002) | 2026-11-19T23:37:02Z |
+| Infrastructure Software Engineer, Apps Platform | scaleai | London, UK | 0.186 | match | [link](https://job-boards.greenhouse.io/scaleai/jobs/4745021005) | 2026-11-19T23:37:02Z |
+| Staff Software Engineer - Databases SRE / UK / Remote | grafanalabs | United Kingdom (Remote) | 0.185 | match | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6101637004) | 2026-11-19T23:37:02Z |
+| Senior Infrastructure Software Engineer, Apps Platform | scaleai | London, UK | 0.185 | match | [link](https://job-boards.greenhouse.io/scaleai/jobs/4729979005) | 2026-11-19T23:37:02Z |
+| Staff Software Engineer - Databases SRE / Spain / Remote | grafanalabs | Spain (Remote) | 0.184 | match | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6103685004) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Personalization | spotify | New York, NY | 0.184 | match | [link](https://jobs.lever.co/spotify/05b8d6ee-0773-4255-b8b9-ae73d74a5ee5) | 2026-11-19T23:37:02Z |
 | Senior Data Engineer | sumologic | Noida, Uttar Pradesh, India | 0.184 | match | [link](https://job-boards.greenhouse.io/sumologic/jobs/8353318) | 2026-11-19T23:37:02Z |
+| Staff Software Engineer - Databases SRE / Sweden / Remote | grafanalabs | Sweden (Remote) | 0.184 | match | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6103687004) | 2026-11-19T23:37:02Z |
+| Staff Software Engineer - Databases SRE / Ireland / Remote | grafanalabs | Republic of Ireland (Remote) | 0.183 | match | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6107502004) | 2026-11-19T23:37:02Z |
 | Senior Analytics Engineer, Product | harvey | San Francisco, New York, Remote | 0.183 | match | [link](https://jobs.ashbyhq.com/harvey/754bb046-a622-40dd-8416-0af87f1f0301) | 2026-11-19T23:54:57Z |
+| Staff Software Engineer - Databases SRE / Germany / Remote | grafanalabs | Germany (Remote) | 0.183 | match | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6103688004) | 2026-11-19T23:37:02Z |
 | Senior Analytics Engineer, Finance | harvey | New York, San Francisco, Remote | 0.183 | match | [link](https://jobs.ashbyhq.com/harvey/cf7b6b62-44c6-40ae-ac94-7f903370dcd5) | 2026-11-19T23:54:57Z |
+| Client Platform Engineer | openai | San Francisco, Remote | 0.181 | match | [link](https://jobs.ashbyhq.com/openai/329fe50f-7701-4f07-982d-a4e10cbec236) | 2026-11-19T23:54:57Z |
+| Senior Site Reliability Engineer | airbyte | San Francisco, Remote | 0.180 | match | [link](https://jobs.ashbyhq.com/airbyte/5930fed9-c4f6-43c3-87be-3402c2c46489) | 2026-11-19T23:54:57Z |
+| Platform Engineer - Compute | supabase | Remote, Global | 0.178 | match | [link](https://jobs.ashbyhq.com/supabase/6b314e83-6617-49fc-8c73-021ebae9a757) | 2026-11-19T23:54:57Z |
 | Senior Technical Solutions Engineer (Platform) | databricks | Bengaluru, India | 0.177 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7845320002) | 2026-11-19T23:37:02Z |
 | Staff Technical Solutions Engineer (Platform) | databricks | Bengaluru, India | 0.176 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7845334002) | 2026-11-19T23:37:02Z |
 | Lead Analytics Engineer – Enterprise, Data & AI | zoox | Foster City, CA | 0.175 | match | [link](https://jobs.lever.co/zoox/17b2714f-5454-48a4-bb76-d14157575498) | 2026-11-19T23:54:57Z |
 | Senior Data Engineer, Marketing & GTM | amplitude | San Francisco , New York City, Remote | 0.174 | match | [link](https://jobs.ashbyhq.com/amplitude/32a5b52c-9e3b-46e2-8c3f-a843fa21bd48) | 2026-11-19T23:37:02Z |
 | Analytics Engineer, HR Analytics | elastic | United States | 0.173 | match | [link](https://jobs.elastic.co/jobs?gh_jid=8244449&gh_jid=8244449) | 2026-11-19T23:37:02Z |
+| ML Engineer Manager, AI Conversation Platform | stripe | Toronto, Canada | 0.171 | match | [link](https://stripe.com/jobs/search?gh_jid=8022713) | 2026-11-19T23:37:02Z |
+| Software Engineer, Financial Platform | chime | New York, NY, USA; San Francisco, CA, USA | 0.169 | match | [link](https://boards.greenhouse.io/chime/jobs/8594959002?gh_jid=8594959002) | 2026-11-19T23:37:02Z |
+| Senior Platform Engineer | adyen | Chicago | 0.168 | match | [link](https://job-boards.greenhouse.io/adyen/jobs/7684222) | 2026-11-19T23:37:02Z |
+| Software Engineer, Infrastructure Platform | chime | Chicago, IL, USA; New York, NY, USA; San Francisco, CA, USA | 0.168 | match | [link](https://boards.greenhouse.io/chime/jobs/8859182002?gh_jid=8859182002) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer (Data Platform) | databricks | Bengaluru, India | 0.166 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7647369002) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer (Data Platform) | databricks | Bengaluru, India | 0.166 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7652016002) | 2026-11-19T23:37:02Z |
+| Senior Platform Engineer - Container Services | adyen | San Francisco | 0.165 | match | [link](https://job-boards.greenhouse.io/adyen/jobs/8255695) | 2026-11-19T23:37:02Z |
+| Senior/Staff Software Engineer - AI/ML Models, Agents & Tools | zoox | Foster City, CA | 0.164 | match | [link](https://jobs.lever.co/zoox/2aa94106-52ac-4f67-871b-1140f8644ea4) | 2026-11-19T23:54:57Z |
+| Senior Corporate Enterprise Platform Engineer, Windows | dropbox | Remote - Canada: Select locations | 0.163 | match | [link](https://jobs.dropbox.com/listing/8280094?gh_jid=8280094) | 2026-11-19T23:37:02Z |
+| Senior Corporate Enterprise Platform Engineer, Windows | dropbox | Remote - US: Select locations | 0.163 | match | [link](https://jobs.dropbox.com/listing/8280093?gh_jid=8280093) | 2026-11-19T23:37:02Z |
 | Senior Specialist Solutions Engineer (Infrastructure & Platform) | databricks | London, United Kingdom | 0.161 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8657553002) | 2026-11-19T23:37:02Z |
+| Senior Platform Engineer | mongodb | Gurugram | 0.161 | match | [link](https://www.mongodb.com/careers/job/?gh_jid=8071475) | 2026-11-19T23:37:02Z |
+| Platform Engineer, Managed Postgres | supabase | Remote, Global | 0.161 | match | [link](https://jobs.ashbyhq.com/supabase/9073c0cd-2545-473a-b2ac-63e4615c69b5) | 2026-11-19T23:54:57Z |
+| Senior Machine Learning Engineer, Public Sector | scaleai | Denver, CO; Honolulu, HI; Washington, DC | 0.161 | match | [link](https://job-boards.greenhouse.io/scaleai/jobs/4732798005) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer - Distributed Data Systems | databricks | Mountain View, California | 0.161 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=6544364002) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer - Distributed Data Systems | databricks | San Francisco, California | 0.161 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=5646855002) | 2026-11-19T23:37:02Z |
+| Senior Platform Engineer - Observability | adyen | Amsterdam | 0.160 | match | [link](https://job-boards.greenhouse.io/adyen/jobs/7607691) | 2026-11-19T23:37:02Z |
+| Cloud Platform Engineer | singlestore | India | 0.160 | match | [link](https://job-boards.greenhouse.io/singlestore/jobs/7573638) | 2026-11-19T23:37:02Z |
+| Senior Infrastructure Engineer, Compute & Storage Platform | toast | Dublin, Ireland | 0.159 | match | [link](https://careers.toasttab.com/jobs?gh_jid=8210638) | 2026-11-19T23:37:02Z |
 | Staff Analytics Engineer | hubspotjobs | Remote - USA | 0.159 | match | [link](https://www.hubspot.com/careers/jobs/7988079?gh_jid=7988079) | 2026-11-19T23:37:02Z |
 | Senior Analytics Engineer | plaid | San Francisco HQ, Remote | 0.159 | match | [link](https://jobs.ashbyhq.com/plaid/98c030bd-a72d-4045-87aa-b8ff7d0d43fb) | 2026-11-19T23:37:02Z |
 | Staff Site Reliability Engineer - (Kubernetes, Terraform, AWS & Python) | okta | Bengaluru, India | 0.158 | match | [link](https://www.okta.com/company/careers/opportunity/7307866?gh_jid=7307866) | 2026-11-19T23:37:02Z |
+| Staff Software Engineer, Backend (Communications Platform) | squarespace | New York City | 0.158 | match | [link](http://www.squarespace.com/about/careers?gh_jid=8392750) | 2026-11-19T23:37:02Z |
 | Applied AI Engineer | databricks | Belgrade, Serbia | 0.157 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8091041002) | 2026-11-19T23:37:02Z |
 | Senior AI Data & Analytics Engineer II | samsara | Remote - Seattle | 0.157 | match | [link](https://www.samsara.com/company/careers/roles/8302004?gh_jid=8302004) | 2026-11-19T23:37:02Z |
 | Senior AI Data & Analytics Engineer II | samsara | Remote - NYC | 0.157 | match | [link](https://www.samsara.com/company/careers/roles/8281479?gh_jid=8281479) | 2026-11-19T23:37:02Z |
@@ -71,15 +108,29 @@
 | Senior AI Data & Analytics Engineer II | samsara | Remote - MA | 0.157 | match | [link](https://www.samsara.com/company/careers/roles/8281491?gh_jid=8281491) | 2026-11-19T23:37:02Z |
 | Senior AI Data & Analytics Engineer II | samsara | Remote - Austin | 0.157 | match | [link](https://www.samsara.com/company/careers/roles/8281489?gh_jid=8281489) | 2026-11-19T23:37:02Z |
 | Senior Analytics Engineer | twilio | Remote - US | 0.157 | match | [link](https://job-boards.greenhouse.io/twilio/jobs/8044650) | 2026-11-19T23:37:02Z |
+| Senior DevOps Engineer (Trading Platform) | crypto | Hong Kong | 0.157 | match | [link](https://jobs.lever.co/crypto/8596f625-56f5-4508-b496-d573aa64c721) | 2026-11-19T23:54:57Z |
+| Senior DevOps Engineer (Trading Platform) | crypto | Singapore | 0.157 | match | [link](https://jobs.lever.co/crypto/a3ac2fc1-37c6-45d3-834e-25e9f94aaf5c) | 2026-11-19T23:54:57Z |
 | Senior Data Engineer - Data Platform | spotify | London | 0.157 | match | [link](https://jobs.lever.co/spotify/204f6cd7-98a3-4360-87e3-8876adf087da) | 2026-11-19T23:37:02Z |
 | Senior Mobile Cross Platform Engineer | chime | New York, NY, USA; San Francisco, CA, USA | 0.157 | match | [link](https://boards.greenhouse.io/chime/jobs/8604565002?gh_jid=8604565002) | 2026-11-19T23:37:02Z |
+| Senior AI Platform Engineer | zscaler | Pune, IND | 0.156 | match | [link](https://job-boards.greenhouse.io/zscaler/jobs/5278563007) | 2026-11-19T23:37:02Z |
+| Software Engineer, Cloud Infrastructure | openai | San Francisco | 0.155 | match | [link](https://jobs.ashbyhq.com/openai/12342ebb-dcd4-45e2-b875-fc5447fdb7d8) | 2026-11-19T23:54:57Z |
+| Engineering Manager - Control Plane Platform Engineer | clickhouse | Europe or US, Remote | 0.154 | match | [link](https://jobs.ashbyhq.com/clickhouse/aefd66e4-d812-48b3-a9f6-160e19882136) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer - AI Research Infrastructure | databricks | New York City, New York; San Francisco, California | 0.154 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8552484002) | 2026-11-19T23:37:02Z |
 | Staff Data Scientist | databricks | San Francisco, California | 0.153 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=5507088002) | 2026-11-19T23:37:02Z |
+| Deputy Manager, AI & Platform Engineer | zscaler | Mohali, IND | 0.153 | match | [link](https://job-boards.greenhouse.io/zscaler/jobs/5081527007) | 2026-11-19T23:37:02Z |
+| Senior Software Engineer, Machine Learning Platform | chime | San Francisco, CA, USA | 0.153 | match | [link](https://boards.greenhouse.io/chime/jobs/8765684002?gh_jid=8765684002) | 2026-11-19T23:37:02Z |
+| Sr. Cloud Platform Engineer | zscaler | Remote - USA; San Jose, California, USA | 0.153 | match | [link](https://job-boards.greenhouse.io/zscaler/jobs/5208829007) | 2026-11-19T23:37:02Z |
 | Senior Data Scientist | databricks | Mountain View, California; San Francisco, California | 0.152 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=5634684002) | 2026-11-19T23:37:02Z |
+| Senior Cloud Data Infrastructure Engineer (US Remote) | clickhouse | United States, Remote | 0.152 | match | [link](https://jobs.ashbyhq.com/clickhouse/9e205698-0e50-42e5-8783-a79a7ff7efaa) | 2026-11-19T23:37:02Z |
+| Senior Cloud Software Engineer - Efficiency Engineering | clickhouse | NAMER and LatAm | 0.152 | match | [link](https://jobs.ashbyhq.com/clickhouse/db498a8c-c8d8-405b-b86a-0943a5122e7d) | 2026-11-19T23:37:02Z |
+| Senior Cloud Data Infrastructure Engineer (APJ Remote) | clickhouse | Singapore, Australia, Remote | 0.152 | match | [link](https://jobs.ashbyhq.com/clickhouse/b6e7fb97-e7e2-4e29-9476-b777d787a94c) | 2026-11-19T23:37:02Z |
 | Specialist Solutions Architect - Data Engineering | databricks | Amsterdam, Netherlands | 0.151 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8870159002) | 2026-11-19T23:37:02Z |
 | Machine Learning Engineer, API Multicloud | openai | San Francisco | 0.151 | match | [link](https://jobs.ashbyhq.com/openai/5acf4854-1d42-40ca-bff8-4f6f04cdce68) | 2026-11-19T23:54:57Z |
 | Staff Software Engineer - Data Platform | databricks | Bengaluru, India | 0.151 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7601572002) | 2026-11-19T23:37:02Z |
 | Sr. Product Manager, Data Engineering | databricks | San Francisco, California | 0.151 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=6322654002) | 2026-11-19T23:37:02Z |
+| Senior Software Engineer, Infrastructure Foundations | temporal | United States (Remote) | 0.150 | match | [link](https://jobs.ashbyhq.com/temporal/1929137d-1aef-4eae-9490-b934a90bc2ab) | 2026-11-19T23:54:57Z |
+| Staff Software Engineer, Infrastructure Foundations | temporal | United States (Remote) | 0.150 | match | [link](https://jobs.ashbyhq.com/temporal/25ab987b-b07e-424b-8ce9-eb10de739a7f) | 2026-11-19T23:54:57Z |
+| AI Platform Engineer | supabase | Remote, Global | 0.150 | match | [link](https://jobs.ashbyhq.com/supabase/3b5d54ca-741b-45ac-bd3f-31605a0d3541) | 2026-11-19T23:54:57Z |
 | Staff Software Engineer - Security Infrastructure | databricks | Mountain View, California | 0.149 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7994770002) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer - Security Infrastructure | databricks | Bellevue, Washington | 0.149 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7994759002) | 2026-11-19T23:37:02Z |
 | Senior Finance Analytics Engineer | faire | New York City, NY; San Francisco, CA | 0.149 | match | [link](https://boards.greenhouse.io/faire/jobs/8828560002?gh_jid=8828560002) | 2026-11-19T23:37:02Z |
@@ -89,8 +140,12 @@
 | Senior Staff Software Engineer - Security Infrastructure | databricks | Bellevue, Washington | 0.148 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7274902002) | 2026-11-19T23:37:02Z |
 | Senior Product Analytics Engineer - Ads | faire | San Francisco, CA | 0.148 | match | [link](https://boards.greenhouse.io/faire/jobs/8804205002?gh_jid=8804205002) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Data Collection (Tags & SDKs) | databricks | New York City, New York | 0.148 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8760176002) | 2026-11-19T23:37:02Z |
+| Platform Engineer, Edge & Networking | supabase | Remote, Global | 0.148 | match | [link](https://jobs.ashbyhq.com/supabase/6c9de03c-e289-4612-9045-492985d0274b) | 2026-11-19T23:54:57Z |
+| Staff Site Reliability Engineer, InfraSec | mongodb | Dublin | 0.148 | match | [link](https://www.mongodb.com/careers/job/?gh_jid=8278921) | 2026-11-19T23:37:02Z |
 | Senior Data Engineer- People Analytics | sofi | United States | 0.148 | match | [link](https://sofi.com/careers/job/7963974003?gh_jid=7963974003) | 2026-11-19T23:37:02Z |
 | Engineering Manager - UI Platform | databricks | Seattle, Washington | 0.147 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8013809002) | 2026-11-19T23:37:02Z |
+| Staff Frontend Platform Engineer | harvey | San Francisco, New York, Remote | 0.147 | match | [link](https://jobs.ashbyhq.com/harvey/19db4c0a-8883-43c3-b667-60463098feb2) | 2026-11-19T23:54:57Z |
+| Cloud Database Infrastructure Engineer (EMEA Remote) | clickhouse | EMEA, Denmark, Portugal, France, United Kingdom, Spain, Germany, Italy, Sweden, The Netherlands | 0.147 | match | [link](https://jobs.ashbyhq.com/clickhouse/086c4dd1-217d-48f8-9d62-e57542e16dbe) | 2026-11-19T23:37:02Z |
 | Manager, Engineering - AI/BI | databricks | Vancouver, Canada | 0.147 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8176503002) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - Data + AI Observability | databricks | Bengaluru, India | 0.147 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7897431002) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - Infrastructure and Tools | databricks | San Francisco, California | 0.146 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=6318503002) | 2026-11-19T23:37:02Z |
@@ -105,120 +160,460 @@
 | Senior Software Engineer - Distributed Data Systems | databricks | Belgrade, Serbia | 0.145 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8012800002) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer - Distributed Data Systems | databricks | Belgrade, Serbia | 0.145 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8012831002) | 2026-11-19T23:37:02Z |
 | Sr Platform Monitoring Engineer | databricks | United States | 0.145 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8407913002) | 2026-11-19T23:37:02Z |
+| Senior/Staff Software Engineer - SRE, GitHub & CI/CD Infrastructure | zoox | Foster City, CA | 0.144 | match | [link](https://jobs.lever.co/zoox/5ab0cc36-0d91-4acd-9cf3-c38a273293cb) | 2026-11-19T23:54:57Z |
 | Staff Software Engineer - AI Gateway | databricks | New York | 0.144 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8468436002) | 2026-11-19T23:37:02Z |
+| Senior Software Engineer - Cloud Infrastructure - (US Remote) | clickhouse | NAMER and LatAm, United States | 0.144 | match | [link](https://jobs.ashbyhq.com/clickhouse/caf49f06-ed35-4637-9372-f4df114e852f) | 2026-11-19T23:37:02Z |
+| Senior Software Engineer - Cloud Infrastructure - (Canada Remote) | clickhouse | Canada, Remote | 0.144 | match | [link](https://jobs.ashbyhq.com/clickhouse/2fdde21b-48de-419f-96e6-b0016c7133e1) | 2026-11-19T23:37:02Z |
+| Staff AI/ML Engineer | chime | San Francisco, CA, USA | 0.143 | match | [link](https://boards.greenhouse.io/chime/jobs/8840205002?gh_jid=8840205002) | 2026-11-19T23:37:02Z |
 | Staff Backline Engineer – ML/AI | databricks | Bellevue, Washington; San Francisco, California | 0.143 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7872746002) | 2026-11-19T23:37:02Z |
 | Staff Machine Learning Engineer, CustomerLake (ML/LLM) | databricks | New York City, New York | 0.143 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8923831002) | 2026-11-19T23:37:02Z |
+| Senior Software Engineer, Cloud Capacity | temporal | United States (Remote), San Francisco, California | 0.143 | match | [link](https://jobs.ashbyhq.com/temporal/a60877d2-e825-4e0f-9f36-230352a9f193) | 2026-11-19T23:54:57Z |
 | Senior Engineering Manager for Workspace Platform | databricks | San Francisco, California | 0.143 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7987658002) | 2026-11-19T23:37:02Z |
 | Sr.Staff Software Engineer- Network Platform | databricks | Bengaluru, India | 0.142 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8462811002) | 2026-11-19T23:37:02Z |
+| Platform Engineer - Compute Capacity | supabase | Remote, Global | 0.142 | match | [link](https://jobs.ashbyhq.com/supabase/4eb14408-51e6-4c58-812a-3782d5c0b045) | 2026-11-19T23:54:57Z |
 | Senior Software Engineer - Multi Cloud Efficiency | databricks | Bengaluru, India | 0.142 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8602402002) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer - Multi Cloud Efficiency | databricks | Bengaluru, India | 0.142 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8593107002) | 2026-11-19T23:37:02Z |
 | Senior Data Engineer | Lemon.io | LATAM, Europe, USA, Canada, APAC | 0.142 | match | [link](https://remotive.com/remote-jobs/data/senior-data-engineer-2091137) | 2026-11-19T21:31:05Z |
 | Staff Backend Software Engineer- (AI Platform) | databricks | San Francisco, California | 0.142 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8367021002) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Fullstack - AI Product (NYC) | databricks | New York City, New York | 0.141 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8509534002) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - Backend Infrastructure | databricks | Bengaluru, India | 0.141 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7647294002) | 2026-11-19T23:37:02Z |
+| Staff Site Reliability Engineer, Infrastructure Security | mongodb | Austin; Boston; Chicago; Dallas; Denver; New York; San Francisco; Seattle; Washington DC | 0.141 | match | [link](https://www.mongodb.com/careers/job/?gh_jid=6982487) | 2026-11-19T23:37:02Z |
 | Sr. Engineering Manager - Agentic Service Platform | databricks | Mountain View, California | 0.141 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8510921002) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer - Customer Engagement & Docs Platform | databricks | San Francisco, California | 0.140 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8032546002) | 2026-11-19T23:37:02Z |
 | Sr. Software Engineer - AI Gateway | databricks | New York City, New York | 0.139 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8379331002) | 2026-11-19T23:37:02Z |
+| Platform Engineer - Identity Infrastructure | palantir | Palo Alto, CA | 0.139 | match | [link](https://jobs.lever.co/palantir/721fe5ca-73b8-4223-826e-93a528194821) | 2026-11-19T23:37:02Z |
+| Platform Engineer - Identity Infrastructure | palantir | Washington, D.C. | 0.139 | match | [link](https://jobs.lever.co/palantir/a80afc2b-2564-4a98-84c2-34cdcc0402df) | 2026-11-19T23:37:02Z |
+| Platform Engineer - Identity Infrastructure | palantir | New York, NY | 0.139 | match | [link](https://jobs.lever.co/palantir/cf08f44c-bf75-45ed-9fab-f4836e51013e) | 2026-11-19T23:37:02Z |
+| Staff Software Engineer, Infrastructure | toast | Dublin, Ireland | 0.139 | match | [link](https://careers.toasttab.com/jobs?gh_jid=8243136) | 2026-11-19T23:37:02Z |
+| Member of Technical Staff (Search Core DevOps Engineer) | perplexity | Belgrade, London, Dublin | 0.138 | match | [link](https://jobs.ashbyhq.com/Perplexity/739411fa-6580-4c8b-9960-035d5fa3c00e) | 2026-11-19T23:54:57Z |
+| Senior DevOps Engineer | Lemon.io |  | 0.138 | match | [link](https://remoteOK.com/remote-jobs/remote-senior-devops-engineer-lemon-io-1137557) | 2026-11-19T21:31:05Z |
 | AI Forward Deployed Engineer | databricks | London, United Kingdom | 0.138 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8927179002) | 2026-11-19T23:37:02Z |
+| Principal Client Platform Engineer | roblox | San Mateo, CA, United States | 0.138 | match | [link](https://careers.roblox.com/jobs/8212529?gh_jid=8212529) | 2026-11-19T23:37:02Z |
 | Sr. Manager, Engineering  Configuration Platform Team | databricks | Bellevue, Washington | 0.138 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8567602002) | 2026-11-19T23:37:02Z |
 | Staff Data Scientist - Infrastructure | databricks | Mountain View, California | 0.138 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7069793002) | 2026-11-19T23:37:02Z |
+| Principal Endpoint Platform Engineer | roblox | San Mateo, CA, United States | 0.137 | match | [link](https://careers.roblox.com/jobs/8351078?gh_jid=8351078) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer (Backend) - AI/ML Environments | databricks | Mountain View, California | 0.137 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8233899002) | 2026-11-19T23:37:02Z |
+| AI/ML Engineer | chime | Chicago, IL, USA; New York, NY, USA; San Francisco, CA, USA | 0.137 | match | [link](https://boards.greenhouse.io/chime/jobs/8569366002?gh_jid=8569366002) | 2026-11-19T23:37:02Z |
 | Engineering Manager, Serverless Compute Platform | databricks | Bellevue, Washington | 0.136 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8603361002) | 2026-11-19T23:37:02Z |
+| Principal Machine Learning Platform Engineer, Foundation AI | roblox | San Mateo, CA, United States | 0.136 | match | [link](https://careers.roblox.com/jobs/8233722?gh_jid=8233722) | 2026-11-19T23:37:02Z |
+| Principal AI Infrastructure Engineer, Build Platform | roblox | San Mateo, CA, United States | 0.136 | match | [link](https://careers.roblox.com/jobs/8221568?gh_jid=8221568) | 2026-11-19T23:37:02Z |
 | AI Engineer – Forward Deployed Engineering (AI FDE) | databricks | United States | 0.135 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8546367002) | 2026-11-19T23:37:02Z |
 | Member of Data Staff (Data Acceleration) | perplexity | San Francisco | 0.135 | match | [link](https://jobs.ashbyhq.com/Perplexity/d89a3cad-50d5-47fd-8f87-be55285ee2b1) | 2026-11-19T23:54:57Z |
 | Sr. Specialist Solutions Architect -AI&ML Engineer | databricks | Israel | 0.134 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8784103002) | 2026-11-19T23:37:02Z |
 | Senior ML & AI Technical Solutions Engineer | databricks | Bengaluru, India | 0.134 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7845325002) | 2026-11-19T23:37:02Z |
+| Senior Site Reliability Engineer - I | sumologic | Noida, Uttar Pradesh, India | 0.134 | match | [link](https://job-boards.greenhouse.io/sumologic/jobs/8288761) | 2026-11-19T23:37:02Z |
 | Specialist Solutions Architect - Azure Infrastructure & AI Platform | databricks | United States | 0.133 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8952028002) | 2026-11-19T23:37:02Z |
+| AWS Cloud Solutions Architect | Cloudary SAS |  | 0.133 | match | [link](https://remoteOK.com/remote-jobs/remote-aws-cloud-solutions-architect-cloudary-sas-1137606) | 2026-11-19T21:31:05Z |
+| Software Engineer, Infrastructure | databricks | Mountain View, California | 0.133 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8829039002) | 2026-11-19T23:37:02Z |
+| Staff Site Reliability Engineer (Linux/Network troubleshooting/Scripting) | zscaler | Bangalore, IND | 0.133 | match | [link](https://job-boards.greenhouse.io/zscaler/jobs/5177389007) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, AI Runtime | databricks | Mountain View, California; San Francisco, California | 0.133 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8582271002) | 2026-11-19T23:37:02Z |
 | Senior Staff Software Engineer, AI Runtime | databricks | Mountain View, California; San Francisco, California | 0.132 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8909305002) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, Growth Platform | stripe | San Francisco | 0.132 | match | [link](https://stripe.com/jobs/search?gh_jid=8224915) | 2026-11-19T23:37:02Z |
 | Director of Engineering (Data Infrastructure) | databricks | Bengaluru, India | 0.132 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8290810002) | 2026-11-19T23:37:02Z |
+| Member of Technical Staff (Software Engineer, Backend Platform) | perplexity | San Francisco, Palo Alto, New York City | 0.131 | match | [link](https://jobs.ashbyhq.com/Perplexity/7795683f-6c5f-40cd-af2d-51294edddd4b) | 2026-11-19T23:54:57Z |
+| Principal Machine Learning Engineer (AI/Platform)- League of Legends | riotgames | Los Angeles, USA | 0.131 | match | [link](https://www.riotgames.com/en/work-with-us/job/7944656?gh_jid=7944656) | 2026-11-19T23:37:02Z |
+| Cloud Platform Engineer | gitlab | Remote, Canada; Remote, United States | 0.131 | match | [link](https://job-boards.greenhouse.io/gitlab/jobs/8889193002) | 2026-11-19T23:37:02Z |
+| Senior CX Platform Engineer | gitlab | Remote, Canada; Remote, United States | 0.131 | match | [link](https://job-boards.greenhouse.io/gitlab/jobs/8871406002) | 2026-11-19T23:37:02Z |
+| Sr Software Engineer, Infrastructure | databricks | San Francisco, California | 0.131 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8493170002) | 2026-11-19T23:37:02Z |
 | Data Engineer | toast | Remote, US | 0.131 | match | [link](https://careers.toasttab.com/jobs?gh_jid=8359240) | 2026-11-19T23:37:02Z |
 | Partner Applied AI Engineer, AWS | openai | San Francisco, New York City | 0.130 | match | [link](https://jobs.ashbyhq.com/openai/9635775d-18fa-47bb-9ede-9a4137618de0) | 2026-11-19T23:54:57Z |
+| Site Reliability Engineer (Senior or Staff), Atlas | mongodb | Austin; Boston; Chicago; Miami; New York City; Philadelphia; Pittsburgh; Raleigh; United States; Washington DC | 0.130 | match | [link](https://www.mongodb.com/careers/job/?gh_jid=7727964) | 2026-11-19T23:37:02Z |
+| Senior DevOps Engineer, United States | crypto | San Francisco, California, New York, Chicago,IL | 0.130 | match | [link](https://jobs.lever.co/crypto/d39f52ad-f580-4ec1-87b0-4ae9bf9403d6) | 2026-11-19T23:54:57Z |
 | Applied AI Engineer, Partner - AWS | openai | Bangalore - Remote, Mumbai, India, Delhi, India | 0.130 | match | [link](https://jobs.ashbyhq.com/openai/87989505-81e5-4513-bba0-5f00bb064216) | 2026-11-19T23:54:57Z |
+| Senior Staff Machine Learning Engineer - Content Platform | spotify | New York, NY | 0.130 | match | [link](https://jobs.lever.co/spotify/47d4eabf-8d5a-4dab-ac72-de7b5b56841c) | 2026-11-19T23:37:02Z |
+| Senior Staff Machine Learning Engineer - Content Platform | spotify | London, Stockholm | 0.130 | match | [link](https://jobs.lever.co/spotify/499543e3-78e7-473a-8a1d-a82ce9ce9030) | 2026-11-19T23:37:02Z |
 | Senior Specialist Solutions Architect (AI/ML) | databricks | London, United Kingdom | 0.130 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8615245002) | 2026-11-19T23:37:02Z |
 | Member of Technical Staff (AI Infrastructure Engineer) | perplexity | London, Remote | 0.129 | match | [link](https://jobs.ashbyhq.com/Perplexity/60deb376-51b5-46c6-9e17-55377a5ef34e) | 2026-11-19T23:54:57Z |
 | Evergreen - AI Engineer, AI FDE | databricks | Bengaluru, India | 0.129 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8878946002) | 2026-11-19T23:37:02Z |
 | Member of Technical Staff (AI Inference Engineer) | perplexity | San Francisco, Palo Alto, New York City | 0.128 | match | [link](https://jobs.ashbyhq.com/Perplexity/8a976851-9bef-4b07-8d36-567fa9540aef) | 2026-11-19T23:54:57Z |
 | Senior Data Engineer | adyen | Amsterdam | 0.128 | match | [link](https://job-boards.greenhouse.io/adyen/jobs/6919020) | 2026-11-19T23:37:02Z |
+| Senior Site Reliability Engineer | wikimedia | Remote | 0.128 | match | [link](https://job-boards.greenhouse.io/wikimedia/jobs/8397050) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Financial Connections | stripe | New York | 0.128 | match | [link](https://stripe.com/jobs/search?gh_jid=8148653) | 2026-11-19T23:37:02Z |
 | Recruiting Analytics Data Engineer | anthropic | San Francisco, CA / New York City, NY / Seattle, WA | 0.128 | match | [link](https://job-boards.greenhouse.io/anthropic/jobs/5424111008) | 2026-11-19T23:37:02Z |
 | Backend Engineer, Platform | hightouch | San Francisco, Remote | 0.127 | match | [link](https://jobs.ashbyhq.com/hightouch/7f302222-2e06-4e37-8766-87b3bf6068e6) | 2026-11-19T23:54:57Z |
+| Machine Learning Engineer - Vision Foundation Models | zoox | Foster City, CA, Boston, MA, Seattle, WA, San Diego, CA | 0.127 | match | [link](https://jobs.lever.co/zoox/06f146c2-25f6-40fd-8393-4f92ce518929) | 2026-11-19T23:54:57Z |
 | Senior AI Engineer - FDE (Forward Deployed Engineer) | databricks | Tokyo, Japan | 0.127 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8569392002) | 2026-11-19T23:37:02Z |
+| Sr. Machine Learning Engineer, Applied Science | pinterest | San Francisco, CA, US; Remote, US | 0.126 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=6894747) | 2026-11-19T23:37:02Z |
 | AI Engineer - FDE (Forward Deployed Engineer) | databricks | Seoul, South Korea | 0.126 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8574655002) | 2026-11-19T23:37:02Z |
+| Senior Infrastructure Engineer, Storage Platform | cloudflare | In-Office | 0.126 | match | [link](https://boards.greenhouse.io/cloudflare/jobs/7629805?gh_jid=7629805) | 2026-11-19T23:37:02Z |
 | Software Engineer, Data Infrastructure | openai | San Francisco, New York City, Seattle, Mountain View | 0.126 | match | [link](https://jobs.ashbyhq.com/openai/f763c6b3-5167-4a67-b691-4c3fa2c44156) | 2026-11-19T23:54:57Z |
 | Senior Manager, Data Engineering - Valorant | riotgames | Los Angeles, USA | 0.125 | match | [link](https://www.riotgames.com/en/work-with-us/job/7551204?gh_jid=7551204) | 2026-11-19T23:37:02Z |
+| Sr. IT Site Reliability Software Engineer | databricks | Costa Rica | 0.125 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8493168002) | 2026-11-19T23:37:02Z |
+| Staff Site Reliability Engineer, FinOps | sumologic | San José, Costa Rica | 0.125 | match | [link](https://job-boards.greenhouse.io/sumologic/jobs/8349107) | 2026-11-19T23:37:02Z |
+| ⚙️ Senior/Staff Platform Engineer | runway | North America, Remote | 0.125 | match | [link](https://jobs.ashbyhq.com/Runway/950876a1-709e-49b7-93f3-6e130efdf6fa) | 2026-11-19T23:54:57Z |
 | FinOps Data Engineer | supabase | Remote, Global | 0.124 | match | [link](https://jobs.ashbyhq.com/supabase/73ddf93b-fe0c-455d-ba27-cdde0d3fb94f) | 2026-11-19T23:54:57Z |
+| Site Reliability Engineer (Senior or Staff), Storage Layer Services (SLS) | mongodb | Boston; Miami; New York City; Pittsburgh; Raleigh; United States | 0.124 | match | [link](https://www.mongodb.com/careers/job/?gh_jid=7743366) | 2026-11-19T23:37:02Z |
+| Site Reliability Engineer (Senior or Staff), Storage Layer Services (SLS) | mongodb | Montreal; Toronto | 0.124 | match | [link](https://www.mongodb.com/careers/job/?gh_jid=7793634) | 2026-11-19T23:37:02Z |
 | Data Engineer | samsara | Remote - US | 0.124 | match | [link](https://www.samsara.com/company/careers/roles/8141959?gh_jid=8141959) | 2026-11-19T23:37:02Z |
 | Data Engineer | samsara | Remote - Canada | 0.124 | match | [link](https://www.samsara.com/company/careers/roles/8250423?gh_jid=8250423) | 2026-11-19T23:37:02Z |
+| Site Reliability Engineer (Senior or Staff), Storage Layer Services (SLS) | mongodb | Cork, Ireland; Dublin, Ireland | 0.124 | match | [link](https://www.mongodb.com/careers/job/?gh_jid=6984814) | 2026-11-19T23:37:02Z |
 | Member of Technical Staff (AI Inference Engineer) | perplexity | London | 0.124 | match | [link](https://jobs.ashbyhq.com/Perplexity/e4777627-ff8f-4257-8612-3a016bb58592) | 2026-11-19T23:54:57Z |
 | Analytics Engineer | linear | North America, Remote | 0.123 | match | [link](https://jobs.ashbyhq.com/linear/f272fc4a-91a7-4dcf-9cb5-3600ebaf14e1) | 2026-11-19T23:54:57Z |
+| Staff Machine Learning Engineer - Unpublished R&D Product | riotgames | Los Angeles, USA | 0.123 | match | [link](https://www.riotgames.com/en/work-with-us/job/8104456?gh_jid=8104456) | 2026-11-19T23:37:02Z |
 | Supply Chain Data Engineer & Integration Manager | adyen | Amsterdam | 0.123 | match | [link](https://job-boards.greenhouse.io/adyen/jobs/8105603) | 2026-11-19T23:37:02Z |
 | Senior Data Engineer II | samsara | Remote - US | 0.123 | match | [link](https://www.samsara.com/company/careers/roles/8039914?gh_jid=8039914) | 2026-11-19T23:37:02Z |
 | Analytics Engineer | reddit | Remote - United States | 0.123 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8282760) | 2026-11-19T23:37:02Z |
+| Senior Software Engineer, Cloud Growth | temporal | United States (Remote) | 0.123 | match | [link](https://jobs.ashbyhq.com/temporal/a04c4545-b34e-40d4-b1ac-17f17976e93e) | 2026-11-19T23:54:57Z |
 | Senior Manager, AI Forward Deployed Engineering | databricks | Paris, France | 0.122 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8948900002) | 2026-11-19T23:37:02Z |
 | Specialist Solutions Architect (Data Warehousing) | databricks | Tokyo, Japan | 0.122 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8855171002) | 2026-11-19T23:37:02Z |
+| Senior Infrastructure Engineer (Software-Focused) | asana | Warsaw | 0.121 | match | [link](https://www.asana.com/jobs/apply/7964316?gh_jid=7964316) | 2026-11-19T23:37:02Z |
+| Senior Staff Cloud Platform Engineer | 1password | Remote (United States / Canada) | 0.121 | match | [link](https://jobs.ashbyhq.com/1password/25e52edb-3d1a-43ab-a6d1-ad2a36f0c8ee) | 2026-11-19T23:54:57Z |
 | Manager/Sr. Manager, AI Forward Deployed Engineering | databricks | Bengaluru, India | 0.121 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8630019002) | 2026-11-19T23:37:02Z |
 | Senior Manager, AI Forward Deployed Engineering | databricks | Munich, Germany | 0.120 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8948870002) | 2026-11-19T23:37:02Z |
 | Senior DevOps Engineer, Canada | crypto | Canada | 0.120 | match | [link](https://jobs.lever.co/crypto/fcf3267b-473b-40ec-ab28-bb70485c6e30) | 2026-11-19T23:54:57Z |
 | AI Automation Engineer | databricks | Costa Rica | 0.120 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8829033002) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer | clickhouse | United Kingdom, Poland, Portugal, France, Spain, Germany, Italy, The Netherlands, Remote | 0.120 | match | [link](https://jobs.ashbyhq.com/clickhouse/fe8430ad-2150-4838-ae36-535aa659b389) | 2026-11-19T23:37:02Z |
 | Staff Analytics Engineer | coinbase | Remote - USA | 0.120 | match | [link](https://www.coinbase.com/careers/positions/8047150?gh_jid=8047150) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer (Research Scientist) - DFAI | plaid | San Francisco HQ, Seattle Office, Remote | 0.120 | match | [link](https://jobs.ashbyhq.com/plaid/dab31ae8-1e25-4b63-8008-d6930ff72369) | 2026-11-19T23:37:02Z |
 | Analytics Engineer Intern | coinbase | Hybrid - New York, NY | 0.120 | match | [link](https://www.coinbase.com/careers/positions/8175471?gh_jid=8175471) | 2026-11-19T23:37:02Z |
+| Senior AI/ML Engineer | sigmacomputing | San Francisco, CA | 0.120 | match | [link](https://job-boards.greenhouse.io/sigmacomputing/jobs/7767727003) | 2026-11-19T23:37:02Z |
+| Senior AI/ML Engineer | sigmacomputing | New York City, NY | 0.120 | match | [link](https://job-boards.greenhouse.io/sigmacomputing/jobs/7767728003) | 2026-11-19T23:37:02Z |
+| Staff AI/ML Engineer | sigmacomputing | San Francisco, CA | 0.120 | match | [link](https://job-boards.greenhouse.io/sigmacomputing/jobs/7767730003) | 2026-11-19T23:37:02Z |
+| Staff AI/ML Engineer | sigmacomputing | New York City, NY | 0.120 | match | [link](https://job-boards.greenhouse.io/sigmacomputing/jobs/7767733003) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer (Research Scientist) - Fraud | plaid | New York City Office, Seattle Office, San Francisco HQ, Remote | 0.120 | match | [link](https://jobs.ashbyhq.com/plaid/5e56c0a6-3caa-4255-8c63-95c29cbc2a32) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer (AI/ML) | clickhouse | New York, Detroit, Canada, Austin, Phoenix, Los Angeles, San Francisco, Dallas, Remote | 0.119 | match | [link](https://jobs.ashbyhq.com/clickhouse/b3e6d985-b540-456c-8eee-edfd79580572) | 2026-11-19T23:37:02Z |
 | Senior Manager, AI Forward Deployed Engineering | databricks | Amsterdam, Netherlands | 0.119 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8937360002) | 2026-11-19T23:37:02Z |
 | Senior Manager, AI Forward Deployed Engineering | databricks | Stockholm, Sweden | 0.119 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8948868002) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Financial Products | adyen | San Francisco | 0.119 | match | [link](https://job-boards.greenhouse.io/adyen/jobs/8160968) | 2026-11-19T23:37:02Z |
 | Staff Product Analytics Engineer | celonis | Bangalore, India | 0.119 | match | [link](https://job-boards.greenhouse.io/celonis/jobs/7886054003?gh_jid=7886054003) | 2026-11-19T23:37:02Z |
+| Senior Software Engineer, Compute Infrastructure | databricks | Mountain View, California | 0.118 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8806934002) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Public Sector | scaleai | Denver, CO; Washington, DC | 0.118 | match | [link](https://job-boards.greenhouse.io/scaleai/jobs/4654382005) | 2026-11-19T23:37:02Z |
+| DevOps Engineer, Infrastructure & Security | scaleai | Washington, DC | 0.118 | match | [link](https://job-boards.greenhouse.io/scaleai/jobs/4674863005) | 2026-11-19T23:37:02Z |
 | Data Engineer | openai | San Francisco, Mountain View, Remote | 0.117 | match | [link](https://jobs.ashbyhq.com/openai/fc5bbc77-a30c-4e7a-9acc-8a2e748545b4) | 2026-11-19T23:54:57Z |
+| Senior Software Engineer, Site Reliability Engineer | harvey | San Francisco | 0.117 | match | [link](https://jobs.ashbyhq.com/harvey/c9cea360-f0b6-4a93-b7b3-0f0145b02ffe) | 2026-11-19T23:54:57Z |
+| Staff Machine Learning Engineer (Credit International ML) | affirm | Remote Poland | 0.117 | match | [link](https://job-boards.greenhouse.io/affirm/jobs/8045395003) | 2026-11-19T23:37:02Z |
+| Site Reliability Engineer, Infrastructure Platforms — UK (Intermediate to Senior Staff) | gitlab | Remote | 0.116 | match | [link](https://job-boards.greenhouse.io/gitlab/jobs/8773546002) | 2026-11-19T23:37:02Z |
+| AI Platform Engineer | starburst | India | 0.116 | match | [link](https://job-boards.greenhouse.io/starburst/jobs/5416975008) | 2026-11-19T23:37:02Z |
+| Site Reliability Engineer, Infrastructure Platforms — AMER (Intermediate to Senior Staff) | gitlab | Remote, Canada; Remote, US | 0.116 | match | [link](https://job-boards.greenhouse.io/gitlab/jobs/8623389002) | 2026-11-19T23:37:02Z |
 | Lead Data Engineer | elastic | United States | 0.115 | match | [link](https://jobs.elastic.co/jobs?gh_jid=8247144&gh_jid=8247144) | 2026-11-19T23:37:02Z |
 | Specialist Solutions Architect - AI/ML | databricks | Bengaluru, India | 0.115 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8585164002) | 2026-11-19T23:37:02Z |
 | Specialist Solutions Architect - AI/ML | databricks | Seoul, South Korea | 0.115 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8785057002) | 2026-11-19T23:37:02Z |
 | Specialist Solutions Architect - AI/ML | databricks | Mumbai, India | 0.115 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8593505002) | 2026-11-19T23:37:02Z |
 | Data Engineer Intern (2027) | figma | San Francisco, CA • New York, NY | 0.115 | match | [link](https://boards.greenhouse.io/figma/jobs/6178851004?gh_jid=6178851004) | 2026-11-19T23:37:02Z |
+| Senior Software Engineer (SRE), Infrastructure Security | mongodb | Austin; Boston; Chicago; Dallas; Denver; New York City; San Francisco; Seattle; United States; Washington DC | 0.115 | match | [link](https://www.mongodb.com/careers/job/?gh_jid=8274765) | 2026-11-19T23:37:02Z |
 | Member of Technical Staff (Site Reliability Engineer, Cloud Infrastructure) | perplexity | San Francisco, Remote (United States), Seattle, New York City | 0.114 | match | [link](https://jobs.ashbyhq.com/Perplexity/5fe2b80d-9d59-42bb-90e6-9a0b78d7d403) | 2026-11-19T23:54:57Z |
 | Principal GenAI Data Engineer | zscaler | Bellevue, Washington, USA; Santa Clara, California, USA | 0.114 | match | [link](https://job-boards.greenhouse.io/zscaler/jobs/5282847007) | 2026-11-19T23:37:02Z |
 | Staff Data Engineer | discord | San Francisco Bay Area | 0.114 | match | [link](https://job-boards.greenhouse.io/discord/jobs/8691572002) | 2026-11-19T23:37:02Z |
 | Senior Data Engineer, Ads | discord | Remote (U.S.) | 0.113 | match | [link](https://job-boards.greenhouse.io/discord/jobs/8299493002) | 2026-11-19T23:37:02Z |
+| Staff Site Reliability Engineer (Production Engineer)- Federal | zscaler | Santa Clara, California, USA | 0.113 | match | [link](https://job-boards.greenhouse.io/zscaler/jobs/5029669007) | 2026-11-19T23:37:02Z |
+| Staff Technical Program Manager, Site Reliability Engineering | mongodb | Cork, Ireland; Dublin, Ireland; Ireland | 0.113 | match | [link](https://www.mongodb.com/careers/job/?gh_jid=7831454) | 2026-11-19T23:37:02Z |
 | Sr. Manager – Data & AI Support Engineering | databricks | Plano, Texas | 0.113 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7914730002) | 2026-11-19T23:37:02Z |
+| Sr. DevOps Engineer | zscaler | Tel Aviv-Yafo Municipality, ISR | 0.112 | match | [link](https://job-boards.greenhouse.io/zscaler/jobs/5229507007) | 2026-11-19T23:37:02Z |
+| Staff / Senior Staff Machine Learning Engineer - Collision Avoidance System | zoox | Foster City, CA | 0.112 | match | [link](https://jobs.lever.co/zoox/01ff8f1c-eda8-4c45-9cca-b4461d8757d5) | 2026-11-19T23:54:57Z |
+| Staff DevOps Engineer | zscaler | Bangalore, IND | 0.112 | match | [link](https://job-boards.greenhouse.io/zscaler/jobs/5270971007) | 2026-11-19T23:37:02Z |
+| Senior Site Reliability Engineer | fivetran | Bengaluru, Karnataka, India, APAC | 0.112 | match | [link](https://www.fivetran.com/careers/job?gh_jid=8044038003) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, New Grad - Quora (Remote) | quora | Remote - Multiple Locations, United States, Canada | 0.111 | match | [link](https://jobs.ashbyhq.com/quora/40659fe7-545e-4b08-b6d7-2567b18b9ed3) | 2026-11-19T23:54:57Z |
+| Member of Technical Staff (Backend/Infrastructure Engineer, Search) | perplexity | Belgrade, London, Dublin | 0.111 | match | [link](https://jobs.ashbyhq.com/Perplexity/dd80ab52-34bd-42af-aa5e-6283b7e6c194) | 2026-11-19T23:54:57Z |
+| Senior Staff Site Reliability Engineer | fivetran | Oakland, California, United States, AMER | 0.111 | match | [link](https://www.fivetran.com/careers/job?gh_jid=7990752003) | 2026-11-19T23:37:02Z |
+| Staff Software Engineer, Site Reliability Engineer | harvey | San Francisco | 0.111 | match | [link](https://jobs.ashbyhq.com/harvey/4d661139-19ad-42af-9f6c-a68c71263e14) | 2026-11-19T23:54:57Z |
+| Senior Site Reliability Engineer, Infrastructure Security | mongodb | Austin; Boston; Chicago; Dallas; Denver; New York City; San Francisco; Seattle; United States; Washington DC | 0.111 | match | [link](https://www.mongodb.com/careers/job/?gh_jid=7668289) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, Public Sector | scaleai | Denver, CO; Honolulu, HI; Washington, DC | 0.110 | match | [link](https://job-boards.greenhouse.io/scaleai/jobs/4631848005) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, Core Experimentation | openai | Seattle, Remote | 0.109 | match | [link](https://jobs.ashbyhq.com/openai/9d4d2727-27f3-4a63-857c-a96466130645) | 2026-11-19T23:54:57Z |
+| Senior Infrastructure Engineer | harvey | New York, Remote | 0.109 | match | [link](https://jobs.ashbyhq.com/harvey/54770fc2-8dc0-4812-bfc5-0f4d628b97d9) | 2026-11-19T23:54:57Z |
+| Senior Infrastructure Engineer | harvey | Remote | 0.109 | match | [link](https://jobs.ashbyhq.com/harvey/880c222b-faa8-4e86-8fe9-989b5cd2bd46) | 2026-11-19T23:54:57Z |
+| Senior Manager, Software Engineering - AI Developer Productivity (Dev Agents and SRE AI) | samsara | Remote - Canada | 0.109 | match | [link](https://www.samsara.com/company/careers/roles/8387002?gh_jid=8387002) | 2026-11-19T23:37:02Z |
+| Senior Manager, Software Engineering - AI Developer Productivity (Dev Agents and SRE AI) | samsara | Remote - US | 0.109 | match | [link](https://www.samsara.com/company/careers/roles/8374911?gh_jid=8374911) | 2026-11-19T23:37:02Z |
+| Threat Intelligence Platform Engineer | coinbase | Remote - USA | 0.109 | match | [link](https://www.coinbase.com/careers/positions/8177619?gh_jid=8177619) | 2026-11-19T23:37:02Z |
+| Staff Platform Engineer | calendly | Remote - US | 0.109 | match | [link](https://job-boards.greenhouse.io/calendly/jobs/8628979002) | 2026-11-19T23:37:02Z |
+| Site Reliability Engineer (US - Pacific time) | posthog | Remote (US) | 0.108 | match | [link](https://jobs.ashbyhq.com/PostHog/1464036f-94d5-4dbd-aef8-fe99246a26d4) | 2026-11-19T23:54:57Z |
 | Data Scientist & Analytics Engineer | ledger | Paris, France, Remote | 0.108 | match | [link](https://jobs.ashbyhq.com/ledger/490a806d-48da-4279-82d1-5d4bdaf10bd4) | 2026-11-19T23:54:57Z |
+| Senior AI/ML Engineer | pagerduty | Lisbon | 0.108 | match | [link](https://job-boards.greenhouse.io/pagerduty/jobs/6144823004) | 2026-11-19T23:37:02Z |
+| Manager, Site Reliability Engineering | lightspeedhq | Montreal, Remote | 0.108 | match | [link](https://jobs.ashbyhq.com/lightspeedhq/2e0e2daf-3547-4091-8896-3405181519e3) | 2026-11-19T23:37:02Z |
+| Manager, Site Reliability Engineering | lightspeedhq | Toronto, Remote | 0.108 | match | [link](https://jobs.ashbyhq.com/lightspeedhq/9b1c9899-2ebc-46e3-b44e-75babdcfdd3a) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Platform Engineer - Identity | coinbase | Remote - USA | 0.108 | match | [link](https://www.coinbase.com/careers/positions/8211490?gh_jid=8211490) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer(Platform - Identity) | coinbase | Remote - USA | 0.108 | match | [link](https://www.coinbase.com/careers/positions/7891045?gh_jid=7891045) | 2026-11-19T23:37:02Z |
+| Senior Site Reliability Engineer, InfraSec | mongodb | Dublin | 0.108 | match | [link](https://www.mongodb.com/careers/job/?gh_jid=8278897) | 2026-11-19T23:37:02Z |
 | Software Engineer - Spark | supabase | Remote, Global | 0.108 | match | [link](https://jobs.ashbyhq.com/supabase/b75ba81e-54cc-4393-a575-bc41776b0113) | 2026-11-19T23:54:57Z |
+| Staff Site Reliability Engineer | zscaler | Santa Clara, California, USA | 0.107 | match | [link](https://job-boards.greenhouse.io/zscaler/jobs/5130009007) | 2026-11-19T23:37:02Z |
+| ML Engineer, Marketplace | lyft | Toronto, Canada | 0.107 | match | [link](https://app.careerpuck.com/job-board/lyft/job/8944659002?gh_jid=8944659002) | 2026-11-19T23:37:02Z |
+| Principal Machine Learning Engineer | zscaler | Bangalore, IND | 0.107 | match | [link](https://job-boards.greenhouse.io/zscaler/jobs/5267225007) | 2026-11-19T23:37:02Z |
+| Site Reliability Engineer | supabase | Remote, Global | 0.107 | match | [link](https://jobs.ashbyhq.com/supabase/ed6cedb1-b9bf-4609-ac5c-c75c33b31bf3) | 2026-11-19T23:54:57Z |
+| Sr. Salesforce DevOps Engineer | elastic | United States | 0.107 | match | [link](https://jobs.elastic.co/jobs?gh_jid=8207939&gh_jid=8207939) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Home Surfaces | spotify | New York, NY, Boston, MA | 0.107 | match | [link](https://jobs.lever.co/spotify/6af8894a-752f-4485-be70-a6685e5fd696) | 2026-11-19T23:37:02Z |
+| Staff Site Reliability Engineer | fivetran | Bengaluru, Karnataka, India, APAC | 0.107 | match | [link](https://www.fivetran.com/careers/job?gh_jid=7723267003) | 2026-11-19T23:37:02Z |
 | Products Analytics Engineer - Internship | ledger | Paris, France, Remote | 0.107 | match | [link](https://jobs.ashbyhq.com/ledger/8147f1f8-bbe5-4c63-b1b6-115eaf6efad2) | 2026-11-19T23:54:57Z |
 | Engineering Manager - Spark | supabase | Remote, Global | 0.106 | match | [link](https://jobs.ashbyhq.com/supabase/c6d89ec0-76ee-4de7-92d0-2e0262e9e025) | 2026-11-19T23:54:57Z |
+| Principal Site Reliability Engineer | zscaler | Remote - USA; Santa Clara, California, USA | 0.106 | match | [link](https://job-boards.greenhouse.io/zscaler/jobs/5277461007) | 2026-11-19T23:37:02Z |
 | Senior Staff Data Engineer | cohere | Toronto, San Francisco, Canada, United States, New York, Ottawa, Montreal, Remote | 0.105 | match | [link](https://jobs.ashbyhq.com/cohere/4ef5101e-b083-49cd-808a-54c754d159e5) | 2026-11-19T23:37:02Z |
 | Sr. Specialist Solutions Architect - Platform Security and Cloud Infrastructure | databricks | Paris, France | 0.105 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8910988002) | 2026-11-19T23:37:02Z |
+| Senior Staff Machine Learning Engineer - Perception | zoox | Boston, MA | 0.105 | match | [link](https://jobs.lever.co/zoox/1ff0f89b-77ec-4e86-927e-7098c377581f) | 2026-11-19T23:54:57Z |
 | Data Engineer | Addepto |  | 0.105 | match | [link](https://remoteOK.com/remote-jobs/remote-data-engineer-addepto-1137714) | 2026-11-19T21:31:05Z |
+| QA/DevOps Engineer | discord | San Francisco Bay Area or Remote (U.S.) | 0.105 | match | [link](https://job-boards.greenhouse.io/discord/jobs/8703614002) | 2026-11-19T23:37:02Z |
+| Staff Software Engineer, Enterprise AI (Intelligence Platform) | riotgames | Los Angeles, USA | 0.105 | match | [link](https://www.riotgames.com/en/work-with-us/job/8174908?gh_jid=8174908) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, Core Engineering | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US; Remote, US | 0.105 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=6121450) | 2026-11-19T23:37:02Z |
 | Software Engineer | Mirantis |  | 0.105 | match | [link](https://remoteOK.com/remote-jobs/remote-software-engineer-mirantis-1137387) | 2026-11-19T21:31:05Z |
+| Staff Machine Learning Engineer, Compliance Automation (Platform) | coinbase | Remote - USA | 0.105 | match | [link](https://www.coinbase.com/careers/positions/8333165?gh_jid=8333165) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer II, Core Engineering | pinterest | Toronto, ON, CA | 0.105 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=7473497) | 2026-11-19T23:37:02Z |
 | Data Engineer, Core Experimentation | openai | Seattle, Remote | 0.104 | match | [link](https://jobs.ashbyhq.com/openai/2796d32a-9f7c-4008-a2c5-50dd53b0f2fe) | 2026-11-19T23:54:57Z |
+| Sr. Machine Learning Engineer, Core Engineering | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US | 0.104 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=6121464) | 2026-11-19T23:37:02Z |
+| Senior DevOps Engineer | hubspotjobs | Remote - USA | 0.104 | match | [link](https://www.hubspot.com/careers/jobs/8256969?gh_jid=8256969) | 2026-11-19T23:37:02Z |
 | Senior Market Data Engineer | coinbase | Remote - USA | 0.104 | match | [link](https://www.coinbase.com/careers/positions/8180833?gh_jid=8180833) | 2026-11-19T23:37:02Z |
+| IT Systems Engineer, Client Platform Engineer, macOS | anthropic | Boston, MA; Remote-Friendly (Travel-Required) / San Francisco, CA / Seattle, WA / New York City, NY; Washington, DC | 0.104 | match | [link](https://job-boards.greenhouse.io/anthropic/jobs/5445625008) | 2026-11-19T23:37:02Z |
+| Sr. Site Reliability Engineer- Federal | zscaler | Santa Clara, California, USA | 0.104 | match | [link](https://job-boards.greenhouse.io/zscaler/jobs/5256468007) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer - Central Technology, Anti-Cheat | riotgames | Los Angeles, USA | 0.104 | match | [link](https://www.riotgames.com/en/work-with-us/job/8202900?gh_jid=8202900) | 2026-11-19T23:37:02Z |
+| IT Systems Engineer, Mobile Client Platform Engineer | anthropic | Boston, MA; Remote-Friendly (Travel-Required) / San Francisco, CA / Seattle, WA / New York City, NY; Washington, DC | 0.104 | match | [link](https://job-boards.greenhouse.io/anthropic/jobs/5396384008) | 2026-11-19T23:37:02Z |
+| Site Reliability Engineer | singlestore | Portugal | 0.103 | match | [link](https://job-boards.greenhouse.io/singlestore/jobs/8185122) | 2026-11-19T23:37:02Z |
+| IT Systems Engineer, Client Platform Engineer, ChromeOS | anthropic | Boston, MA; Remote-Friendly (Travel-Required) / San Francisco, CA / Seattle, WA / New York City, NY; Washington, DC | 0.103 | match | [link](https://job-boards.greenhouse.io/anthropic/jobs/5456018008) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, 3D Data | roblox | San Mateo, CA, United States | 0.103 | match | [link](https://careers.roblox.com/jobs/8084095?gh_jid=8084095) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer (Applied Modeling) - League of Legends | riotgames | Los Angeles, USA | 0.103 | match | [link](https://www.riotgames.com/en/work-with-us/job/7981132?gh_jid=7981132) | 2026-11-19T23:37:02Z |
 | Analytics Engineer | modal | New York, Stockholm, San Francisco | 0.103 | match | [link](https://jobs.ashbyhq.com/modal/a518f2cd-e0c7-4105-9004-d7971f7b1daf) | 2026-11-19T23:54:57Z |
 | Manager, Technical Solutions Spark | databricks | Bengaluru, India | 0.103 | match | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8619213002) | 2026-11-19T23:37:02Z |
 | Data Platform Engineer | clickhouse | The Netherlands, United Kingdom, Spain, Germany, Remote | 0.102 | match | [link](https://jobs.ashbyhq.com/clickhouse/6d2d05da-c1f4-4ff6-9d02-a30306940857) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer (Growth) | discord | San Francisco Bay Area | 0.102 | match | [link](https://job-boards.greenhouse.io/discord/jobs/8910013002) | 2026-11-19T23:37:02Z |
+| PhD University Grad Machine Learning Engineer (USA) | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US | 0.102 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8140363) | 2026-11-19T23:37:02Z |
+| Senior / Staff Software Engineer - Learned Trajectory Machine Learning Engineer | zoox | Foster City, CA | 0.102 | match | [link](https://jobs.lever.co/zoox/24acfe86-aa1b-4aa6-903b-99b4596e42cf) | 2026-11-19T23:54:57Z |
 | Senior Data Engineer | okta | Bengaluru, India | 0.102 | match | [link](https://www.okta.com/company/careers/opportunity/8132163?gh_jid=8132163) | 2026-11-19T23:37:02Z |
+| Senior Infrastructure Software Engineer, Enterprise AI | scaleai | New York, NY; San Francisco, CA | 0.101 | match | [link](https://job-boards.greenhouse.io/scaleai/jobs/4599700005) | 2026-11-19T23:37:02Z |
 | Senior Data Engineer, Cloudforce One | cloudflare | Hybrid | 0.101 | match | [link](https://boards.greenhouse.io/cloudflare/jobs/8395358?gh_jid=8395358) | 2026-11-19T23:37:02Z |
+| Master's University Grad Machine Learning Engineer 2027 (USA) | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US; New York, NY, US | 0.100 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8140219) | 2026-11-19T23:37:02Z |
 | Data Engineer | brex | São Paulo, São Paulo, Brazil | 0.100 | match | [link](https://www.brex.com/careers/8523806002?gh_jid=8523806002) | 2026-11-19T23:37:02Z |
 | Data Engineer | brex | San Francisco, California, United States | 0.100 | match | [link](https://www.brex.com/careers/8366850002?gh_jid=8366850002) | 2026-11-19T23:37:02Z |
+| Senior Software Engineer – Tooling & Platform (Terraform) | okta | Bengaluru, India | 0.100 | match | [link](https://www.okta.com/company/careers/opportunity/7765038?gh_jid=7765038) | 2026-11-19T23:37:02Z |
 | Senior Data Platform Engineer | later | Boston, MA; San Francisco, California, United States; Vancouver, British Columbia, Canada | 0.100 | match | [link](https://job-boards.greenhouse.io/later/jobs/8863354002) | 2026-11-19T23:37:02Z |
+| Sr. Site Reliability Engineer-Federal, Security Clearance | zscaler | Crystal City, Virginia, USA | 0.100 | match | [link](https://job-boards.greenhouse.io/zscaler/jobs/5200385007) | 2026-11-19T23:37:02Z |
+| Senior Staff Machine Learning Engineer, GenAI Platform | reddit | Remote - United States | 0.100 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/7772274) | 2026-11-19T23:37:02Z |
+| Staff Site Reliability Engineer-Federal, Security Clearance | zscaler | Crystal City, Virginia, USA | 0.100 | match | [link](https://job-boards.greenhouse.io/zscaler/jobs/5200278007) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Assistance Engineering | airbnb | San Francisco, CA | 0.099 | match | [link](https://careers.airbnb.com/positions/8024316?gh_jid=8024316) | 2026-11-19T23:37:02Z |
+| Sr. Staff Site Reliability Engineer-Federal, Security Clearance | zscaler | Crystal City, Virginia, USA | 0.099 | match | [link](https://job-boards.greenhouse.io/zscaler/jobs/5252248007) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, Link | stripe | New York City | 0.099 | match | [link](https://stripe.com/jobs/search?gh_jid=8197886) | 2026-11-19T23:37:02Z |
+| Site Reliability Engineer 3 | mongodb | New York City | 0.097 | match | [link](https://www.mongodb.com/careers/job/?gh_jid=7821316) | 2026-11-19T23:37:02Z |
+| AI ML Engineer | Docusketch |  | 0.097 | match | [link](https://remoteOK.com/remote-jobs/remote-ai-ml-engineer-docusketch-1137619) | 2026-11-19T21:31:05Z |
+| Machine Learning Engineer II, Responsible AI | pinterest | San Francisco, CA, US; Remote, US | 0.097 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=7697137) | 2026-11-19T23:37:02Z |
+| Senior Staff Machine Learning Engineer, Data & Eval | airbnb | United States | 0.097 | match | [link](https://careers.airbnb.com/positions/6757302?gh_jid=6757302) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Content Visual AI | pinterest | San Francisco, CA, US; New York, NY, US; Seattle, WA, US; Remote, US | 0.097 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8247246) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer | pinterest | San Francisco, CA, US; Remote, US | 0.097 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8240355) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, EPD Ads | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US | 0.096 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=6121543) | 2026-11-19T23:37:02Z |
+| Sr. Machine Learning Engineer, Growth Science | pinterest | Toronto, ON, CA | 0.096 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=5691478) | 2026-11-19T23:37:02Z |
+| Sr. Software Engineer - SysAdmin & Internal Ops Platform | clickhouse | Europe or US, Remote | 0.096 | match | [link](https://jobs.ashbyhq.com/clickhouse/5822f2c8-a00c-4499-b595-85e8796db3cd) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer | ramp | New York, NY (HQ), Remote (US) | 0.096 | match | [link](https://jobs.ashbyhq.com/ramp/2888b101-b1da-4e53-a02e-1bb9b1b5a951) | 2026-11-19T23:54:57Z |
+| Sr. Machine Learning Engineer, EPD Ads | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US | 0.096 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=6121551) | 2026-11-19T23:37:02Z |
+| Software Platform Engineer, EU Traffic | deliveroo | London, United Kingdom - Deliveroo | 0.096 | match | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8334486) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Homefeed | pinterest | San Francisco, CA, US; Remote, US | 0.096 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8279563) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer - Content Intelligence | spotify | London, Stockholm | 0.096 | match | [link](https://jobs.lever.co/spotify/288ef608-a1e5-4127-b606-3a9981640f91) | 2026-11-19T23:37:02Z |
 | Data Engineer - Talent Acquisition Operations | palantir | New York, NY | 0.095 | match | [link](https://jobs.lever.co/palantir/1b690123-1766-4e75-a0ef-0f58afa864b4) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer - Perception | zoox | Foster City, CA, Boston, MA | 0.095 | match | [link](https://jobs.lever.co/zoox/2f65fc0e-16f1-48a9-b34d-5ca5dcf76800) | 2026-11-19T23:54:57Z |
+| Senior Site Reliability Engineer - (US-Remote) | clickhouse | United States, Remote | 0.095 | match | [link](https://jobs.ashbyhq.com/clickhouse/6b2709a0-ee6b-481a-b72c-87a669acd055) | 2026-11-19T23:37:02Z |
+| Site Reliability Engineer - US Government | palantir | Washington, D.C. | 0.095 | match | [link](https://jobs.lever.co/palantir/211f99dc-269e-4f25-84d3-d73dea782080) | 2026-11-19T23:37:02Z |
+| Manufacturing Test Infrastructure Engineer | zoox | Foster City, CA | 0.095 | match | [link](https://jobs.lever.co/zoox/6320b978-abf4-483b-a09f-bfba0c44c485) | 2026-11-19T23:54:57Z |
+| Senior Machine Learning Engineer, Ads | roblox | San Mateo, CA, United States | 0.095 | match | [link](https://careers.roblox.com/jobs/7351220?gh_jid=7351220) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer - Policy & Safety | spotify | London, Stockholm | 0.095 | match | [link](https://jobs.lever.co/spotify/d83cbddf-871a-4f9a-9b29-52cd676e2b3c) | 2026-11-19T23:37:02Z |
 | Senior Site Reliability Engineer - (EMEA-Remote) | clickhouse | United Kingdom, Denmark, Poland, Portugal, France, Spain, Germany, Italy, The Netherlands, Remote | 0.095 | match | [link](https://jobs.ashbyhq.com/clickhouse/56e89edd-e189-4afa-9b63-c3f339762ef0) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Shopping Ads | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US | 0.095 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8049465) | 2026-11-19T23:37:02Z |
+| Edge Infrastructure Engineer | palantir | Warsaw, Poland | 0.095 | match | [link](https://jobs.lever.co/palantir/3d06b4bc-6a7b-4f73-b5c5-4544354e3d0f) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Behavioral Detection | roblox | San Mateo, CA, United States | 0.094 | match | [link](https://careers.roblox.com/jobs/8311549?gh_jid=8311549) | 2026-11-19T23:37:02Z |
 | Staff Data Engineer, Market Data | coinbase | Remote - USA | 0.094 | match | [link](https://www.coinbase.com/careers/positions/8144836?gh_jid=8144836) | 2026-11-19T23:37:02Z |
+| Senior Platform Engineer (Auth0) | okta | Toronto, Ontario, Canada | 0.094 | match | [link](https://www.okta.com/company/careers/opportunity/8286405?gh_jid=8286405) | 2026-11-19T23:37:02Z |
+| Staff Client Platform Engineer | okta | San Francisco, California | 0.094 | match | [link](https://www.okta.com/company/careers/opportunity/8332521?gh_jid=8332521) | 2026-11-19T23:37:02Z |
+| Staff Data Infrastructure Engineer | faire | New York City, NY; San Francisco, CA | 0.094 | match | [link](https://boards.greenhouse.io/faire/jobs/8806617002?gh_jid=8806617002) | 2026-11-19T23:37:02Z |
+| Staff Data Infrastructure Engineer | faire | Kitchener-Waterloo, ON; Toronto, ON | 0.094 | match | [link](https://boards.greenhouse.io/faire/jobs/8860409002?gh_jid=8860409002) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Ads Bidding & Pacing | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US | 0.094 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8238679) | 2026-11-19T23:37:02Z |
+| [2027] Senior Machine Learning Engineer - PhD Early Career | roblox | San Mateo, CA, United States | 0.094 | match | [link](https://careers.roblox.com/jobs/8242623?gh_jid=8242623) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer - Economy ML | roblox | San Mateo, CA, United States | 0.094 | match | [link](https://careers.roblox.com/jobs/7729109?gh_jid=7729109) | 2026-11-19T23:37:02Z |
+| Senior Site Reliability Engineer, Compute | roblox | San Mateo, CA, United States | 0.093 | match | [link](https://careers.roblox.com/jobs/8148679?gh_jid=8148679) | 2026-11-19T23:37:02Z |
 | Senior Data Engineer Tech Foundations | airbnb | US - Remote | 0.093 | match | [link](https://careers.airbnb.com/positions/8396777?gh_jid=8396777) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Homefeed & Search Quality | pinterest | San Francisco, CA, US; Remote, US | 0.093 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8346516) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning  Engineer - Perception 3D Segmentation | zoox | Foster City, CA | 0.093 | match | [link](https://jobs.lever.co/zoox/240ae92f-51ec-4d32-a0a4-3d4669508e3d) | 2026-11-19T23:54:57Z |
+| Staff Machine Learning Engineer, Ads Lightweight Ranking | pinterest | San Francisco, CA, US; Remote, US | 0.093 | match | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8354411) | 2026-11-19T23:37:02Z |
+| Forward Deployed Site Reliability Engineer - US Government | palantir | Washington, D.C. | 0.093 | match | [link](https://jobs.lever.co/palantir/a194220b-684a-4b4e-b918-1f70154b464c) | 2026-11-19T23:37:02Z |
+| Forward Deployed Infrastructure Engineer - UK Government | palantir | London, United Kingdom | 0.093 | match | [link](https://jobs.lever.co/palantir/72e51928-07f0-4be0-aae5-0ae6956a4846) | 2026-11-19T23:37:02Z |
+| Forward Deployed Infrastructure Engineer - US Government | palantir | Honolulu, HI | 0.093 | match | [link](https://jobs.lever.co/palantir/0fccbe95-2520-4df3-8600-7897656c06a2) | 2026-11-19T23:37:02Z |
+| Forward Deployed Infrastructure Engineer - US Government | palantir | Washington, D.C. | 0.093 | match | [link](https://jobs.lever.co/palantir/74748e0e-a0bc-4c53-a636-ef14e36d9b5e) | 2026-11-19T23:37:02Z |
+| Forward Deployed Infrastructure Engineer - US Government | palantir | New York, NY | 0.093 | match | [link](https://jobs.lever.co/palantir/b57f08e9-546c-4b9b-8d21-db0ebbc11363) | 2026-11-19T23:37:02Z |
+| Senior Site Reliability Engineer- (APJ-Remote) | clickhouse | Singapore, Australia, Remote | 0.093 | match | [link](https://jobs.ashbyhq.com/clickhouse/586876a1-0847-4652-b799-1680eb2ef880) | 2026-11-19T23:37:02Z |
+| Staff Platform Engineer | tide | Bulgaria | 0.092 | match | [link](https://job-boards.greenhouse.io/tide/jobs/8036817003) | 2026-11-19T23:54:57Z |
+| Staff Platform Engineer | tide | Lithuania | 0.092 | match | [link](https://job-boards.greenhouse.io/tide/jobs/8039814003) | 2026-11-19T23:54:57Z |
+| Staff Platform Engineer | tide | Serbia | 0.092 | match | [link](https://job-boards.greenhouse.io/tide/jobs/8039813003) | 2026-11-19T23:54:57Z |
+| Principal Machine Learning Engineer - Matchmaking | roblox | San Mateo, CA, United States | 0.092 | match | [link](https://careers.roblox.com/jobs/8257625?gh_jid=8257625) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Assistance Engineering | airbnb | China | 0.092 | match | [link](https://careers.airbnb.com/positions/7975743?gh_jid=7975743) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Assistance Engineering | airbnb | Remote-USA | 0.092 | match | [link](https://careers.airbnb.com/positions/8014904?gh_jid=8014904) | 2026-11-19T23:37:02Z |
 | Senior Site Reliability Engineer (K8s, Terraform, Python) | okta | Bengaluru, India | 0.092 | match | [link](https://www.okta.com/company/careers/opportunity/8255904?gh_jid=8255904) | 2026-11-19T23:37:02Z |
+| Forward Deployed Infrastructure Engineer, New Grad - UK Government | palantir | London, United Kingdom | 0.092 | match | [link](https://jobs.lever.co/palantir/cadc0eb2-2703-43e4-8e4f-41edf5b071c6) | 2026-11-19T23:37:02Z |
+| Forward Deployed Infrastructure Engineer, New Grad - US Government | palantir | Palo Alto, CA | 0.092 | match | [link](https://jobs.lever.co/palantir/33243fb5-6907-40c7-930c-968b25d825d0) | 2026-11-19T23:37:02Z |
+| Forward Deployed Infrastructure Engineer, New Grad - US Government | palantir | Washington, D.C. | 0.092 | match | [link](https://jobs.lever.co/palantir/5a28f3a5-8655-47f2-ab19-a79b8a319da8) | 2026-11-19T23:37:02Z |
+| Forward Deployed Infrastructure Engineer, New Grad - US Government | palantir | Honolulu, HI | 0.092 | match | [link](https://jobs.lever.co/palantir/701a9307-0619-45d3-b077-cabe9897cd12) | 2026-11-19T23:37:02Z |
+| Forward Deployed Infrastructure Engineer, New Grad - US Government | palantir | New York, NY | 0.092 | match | [link](https://jobs.lever.co/palantir/91117724-9389-48dc-912f-98e48d4d45d8) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer | reddit | Remote - Ontario, Canada | 0.092 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/6960833) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer | reddit | Remote - United States | 0.092 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/6960831) | 2026-11-19T23:37:02Z |
+| PhD Machine Learning Engineer, Intern | stripe | San Francisco, New York City, Seattle | 0.092 | match | [link](https://stripe.com/jobs/search?gh_jid=8328662) | 2026-11-19T23:37:02Z |
+| PhD Machine Learning Engineer, Intern | stripe | Toronto | 0.092 | match | [link](https://stripe.com/jobs/search?gh_jid=8328664) | 2026-11-19T23:37:02Z |
 | Senior Site Reliability Engineer - (Canada-Remote) | clickhouse | Canada, Remote | 0.091 | match | [link](https://jobs.ashbyhq.com/clickhouse/d1339d58-daaf-4ac6-9c48-87b0361be11d) | 2026-11-19T23:37:02Z |
+| Member of Technical Staff (Machine Learning Engineer, Search) | perplexity | Belgrade, London, Dublin, Remote | 0.091 | match | [link](https://jobs.ashbyhq.com/Perplexity/0190699f-010b-44f2-8399-278899fef018) | 2026-11-19T23:54:57Z |
+| Master's Machine Learning Engineer, Intern | stripe | Toronto | 0.091 | match | [link](https://stripe.com/jobs/search?gh_jid=8333122) | 2026-11-19T23:37:02Z |
+| Master's Machine Learning Engineer, Intern | stripe | San Francisco, New York City, Seattle | 0.091 | match | [link](https://stripe.com/jobs/search?gh_jid=8333074) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer | coinbase | Remote - USA | 0.091 | match | [link](https://www.coinbase.com/careers/positions/8347602?gh_jid=8347602) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer | coinbase | Remote - India | 0.091 | match | [link](https://www.coinbase.com/careers/positions/7739592?gh_jid=7739592) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer - Messaging Platform | spotify | London, Stockholm | 0.091 | match | [link](https://jobs.lever.co/spotify/c322d068-5b59-4658-b618-bb2a032eeb9b) | 2026-11-19T23:37:02Z |
+| Principal Machine Learning Infrastructure Engineer, Ads | roblox | San Mateo, CA, United States | 0.091 | match | [link](https://careers.roblox.com/jobs/8090079?gh_jid=8090079) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, CX | coinbase | Remote - USA | 0.091 | match | [link](https://www.coinbase.com/careers/positions/8292793?gh_jid=8292793) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Infrastructure Engineer, Matchmaking | roblox | San Mateo, CA, United States | 0.091 | match | [link](https://careers.roblox.com/jobs/8282837?gh_jid=8282837) | 2026-11-19T23:37:02Z |
+| Senior Software Engineer - SRE | okta | Bengaluru, India | 0.091 | match | [link](https://www.okta.com/company/careers/opportunity/8263916?gh_jid=8263916) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Traffic Intelligence | airbnb | United States | 0.090 | match | [link](https://careers.airbnb.com/positions/8129371?gh_jid=8129371) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, Radar | stripe | Seattle | 0.090 | match | [link](https://stripe.com/jobs/search?gh_jid=8243617) | 2026-11-19T23:37:02Z |
+| Senior Site Reliability Engineer | okta | Dublin, Ireland | 0.090 | match | [link](https://www.okta.com/company/careers/opportunity/8184826?gh_jid=8184826) | 2026-11-19T23:37:02Z |
+| Senior Site Reliability Engineer | okta | Bengaluru, India | 0.090 | match | [link](https://www.okta.com/company/careers/opportunity/7963271?gh_jid=7963271) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Recommendations | lyft | San Francisco, CA | 0.090 | match | [link](https://app.careerpuck.com/job-board/lyft/job/8430552002?gh_jid=8430552002) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Recommendations | lyft | Toronto, Canada | 0.090 | match | [link](https://app.careerpuck.com/job-board/lyft/job/8603653002?gh_jid=8603653002) | 2026-11-19T23:37:02Z |
+| Senior Staff Machine Learning Engineer, Ads Ranking | reddit | Remote - United States | 0.090 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8368600) | 2026-11-19T23:37:02Z |
+| Senior/Staff Machine Learning Engineer, 3D Simulation | zoox | Foster City, CA, Seattle, WA | 0.090 | match | [link](https://jobs.lever.co/zoox/1dc3a72e-1461-4c66-b424-252f057809ed) | 2026-11-19T23:54:57Z |
 | Senior Data Engineer | plaid | San Francisco HQ, Seattle Office, Remote | 0.089 | match | [link](https://jobs.ashbyhq.com/plaid/eeb094c3-da73-411e-8dda-b3f4ee397f97) | 2026-11-19T23:37:02Z |
+| Senior Staff Machine Learning Engineer, Trust | airbnb | Remote - USA | 0.089 | match | [link](https://careers.airbnb.com/positions/7592146?gh_jid=7592146) | 2026-11-19T23:37:02Z |
+| Senior / Staff Machine Learning Engineer - Behavior Models for Road Users | zoox | Foster City, CA | 0.089 | match | [link](https://jobs.lever.co/zoox/170c22c2-24f8-4163-a007-45dec5bdb902) | 2026-11-19T23:54:57Z |
+| Senior Site Reliability Engineer  - EPG | okta | Bellevue, Washington; San Francisco, California | 0.089 | match | [link](https://www.okta.com/company/careers/opportunity/8268917?gh_jid=8268917) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Radar | stripe | N/A | 0.089 | match | [link](https://stripe.com/jobs/search?gh_jid=8243615) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Ads ML Efficiency | reddit | Remote - United States | 0.089 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8304463) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Platform Engineer | klaviyo | Boston, MA | 0.089 | match | [link](https://www.klaviyo.com/careers/jobs/8035953003?gh_jid=8035953003) | 2026-11-19T23:37:02Z |
+| Senior Site Reliability Engineer (Auth0) | okta | Barcelona, Spain | 0.089 | match | [link](https://www.okta.com/company/careers/opportunity/7418982?gh_jid=7418982) | 2026-11-19T23:37:02Z |
+| Senior Staff Machine Learning Engineer, Feed Relevance | reddit | Remote - United States | 0.089 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8122606) | 2026-11-19T23:37:02Z |
+| Frontend Platform Engineer | rover | Barcelona | 0.088 | match | [link](https://jobs.lever.co/rover/f91fa5e0-fa7d-4463-9030-0a3045d6556f) | 2026-11-19T23:54:57Z |
+| Senior Staff Machine Learning Engineer, ML Understanding | reddit | Remote - United States | 0.088 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8243010) | 2026-11-19T23:37:02Z |
 | Staff AI & Data Engineer, HR Systems | riotgames | Los Angeles, USA | 0.088 | match | [link](https://www.riotgames.com/en/work-with-us/job/8248055?gh_jid=8248055) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, CX Intelligence | coinbase | Remote - Brazil | 0.088 | match | [link](https://www.coinbase.com/careers/positions/8008569?gh_jid=8008569) | 2026-11-19T23:37:02Z |
+| Senior Staff Machine Learning Engineer, Post Training | airbnb | Remote - USA | 0.088 | match | [link](https://careers.airbnb.com/positions/7858738?gh_jid=7858738) | 2026-11-19T23:37:02Z |
+| Principal AI Platform Engineer | pointclickcare | Mississauga | 0.088 | match | [link](https://jobs.lever.co/pointclickcare/d27ec0dd-570d-4626-9962-2db3fc56b991) | 2026-11-19T23:37:02Z |
 | Senior Data Engineer | sofi | Cottonwood Heights, Utah, United States | 0.088 | match | [link](https://sofi.com/careers/job/8040823003?gh_jid=8040823003) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer - Risk | gusto | San Francisco, CA - Hybrid | 0.088 | match | [link](https://job-boards.greenhouse.io/gusto/jobs/7168696) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, Transaction Risk | stripe | Seattle, New York City | 0.088 | match | [link](https://stripe.com/jobs/search?gh_jid=8187574) | 2026-11-19T23:37:02Z |
+| Senior Frontend Platform Engineer | rover | Barcelona | 0.088 | match | [link](https://jobs.lever.co/rover/84c26c28-da24-4db8-8ba1-16b8bbeebdac) | 2026-11-19T23:54:57Z |
+| Member of Technical Staff (ML Engineer, Recommendations & User Modeling) | perplexity | San Francisco, Palo Alto | 0.088 | match | [link](https://jobs.ashbyhq.com/Perplexity/affd3040-91e4-4e0c-bd2f-4b022c613f91) | 2026-11-19T23:54:57Z |
+| Canada- Jr Software Engineer (SRE) | pointclickcare | Remote or Mississauga | 0.088 | match | [link](https://jobs.lever.co/pointclickcare/e56d6df3-16fb-4652-9d97-c6140700d2e0) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Ads Forecasting & Scenarios | reddit | Remote - United States | 0.088 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8029120) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer - 3D Sensor Simulation | zoox | Foster City, CA, Seattle, WA | 0.087 | match | [link](https://jobs.lever.co/zoox/2347453a-f11f-4dc2-ad14-572bc1f6247f) | 2026-11-19T23:54:57Z |
+| Member of Technical Staff (Machine Learning Engineer, Search Agent RL) | perplexity | Belgrade, London, Dublin, Remote | 0.087 | match | [link](https://jobs.ashbyhq.com/Perplexity/9cec9b33-06f2-4ba1-8c9e-20a598361ca2) | 2026-11-19T23:54:57Z |
+| Senior MLOps Engineer | later | Boston, MA; Vancouver, British Columbia, Canada | 0.086 | match | [link](https://job-boards.greenhouse.io/later/jobs/8552308002) | 2026-11-19T23:37:02Z |
+| Senior Client Platform Engineer | robinhood | Menlo Park, CA | 0.086 | match | [link](https://boards.greenhouse.io/robinhood/jobs/8354333?t=gh_src=&gh_jid=8354333) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer - AML Tech | adyen | Amsterdam | 0.086 | match | [link](https://job-boards.greenhouse.io/adyen/jobs/8288674) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, AI Platform & Agentic Apps | robinhood | Menlo Park, CA | 0.086 | match | [link](https://boards.greenhouse.io/robinhood/jobs/8107212?t=gh_src=&gh_jid=8107212) | 2026-11-19T23:37:02Z |
+| Staff Site Reliability Engineer - Monitoring and Anomaly Detection (Monetization) | gitlab | Bangalore, India | 0.086 | match | [link](https://job-boards.greenhouse.io/gitlab/jobs/8615268002) | 2026-11-19T23:37:02Z |
+| Staff Site Reliability Engineer, Environment Automation | gitlab | Bangalore, India | 0.085 | match | [link](https://job-boards.greenhouse.io/gitlab/jobs/8800489002) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer | cloudflare | Hybrid | 0.085 | match | [link](https://boards.greenhouse.io/cloudflare/jobs/8042034?gh_jid=8042034) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Trust | airbnb | San Francisco, CA | 0.085 | match | [link](https://careers.airbnb.com/positions/8130355?gh_jid=8130355) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer | epicgames | London,England,United Kingdom | 0.085 | match | [link](https://epicgames.com/careers/jobs/6117647004?gh_jid=6117647004) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Payments | airbnb | Remote-USA | 0.084 | match | [link](https://careers.airbnb.com/positions/7755758?gh_jid=7755758) | 2026-11-19T23:37:02Z |
 | Data Engineering Intern - Summer 2027 | riotgames | Los Angeles, USA | 0.084 | match | [link](https://www.riotgames.com/en/work-with-us/job/8356716?gh_jid=8356716) | 2026-11-19T23:37:02Z |
+| Network Infrastructure Engineer, Global Network Infra (WAN) | openai | San Francisco, Remote | 0.084 | match | [link](https://jobs.ashbyhq.com/openai/9f7371c4-e306-4a45-a400-aa2843fabd85) | 2026-11-19T23:54:57Z |
+| Senior Machine Learning Engineer, Relevance | airbnb | United States | 0.084 | match | [link](https://careers.airbnb.com/positions/8351417?gh_jid=8351417) | 2026-11-19T23:37:02Z |
+| Senior Staff SRE, Architecture Engineering: Hosted Runners | gitlab | Remote, Canada; Remote, United Kingdom; Remote, United States | 0.084 | match | [link](https://job-boards.greenhouse.io/gitlab/jobs/8932489002) | 2026-11-19T23:37:02Z |
+| Senior Staff / Principal Machine Learning Engineer - Autonomy Behaviors | zoox | Foster City, CA | 0.084 | match | [link](https://jobs.lever.co/zoox/b30b28b0-fea9-4420-a61e-10309c3f7c52) | 2026-11-19T23:54:57Z |
+| Software Engineer - Learned Trajectory Machine Learning Engineer | zoox | Foster City, CA | 0.083 | match | [link](https://jobs.lever.co/zoox/9176aa65-14e3-4f9d-98f9-e755e9777d67) | 2026-11-19T23:54:57Z |
+| Senior Machine Learning Engineer, Fulfillment | instacart | Canada - Remote (ON, AB, BC, or NS Only) | 0.083 | match | [link](https://instacart.careers/job/?gh_jid=8240307) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Fulfillment | instacart | United States - Remote | 0.083 | match | [link](https://instacart.careers/job/?gh_jid=8240305) | 2026-11-19T23:37:02Z |
+| Associate IT infrastructure Engineer | newrelic | Dublin, Ireland | 0.083 | match | [link](https://job-boards.greenhouse.io/newrelic/jobs/5481206008) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer - Embedded Insights | plaid | New York City Office, Seattle Office, San Francisco HQ, Remote | 0.083 | match | [link](https://jobs.ashbyhq.com/plaid/a1db9566-d51d-495e-9e87-4d57ac307d3c) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Query Intelligence | airbnb | United States | 0.083 | match | [link](https://careers.airbnb.com/positions/8065789?gh_jid=8065789) | 2026-11-19T23:37:02Z |
 | Principal Data Engineer -Teamfight Tactics | riotgames | Los Angeles, USA | 0.082 | match | [link](https://www.riotgames.com/en/work-with-us/job/8187622?gh_jid=8187622) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, ML Platform | braze | Chicago | 0.082 | match | [link](https://job-boards.greenhouse.io/braze/jobs/8209434) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, ML Platform | braze | San Francisco | 0.082 | match | [link](https://job-boards.greenhouse.io/braze/jobs/8209438) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, ML Platform | braze | New York City | 0.082 | match | [link](https://job-boards.greenhouse.io/braze/jobs/8195997) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, ML Platform | braze | Austin | 0.082 | match | [link](https://job-boards.greenhouse.io/braze/jobs/8209425) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Operations Research | instacart | United States - Remote | 0.082 | match | [link](https://instacart.careers/job/?gh_jid=7793089) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Ranking - Quora (Remote) | quora | Remote - Multiple Locations, United States, Ireland, Canada, & 13 other countries | 0.082 | match | [link](https://jobs.ashbyhq.com/quora/b9b477ad-4c43-49f0-b1fb-e7ee218686a7) | 2026-11-19T23:54:57Z |
 | Data Engineer, Product | notion | San Francisco, California | 0.082 | match | [link](https://jobs.ashbyhq.com/notion/73a71747-28d3-4dda-a718-77336056e687) | 2026-11-19T23:54:57Z |
+| Senior Forward Deployed Infrastructure Engineer | cloudflare | Hybrid | 0.082 | match | [link](https://boards.greenhouse.io/cloudflare/jobs/8256332?gh_jid=8256332) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Discovery Recommendations | epicgames | Cary,North Carolina,United States | 0.082 | match | [link](https://epicgames.com/careers/jobs/6180210004?gh_jid=6180210004) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, Discovery Recommendations | epicgames | BLANK,BLANK,Multiple Locations | 0.082 | match | [link](https://epicgames.com/careers/jobs/6231410004?gh_jid=6231410004) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, Implicit Signals | openai | San Francisco, Remote | 0.081 | match | [link](https://jobs.ashbyhq.com/openai/a01fc9ed-de08-4326-9206-4ee3f08000dc) | 2026-11-19T23:54:57Z |
+| Senior Machine Learning Engineer, Ads - Quora (Remote) | quora | Remote - Multiple Locations, United States, Ireland, Canada, & 13 other countries | 0.081 | match | [link](https://jobs.ashbyhq.com/quora/0cf73c29-e74b-4eaf-8dd4-e864d88bcc35) | 2026-11-19T23:54:57Z |
+| Staff Machine Learning Engineer, Recommendation Systems - Quora (Remote) | quora | Remote - Multiple Locations, United States, Ireland, Canada, & 13 other countries | 0.081 | match | [link](https://jobs.ashbyhq.com/quora/1027c20b-ae70-4455-91be-73aac13610b6) | 2026-11-19T23:54:57Z |
+| Senior Machine Learning Engineer - Fraud | plaid | New York City Office, Seattle Office, San Francisco HQ, Remote | 0.081 | match | [link](https://jobs.ashbyhq.com/plaid/e9a9aeab-be90-43f3-b898-63a846cb5777) | 2026-11-19T23:37:02Z |
+| Manager, Software Engineering - SRE Site Lead: Dublin ROC | riotgames | Dublin, Ireland | 0.080 | match | [link](https://www.riotgames.com/en/work-with-us/job/8385235?gh_jid=8385235) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer | coinbase | Remote - USA | 0.079 | match | [link](https://www.coinbase.com/careers/positions/8267151?gh_jid=8267151) | 2026-11-19T23:37:02Z |
 | Data Engineer | elevenlabs | United Kingdom, Spain, Hungary, Bulgaria, Poland, Italy, Netherlands, France, Remote | 0.079 | match | [link](https://jobs.ashbyhq.com/ElevenLabs/e53c5be6-5c1a-4870-ad85-8397a1f201de) | 2026-11-19T23:54:57Z |
+| Senior Site Reliability Engineer, PaaS | algolia | Paris, France | 0.079 | match | [link](https://job-boards.greenhouse.io/algolia/jobs/6200275004) | 2026-11-19T23:37:02Z |
+| DevOps Engineer (Observability) | twilio | Remote - Ireland | 0.079 | match | [link](https://job-boards.greenhouse.io/twilio/jobs/8108771) | 2026-11-19T23:37:02Z |
+| Senior Site Reliability Engineer - Search | algolia | Paris, France | 0.079 | match | [link](https://job-boards.greenhouse.io/algolia/jobs/6187901004) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer - Growth & Personalisation | deliveroo | London, England | 0.079 | match | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8202532) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer - Search | nextdoor | US Remote | 0.079 | match | [link](https://about.nextdoor.com/careers-list/?gh_jid=8399906) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer - Search | nextdoor | Dallas, TX | 0.079 | match | [link](https://about.nextdoor.com/careers-list/?gh_jid=8399912) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer - Recommendations | deliveroo | London, England | 0.078 | match | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8261231) | 2026-11-19T23:37:02Z |
 | Principal Data Engineer, Personalization - Central Product Insights | riotgames | Los Angeles, USA | 0.078 | match | [link](https://www.riotgames.com/en/work-with-us/job/8049834?gh_jid=8049834) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer II - Growth & Personalisation | deliveroo | London, England | 0.078 | match | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8202399) | 2026-11-19T23:37:02Z |
+| Senior Site Reliability Engineer | duolingo | New York, NY; Pittsburgh, PA | 0.078 | match | [link](https://careers.duolingo.com/jobs/8784381002?gh_jid=8784381002) | 2026-11-19T23:37:02Z |
+| Staff Site Reliability Engineer - Release Engineering | plaid | San Francisco HQ, Seattle Office, Remote | 0.077 | match | [link](https://jobs.ashbyhq.com/plaid/07cde72b-a127-48a8-b01a-570de5768340) | 2026-11-19T23:37:02Z |
 | Data Engineer | cloudflare | Hybrid | 0.077 | match | [link](https://boards.greenhouse.io/cloudflare/jobs/8055118?gh_jid=8055118) | 2026-11-19T23:37:02Z |
+| Member of Technical Staff (Machine Learning Engineer, Ranking Quality - Search) | perplexity | Belgrade, London, Dublin, Remote | 0.077 | match | [link](https://jobs.ashbyhq.com/Perplexity/19d8bcfd-e493-4b3a-b8fd-11a2a6502da2) | 2026-11-19T23:54:57Z |
+| Senior Machine Learning Engineer (Fraud) | affirm | Remote Canada | 0.077 | match | [link](https://job-boards.greenhouse.io/affirm/jobs/7806920003) | 2026-11-19T23:37:02Z |
+| Intermediate AI-Enabled DevOps Engineer | pointclickcare | Salt Lake City, UT | 0.076 | match | [link](https://jobs.lever.co/pointclickcare/94b85a28-9893-48c5-a2bb-a50175887ef1) | 2026-11-19T23:37:02Z |
+| Senior Infrastructure Engineer - Network Infrastructure | plaid | New York City Office, Remote | 0.075 | match | [link](https://jobs.ashbyhq.com/plaid/a6324085-a7f8-4acd-9e36-a330a6249c4d) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Consumer | reddit | Remote - United States | 0.075 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/7747244) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, SecureAI | okta | Toronto, Ontario, Canada | 0.075 | match | [link](https://www.okta.com/company/careers/opportunity/8208359?gh_jid=8208359) | 2026-11-19T23:37:02Z |
+| Senior SRE, Site Experience | reddit | Remote - United States | 0.075 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8369767) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer | twilio | Remote - Ontario, Canada (DNU) | 0.075 | match | [link](https://job-boards.greenhouse.io/twilio/jobs/8258581) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer | klaviyo | Palo Alto, CA | 0.075 | match | [link](https://www.klaviyo.com/careers/jobs/7855802003?gh_jid=7855802003) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer (L4) | twilio | Remote - India | 0.074 | match | [link](https://job-boards.greenhouse.io/twilio/jobs/8258593) | 2026-11-19T23:37:02Z |
+| Senior Staff SRE, Site Experience | reddit | Remote - United States | 0.074 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8369169) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, AI Security | reddit | Remote - United States | 0.074 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8203478) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Retrieval | reddit | Remote - United States | 0.074 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8178085) | 2026-11-19T23:37:02Z |
 | Data Engineer, Marketplace | lyft | Ukraine Anywhere | 0.074 | match | [link](https://app.careerpuck.com/job-board/lyft/job/8940409002?gh_jid=8940409002) | 2026-11-19T23:37:02Z |
+| Senior Machine Learning Engineer, End-to-End Planning | lucidmotors | Newark, CA | 0.074 | match | [link](https://lucidmotors.com/careers/search/5194178007?gh_jid=5194178007) | 2026-11-19T23:54:57Z |
+| Staff Machine Learning Engineer, Ads ML Efficiency | reddit | Remote - United States | 0.074 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8247280) | 2026-11-19T23:37:02Z |
+| Staff Site Reliability Engineer, Federal (TS/SCI) | okta | Maryland; Washington, DC | 0.074 | match | [link](https://www.okta.com/company/careers/opportunity/8097489?gh_jid=8097489) | 2026-11-19T23:37:02Z |
+| Staff Infrastructure Engineer, Cluster Infrastructure | anthropic | London, UK | 0.073 | match | [link](https://job-boards.greenhouse.io/anthropic/jobs/5211297008) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Retrieval & Targeting | reddit | Remote - United States | 0.073 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8316086) | 2026-11-19T23:37:02Z |
+| Staff TDI Site Reliability Engineer, Okta Federal | okta | Washington, DC | 0.073 | match | [link](https://www.okta.com/company/careers/opportunity/8073066?gh_jid=8073066) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Ads Forecasting & Scenarios | reddit | Remote - United States | 0.072 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8334138) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Generative AI (Auth0) | okta | Toronto, Ontario, Canada | 0.072 | match | [link](https://www.okta.com/company/careers/opportunity/8139696?gh_jid=8139696) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Ads Foundational Representations | reddit | Remote - United Kingdom | 0.072 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8018513) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Ads Foundational Representations | reddit | New York City, NY | 0.072 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8382925) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer, Ads Foundational Representations | reddit | Remote - The Netherlands | 0.072 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8018517) | 2026-11-19T23:37:02Z |
+| Staff Site Reliability Engineer | okta | Bengaluru, India | 0.072 | match | [link](https://www.okta.com/company/careers/opportunity/8242975?gh_jid=8242975) | 2026-11-19T23:37:02Z |
+| Staff Site Reliability Engineer | okta | Bellevue, WA, United States | 0.072 | match | [link](https://www.okta.com/company/careers/opportunity/8385706?gh_jid=8385706) | 2026-11-19T23:37:02Z |
+| Software Engineer - Data Aquisition (systems) | openai | San Francisco | 0.072 | match | [link](https://jobs.ashbyhq.com/openai/70aaaafa-fe2f-4409-9a72-c0faf50d7d01) | 2026-11-19T23:54:57Z |
+| Staff Machine Learning Engineer, Ads Creative Effectiveness | reddit | Remote - United States | 0.072 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8250389) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, Monetization AI/ML | openai | San Francisco | 0.072 | match | [link](https://jobs.ashbyhq.com/openai/80f9f564-d789-47bc-91c3-3babf5a1a33d) | 2026-11-19T23:54:57Z |
 | Data Engineer Intern (Summer 2027) | lyft | Toronto, Canada | 0.072 | match | [link](https://app.careerpuck.com/job-board/lyft/job/8797376002?gh_jid=8797376002) | 2026-11-19T23:37:02Z |
+| Principal Machine Learning Engineer, SecureAI | okta | Toronto, Ontario, Canada | 0.071 | match | [link](https://www.okta.com/company/careers/opportunity/8208377?gh_jid=8208377) | 2026-11-19T23:37:02Z |
+| Staff  Site Reliability Engineer, Networking w/ active TS/SCI | okta | Maryland; Washington, DC | 0.071 | match | [link](https://www.okta.com/company/careers/opportunity/7575679?gh_jid=7575679) | 2026-11-19T23:37:02Z |
+| Staff Site Reliability Engineer - IDaaS | okta | Toronto, ON, Canada | 0.071 | match | [link](https://www.okta.com/company/careers/opportunity/8071442?gh_jid=8071442) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer - Fraud | plaid | San Francisco HQ, Seattle Office, New York City Office, Remote | 0.071 | match | [link](https://jobs.ashbyhq.com/plaid/85cd5d07-9920-45fa-931a-daf8c3558e5b) | 2026-11-19T23:37:02Z |
+| Staff Machine Learning Engineer - Vision AI | toast | Remote, US | 0.071 | match | [link](https://careers.toasttab.com/jobs?gh_jid=8368738) | 2026-11-19T23:37:02Z |
+| Staff Site Reliability Engineer, Security- GCP | okta | Bengaluru, India | 0.071 | match | [link](https://www.okta.com/company/careers/opportunity/6671260?gh_jid=6671260) | 2026-11-19T23:37:02Z |
+| EDA Cloud & Developer Infrastructure Engineer | openai | San Francisco, Remote | 0.070 | match | [link](https://jobs.ashbyhq.com/openai/4f2d9849-ad00-48d5-a22f-0cb943723999) | 2026-11-19T23:54:57Z |
+| Machine Learning Engineering Intern (Masters/PhD) - Summer 2027 | riotgames | Los Angeles, USA | 0.070 | match | [link](https://www.riotgames.com/en/work-with-us/job/8356771?gh_jid=8356771) | 2026-11-19T23:37:02Z |
 | Data Engineer, Marketing | cursor | San Francisco, CA | 0.069 | match | [link](https://jobs.ashbyhq.com/cursor/6acdd80a-3a1b-4701-a607-ca10d86c6847) | 2026-11-19T23:54:57Z |
+| Manager, Site Reliability Engineer | okta | Bengaluru, India | 0.069 | match | [link](https://www.okta.com/company/careers/opportunity/7247309?gh_jid=7247309) | 2026-11-19T23:37:02Z |
+| Internship - Search Machine Learning Engineer | perplexity | Belgrade | 0.069 | match | [link](https://jobs.ashbyhq.com/Perplexity/9246cf02-26fd-4ae8-90c5-639c6e85e9e2) | 2026-11-19T23:54:57Z |
+| Internship - Search Machine Learning Engineer | perplexity | London | 0.069 | match | [link](https://jobs.ashbyhq.com/Perplexity/71168628-1998-47d3-87a9-be7bc56a430d) | 2026-11-19T23:54:57Z |
+| Machine Learning Engineer II (ROA + LTV ML) | affirm | Remote Canada | 0.066 | match | [link](https://job-boards.greenhouse.io/affirm/jobs/8033261003) | 2026-11-19T23:37:02Z |
 | Data Engineer, Hardware & Consumer Devices | openai | San Francisco | 0.066 | match | [link](https://jobs.ashbyhq.com/openai/c25fd30e-056e-4a26-af80-7ea1074fc56e) | 2026-11-19T23:54:57Z |
+| Staff Machine Learning Engineer – (ADAS/Autonomous Driving) | lucidmotors | Newark, CA | 0.065 | match | [link](https://lucidmotors.com/careers/search/4620390007?gh_jid=4620390007) | 2026-11-19T23:54:57Z |
+| Machine Learning Engineer, Safety and Customer Care AI | lyft | Toronto, Canada | 0.064 | match | [link](https://app.careerpuck.com/job-board/lyft/job/8684440002?gh_jid=8684440002) | 2026-11-19T23:37:02Z |
+| Sr/Staff Perception Machine Learning Engineer | lucidmotors | Michigan, United States | 0.064 | match | [link](https://lucidmotors.com/careers/search/5197938007?gh_jid=5197938007) | 2026-11-19T23:54:57Z |
+| Member of Technical Staff (Site Reliability Engineer, Search Crawler) | perplexity | London, Belgrade, Dublin | 0.063 | match | [link](https://jobs.ashbyhq.com/Perplexity/190962f1-a955-4690-8025-6943dcbf063c) | 2026-11-19T23:54:57Z |
 | Data Engineer | lyft | Toronto, Canada | 0.062 | match | [link](https://app.careerpuck.com/job-board/lyft/job/8662205002?gh_jid=8662205002) | 2026-11-19T23:37:02Z |
+| Pre-training Data Infrastructure Engineer | anthropic | San Francisco, CA | 0.061 | match | [link](https://job-boards.greenhouse.io/anthropic/jobs/4973067008) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer | reddit | Remote - Ontario, Canada | 0.061 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/7131934) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer | reddit | Remote - United States | 0.061 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/7131932) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, 3D Simulation | zoox | Foster City, CA, Seattle, WA | 0.061 | match | [link](https://jobs.lever.co/zoox/2d73563c-8039-4d1b-844c-3953259ba6b1) | 2026-11-19T23:54:57Z |
+| Machine Learning Engineer, Memory | epicgames | London,England,United Kingdom | 0.060 | match | [link](https://epicgames.com/careers/jobs/6141143004?gh_jid=6141143004) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, Memory | epicgames | Cary,North Carolina,United States | 0.060 | match | [link](https://epicgames.com/careers/jobs/6134271004?gh_jid=6134271004) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, Memory | epicgames | Porto Alegre,Rio Grande do Sul,Brazil | 0.060 | match | [link](https://epicgames.com/careers/jobs/6142418004?gh_jid=6142418004) | 2026-11-19T23:37:02Z |
+| Staff SRE, Site Experience | reddit | Remote - United States | 0.060 | match | [link](https://job-boards.greenhouse.io/reddit/jobs/8018555) | 2026-11-19T23:37:02Z |
+| Intermediate Site Reliability Engineer (SRE) | pointclickcare | Salt Lake City, UT | 0.059 | match | [link](https://jobs.lever.co/pointclickcare/37553fe8-a0c4-41db-b0d4-4ad0ca7941af) | 2026-11-19T23:37:02Z |
 | Data Engineer, GTM | anthropic | San Francisco, CA / New York City, NY | 0.059 | match | [link](https://job-boards.greenhouse.io/anthropic/jobs/5418610008) | 2026-11-19T23:37:02Z |
+| Machine Learning Infrastructure Engineer, Safeguards Research | anthropic | San Francisco, CA / New York City, NY | 0.059 | match | [link](https://job-boards.greenhouse.io/anthropic/jobs/5364804008) | 2026-11-19T23:37:02Z |
 | Data Engineer | benchling | San Francisco, CA, Remote | 0.059 | match | [link](https://jobs.ashbyhq.com/benchling/c97e5668-29ee-4810-b7cc-35331ac123f5) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer | coinbase | Remote - India | 0.059 | match | [link](https://www.coinbase.com/careers/positions/7985187?gh_jid=7985187) | 2026-11-19T23:37:02Z |
 | Data Engineer, Product | anthropic | San Francisco, CA / New York City, NY / Seattle, WA | 0.059 | match | [link](https://job-boards.greenhouse.io/anthropic/jobs/5448481008) | 2026-11-19T23:37:02Z |
 | Security Data Engineer | anthropic | Remote-Friendly (Travel Required) / San Francisco, CA | 0.058 | match | [link](https://job-boards.greenhouse.io/anthropic/jobs/5462966008) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer Intern | coinbase | Hybrid - San Francisco, CA | 0.058 | match | [link](https://www.coinbase.com/careers/positions/8175441?gh_jid=8175441) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer 2 | twilio | Remote - US | 0.058 | match | [link](https://job-boards.greenhouse.io/twilio/jobs/8240487) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, Assistance Engineering | airbnb | China | 0.058 | match | [link](https://careers.airbnb.com/positions/7716341?gh_jid=7716341) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, Assistance Engineering | airbnb | Remote-USA | 0.058 | match | [link](https://careers.airbnb.com/positions/7826337?gh_jid=7826337) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer (L3) | twilio | Remote - India | 0.058 | match | [link](https://job-boards.greenhouse.io/twilio/jobs/8258587) | 2026-11-19T23:37:02Z |
 | Data Engineer, Billing & Payments | anthropic | San Francisco, CA / New York City, NY | 0.058 | match | [link](https://job-boards.greenhouse.io/anthropic/jobs/5450099008) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer, CX Intelligence | coinbase | Remote - Brazil | 0.057 | match | [link](https://www.coinbase.com/careers/positions/8031260?gh_jid=8031260) | 2026-11-19T23:37:02Z |
+| Principal, Machine Learning Engineer (L5) | twilio | Remote - India | 0.057 | match | [link](https://job-boards.greenhouse.io/twilio/jobs/8258597) | 2026-11-19T23:37:02Z |
+| Principal Machine Learning Engineer, Vision AI | toast | Remote, US | 0.056 | match | [link](https://careers.toasttab.com/jobs?gh_jid=8368740) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer | lucidmotors | Southfield, MI | 0.055 | match | [link](https://lucidmotors.com/careers/search/5254390007?gh_jid=5254390007) | 2026-11-19T23:54:57Z |
+| Machine Learning Engineer - Income Insights | plaid | New York City Office, Remote | 0.053 | match | [link](https://jobs.ashbyhq.com/plaid/8d8378cf-edf2-4c86-afcc-49df91ece2e4) | 2026-11-19T23:37:02Z |
+| Infrastructure Engineer, Privy | stripe | New York | 0.053 | match | [link](https://stripe.com/jobs/search?gh_jid=7462961) | 2026-11-19T23:37:02Z |
+| Perception Machine Learning Engineer – ADAS | lucidmotors | Southfield, MI | 0.053 | match | [link](https://lucidmotors.com/careers/search/5199878007?gh_jid=5199878007) | 2026-11-19T23:54:57Z |
+| Manager, Machine Learning Engineer - Credit | plaid | New York City Office, Remote | 0.052 | match | [link](https://jobs.ashbyhq.com/plaid/77571da7-404a-49dc-9f98-b9b24df1dba2) | 2026-11-19T23:37:02Z |
+| Site Reliability Engineer | geotab | Singapore City, Singapore - Singapore | 0.047 | match | [link](https://job-boards.greenhouse.io/geotab/jobs/5445656008) | 2026-11-19T23:37:02Z |
+| Principal Machine Learning Engineer- LLM Fine-tuning and Optimization | airbnb | United States | 0.043 | match | [link](https://careers.airbnb.com/positions/7955579?gh_jid=7955579) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer - Subscriptions | spotify | London | 0.040 | match | [link](https://jobs.lever.co/spotify/19c12e29-b6d4-4d97-9053-48238fb7c381) | 2026-11-19T23:37:02Z |
+| Machine Learning Engineer - Ads | nextdoor | US Remote | 0.037 | match | [link](https://about.nextdoor.com/careers-list/?gh_jid=6005888) | 2026-11-19T23:37:02Z |
+| Gestionnaire, Ingénierie de la fiabilité des sites (SRE) | lightspeedhq | Montreal, Remote | 0.029 | match | [link](https://jobs.ashbyhq.com/lightspeedhq/45e63872-1b53-46d4-9d3b-99ac19ca24f2) | 2026-11-19T23:37:02Z |
 | AV Engineer - Platform | spotify | Stockholm | 0.494 | no | [link](https://jobs.lever.co/spotify/785989a6-b219-43b1-92d9-750a67054f24) | 2026-11-19T23:37:02Z |
 | Data Scientist - Music Mission | spotify | New York, NY | 0.339 | no | [link](https://jobs.lever.co/spotify/1bbaf909-5ff3-4ed6-87ca-f7ff007a169c) | 2026-11-19T23:37:02Z |
 | Data Scientist - Music Promotion | spotify | New York, NY | 0.327 | no | [link](https://jobs.lever.co/spotify/56ea6f2e-f20b-4e46-ab94-d3eb0a89482d) | 2026-11-19T23:37:02Z |
@@ -236,14 +631,11 @@
 | Senior Product Manager – Agentic Platform | pointclickcare | Remote or Mississauga | 0.216 | no | [link](https://jobs.lever.co/pointclickcare/73ad5135-fd75-449d-8008-df929acb80c2) | 2026-11-19T23:37:02Z |
 | Manager II, Engineering - Kubernetes Platform | pinterest | San Francisco, CA, US; Remote, CA, US | 0.212 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8139439) | 2026-11-19T23:37:02Z |
 | Senior Data Scientist | asana | Vancouver, BC | 0.210 | no | [link](https://www.asana.com/jobs/apply/8275149?gh_jid=8275149) | 2026-11-19T23:37:02Z |
-| Senior Software Engineer - Java (Media Platform) | squarespace | New York City | 0.210 | no | [link](http://www.squarespace.com/about/careers?gh_jid=6305471) | 2026-11-19T23:37:02Z |
 | Senior Analyst | affirm | Remote US | 0.207 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/7804953003) | 2026-11-19T23:37:02Z |
 | Senior Analyst | affirm | Remote Canada | 0.207 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/7804955003) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer — Kubernetes Control Plane | Buoyant |  | 0.207 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-software-engineer-kubernetes-control-plane-buoyant-1137713) | 2026-11-19T21:31:05Z |
-| Senior Machine Learning Engineer - Platform Team | sumup | Berlin, Germany | 0.205 | no | [link](https://sumup.com/careers/positions/8712443002?gh_jid=8712443002) | 2026-11-19T23:37:02Z |
 | Sr. Product Manager, Databricks AI | databricks | Seattle, Washington | 0.204 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8136204002) | 2026-11-19T23:37:02Z |
 | Sr. Product Manager, Databricks AI | databricks | San Francisco, California | 0.204 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8136071002) | 2026-11-19T23:37:02Z |
-| Senior Platform Engineer | sumup | Boulder, Colorado, United States | 0.204 | no | [link](https://sumup.com/careers/positions/8656544002?gh_jid=8656544002) | 2026-11-19T23:37:02Z |
 | Senior Fullstack Engineer - Grafana Data Source Plugins / NASA / (Remote, Canada) | grafanalabs | Canada (Remote) | 0.204 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6223972004) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Data Foundation | mixpanel | San Francisco, US (Hybrid) | 0.203 | no | [link](https://job-boards.greenhouse.io/mixpanel/jobs/7943560) | 2026-11-19T23:37:02Z |
 | Data Scientist - Behavior Evaluation | zoox | Foster City, CA | 0.203 | no | [link](https://jobs.lever.co/zoox/acaafc9a-486d-4045-80d7-12b09e39330e) | 2026-11-19T23:54:57Z |
@@ -258,7 +650,6 @@
 | Manager, Client Platform Engineering | mongodb | Los Angeles; Phoenix; San Diego; Seattle | 0.199 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8384766) | 2026-11-19T23:37:02Z |
 | Senior FullStack Engineer - Grafana Cloud Observability/ Canada / Remote | grafanalabs | Canada (Remote) | 0.199 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6130872004) | 2026-11-19T23:37:02Z |
 | Applied Data Scientist, Personalization & Machine Learning | openai | San Francisco, Remote | 0.198 | no | [link](https://jobs.ashbyhq.com/openai/5dce6671-9aa8-4c49-b263-b175a2a927f8) | 2026-11-19T23:54:57Z |
-| Senior Platform Engineer - GenAI | adyen | Amsterdam; Madrid | 0.198 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8163866) | 2026-11-19T23:37:02Z |
 | Staff Product Designer, AI Products | databricks | New York City, New York | 0.197 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8584704002) | 2026-11-19T23:37:02Z |
 | Senior Security Engineer - Data Security | sigmacomputing | San Francisco, CA and New York, New York | 0.197 | no | [link](https://job-boards.greenhouse.io/sigmacomputing/jobs/7774471003) | 2026-11-19T23:37:02Z |
 | Senior Full Stack Engineer / Database Observability, Grafana Cloud / UK / Remote | grafanalabs | United Kingdom (Remote) | 0.197 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6250630004) | 2026-11-19T23:37:02Z |
@@ -267,21 +658,15 @@
 | Engineering Manager, Client Platform Engineering | openai | San Francisco, New York City, Seattle, Remote | 0.195 | no | [link](https://jobs.ashbyhq.com/openai/5df9e349-f8e1-4cfd-ba20-ec9e4115d564) | 2026-11-19T23:54:57Z |
 | Senior Full Stack Engineer / Database Observability, Grafana Cloud / Ireland / Remote | grafanalabs | Republic of Ireland (Remote) | 0.195 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6250634004) | 2026-11-19T23:37:02Z |
 | Senior Full Stack Engineer / Database Observability, Grafana Cloud / Germany / Remote | grafanalabs | Germany (Remote) | 0.195 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6250631004) | 2026-11-19T23:37:02Z |
-| Senior Software Engineer - Kubernetes platform | cloudflare | Distributed; Hybrid | 0.193 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8263016?gh_jid=8263016) | 2026-11-19T23:37:02Z |
 | Staff Data Scientist, Marketing Analytics | chime | San Francisco, CA, USA | 0.193 | no | [link](https://boards.greenhouse.io/chime/jobs/8882465002?gh_jid=8882465002) | 2026-11-19T23:37:02Z |
 | Manager, Internal Product Analytics | datadog | New York, New York, USA | 0.193 | no | [link](https://careers.datadoghq.com/detail/8128810/?gh_jid=8128810) | 2026-11-19T23:37:02Z |
 | Staff AI Engineer / Canada / Remote | grafanalabs | Canada (Remote) | 0.192 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6092954004) | 2026-11-19T23:37:02Z |
-| Senior / Staff Machine Learning Engineer - 3D Sensor Simulation | zoox | Foster City, CA, Seattle, WA | 0.192 | no | [link](https://jobs.lever.co/zoox/d6748d5e-b0ee-424b-b303-c5688713662a) | 2026-11-19T23:54:57Z |
 | Staff AI Engineer / USA / Remote | grafanalabs | United States (Remote) | 0.192 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6092955004) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Builder Platform | temporal | United States (Remote), Vancouver, British Columbia, Toronto, Ontario, Ottawa, Ontario | 0.191 | no | [link](https://jobs.ashbyhq.com/temporal/86db065f-0f55-4985-b0f1-ce6a5e75f622) | 2026-11-19T23:54:57Z |
 | Senior Product Manager, Data | mixpanel | New York City, US (Hybrid) | 0.190 | no | [link](https://job-boards.greenhouse.io/mixpanel/jobs/8354540) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Builder Platform | temporal | United States (Remote), Vancouver, British Columbia, Toronto, Ontario, Ottawa, Ontario | 0.190 | no | [link](https://jobs.ashbyhq.com/temporal/a1e22a53-a8c2-410d-9385-814a488dd6c1) | 2026-11-19T23:54:57Z |
-| Senior Client Platform Engineer, Endpoint Platform & Automation | dropbox | Remote - US: Select locations | 0.190 | no | [link](https://jobs.dropbox.com/listing/8356941?gh_jid=8356941) | 2026-11-19T23:37:02Z |
-| Senior Client Platform Engineer, Endpoint Platform & Automation | dropbox | Remote - Ireland | 0.190 | no | [link](https://jobs.dropbox.com/listing/8356939?gh_jid=8356939) | 2026-11-19T23:37:02Z |
-| Senior Client Platform Engineer, Endpoint Platform & Automation | dropbox | Remote - Canada: Select locations | 0.190 | no | [link](https://jobs.dropbox.com/listing/8356942?gh_jid=8356942) | 2026-11-19T23:37:02Z |
 | [2027] Applied Scientist - PhD Intern | roblox | San Mateo, CA, United States | 0.189 | no | [link](https://careers.roblox.com/jobs/8242621?gh_jid=8242621) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Data Platform | chime | San Francisco, CA, USA | 0.189 | no | [link](https://boards.greenhouse.io/chime/jobs/8840193002?gh_jid=8840193002) | 2026-11-19T23:37:02Z |
-| Storage Platform Engineer | supabase | Remote, Global | 0.189 | no | [link](https://jobs.ashbyhq.com/supabase/463d8cd7-3092-44eb-b80e-8d21008e569e) | 2026-11-19T23:54:57Z |
 | Senior Staff Software Engineer, Builder Platform | temporal | United States (Remote), Vancouver, British Columbia, Toronto, Ontario, Ottawa, Ontario | 0.189 | no | [link](https://jobs.ashbyhq.com/temporal/dfa01032-82b4-443f-bfdc-1a20bd976b9c) | 2026-11-19T23:54:57Z |
 | Senior Staff Applied Scientist, Science Platform | reddit | Remote - United States | 0.188 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8282748) | 2026-11-19T23:37:02Z |
 | Senior Manager, Infrastructure Data Science | databricks | Mountain View, California | 0.187 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7641390002) | 2026-11-19T23:37:02Z |
@@ -289,33 +674,21 @@
 | Senior Data Scientist, AI Product Insights | mixpanel | San Francisco, US (Hybrid) | 0.187 | no | [link](https://job-boards.greenhouse.io/mixpanel/jobs/8115028) | 2026-11-19T23:37:02Z |
 | Sr. Product Manager, Lakebase/Lakehouse | databricks | San Francisco, California | 0.187 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8811265002) | 2026-11-19T23:37:02Z |
 | Sr. Product Manager, Lakebase/Lakehouse | databricks | Seattle, Washington | 0.187 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8876675002) | 2026-11-19T23:37:02Z |
-| Software Engineer, Infrastructure | chime | Chicago, IL, USA; New York, NY, USA; San Francisco, CA, USA | 0.186 | no | [link](https://boards.greenhouse.io/chime/jobs/8616359002?gh_jid=8616359002) | 2026-11-19T23:37:02Z |
-| Infrastructure Software Engineer, Apps Platform | scaleai | London, UK | 0.186 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4745021005) | 2026-11-19T23:37:02Z |
 | Tech Lead Manager, Data Integration Platform | chime | San Francisco, CA, USA | 0.186 | no | [link](https://boards.greenhouse.io/chime/jobs/8733757002?gh_jid=8733757002) | 2026-11-19T23:37:02Z |
 | Senior Cloud Performance Engineer | clickhouse | Singapore, Remote | 0.186 | no | [link](https://jobs.ashbyhq.com/clickhouse/a7182394-b016-4681-8e76-e71ad22cbe02) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, AI | klue | Toronto, Ontario | 0.186 | no | [link](https://jobs.ashbyhq.com/klue/25683e0d-db43-499b-9dd1-7bcecb763e61) | 2026-11-19T23:37:02Z |
 | Senior IT Analyst | airbyte | San Francisco, Remote | 0.186 | no | [link](https://jobs.ashbyhq.com/airbyte/fc53d441-aa69-4d69-8cc4-6bd5607ba780) | 2026-11-19T23:54:57Z |
-| Staff Software Engineer - Databases SRE / UK / Remote | grafanalabs | United Kingdom (Remote) | 0.185 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6101637004) | 2026-11-19T23:37:02Z |
 | Team Lead - Platform Monitoring Engineer | databricks | Bengaluru, India | 0.185 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8788176002) | 2026-11-19T23:37:02Z |
-| Senior Infrastructure Software Engineer, Apps Platform | scaleai | London, UK | 0.185 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4729979005) | 2026-11-19T23:37:02Z |
-| Staff Software Engineer - Databases SRE / Spain / Remote | grafanalabs | Spain (Remote) | 0.184 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6103685004) | 2026-11-19T23:37:02Z |
 | Senior Full Stack Engineer - Databases - Analytics / UK / Remote | grafanalabs | United Kingdom (Remote) | 0.184 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6200028004) | 2026-11-19T23:37:02Z |
 | Senior Financial Analyst - Strategic GTM Finance | databricks | Mountain View, California; San Francisco, California | 0.184 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8414474002) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Personalization | spotify | New York, NY | 0.184 | no | [link](https://jobs.lever.co/spotify/05b8d6ee-0773-4255-b8b9-ae73d74a5ee5) | 2026-11-19T23:37:02Z |
 | Senior Full Stack Engineer - Databases, Analytics / Spain / Remote | grafanalabs | Spain (Remote) | 0.184 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6200023004) | 2026-11-19T23:37:02Z |
-| Staff Software Engineer - Databases SRE / Sweden / Remote | grafanalabs | Sweden (Remote) | 0.184 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6103687004) | 2026-11-19T23:37:02Z |
-| Staff Software Engineer - Databases SRE / Ireland / Remote | grafanalabs | Republic of Ireland (Remote) | 0.183 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6107502004) | 2026-11-19T23:37:02Z |
-| Staff Software Engineer - Databases SRE / Germany / Remote | grafanalabs | Germany (Remote) | 0.183 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6103688004) | 2026-11-19T23:37:02Z |
 | Senior Full Stack Engineer - Databases - Analytics / Sweden / Remote | grafanalabs | Sweden (Remote) | 0.182 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6200025004) | 2026-11-19T23:37:02Z |
 | Senior Full Stack Engineer - Databases - Analytics / Ireland / Remote | grafanalabs | Republic of Ireland (Remote) | 0.182 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6200026004) | 2026-11-19T23:37:02Z |
 | Senior Full Stack Engineer - Databases - Analytics / Germany / Remote | grafanalabs | Germany (Remote) | 0.182 | no | [link](https://job-boards.greenhouse.io/grafanalabs/jobs/6200027004) | 2026-11-19T23:37:02Z |
 | Engineering Manager - Data Platform | spotify | London | 0.181 | no | [link](https://jobs.lever.co/spotify/abcc8b41-7553-4054-b5eb-8d3e49e00e25) | 2026-11-19T23:37:02Z |
-| Client Platform Engineer | openai | San Francisco, Remote | 0.181 | no | [link](https://jobs.ashbyhq.com/openai/329fe50f-7701-4f07-982d-a4e10cbec236) | 2026-11-19T23:54:57Z |
 | Scientist II/Senior Scientist | abcellera | Vancouver | 0.180 | no | [link](https://job-boards.greenhouse.io/abcellera/jobs/8020415003) | 2026-11-19T23:37:02Z |
-| Senior Site Reliability Engineer | airbyte | San Francisco, Remote | 0.180 | no | [link](https://jobs.ashbyhq.com/airbyte/5930fed9-c4f6-43c3-87be-3402c2c46489) | 2026-11-19T23:54:57Z |
 | Engineering Manager - Data Platform | n26 | Berlin | 0.179 | no | [link](https://n26.com/en-eu/careers/positions/7818361?gh_jid=7818361) | 2026-11-19T23:37:02Z |
 | Engineering Manager - Data Platform | n26 | Barcelona | 0.179 | no | [link](https://n26.com/en-eu/careers/positions/7841923?gh_jid=7841923) | 2026-11-19T23:37:02Z |
-| Platform Engineer - Compute | supabase | Remote, Global | 0.178 | no | [link](https://jobs.ashbyhq.com/supabase/6b314e83-6617-49fc-8c73-021ebae9a757) | 2026-11-19T23:54:57Z |
 | Senior / Staff Machine Learning Research Scientist, Agents | scaleai | San Francisco, CA; Seattle, WA; New York, NY | 0.177 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4488520005) | 2026-11-19T23:37:02Z |
 | Software Engineer – DevOps Platform | wealthfront | Palo Alto, CA, New York City, NY, San Francisco, CA, Seattle, WA | 0.177 | no | [link](https://jobs.lever.co/wealthfront/91c149ed-18fa-4e72-a3a6-386840aae86e) | 2026-11-19T23:37:02Z |
 | Senior Analyst, Revenue Operations | clickhouse | United States, Remote | 0.177 | no | [link](https://jobs.ashbyhq.com/clickhouse/d8414b6c-51f2-4a40-a65d-26681575604a) | 2026-11-19T23:37:02Z |
@@ -340,7 +713,6 @@
 | Data Scientist, Algorithms - Pricing - Rider Engagement | lyft | San Francisco, CA | 0.172 | no | [link](https://app.careerpuck.com/job-board/lyft/job/8908005002?gh_jid=8908005002) | 2026-11-19T23:37:02Z |
 | Staff Applied Data Scientist, Pricing | coinbase | Remote - USA | 0.172 | no | [link](https://www.coinbase.com/careers/positions/8083051?gh_jid=8083051) | 2026-11-19T23:37:02Z |
 | Member of Technical Staff (Software Engineer, Data Platform) | perplexity | San Francisco, Palo Alto, New York City | 0.171 | no | [link](https://jobs.ashbyhq.com/Perplexity/2e73bc78-684c-47c5-95df-e9973a10e0b6) | 2026-11-19T23:54:57Z |
-| ML Engineer Manager, AI Conversation Platform | stripe | Toronto, Canada | 0.171 | no | [link](https://stripe.com/jobs/search?gh_jid=8022713) | 2026-11-19T23:37:02Z |
 | Machine Learning Research Scientist, Post-Training | scaleai | San Francisco, CA; Seattle, WA; New York, NY | 0.171 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4528009005) | 2026-11-19T23:37:02Z |
 | Principal Software Engineer I - CI/CD - Platform Engineering Productivity | elastic | United Kingdom | 0.171 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8267189&gh_jid=8267189) | 2026-11-19T23:37:02Z |
 | Principal Software Engineer I - CI/CD - Platform Engineering Productivity | elastic | Ireland | 0.171 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8267190&gh_jid=8267190) | 2026-11-19T23:37:02Z |
@@ -353,13 +725,10 @@
 | Senior Data Scientist | temporal | United States (Remote) | 0.170 | no | [link](https://jobs.ashbyhq.com/temporal/8d2a0d16-0610-4337-93d0-243adcc4e4be) | 2026-11-19T23:54:57Z |
 | Senior Software Engineer / Aura Platform | singlestore | United States | 0.170 | no | [link](https://job-boards.greenhouse.io/singlestore/jobs/8159062) | 2026-11-19T23:37:02Z |
 | Machine Learning Research Scientist, Evaluations | scaleai | San Francisco, CA; Seattle, WA; New York, NY | 0.170 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4728014005) | 2026-11-19T23:37:02Z |
-| Software Engineer, Financial Platform | chime | New York, NY, USA; San Francisco, CA, USA | 0.169 | no | [link](https://boards.greenhouse.io/chime/jobs/8594959002?gh_jid=8594959002) | 2026-11-19T23:37:02Z |
 | Sr. Research Scientist - Agent Flywheel | databricks | New York City, New York | 0.169 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8940421002) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer - Data Platform | toast | Dublin, Ireland | 0.168 | no | [link](https://careers.toasttab.com/jobs?gh_jid=8068781) | 2026-11-19T23:37:02Z |
 | Lead Data Scientist, Credit Risk | chime | Chicago, IL, USA; San Francisco, CA, USA | 0.168 | no | [link](https://boards.greenhouse.io/chime/jobs/8788322002?gh_jid=8788322002) | 2026-11-19T23:37:02Z |
 | Engineering Manager, AI Conversation Platform | stripe | Toronto, Canada | 0.168 | no | [link](https://stripe.com/jobs/search?gh_jid=7943804) | 2026-11-19T23:37:02Z |
-| Senior Platform Engineer | adyen | Chicago | 0.168 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/7684222) | 2026-11-19T23:37:02Z |
-| Software Engineer, Infrastructure Platform | chime | Chicago, IL, USA; New York, NY, USA; San Francisco, CA, USA | 0.168 | no | [link](https://boards.greenhouse.io/chime/jobs/8859182002?gh_jid=8859182002) | 2026-11-19T23:37:02Z |
 | Data Scientist, Ads Demand | openai | San Francisco | 0.167 | no | [link](https://jobs.ashbyhq.com/openai/1eb32675-b1a0-4c0a-9b57-19ceab07e9e0) | 2026-11-19T23:54:57Z |
 | Database Research Scientist | clickhouse | United States, Canada, United Kingdom, Germany, The Netherlands, Remote | 0.167 | no | [link](https://jobs.ashbyhq.com/clickhouse/962f45f3-d8d3-4073-add2-af763f7c3ffb) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer (Query Infrastructure) | amplitude | San Francisco , Remote | 0.167 | no | [link](https://jobs.ashbyhq.com/amplitude/c72bb0c3-b9c7-4536-b33f-6a26e2319fe2) | 2026-11-19T23:37:02Z |
@@ -375,16 +744,12 @@
 | Software Engineer - Data Platform | samsara | Remote - US | 0.165 | no | [link](https://www.samsara.com/company/careers/roles/7922530?gh_jid=7922530) | 2026-11-19T23:37:02Z |
 | AI Research Scientist – Datadog AI Research | datadog | New York, New York, USA; Pittsburgh, Pennsylvania, USA | 0.165 | no | [link](https://careers.datadoghq.com/detail/6572669/?gh_jid=6572669) | 2026-11-19T23:37:02Z |
 | AI Research Scientist - Datadog AI Research | datadog | Paris, France | 0.165 | no | [link](https://careers.datadoghq.com/detail/6652564/?gh_jid=6652564) | 2026-11-19T23:37:02Z |
-| Senior Platform Engineer - Container Services | adyen | San Francisco | 0.165 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8255695) | 2026-11-19T23:37:02Z |
 | Staff Engineer - Content Platform | spotify | London, Stockholm | 0.165 | no | [link](https://jobs.lever.co/spotify/be2d7d1e-939e-47f9-8db7-278caa101a60) | 2026-11-19T23:37:02Z |
 | Data Scientist - Perception Verification and Validation | zoox | Boston, MA | 0.164 | no | [link](https://jobs.lever.co/zoox/87877cf4-3ac8-45d5-90fb-2ef7f223c068) | 2026-11-19T23:54:57Z |
-| Senior/Staff Software Engineer - AI/ML Models, Agents & Tools | zoox | Foster City, CA | 0.164 | no | [link](https://jobs.lever.co/zoox/2aa94106-52ac-4f67-871b-1140f8644ea4) | 2026-11-19T23:54:57Z |
 | Data Scientist, SMB Ads Growth | openai | San Francisco | 0.164 | no | [link](https://jobs.ashbyhq.com/openai/f5dfd3aa-3bf6-49e2-b780-0da281a21533) | 2026-11-19T23:54:57Z |
 | Senior Data Scientist, Lending | chime | San Francisco, CA, USA | 0.164 | no | [link](https://boards.greenhouse.io/chime/jobs/8612037002?gh_jid=8612037002) | 2026-11-19T23:37:02Z |
 | Senior Applied Data Scientist | flexport | Shanghai, China | 0.164 | no | [link](https://job-boards.greenhouse.io/flexport/jobs/8269055) | 2026-11-19T23:37:02Z |
 | Software Engineer, Infrastructure - Analytics Platform | openai | San Francisco, Remote | 0.163 | no | [link](https://jobs.ashbyhq.com/openai/e44bfa94-0b82-4d0c-b224-02155b76eea9) | 2026-11-19T23:54:57Z |
-| Senior Corporate Enterprise Platform Engineer, Windows | dropbox | Remote - Canada: Select locations | 0.163 | no | [link](https://jobs.dropbox.com/listing/8280094?gh_jid=8280094) | 2026-11-19T23:37:02Z |
-| Senior Corporate Enterprise Platform Engineer, Windows | dropbox | Remote - US: Select locations | 0.163 | no | [link](https://jobs.dropbox.com/listing/8280093?gh_jid=8280093) | 2026-11-19T23:37:02Z |
 | Data Scientist II, Applied ML | brex | São Paulo, São Paulo, Brazil | 0.163 | no | [link](https://www.brex.com/careers/8735070002?gh_jid=8735070002) | 2026-11-19T23:37:02Z |
 | Data Scientist II, Applied ML | brex | San Francisco, California, United States | 0.163 | no | [link](https://www.brex.com/careers/8783482002?gh_jid=8783482002) | 2026-11-19T23:37:02Z |
 | Director of Engineering, Cloud Platform | attentive | New York, NY (Hybrid) | 0.162 | no | [link](https://job-boards.greenhouse.io/attentive/jobs/4438176009) | 2026-11-19T23:37:02Z |
@@ -394,22 +759,16 @@
 | Financial Analyst – Revenue & Metrics (Ireland Based) | launchdarkly | Ireland | 0.162 | no | [link](https://job-boards.greenhouse.io/launchdarkly/jobs/7692792003) | 2026-11-19T23:37:02Z |
 | Staff Research Scientist - Foundation & World Models | datadog | Paris, France | 0.162 | no | [link](https://careers.datadoghq.com/detail/8385205/?gh_jid=8385205) | 2026-11-19T23:37:02Z |
 | Staff Research Scientist - Foundation & World Models | datadog | New York, New York, USA; Pittsburgh, Pennsylvania, USA | 0.162 | no | [link](https://careers.datadoghq.com/detail/8261937/?gh_jid=8261937) | 2026-11-19T23:37:02Z |
-| Senior Platform Engineer | mongodb | Gurugram | 0.161 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8071475) | 2026-11-19T23:37:02Z |
-| Platform Engineer, Managed Postgres | supabase | Remote, Global | 0.161 | no | [link](https://jobs.ashbyhq.com/supabase/9073c0cd-2545-473a-b2ac-63e4615c69b5) | 2026-11-19T23:54:57Z |
 | Data Scientist, Marketing | wealthfront | Palo Alto, CA, San Francisco, CA, Seattle, WA, New York City, NY, Austin, TX | 0.161 | no | [link](https://jobs.lever.co/wealthfront/367b310e-0aa2-4eb2-9587-908069ab099d) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Public Sector | scaleai | Denver, CO; Honolulu, HI; Washington, DC | 0.161 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4732798005) | 2026-11-19T23:37:02Z |
 | Senior Data Scientist, Home Lending | wealthfront | Palo Alto, CA, San Francisco, CA, Seattle, WA, New York City, NY, Austin, TX | 0.161 | no | [link](https://jobs.lever.co/wealthfront/c90dc246-578c-42a0-a322-6400f47e97dc) | 2026-11-19T23:37:02Z |
-| Senior Platform Engineer - Observability | adyen | Amsterdam | 0.160 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/7607691) | 2026-11-19T23:37:02Z |
 | Staff Applied Scientist | braze | Austin | 0.160 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8170739) | 2026-11-19T23:37:02Z |
 | Staff Applied Scientist | braze | New York City | 0.160 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8159431) | 2026-11-19T23:37:02Z |
 | Staff Applied Scientist | braze | San Francisco | 0.160 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8170743) | 2026-11-19T23:37:02Z |
 | Staff Applied Scientist | braze | Chicago | 0.160 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8170742) | 2026-11-19T23:37:02Z |
-| Cloud Platform Engineer | singlestore | India | 0.160 | no | [link](https://job-boards.greenhouse.io/singlestore/jobs/7573638) | 2026-11-19T23:37:02Z |
 | Applied Scientist, Engineering | anthropic | San Francisco, CA | 0.160 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5468939008) | 2026-11-19T23:37:02Z |
 | Engineering Manager, Platform | airbyte | San Francisco, Remote | 0.160 | no | [link](https://jobs.ashbyhq.com/airbyte/efe55756-f28b-4030-b9a0-539f6c8ed8ff) | 2026-11-19T23:54:57Z |
 | Software Engineer, Agent Platform | openai | San Francisco, Remote | 0.160 | no | [link](https://jobs.ashbyhq.com/openai/783704d7-5afa-45aa-899b-1d6799f73004) | 2026-11-19T23:54:57Z |
 | Director of Engineering, Marketing Agent Platform | attentive | New York, NY (Hybrid) | 0.159 | no | [link](https://job-boards.greenhouse.io/attentive/jobs/4429776009) | 2026-11-19T23:37:02Z |
-| Senior Infrastructure Engineer, Compute & Storage Platform | toast | Dublin, Ireland | 0.159 | no | [link](https://careers.toasttab.com/jobs?gh_jid=8210638) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Data Loading Infrastructure | asana | San Francisco | 0.159 | no | [link](https://www.asana.com/jobs/apply/8226969?gh_jid=8226969) | 2026-11-19T23:37:02Z |
 | Senior Staff Engineer, AI | asana | San Francisco | 0.159 | no | [link](https://www.asana.com/jobs/apply/8098020?gh_jid=8098020) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer (Java) - Unified Platform | adyen | Amsterdam | 0.159 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/7342887) | 2026-11-19T23:37:02Z |
@@ -418,7 +777,6 @@
 | Senior Applied ML/AI Scientist - Search | faire | New York City, NY; San Francisco, CA | 0.158 | no | [link](https://boards.greenhouse.io/faire/jobs/8660923002?gh_jid=8660923002) | 2026-11-19T23:37:02Z |
 | Applied Scientist | twitch | San Francisco, CA | 0.158 | no | [link](https://job-boards.greenhouse.io/twitch/jobs/8872835002) | 2026-11-19T23:37:02Z |
 | Manager – AI & Data Platform Engineering | zscaler | Remote - USA; Santa Clara, California, USA | 0.158 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5268021007) | 2026-11-19T23:37:02Z |
-| Staff Software Engineer, Backend (Communications Platform) | squarespace | New York City | 0.158 | no | [link](http://www.squarespace.com/about/careers?gh_jid=8392750) | 2026-11-19T23:37:02Z |
 | Platform Consultant | yext | Washington, D.C. | 0.158 | no | [link](https://job-boards.greenhouse.io/yext/jobs/8264517) | 2026-11-19T23:37:02Z |
 | Platform Consultant | yext | New York, NY | 0.158 | no | [link](https://job-boards.greenhouse.io/yext/jobs/8267827) | 2026-11-19T23:37:02Z |
 | Member of Technical Staff (Software Engineer, API Platform) | perplexity | San Francisco, Seattle, New York City, Toronto | 0.158 | no | [link](https://jobs.ashbyhq.com/Perplexity/3f800e42-7c48-4f9a-9b12-43ee23e52516) | 2026-11-19T23:54:57Z |
@@ -427,8 +785,6 @@
 | Sr. Software Engineer, Cloud Platform | samsara | Remote - London; Remote - UK | 0.157 | no | [link](https://www.samsara.com/company/careers/roles/8042387?gh_jid=8042387) | 2026-11-19T23:37:02Z |
 | Senior Applied Research Scientist - Personalization | spotify | New York, NY | 0.157 | no | [link](https://jobs.lever.co/spotify/6eb9ce0e-5372-4a4f-b2fa-d005f9426750) | 2026-11-19T23:37:02Z |
 | Senior Applied Research Scientist - Personalization | spotify | London, Stockholm | 0.157 | no | [link](https://jobs.lever.co/spotify/a4c49acb-a095-4452-ad9e-69e4b778c256) | 2026-11-19T23:37:02Z |
-| Senior DevOps Engineer (Trading Platform) | crypto | Hong Kong | 0.157 | no | [link](https://jobs.lever.co/crypto/8596f625-56f5-4508-b496-d573aa64c721) | 2026-11-19T23:54:57Z |
-| Senior DevOps Engineer (Trading Platform) | crypto | Singapore | 0.157 | no | [link](https://jobs.lever.co/crypto/a3ac2fc1-37c6-45d3-834e-25e9f94aaf5c) | 2026-11-19T23:54:57Z |
 | PhD Intern, AI Applied Scientist (2027) | figma | San Francisco, CA • New York, NY | 0.157 | no | [link](https://boards.greenhouse.io/figma/jobs/6207801004?gh_jid=6207801004) | 2026-11-19T23:37:02Z |
 | Senior Applied Scientist - Knowledge Graphs & AI | outreach | Hyderabad | 0.157 | no | [link](https://jobs.lever.co/outreach/cc0715d3-8bbf-4a5c-bd32-7d12c243e2c9) | 2026-11-19T23:54:57Z |
 | Staff Applied Scientist - Knowledge Graphs & AI | outreach | Hyderabad | 0.157 | no | [link](https://jobs.lever.co/outreach/4ef30219-4dd5-4f40-b3b8-76c3c2277ebb) | 2026-11-19T23:54:57Z |
@@ -437,13 +793,11 @@
 | Staff Applied AI/ML Scientist | faire | San Francisco, CA | 0.157 | no | [link](https://boards.greenhouse.io/faire/jobs/8747498002?gh_jid=8747498002) | 2026-11-19T23:37:02Z |
 | Senior Applied AI/ML Scientist - Search Ranking | faire | San Francisco, CA | 0.157 | no | [link](https://boards.greenhouse.io/faire/jobs/8856357002?gh_jid=8856357002) | 2026-11-19T23:37:02Z |
 | Cloud Infrastructure and Security Engineer (Contract) | riotgames | Shanghai, China | 0.156 | no | [link](https://www.riotgames.com/en/work-with-us/job/8055923?gh_jid=8055923) | 2026-11-19T23:37:02Z |
-| Senior AI Platform Engineer | zscaler | Pune, IND | 0.156 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5278563007) | 2026-11-19T23:37:02Z |
 | Data Solutions & Analytics Senior Analyst | robinhood | Westlake, TX | 0.156 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8220699?t=gh_src=&gh_jid=8220699) | 2026-11-19T23:37:02Z |
 | P2P Data & Automation Lead | databricks | San Francisco, California | 0.156 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8633071002) | 2026-11-19T23:37:02Z |
 | Senior Analyst, Advanced Analytics - Gurugram | airbnb | Gurugram, India | 0.155 | no | [link](https://careers.airbnb.com/positions/8081180?gh_jid=8081180) | 2026-11-19T23:37:02Z |
 | Group Product Manager, Revenue Platform | adyen | Chicago | 0.155 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8312348) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Realtime Analytics Platform | roblox | San Mateo, CA, United States | 0.155 | no | [link](https://careers.roblox.com/jobs/8287853?gh_jid=8287853) | 2026-11-19T23:37:02Z |
-| Software Engineer, Cloud Infrastructure | openai | San Francisco | 0.155 | no | [link](https://jobs.ashbyhq.com/openai/12342ebb-dcd4-45e2-b875-fc5447fdb7d8) | 2026-11-19T23:54:57Z |
 | Senior Analyst, Client Analytics | later | Boston, MA | 0.155 | no | [link](https://job-boards.greenhouse.io/later/jobs/8895439002) | 2026-11-19T23:37:02Z |
 | Staff Engineer - Cloud Networks | datadog | Boston, Massachusetts, USA; Denver, Colorado, USA; New York, New York, USA | 0.155 | no | [link](https://careers.datadoghq.com/detail/8128450/?gh_jid=8128450) | 2026-11-19T23:37:02Z |
 | Senior Applied AI/ML Scientist - Compass | faire | New York City, NY; San Francisco, CA | 0.154 | no | [link](https://boards.greenhouse.io/faire/jobs/8610263002?gh_jid=8610263002) | 2026-11-19T23:37:02Z |
@@ -453,27 +807,20 @@
 | Staff Applied AI/ML Scientist, Acquisition | faire | San Francisco, CA | 0.154 | no | [link](https://boards.greenhouse.io/faire/jobs/8942108002?gh_jid=8942108002) | 2026-11-19T23:37:02Z |
 | Trading Analytics Developer, Quantitative Trading | crypto | Chicago,IL, Los Angeles, New York | 0.154 | no | [link](https://jobs.lever.co/crypto/bd4c7626-c095-452a-a865-7cfe5214485b) | 2026-11-19T23:54:57Z |
 | Senior Applied AI/ML Scientist - Listing Quality | faire | San Francisco, CA | 0.154 | no | [link](https://boards.greenhouse.io/faire/jobs/8831888002?gh_jid=8831888002) | 2026-11-19T23:37:02Z |
-| Engineering Manager - Control Plane Platform Engineer | clickhouse | Europe or US, Remote | 0.154 | no | [link](https://jobs.ashbyhq.com/clickhouse/aefd66e4-d812-48b3-a9f6-160e19882136) | 2026-11-19T23:37:02Z |
 | Research Scientist II - In Vivo Science | abcellera | Vancouver | 0.154 | no | [link](https://job-boards.greenhouse.io/abcellera/jobs/8005913003) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Analytics Infrastructure | airbnb | Brazil | 0.154 | no | [link](https://careers.airbnb.com/positions/8263282?gh_jid=8263282) | 2026-11-19T23:37:02Z |
 | Android Engineer, Plugin Developer Platform | openai | San Francisco, Remote | 0.153 | no | [link](https://jobs.ashbyhq.com/openai/e6e5e4b6-a1d9-4a4e-beef-8d3befef08c0) | 2026-11-19T23:54:57Z |
 | Director, Global People Analytics | toast | Remote, United States | 0.153 | no | [link](https://careers.toasttab.com/jobs?gh_jid=8346005) | 2026-11-19T23:37:02Z |
 | Senior Applied AI/ML Scientist - Brand Growth | faire | San Francisco, CA | 0.153 | no | [link](https://boards.greenhouse.io/faire/jobs/8801507002?gh_jid=8801507002) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer - Platform and Infrastructure | samsara | Bengaluru - BLR1 | 0.153 | no | [link](https://www.samsara.com/company/careers/roles/7266287?gh_jid=7266287) | 2026-11-19T23:37:02Z |
-| Deputy Manager, AI & Platform Engineer | zscaler | Mohali, IND | 0.153 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5081527007) | 2026-11-19T23:37:02Z |
 | Software Engineer, Plugin Developer Platform | openai | San Francisco, Remote | 0.153 | no | [link](https://jobs.ashbyhq.com/openai/71838fdf-4476-490c-81b6-4bf0746f6774) | 2026-11-19T23:54:57Z |
-| Senior Software Engineer, Machine Learning Platform | chime | San Francisco, CA, USA | 0.153 | no | [link](https://boards.greenhouse.io/chime/jobs/8765684002?gh_jid=8765684002) | 2026-11-19T23:37:02Z |
-| Sr. Cloud Platform Engineer | zscaler | Remote - USA; San Jose, California, USA | 0.153 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5208829007) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Agentic Customer Platform (Poland, Remote, B2B) | samsara | Remote - Poland | 0.153 | no | [link](https://www.samsara.com/company/careers/roles/8052685?gh_jid=8052685) | 2026-11-19T23:37:02Z |
 | Applied Scientist II - Advertiser Optimization | instacart | Canada - Remote (ON, AB, BC, or NS Only) | 0.153 | no | [link](https://instacart.careers/job/?gh_jid=8403432) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Cloud Payments | mongodb | Atlanta; Austin; Boston; Chicago; Dallas; Denver; Los Angeles; New York City; Palo Alto; Princeton; San Francisco; Seattle; United States; Washington DC | 0.152 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8397699) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Cloud Payments | mongodb | Toronto; Vancouver | 0.152 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8397701) | 2026-11-19T23:37:02Z |
 | People Research Scientist | openai | San Francisco | 0.152 | no | [link](https://jobs.ashbyhq.com/openai/5a682b9f-ef1a-4e47-813a-72b23414d43e) | 2026-11-19T23:54:57Z |
-| Senior Cloud Data Infrastructure Engineer (US Remote) | clickhouse | United States, Remote | 0.152 | no | [link](https://jobs.ashbyhq.com/clickhouse/9e205698-0e50-42e5-8783-a79a7ff7efaa) | 2026-11-19T23:37:02Z |
-| Senior Cloud Software Engineer - Efficiency Engineering | clickhouse | NAMER and LatAm | 0.152 | no | [link](https://jobs.ashbyhq.com/clickhouse/db498a8c-c8d8-405b-b86a-0943a5122e7d) | 2026-11-19T23:37:02Z |
 | Sr. Software Engineer II / Tech lead, Agentic Platform (Poland, Remote, B2B) | samsara | Remote - Poland | 0.152 | no | [link](https://www.samsara.com/company/careers/roles/8210697?gh_jid=8210697) | 2026-11-19T23:37:02Z |
 | Manager, Software Engineering - UX Platform | figma | San Francisco, CA • New York, NY • United States | 0.152 | no | [link](https://boards.greenhouse.io/figma/jobs/6237757004?gh_jid=6237757004) | 2026-11-19T23:37:02Z |
-| Senior Cloud Data Infrastructure Engineer (APJ Remote) | clickhouse | Singapore, Australia, Remote | 0.152 | no | [link](https://jobs.ashbyhq.com/clickhouse/b6e7fb97-e7e2-4e29-9476-b777d787a94c) | 2026-11-19T23:37:02Z |
 | Sr. Partner Marketing Manager, AWS & AI Partners | databricks | United States | 0.152 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8860665002) | 2026-11-19T23:37:02Z |
 | Senior Applied AI/ML Scientist - Marketplace Quality | faire | San Francisco, CA | 0.152 | no | [link](https://boards.greenhouse.io/faire/jobs/8845103002?gh_jid=8845103002) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - IAM - Control Plane - Platform | elastic | United States | 0.152 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8108689&gh_jid=8108689) | 2026-11-19T23:37:02Z |
@@ -493,14 +840,11 @@
 | Staff Research Scientist - Post-Training for Observability Native Models | datadog | New York, New York, USA; Pittsburgh, Pennsylvania, USA | 0.151 | no | [link](https://careers.datadoghq.com/detail/8261934/?gh_jid=8261934) | 2026-11-19T23:37:02Z |
 | Staff Research Scientist - Post-Training for Observability Native Models | datadog | Paris, France | 0.151 | no | [link](https://careers.datadoghq.com/detail/8385200/?gh_jid=8385200) | 2026-11-19T23:37:02Z |
 | Staff Integration Engineer (Security Platform and Data Pipelines) | zscaler | Bangalore, IND | 0.150 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5267231007) | 2026-11-19T23:37:02Z |
-| Senior Software Engineer, Infrastructure Foundations | temporal | United States (Remote) | 0.150 | no | [link](https://jobs.ashbyhq.com/temporal/1929137d-1aef-4eae-9490-b934a90bc2ab) | 2026-11-19T23:54:57Z |
-| Staff Software Engineer, Infrastructure Foundations | temporal | United States (Remote) | 0.150 | no | [link](https://jobs.ashbyhq.com/temporal/25ab987b-b07e-424b-8ce9-eb10de739a7f) | 2026-11-19T23:54:57Z |
 | Software Engineer, Enterprise AI | scaleai | New York, NY; San Francisco, CA | 0.150 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4513943005) | 2026-11-19T23:37:02Z |
 | Member of Technical Staff (Software Engineer, Infrastructure & Platform) | perplexity | San Francisco, London, Austin, Seattle, New York City, Dublin, Toronto, Remote | 0.150 | no | [link](https://jobs.ashbyhq.com/Perplexity/76c9b39f-aecc-4247-b5f5-ebcd02dff7c3) | 2026-11-19T23:54:57Z |
 | Research Scientist - Generative Audio | spotify | New York, NY | 0.150 | no | [link](https://jobs.lever.co/spotify/0eebb462-b5a2-4e3a-b830-d8ef7505b014) | 2026-11-19T23:37:02Z |
 | Research Scientist - Generative Audio | spotify | London, Stockholm | 0.150 | no | [link](https://jobs.lever.co/spotify/819f584f-84a5-485d-8082-3412545f6c8a) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Identity and Access Platform | outreach | Seattle, WA | 0.150 | no | [link](https://jobs.lever.co/outreach/4b20d94b-ecae-4761-86ae-4f474d091adc) | 2026-11-19T23:54:57Z |
-| AI Platform Engineer | supabase | Remote, Global | 0.150 | no | [link](https://jobs.ashbyhq.com/supabase/3b5d54ca-741b-45ac-bd3f-31605a0d3541) | 2026-11-19T23:54:57Z |
 | Manager, Application Engineering - ​​Atlassian Cloud Platform | riotgames | Los Angeles, USA | 0.150 | no | [link](https://www.riotgames.com/en/work-with-us/job/8326548?gh_jid=8326548) | 2026-11-19T23:37:02Z |
 | Business Analyst (Senior) | sumup | São Paulo, São Paulo, Brazil | 0.150 | no | [link](https://sumup.com/careers/positions/8917598002?gh_jid=8917598002) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - Identity & Authorization Platform | clickhouse | Germany, Portugal, France, United Kingdom, Italy, The Netherlands, Remote | 0.149 | no | [link](https://jobs.ashbyhq.com/clickhouse/4dc25e4c-6710-4b47-aedc-7caa260f043a) | 2026-11-19T23:37:02Z |
@@ -516,9 +860,7 @@
 | Senior Software Engineer, AI Platform | harvey | New York, Remote | 0.148 | no | [link](https://jobs.ashbyhq.com/harvey/d00dc18e-862b-4391-a3f1-5cd49c07f8e7) | 2026-11-19T23:54:57Z |
 | Staff Software Engineer, AI Platform | harvey | San Francisco, Remote | 0.148 | no | [link](https://jobs.ashbyhq.com/harvey/01da8934-d3e3-4ebb-beb9-681b3c24fb9c) | 2026-11-19T23:54:57Z |
 | Staff Software Engineer, AI Platform | harvey | New York, Remote | 0.148 | no | [link](https://jobs.ashbyhq.com/harvey/ebf00b72-4693-4894-b540-5f82a60fdbdc) | 2026-11-19T23:54:57Z |
-| Platform Engineer, Edge & Networking | supabase | Remote, Global | 0.148 | no | [link](https://jobs.ashbyhq.com/supabase/6c9de03c-e289-4612-9045-492985d0274b) | 2026-11-19T23:54:57Z |
 | Software Engineer - Application Platform | figma | San Francisco, CA • New York, NY • United States | 0.148 | no | [link](https://boards.greenhouse.io/figma/jobs/6242561004?gh_jid=6242561004) | 2026-11-19T23:37:02Z |
-| Staff Site Reliability Engineer, InfraSec | mongodb | Dublin | 0.148 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8278921) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - Integrations 3P - Platform | elastic | Poland | 0.148 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8239653&gh_jid=8239653) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - Integrations 3P - Platform | elastic | Spain | 0.148 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8105634&gh_jid=8105634) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - Integrations 3P - Platform | elastic | Portugal | 0.148 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8131025&gh_jid=8131025) | 2026-11-19T23:37:02Z |
@@ -537,8 +879,6 @@
 | Software Engineering Manager - IAM Team - Control Plane - Platform | elastic | Poland | 0.147 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8317778&gh_jid=8317778) | 2026-11-19T23:37:02Z |
 | Software Engineering Manager - IAM Team - Control Plane - Platform | elastic | Portugal | 0.147 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8314209&gh_jid=8314209) | 2026-11-19T23:37:02Z |
 | Software Engineering Manager - IAM Team - Control Plane - Platform | elastic | Spain | 0.147 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8301329&gh_jid=8301329) | 2026-11-19T23:37:02Z |
-| Staff Frontend Platform Engineer | harvey | San Francisco, New York, Remote | 0.147 | no | [link](https://jobs.ashbyhq.com/harvey/19db4c0a-8883-43c3-b667-60463098feb2) | 2026-11-19T23:54:57Z |
-| Cloud Database Infrastructure Engineer (EMEA Remote) | clickhouse | EMEA, Denmark, Portugal, France, United Kingdom, Spain, Germany, Italy, Sweden, The Netherlands | 0.147 | no | [link](https://jobs.ashbyhq.com/clickhouse/086c4dd1-217d-48f8-9d62-e57542e16dbe) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - Platform Billing Experience | elastic | United States | 0.147 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8249252&gh_jid=8249252) | 2026-11-19T23:37:02Z |
 | Senior / Staff Test Automation Engineer, Robot Platform | zoox | Foster City, CA | 0.147 | no | [link](https://jobs.lever.co/zoox/c84c90b4-22f2-4d2e-9034-afee385dd0d2) | 2026-11-19T23:54:57Z |
 | Staff Software Engineer, Backend (Order Platform) | affirm | Remote US | 0.147 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/7819704003) | 2026-11-19T23:37:02Z |
@@ -572,7 +912,6 @@
 | Senior Deal Desk Analyst | datadog | Denver, Colorado, USA; San Francisco, California, USA | 0.145 | no | [link](https://careers.datadoghq.com/detail/8197674/?gh_jid=8197674) | 2026-11-19T23:37:02Z |
 | Senior Manager, Head of Sales Data Science & Analytics | gusto | Denver, CO - Hybrid; New York, NY - Hybrid; San Francisco, CA - Hybrid | 0.145 | no | [link](https://job-boards.greenhouse.io/gusto/jobs/7283301) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Backend Platform | harvey | San Francisco, New York, Remote | 0.145 | no | [link](https://jobs.ashbyhq.com/harvey/66a13783-3073-4474-8dad-90f4146885ef) | 2026-11-19T23:54:57Z |
-| Senior/Staff Software Engineer - SRE, GitHub & CI/CD Infrastructure | zoox | Foster City, CA | 0.144 | no | [link](https://jobs.lever.co/zoox/5ab0cc36-0d91-4acd-9cf3-c38a273293cb) | 2026-11-19T23:54:57Z |
 | Principal Software Engineer - Global UX - Application - Platform | elastic | Greece | 0.144 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8319140&gh_jid=8319140) | 2026-11-19T23:37:02Z |
 | Principal Software Engineer - Global UX - Application - Platform | elastic | Portugal | 0.144 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8319141&gh_jid=8319141) | 2026-11-19T23:37:02Z |
 | Principal Software Engineer - Global UX - Application - Platform | elastic | Spain | 0.144 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8075239&gh_jid=8075239) | 2026-11-19T23:37:02Z |
@@ -584,14 +923,11 @@
 | Sr. Staff Software Engineer, Data Product Platform | pinterest | San Francisco, CA, US; Remote, US | 0.144 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=7746946) | 2026-11-19T23:37:02Z |
 | Senior Engineering Manager, Ads Data Platform | roblox | San Mateo, CA, United States | 0.144 | no | [link](https://careers.roblox.com/jobs/8161954?gh_jid=8161954) | 2026-11-19T23:37:02Z |
 | Director, Software Engineering - Common Platform Services | zscaler | Santa Clara, California, USA | 0.144 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5166806007) | 2026-11-19T23:37:02Z |
-| Senior Software Engineer - Cloud Infrastructure - (US Remote) | clickhouse | NAMER and LatAm, United States | 0.144 | no | [link](https://jobs.ashbyhq.com/clickhouse/caf49f06-ed35-4637-9372-f4df114e852f) | 2026-11-19T23:37:02Z |
 | Platform Operations Program Manager | openai | San Francisco, Remote | 0.144 | no | [link](https://jobs.ashbyhq.com/openai/616ef2ce-3790-432d-9a6d-32abb2f52ff9) | 2026-11-19T23:54:57Z |
 | Senior Software Engineer, Product Data & Intelligence | attentive | New York, NY (Hybrid) | 0.144 | no | [link](https://job-boards.greenhouse.io/attentive/jobs/4434476009) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer (Typescript / Front-end) - AI/ML | clickhouse | United States, Remote | 0.144 | no | [link](https://jobs.ashbyhq.com/clickhouse/1c633f41-6c9f-46a2-87fa-25f846cd54ef) | 2026-11-19T23:37:02Z |
 | Lead Product Manager, Agentic Integrations Platform | attentive | New York, NY (Hybrid) | 0.144 | no | [link](https://job-boards.greenhouse.io/attentive/jobs/4507440009) | 2026-11-19T23:37:02Z |
 | Senior Platform Security Engineer | discord | Remote (California, Washington, and Oregon Only) | 0.144 | no | [link](https://job-boards.greenhouse.io/discord/jobs/8769799002) | 2026-11-19T23:37:02Z |
-| Senior Software Engineer - Cloud Infrastructure - (Canada Remote) | clickhouse | Canada, Remote | 0.144 | no | [link](https://jobs.ashbyhq.com/clickhouse/2fdde21b-48de-419f-96e6-b0016c7133e1) | 2026-11-19T23:37:02Z |
-| Staff AI/ML Engineer | chime | San Francisco, CA, USA | 0.143 | no | [link](https://boards.greenhouse.io/chime/jobs/8840205002?gh_jid=8840205002) | 2026-11-19T23:37:02Z |
 | Senior C++/iOS Engineer - User Platform | spotify | Stockholm, London | 0.143 | no | [link](https://jobs.lever.co/spotify/813b4b62-429c-42e9-a8f7-59e9412fb287) | 2026-11-19T23:37:02Z |
 | ML Research Engineer, ML Systems | scaleai | San Francisco, CA; Seattle, WA; New York, NY | 0.143 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4534631005) | 2026-11-19T23:37:02Z |
 | Senior Deal Desk Analyst - Dublin | datadog | Amsterdam, The Netherlands; Dublin, Ireland | 0.143 | no | [link](https://careers.datadoghq.com/detail/8273655/?gh_jid=8273655) | 2026-11-19T23:37:02Z |
@@ -599,7 +935,6 @@
 | Senior Financial Analyst | mongodb | Austin | 0.143 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8381864) | 2026-11-19T23:37:02Z |
 | Senior Engineering Manager, Backend Platform | harvey | San Francisco, Remote | 0.143 | no | [link](https://jobs.ashbyhq.com/harvey/bc2cf43d-c37d-4496-b64e-277ba79ad415) | 2026-11-19T23:54:57Z |
 | Senior Engineering Manager, Backend Platform | harvey | New York, Remote | 0.143 | no | [link](https://jobs.ashbyhq.com/harvey/de1d9fbe-c7a9-49ac-b5c0-aaaa606325b2) | 2026-11-19T23:54:57Z |
-| Senior Software Engineer, Cloud Capacity | temporal | United States (Remote), San Francisco, California | 0.143 | no | [link](https://jobs.ashbyhq.com/temporal/a60877d2-e825-4e0f-9f36-230352a9f193) | 2026-11-19T23:54:57Z |
 | Staff / Principal Software Engineer – Cloud Platform & SaaS | singlestore | United States | 0.143 | no | [link](https://job-boards.greenhouse.io/singlestore/jobs/8318150) | 2026-11-19T23:37:02Z |
 | Software Engineering Manager - Global UX - Applications - Platform | elastic | Greece | 0.142 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8319082&gh_jid=8319082) | 2026-11-19T23:37:02Z |
 | Software Engineering Manager - Global UX - Applications - Platform | elastic | Spain | 0.142 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8301334&gh_jid=8301334) | 2026-11-19T23:37:02Z |
@@ -607,7 +942,6 @@
 | Senior Platform Productivity Engineer - Core/Infra - Elasticsearch | elastic | United States | 0.142 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8227060&gh_jid=8227060) | 2026-11-19T23:37:02Z |
 | Senior Platform Productivity Engineer - Core/Infra - Elasticsearch | elastic | Canada | 0.142 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8352185&gh_jid=8352185) | 2026-11-19T23:37:02Z |
 | Infrastructure Software Engineer, Enterprise GenAI | scaleai | San Francisco, CA; New York, NY | 0.142 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4665557005) | 2026-11-19T23:37:02Z |
-| Platform Engineer - Compute Capacity | supabase | Remote, Global | 0.142 | no | [link](https://jobs.ashbyhq.com/supabase/4eb14408-51e6-4c58-812a-3782d5c0b045) | 2026-11-19T23:54:57Z |
 | Platform Intelligence Engineer | palantir | New York, NY | 0.142 | no | [link](https://jobs.lever.co/palantir/a753a9e7-a361-426b-9c25-3cf2488c1730) | 2026-11-19T23:37:02Z |
 | Senior Data Scientist, Consumer Apps | roblox | San Mateo, CA, United States | 0.142 | no | [link](https://careers.roblox.com/jobs/8127054?gh_jid=8127054) | 2026-11-19T23:37:02Z |
 | Senior Sales Engineer - AI Accounts | datadog | California, USA, Remote | 0.142 | no | [link](https://careers.datadoghq.com/detail/8238455/?gh_jid=8238455) | 2026-11-19T23:37:02Z |
@@ -616,7 +950,6 @@
 | Principal Engineer, AI Platform | pinterest | San Francisco, CA, US; Remote, US | 0.141 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=7683977) | 2026-11-19T23:37:02Z |
 | Software Engineer II, Cloud Applications | temporal | United States (Remote) | 0.141 | no | [link](https://jobs.ashbyhq.com/temporal/e3d7f035-7946-469f-84cf-e1c775bf25e8) | 2026-11-19T23:54:57Z |
 | Director, Data Engineering | chime | San Francisco, CA, USA | 0.141 | no | [link](https://boards.greenhouse.io/chime/jobs/8765690002?gh_jid=8765690002) | 2026-11-19T23:37:02Z |
-| Staff Site Reliability Engineer, Infrastructure Security | mongodb | Austin; Boston; Chicago; Dallas; Denver; New York; San Francisco; Seattle; Washington DC | 0.141 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=6982487) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Enterprise Platform | discord | San Francisco Bay Area or Remote (West Coast) | 0.141 | no | [link](https://job-boards.greenhouse.io/discord/jobs/8675185002) | 2026-11-19T23:37:02Z |
 | Senior Product Manager, AI Context | asana | New York City | 0.141 | no | [link](https://www.asana.com/jobs/apply/8044815?gh_jid=8044815) | 2026-11-19T23:37:02Z |
 | Staff Product Operations Manager, Platform | samsara | Remote - US | 0.141 | no | [link](https://www.samsara.com/company/careers/roles/8359984?gh_jid=8359984) | 2026-11-19T23:37:02Z |
@@ -633,12 +966,8 @@
 | Data Scientist, Dispute Risk | chime | Chicago, IL, USA | 0.139 | no | [link](https://boards.greenhouse.io/chime/jobs/8904126002?gh_jid=8904126002) | 2026-11-19T23:37:02Z |
 | Full Stack Software Engineer, Sales Platform | openai | San Francisco | 0.139 | no | [link](https://jobs.ashbyhq.com/openai/1f7c6071-ad3a-4903-9b05-4684f5c1a7c8) | 2026-11-19T23:54:57Z |
 | Senior Software Engineer, Cloud Data Storage | temporal | United States (Remote), Seattle, Washington, United States (Remote) | 0.139 | no | [link](https://jobs.ashbyhq.com/temporal/2a2a29fa-3701-4f0d-a262-aeb8bc68e0c3) | 2026-11-19T23:54:57Z |
-| Platform Engineer - Identity Infrastructure | palantir | Palo Alto, CA | 0.139 | no | [link](https://jobs.lever.co/palantir/721fe5ca-73b8-4223-826e-93a528194821) | 2026-11-19T23:37:02Z |
-| Platform Engineer - Identity Infrastructure | palantir | Washington, D.C. | 0.139 | no | [link](https://jobs.lever.co/palantir/a80afc2b-2564-4a98-84c2-34cdcc0402df) | 2026-11-19T23:37:02Z |
-| Platform Engineer - Identity Infrastructure | palantir | New York, NY | 0.139 | no | [link](https://jobs.lever.co/palantir/cf08f44c-bf75-45ed-9fab-f4836e51013e) | 2026-11-19T23:37:02Z |
 | Senior Clinical Scientist | abcellera | Vancouver | 0.139 | no | [link](https://job-boards.greenhouse.io/abcellera/jobs/8045338003) | 2026-11-19T23:37:02Z |
 | Principal Engineer - ML Platform | roblox | San Mateo, CA, United States | 0.139 | no | [link](https://careers.roblox.com/jobs/7872401?gh_jid=7872401) | 2026-11-19T23:37:02Z |
-| Staff Software Engineer, Infrastructure | toast | Dublin, Ireland | 0.139 | no | [link](https://careers.toasttab.com/jobs?gh_jid=8243136) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Platform | roblox | San Mateo, CA, United States | 0.139 | no | [link](https://careers.roblox.com/jobs/7309267?gh_jid=7309267) | 2026-11-19T23:37:02Z |
 | Software Engineer - Environment Platform | palantir | Seattle, WA | 0.139 | no | [link](https://jobs.lever.co/palantir/cd2423c6-da68-430c-8be5-0ae7eea36497) | 2026-11-19T23:37:02Z |
 | Software Engineer - Environment Platform | palantir | New York, NY | 0.139 | no | [link](https://jobs.lever.co/palantir/d5d83a8f-cb96-41cc-9612-c7224fbb2fbc) | 2026-11-19T23:37:02Z |
@@ -655,13 +984,9 @@
 | AI Forward Deployed Engineer - France | databricks | Paris, France | 0.138 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8929894002) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Web Platform | roblox | San Mateo, CA, United States | 0.138 | no | [link](https://careers.roblox.com/jobs/8350725?gh_jid=8350725) | 2026-11-19T23:37:02Z |
 | Manager, Applied AI Architect | openai | San Francisco, New York City, Remote | 0.138 | no | [link](https://jobs.ashbyhq.com/openai/ab463045-cd9b-4100-a037-f1135ace1464) | 2026-11-19T23:54:57Z |
-| Member of Technical Staff (Search Core DevOps Engineer) | perplexity | Belgrade, London, Dublin | 0.138 | no | [link](https://jobs.ashbyhq.com/Perplexity/739411fa-6580-4c8b-9960-035d5fa3c00e) | 2026-11-19T23:54:57Z |
 | Manager, Product Management - Figma Platform Experience | figma | San Francisco, CA • New York, NY • United States | 0.138 | no | [link](https://boards.greenhouse.io/figma/jobs/6160732004?gh_jid=6160732004) | 2026-11-19T23:37:02Z |
-| Senior DevOps Engineer | Lemon.io |  | 0.138 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-devops-engineer-lemon-io-1137557) | 2026-11-19T21:31:05Z |
-| Principal Client Platform Engineer | roblox | San Mateo, CA, United States | 0.138 | no | [link](https://careers.roblox.com/jobs/8212529?gh_jid=8212529) | 2026-11-19T23:37:02Z |
 | Senior Manager, Service Now Platform | zscaler | Remote - USA; Santa Clara, California, USA | 0.138 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5187284007) | 2026-11-19T23:37:02Z |
 | Software Engineer, ROS Open Platform & AI Enablement | roblox | San Mateo, CA, United States | 0.138 | no | [link](https://careers.roblox.com/jobs/8356764?gh_jid=8356764) | 2026-11-19T23:37:02Z |
-| Principal Endpoint Platform Engineer | roblox | San Mateo, CA, United States | 0.137 | no | [link](https://careers.roblox.com/jobs/8351078?gh_jid=8351078) | 2026-11-19T23:37:02Z |
 | Principal Engineer - GTM Data Platform | cloudflare | Hybrid | 0.137 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8054669?gh_jid=8054669) | 2026-11-19T23:37:02Z |
 | Full Stack Software Engineer, Monetization Platform | openai | San Francisco, New York City, Remote | 0.137 | no | [link](https://jobs.ashbyhq.com/openai/191e42f8-cd62-4082-8f72-505c26505e67) | 2026-11-19T23:54:57Z |
 | Software Engineer II, Data Enablement Platform | brex | San Francisco, California, United States | 0.137 | no | [link](https://www.brex.com/careers/8605070002?gh_jid=8605070002) | 2026-11-19T23:37:02Z |
@@ -673,7 +998,6 @@
 | Staff Software Engineer (Query Infrastructure) | amplitude | Vancouver, Remote | 0.137 | no | [link](https://jobs.ashbyhq.com/amplitude/227ebdc6-1384-4c5b-84de-19d996eeca28) | 2026-11-19T23:37:02Z |
 | Senior Manager, Data Science and Machine Learning | squarespace | New York City | 0.137 | no | [link](http://www.squarespace.com/about/careers?gh_jid=8249791) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, AI | asana | Vancouver, BC | 0.137 | no | [link](https://www.asana.com/jobs/apply/8319678?gh_jid=8319678) | 2026-11-19T23:37:02Z |
-| AI/ML Engineer | chime | Chicago, IL, USA; New York, NY, USA; San Francisco, CA, USA | 0.137 | no | [link](https://boards.greenhouse.io/chime/jobs/8569366002?gh_jid=8569366002) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Metric Platform | roblox | San Mateo, CA, United States | 0.137 | no | [link](https://careers.roblox.com/jobs/8014486?gh_jid=8014486) | 2026-11-19T23:37:02Z |
 | Solutions Architect, Metronome (AI Native) | stripe | London | 0.137 | no | [link](https://stripe.com/jobs/search?gh_jid=8168813) | 2026-11-19T23:37:02Z |
 | (Senior/Mid) Software Engineer, Golang - Payments Platform | sumup | Sofia, Bulgaria | 0.137 | no | [link](https://sumup.com/careers/positions/8520784002?gh_jid=8520784002) | 2026-11-19T23:37:02Z |
@@ -688,8 +1012,6 @@
 | Technical Services Engineer, Infrastructure | mongodb | Sydney | 0.137 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8194603) | 2026-11-19T23:37:02Z |
 | Member of Technical Staff (Software Engineer, Cloud Infrastructure) | perplexity | San Francisco, Palo Alto, London, Belgrade, New York City, Dublin | 0.136 | no | [link](https://jobs.ashbyhq.com/Perplexity/0d722589-0f8c-4500-ae79-d3bba5c8a0ea) | 2026-11-19T23:54:57Z |
 | Distinguished Engineer, Content Platform | roblox | San Mateo, CA, United States | 0.136 | no | [link](https://careers.roblox.com/jobs/7754152?gh_jid=7754152) | 2026-11-19T23:37:02Z |
-| Principal Machine Learning Platform Engineer, Foundation AI | roblox | San Mateo, CA, United States | 0.136 | no | [link](https://careers.roblox.com/jobs/8233722?gh_jid=8233722) | 2026-11-19T23:37:02Z |
-| Principal AI Infrastructure Engineer, Build Platform | roblox | San Mateo, CA, United States | 0.136 | no | [link](https://careers.roblox.com/jobs/8221568?gh_jid=8221568) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Compute Cell Platform | roblox | San Mateo, CA, United States | 0.136 | no | [link](https://careers.roblox.com/jobs/8056362?gh_jid=8056362) | 2026-11-19T23:37:02Z |
 | Principal Software Engineer, GenAI Platform | roblox | San Mateo, CA, United States | 0.136 | no | [link](https://careers.roblox.com/jobs/8287614?gh_jid=8287614) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer-ML Platform | roblox | San Mateo, CA, United States | 0.135 | no | [link](https://careers.roblox.com/jobs/8268776?gh_jid=8268776) | 2026-11-19T23:37:02Z |
@@ -712,18 +1034,14 @@
 | Data Science Intern (2027 Start) | databricks | Mountain View, California; San Francisco, California | 0.134 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=6866538002) | 2026-11-19T23:37:02Z |
 | Principal Scientist, Clinical Pharmacology | abcellera | California | 0.134 | no | [link](https://job-boards.greenhouse.io/abcellera/jobs/8196021003) | 2026-11-19T23:37:02Z |
 | Principal Scientist, Clinical Pharmacology | abcellera | Vancouver | 0.134 | no | [link](https://job-boards.greenhouse.io/abcellera/jobs/8196014003) | 2026-11-19T23:37:02Z |
-| Senior Site Reliability Engineer - I | sumologic | Noida, Uttar Pradesh, India | 0.134 | no | [link](https://job-boards.greenhouse.io/sumologic/jobs/8288761) | 2026-11-19T23:37:02Z |
 | Senior Data Scientist, Engine Infra | roblox | San Mateo, CA, United States | 0.134 | no | [link](https://careers.roblox.com/jobs/8193712?gh_jid=8193712) | 2026-11-19T23:37:02Z |
 | Technical Program Manager, Cloud AI Partnerships | openai | San Francisco | 0.134 | no | [link](https://jobs.ashbyhq.com/openai/db993e24-ce4f-4f55-9187-403726bcb957) | 2026-11-19T23:54:57Z |
 | Research Engineer/Research Scientist- Post Training, Model Experience | openai | San Francisco | 0.133 | no | [link](https://jobs.ashbyhq.com/openai/872ca3d0-c8c0-4585-9a34-7f9ed6b4dbf9) | 2026-11-19T23:54:57Z |
-| AWS Cloud Solutions Architect | Cloudary SAS |  | 0.133 | no | [link](https://remoteOK.com/remote-jobs/remote-aws-cloud-solutions-architect-cloudary-sas-1137606) | 2026-11-19T21:31:05Z |
 | Distributed Systems Engineer - Data Platform (Delivery, Database, Retrieval) | cloudflare | Hybrid | 0.133 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/7462801?gh_jid=7462801) | 2026-11-19T23:37:02Z |
 | AI Forward Deployed Engineer - Sweden | databricks | Stockholm, Sweden | 0.133 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8930381002) | 2026-11-19T23:37:02Z |
 | Sr. Developer Advocate, AI and Machine Learning | databricks | San Francisco, California | 0.133 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8716192002) | 2026-11-19T23:37:02Z |
 | Software Engineer, Identity Platform | openai | San Francisco | 0.133 | no | [link](https://jobs.ashbyhq.com/openai/10980026-e468-4516-958c-7c697793d1d4) | 2026-11-19T23:54:57Z |
-| Software Engineer, Infrastructure | databricks | Mountain View, California | 0.133 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8829039002) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer LATAM | Wagmo |  | 0.133 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-software-engineer-latam-wagmo-1137572) | 2026-11-19T21:31:05Z |
-| Staff Site Reliability Engineer (Linux/Network troubleshooting/Scripting) | zscaler | Bangalore, IND | 0.133 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5177389007) | 2026-11-19T23:37:02Z |
 | [2027] Data Scientist - PhD Early Career - Safety | roblox | San Mateo, CA, United States | 0.133 | no | [link](https://careers.roblox.com/jobs/8384186?gh_jid=8384186) | 2026-11-19T23:37:02Z |
 | Senior Marketing Analytics Manager | duolingo | New York, NY | 0.133 | no | [link](https://careers.duolingo.com/jobs/8759720002?gh_jid=8759720002) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer | Klardaten |  | 0.133 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-software-engineer-klardaten-1137571) | 2026-11-19T21:31:05Z |
@@ -738,7 +1056,6 @@
 | Engineering Director, AI Engineering | hex | San Francisco, New York, Remote | 0.132 | no | [link](https://jobs.ashbyhq.com/hex/1377177b-5b95-4653-8d5b-17de7e14513a) | 2026-11-19T23:54:57Z |
 | Sr. Product Manager, Data Governance | databricks | Seattle, Washington | 0.132 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7863522002) | 2026-11-19T23:37:02Z |
 | Sr. Product Manager, Data Governance | databricks | San Francisco, California | 0.132 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7863365002) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, Growth Platform | stripe | San Francisco | 0.132 | no | [link](https://stripe.com/jobs/search?gh_jid=8224915) | 2026-11-19T23:37:02Z |
 | Principal Data Scientist - Safety | roblox | San Mateo, CA, United States | 0.132 | no | [link](https://careers.roblox.com/jobs/8247229?gh_jid=8247229) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer,  Riot Client - Publishing Platform | riotgames | Los Angeles, USA | 0.132 | no | [link](https://www.riotgames.com/en/work-with-us/job/8222064?gh_jid=8222064) | 2026-11-19T23:37:02Z |
 | Software Engineer, Cloud Infrastructure | openai | London, UK | 0.132 | no | [link](https://jobs.ashbyhq.com/openai/29c2c171-fb63-4985-9ac5-229b2ff5ced6) | 2026-11-19T23:54:57Z |
@@ -746,32 +1063,23 @@
 | Growth Data Analyst | crypto | Taipei | 0.131 | no | [link](https://jobs.lever.co/crypto/558520f3-d3ef-41b6-964b-2f51da8bbcde) | 2026-11-19T23:54:57Z |
 | Growth Data Analyst | crypto | Singapore | 0.131 | no | [link](https://jobs.lever.co/crypto/7983ff1a-dd4a-45c2-9f6a-dda28ccca9ce) | 2026-11-19T23:54:57Z |
 | Growth Data Analyst | crypto | Hong Kong | 0.131 | no | [link](https://jobs.lever.co/crypto/c7f5a76d-d079-4e07-af06-290252d475f0) | 2026-11-19T23:54:57Z |
-| Member of Technical Staff (Software Engineer, Backend Platform) | perplexity | San Francisco, Palo Alto, New York City | 0.131 | no | [link](https://jobs.ashbyhq.com/Perplexity/7795683f-6c5f-40cd-af2d-51294edddd4b) | 2026-11-19T23:54:57Z |
 | Senior Data Scientist, Marketplace Economics | roblox | San Mateo, CA, United States | 0.131 | no | [link](https://careers.roblox.com/jobs/8303926?gh_jid=8303926) | 2026-11-19T23:37:02Z |
 | Senior Data Scientist, Monetary Policy | roblox | San Mateo, CA, United States | 0.131 | no | [link](https://careers.roblox.com/jobs/8240745?gh_jid=8240745) | 2026-11-19T23:37:02Z |
 | Full Stack Engineer, Web Presence and Platform | stripe | N/A | 0.131 | no | [link](https://stripe.com/jobs/search?gh_jid=7436086) | 2026-11-19T23:37:02Z |
-| Principal Machine Learning Engineer (AI/Platform)- League of Legends | riotgames | Los Angeles, USA | 0.131 | no | [link](https://www.riotgames.com/en/work-with-us/job/7944656?gh_jid=7944656) | 2026-11-19T23:37:02Z |
 | Tax Analyst | yext | Hyderabad, India | 0.131 | no | [link](https://job-boards.greenhouse.io/yext/jobs/8337870) | 2026-11-19T23:37:02Z |
 | Staff Product Manager, Agentic Platform | scaleai | New York, NY; San Francisco, CA; Washington, DC | 0.131 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4612403005) | 2026-11-19T23:37:02Z |
-| Cloud Platform Engineer | gitlab | Remote, Canada; Remote, United States | 0.131 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8889193002) | 2026-11-19T23:37:02Z |
 | Principal Data Scientist, Creator | roblox | San Mateo, CA, United States | 0.131 | no | [link](https://careers.roblox.com/jobs/8301234?gh_jid=8301234) | 2026-11-19T23:37:02Z |
 | Full Stack Engineer, Developer & End User Experience Platform | stripe | N/A | 0.131 | no | [link](https://stripe.com/jobs/search?gh_jid=6567104) | 2026-11-19T23:37:02Z |
 | Partner Applied AI Engineer, Google Cloud | openai | San Francisco, Remote | 0.131 | no | [link](https://jobs.ashbyhq.com/openai/9a57d693-24ad-4457-a408-50617551ea5e) | 2026-11-19T23:54:57Z |
-| Senior CX Platform Engineer | gitlab | Remote, Canada; Remote, United States | 0.131 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8871406002) | 2026-11-19T23:37:02Z |
-| Sr Software Engineer, Infrastructure | databricks | San Francisco, California | 0.131 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8493170002) | 2026-11-19T23:37:02Z |
 | Applied AI Engineer, Government, International | openai | London, UK, Remote | 0.131 | no | [link](https://jobs.ashbyhq.com/openai/6c01266f-6ddb-42d1-a529-84736ae8587a) | 2026-11-19T23:54:57Z |
 | Strategy & Analytics Senior Lead - Multiple Openings | faire | New York City, NY; San Francisco, CA | 0.131 | no | [link](https://boards.greenhouse.io/faire/jobs/8396231002?gh_jid=8396231002) | 2026-11-19T23:37:02Z |
-| Site Reliability Engineer (Senior or Staff), Atlas | mongodb | Austin; Boston; Chicago; Miami; New York City; Philadelphia; Pittsburgh; Raleigh; United States; Washington DC | 0.130 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=7727964) | 2026-11-19T23:37:02Z |
 | Data Scientist, Fleet Orchestration Algorithms | zoox | Foster City, CA | 0.130 | no | [link](https://jobs.lever.co/zoox/254559af-8372-403b-8220-9b49af400361) | 2026-11-19T23:54:57Z |
 | Product Manager, Platform | perplexity | New York City, San Francisco | 0.130 | no | [link](https://jobs.ashbyhq.com/Perplexity/a8c79425-eb48-40e0-8557-93460fa67097) | 2026-11-19T23:54:57Z |
-| Senior DevOps Engineer, United States | crypto | San Francisco, California, New York, Chicago,IL | 0.130 | no | [link](https://jobs.lever.co/crypto/d39f52ad-f580-4ec1-87b0-4ae9bf9403d6) | 2026-11-19T23:54:57Z |
 | Staff Software Engineer, Money Movement Platform | stripe | SEA, San Francisco | 0.130 | no | [link](https://stripe.com/jobs/search?gh_jid=8177513) | 2026-11-19T23:37:02Z |
 | Staff Data and AI Engineer - Enterprise | riotgames | Los Angeles, USA | 0.130 | no | [link](https://www.riotgames.com/en/work-with-us/job/8014875?gh_jid=8014875) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Platform Services - Central Technology, Anti-Cheat | riotgames | Los Angeles, USA | 0.130 | no | [link](https://www.riotgames.com/en/work-with-us/job/8003927?gh_jid=8003927) | 2026-11-19T23:37:02Z |
 | Research Scientist / Research Engineer, Safety + Alignment, Search | openai | San Francisco | 0.130 | no | [link](https://jobs.ashbyhq.com/openai/5ef10e09-2b3f-41de-b77c-829787302101) | 2026-11-19T23:54:57Z |
 | Member of Technical Staff (Software Engineer, Enterprise Knowledge Platform) | perplexity | San Francisco, Palo Alto, London, Seattle, New York City, Remote | 0.130 | no | [link](https://jobs.ashbyhq.com/Perplexity/daafcaba-cc39-487a-b941-d7a407753788) | 2026-11-19T23:54:57Z |
-| Senior Staff Machine Learning Engineer - Content Platform | spotify | New York, NY | 0.130 | no | [link](https://jobs.lever.co/spotify/47d4eabf-8d5a-4dab-ac72-de7b5b56841c) | 2026-11-19T23:37:02Z |
-| Senior Staff Machine Learning Engineer - Content Platform | spotify | London, Stockholm | 0.130 | no | [link](https://jobs.lever.co/spotify/499543e3-78e7-473a-8a1d-a82ce9ce9030) | 2026-11-19T23:37:02Z |
 | Sr. Product Designer, AI/BI | databricks | Mountain View, California; San Francisco, California; Seattle, Washington | 0.130 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8429978002) | 2026-11-19T23:37:02Z |
 | Backend Engineer, Developer & End-user Experience Platform | stripe | SEA, SF, NY, Toronto | 0.130 | no | [link](https://stripe.com/jobs/search?gh_jid=7476555) | 2026-11-19T23:37:02Z |
 | Backend Engineer, Developer & End-user Experience Platform | stripe | Toronto Canada, San Francisco, Remote in US, Remote in Canada | 0.130 | no | [link](https://stripe.com/jobs/search?gh_jid=7292520) | 2026-11-19T23:37:02Z |
@@ -808,8 +1116,6 @@
 | Sr. Product Manager, Compute Platform | databricks | Seattle, Washington | 0.128 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8200284002) | 2026-11-19T23:37:02Z |
 | Applied AI Engineer, Enterprise | openai | San Francisco, New York City, US - Remote | 0.128 | no | [link](https://jobs.ashbyhq.com/openai/01091aed-427d-4e10-8cdb-fb500cf55bb9) | 2026-11-19T23:54:57Z |
 | Lead Product Manager, Identity & First-Party Data | attentive | New York, NY (Hybrid) | 0.128 | no | [link](https://job-boards.greenhouse.io/attentive/jobs/4163560009) | 2026-11-19T23:37:02Z |
-| Senior Site Reliability Engineer | wikimedia | Remote | 0.128 | no | [link](https://job-boards.greenhouse.io/wikimedia/jobs/8397050) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Financial Connections | stripe | New York | 0.128 | no | [link](https://stripe.com/jobs/search?gh_jid=8148653) | 2026-11-19T23:37:02Z |
 | Applied AI Engineer - Tokyo | openai | Tokyo, Japan, Remote | 0.128 | no | [link](https://jobs.ashbyhq.com/openai/4762783e-61e1-4d36-af1d-8dee3c5f70e2) | 2026-11-19T23:54:57Z |
 | Partner Applied AI Engineer - LATAM | openai | São Paulo, Remote | 0.128 | no | [link](https://jobs.ashbyhq.com/openai/e808f3eb-f1bc-42ed-bf0c-12e339cabc92) | 2026-11-19T23:54:57Z |
 | Staff Software Engineer, Applied AI | toast | Bengaluru, Karnataka, India | 0.128 | no | [link](https://careers.toasttab.com/jobs?gh_jid=8345739) | 2026-11-19T23:37:02Z |
@@ -826,7 +1132,6 @@
 | Credit Risk Senior Analyst - CECL Reporting, Loss Forecasting | toast | Bangalore | 0.127 | no | [link](https://careers.toasttab.com/jobs?gh_jid=7519051) | 2026-11-19T23:37:02Z |
 | Technical Support Engineer, Developer Platform | cloudflare | Hybrid | 0.127 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8329741?gh_jid=8329741) | 2026-11-19T23:37:02Z |
 | Applied AI Engineer, Large Enterprise | openai | Munich, Germany, Remote | 0.127 | no | [link](https://jobs.ashbyhq.com/openai/0cbc002e-bd6e-4aa3-9dbc-ed7fe59511ea) | 2026-11-19T23:54:57Z |
-| Machine Learning Engineer - Vision Foundation Models | zoox | Foster City, CA, Boston, MA, Seattle, WA, San Diego, CA | 0.127 | no | [link](https://jobs.lever.co/zoox/06f146c2-25f6-40fd-8393-4f92ce518929) | 2026-11-19T23:54:57Z |
 | Technical Support Engineer - Developer Platform | cloudflare | Hybrid | 0.127 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8330121?gh_jid=8330121) | 2026-11-19T23:37:02Z |
 | Research Engineer / Research Scientist - Post Training, Personalization | openai | San Francisco | 0.127 | no | [link](https://jobs.ashbyhq.com/openai/1bf678c5-1058-45ca-b9bd-b0029fccd60e) | 2026-11-19T23:54:57Z |
 | Senior Machine Learning Engineering Manager - Content Platform | spotify | London, Stockholm | 0.127 | no | [link](https://jobs.lever.co/spotify/bc70c9af-212e-48d5-b00b-eab26e4c0658) | 2026-11-19T23:37:02Z |
@@ -836,22 +1141,17 @@
 | Senior Backend Engineer, Platform Enablement | gitlab | Remote, United States | 0.126 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8750842002) | 2026-11-19T23:37:02Z |
 | Senior Business Analyst, Voice of Customer Insights | lightspeedhq | Montreal, Remote | 0.126 | no | [link](https://jobs.ashbyhq.com/lightspeedhq/1877ac02-4392-4305-bc6a-9a640b657c24) | 2026-11-19T23:37:02Z |
 | Senior Business Analyst, Voice of Customer Insights | lightspeedhq | Toronto, Remote | 0.126 | no | [link](https://jobs.ashbyhq.com/lightspeedhq/52a48b4d-e575-4014-a278-10e82fad73e7) | 2026-11-19T23:37:02Z |
-| Sr. Machine Learning Engineer, Applied Science | pinterest | San Francisco, CA, US; Remote, US | 0.126 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=6894747) | 2026-11-19T23:37:02Z |
 | Staff Backend Engineer, Agent Infrastructure | airbyte | San Francisco, Remote | 0.126 | no | [link](https://jobs.ashbyhq.com/airbyte/49a74b79-7c2a-455c-b714-84e74121403d) | 2026-11-19T23:54:57Z |
 | AI Transformation Leader | databricks | United States | 0.126 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=7803651002) | 2026-11-19T23:37:02Z |
 | Lead Machine Learning Scientist, FinCrime | monzo | Cardiff, London or Remote (UK) | 0.126 | no | [link](https://job-boards.greenhouse.io/monzo/jobs/8050756) | 2026-11-19T23:37:02Z |
 | Principal Product Manager, AI Agents & MCP | amplitude | San Francisco | 0.126 | no | [link](https://jobs.ashbyhq.com/amplitude/a1b85c94-7d75-47ce-91b8-ccb81561bd63) | 2026-11-19T23:37:02Z |
-| Senior Infrastructure Engineer, Storage Platform | cloudflare | In-Office | 0.126 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/7629805?gh_jid=7629805) | 2026-11-19T23:37:02Z |
 | AI Engineer, Trading Ops & Management | crypto | United States | 0.126 | no | [link](https://jobs.lever.co/crypto/104efd49-475b-4e42-8804-5d728db9fe74) | 2026-11-19T23:54:57Z |
 | AI Engineer, Trading Ops & Management | crypto | London | 0.126 | no | [link](https://jobs.lever.co/crypto/56065276-69e8-490f-8d66-115a943fa652) | 2026-11-19T23:54:57Z |
 | AI Engineer, Trading Ops & Management | crypto | Hong Kong | 0.126 | no | [link](https://jobs.lever.co/crypto/a9695010-f3ae-4264-a0b6-458e43f8a696) | 2026-11-19T23:54:57Z |
 | Applied AI Engineer, API Platform, Digital Natives | openai | New York City, Remote | 0.126 | no | [link](https://jobs.ashbyhq.com/openai/3254f6a7-6353-4a77-beec-f37b832c99ae) | 2026-11-19T23:54:57Z |
 | Applied AI Engineer, API Platform, Digital Natives | openai | San Francisco, Seattle, Remote | 0.126 | no | [link](https://jobs.ashbyhq.com/openai/5c3a17db-62f1-4145-93b0-2f207d4d4af8) | 2026-11-19T23:54:57Z |
-| Sr. IT Site Reliability Software Engineer | databricks | Costa Rica | 0.125 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8493168002) | 2026-11-19T23:37:02Z |
 | Senior Research Scientist | mongodb | Palo Alto | 0.125 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=7891161) | 2026-11-19T23:37:02Z |
-| Staff Site Reliability Engineer, FinOps | sumologic | San José, Costa Rica | 0.125 | no | [link](https://job-boards.greenhouse.io/sumologic/jobs/8349107) | 2026-11-19T23:37:02Z |
 | Senior Business Analyst (Reconciliation) | sumup | São Paulo, São Paulo, Brazil | 0.125 | no | [link](https://sumup.com/careers/positions/8860089002?gh_jid=8860089002) | 2026-11-19T23:37:02Z |
-| ⚙️ Senior/Staff Platform Engineer | runway | North America, Remote | 0.125 | no | [link](https://jobs.ashbyhq.com/Runway/950876a1-709e-49b7-93f3-6e130efdf6fa) | 2026-11-19T23:54:57Z |
 | Applied AI Engineer, Digital Natives | openai | London, UK, Remote | 0.125 | no | [link](https://jobs.ashbyhq.com/openai/7be58f3a-6005-42ed-86fa-77773ebfb294) | 2026-11-19T23:54:57Z |
 | Applied AI Engineer, Digital Natives | openai | Munich, Germany, Remote | 0.125 | no | [link](https://jobs.ashbyhq.com/openai/d039c0ef-ab36-4d40-bc5e-5c70295b2eb7) | 2026-11-19T23:54:57Z |
 | Applied AI Engineer, Digital Natives | openai | Paris, France, Remote | 0.125 | no | [link](https://jobs.ashbyhq.com/openai/112e34f2-45da-4a08-adf4-cc29398938df) | 2026-11-19T23:54:57Z |
@@ -864,15 +1164,12 @@
 | Senior Director of Engineering, Billing Platform | cloudflare | Hybrid | 0.124 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8152825?gh_jid=8152825) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, AI Enablement | chime | San Francisco, CA, USA | 0.124 | no | [link](https://boards.greenhouse.io/chime/jobs/8788272002?gh_jid=8788272002) | 2026-11-19T23:37:02Z |
 | Staff Technical Solutions Engineer, Data & AI | databricks | Sao Paulo, Brazil | 0.124 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8920303002) | 2026-11-19T23:37:02Z |
-| Site Reliability Engineer (Senior or Staff), Storage Layer Services (SLS) | mongodb | Boston; Miami; New York City; Pittsburgh; Raleigh; United States | 0.124 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=7743366) | 2026-11-19T23:37:02Z |
-| Site Reliability Engineer (Senior or Staff), Storage Layer Services (SLS) | mongodb | Montreal; Toronto | 0.124 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=7793634) | 2026-11-19T23:37:02Z |
 | Staff Product Designer - Platform Design | spotify | London, Stockholm | 0.124 | no | [link](https://jobs.lever.co/spotify/f02fb195-ba10-40bd-a926-0318a34a7fae) | 2026-11-19T23:37:02Z |
 | Backend Engineer - Data Platform | spotify | Stockholm, London | 0.124 | no | [link](https://jobs.lever.co/spotify/186b763a-2a61-4563-8813-ff6b40c9c8a7) | 2026-11-19T23:37:02Z |
 | Principal Product Manager - Core Experience Platform | spotify | London, Stockholm | 0.124 | no | [link](https://jobs.lever.co/spotify/73a83f73-2f59-4c82-bac3-7dfc5d3355ad) | 2026-11-19T23:37:02Z |
 | Senior / Staff Product Engineer, Applied AI | linear | North America, Remote | 0.124 | no | [link](https://jobs.ashbyhq.com/linear/b4a7764e-c680-4bdf-9956-dc78f2ca94d5) | 2026-11-19T23:54:57Z |
 | Staff/Principal Software Engineer - Security Platform | cloudflare | Distributed | 0.124 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/7053411?gh_jid=7053411) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, AI Operations, GPS | scaleai | Doha, Qatar | 0.124 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4725133005) | 2026-11-19T23:37:02Z |
-| Site Reliability Engineer (Senior or Staff), Storage Layer Services (SLS) | mongodb | Cork, Ireland; Dublin, Ireland | 0.124 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=6984814) | 2026-11-19T23:37:02Z |
 | Software Engineer, Traffic Infrastructure | openai | San Francisco, Seattle | 0.124 | no | [link](https://jobs.ashbyhq.com/openai/1d386acc-5fe0-44ed-b288-a6b1b891c9a8) | 2026-11-19T23:54:57Z |
 | Product Manager, Support Platform | stripe | Dublin, Ireland | 0.124 | no | [link](https://stripe.com/jobs/search?gh_jid=8143563) | 2026-11-19T23:37:02Z |
 | Manager, Applied AI Architects | openai | London, UK | 0.124 | no | [link](https://jobs.ashbyhq.com/openai/f794c64d-bc5c-430b-b645-bff8c202b80e) | 2026-11-19T23:54:57Z |
@@ -890,7 +1187,6 @@
 | Software Engineer, Enterprise Platform | replit | Foster City, CA, Remote | 0.123 | no | [link](https://jobs.ashbyhq.com/replit/7b4bc2fe-5860-4f56-8746-aabb852cf0e1) | 2026-11-19T23:54:57Z |
 | Sr. Staff Applied AI Engineer, GTM | zscaler | Remote - USA; Santa Clara, California, USA | 0.123 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5275347007) | 2026-11-19T23:37:02Z |
 | Sales Compensation Manager Systems and Analytics | fivetran | USA - New York | 0.123 | no | [link](https://www.fivetran.com/careers/job?gh_jid=8198219003) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer - Unpublished R&D Product | riotgames | Los Angeles, USA | 0.123 | no | [link](https://www.riotgames.com/en/work-with-us/job/8104456?gh_jid=8104456) | 2026-11-19T23:37:02Z |
 | Director, AI Developer Experience | attentive | New York, NY (Hybrid) | 0.123 | no | [link](https://job-boards.greenhouse.io/attentive/jobs/4443888009) | 2026-11-19T23:37:02Z |
 | Senior AI Research Engineer | adyen | Amsterdam | 0.123 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/7908806) | 2026-11-19T23:37:02Z |
 | Staff Engineer - Data Foundations | adyen | San Francisco | 0.123 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8300952) | 2026-11-19T23:37:02Z |
@@ -900,7 +1196,6 @@
 | Software Engineer, Cloud Agents | openai | San Francisco, Remote | 0.123 | no | [link](https://jobs.ashbyhq.com/openai/f6278b60-dd42-4aa8-a3cd-c105f75ae8ae) | 2026-11-19T23:54:57Z |
 | Manager, Applied AI Architect (India) | openai | Bangalore - Remote | 0.123 | no | [link](https://jobs.ashbyhq.com/openai/2aae72af-8c35-42bc-86f6-9d5634391245) | 2026-11-19T23:54:57Z |
 | Senior Manager - Technical Solutions (Big Data / AI) | databricks | Bengaluru, India | 0.123 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8407895002) | 2026-11-19T23:37:02Z |
-| Senior Software Engineer, Cloud Growth | temporal | United States (Remote) | 0.123 | no | [link](https://jobs.ashbyhq.com/temporal/a04c4545-b34e-40d4-b1ac-17f17976e93e) | 2026-11-19T23:54:57Z |
 | Legal Operations Analyst | attentive | New York, NY (Hybrid) | 0.123 | no | [link](https://job-boards.greenhouse.io/attentive/jobs/4471774009) | 2026-11-19T23:37:02Z |
 | AI Research Engineer | hex | New York, San Francisco, Remote | 0.122 | no | [link](https://jobs.ashbyhq.com/hex/4159564c-f4a6-4034-93a6-928c579d96ce) | 2026-11-19T23:54:57Z |
 | Staff Software Engineer, Enterprise Platform | replit | Foster City, CA, Remote | 0.122 | no | [link](https://jobs.ashbyhq.com/replit/61cfbcb7-cd1e-49ab-82a1-e93c3962e343) | 2026-11-19T23:54:57Z |
@@ -918,9 +1213,7 @@
 | Engineering Manager, Security Platform: Authentication | gitlab | Bangalore, India | 0.121 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8929723002) | 2026-11-19T23:37:02Z |
 | Manager, Applied AI Architects (Australia) | openai | Sydney, Australia | 0.121 | no | [link](https://jobs.ashbyhq.com/openai/f4552c9d-e15f-4f2c-bf03-fd2cc1e11068) | 2026-11-19T23:54:57Z |
 | Senior Data Scientist, Artist-First AI Music lab | spotify | New York, NY, Boston, MA, Washington D.C. | 0.121 | no | [link](https://jobs.lever.co/spotify/babebec3-0061-4c39-a4ad-c51a54d23567) | 2026-11-19T23:37:02Z |
-| Senior Infrastructure Engineer (Software-Focused) | asana | Warsaw | 0.121 | no | [link](https://www.asana.com/jobs/apply/7964316?gh_jid=7964316) | 2026-11-19T23:37:02Z |
 | Senior People Insights Analyst | attentive | New York, NY (Hybrid) | 0.121 | no | [link](https://job-boards.greenhouse.io/attentive/jobs/4463318009) | 2026-11-19T23:37:02Z |
-| Senior Staff Cloud Platform Engineer | 1password | Remote (United States / Canada) | 0.121 | no | [link](https://jobs.ashbyhq.com/1password/25e52edb-3d1a-43ab-a6d1-ad2a36f0c8ee) | 2026-11-19T23:54:57Z |
 | Software Engineer, AI Agent | hex | San Francisco, New York, Remote | 0.121 | no | [link](https://jobs.ashbyhq.com/hex/f5e3e677-5fdb-4012-badb-1b709ed37e11) | 2026-11-19T23:54:57Z |
 | Paid Media Manager US | Kyra | US | 0.121 | no | [link](https://remoteOK.com/remote-jobs/remote-paid-media-manager-us-kyra-1137675) | 2026-11-19T21:31:05Z |
 | Cloud Security Engineer | hex | Remote - US, San Francisco, New York | 0.121 | no | [link](https://jobs.ashbyhq.com/hex/3f3c943c-7d46-46a7-bc58-5a66785c1e87) | 2026-11-19T23:54:57Z |
@@ -937,19 +1230,11 @@
 | Research Engineer / Scientist, Reinforcement Learning | harvey | Remote | 0.120 | no | [link](https://jobs.ashbyhq.com/harvey/30df72cf-ee68-4194-864e-47745ca8b6e0) | 2026-11-19T23:54:57Z |
 | Research Engineer / Scientist, Reinforcement Learning | harvey | London, Remote | 0.120 | no | [link](https://jobs.ashbyhq.com/harvey/f0e47659-1727-4fd6-af14-4dffe07b6342) | 2026-11-19T23:54:57Z |
 | Data Scientist, Safety | openai | San Francisco, Remote | 0.120 | no | [link](https://jobs.ashbyhq.com/openai/90c711dc-5f50-46e3-a5ab-82359a56d683) | 2026-11-19T23:54:57Z |
-| Machine Learning Engineer | clickhouse | United Kingdom, Poland, Portugal, France, Spain, Germany, Italy, The Netherlands, Remote | 0.120 | no | [link](https://jobs.ashbyhq.com/clickhouse/fe8430ad-2150-4838-ae36-535aa659b389) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Data Engineering Platform | coinbase | Remote - USA | 0.120 | no | [link](https://www.coinbase.com/careers/positions/8082199?gh_jid=8082199) | 2026-11-19T23:37:02Z |
 | Machine Learning Data Scientist, Forecasting Platform | anthropic | San Francisco, CA | 0.120 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5467893008) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer (Research Scientist) - DFAI | plaid | San Francisco HQ, Seattle Office, Remote | 0.120 | no | [link](https://jobs.ashbyhq.com/plaid/dab31ae8-1e25-4b63-8008-d6930ff72369) | 2026-11-19T23:37:02Z |
 | Lead Data Scientist | monzo | Cardiff, London or Remote (UK) | 0.120 | no | [link](https://job-boards.greenhouse.io/monzo/jobs/6369658) | 2026-11-19T23:37:02Z |
 | Principal Product Manager, Creation Platform | roblox | San Mateo, CA, United States | 0.120 | no | [link](https://careers.roblox.com/jobs/8364312?gh_jid=8364312) | 2026-11-19T23:37:02Z |
 | Scientifique de données principal(e)// Senior Data Scientist- Travel Tech | hopper | Montréal - Remote, Québec - Remote | 0.120 | no | [link](https://jobs.ashbyhq.com/hopper/8b3a31e4-634a-46f8-a0f4-6e9722565088) | 2026-11-19T23:37:02Z |
-| Senior AI/ML Engineer | sigmacomputing | San Francisco, CA | 0.120 | no | [link](https://job-boards.greenhouse.io/sigmacomputing/jobs/7767727003) | 2026-11-19T23:37:02Z |
-| Senior AI/ML Engineer | sigmacomputing | New York City, NY | 0.120 | no | [link](https://job-boards.greenhouse.io/sigmacomputing/jobs/7767728003) | 2026-11-19T23:37:02Z |
-| Staff AI/ML Engineer | sigmacomputing | San Francisco, CA | 0.120 | no | [link](https://job-boards.greenhouse.io/sigmacomputing/jobs/7767730003) | 2026-11-19T23:37:02Z |
-| Staff AI/ML Engineer | sigmacomputing | New York City, NY | 0.120 | no | [link](https://job-boards.greenhouse.io/sigmacomputing/jobs/7767733003) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer (Research Scientist) - Fraud | plaid | New York City Office, Seattle Office, San Francisco HQ, Remote | 0.120 | no | [link](https://jobs.ashbyhq.com/plaid/5e56c0a6-3caa-4255-8c63-95c29cbc2a32) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer (AI/ML) | clickhouse | New York, Detroit, Canada, Austin, Phoenix, Los Angeles, San Francisco, Dallas, Remote | 0.119 | no | [link](https://jobs.ashbyhq.com/clickhouse/b3e6d985-b540-456c-8eee-edfd79580572) | 2026-11-19T23:37:02Z |
 | SaaS Platform and AI Partner Marketing Lead | stripe | San Francisco, New York, Seattle, Chicago, Atlanta, Remote in the US | 0.119 | no | [link](https://stripe.com/jobs/search?gh_jid=8248507) | 2026-11-19T23:37:02Z |
 | Staff Software Development Engineer - AI Engineer | zscaler | Mohali, IND | 0.119 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5173177007) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Agentic Analytics | cohere | United States, San Francisco, Canada, New York, Ottawa, Toronto, Montreal, Remote | 0.119 | no | [link](https://jobs.ashbyhq.com/cohere/39cab400-c976-41d9-9002-880ac6985b64) | 2026-11-19T23:37:02Z |
@@ -957,7 +1242,6 @@
 | Software Engineer - AI Product | figma | San Francisco, CA • New York, NY • United States | 0.119 | no | [link](https://boards.greenhouse.io/figma/jobs/5551730004?gh_jid=5551730004) | 2026-11-19T23:37:02Z |
 | Director, Data Science & Engineering, Finance | dropbox | Remote - US: Select locations | 0.119 | no | [link](https://jobs.dropbox.com/listing/8356282?gh_jid=8356282) | 2026-11-19T23:37:02Z |
 | Staff Applied AI Engineer | scaleai | London, UK | 0.119 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4720050005) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Financial Products | adyen | San Francisco | 0.119 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8160968) | 2026-11-19T23:37:02Z |
 | Cloud Operations Engineer | mongodb | Bengaluru | 0.119 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8184637) | 2026-11-19T23:37:02Z |
 | Manager, Applied AI Engineering (Codex) | openai | San Francisco, New York City, Remote | 0.119 | no | [link](https://jobs.ashbyhq.com/openai/b28b990c-54e4-4be4-a33a-d5518dc3e117) | 2026-11-19T23:54:57Z |
 | Manager, Applied AI Engineering (Codex) | openai | Munich, Germany, Remote | 0.119 | no | [link](https://jobs.ashbyhq.com/openai/cc203d0d-96cd-4615-b5f1-3f25d6b08a95) | 2026-11-19T23:54:57Z |
@@ -973,8 +1257,6 @@
 | Research Scientist, Life Sciences (Computational Chemistry) | anthropic | San Francisco, CA | 0.118 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5461863008) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Data Infrastructure | cohere | New York | 0.118 | no | [link](https://jobs.ashbyhq.com/cohere/c4192057-43fa-45c9-a40e-6f29131bf11d) | 2026-11-19T23:37:02Z |
 | Research Scientist, Life Sciences (Computational) | anthropic | San Francisco, CA | 0.118 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5357739008) | 2026-11-19T23:37:02Z |
-| Senior Software Engineer, Compute Infrastructure | databricks | Mountain View, California | 0.118 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8806934002) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Public Sector | scaleai | Denver, CO; Washington, DC | 0.118 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4654382005) | 2026-11-19T23:37:02Z |
 | People Analytics AI Engineer | samsara | Remote - Seattle | 0.118 | no | [link](https://www.samsara.com/company/careers/roles/7858719?gh_jid=7858719) | 2026-11-19T23:37:02Z |
 | Research Scientist, Life Sciences (Large Molecules, Antibody Design) | anthropic | San Francisco, CA | 0.118 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5467092008) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Model Infrastructure | harvey | San Francisco, Remote | 0.118 | no | [link](https://jobs.ashbyhq.com/harvey/3ae2aecf-16c4-4e6e-a8fd-0db33ebeb16c) | 2026-11-19T23:54:57Z |
@@ -982,12 +1264,10 @@
 | Senior Atlassian Cloud Engineer | dropbox | Remote - Poland | 0.118 | no | [link](https://jobs.dropbox.com/listing/8328520?gh_jid=8328520) | 2026-11-19T23:37:02Z |
 | AI Engineer, Customer Success | samsara | Remote - Austin; Remote - CA; Remote - Chicago; Remote - Dallas; Remote - Houston; Remote - Seattle | 0.118 | no | [link](https://www.samsara.com/company/careers/roles/8024110?gh_jid=8024110) | 2026-11-19T23:37:02Z |
 | Genie Sales Director (AI/BI) | databricks | United States | 0.118 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8824175002) | 2026-11-19T23:37:02Z |
-| DevOps Engineer, Infrastructure & Security | scaleai | Washington, DC | 0.118 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4674863005) | 2026-11-19T23:37:02Z |
 | Quality Operations Lead, Gen AI | scaleai | San Francisco, CA; New York, NY | 0.117 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4750929005) | 2026-11-19T23:37:02Z |
 | Risk & Fraud Analyst | openai | San Francisco, Remote | 0.117 | no | [link](https://jobs.ashbyhq.com/openai/72a513ec-d75c-48d5-9fa5-7eac3d7d12b2) | 2026-11-19T23:54:57Z |
 | Senior Software Engineer - Infrastructure Security (Remote) | quora | Remote - Multiple Locations, United States, Canada | 0.117 | no | [link](https://jobs.ashbyhq.com/quora/dce88e1a-d30f-44e6-a471-cf810fc9a449) | 2026-11-19T23:54:57Z |
 | Senior Software Engineer, Jade Awareness - AI Financial Partner | chime | New York, NY, USA; San Francisco, CA, USA | 0.117 | no | [link](https://boards.greenhouse.io/chime/jobs/8625622002?gh_jid=8625622002) | 2026-11-19T23:37:02Z |
-| Senior Software Engineer, Site Reliability Engineer | harvey | San Francisco | 0.117 | no | [link](https://jobs.ashbyhq.com/harvey/c9cea360-f0b6-4a93-b7b3-0f0145b02ffe) | 2026-11-19T23:54:57Z |
 | [WEBTOON] Senior Content Programming Manager, On-Platform Curation | wattpad | El Segundo, California | 0.117 | no | [link](https://jobs.lever.co/wattpad/8cb8071f-81fb-48d8-b4ec-90a74c194510) | 2026-11-19T23:37:02Z |
 | Principal Technical Product Manager - Publishing Platform, Content Access Platform | riotgames | Los Angeles, USA; Mercer Island, USA | 0.117 | no | [link](https://www.riotgames.com/en/work-with-us/job/8316731?gh_jid=8316731) | 2026-11-19T23:37:02Z |
 | CDD Risk Analyst, Customer Onboarding | adyen | Amsterdam | 0.117 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8278827) | 2026-11-19T23:37:02Z |
@@ -997,7 +1277,6 @@
 | Manager II, Engineering- Analytics Engineering, Core Data Science | pinterest | San Francisco, CA, US; Remote, US | 0.117 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8015360) | 2026-11-19T23:37:02Z |
 | Manager, Applied AI Engineering (Digital Natives) | openai | San Francisco, New York City, Seattle, Mountain View, Remote | 0.117 | no | [link](https://jobs.ashbyhq.com/openai/ba2ead69-d118-4a91-a4d7-c880d17fa7f9) | 2026-11-19T23:54:57Z |
 | Senior Deal Desk Analyst, APAC | harvey | Sydney | 0.117 | no | [link](https://jobs.ashbyhq.com/harvey/39d6ae01-e28c-441c-9593-5b1d2923b075) | 2026-11-19T23:54:57Z |
-| Staff Machine Learning Engineer (Credit International ML) | affirm | Remote Poland | 0.117 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8045395003) | 2026-11-19T23:37:02Z |
 | Senior CDD Risk Analyst, Reviews | adyen | Amsterdam | 0.117 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8274233) | 2026-11-19T23:37:02Z |
 | Applied AI Engineer, Enterprise - EDU | openai | San Francisco, New York City, US - Remote | 0.117 | no | [link](https://jobs.ashbyhq.com/openai/087aa4f5-1192-413a-ba34-3ae324cf90e5) | 2026-11-19T23:54:57Z |
 | Data API Engineer | supabase | Remote, Global | 0.117 | no | [link](https://jobs.ashbyhq.com/supabase/950e8ffc-79a5-4626-b1dd-115fcbcddad0) | 2026-11-19T23:54:57Z |
@@ -1015,14 +1294,11 @@
 | Staff Software Engineer, AI Developer Experience | asana | New York City | 0.116 | no | [link](https://www.asana.com/jobs/apply/7964388?gh_jid=7964388) | 2026-11-19T23:37:02Z |
 | Machine Learning Engineering Manager, Credit & Underwriting | adyen | San Francisco | 0.116 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8160966) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Data Engineering | chime | San Francisco, CA, USA | 0.116 | no | [link](https://boards.greenhouse.io/chime/jobs/8505462002?gh_jid=8505462002) | 2026-11-19T23:37:02Z |
-| Site Reliability Engineer, Infrastructure Platforms — UK (Intermediate to Senior Staff) | gitlab | Remote | 0.116 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8773546002) | 2026-11-19T23:37:02Z |
 | Technical Program Manager, Applied Infrastructure | openai | San Francisco | 0.116 | no | [link](https://jobs.ashbyhq.com/openai/0a7f5df1-f5aa-4df6-98a8-5afbc660782b) | 2026-11-19T23:54:57Z |
-| AI Platform Engineer | starburst | India | 0.116 | no | [link](https://job-boards.greenhouse.io/starburst/jobs/5416975008) | 2026-11-19T23:37:02Z |
 | AI Research Engineer | posthog | Hybrid (UK), Remote | 0.116 | no | [link](https://jobs.ashbyhq.com/PostHog/8dc3f33a-b930-4c54-b4c4-3e6bd2ff28d3) | 2026-11-19T23:54:57Z |
 | Principal Product Manager, Internal AI Products | adyen | San Francisco | 0.116 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8359357) | 2026-11-19T23:37:02Z |
 | Software Engineer, Infrastructure | hex | Remote - US | 0.116 | no | [link](https://jobs.ashbyhq.com/hex/b3921203-d928-40ac-9675-a58a9cdbaafa) | 2026-11-19T23:54:57Z |
 | Senior Procurement Manager - Data Centers | adyen | Amsterdam | 0.116 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8220257) | 2026-11-19T23:37:02Z |
-| Site Reliability Engineer, Infrastructure Platforms — AMER (Intermediate to Senior Staff) | gitlab | Remote, Canada; Remote, US | 0.116 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8623389002) | 2026-11-19T23:37:02Z |
 | AI Agent Engineer | starburst | United States | 0.115 | no | [link](https://job-boards.greenhouse.io/starburst/jobs/5430686008) | 2026-11-19T23:37:02Z |
 | Senior Manager, AI Forward Deployed Engineering - London | databricks | London, United Kingdom | 0.115 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8793863002) | 2026-11-19T23:37:02Z |
 | AI Policy Lead | scaleai | New York, NY; San Francisco, CA; Washington, DC | 0.115 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4752554005) | 2026-11-19T23:37:02Z |
@@ -1044,7 +1320,6 @@
 | Sr Software Engineer I/II, Operational AI | samsara | Remote - Canada | 0.115 | no | [link](https://www.samsara.com/company/careers/roles/8387609?gh_jid=8387609) | 2026-11-19T23:37:02Z |
 | Sr Software Engineer I/II, Operational AI | samsara | Remote - US | 0.115 | no | [link](https://www.samsara.com/company/careers/roles/8223641?gh_jid=8223641) | 2026-11-19T23:37:02Z |
 | Business Development Manager - Mobility Data and Analytics (Remote) | geotab | Denver, Colorado - USA; Las Vegas, Nevada - USA; Phoenix, Arizona - USA; Portland, Oregon - USA; Sacramento, California - USA; Salt Lake City, Utah - USA; Seattle, Washington - USA | 0.115 | no | [link](https://job-boards.greenhouse.io/geotab/jobs/5393645008) | 2026-11-19T23:37:02Z |
-| Senior Software Engineer (SRE), Infrastructure Security | mongodb | Austin; Boston; Chicago; Dallas; Denver; New York City; San Francisco; Seattle; United States; Washington DC | 0.115 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8274765) | 2026-11-19T23:37:02Z |
 | Manager, Service Cloud | adyen | Amsterdam | 0.114 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8267439) | 2026-11-19T23:37:02Z |
 | Senior Systems Engineer, Data and Integrations | fivetran | Novi Sad, South Bačka, Serbia, EMEA | 0.114 | no | [link](https://www.fivetran.com/careers/job?gh_jid=8075761003) | 2026-11-19T23:37:02Z |
 | Senior  Staff Systems Engineer, Data & Integrations | fivetran | Oakland, California, United States, AMER | 0.114 | no | [link](https://www.fivetran.com/careers/job?gh_jid=8004964003) | 2026-11-19T23:37:02Z |
@@ -1076,8 +1351,6 @@
 | Support Engineer, AI Infrastructure & Tooling | figma | San Francisco, CA • New York, NY • United States | 0.113 | no | [link](https://boards.greenhouse.io/figma/jobs/5802956004?gh_jid=5802956004) | 2026-11-19T23:37:02Z |
 | Senior AI Research Engineer - LLM Training & Inference Infrastructure | datadog | Paris, France | 0.113 | no | [link](https://careers.datadoghq.com/detail/8364908/?gh_jid=8364908) | 2026-11-19T23:37:02Z |
 | Senior Product Analyst | fivetran | Oakland, California, United States, AMER | 0.113 | no | [link](https://www.fivetran.com/careers/job?gh_jid=8017414003) | 2026-11-19T23:37:02Z |
-| Staff Site Reliability Engineer (Production Engineer)- Federal | zscaler | Santa Clara, California, USA | 0.113 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5029669007) | 2026-11-19T23:37:02Z |
-| Staff Technical Program Manager, Site Reliability Engineering | mongodb | Cork, Ireland; Dublin, Ireland; Ireland | 0.113 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=7831454) | 2026-11-19T23:37:02Z |
 | Applied AI Engineer, Cyber | openai | Singapore, Remote | 0.113 | no | [link](https://jobs.ashbyhq.com/openai/29f15e50-1611-4256-afad-03b7df0b7aa7) | 2026-11-19T23:54:57Z |
 | Data Scientist, Cloud Distribution & Growth | openai | San Francisco, Seattle, Remote | 0.113 | no | [link](https://jobs.ashbyhq.com/openai/b82699a2-5819-4276-a402-fd88f56f9246) | 2026-11-19T23:54:57Z |
 | Member of Technical Staff - Post-training (Data Infrastructure) | cohere | United States, Canada | 0.113 | no | [link](https://jobs.ashbyhq.com/cohere/eef82766-7e31-430f-a102-bc33a5022597) | 2026-11-19T23:37:02Z |
@@ -1094,7 +1367,6 @@
 | Associate Value Engineer (AI-Driven Data Science & Analytics) - Orbit Program | celonis | Raleigh, US, North Carolina | 0.112 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/7885881003?gh_jid=7885881003) | 2026-11-19T23:37:02Z |
 | Financial Risk Analyst | adyen | São Paulo | 0.112 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/7842667) | 2026-11-19T23:37:02Z |
 | Manager,Salesforce Sales Cloud | adyen | Amsterdam | 0.112 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8378319) | 2026-11-19T23:37:02Z |
-| Sr. DevOps Engineer | zscaler | Tel Aviv-Yafo Municipality, ISR | 0.112 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5229507007) | 2026-11-19T23:37:02Z |
 | Team Lead, Service Cloud | adyen | Amsterdam | 0.112 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8065770) | 2026-11-19T23:37:02Z |
 | Senior Optimization Data Analyst | adyen | Chicago | 0.112 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8160354) | 2026-11-19T23:37:02Z |
 | Sr. Staff Data Center Operations Engineer | zscaler | Singapore, SGP | 0.112 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5261573007) | 2026-11-19T23:37:02Z |
@@ -1104,14 +1376,11 @@
 | Financial Crime Analyst | adyen | São Paulo | 0.112 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8214603) | 2026-11-19T23:37:02Z |
 | Head of Engineering, AI Platform | starburst | India | 0.112 | no | [link](https://job-boards.greenhouse.io/starburst/jobs/4884854008) | 2026-11-19T23:37:02Z |
 | Software Engineer, Backend, Comms Platform | ramp | Remote (US) | 0.112 | no | [link](https://jobs.ashbyhq.com/ramp/939892e5-5273-4bfc-8c41-a6c51cabb228) | 2026-11-19T23:54:57Z |
-| Staff / Senior Staff Machine Learning Engineer - Collision Avoidance System | zoox | Foster City, CA | 0.112 | no | [link](https://jobs.lever.co/zoox/01ff8f1c-eda8-4c45-9cca-b4461d8757d5) | 2026-11-19T23:54:57Z |
-| Staff DevOps Engineer | zscaler | Bangalore, IND | 0.112 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5270971007) | 2026-11-19T23:37:02Z |
 | Frontier Agents Engineer (Applied AI) | scaleai | San Francisco, CA | 0.112 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4720573005) | 2026-11-19T23:37:02Z |
 | Tax Analyst | spotify | Stockholm | 0.112 | no | [link](https://jobs.lever.co/spotify/d2489df3-87cb-48bb-81af-83aab5f03bdc) | 2026-11-19T23:37:02Z |
 | Marketing Analytics Lead, Enterprise Marketing | anthropic | San Francisco, CA / New York City, NY | 0.112 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5434145008) | 2026-11-19T23:37:02Z |
 | Principal Software Engineer, Creator Analytics | roblox | San Mateo, CA, United States | 0.112 | no | [link](https://careers.roblox.com/jobs/8310779?gh_jid=8310779) | 2026-11-19T23:37:02Z |
 | Senior Manager, Research Scientist | scaleai | San Francisco, CA; New York, NY | 0.112 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4718431005) | 2026-11-19T23:37:02Z |
-| Senior Site Reliability Engineer | fivetran | Bengaluru, Karnataka, India, APAC | 0.112 | no | [link](https://www.fivetran.com/careers/job?gh_jid=8044038003) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Full Stack - Gen AI | scaleai | New York, NY; San Francisco, CA; Seattle, WA; New York, NY | 0.112 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4713608005) | 2026-11-19T23:37:02Z |
 | Applied AI Engineer, Codex | openai | San Francisco | 0.112 | no | [link](https://jobs.ashbyhq.com/openai/ca7e4019-bf93-42fd-8f15-fac59c6e237c) | 2026-11-19T23:54:57Z |
 | Applied AI Engineer, Codex | openai | Singapore, Remote | 0.112 | no | [link](https://jobs.ashbyhq.com/openai/02ec1893-17df-420c-8d19-48eca8edd884) | 2026-11-19T23:54:57Z |
@@ -1138,9 +1407,6 @@
 | Senior Frontier Agents Engineer (Applied AI) | scaleai | San Francisco, CA | 0.111 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4720478005) | 2026-11-19T23:37:02Z |
 | Staff Frontier Agents Engineer (Applied AI) | scaleai | San Francisco, CA | 0.111 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4720487005) | 2026-11-19T23:37:02Z |
 | Applied AI Engineering Manager, Startups / Core | openai | London, UK, Munich, Germany, Paris, France, Remote | 0.111 | no | [link](https://jobs.ashbyhq.com/openai/ceca6916-b8d8-42cc-a32a-c27e06744b31) | 2026-11-19T23:54:57Z |
-| Machine Learning Engineer, New Grad - Quora (Remote) | quora | Remote - Multiple Locations, United States, Canada | 0.111 | no | [link](https://jobs.ashbyhq.com/quora/40659fe7-545e-4b08-b6d7-2567b18b9ed3) | 2026-11-19T23:54:57Z |
-| Member of Technical Staff (Backend/Infrastructure Engineer, Search) | perplexity | Belgrade, London, Dublin | 0.111 | no | [link](https://jobs.ashbyhq.com/Perplexity/dd80ab52-34bd-42af-aa5e-6283b7e6c194) | 2026-11-19T23:54:57Z |
-| Senior Staff Site Reliability Engineer | fivetran | Oakland, California, United States, AMER | 0.111 | no | [link](https://www.fivetran.com/careers/job?gh_jid=7990752003) | 2026-11-19T23:37:02Z |
 | Principal Product Manager, AI-Native Merchant Experiences | adyen | San Francisco | 0.111 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8161148) | 2026-11-19T23:37:02Z |
 | Software Engineer, IP Infrastructure | openai | San Francisco, Remote | 0.111 | no | [link](https://jobs.ashbyhq.com/openai/33acf0e2-5c11-46d7-9dc9-417f5537139b) | 2026-11-19T23:54:57Z |
 | Sr. Staff Software Engineer, Cloud Networking & Datapath | zscaler | Santa Clara, California, USA | 0.111 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5253937007) | 2026-11-19T23:37:02Z |
@@ -1161,10 +1427,8 @@
 | Senior Data Scientist, Safety Enforcement | reddit | Remote - United States | 0.111 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8110339) | 2026-11-19T23:37:02Z |
 | Senior Sales Compensation Analyst | fivetran | Bengaluru, Karnataka, India, APAC | 0.111 | no | [link](https://www.fivetran.com/careers/job?gh_jid=8200340003) | 2026-11-19T23:37:02Z |
 | Software Engineer - Data Infrastructure | figma | San Francisco, CA • New York, NY • United States | 0.111 | no | [link](https://boards.greenhouse.io/figma/jobs/5551686004?gh_jid=5551686004) | 2026-11-19T23:37:02Z |
-| Staff Software Engineer, Site Reliability Engineer | harvey | San Francisco | 0.111 | no | [link](https://jobs.ashbyhq.com/harvey/4d661139-19ad-42af-9f6c-a68c71263e14) | 2026-11-19T23:54:57Z |
 | Strategic Account Director, Developer Platform | cloudflare | Hybrid | 0.111 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8375925?gh_jid=8375925) | 2026-11-19T23:37:02Z |
 | Senior Pricing & Monetization Data Scientist | fivetran | Oakland, California, United States, AMER | 0.111 | no | [link](https://www.fivetran.com/careers/job?gh_jid=8031705003) | 2026-11-19T23:37:02Z |
-| Senior Site Reliability Engineer, Infrastructure Security | mongodb | Austin; Boston; Chicago; Dallas; Denver; New York City; San Francisco; Seattle; United States; Washington DC | 0.111 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=7668289) | 2026-11-19T23:37:02Z |
 | Strategic Finance Analyst | posthog | Remote (US) | 0.110 | no | [link](https://jobs.ashbyhq.com/PostHog/b0362f5c-ce12-42cd-9e8d-f2d3085b00a0) | 2026-11-19T23:54:57Z |
 | Systems Engineer (Data Intelligence & Analytics Team) | cloudflare | In-Office | 0.110 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8022909?gh_jid=8022909) | 2026-11-19T23:37:02Z |
 | Escalation Engineer - Cloud | zscaler | Mohali, IND | 0.110 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5269094007) | 2026-11-19T23:37:02Z |
@@ -1183,7 +1447,6 @@
 | Applied AI Architect | databricks | United States | 0.110 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8933544002) | 2026-11-19T23:37:02Z |
 | Applied AI Engineering Manager, Startups / Greenfield | openai | London, UK, Munich, Germany, Paris, France, Remote | 0.110 | no | [link](https://jobs.ashbyhq.com/openai/c0586c46-6b10-482f-af1c-a5b7eb196b3b) | 2026-11-19T23:54:57Z |
 | Data Scientist - Credit (Retros) | plaid | New York City Office, Remote | 0.110 | no | [link](https://jobs.ashbyhq.com/plaid/9d8a139c-8f99-4049-b7bd-8de693820d7b) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, Public Sector | scaleai | Denver, CO; Honolulu, HI; Washington, DC | 0.110 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4631848005) | 2026-11-19T23:37:02Z |
 | Manager II, Software Engineering, Infrastructure | samsara | Remote - US | 0.110 | no | [link](https://www.samsara.com/company/careers/roles/8148638?gh_jid=8148638) | 2026-11-19T23:37:02Z |
 | Manager II, Software Engineering, Infrastructure | samsara | Remote - Canada | 0.110 | no | [link](https://www.samsara.com/company/careers/roles/8221852?gh_jid=8221852) | 2026-11-19T23:37:02Z |
 | Senior Staff Data Scientist, Consumer Relevance | reddit | Remote - United States | 0.110 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/7974605) | 2026-11-19T23:37:02Z |
@@ -1196,16 +1459,9 @@
 | Sr. Analyst, Identity & KYC | chime | Chicago, IL, USA | 0.109 | no | [link](https://boards.greenhouse.io/chime/jobs/8917560002?gh_jid=8917560002) | 2026-11-19T23:37:02Z |
 | Senior Staff Software Engineer, Platform - IAM | coinbase | Remote - USA | 0.109 | no | [link](https://www.coinbase.com/careers/positions/8155366?gh_jid=8155366) | 2026-11-19T23:37:02Z |
 | Technical Program Manager, AI | figma | New York, NY • United States | 0.109 | no | [link](https://boards.greenhouse.io/figma/jobs/6261622004?gh_jid=6261622004) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, Core Experimentation | openai | Seattle, Remote | 0.109 | no | [link](https://jobs.ashbyhq.com/openai/9d4d2727-27f3-4a63-857c-a96466130645) | 2026-11-19T23:54:57Z |
 | Director, Site Reliability Engineering (Production Engineering) | zscaler | Bangalore, IND | 0.109 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5237915007) | 2026-11-19T23:37:02Z |
-| Senior Infrastructure Engineer | harvey | New York, Remote | 0.109 | no | [link](https://jobs.ashbyhq.com/harvey/54770fc2-8dc0-4812-bfc5-0f4d628b97d9) | 2026-11-19T23:54:57Z |
-| Senior Infrastructure Engineer | harvey | Remote | 0.109 | no | [link](https://jobs.ashbyhq.com/harvey/880c222b-faa8-4e86-8fe9-989b5cd2bd46) | 2026-11-19T23:54:57Z |
-| Senior Manager, Software Engineering - AI Developer Productivity (Dev Agents and SRE AI) | samsara | Remote - Canada | 0.109 | no | [link](https://www.samsara.com/company/careers/roles/8387002?gh_jid=8387002) | 2026-11-19T23:37:02Z |
-| Senior Manager, Software Engineering - AI Developer Productivity (Dev Agents and SRE AI) | samsara | Remote - US | 0.109 | no | [link](https://www.samsara.com/company/careers/roles/8374911?gh_jid=8374911) | 2026-11-19T23:37:02Z |
-| Threat Intelligence Platform Engineer | coinbase | Remote - USA | 0.109 | no | [link](https://www.coinbase.com/careers/positions/8177619?gh_jid=8177619) | 2026-11-19T23:37:02Z |
 | Principal Specialist Sales Engineer, Data Security - Majors, East | zscaler | Remote - D.C., USA; Remote - Maryland, USA; Remote - Massachusetts, USA; Remote - New Jersey, USA; Remote - New York, USA; Remote - Virginia, USA | 0.109 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5196229007) | 2026-11-19T23:37:02Z |
 | Senior Engineering Manager, Payments Platform | coinbase | Remote - USA | 0.109 | no | [link](https://www.coinbase.com/careers/positions/8124224?gh_jid=8124224) | 2026-11-19T23:37:02Z |
-| Staff Platform Engineer | calendly | Remote - US | 0.109 | no | [link](https://job-boards.greenhouse.io/calendly/jobs/8628979002) | 2026-11-19T23:37:02Z |
 | Manager, Software Engineering - AI Observability | figma | San Francisco, CA • New York, NY • United States | 0.109 | no | [link](https://boards.greenhouse.io/figma/jobs/5807963004?gh_jid=5807963004) | 2026-11-19T23:37:02Z |
 | Senior Fullstack Engineer - AI Security | zscaler | Zagreb, HRV | 0.109 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5297271007) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Compute Platform | coinbase | Remote - USA | 0.109 | no | [link](https://www.coinbase.com/careers/positions/7701645?gh_jid=7701645) | 2026-11-19T23:37:02Z |
@@ -1219,12 +1475,10 @@
 | Manager, Corporate Security - Platform Security | gitlab | Remote, United States | 0.108 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8940626002) | 2026-11-19T23:37:02Z |
 | Manager, Software Engineering - AI Infrastructure | figma | San Francisco, CA • New York, NY • United States | 0.108 | no | [link](https://boards.greenhouse.io/figma/jobs/6138981004?gh_jid=6138981004) | 2026-11-19T23:37:02Z |
 | Senior Collections Analyst, Commercial Credit | adyen | Chicago | 0.108 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8354222) | 2026-11-19T23:37:02Z |
-| Site Reliability Engineer (US - Pacific time) | posthog | Remote (US) | 0.108 | no | [link](https://jobs.ashbyhq.com/PostHog/1464036f-94d5-4dbd-aef8-fe99246a26d4) | 2026-11-19T23:54:57Z |
 | Senior Data Scientist, Product | robinhood | Menlo Park, CA | 0.108 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8080893?t=gh_src=&gh_jid=8080893) | 2026-11-19T23:37:02Z |
 | Sr. Data Center Operations (DCO) Engineer-Federal | zscaler | Remote - Texas, USA | 0.108 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5247843007) | 2026-11-19T23:37:02Z |
 | Director of Data and Analytics, Self Service Cloud | elastic | United States | 0.108 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8372380&gh_jid=8372380) | 2026-11-19T23:37:02Z |
 | Model Engineer, RL Data | cursor | Palo Alto, CA | 0.108 | no | [link](https://jobs.ashbyhq.com/cursor/438ff4ff-2bdc-4e43-97bb-98e289694f8c) | 2026-11-19T23:54:57Z |
-| Senior AI/ML Engineer | pagerduty | Lisbon | 0.108 | no | [link](https://job-boards.greenhouse.io/pagerduty/jobs/6144823004) | 2026-11-19T23:37:02Z |
 | Software Engineer, ML Ops | cohere | London, Europe, Berlin, United Kingdom, Remote | 0.108 | no | [link](https://jobs.ashbyhq.com/cohere/2a9a9b65-4f1b-4387-aa7f-d58c78e738c4) | 2026-11-19T23:37:02Z |
 | Staff Data Scientist - Ads Measurement, Signals, Privacy | reddit | Remote - British Columbia, Canada | 0.108 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8103609) | 2026-11-19T23:37:02Z |
 | Staff Data Scientist - Ads Measurement, Signals, Privacy | reddit | Remote - United States | 0.108 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8072076) | 2026-11-19T23:37:02Z |
@@ -1233,18 +1487,13 @@
 | Applied AI Engineer, Codex | openai | Munich, Germany, Remote | 0.108 | no | [link](https://jobs.ashbyhq.com/openai/6a7cedbd-0a7c-4f3e-8389-55357ad444b3) | 2026-11-19T23:54:57Z |
 | Applied AI Engineer, Codex | openai | Paris, France, Remote | 0.108 | no | [link](https://jobs.ashbyhq.com/openai/21ee6dd3-dcd0-425a-91e9-34a23ab3e434) | 2026-11-19T23:54:57Z |
 | Applied AI Engineer, Codex | openai | London, UK, Remote | 0.108 | no | [link](https://jobs.ashbyhq.com/openai/32425ea6-a64b-408d-ae54-38342b83c875) | 2026-11-19T23:54:57Z |
-| Manager, Site Reliability Engineering | lightspeedhq | Montreal, Remote | 0.108 | no | [link](https://jobs.ashbyhq.com/lightspeedhq/2e0e2daf-3547-4091-8896-3405181519e3) | 2026-11-19T23:37:02Z |
-| Manager, Site Reliability Engineering | lightspeedhq | Toronto, Remote | 0.108 | no | [link](https://jobs.ashbyhq.com/lightspeedhq/9b1c9899-2ebc-46e3-b44e-75babdcfdd3a) | 2026-11-19T23:37:02Z |
 | Principal Specialist Sales Engineer, Data Security - Federal / Fed Civ | zscaler | Remote - USA | 0.108 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5279588007) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Platform Engineer - Identity | coinbase | Remote - USA | 0.108 | no | [link](https://www.coinbase.com/careers/positions/8211490?gh_jid=8211490) | 2026-11-19T23:37:02Z |
 | Staff Backend Engineer, Core DevOps: CI/CD Artifact Management (PST) | gitlab | Remote, United States | 0.108 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8689236002) | 2026-11-19T23:37:02Z |
 | AI Product Engineer - ClickStack | clickhouse | United States, Canada, United Kingdom, Australia, The Netherlands, Remote | 0.108 | no | [link](https://jobs.ashbyhq.com/clickhouse/03b2433e-6a7b-4f79-a75e-c7371365d527) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer(Platform - Identity) | coinbase | Remote - USA | 0.108 | no | [link](https://www.coinbase.com/careers/positions/7891045?gh_jid=7891045) | 2026-11-19T23:37:02Z |
 | Applied AI Architect, Cyber | openai | San Francisco, New York City, Remote | 0.108 | no | [link](https://jobs.ashbyhq.com/openai/b46ffd99-f9f2-440c-ac13-448eb7911ad6) | 2026-11-19T23:54:57Z |
 | Applied AI Architect, Cyber | openai | Vancouver, Remote | 0.108 | no | [link](https://jobs.ashbyhq.com/openai/97e3df39-8a0b-493d-8cc4-c35e01491516) | 2026-11-19T23:54:57Z |
 | Applied AI Engineer, Startups (Life Sciences) | anthropic | San Francisco, CA / New York City, NY | 0.108 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5454650008) | 2026-11-19T23:37:02Z |
 | Senior Practice Leader, Developer Platform for Professional Services, APAC | cloudflare | Hybrid | 0.108 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8260743?gh_jid=8260743) | 2026-11-19T23:37:02Z |
-| Senior Site Reliability Engineer, InfraSec | mongodb | Dublin | 0.108 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8278897) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Backend - Overseer (Platform) | coinbase | Remote - USA | 0.108 | no | [link](https://www.coinbase.com/careers/positions/8238630?gh_jid=8238630) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer (Platform - Identity IDV) | coinbase | Remote - USA | 0.108 | no | [link](https://www.coinbase.com/careers/positions/7773776?gh_jid=7773776) | 2026-11-19T23:37:02Z |
 | Senior Data Scientist, Experimentation | robinhood | Menlo Park, CA | 0.108 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8356065?t=gh_src=&gh_jid=8356065) | 2026-11-19T23:37:02Z |
@@ -1259,7 +1508,6 @@
 | Staff Data Scientist,  ML (Credit Risk) | robinhood | Menlo Park, CA; New York, NY; Washington, DC | 0.107 | no | [link](https://boards.greenhouse.io/robinhood/jobs/7997218?t=gh_src=&gh_jid=7997218) | 2026-11-19T23:37:02Z |
 | Head of Data Science | samsara | Remote - SF Bay Area | 0.107 | no | [link](https://www.samsara.com/company/careers/roles/8329357?gh_jid=8329357) | 2026-11-19T23:37:02Z |
 | Product Support Engineer III - Cloud | zscaler | Bangalore, IND; Mohali, IND | 0.107 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5210019007) | 2026-11-19T23:37:02Z |
-| Staff Site Reliability Engineer | zscaler | Santa Clara, California, USA | 0.107 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5130009007) | 2026-11-19T23:37:02Z |
 | Applied AI Engineer, Codex / Tokyo | openai | Tokyo, Japan | 0.107 | no | [link](https://jobs.ashbyhq.com/openai/6668417f-6878-4244-940f-9a99ae4ebcb0) | 2026-11-19T23:54:57Z |
 | Senior AI Research Engineer - GPU Systems & Kernels | datadog | Paris, France | 0.107 | no | [link](https://careers.datadoghq.com/detail/8365206/?gh_jid=8365206) | 2026-11-19T23:37:02Z |
 | Senior Data Analyst, Revenue & Margin | trulioo | Vancouver, BC, Remote | 0.107 | no | [link](https://jobs.ashbyhq.com/trulioo/2755d9fa-1fa6-4e71-8e23-ede57689845b) | 2026-11-19T23:37:02Z |
@@ -1269,10 +1517,7 @@
 | Infrastructure Software Engineer, Orchestration | dropbox | Remote - Poland | 0.107 | no | [link](https://jobs.dropbox.com/listing/8394046?gh_jid=8394046) | 2026-11-19T23:37:02Z |
 | Software Engineer, Developer Platform | notion | San Francisco, California, New York, New York, Remote | 0.107 | no | [link](https://jobs.ashbyhq.com/notion/8c0bf773-e536-45c9-9a6c-8ee478148cc8) | 2026-11-19T23:54:57Z |
 | Director, Analytics Engineering | gitlab | Remote, Canada; Remote, United States | 0.107 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8883003002) | 2026-11-19T23:37:02Z |
-| ML Engineer, Marketplace | lyft | Toronto, Canada | 0.107 | no | [link](https://app.careerpuck.com/job-board/lyft/job/8944659002?gh_jid=8944659002) | 2026-11-19T23:37:02Z |
-| Principal Machine Learning Engineer | zscaler | Bangalore, IND | 0.107 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5267225007) | 2026-11-19T23:37:02Z |
 | Senior Solutions Architect, APJC (Developer Platform) - India Market | cloudflare | Hybrid | 0.107 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8169689?gh_jid=8169689) | 2026-11-19T23:37:02Z |
-| Site Reliability Engineer | supabase | Remote, Global | 0.107 | no | [link](https://jobs.ashbyhq.com/supabase/ed6cedb1-b9bf-4609-ac5c-c75c33b31bf3) | 2026-11-19T23:54:57Z |
 | Staff+ Research Engineer, RL Data Platform | anthropic | San Francisco, CA / New York City, NY | 0.107 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5404725008) | 2026-11-19T23:37:02Z |
 | Lead Product Data Scientist, Forecasting | klaviyo | Boston, MA | 0.107 | no | [link](https://www.klaviyo.com/careers/jobs/8048080003?gh_jid=8048080003) | 2026-11-19T23:37:02Z |
 | Senior Research Scientist, Model Evaluation | cohere | Toronto, San Francisco, Canada, Seattle, London, United States, New York, Remote | 0.107 | no | [link](https://jobs.ashbyhq.com/cohere/830c613b-d4bf-4673-ab33-46ccc12cc415) | 2026-11-19T23:37:02Z |
@@ -1280,9 +1525,6 @@
 | Senior Software Engineer (Typescript / Front-end) - AI/ML | clickhouse | Germany, Remote | 0.107 | no | [link](https://jobs.ashbyhq.com/clickhouse/999e3811-e002-49f8-88b0-2d418b16cc80) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer (Typescript / Front-end) - AI/ML | clickhouse | The Netherlands, Remote | 0.107 | no | [link](https://jobs.ashbyhq.com/clickhouse/33313f14-1a98-4cd1-8baa-edb818316e2b) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer (Typescript / Front-end) - AI/ML | clickhouse | Australia, Remote | 0.107 | no | [link](https://jobs.ashbyhq.com/clickhouse/dd1eb66c-b6ab-4afa-9aff-7c6c254a6554) | 2026-11-19T23:37:02Z |
-| Sr. Salesforce DevOps Engineer | elastic | United States | 0.107 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8207939&gh_jid=8207939) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Home Surfaces | spotify | New York, NY, Boston, MA | 0.107 | no | [link](https://jobs.lever.co/spotify/6af8894a-752f-4485-be70-a6685e5fd696) | 2026-11-19T23:37:02Z |
-| Staff Site Reliability Engineer | fivetran | Bengaluru, Karnataka, India, APAC | 0.107 | no | [link](https://www.fivetran.com/careers/job?gh_jid=7723267003) | 2026-11-19T23:37:02Z |
 | Technical Program Manager, Storage & Data Infrastructure | openai | San Francisco | 0.107 | no | [link](https://jobs.ashbyhq.com/openai/c0c70d7e-c450-4ca4-842a-dbc5e643c048) | 2026-11-19T23:54:57Z |
 | Software Engineer - AI Tooling | supabase | Remote, Global | 0.107 | no | [link](https://jobs.ashbyhq.com/supabase/0055f731-cffa-4c74-9c00-8abfa579873d) | 2026-11-19T23:54:57Z |
 | Software Engineer AI Tooling | Supabase |  | 0.107 | no | [link](https://remoteOK.com/remote-jobs/remote-software-engineer-ai-tooling-supabase-1137793) | 2026-11-19T21:31:05Z |
@@ -1305,7 +1547,6 @@
 | Forward Deployed Engineer, Applied ML and Data | hopper | Canada - Remote, Toronto - Remote, Ontario - Remote, Alberta - Remote | 0.106 | no | [link](https://jobs.ashbyhq.com/hopper/61a52170-aefe-40d1-abe1-10a1efa5d095) | 2026-11-19T23:37:02Z |
 | Software Engineer 3, AI Framework Integrations | mongodb | Gurugram | 0.106 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8127772) | 2026-11-19T23:37:02Z |
 | Technical Program Manager - Infrastructure | figma | San Francisco, CA • New York, NY • United States | 0.106 | no | [link](https://boards.greenhouse.io/figma/jobs/6020719004?gh_jid=6020719004) | 2026-11-19T23:37:02Z |
-| Principal Site Reliability Engineer | zscaler | Remote - USA; Santa Clara, California, USA | 0.106 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5277461007) | 2026-11-19T23:37:02Z |
 | Senior Staff Data Scientist, Guest & Host Marketplace AI | airbnb | Remote | 0.106 | no | [link](https://careers.airbnb.com/positions/7107054?gh_jid=7107054) | 2026-11-19T23:37:02Z |
 | Senior Data Analyst, Strategic Finance | vanta | Remote U.S. | 0.106 | no | [link](https://jobs.ashbyhq.com/vanta/0fab2072-8863-42ec-b00d-de367b90d937) | 2026-11-19T23:54:57Z |
 | Senior Software Engineer - Access & Authorization (Platform) | coinbase | Remote - USA | 0.106 | no | [link](https://www.coinbase.com/careers/positions/8146039?gh_jid=8146039) | 2026-11-19T23:37:02Z |
@@ -1324,18 +1565,14 @@
 | Data Scientist, Growth | anthropic | New York City, NY / Seattle, WA; San Francisco, CA | 0.105 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5161402008) | 2026-11-19T23:37:02Z |
 | Engineering Manager, Data Platform Foundations | notion | San Francisco, California, Remote | 0.105 | no | [link](https://jobs.ashbyhq.com/notion/e9bf7ffa-9cf2-4360-a2e4-e9fa66859927) | 2026-11-19T23:54:57Z |
 | Product Designer, AI Models | figma | San Francisco, CA • New York, NY • United States | 0.105 | no | [link](https://boards.greenhouse.io/figma/jobs/5711913004?gh_jid=5711913004) | 2026-11-19T23:37:02Z |
-| Senior Staff Machine Learning Engineer - Perception | zoox | Boston, MA | 0.105 | no | [link](https://jobs.lever.co/zoox/1ff0f89b-77ec-4e86-927e-7098c377581f) | 2026-11-19T23:54:57Z |
 | Release Engineer - Data Plane Internal Tooling and Productivity | clickhouse | Singapore, Japan, India, Remote | 0.105 | no | [link](https://jobs.ashbyhq.com/clickhouse/a68db3e5-0ec3-472a-8597-8586f40d43a5) | 2026-11-19T23:37:02Z |
 | Release Engineer - Data Plane Internal Tooling and Productivity | clickhouse | Australia, Remote | 0.105 | no | [link](https://jobs.ashbyhq.com/clickhouse/095fdff6-c00e-4635-92a6-fa3ec99288d5) | 2026-11-19T23:37:02Z |
 | Tech Lead Manager, Claude Code Data Scientist | anthropic | New York City, NY; San Francisco, CA / New York City, NY; Seattle, WA | 0.105 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5464493008) | 2026-11-19T23:37:02Z |
 | Data Scientist, Risk | gusto | San Francisco, CA - Hybrid | 0.105 | no | [link](https://job-boards.greenhouse.io/gusto/jobs/7656216) | 2026-11-19T23:37:02Z |
 | Mechanical Engineer, Dynamometer and Actuator Testing Infrastructure | openai | San Francisco, Remote | 0.105 | no | [link](https://jobs.ashbyhq.com/openai/2b87bb06-ba33-4cab-b950-0df12ca85dcf) | 2026-11-19T23:54:57Z |
-| QA/DevOps Engineer | discord | San Francisco Bay Area or Remote (U.S.) | 0.105 | no | [link](https://job-boards.greenhouse.io/discord/jobs/8703614002) | 2026-11-19T23:37:02Z |
 | Staff Data Scientist, Causal Inference & Experimentation | discord | San Francisco Bay Area | 0.105 | no | [link](https://job-boards.greenhouse.io/discord/jobs/8652853002) | 2026-11-19T23:37:02Z |
 | Engineering Manager, FinHub - Financial Intelligence (Platform) | coinbase | Remote - USA | 0.105 | no | [link](https://www.coinbase.com/careers/positions/8138031?gh_jid=8138031) | 2026-11-19T23:37:02Z |
-| Staff Software Engineer, Enterprise AI (Intelligence Platform) | riotgames | Los Angeles, USA | 0.105 | no | [link](https://www.riotgames.com/en/work-with-us/job/8174908?gh_jid=8174908) | 2026-11-19T23:37:02Z |
 | Electrical Engineer, PCBA Test Infrastructure, Robotics | openai | San Francisco | 0.105 | no | [link](https://jobs.ashbyhq.com/openai/83939922-2a95-4cc0-b8ff-e1b15ed5254b) | 2026-11-19T23:54:57Z |
-| Machine Learning Engineer, Core Engineering | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US; Remote, US | 0.105 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=6121450) | 2026-11-19T23:37:02Z |
 | Principal Solutions Architect, APJC (Developer Platform) - Mandarin Speaking | cloudflare | Hybrid | 0.105 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8179387?gh_jid=8179387) | 2026-11-19T23:37:02Z |
 | Senior Cloud Engineer - Product Metrics | clickhouse | Canada, Remote | 0.105 | no | [link](https://jobs.ashbyhq.com/clickhouse/80ce3e2e-bc01-403c-b836-043d1302feff) | 2026-11-19T23:37:02Z |
 | Analytics Lead, Central Market Management | lyft | Toronto, Canada | 0.105 | no | [link](https://app.careerpuck.com/job-board/lyft/job/8856440002?gh_jid=8856440002) | 2026-11-19T23:37:02Z |
@@ -1343,10 +1580,8 @@
 | Senior Analyst, Employee Lifecycle Data (Workday) | ramp | New York, NY (HQ), Remote | 0.105 | no | [link](https://jobs.ashbyhq.com/ramp/1c8e2b03-fcb3-4949-9113-07812f138eb6) | 2026-11-19T23:54:57Z |
 | Senior Staff Software Engineer – SASE & Cloud Security | zscaler | Santa Clara, California, USA | 0.105 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5239536007) | 2026-11-19T23:37:02Z |
 | Software Engineer, Data Model | roblox | San Mateo, CA, United States | 0.105 | no | [link](https://careers.roblox.com/jobs/8159857?gh_jid=8159857) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Compliance Automation (Platform) | coinbase | Remote - USA | 0.105 | no | [link](https://www.coinbase.com/careers/positions/8333165?gh_jid=8333165) | 2026-11-19T23:37:02Z |
 | Technical Lead - Training Runtime, Data(set) Movement | openai | San Francisco, Remote | 0.105 | no | [link](https://jobs.ashbyhq.com/openai/4cbbf0b1-7c0b-4c42-bf38-48377f847e91) | 2026-11-19T23:54:57Z |
 | Data Scientist, Safeguards | anthropic | New York City, NY; San Francisco, CA; Seattle, WA | 0.105 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5209196008) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer II, Core Engineering | pinterest | Toronto, ON, CA | 0.105 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=7473497) | 2026-11-19T23:37:02Z |
 | Analytics Lead, Deposit Fraud Risk | affirm | Remote US | 0.104 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8004096003) | 2026-11-19T23:37:02Z |
 | Engineering Manager, Research Data Platform | anthropic | San Francisco, CA / New York City, NY | 0.104 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5297059008) | 2026-11-19T23:37:02Z |
 | Senior Cloud Engineer - Product Metrics (Remote) | clickhouse | United States, Remote | 0.104 | no | [link](https://jobs.ashbyhq.com/clickhouse/57c9aa0c-ffca-4759-9bfd-878ce7a7ea8e) | 2026-11-19T23:37:02Z |
@@ -1354,15 +1589,12 @@
 | Data Engineering Manager, Growth & Revenue | openai | San Francisco | 0.104 | no | [link](https://jobs.ashbyhq.com/openai/acbf80cd-20a7-47fe-aaf9-3e9224d1570c) | 2026-11-19T23:54:57Z |
 | Senior Software Engineer, Backend (AI Platform) | affirm | Remote US | 0.104 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8040267003) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Backend (AI Platform) | affirm | Remote Canada | 0.104 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8040388003) | 2026-11-19T23:37:02Z |
-| Sr. Machine Learning Engineer, Core Engineering | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US | 0.104 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=6121464) | 2026-11-19T23:37:02Z |
 | Software Engineer, Data Access | roblox | San Mateo, CA, United States | 0.104 | no | [link](https://careers.roblox.com/jobs/8168881?gh_jid=8168881) | 2026-11-19T23:37:02Z |
-| Senior DevOps Engineer | hubspotjobs | Remote - USA | 0.104 | no | [link](https://www.hubspot.com/careers/jobs/8256969?gh_jid=8256969) | 2026-11-19T23:37:02Z |
 | Product Builder, AI Insights | figma | San Francisco, CA • New York, NY • United States | 0.104 | no | [link](https://boards.greenhouse.io/figma/jobs/6227402004?gh_jid=6227402004) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Backend (Lakehouse Infra) | affirm | Remote US | 0.104 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8013442003) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Backend (Lakehouse Infra) | affirm | Remote Canada | 0.104 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8013444003) | 2026-11-19T23:37:02Z |
 | Software Engineer, AI Connections (Developer Platform) | notion | San Francisco, California, New York, New York, Remote | 0.104 | no | [link](https://jobs.ashbyhq.com/notion/1fc309c8-da20-4ff2-84c7-8b863ece2b0a) | 2026-11-19T23:54:57Z |
 | Forward Deployed Engineer (FDE) - AI Infra - SF | openai | San Francisco, Remote | 0.104 | no | [link](https://jobs.ashbyhq.com/openai/7472e486-0aa6-4f9d-86da-2105a42b2dce) | 2026-11-19T23:54:57Z |
-| IT Systems Engineer, Client Platform Engineer, macOS | anthropic | Boston, MA; Remote-Friendly (Travel-Required) / San Francisco, CA / Seattle, WA / New York City, NY; Washington, DC | 0.104 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5445625008) | 2026-11-19T23:37:02Z |
 | Principal Engineer, AI Platform | epicgames | Cary,North Carolina,United States | 0.104 | no | [link](https://epicgames.com/careers/jobs/6122975004?gh_jid=6122975004) | 2026-11-19T23:37:02Z |
 | Principal Engineer, AI Platform | epicgames | BLANK,BLANK,Multiple Locations | 0.104 | no | [link](https://epicgames.com/careers/jobs/6122977004?gh_jid=6122977004) | 2026-11-19T23:37:02Z |
 | Senior Backend Engineer - ClickPipes Platform | clickhouse | United States, Remote | 0.104 | no | [link](https://jobs.ashbyhq.com/clickhouse/e6ea501b-70dc-4d50-8e53-68ec87139b6d) | 2026-11-19T23:37:02Z |
@@ -1371,29 +1603,22 @@
 | Staff Software Engineer, Big Data Storage | pinterest | Palo Alto, CA, US; Remote, US | 0.104 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=7437356) | 2026-11-19T23:37:02Z |
 | Senior Cloud Engineer - Product Metrics (EMEA Remote) | clickhouse | The Netherlands, Denmark, Portugal, France, United Kingdom, Spain, Germany, Italy, Remote | 0.104 | no | [link](https://jobs.ashbyhq.com/clickhouse/b2ac526a-4dd3-4a32-83cb-9bfe41189632) | 2026-11-19T23:37:02Z |
 | Sr. Counsel - Product, Engineering & AI | pinterest | New York, NY, US; Remote, US | 0.104 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8402791) | 2026-11-19T23:37:02Z |
-| Sr. Site Reliability Engineer- Federal | zscaler | Santa Clara, California, USA | 0.104 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5256468007) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer - Central Technology, Anti-Cheat | riotgames | Los Angeles, USA | 0.104 | no | [link](https://www.riotgames.com/en/work-with-us/job/8202900?gh_jid=8202900) | 2026-11-19T23:37:02Z |
 | Tech Lead Manager, Developer Platform Product Data Scientist | anthropic | New York City, NY; San Francisco, CA; Seattle, WA | 0.104 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5116820008) | 2026-11-19T23:37:02Z |
 | Manager Applied AI Architecture, Healthcare & Life Sciences | anthropic | New York City, NY; San Francisco, CA / New York City, NY | 0.104 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5390890008) | 2026-11-19T23:37:02Z |
 | Tech Lead Manager, Decision Platform | chime | Chicago, IL, USA | 0.104 | no | [link](https://boards.greenhouse.io/chime/jobs/8322483002?gh_jid=8322483002) | 2026-11-19T23:37:02Z |
-| IT Systems Engineer, Mobile Client Platform Engineer | anthropic | Boston, MA; Remote-Friendly (Travel-Required) / San Francisco, CA / Seattle, WA / New York City, NY; Washington, DC | 0.104 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5396384008) | 2026-11-19T23:37:02Z |
 | Senior Analyst, Economic Research and Special Projects | ramp | New York, NY (HQ), San Francisco, CA, Remote | 0.104 | no | [link](https://jobs.ashbyhq.com/ramp/7c027757-24d8-49f4-90c1-ca3696d244a5) | 2026-11-19T23:54:57Z |
 | Software Engineer - AI Tooling Infrastructure | supabase | Remote, Global | 0.104 | no | [link](https://jobs.ashbyhq.com/supabase/fb0b563a-e541-43fd-8555-9eb6473aaa11) | 2026-11-19T23:54:57Z |
 | Staff Software Development Engineer- AI Security (Go/Rust/Python) | zscaler | Santa Clara, California, USA | 0.104 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5219189007) | 2026-11-19T23:37:02Z |
 | Cloud Engineer Automation | Smile Digital Health | Toronto, Ontario | 0.103 | no | [link](https://remoteOK.com/remote-jobs/remote-cloud-engineer-automation-smile-digital-health-1137600) | 2026-11-19T21:31:05Z |
 | Senior Software Engineer, Product Platform | vanta | Remote U.S., Remote - Canada | 0.103 | no | [link](https://jobs.ashbyhq.com/vanta/021cca9c-f937-4d97-8be7-bc83af8307be) | 2026-11-19T23:54:57Z |
-| Site Reliability Engineer | singlestore | Portugal | 0.103 | no | [link](https://job-boards.greenhouse.io/singlestore/jobs/8185122) | 2026-11-19T23:37:02Z |
 | PhD Data Scientist, Intern | stripe | Toronto | 0.103 | no | [link](https://stripe.com/jobs/search?gh_jid=8194285) | 2026-11-19T23:37:02Z |
 | PhD Data Scientist, Intern | stripe | New York, Seattle, South San Francisco HQ | 0.103 | no | [link](https://stripe.com/jobs/search?gh_jid=8194283) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - Data Access | roblox | San Mateo, CA, United States | 0.103 | no | [link](https://careers.roblox.com/jobs/7437922?gh_jid=7437922) | 2026-11-19T23:37:02Z |
 | Data Scientist | lyft | Seattle, WA | 0.103 | no | [link](https://app.careerpuck.com/job-board/lyft/job/8772592002?gh_jid=8772592002) | 2026-11-19T23:37:02Z |
 | Director, Machine Learning Engineering - AI Foundations | riotgames | Los Angeles, USA | 0.103 | no | [link](https://www.riotgames.com/en/work-with-us/job/8178071?gh_jid=8178071) | 2026-11-19T23:37:02Z |
 | Full stack AI Engineer | celonis | Bangalore, India | 0.103 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/7885808003?gh_jid=7885808003) | 2026-11-19T23:37:02Z |
-| IT Systems Engineer, Client Platform Engineer, ChromeOS | anthropic | Boston, MA; Remote-Friendly (Travel-Required) / San Francisco, CA / Seattle, WA / New York City, NY; Washington, DC | 0.103 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5456018008) | 2026-11-19T23:37:02Z |
 | Internal Audit Analytics Intern | coinbase | Hybrid - New York, NY | 0.103 | no | [link](https://www.coinbase.com/careers/positions/8221238?gh_jid=8221238) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, 3D Data | roblox | San Mateo, CA, United States | 0.103 | no | [link](https://careers.roblox.com/jobs/8084095?gh_jid=8084095) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer II Applied AI | Wrapbook |  | 0.103 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-software-engineer-ii-applied-ai-wrapbook-1137527) | 2026-11-19T21:31:05Z |
-| Staff Machine Learning Engineer (Applied Modeling) - League of Legends | riotgames | Los Angeles, USA | 0.103 | no | [link](https://www.riotgames.com/en/work-with-us/job/7981132?gh_jid=7981132) | 2026-11-19T23:37:02Z |
 | Senior Data Scientist, Transparency & Regulatory | epicgames | Cary,North Carolina,United States | 0.103 | no | [link](https://epicgames.com/careers/jobs/6230436004?gh_jid=6230436004) | 2026-11-19T23:37:02Z |
 | Senior Data Scientist, Transparency & Regulatory | epicgames | BLANK,BLANK,Multiple Locations | 0.103 | no | [link](https://epicgames.com/careers/jobs/6231468004?gh_jid=6231468004) | 2026-11-19T23:37:02Z |
 | Staff Data Scientist, Marketplace Intelligence and Forecasting | airbnb | United States | 0.103 | no | [link](https://careers.airbnb.com/positions/7705262?gh_jid=7705262) | 2026-11-19T23:37:02Z |
@@ -1439,20 +1664,16 @@
 | Principal Backend Programmer (Developer Platform) | epicgames | Cary,North Carolina,United States | 0.102 | no | [link](https://epicgames.com/careers/jobs/6250140004?gh_jid=6250140004) | 2026-11-19T23:37:02Z |
 | Principal Software Engineer, Data Tooling | roblox | San Mateo, CA, United States | 0.102 | no | [link](https://careers.roblox.com/jobs/8052237?gh_jid=8052237) | 2026-11-19T23:37:02Z |
 | Software Engineer, Infrastructure - Core Experimentation | openai | Seattle | 0.102 | no | [link](https://jobs.ashbyhq.com/openai/823a05bf-33fb-4d94-9dd8-571723d27b1a) | 2026-11-19T23:54:57Z |
-| Senior Machine Learning Engineer (Growth) | discord | San Francisco Bay Area | 0.102 | no | [link](https://job-boards.greenhouse.io/discord/jobs/8910013002) | 2026-11-19T23:37:02Z |
 | Strategic Projects Lead, Generative AI | scaleai | San Francisco, CA; New York, NY | 0.102 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4282118005) | 2026-11-19T23:37:02Z |
 | Adoption Specialist - Infrastructure & Agentic | cohere | Toronto, Europe, Canada, London, United States, New York, United Kingdom, Atlanta, Remote | 0.102 | no | [link](https://jobs.ashbyhq.com/cohere/dc881634-ca66-46e5-90ff-43ad83080de2) | 2026-11-19T23:37:02Z |
 | Contract Sr Data Analyst (SQL,Telemetry,Browser Engine) | mozilla | Remote Germany | 0.102 | no | [link](https://job-boards.greenhouse.io/mozilla/jobs/8324482) | 2026-11-19T23:37:02Z |
 | Full-Stack Engineer (Backend Leaning) - Platform Engineering | elevenlabs | Remote, Ireland, Europe, United States, Poland, United Kingdom | 0.102 | no | [link](https://jobs.ashbyhq.com/ElevenLabs/ce3d5a59-fb8c-482b-bc3f-60e44576c5e0) | 2026-11-19T23:54:57Z |
-| PhD University Grad Machine Learning Engineer (USA) | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US | 0.102 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8140363) | 2026-11-19T23:37:02Z |
 | Protection Scientist Engineer, Integrity | openai | London, UK | 0.102 | no | [link](https://jobs.ashbyhq.com/openai/3fefc615-6950-4a29-9214-eefdc4e659e3) | 2026-11-19T23:54:57Z |
-| Senior / Staff Software Engineer - Learned Trajectory Machine Learning Engineer | zoox | Foster City, CA | 0.102 | no | [link](https://jobs.lever.co/zoox/24acfe86-aa1b-4aa6-903b-99b4596e42cf) | 2026-11-19T23:54:57Z |
 | Staff Software Enginer, Backend - Payments Platform | coinbase | Remote - USA | 0.102 | no | [link](https://www.coinbase.com/careers/positions/8302189?gh_jid=8302189) | 2026-11-19T23:37:02Z |
 | Research Engineer, Infrastructure | harvey | New York, Remote | 0.101 | no | [link](https://jobs.ashbyhq.com/harvey/7d5946ab-9b70-4c33-9e0f-cadbf0b892aa) | 2026-11-19T23:54:57Z |
 | Research Engineer, Infrastructure | harvey | San Francisco, Remote | 0.101 | no | [link](https://jobs.ashbyhq.com/harvey/264aac9e-3f8d-402f-a33b-04d2fe1e16be) | 2026-11-19T23:54:57Z |
 | Research Engineer, Infrastructure | harvey | London, Remote | 0.101 | no | [link](https://jobs.ashbyhq.com/harvey/4fc070c5-99be-459c-b5ef-63e5f4d68f8b) | 2026-11-19T23:54:57Z |
 | Research Engineer, Infrastructure | harvey | Remote | 0.101 | no | [link](https://jobs.ashbyhq.com/harvey/9b63e15d-2d43-4c4a-94be-75908e942ea7) | 2026-11-19T23:54:57Z |
-| Senior Infrastructure Software Engineer, Enterprise AI | scaleai | New York, NY; San Francisco, CA | 0.101 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4599700005) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer (Backend) - AI/ML | clickhouse | Germany, Remote | 0.101 | no | [link](https://jobs.ashbyhq.com/clickhouse/84b6515f-6afb-4503-b73c-3dcc1bc17cb4) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer (Backend) - AI/ML | clickhouse | The Netherlands, Remote | 0.101 | no | [link](https://jobs.ashbyhq.com/clickhouse/c4bb5a89-45de-4761-8d19-f8207faf49ea) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer (Backend) - AI/ML | clickhouse | Spain, Remote | 0.101 | no | [link](https://jobs.ashbyhq.com/clickhouse/73b9f159-1493-40d1-a61c-555fd6faa76e) | 2026-11-19T23:37:02Z |
@@ -1490,14 +1711,12 @@
 | Staff Infrastructure Security Engineer | harvey | San Francisco, Remote | 0.101 | no | [link](https://jobs.ashbyhq.com/harvey/694441dc-7637-43bb-81de-c3ac69fd8af0) | 2026-11-19T23:54:57Z |
 | Staff Infrastructure Security Engineer | harvey | New York, Remote | 0.101 | no | [link](https://jobs.ashbyhq.com/harvey/90421e4b-77d2-40a4-bb7f-80d2a0a9b5b3) | 2026-11-19T23:54:57Z |
 | Business Systems Analyst | figma | San Francisco, CA • New York, NY • United States | 0.100 | no | [link](https://boards.greenhouse.io/figma/jobs/6215865004?gh_jid=6215865004) | 2026-11-19T23:37:02Z |
-| Master's University Grad Machine Learning Engineer 2027 (USA) | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US; New York, NY, US | 0.100 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8140219) | 2026-11-19T23:37:02Z |
 | Data Scientist - Product Analytics | elevenlabs | United Kingdom, Spain, Hungary, Bulgaria, Germany, Poland, Italy, France, Remote | 0.100 | no | [link](https://jobs.ashbyhq.com/ElevenLabs/41b892ba-b530-44cb-9ae1-178908fc324c) | 2026-11-19T23:54:57Z |
 | Sr. Data Scientist, Performance Marketing | pinterest | San Francisco, CA, US; Remote, US | 0.100 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8280111) | 2026-11-19T23:37:02Z |
 | Staff Engineer, Commerce Platform | rover | Seattle | 0.100 | no | [link](https://jobs.lever.co/rover/861c2f1c-6586-40b6-87b8-4140c9379780) | 2026-11-19T23:54:57Z |
 | Analytics Lead, Market Insights | lyft | San Francisco, CA | 0.100 | no | [link](https://app.careerpuck.com/job-board/lyft/job/8503985002?gh_jid=8503985002) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - Data Infrastructure Safety | roblox | San Mateo, CA, United States | 0.100 | no | [link](https://careers.roblox.com/jobs/8287516?gh_jid=8287516) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer II, Ads Data Solutions Engineering | instacart | United States - Remote | 0.100 | no | [link](https://instacart.careers/job/?gh_jid=8281965) | 2026-11-19T23:37:02Z |
-| Senior Software Engineer – Tooling & Platform (Terraform) | okta | Bengaluru, India | 0.100 | no | [link](https://www.okta.com/company/careers/opportunity/7765038?gh_jid=7765038) | 2026-11-19T23:37:02Z |
 | Engineering Manager, AI Applications | plaid | San Francisco HQ, Remote | 0.100 | no | [link](https://jobs.ashbyhq.com/plaid/3b205208-b07b-4acd-8abc-09f0fd0f88f1) | 2026-11-19T23:37:02Z |
 | Intern, AI & Data (Applied AI/Machine Learning), Summer 2027 | lucidmotors | Newark, CA | 0.100 | no | [link](https://lucidmotors.com/careers/search/5290919007?gh_jid=5290919007) | 2026-11-19T23:54:57Z |
 | Manager I, Engineering - Sensitive Data Scanner | datadog | Paris, France | 0.100 | no | [link](https://careers.datadoghq.com/detail/8102794/?gh_jid=8102794) | 2026-11-19T23:37:02Z |
@@ -1517,7 +1736,6 @@
 | Specialist Seller, Enterprise Core (AI Products) | samsara | Atlanta, Georgia, United States; Remote - Chicago; Remote - MA; Remote - TX | 0.100 | no | [link](https://www.samsara.com/company/careers/roles/7960413?gh_jid=7960413) | 2026-11-19T23:37:02Z |
 | Specialist Seller, Enterprise Core (AI Products) | samsara | Remote - NY | 0.100 | no | [link](https://www.samsara.com/company/careers/roles/7982331?gh_jid=7982331) | 2026-11-19T23:37:02Z |
 | Specialist Seller, Enterprise Core (AI Products) | samsara | Remote - DC | 0.100 | no | [link](https://www.samsara.com/company/careers/roles/7982336?gh_jid=7982336) | 2026-11-19T23:37:02Z |
-| Sr. Site Reliability Engineer-Federal, Security Clearance | zscaler | Crystal City, Virginia, USA | 0.100 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5200385007) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Core Infrastructure | harvey | New York | 0.100 | no | [link](https://jobs.ashbyhq.com/harvey/6cb0809d-923f-4119-a0d1-babb0c9289c4) | 2026-11-19T23:54:57Z |
 | Staff Software Engineer, Core Infrastructure | harvey | San Francisco | 0.100 | no | [link](https://jobs.ashbyhq.com/harvey/c2d6c21b-1563-4000-a8a3-b751c79535da) | 2026-11-19T23:54:57Z |
 | Backend Engineer - Data Infrastructure | spotify | New York, NY, Toronto | 0.100 | no | [link](https://jobs.lever.co/spotify/ced2c220-6b5c-4e74-8e06-37d50985097c) | 2026-11-19T23:37:02Z |
@@ -1527,8 +1745,6 @@
 | Applied Data Researcher | figma | San Francisco, CA • New York, NY • United States | 0.100 | no | [link](https://boards.greenhouse.io/figma/jobs/6238480004?gh_jid=6238480004) | 2026-11-19T23:37:02Z |
 | Applied Value Engineer - AI and Pre-Sales Consultant | celonis | London, United Kingdom | 0.100 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/8067893003?gh_jid=8067893003) | 2026-11-19T23:37:02Z |
 | Forward Deployed Engineer, Agentic Platform (Korea) | cohere | Korea, Remote | 0.100 | no | [link](https://jobs.ashbyhq.com/cohere/031c2335-db85-4265-8a88-a54b911be36a) | 2026-11-19T23:37:02Z |
-| Senior Staff Machine Learning Engineer, GenAI Platform | reddit | Remote - United States | 0.100 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/7772274) | 2026-11-19T23:37:02Z |
-| Staff Site Reliability Engineer-Federal, Security Clearance | zscaler | Crystal City, Virginia, USA | 0.100 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5200278007) | 2026-11-19T23:37:02Z |
 | Language Measurement Scientist | duolingo | Pittsburgh, PA | 0.100 | no | [link](https://careers.duolingo.com/jobs/8942115002?gh_jid=8942115002) | 2026-11-19T23:37:02Z |
 | Quantitative Analyst II (Capital Structuring & Analytics) | affirm | Remote Canada | 0.100 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/7815954003) | 2026-11-19T23:37:02Z |
 | Quantitative Analyst II (Capital Structuring & Analytics) | affirm | Remote US | 0.100 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/7815952003) | 2026-11-19T23:37:02Z |
@@ -1548,13 +1764,11 @@
 | Digital Customer Success Manager, AI & Automation | samsara | Remote - Austin; Remote - CA; Remote - Chicago; Remote - Dallas; Remote - Houston; Remote - Seattle | 0.099 | no | [link](https://www.samsara.com/company/careers/roles/8306612?gh_jid=8306612) | 2026-11-19T23:37:02Z |
 | Senior Incident Response Analyst - InfoSec | elastic | United States | 0.099 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8274371&gh_jid=8274371) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Engine Infrastructure | roblox | San Mateo, CA, United States | 0.099 | no | [link](https://careers.roblox.com/jobs/8346849?gh_jid=8346849) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Assistance Engineering | airbnb | San Francisco, CA | 0.099 | no | [link](https://careers.airbnb.com/positions/8024316?gh_jid=8024316) | 2026-11-19T23:37:02Z |
 | Staff+ Software Engineer, GRC Platform | anthropic | San Francisco, CA / New York City, NY / Seattle, WA | 0.099 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5250091008) | 2026-11-19T23:37:02Z |
 | Applied AI Engineer - Technology Consultant | celonis | New York, US, New York | 0.099 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/7765659003?gh_jid=7765659003) | 2026-11-19T23:37:02Z |
 | Engineering Manager, Ranking Platform | reddit | Remote - United States | 0.099 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8379092) | 2026-11-19T23:37:02Z |
 | Senior Staff Software Engineer, Backend (Compute Platform) | affirm | Remote Canada | 0.099 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8057950003) | 2026-11-19T23:37:02Z |
 | Senior Staff Software Engineer, Backend (Compute Platform) | affirm | Remote US | 0.099 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8057948003) | 2026-11-19T23:37:02Z |
-| Sr. Staff Site Reliability Engineer-Federal, Security Clearance | zscaler | Crystal City, Virginia, USA | 0.099 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5252248007) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer - Ingestion Platform | reddit | Remote - United States | 0.099 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8205402) | 2026-11-19T23:37:02Z |
 | Marketing Analytics Manager | okta | Bellevue, Washington; Chicago, Illinois | 0.099 | no | [link](https://www.okta.com/company/careers/opportunity/8204938?gh_jid=8204938) | 2026-11-19T23:37:02Z |
 | Member of Technical Staff - Sovereign AI | cohere | Canada, Toronto | 0.099 | no | [link](https://jobs.ashbyhq.com/cohere/b9306620-a110-46b5-b4c4-7363e1d03a8d) | 2026-11-19T23:37:02Z |
@@ -1572,7 +1786,6 @@
 | Senior Software Engineer, Security Engineering - Platform (Auth0) | okta | Toronto, Ontario, Canada | 0.099 | no | [link](https://www.okta.com/company/careers/opportunity/8256688?gh_jid=8256688) | 2026-11-19T23:37:02Z |
 | Sr. Manager, Marketing Analytics | okta | Bellevue, Washington; Chicago, Illinois | 0.099 | no | [link](https://www.okta.com/company/careers/opportunity/8138453?gh_jid=8138453) | 2026-11-19T23:37:02Z |
 | Staff+ Software Engineer, Billing Platform | anthropic | San Francisco, CA / New York City, NY / Seattle, WA | 0.099 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5146298008) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, Link | stripe | New York City | 0.099 | no | [link](https://stripe.com/jobs/search?gh_jid=8197886) | 2026-11-19T23:37:02Z |
 | Senior Staff Infrastructure & Security Engineer | CivilGrid | Boston | 0.099 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-staff-infrastructure-security-engineer-civilgrid-1137687) | 2026-11-19T21:31:05Z |
 | Engineering Manager, Machine Learning - Safety | discord | San Francisco Bay Area or Remote (U.S.) | 0.098 | no | [link](https://job-boards.greenhouse.io/discord/jobs/8761356002) | 2026-11-19T23:37:02Z |
 | Intern AI & Management Consulting (Value Engineering) | celonis | Paris, France | 0.098 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/7767090003?gh_jid=7767090003) | 2026-11-19T23:37:02Z |
@@ -1624,7 +1837,6 @@
 | Forward Deployed Engineer, Agentic Platform (UK Public Sector) | cohere | United Kingdom, Europe, London, Remote | 0.097 | no | [link](https://jobs.ashbyhq.com/cohere/691982e3-9357-42e4-b4c3-a65cae906935) | 2026-11-19T23:37:02Z |
 | Langfuse - Senior Cloud Infra Engineer | clickhouse | Germany, Portugal, France, Spain, Italy, The Netherlands, Remote | 0.097 | no | [link](https://jobs.ashbyhq.com/clickhouse/cf36e6db-3939-4ff0-8bcf-a3bb200d9e46) | 2026-11-19T23:37:02Z |
 | Langfuse - Senior Cloud Infra Engineer | clickhouse | New York, Remote | 0.097 | no | [link](https://jobs.ashbyhq.com/clickhouse/39e42a38-1cbf-40c7-b373-717b4cdddbac) | 2026-11-19T23:37:02Z |
-| Site Reliability Engineer 3 | mongodb | New York City | 0.097 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=7821316) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Ads Data Platform | instacart | Canada - Remote (ON, AB, BC, or NS Only) | 0.097 | no | [link](https://instacart.careers/job/?gh_jid=8372848) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Ads Data Platform | instacart | United States - Remote | 0.097 | no | [link](https://instacart.careers/job/?gh_jid=8372846) | 2026-11-19T23:37:02Z |
 | Staff+ Software Engineer, Platform Intelligence | anthropic | San Francisco, CA / New York City, NY | 0.097 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5472201008) | 2026-11-19T23:37:02Z |
@@ -1647,8 +1859,6 @@
 | Strategic Finance Manager, Platform | coinbase | Remote - USA | 0.097 | no | [link](https://www.coinbase.com/careers/positions/8148248?gh_jid=8148248) | 2026-11-19T23:37:02Z |
 | Strategic Partnerships Lead / Director - AEO/GEO Analytics | cloudflare | Hybrid | 0.097 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8304122?gh_jid=8304122) | 2026-11-19T23:37:02Z |
 | Summernaut Program - AI & Management Consulting (Value Engineering) Summer Intern | celonis | Raleigh, US, North Carolina | 0.097 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/8198760003?gh_jid=8198760003) | 2026-11-19T23:37:02Z |
-| AI ML Engineer | Docusketch |  | 0.097 | no | [link](https://remoteOK.com/remote-jobs/remote-ai-ml-engineer-docusketch-1137619) | 2026-11-19T21:31:05Z |
-| Machine Learning Engineer II, Responsible AI | pinterest | San Francisco, CA, US; Remote, US | 0.097 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=7697137) | 2026-11-19T23:37:02Z |
 | Marketing Scientist | openai | San Francisco, New York City, Remote | 0.097 | no | [link](https://jobs.ashbyhq.com/openai/6c21e5e0-a41c-4936-a278-dd7d2c88f25c) | 2026-11-19T23:54:57Z |
 | Member of Technical Staff, Data Analysis and Evaluation | cohere | London, San Francisco, New York, Paris, Toronto, Montreal, Remote | 0.097 | no | [link](https://jobs.ashbyhq.com/cohere/61703710-4379-42fd-a508-946f2a5fb6bc) | 2026-11-19T23:37:02Z |
 | Senior Legal Analyst & Litigation Project Manager | samsara | Remote - US | 0.097 | no | [link](https://www.samsara.com/company/careers/roles/8029100?gh_jid=8029100) | 2026-11-19T23:37:02Z |
@@ -1659,8 +1869,6 @@
 | Senior Regulatory Reporting Analyst | monzo | London | 0.097 | no | [link](https://job-boards.greenhouse.io/monzo/jobs/8385865) | 2026-11-19T23:37:02Z |
 | Frontier Data Strategist | scaleai | San Francisco, CA; New York, NY | 0.097 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4687052005) | 2026-11-19T23:37:02Z |
 | Senior Lead Software Engineer - Data Platform | klaviyo | Boston, MA | 0.097 | no | [link](https://www.klaviyo.com/careers/jobs/7809608003?gh_jid=7809608003) | 2026-11-19T23:37:02Z |
-| Senior Staff Machine Learning Engineer, Data & Eval | airbnb | United States | 0.097 | no | [link](https://careers.airbnb.com/positions/6757302?gh_jid=6757302) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Content Visual AI | pinterest | San Francisco, CA, US; New York, NY, US; Seattle, WA, US; Remote, US | 0.097 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8247246) | 2026-11-19T23:37:02Z |
 | Software Engineer, Data Orchestration | stripe | N/A | 0.097 | no | [link](https://stripe.com/jobs/search?gh_jid=7230670) | 2026-11-19T23:37:02Z |
 | Staff / Senior Software Engineer, Security Fusion Platform | anthropic | San Francisco, CA / New York City, NY / Seattle, WA | 0.097 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5434559008) | 2026-11-19T23:37:02Z |
 | Technical Operations & Insights Analyst | figma | San Francisco, CA • New York, NY • United States | 0.097 | no | [link](https://boards.greenhouse.io/figma/jobs/6249978004?gh_jid=6249978004) | 2026-11-19T23:37:02Z |
@@ -1670,15 +1878,11 @@
 | Senior Software Engineer, Forward Deployed AI Engineer | mongodb | Cork, Ireland; Dublin, Ireland | 0.097 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=7392902) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Forward Deployed AI Engineer | mongodb | Ireland | 0.097 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=7590735) | 2026-11-19T23:37:02Z |
 | Software Engineer Infrastructure | Sodalis, Inc. | Palo Alto | 0.097 | no | [link](https://remoteOK.com/remote-jobs/remote-software-engineer-infrastructure-sodalis-inc-1137614) | 2026-11-19T21:31:05Z |
-| Staff Machine Learning Engineer | pinterest | San Francisco, CA, US; Remote, US | 0.097 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8240355) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, EPD Ads | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US | 0.096 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=6121543) | 2026-11-19T23:37:02Z |
 | Senior Program Analyst - GTM Ops | spotify | New York, NY | 0.096 | no | [link](https://jobs.lever.co/spotify/ed409ff1-a241-4c2c-96ea-c988ca131671) | 2026-11-19T23:37:02Z |
 | Forward Deployed Engineer, Agentic Platform (Europe) | cohere | Europe, Brussels, Munich, London, Edinburgh, Paris, Berlin, United Kingdom, France, Frankfurt, Germany, Remote | 0.096 | no | [link](https://jobs.ashbyhq.com/cohere/2d256112-b336-4539-8133-a0bf7f6698f0) | 2026-11-19T23:37:02Z |
 | Operations Expert with Python for AI Supply Chain Task Design | Toptal | Anywhere in the World | 0.096 | no | [link](https://remoteOK.com/remote-jobs/remote-operations-expert-with-python-for-ai-supply-chain-task-design-toptal-1137690) | 2026-11-19T21:31:05Z |
 | Principal Software Engineer, ML & Media Infra | pinterest | Palo Alto, CA; US;  San Francisco, CA, US | 0.096 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=7685466) | 2026-11-19T23:37:02Z |
 | Software Engineer, Fleet Infrastructure | openai | San Francisco, New York City | 0.096 | no | [link](https://jobs.ashbyhq.com/openai/a58add97-1968-4d5c-b504-ab62bea12df3) | 2026-11-19T23:54:57Z |
-| Sr. Machine Learning Engineer, Growth Science | pinterest | Toronto, ON, CA | 0.096 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=5691478) | 2026-11-19T23:37:02Z |
-| Sr. Software Engineer - SysAdmin & Internal Ops Platform | clickhouse | Europe or US, Remote | 0.096 | no | [link](https://jobs.ashbyhq.com/clickhouse/5822f2c8-a00c-4499-b595-85e8796db3cd) | 2026-11-19T23:37:02Z |
 | AI Operations Engineer | clickhouse | NAMER and LatAm | 0.096 | no | [link](https://jobs.ashbyhq.com/clickhouse/e0a5ee0f-44b9-4b96-8504-b576cc843966) | 2026-11-19T23:37:02Z |
 | Credit Model Validation Manager (Machine Learning & NPV Models) | monzo | Cardiff, London or Remote (UK) | 0.096 | no | [link](https://job-boards.greenhouse.io/monzo/jobs/8023162) | 2026-11-19T23:37:02Z |
 | Research Scientist/Engineer, Biological Safety | anthropic | San Francisco, CA | 0.096 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5066977008) | 2026-11-19T23:37:02Z |
@@ -1686,22 +1890,17 @@
 | Senior Design Manager - AI Monitoring & Management | datadog | New York, New York, USA | 0.096 | no | [link](https://careers.datadoghq.com/detail/8262004/?gh_jid=8262004) | 2026-11-19T23:37:02Z |
 | Staff, Advanced Analytics | airbnb | United States | 0.096 | no | [link](https://careers.airbnb.com/positions/8331899?gh_jid=8331899) | 2026-11-19T23:37:02Z |
 | Applied AI Engineer | ramp | New York, NY (HQ), San Francisco, CA, Remote | 0.096 | no | [link](https://jobs.ashbyhq.com/ramp/d204e136-2749-42de-82b4-88a0dd352090) | 2026-11-19T23:54:57Z |
-| Machine Learning Engineer | ramp | New York, NY (HQ), Remote (US) | 0.096 | no | [link](https://jobs.ashbyhq.com/ramp/2888b101-b1da-4e53-a02e-1bb9b1b5a951) | 2026-11-19T23:54:57Z |
-| Sr. Machine Learning Engineer, EPD Ads | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US | 0.096 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=6121551) | 2026-11-19T23:37:02Z |
 | Data Scientist, FinEng | openai | San Francisco, Remote | 0.096 | no | [link](https://jobs.ashbyhq.com/openai/082f4d82-499f-4150-892f-0b0d1105fffe) | 2026-11-19T23:54:57Z |
 | Research Scientist, Interpretability | anthropic | San Francisco, CA | 0.096 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/4980427008) | 2026-11-19T23:37:02Z |
 | Senior Financial Control Analyst, 9 Month Fixed Term Contract | monzo | London | 0.096 | no | [link](https://job-boards.greenhouse.io/monzo/jobs/8378844) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Data Platform | sofi | Seattle, Washington or Salt Lake City, Utah | 0.096 | no | [link](https://sofi.com/careers/job/8207529003?gh_jid=8207529003) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, GenAI Platform | deliveroo | London, United Kingdom - Deliveroo | 0.096 | no | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8205846) | 2026-11-19T23:37:02Z |
-| Software Platform Engineer, EU Traffic | deliveroo | London, United Kingdom - Deliveroo | 0.096 | no | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8334486) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Homefeed | pinterest | San Francisco, CA, US; Remote, US | 0.096 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8279563) | 2026-11-19T23:37:02Z |
 | Backend Software Engineer - Data Connectors | palantir | New York, NY | 0.096 | no | [link](https://jobs.lever.co/palantir/9aadca04-df88-4b46-95d8-c3b2628b30b0) | 2026-11-19T23:37:02Z |
 | Sales Analytics Intern 2027 (USA) | pinterest | San Francisco, CA, US; Remote, US | 0.096 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8214783) | 2026-11-19T23:37:02Z |
 | Software Engineer | Prenosis |  | 0.096 | no | [link](https://remoteOK.com/remote-jobs/remote-software-engineer-prenosis-1137427) | 2026-11-19T21:31:05Z |
 | Software Engineer, Backend (BI Platform) | deliveroo | London, United Kingdom - Deliveroo | 0.096 | no | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8206463) | 2026-11-19T23:37:02Z |
 | Detection Analyst | zscaler | USA - Update Location | 0.096 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5277840007) | 2026-11-19T23:37:02Z |
 | Detection Analyst | zscaler | Bellevue, Washington, USA; Remote - D.C., USA; Remote - Georgia, USA; Remote - New York, USA; Remote - North Carolina, USA; Remote - Texas, USA; Remote - USA; Remote - Washington, USA; Santa Clara, California, USA; USA - Update Location | 0.096 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5219486007) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer - Content Intelligence | spotify | London, Stockholm | 0.096 | no | [link](https://jobs.lever.co/spotify/288ef608-a1e5-4127-b606-3a9981640f91) | 2026-11-19T23:37:02Z |
 | Senior Staff Engineer, Tax Platform | gusto | Atlanta, GA - Hybrid; Austin, TX - Remote; Chicago, IL - Remote; Denver, CO - Hybrid; Los Angeles, CA - Remote; Miami, FL - Remote; New York, NY - Hybrid; San Francisco, CA - Hybrid; Seattle, WA - Remote | 0.096 | no | [link](https://job-boards.greenhouse.io/gusto/jobs/8013480) | 2026-11-19T23:37:02Z |
 | Software Engineer - Platform Engineering | twilio | Remote - US | 0.096 | no | [link](https://job-boards.greenhouse.io/twilio/jobs/8385593) | 2026-11-19T23:37:02Z |
 | Software Engineer, New Grad - Production Infrastructure | palantir | Washington, D.C. | 0.096 | no | [link](https://jobs.lever.co/palantir/15844944-fb69-4b57-9531-e988650b20c6) | 2026-11-19T23:37:02Z |
@@ -1723,7 +1922,6 @@
 | Senior Treasury Product Control Analyst | monzo | Cardiff, London or Remote (UK); London | 0.095 | no | [link](https://job-boards.greenhouse.io/monzo/jobs/8398665) | 2026-11-19T23:37:02Z |
 | AI Engineer | stripe | Chicago | 0.095 | no | [link](https://stripe.com/jobs/search?gh_jid=8144196) | 2026-11-19T23:37:02Z |
 | Senior Business Systems Analyst | datadog | New York, New York, USA | 0.095 | no | [link](https://careers.datadoghq.com/detail/8231811/?gh_jid=8231811) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer - Perception | zoox | Foster City, CA, Boston, MA | 0.095 | no | [link](https://jobs.lever.co/zoox/2f65fc0e-16f1-48a9-b34d-5ca5dcf76800) | 2026-11-19T23:54:57Z |
 | Senior Software Engineer, Network Infrastructure | palantir | Seattle, WA | 0.095 | no | [link](https://jobs.lever.co/palantir/39c57909-ae76-4c86-9290-9fb50c689c4f) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Network Infrastructure | palantir | New York, NY | 0.095 | no | [link](https://jobs.lever.co/palantir/55005ee7-4e06-4520-b569-f6e8f26745cb) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Network Infrastructure | palantir | Washington, D.C. | 0.095 | no | [link](https://jobs.lever.co/palantir/89a77547-8b74-45b2-8590-f04b16e19a59) | 2026-11-19T23:37:02Z |
@@ -1739,11 +1937,7 @@
 | Software Engineer, Internship - Sovereign AI Systems | palantir | New York, NY | 0.095 | no | [link](https://jobs.lever.co/palantir/cd64bcd4-50bb-4aeb-a135-4e0487ffd312) | 2026-11-19T23:37:02Z |
 | Staff Product Manager - Data Protection | zscaler | Remote - USA; Santa Clara, California, USA | 0.095 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5253726007) | 2026-11-19T23:37:02Z |
 | AI Enablement Architect | zscaler | Bellevue, Washington, USA; Santa Clara, California, USA | 0.095 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5270709007) | 2026-11-19T23:37:02Z |
-| Senior Site Reliability Engineer - (US-Remote) | clickhouse | United States, Remote | 0.095 | no | [link](https://jobs.ashbyhq.com/clickhouse/6b2709a0-ee6b-481a-b72c-87a669acd055) | 2026-11-19T23:37:02Z |
-| Site Reliability Engineer - US Government | palantir | Washington, D.C. | 0.095 | no | [link](https://jobs.lever.co/palantir/211f99dc-269e-4f25-84d3-d73dea782080) | 2026-11-19T23:37:02Z |
-| Manufacturing Test Infrastructure Engineer | zoox | Foster City, CA | 0.095 | no | [link](https://jobs.lever.co/zoox/6320b978-abf4-483b-a09f-bfba0c44c485) | 2026-11-19T23:54:57Z |
 | Software Engineer, Jade Foundation - AI Financial Partner | chime | San Francisco, CA, USA | 0.095 | no | [link](https://boards.greenhouse.io/chime/jobs/8868948002?gh_jid=8868948002) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Ads | roblox | San Mateo, CA, United States | 0.095 | no | [link](https://careers.roblox.com/jobs/7351220?gh_jid=7351220) | 2026-11-19T23:37:02Z |
 | Senior Product Manager - Self service cloud | elastic | Ireland | 0.095 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8041203&gh_jid=8041203) | 2026-11-19T23:37:02Z |
 | Senior Product Manager - Self service cloud | elastic | Norway | 0.095 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8041211&gh_jid=8041211) | 2026-11-19T23:37:02Z |
 | Senior Product Manager - Self service cloud | elastic | Spain | 0.095 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8028261&gh_jid=8028261) | 2026-11-19T23:37:02Z |
@@ -1759,7 +1953,6 @@
 | AI Ethics & Human Impact Lead | zscaler | Bellevue, Washington, USA; Remote - Illinois, USA; Santa Clara, California, USA | 0.095 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5277918007) | 2026-11-19T23:37:02Z |
 | Senior Data Analyst (Auth0) | okta | Bengaluru, India | 0.095 | no | [link](https://www.okta.com/company/careers/opportunity/7780488?gh_jid=7780488) | 2026-11-19T23:37:02Z |
 | Senior Data Analyst (Auth0) | okta | Chicago, Illinois; New York, New York; Seattle, Washington; Washington, DC | 0.095 | no | [link](https://www.okta.com/company/careers/opportunity/8304288?gh_jid=8304288) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer - Policy & Safety | spotify | London, Stockholm | 0.095 | no | [link](https://jobs.lever.co/spotify/d83cbddf-871a-4f9a-9b29-52cd676e2b3c) | 2026-11-19T23:37:02Z |
 | Software Engineering Manager, AI Platform Engineering | sofi | CA - San Francisco; WA - Seattle | 0.095 | no | [link](https://sofi.com/careers/job/8089614003?gh_jid=8089614003) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer (L4) Data Platform | twilio | Remote - US | 0.095 | no | [link](https://job-boards.greenhouse.io/twilio/jobs/7782805) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, ML Platform | gusto | Denver, CO - Hybrid; New York, NY - Hybrid; San Francisco, CA - Hybrid | 0.095 | no | [link](https://job-boards.greenhouse.io/gusto/jobs/8257983) | 2026-11-19T23:37:02Z |
@@ -1770,12 +1963,10 @@
 | Senior HRIS Analyst | pagerduty | Toronto | 0.095 | no | [link](https://job-boards.greenhouse.io/pagerduty/jobs/6254225004) | 2026-11-19T23:37:02Z |
 | Senior HRIS Analyst | pagerduty | Atlanta; San Francisco | 0.095 | no | [link](https://job-boards.greenhouse.io/pagerduty/jobs/6131137004) | 2026-11-19T23:37:02Z |
 | Staff + Senior Software Engineer, Inference Infrastructure | anthropic | San Francisco, CA / New York City, NY / Seattle, WA | 0.095 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5245851008) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Shopping Ads | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US | 0.095 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8049465) | 2026-11-19T23:37:02Z |
 | Staff Product Manager, AI & Developer Experience | fivetran | Denver, Colorado, United States, AMER | 0.095 | no | [link](https://www.fivetran.com/careers/job?gh_jid=7894337003) | 2026-11-19T23:37:02Z |
 | Staff Product Manager, AI & Developer Experience | fivetran | USA - Austin (dbt) | 0.095 | no | [link](https://www.fivetran.com/careers/job?gh_jid=7894333003) | 2026-11-19T23:37:02Z |
 | Staff Product Manager, AI & Developer Experience | fivetran | Oakland, California, United States | 0.095 | no | [link](https://www.fivetran.com/careers/job?gh_jid=7790909003) | 2026-11-19T23:37:02Z |
 | Staff Product Manager, AI & Developer Experience | fivetran | USA - New York (dbt) | 0.095 | no | [link](https://www.fivetran.com/careers/job?gh_jid=7894342003) | 2026-11-19T23:37:02Z |
-| Edge Infrastructure Engineer | palantir | Warsaw, Poland | 0.095 | no | [link](https://jobs.lever.co/palantir/3d06b4bc-6a7b-4f73-b5c5-4544354e3d0f) | 2026-11-19T23:37:02Z |
 | Senior Backend Engineer, Core DevOps | gitlab | Remote, United Kingdom | 0.095 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8689243002) | 2026-11-19T23:37:02Z |
 | Senior GTM AI Advisor (Customer Success Manager) | outreach | United States | 0.095 | no | [link](https://jobs.lever.co/outreach/91b45521-0ad3-499f-8c05-514beb39c2e5) | 2026-11-19T23:54:57Z |
 | Software Dev Engineer I - Security Platform | twitch | Seattle, WA | 0.095 | no | [link](https://job-boards.greenhouse.io/twitch/jobs/8931343002) | 2026-11-19T23:37:02Z |
@@ -1784,7 +1975,6 @@
 | Lead Applied Value Engineer - AI & Process Intelligence Consultant | celonis | Remote, United Arab Emirates | 0.094 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/8068099003?gh_jid=8068099003) | 2026-11-19T23:37:02Z |
 | Manager II, Engineering, Serving Infrastructure | pinterest | Palo Alto, CA, US; San Francisco, CA, US | 0.094 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=7957635) | 2026-11-19T23:37:02Z |
 | Scientific Account Executive | Adaptyv | Lausanne | 0.094 | no | [link](https://remoteOK.com/remote-jobs/remote-scientific-account-executive-adaptyv-1137608) | 2026-11-19T21:31:05Z |
-| Senior Machine Learning Engineer, Behavioral Detection | roblox | San Mateo, CA, United States | 0.094 | no | [link](https://careers.roblox.com/jobs/8311549?gh_jid=8311549) | 2026-11-19T23:37:02Z |
 | Tech Lead Manager, Machine Learning, Growth and Marketing | chime | San Francisco, CA, USA | 0.094 | no | [link](https://boards.greenhouse.io/chime/jobs/8864214002?gh_jid=8864214002) | 2026-11-19T23:37:02Z |
 | Account Executive, Enterprise - AI | zscaler | Tokyo, JPN | 0.094 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5233185007) | 2026-11-19T23:37:02Z |
 | Research Engineer/Research Scientist - Post Training, North Stars | openai | San Francisco, Remote | 0.094 | no | [link](https://jobs.ashbyhq.com/openai/171ebca6-de53-4d6e-a312-30332f353957) | 2026-11-19T23:54:57Z |
@@ -1795,19 +1985,12 @@
 | Applied AI Engineer, Fullstack | ramp | New York, NY (HQ), San Francisco, CA, Remote | 0.094 | no | [link](https://jobs.ashbyhq.com/ramp/6a7e382f-240a-4952-b9e5-7fe2b3856bc9) | 2026-11-19T23:54:57Z |
 | Engineering Manager - Unified Platform | deliveroo | London, England; London, United Kingdom | 0.094 | no | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8334695) | 2026-11-19T23:37:02Z |
 | Quantitative Analytics Manager, Affirm Bank Machine Learning & Model Governance | affirm | Remote US | 0.094 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/7819441003) | 2026-11-19T23:37:02Z |
-| Senior Platform Engineer (Auth0) | okta | Toronto, Ontario, Canada | 0.094 | no | [link](https://www.okta.com/company/careers/opportunity/8286405?gh_jid=8286405) | 2026-11-19T23:37:02Z |
 | Software Engineer, Backend, AI Spend Management | ramp | New York, NY (HQ), Remote | 0.094 | no | [link](https://jobs.ashbyhq.com/ramp/b7514711-8a29-4bd2-a97a-967be14e336f) | 2026-11-19T23:54:57Z |
-| Staff Client Platform Engineer | okta | San Francisco, California | 0.094 | no | [link](https://www.okta.com/company/careers/opportunity/8332521?gh_jid=8332521) | 2026-11-19T23:37:02Z |
-| Staff Data Infrastructure Engineer | faire | New York City, NY; San Francisco, CA | 0.094 | no | [link](https://boards.greenhouse.io/faire/jobs/8806617002?gh_jid=8806617002) | 2026-11-19T23:37:02Z |
-| Staff Data Infrastructure Engineer | faire | Kitchener-Waterloo, ON; Toronto, ON | 0.094 | no | [link](https://boards.greenhouse.io/faire/jobs/8860409002?gh_jid=8860409002) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Ads Bidding & Pacing | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US | 0.094 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8238679) | 2026-11-19T23:37:02Z |
 | Senior Systems Engineer - Go-To-Market Data Team | cloudflare | Hybrid | 0.094 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8082544?gh_jid=8082544) | 2026-11-19T23:37:02Z |
 | AI Safety Residency — Scale Labs Preparedness & Policy (SLPreP) | scaleai | Canada; United Kingdom; United States | 0.094 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4744402005) | 2026-11-19T23:37:02Z |
 | Senior Director of Engineering, Generative AI | roblox | San Mateo, CA, United States | 0.094 | no | [link](https://careers.roblox.com/jobs/8131695?gh_jid=8131695) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Platform Network (Auth0) | okta | Toronto, Ontario, Canada | 0.094 | no | [link](https://www.okta.com/company/careers/opportunity/8041376?gh_jid=8041376) | 2026-11-19T23:37:02Z |
-| [2027] Senior Machine Learning Engineer - PhD Early Career | roblox | San Mateo, CA, United States | 0.094 | no | [link](https://careers.roblox.com/jobs/8242623?gh_jid=8242623) | 2026-11-19T23:37:02Z |
 | Principal Engineer, Indexing & Retrieval Infrastructure | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA,US | 0.094 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8011719) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer - Economy ML | roblox | San Mateo, CA, United States | 0.094 | no | [link](https://careers.roblox.com/jobs/7729109?gh_jid=7729109) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Payments (AirCover Insurance Platform) | airbnb | Remote - USA | 0.094 | no | [link](https://careers.airbnb.com/positions/8259526?gh_jid=8259526) | 2026-11-19T23:37:02Z |
 | Application Security Engineer - Agents platform | elevenlabs | United Kingdom, Dublin, London, Remote | 0.094 | no | [link](https://jobs.ashbyhq.com/ElevenLabs/709b53e4-9db5-47ae-9c4b-a6fb9f33044c) | 2026-11-19T23:54:57Z |
 | Lead Advanced Analytics, Community Support | airbnb | Bengaluru, India | 0.094 | no | [link](https://careers.airbnb.com/positions/8023118?gh_jid=8023118) | 2026-11-19T23:37:02Z |
@@ -1817,7 +2000,6 @@
 | Lead Data Analyst, Growth Marketing | lightspeedhq | Montreal, Remote | 0.093 | no | [link](https://jobs.ashbyhq.com/lightspeedhq/50acfe97-e9f3-4c5a-b507-10d69bd3d621) | 2026-11-19T23:37:02Z |
 | Lead Data Analyst, Growth Marketing | lightspeedhq | Toronto, Remote | 0.093 | no | [link](https://jobs.ashbyhq.com/lightspeedhq/dec7d68e-e482-4835-a5ea-fab65faea95a) | 2026-11-19T23:37:02Z |
 | Senior Product Manager AI Security | zscaler | Zagreb, HRV | 0.093 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5267169007) | 2026-11-19T23:37:02Z |
-| Senior Site Reliability Engineer, Compute | roblox | San Mateo, CA, United States | 0.093 | no | [link](https://careers.roblox.com/jobs/8148679?gh_jid=8148679) | 2026-11-19T23:37:02Z |
 | Software Engineer, Forward Deployed, AI Solutions | ramp | New York, NY (HQ), Remote | 0.093 | no | [link](https://jobs.ashbyhq.com/ramp/b614563f-3ce6-4dca-b5ba-0e5a6c8bda27) | 2026-11-19T23:54:57Z |
 | AI Tool Admin | elastic | Bangalore, India | 0.093 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8314336&gh_jid=8314336) | 2026-11-19T23:37:02Z |
 | Senior Hardware Engineer - Infrastructure | roblox | San Mateo, CA, United States | 0.093 | no | [link](https://careers.roblox.com/jobs/7947153?gh_jid=7947153) | 2026-11-19T23:37:02Z |
@@ -1827,7 +2009,6 @@
 | Research Engineer / Research Scientist, Health | openai | San Francisco | 0.093 | no | [link](https://jobs.ashbyhq.com/openai/719cc0f6-ed38-41db-8870-299b4d336f37) | 2026-11-19T23:54:57Z |
 | Senior Backend Software Engineer - Infrastructure | palantir | London, United Kingdom | 0.093 | no | [link](https://jobs.lever.co/palantir/2cd25c0b-088d-4a5c-9b96-1165a33fe652) | 2026-11-19T23:37:02Z |
 | Senior Backend Software Engineer - Infrastructure | palantir | New York, NY | 0.093 | no | [link](https://jobs.lever.co/palantir/b5ad6660-8145-4be5-97e2-3799f2912f5b) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Homefeed & Search Quality | pinterest | San Francisco, CA, US; Remote, US | 0.093 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8346516) | 2026-11-19T23:37:02Z |
 | Software Engineer, Internship - Infrastructure | palantir | New York, NY | 0.093 | no | [link](https://jobs.lever.co/palantir/b229baac-494b-4a0d-9a13-2e38806e06f3) | 2026-11-19T23:37:02Z |
 | Software Engineer, Internship - Infrastructure | palantir | Palo Alto, CA | 0.093 | no | [link](https://jobs.lever.co/palantir/f221738b-e97c-4ce3-a12a-17ada2b855e4) | 2026-11-19T23:37:02Z |
 | Software Engineer, Internship - Infrastructure | palantir | London, United Kingdom | 0.093 | no | [link](https://jobs.lever.co/palantir/fd3603a9-7016-45c6-9c8d-04c9279ab85e) | 2026-11-19T23:37:02Z |
@@ -1835,28 +2016,20 @@
 | Senior Software Engineer - UI Platform | okta | Toronto, Ontario, Canada | 0.093 | no | [link](https://www.okta.com/company/careers/opportunity/8021682?gh_jid=8021682) | 2026-11-19T23:37:02Z |
 | Staff AI Business Process Analyst, Go To Market (GTM) | zscaler | Remote - India | 0.093 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5167455007) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer - UI Platform | okta | San Francisco, California; Toronto, Ontario, Canada | 0.093 | no | [link](https://www.okta.com/company/careers/opportunity/8211380?gh_jid=8211380) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning  Engineer - Perception 3D Segmentation | zoox | Foster City, CA | 0.093 | no | [link](https://jobs.lever.co/zoox/240ae92f-51ec-4d32-a0a4-3d4669508e3d) | 2026-11-19T23:54:57Z |
 | Staff Embedded Software Engineer – AUTOSAR, Platform Software | lucidmotors | Newark, CA | 0.093 | no | [link](https://lucidmotors.com/careers/search/5283905007?gh_jid=5283905007) | 2026-11-19T23:54:57Z |
-| Staff Machine Learning Engineer, Ads Lightweight Ranking | pinterest | San Francisco, CA, US; Remote, US | 0.093 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8354411) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, AI and Data Risk | vanta | Remote - UK, London, UK | 0.093 | no | [link](https://jobs.ashbyhq.com/vanta/06fbe631-946a-4628-a3f8-9d5d523b9fb2) | 2026-11-19T23:54:57Z |
 | Staff Software Engineer, AI and Data Risk | vanta | Remote - Ireland, Dublin, Ireland | 0.093 | no | [link](https://jobs.ashbyhq.com/vanta/31cdf07c-21ab-460c-912e-f288dc38090e) | 2026-11-19T23:54:57Z |
-| Forward Deployed Site Reliability Engineer - US Government | palantir | Washington, D.C. | 0.093 | no | [link](https://jobs.lever.co/palantir/a194220b-684a-4b4e-b918-1f70154b464c) | 2026-11-19T23:37:02Z |
 | Senior AI Business Process Analyst (Partner/Channel Selling) | zscaler | Remote - India | 0.093 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5127087007) | 2026-11-19T23:37:02Z |
 | Senior Data & AI Consultant | celonis | Amsterdam, Netherlands | 0.093 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/8007989003?gh_jid=8007989003) | 2026-11-19T23:37:02Z |
 | Senior Product Designer II - Commerce & Retailer Platform | instacart | United States - Remote | 0.093 | no | [link](https://instacart.careers/job/?gh_jid=8394152) | 2026-11-19T23:37:02Z |
 | Senior Product Designer II - Commerce & Retailer Platform | instacart | Canada - Remote (ON, AB, BC, or NS Only) | 0.093 | no | [link](https://instacart.careers/job/?gh_jid=8394157) | 2026-11-19T23:37:02Z |
 | Senior Product Designer, AI | sigmacomputing | San Francisco, CA | 0.093 | no | [link](https://job-boards.greenhouse.io/sigmacomputing/jobs/7767897003) | 2026-11-19T23:37:02Z |
 | Software Engineer Java - Payouts Platform | sumup | Sofia, Bulgaria | 0.093 | no | [link](https://sumup.com/careers/positions/8343751002?gh_jid=8343751002) | 2026-11-19T23:37:02Z |
-| Forward Deployed Infrastructure Engineer - UK Government | palantir | London, United Kingdom | 0.093 | no | [link](https://jobs.lever.co/palantir/72e51928-07f0-4be0-aae5-0ae6956a4846) | 2026-11-19T23:37:02Z |
-| Forward Deployed Infrastructure Engineer - US Government | palantir | Honolulu, HI | 0.093 | no | [link](https://jobs.lever.co/palantir/0fccbe95-2520-4df3-8600-7897656c06a2) | 2026-11-19T23:37:02Z |
-| Forward Deployed Infrastructure Engineer - US Government | palantir | Washington, D.C. | 0.093 | no | [link](https://jobs.lever.co/palantir/74748e0e-a0bc-4c53-a636-ef14e36d9b5e) | 2026-11-19T23:37:02Z |
-| Forward Deployed Infrastructure Engineer - US Government | palantir | New York, NY | 0.093 | no | [link](https://jobs.lever.co/palantir/b57f08e9-546c-4b9b-8d21-db0ebbc11363) | 2026-11-19T23:37:02Z |
 | Manager, Analytics, Fraud, UK | tide | Bulgaria | 0.093 | no | [link](https://job-boards.greenhouse.io/tide/jobs/7834726003) | 2026-11-19T23:54:57Z |
 | Manager, Analytics, Fraud, UK | tide | India, Hyderabad | 0.093 | no | [link](https://job-boards.greenhouse.io/tide/jobs/7655326003) | 2026-11-19T23:54:57Z |
 | Principal AI Security Specialist | zscaler | Melbourne, AUS; Sydney, AUS | 0.093 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5177767007) | 2026-11-19T23:37:02Z |
 | Principal AI Security Specialist | zscaler | Tokyo, JPN | 0.093 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5174751007) | 2026-11-19T23:37:02Z |
 | Product Marketing, Data Products | stripe | US / Canada | 0.093 | no | [link](https://stripe.com/jobs/search?gh_jid=7773461) | 2026-11-19T23:37:02Z |
-| Senior Site Reliability Engineer- (APJ-Remote) | clickhouse | Singapore, Australia, Remote | 0.093 | no | [link](https://jobs.ashbyhq.com/clickhouse/586876a1-0847-4652-b799-1680eb2ef880) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, AI Platform | sentry | San Francisco, California, Remote | 0.093 | no | [link](https://jobs.ashbyhq.com/sentry/6eb8d5f2-977e-4ff4-bdbe-fccb8747b5d7) | 2026-11-19T23:37:02Z |
 | Software Engineer II, Fullstack (Ads Platform) | affirm | Remote US | 0.093 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8016866003) | 2026-11-19T23:37:02Z |
 | Software Engineer II, Fullstack (Ads Platform) | affirm | Remote Canada | 0.093 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8016868003) | 2026-11-19T23:37:02Z |
@@ -1866,9 +2039,6 @@
 | Staff Fullstack Engineer, Data Products (Golang / Node) | gitlab | Remote, Canada; Remote, United States | 0.092 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8845277002) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Unified Services Platform | gusto | Denver, CO - Hybrid; New York, NY - Hybrid; San Francisco, CA - Hybrid | 0.092 | no | [link](https://job-boards.greenhouse.io/gusto/jobs/8144140) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, iOS Platform | airbnb | United States | 0.092 | no | [link](https://careers.airbnb.com/positions/8262812?gh_jid=8262812) | 2026-11-19T23:37:02Z |
-| Staff Platform Engineer | tide | Bulgaria | 0.092 | no | [link](https://job-boards.greenhouse.io/tide/jobs/8036817003) | 2026-11-19T23:54:57Z |
-| Staff Platform Engineer | tide | Lithuania | 0.092 | no | [link](https://job-boards.greenhouse.io/tide/jobs/8039814003) | 2026-11-19T23:54:57Z |
-| Staff Platform Engineer | tide | Serbia | 0.092 | no | [link](https://job-boards.greenhouse.io/tide/jobs/8039813003) | 2026-11-19T23:54:57Z |
 | Staff Software Engineer - Central Technology, Data Foundations | riotgames | Los Angeles, USA | 0.092 | no | [link](https://www.riotgames.com/en/work-with-us/job/8369218?gh_jid=8369218) | 2026-11-19T23:37:02Z |
 | Corporate Business Development Manager, Legal Data | harvey | San Francisco, Remote | 0.092 | no | [link](https://jobs.ashbyhq.com/harvey/2e064aa4-effe-40db-ad73-daa8fa325b7d) | 2026-11-19T23:54:57Z |
 | Corporate Business Development Manager, Legal Data | harvey | New York, Remote | 0.092 | no | [link](https://jobs.ashbyhq.com/harvey/6825190c-0cbe-4b53-976a-26afb3734c04) | 2026-11-19T23:54:57Z |
@@ -1883,7 +2053,6 @@
 | Information Security Engineer - Infrastructure Security | palantir | New York, NY | 0.092 | no | [link](https://jobs.lever.co/palantir/1e77a5e8-9843-4516-a186-7c24f0ff07a0) | 2026-11-19T23:37:02Z |
 | Information Security Engineer - Infrastructure Security | palantir | London, United Kingdom | 0.092 | no | [link](https://jobs.lever.co/palantir/36b26f06-1e25-4c33-8548-c9e70add0784) | 2026-11-19T23:37:02Z |
 | Information Security Engineer - Infrastructure Security | palantir | Washington, D.C. | 0.092 | no | [link](https://jobs.lever.co/palantir/4bfef5e0-6689-4db8-9ffe-ab6df6836845) | 2026-11-19T23:37:02Z |
-| Principal Machine Learning Engineer - Matchmaking | roblox | San Mateo, CA, United States | 0.092 | no | [link](https://careers.roblox.com/jobs/8257625?gh_jid=8257625) | 2026-11-19T23:37:02Z |
 | Product Manager - Spark | supabase | Remote, Global | 0.092 | no | [link](https://jobs.ashbyhq.com/supabase/85f4d148-4602-4139-802a-962705133892) | 2026-11-19T23:54:57Z |
 | Product Manager, App Experience and Platform | chime | New York, NY, USA; San Francisco, CA, USA | 0.092 | no | [link](https://boards.greenhouse.io/chime/jobs/8802615002?gh_jid=8802615002) | 2026-11-19T23:37:02Z |
 | Senior Application Development Analyst | okta | Bengaluru, India | 0.092 | no | [link](https://www.okta.com/company/careers/opportunity/8230852?gh_jid=8230852) | 2026-11-19T23:37:02Z |
@@ -1901,26 +2070,15 @@
 | Principal Product Manager II, AI/Vectors - Elasticsearch | elastic | Canada | 0.092 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8306227&gh_jid=8306227) | 2026-11-19T23:37:02Z |
 | Research Engineer - Data Infrastructure | elevenlabs | United Kingdom, United States, Poland, Bulgaria, Remote | 0.092 | no | [link](https://jobs.ashbyhq.com/ElevenLabs/9fbd9227-57e0-4221-9255-1a1d967be8ed) | 2026-11-19T23:54:57Z |
 | Senior AI-Native Designer & Builder, Design System | zscaler | Santa Clara, California, USA | 0.092 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5271544007) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Assistance Engineering | airbnb | China | 0.092 | no | [link](https://careers.airbnb.com/positions/7975743?gh_jid=7975743) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Assistance Engineering | airbnb | Remote-USA | 0.092 | no | [link](https://careers.airbnb.com/positions/8014904?gh_jid=8014904) | 2026-11-19T23:37:02Z |
 | Distinguished Engineer, Machine Learning - Economy | roblox | San Mateo, CA, United States | 0.092 | no | [link](https://careers.roblox.com/jobs/7332473?gh_jid=7332473) | 2026-11-19T23:37:02Z |
-| Forward Deployed Infrastructure Engineer, New Grad - UK Government | palantir | London, United Kingdom | 0.092 | no | [link](https://jobs.lever.co/palantir/cadc0eb2-2703-43e4-8e4f-41edf5b071c6) | 2026-11-19T23:37:02Z |
-| Forward Deployed Infrastructure Engineer, New Grad - US Government | palantir | Palo Alto, CA | 0.092 | no | [link](https://jobs.lever.co/palantir/33243fb5-6907-40c7-930c-968b25d825d0) | 2026-11-19T23:37:02Z |
-| Forward Deployed Infrastructure Engineer, New Grad - US Government | palantir | Washington, D.C. | 0.092 | no | [link](https://jobs.lever.co/palantir/5a28f3a5-8655-47f2-ab19-a79b8a319da8) | 2026-11-19T23:37:02Z |
-| Forward Deployed Infrastructure Engineer, New Grad - US Government | palantir | Honolulu, HI | 0.092 | no | [link](https://jobs.lever.co/palantir/701a9307-0619-45d3-b077-cabe9897cd12) | 2026-11-19T23:37:02Z |
-| Forward Deployed Infrastructure Engineer, New Grad - US Government | palantir | New York, NY | 0.092 | no | [link](https://jobs.lever.co/palantir/91117724-9389-48dc-912f-98e48d4d45d8) | 2026-11-19T23:37:02Z |
 | Senior Data Analyst, Enterprise | 1password | Remote (United States / Canada) | 0.092 | no | [link](https://jobs.ashbyhq.com/1password/577f47a1-f80d-4d5b-8212-9e38e749c004) | 2026-11-19T23:54:57Z |
 | Senior Forward Deployed Engineer (AI Enablement) | reddit | Remote - United States | 0.092 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8301784) | 2026-11-19T23:37:02Z |
 | Senior Full-Stack Engineer, Builder Platform | okta | Toronto, Ontario, Canada | 0.092 | no | [link](https://www.okta.com/company/careers/opportunity/8359853?gh_jid=8359853) | 2026-11-19T23:37:02Z |
 | Sr. Technical Program Manager, Ads Delivery Infrastructure | pinterest | San Francisco, CA, US; Remote, US | 0.092 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8208419) | 2026-11-19T23:37:02Z |
 | Deal Desk Analyst | elastic | Barcelona, Spain | 0.092 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8285463&gh_jid=8285463) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer | reddit | Remote - Ontario, Canada | 0.092 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/6960833) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer | reddit | Remote - United States | 0.092 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/6960831) | 2026-11-19T23:37:02Z |
 | Software Engineer II (Backend) - Home Page & Merchandising Platform | deliveroo | London, United Kingdom - Deliveroo | 0.092 | no | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8266845) | 2026-11-19T23:37:02Z |
 | Finance and Equity Analyst - Rotational Program | carta | Sandy, UT | 0.092 | no | [link](https://job-boards.greenhouse.io/carta/jobs/5640725003) | 2026-11-19T23:37:02Z |
 | Finance and Equity Analyst - Rotational Program | carta | Toronto, Ontario, Canada | 0.092 | no | [link](https://job-boards.greenhouse.io/carta/jobs/7807641003) | 2026-11-19T23:37:02Z |
-| PhD Machine Learning Engineer, Intern | stripe | San Francisco, New York City, Seattle | 0.092 | no | [link](https://stripe.com/jobs/search?gh_jid=8328662) | 2026-11-19T23:37:02Z |
-| PhD Machine Learning Engineer, Intern | stripe | Toronto | 0.092 | no | [link](https://stripe.com/jobs/search?gh_jid=8328664) | 2026-11-19T23:37:02Z |
 | Principal Software Engineer, Agent Infrastructure | roblox | San Mateo, CA, United States | 0.092 | no | [link](https://careers.roblox.com/jobs/8259270?gh_jid=8259270) | 2026-11-19T23:37:02Z |
 | Senior Analyst, France & Netherlands (12 Month Fixed-Term Contract) | airbnb | Paris, France | 0.092 | no | [link](https://careers.airbnb.com/positions/8278729?gh_jid=8278729) | 2026-11-19T23:37:02Z |
 | Senior Engineer (Platform) | later | Boston, MA; Vancouver, British Columbia, Canada; Vancouver, Washington, United States | 0.092 | no | [link](https://job-boards.greenhouse.io/later/jobs/8811513002) | 2026-11-19T23:37:02Z |
@@ -1930,14 +2088,11 @@
 | Analyst, Royalty Operations | spotify | Stockholm | 0.091 | no | [link](https://jobs.lever.co/spotify/a4651332-6400-40e8-8c22-5491e7a34161) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, DevOps & Security | klue | Vancouver, British Columbia, Remote | 0.091 | no | [link](https://jobs.ashbyhq.com/klue/ac2b512c-eb39-40f5-9d60-12d1a4fb5ae7) | 2026-11-19T23:37:02Z |
 | Staff Software Development Engineer In Test, Platform Software | lucidmotors | Newark, CA | 0.091 | no | [link](https://lucidmotors.com/careers/search/5279158007?gh_jid=5279158007) | 2026-11-19T23:54:57Z |
-| Member of Technical Staff (Machine Learning Engineer, Search) | perplexity | Belgrade, London, Dublin, Remote | 0.091 | no | [link](https://jobs.ashbyhq.com/Perplexity/0190699f-010b-44f2-8399-278899fef018) | 2026-11-19T23:54:57Z |
 | Principal, Strategic Finance & Analytics, Technology | airbnb | United States | 0.091 | no | [link](https://careers.airbnb.com/positions/8275416?gh_jid=8275416) | 2026-11-19T23:37:02Z |
 | Public Sector Delivery Analyst | cohere | Ottawa, Remote | 0.091 | no | [link](https://jobs.ashbyhq.com/cohere/9be116c1-c1df-49bd-8e90-31d41b62645f) | 2026-11-19T23:37:02Z |
 | Senior Forecasting and Demand Planning Analyst | airbnb | United States | 0.091 | no | [link](https://careers.airbnb.com/positions/7839229?gh_jid=7839229) | 2026-11-19T23:37:02Z |
 | Technical Program Manager, Apps Platform | anthropic | San Francisco, CA / Seattle, WA | 0.091 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5251609008) | 2026-11-19T23:37:02Z |
 | Lead Solutions Architect - Generative AI (EMEA Emerging DNB) | databricks | Remote - United Kingdom | 0.091 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8403943002) | 2026-11-19T23:37:02Z |
-| Master's Machine Learning Engineer, Intern | stripe | Toronto | 0.091 | no | [link](https://stripe.com/jobs/search?gh_jid=8333122) | 2026-11-19T23:37:02Z |
-| Master's Machine Learning Engineer, Intern | stripe | San Francisco, New York City, Seattle | 0.091 | no | [link](https://stripe.com/jobs/search?gh_jid=8333074) | 2026-11-19T23:37:02Z |
 | Principal AI Security Specialist - Federal | zscaler | McLean, Virginia, USA; Remote - D.C., USA | 0.091 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5174765007) | 2026-11-19T23:37:02Z |
 | Principal Product Specialist - AI Security | zscaler | Remote - USA | 0.091 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5298663007) | 2026-11-19T23:37:02Z |
 | Software Engineer, New Grad - Infrastructure | palantir | New York, NY | 0.091 | no | [link](https://jobs.lever.co/palantir/4abf26b4-795c-420a-bf22-1ab98db268b4) | 2026-11-19T23:37:02Z |
@@ -1957,30 +2112,23 @@
 | Manager AI Enablement & Organizational Change | zscaler | Santa Clara, California, USA | 0.091 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5270586007) | 2026-11-19T23:37:02Z |
 | Senior Data Analyst- Scaled Moderation | roblox | Gurugram, Haryana, India | 0.091 | no | [link](https://careers.roblox.com/jobs/7856888?gh_jid=7856888) | 2026-11-19T23:37:02Z |
 | Senior GTM Systems Analyst (Marketing IT) | zscaler | Santa Clara, California, USA | 0.091 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5267177007) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer | coinbase | Remote - USA | 0.091 | no | [link](https://www.coinbase.com/careers/positions/8347602?gh_jid=8347602) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer | coinbase | Remote - India | 0.091 | no | [link](https://www.coinbase.com/careers/positions/7739592?gh_jid=7739592) | 2026-11-19T23:37:02Z |
 | Senior Product Analyst - Finance Technology | okta | Bengaluru, India | 0.091 | no | [link](https://www.okta.com/company/careers/opportunity/8128431?gh_jid=8128431) | 2026-11-19T23:37:02Z |
 | Sr. Product Manager, Data and Signals Intelligence | pinterest | New York, NY, US | 0.091 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8238389) | 2026-11-19T23:37:02Z |
 | Backend Software Engineer - Infrastructure | palantir | New York, NY | 0.091 | no | [link](https://jobs.lever.co/palantir/6fe5515f-f677-4d98-8ac2-1775a425f5e7) | 2026-11-19T23:37:02Z |
 | Backend Software Engineer - Infrastructure | palantir | London, United Kingdom | 0.091 | no | [link](https://jobs.lever.co/palantir/f70cdff7-c62f-4b73-a136-909e5e3d1891) | 2026-11-19T23:37:02Z |
 | Distinguished Engineer, Machine Learning - Discovery | roblox | San Mateo, CA, United States | 0.091 | no | [link](https://careers.roblox.com/jobs/8104808?gh_jid=8104808) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer - Messaging Platform | spotify | London, Stockholm | 0.091 | no | [link](https://jobs.lever.co/spotify/c322d068-5b59-4658-b618-bb2a032eeb9b) | 2026-11-19T23:37:02Z |
 | Senior/Staff Software Engineer, Search & Retrieval Infrastructure | pinecone | US Remote | 0.091 | no | [link](https://jobs.ashbyhq.com/pinecone/7ef089cb-a721-4ad8-a6d0-c390e64991d2) | 2026-11-19T23:54:57Z |
 | Senior/Staff Software Engineer, Search & Retrieval Infrastructure | pinecone | New York City, Remote | 0.091 | no | [link](https://jobs.ashbyhq.com/pinecone/8beaa81a-20be-4b3c-a38c-b85d13bf1df9) | 2026-11-19T23:54:57Z |
-| Principal Machine Learning Infrastructure Engineer, Ads | roblox | San Mateo, CA, United States | 0.091 | no | [link](https://careers.roblox.com/jobs/8090079?gh_jid=8090079) | 2026-11-19T23:37:02Z |
 | Senior BizOps Analyst - Product Operations | zscaler | Mohali, IND | 0.091 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5255852007) | 2026-11-19T23:37:02Z |
 | Senior Design Engineer - Design System & Platform UI | clickhouse | Europe or US | 0.091 | no | [link](https://jobs.ashbyhq.com/clickhouse/3787b9f2-3184-4ed5-b78e-6454d5631f3d) | 2026-11-19T23:37:02Z |
 | Senior Enterprise AI Account Executive — Deasy Labs | collibra | Remote, USA | 0.091 | no | [link](https://www.collibra.com/us/en/company/careers/job-listing/?gh_jid=8219838) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, CX | coinbase | Remote - USA | 0.091 | no | [link](https://www.coinbase.com/careers/positions/8292793?gh_jid=8292793) | 2026-11-19T23:37:02Z |
 | Senior Professional Services Consultant - AI Security | zscaler | Remote - USA | 0.091 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5129997007) | 2026-11-19T23:37:02Z |
 | Trading Analytics Developer, Quantitative Trading | crypto | Hong Kong | 0.091 | no | [link](https://jobs.lever.co/crypto/2b22d4ce-69f2-497e-bdf4-57c80fc1268a) | 2026-11-19T23:54:57Z |
 | Cloud Security Engineer | stripe | Seattle | 0.091 | no | [link](https://stripe.com/jobs/search?gh_jid=7867389) | 2026-11-19T23:37:02Z |
 | Sr. Manager, Machine Learning Engineering-Applied Research | pinterest | San Francisco, CA, US; Remote, US | 0.091 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8015504) | 2026-11-19T23:37:02Z |
 | Commissioning Project Lead, Data Center Delivery | openai | San Francisco, Seattle | 0.091 | no | [link](https://jobs.ashbyhq.com/openai/91cf75be-a3c6-4f39-9623-f72186fd8553) | 2026-11-19T23:54:57Z |
-| Senior Machine Learning Infrastructure Engineer, Matchmaking | roblox | San Mateo, CA, United States | 0.091 | no | [link](https://careers.roblox.com/jobs/8282837?gh_jid=8282837) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Applied AI | okta | San Francisco, California | 0.091 | no | [link](https://www.okta.com/company/careers/opportunity/8281947?gh_jid=8281947) | 2026-11-19T23:37:02Z |
 | Member of Technical Staff (Search Quality Analyst) | perplexity | Belgrade, London, Dublin, Remote | 0.091 | no | [link](https://jobs.ashbyhq.com/Perplexity/3b349a2f-360e-44e6-a57d-6a87bc3016a7) | 2026-11-19T23:54:57Z |
-| Senior Software Engineer - SRE | okta | Bengaluru, India | 0.091 | no | [link](https://www.okta.com/company/careers/opportunity/8263916?gh_jid=8263916) | 2026-11-19T23:37:02Z |
 | Director, Machine Learning Engineering, Ads Measurement | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US | 0.090 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8234555) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer (Full-Stack) - Home Page and Merchandising Platform | deliveroo | London, United Kingdom - Deliveroo | 0.090 | no | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8276280) | 2026-11-19T23:37:02Z |
 | Staff Product Manager, Generative AI Platform | deliveroo | London, United Kingdom | 0.090 | no | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8206345) | 2026-11-19T23:37:02Z |
@@ -2007,49 +2155,35 @@
 | Senior Software Engineer - Integrations - AI/ML | clickhouse | Spain, Remote | 0.090 | no | [link](https://jobs.ashbyhq.com/clickhouse/7fb1aca5-b7d2-463b-aac0-28b75cfbec7d) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - Integrations - AI/ML | clickhouse | Germany, Remote | 0.090 | no | [link](https://jobs.ashbyhq.com/clickhouse/bf41aec7-162d-4e97-bcbe-44e4febb877e) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - Integrations - AI/ML | clickhouse | Canada, Remote | 0.090 | no | [link](https://jobs.ashbyhq.com/clickhouse/4590946c-3e3c-4ce9-9d59-dbe41b0503b8) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Traffic Intelligence | airbnb | United States | 0.090 | no | [link](https://careers.airbnb.com/positions/8129371?gh_jid=8129371) | 2026-11-19T23:37:02Z |
 | AI Security - Account Executive Strategic Accounts | zscaler | Tokyo, JPN | 0.090 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5219179007) | 2026-11-19T23:37:02Z |
 | Docs Lead, Platform | anthropic | San Francisco, CA / New York City, NY | 0.090 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5482310008) | 2026-11-19T23:37:02Z |
 | Financial Services Strategic Sourcing Analyst | sofi | United States | 0.090 | no | [link](https://sofi.com/careers/job/7979520003?gh_jid=7979520003) | 2026-11-19T23:37:02Z |
 | Master's Data Science Internship 2027 (USA) | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US; New York, NY, US | 0.090 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8138097) | 2026-11-19T23:37:02Z |
 | Data Partnerships Coordinator (1-year contract) | cohere | Toronto, Canada, United States, New York, Ottawa, Montreal, Remote | 0.090 | no | [link](https://jobs.ashbyhq.com/cohere/6d2d5e2e-46bd-4da5-9e03-573578424976) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, Radar | stripe | Seattle | 0.090 | no | [link](https://stripe.com/jobs/search?gh_jid=8243617) | 2026-11-19T23:37:02Z |
 | Manager, Salesforce Revenue Cloud | elastic | United States | 0.090 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8207937&gh_jid=8207937) | 2026-11-19T23:37:02Z |
 | Senior Fullstack Software Engineer, Quality Platform | airbnb | Brazil | 0.090 | no | [link](https://careers.airbnb.com/positions/8257826?gh_jid=8257826) | 2026-11-19T23:37:02Z |
 | Senior Product Analyst | later | Boston, MA; Vancouver, British Columbia, Canada | 0.090 | no | [link](https://job-boards.greenhouse.io/later/jobs/8940295002) | 2026-11-19T23:37:02Z |
 | Security Engineer, Infrastructure | scaleai | New York, NY; San Francisco, CA; Seattle, WA; Washington, DC | 0.090 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4646888005) | 2026-11-19T23:37:02Z |
 | Senior Data Center Capacity Delivery Manager, AUS | anthropic | Sydney, Australia | 0.090 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5215130008) | 2026-11-19T23:37:02Z |
-| Senior Site Reliability Engineer | okta | Dublin, Ireland | 0.090 | no | [link](https://www.okta.com/company/careers/opportunity/8184826?gh_jid=8184826) | 2026-11-19T23:37:02Z |
-| Senior Site Reliability Engineer | okta | Bengaluru, India | 0.090 | no | [link](https://www.okta.com/company/careers/opportunity/7963271?gh_jid=7963271) | 2026-11-19T23:37:02Z |
 | Accountant | Serve Robotics | los angeles | 0.090 | no | [link](https://remoteOK.com/remote-jobs/remote-accountant-serve-robotics-1137694) | 2026-11-19T21:31:05Z |
 | Software Engineer, Metronome Infrastructure | stripe | Toronto, Vancouver, Canada-Remote | 0.090 | no | [link](https://stripe.com/jobs/search?gh_jid=8231439) | 2026-11-19T23:37:02Z |
 | Sr. Product Manager, Test Management Platform | lucidmotors | Phoenix, AZ | 0.090 | no | [link](https://lucidmotors.com/careers/search/5238956007?gh_jid=5238956007) | 2026-11-19T23:54:57Z |
 | Product Manager - Data Platform | spotify | London | 0.090 | no | [link](https://jobs.lever.co/spotify/03437e2a-2d5e-4593-9e97-11271014932e) | 2026-11-19T23:37:02Z |
 | Senior Commercial Deal Desk Analyst | 1password | United Kingdom, Remote | 0.090 | no | [link](https://jobs.ashbyhq.com/1password/c44b3a46-5d1f-4d90-917f-5d1b19ffb835) | 2026-11-19T23:54:57Z |
 | Senior Compensation Analyst | robinhood | Chicago, IL; Menlo Park, CA; New York, NY | 0.090 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8060703?t=gh_src=&gh_jid=8060703) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Recommendations | lyft | San Francisco, CA | 0.090 | no | [link](https://app.careerpuck.com/job-board/lyft/job/8430552002?gh_jid=8430552002) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Recommendations | lyft | Toronto, Canada | 0.090 | no | [link](https://app.careerpuck.com/job-board/lyft/job/8603653002?gh_jid=8603653002) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Experimentation Platform | airbnb | Brazil | 0.090 | no | [link](https://careers.airbnb.com/positions/8334880?gh_jid=8334880) | 2026-11-19T23:37:02Z |
-| Senior Staff Machine Learning Engineer, Ads Ranking | reddit | Remote - United States | 0.090 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8368600) | 2026-11-19T23:37:02Z |
 | Senior Staff Software Engineer, Platform | sentry | San Francisco, California, Remote | 0.090 | no | [link](https://jobs.ashbyhq.com/sentry/af7fab29-5d68-4041-9794-de4de3f41953) | 2026-11-19T23:37:02Z |
-| Senior/Staff Machine Learning Engineer, 3D Simulation | zoox | Foster City, CA, Seattle, WA | 0.090 | no | [link](https://jobs.lever.co/zoox/1dc3a72e-1461-4c66-b424-252f057809ed) | 2026-11-19T23:54:57Z |
 | Business Analyst, Marketing-1 (Fixed Term) | elastic | Bangalore, India | 0.089 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8177119&gh_jid=8177119) | 2026-11-19T23:37:02Z |
 | Product Marketing Manager, Platform | anthropic | San Francisco, CA / New York City, NY | 0.089 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5424078008) | 2026-11-19T23:37:02Z |
-| Senior Staff Machine Learning Engineer, Trust | airbnb | Remote - USA | 0.089 | no | [link](https://careers.airbnb.com/positions/7592146?gh_jid=7592146) | 2026-11-19T23:37:02Z |
 | Business Controls Testing Senior Analyst | sofi | United States | 0.089 | no | [link](https://sofi.com/careers/job/8200888003?gh_jid=8200888003) | 2026-11-19T23:37:02Z |
 | Engineering Manager, Observability Infrastructure | roblox | San Mateo, CA, United States | 0.089 | no | [link](https://careers.roblox.com/jobs/7901793?gh_jid=7901793) | 2026-11-19T23:37:02Z |
 | Group Product Manager, Data Platforms | wikimedia | Remote | 0.089 | no | [link](https://job-boards.greenhouse.io/wikimedia/jobs/8346045) | 2026-11-19T23:37:02Z |
 | Senior Allocation Analyst- Retail | mejuri | Toronto | 0.089 | no | [link](https://job-boards.greenhouse.io/mejuri/jobs/4696144006) | 2026-11-19T23:37:02Z |
 | Staff Product Manager, Infrastructure | harvey | San Francisco, Remote | 0.089 | no | [link](https://jobs.ashbyhq.com/harvey/d629fa64-599d-435c-b4ef-a925299ddac8) | 2026-11-19T23:54:57Z |
-| Senior / Staff Machine Learning Engineer - Behavior Models for Road Users | zoox | Foster City, CA | 0.089 | no | [link](https://jobs.lever.co/zoox/170c22c2-24f8-4163-a007-45dec5bdb902) | 2026-11-19T23:54:57Z |
 | Senior Data Analyst, Moderation Operations | roblox | San Mateo, CA, United States | 0.089 | no | [link](https://careers.roblox.com/jobs/8332448?gh_jid=8332448) | 2026-11-19T23:37:02Z |
 | Senior Oracle Security and AI Engineer | cloudflare | Hybrid | 0.089 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8221248?gh_jid=8221248) | 2026-11-19T23:37:02Z |
-| Senior Site Reliability Engineer  - EPG | okta | Bellevue, Washington; San Francisco, California | 0.089 | no | [link](https://www.okta.com/company/careers/opportunity/8268917?gh_jid=8268917) | 2026-11-19T23:37:02Z |
 | Sr. Business Systems Analyst | elastic | United States | 0.089 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8107090&gh_jid=8107090) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Radar | stripe | N/A | 0.089 | no | [link](https://stripe.com/jobs/search?gh_jid=8243615) | 2026-11-19T23:37:02Z |
 | Developer Relations Manager, Claude Platform | anthropic | San Francisco, CA / New York City, NY | 0.089 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5367562008) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Ads ML Efficiency | reddit | Remote - United States | 0.089 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8304463) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Platform Engineer | klaviyo | Boston, MA | 0.089 | no | [link](https://www.klaviyo.com/careers/jobs/8035953003?gh_jid=8035953003) | 2026-11-19T23:37:02Z |
 | Senior Product Manager, Rider ML/AI | lyft | San Francisco, CA | 0.089 | no | [link](https://app.careerpuck.com/job-board/lyft/job/8916924002?gh_jid=8916924002) | 2026-11-19T23:37:02Z |
 | Senior Security Software Engineer, Infrastructure Security | roblox | San Mateo, CA, United States | 0.089 | no | [link](https://careers.roblox.com/jobs/7896061?gh_jid=7896061) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Billing Platform | sentry | San Francisco, California, Remote | 0.089 | no | [link](https://jobs.ashbyhq.com/sentry/f7b4f37b-4293-433d-910e-9033bf10d6d4) | 2026-11-19T23:37:02Z |
@@ -2062,9 +2196,7 @@
 | Backend Software Engineer - Infrastructure, Foundations | palantir | New York, NY | 0.089 | no | [link](https://jobs.lever.co/palantir/fb2d3222-dbd8-4e03-8d39-47b820e9509c) | 2026-11-19T23:37:02Z |
 | Senior Backend Engineer | Rain |  | 0.089 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-backend-engineer-rain-1137544) | 2026-11-19T21:31:05Z |
 | Senior Security Analyst, Security Risk Management | plaid | Remote United States, Raleigh Office, San Francisco HQ, New York City Office | 0.089 | no | [link](https://jobs.ashbyhq.com/plaid/4c4af954-2c70-4a3c-acc2-97c58211f920) | 2026-11-19T23:37:02Z |
-| Senior Site Reliability Engineer (Auth0) | okta | Barcelona, Spain | 0.089 | no | [link](https://www.okta.com/company/careers/opportunity/7418982?gh_jid=7418982) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, AI Platform - Prism | sofi | CA - San Francisco; WA - Seattle | 0.089 | no | [link](https://sofi.com/careers/job/8197346003?gh_jid=8197346003) | 2026-11-19T23:37:02Z |
-| Senior Staff Machine Learning Engineer, Feed Relevance | reddit | Remote - United States | 0.089 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8122606) | 2026-11-19T23:37:02Z |
 | Staff Product Manager - Internal AI | mongodb | Palo Alto | 0.089 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=7781724) | 2026-11-19T23:37:02Z |
 | Staff Technical Program Manager, Machine Learning | cohere | London, Remote | 0.089 | no | [link](https://jobs.ashbyhq.com/cohere/582c4a60-14a2-49d5-b4d3-24c4ec50508d) | 2026-11-19T23:37:02Z |
 | Financial Analyst, G&A | cohere | United States, San Francisco, New York, Toronto, Remote | 0.089 | no | [link](https://jobs.ashbyhq.com/cohere/53c89232-1de7-42b5-ab9d-b5290451c7e8) | 2026-11-19T23:37:02Z |
@@ -2076,23 +2208,17 @@
 | Trading Analytics Developer, Quantitative Trading | crypto | London | 0.089 | no | [link](https://jobs.lever.co/crypto/0c856e71-a38e-444d-9265-c24d4d49a413) | 2026-11-19T23:54:57Z |
 | Lead - Data Partnerships Business Development | celonis | New York, US, New York | 0.089 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/7790947003?gh_jid=7790947003) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Platform & Infrastructure | okta | Bengaluru, India | 0.089 | no | [link](https://www.okta.com/company/careers/opportunity/8258803?gh_jid=8258803) | 2026-11-19T23:37:02Z |
-| Frontend Platform Engineer | rover | Barcelona | 0.088 | no | [link](https://jobs.lever.co/rover/f91fa5e0-fa7d-4463-9030-0a3045d6556f) | 2026-11-19T23:54:57Z |
 | SVP, Product Management – Data Products & Strategy | pointclickcare | Remote, USA | 0.088 | no | [link](https://jobs.lever.co/pointclickcare/972c9931-ca55-4263-bc0d-75afc697e3b9) | 2026-11-19T23:37:02Z |
 | Senior Agentic AI Engineer NDA | GT | Warsaw | 0.088 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-agentic-ai-engineer-nda-gt-1137710) | 2026-11-19T21:31:05Z |
-| Senior Staff Machine Learning Engineer, ML Understanding | reddit | Remote - United States | 0.088 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8243010) | 2026-11-19T23:37:02Z |
 | Senior State and Local Tax Analyst | sofi | Cottonwood Heights, UT | 0.088 | no | [link](https://sofi.com/careers/job/8050188003?gh_jid=8050188003) | 2026-11-19T23:37:02Z |
 | Senior Tax  Analyst - International Taxes | toast | Dublin | 0.088 | no | [link](https://careers.toasttab.com/jobs?gh_jid=8359247) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Core Infrastructure | okta | San Francisco, California | 0.088 | no | [link](https://www.okta.com/company/careers/opportunity/8081732?gh_jid=8081732) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, CX Intelligence | coinbase | Remote - Brazil | 0.088 | no | [link](https://www.coinbase.com/careers/positions/8008569?gh_jid=8008569) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Operational AI | brex | São Paulo, São Paulo, Brazil | 0.088 | no | [link](https://www.brex.com/careers/8861245002?gh_jid=8861245002) | 2026-11-19T23:37:02Z |
-| Senior Staff Machine Learning Engineer, Post Training | airbnb | Remote - USA | 0.088 | no | [link](https://careers.airbnb.com/positions/7858738?gh_jid=7858738) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Streaming Infrastructure | airbnb | United States | 0.088 | no | [link](https://careers.airbnb.com/positions/7702714?gh_jid=7702714) | 2026-11-19T23:37:02Z |
 | Strategy & Analytics Lead - Multiple Openings | faire | New York City, NY; San Francisco, CA | 0.088 | no | [link](https://boards.greenhouse.io/faire/jobs/8623235002?gh_jid=8623235002) | 2026-11-19T23:37:02Z |
 | DevOps / AgentOps Engineer, GTM Systems | anthropic | San Francisco, CA | 0.088 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5392856008) | 2026-11-19T23:37:02Z |
 | Engineering Manager, Home Infrastructure (Recommendation Systems) | roblox | San Mateo, CA, United States | 0.088 | no | [link](https://careers.roblox.com/jobs/7905464?gh_jid=7905464) | 2026-11-19T23:37:02Z |
-| Principal AI Platform Engineer | pointclickcare | Mississauga | 0.088 | no | [link](https://jobs.lever.co/pointclickcare/d27ec0dd-570d-4626-9962-2db3fc56b991) | 2026-11-19T23:37:02Z |
 | Senior International Payroll Analyst | twilio | Remote - Ireland | 0.088 | no | [link](https://job-boards.greenhouse.io/twilio/jobs/8249285) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer - Risk | gusto | San Francisco, CA - Hybrid | 0.088 | no | [link](https://job-boards.greenhouse.io/gusto/jobs/7168696) | 2026-11-19T23:37:02Z |
 | AI Solutions Program Manager, Finance | stripe | SEA, SF, NYC, CHI | 0.088 | no | [link](https://stripe.com/jobs/search?gh_jid=8221776) | 2026-11-19T23:37:02Z |
 | Platform Hardware Security | anthropic | San Francisco, CA / New York City, NY / Seattle, WA | 0.088 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5257689008) | 2026-11-19T23:37:02Z |
 | Senior Payroll Analyst | deliveroo | London, United Kingdom | 0.088 | no | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8273959) | 2026-11-19T23:37:02Z |
@@ -2100,19 +2226,14 @@
 | Business Development Manager, Cloud & AI | harvey | San Francisco, Remote | 0.088 | no | [link](https://jobs.ashbyhq.com/harvey/03b44b0d-d3a3-4c9f-8b16-f94614aea44d) | 2026-11-19T23:54:57Z |
 | Staff Software Engineer, Cloud Infrastructure | airbnb | Remote, USA | 0.088 | no | [link](https://careers.airbnb.com/positions/8257909?gh_jid=8257909) | 2026-11-19T23:37:02Z |
 | Engineering Manager, Machine Learning - Fraud Detection | stripe | N/A | 0.088 | no | [link](https://stripe.com/jobs/search?gh_jid=8069506) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, Transaction Risk | stripe | Seattle, New York City | 0.088 | no | [link](https://stripe.com/jobs/search?gh_jid=8187574) | 2026-11-19T23:37:02Z |
 | Privacy and AI Counsel, EMEA | harvey | Dublin, Remote | 0.088 | no | [link](https://jobs.ashbyhq.com/harvey/7ef2c12e-dd17-4d8c-a445-bd4ebf559484) | 2026-11-19T23:54:57Z |
-| Senior Frontend Platform Engineer | rover | Barcelona | 0.088 | no | [link](https://jobs.lever.co/rover/84c26c28-da24-4db8-8ba1-16b8bbeebdac) | 2026-11-19T23:54:57Z |
 | ML Inference Engineer – Terminal-Bench Task Designer (vLLM / SGLang / TensorRT-LLM) | Toptal | Anywhere in the World | 0.088 | no | [link](https://remoteOK.com/remote-jobs/remote-ml-inference-engineer-terminal-bench-task-designer-vllm-sglang-tensorrt-llm-toptal-1137689) | 2026-11-19T21:31:05Z |
 | Machine Learning Intern/Co-op  (Winter 2027) | cohere | Canada, Europe, United States, United Kingdom, Remote | 0.088 | no | [link](https://jobs.ashbyhq.com/cohere/36d1f52f-8270-4652-adf5-5303a0ff341b) | 2026-11-19T23:37:02Z |
-| Member of Technical Staff (ML Engineer, Recommendations & User Modeling) | perplexity | San Francisco, Palo Alto | 0.088 | no | [link](https://jobs.ashbyhq.com/Perplexity/affd3040-91e4-4e0c-bd2f-4b022c613f91) | 2026-11-19T23:54:57Z |
 | Processing Cost Analyst | stripe | IN-Bengaluru | 0.088 | no | [link](https://stripe.com/jobs/search?gh_jid=8324207) | 2026-11-19T23:37:02Z |
 | Software Engineer II, Platform Infrastructure - Control | okta | Toronto, Ontario, Canada | 0.088 | no | [link](https://www.okta.com/company/careers/opportunity/8333990?gh_jid=8333990) | 2026-11-19T23:37:02Z |
 | Software Engineer, Jade Awareness - AI Financial Partner | chime | San Francisco, CA, USA | 0.088 | no | [link](https://boards.greenhouse.io/chime/jobs/8922481002?gh_jid=8922481002) | 2026-11-19T23:37:02Z |
 | Staff Engineer, Core Infrastructure | stripe | Bengaluru, India | 0.088 | no | [link](https://stripe.com/jobs/search?gh_jid=8070949) | 2026-11-19T23:37:02Z |
 | AI and Value Transformation Consultant | celonis | London, United Kingdom | 0.088 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/7742474003?gh_jid=7742474003) | 2026-11-19T23:37:02Z |
-| Canada- Jr Software Engineer (SRE) | pointclickcare | Remote or Mississauga | 0.088 | no | [link](https://jobs.lever.co/pointclickcare/e56d6df3-16fb-4652-9d97-c6140700d2e0) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Ads Forecasting & Scenarios | reddit | Remote - United States | 0.088 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8029120) | 2026-11-19T23:37:02Z |
 | Senior Treasury Analyst | braze | New York City | 0.088 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8237197) | 2026-11-19T23:37:02Z |
 | Technical Program Manager, AI Delivery | cohere | Canada, Remote | 0.088 | no | [link](https://jobs.ashbyhq.com/cohere/41cb2a12-e33a-4368-a9f8-0ae0d19c023e) | 2026-11-19T23:37:02Z |
 | Partner Solutions Architect, AI Builder | supabase | Remote, AMER | 0.088 | no | [link](https://jobs.ashbyhq.com/supabase/282d1dfb-b162-4ce4-a938-c4b2173230e0) | 2026-11-19T23:54:57Z |
@@ -2139,7 +2260,6 @@
 | Senior Manager, Infrastructure Lease Accounting | anthropic | San Francisco, CA / Seattle, WA | 0.087 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5357951008) | 2026-11-19T23:37:02Z |
 | Senior Systems Engineer, AI Gateway | cloudflare | In-Office | 0.087 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/7560174?gh_jid=7560174) | 2026-11-19T23:37:02Z |
 | Startup Products Strategy & Operations, Insights & Analytics | stripe | Remote US | 0.087 | no | [link](https://stripe.com/jobs/search?gh_jid=8234710) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer - 3D Sensor Simulation | zoox | Foster City, CA, Seattle, WA | 0.087 | no | [link](https://jobs.lever.co/zoox/2347453a-f11f-4dc2-ad14-572bc1f6247f) | 2026-11-19T23:54:57Z |
 | Senior Customer Engineer AI/ Start Up's | cloudflare | Hybrid | 0.087 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8274341?gh_jid=8274341) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - Robot Software Infrastructure | zoox | Foster City, CA | 0.087 | no | [link](https://jobs.lever.co/zoox/f62f1083-acff-4862-984e-4d16d2a827a6) | 2026-11-19T23:54:57Z |
 | Senior Systems Engineer, Workers AI | cloudflare | In-Office | 0.087 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/7764827?gh_jid=7764827) | 2026-11-19T23:37:02Z |
@@ -2152,7 +2272,6 @@
 | Software Engineer - Robot Software Infrastructure | zoox | Foster City, CA | 0.087 | no | [link](https://jobs.lever.co/zoox/6da52aa7-0ccb-48d0-af25-0889f41ddee5) | 2026-11-19T23:54:57Z |
 | Staff Software Engineer, AI Developer Experience | sofi | CA - San Francisco; WA - Seattle | 0.087 | no | [link](https://sofi.com/careers/job/8089599003?gh_jid=8089599003) | 2026-11-19T23:37:02Z |
 | Technical Program Manager, AI Delivery for Public Sector & Defence, UK | cohere | London, Remote | 0.087 | no | [link](https://jobs.ashbyhq.com/cohere/10306789-4fd5-4f1d-90aa-8132c2df2848) | 2026-11-19T23:37:02Z |
-| Member of Technical Staff (Machine Learning Engineer, Search Agent RL) | perplexity | Belgrade, London, Dublin, Remote | 0.087 | no | [link](https://jobs.ashbyhq.com/Perplexity/9cec9b33-06f2-4ba1-8c9e-20a598361ca2) | 2026-11-19T23:54:57Z |
 | Senior AI Transformation & Innovation Consultant | celonis | Munich, Germany | 0.086 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/8203723003?gh_jid=8203723003) | 2026-11-19T23:37:02Z |
 | Senior Manager, Site Reliability Engineering | okta | Dublin, Ireland | 0.086 | no | [link](https://www.okta.com/company/careers/opportunity/8353207?gh_jid=8353207) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - Core Infrastructure | okta | San Francisco, California | 0.086 | no | [link](https://www.okta.com/company/careers/opportunity/8212358?gh_jid=8212358) | 2026-11-19T23:37:02Z |
@@ -2160,7 +2279,6 @@
 | Senior Software Engineer, Enterprise AI | instacart | United States - Remote | 0.086 | no | [link](https://instacart.careers/job/?gh_jid=8240350) | 2026-11-19T23:37:02Z |
 | Software Engineer, Early Career (AI) | notion | San Francisco, California, Remote | 0.086 | no | [link](https://jobs.ashbyhq.com/notion/85947779-6b87-466a-98bc-30a640448c28) | 2026-11-19T23:54:57Z |
 | Product Manager,  Inference Platform | cohere | Toronto, Canada, United States, Remote | 0.086 | no | [link](https://jobs.ashbyhq.com/cohere/fe2e2971-e2c0-43fd-9ab1-187571776a5d) | 2026-11-19T23:37:02Z |
-| Senior MLOps Engineer | later | Boston, MA; Vancouver, British Columbia, Canada | 0.086 | no | [link](https://job-boards.greenhouse.io/later/jobs/8552308002) | 2026-11-19T23:37:02Z |
 | Technical Program Manager, AI Delivery for Public Sector & Defence, Canada | cohere | Ottawa, Toronto, Montreal, Remote | 0.086 | no | [link](https://jobs.ashbyhq.com/cohere/01a34bc3-6421-4af2-bf5b-f42e98155dda) | 2026-11-19T23:37:02Z |
 | Data Annotation Specialist, Data Science | cohere | Canada, Calgary, Winnipeg, Vancouver, Halifax, Edmonton, Ottawa, Toronto, Victoria, Montreal, Remote | 0.086 | no | [link](https://jobs.ashbyhq.com/cohere/9845c80d-95ba-4769-94a7-62408d73d603) | 2026-11-19T23:37:02Z |
 | GRC Analyst | supabase | Remote, Global | 0.086 | no | [link](https://jobs.ashbyhq.com/supabase/13478d3f-0093-458f-9f84-af71e66db03f) | 2026-11-19T23:54:57Z |
@@ -2172,7 +2290,6 @@
 | Deal Operations Analyst | harvey | Chicago, Remote | 0.086 | no | [link](https://jobs.ashbyhq.com/harvey/16b67976-02a3-4179-9eca-afc86c551b8a) | 2026-11-19T23:54:57Z |
 | Deal Operations Analyst | harvey | Dallas, Remote | 0.086 | no | [link](https://jobs.ashbyhq.com/harvey/41e581a5-b5ee-47cb-94e5-6224f1559e4d) | 2026-11-19T23:54:57Z |
 | Product Manager, Platform | benchling | San Francisco, CA, Remote | 0.086 | no | [link](https://jobs.ashbyhq.com/benchling/358ff26c-7b23-4645-b906-2244c76e2cb2) | 2026-11-19T23:37:02Z |
-| Senior Client Platform Engineer | robinhood | Menlo Park, CA | 0.086 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8354333?t=gh_src=&gh_jid=8354333) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Application Infrastructure | toast | Dublin, Ireland | 0.086 | no | [link](https://careers.toasttab.com/jobs?gh_jid=8259169) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Cloud Engineering | nextdoor | Dallas, TX | 0.086 | no | [link](https://about.nextdoor.com/careers-list/?gh_jid=8403785) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Cloud Engineering | nextdoor | US Remote | 0.086 | no | [link](https://about.nextdoor.com/careers-list/?gh_jid=8403853) | 2026-11-19T23:37:02Z |
@@ -2180,10 +2297,8 @@
 | Staff Software Engineer, Cloud Infrastructure | gusto | Denver, CO - Hybrid; New York, NY - Hybrid; San Francisco, CA - Hybrid | 0.086 | no | [link](https://job-boards.greenhouse.io/gusto/jobs/8250243) | 2026-11-19T23:37:02Z |
 | Technical Program Manager, AI Delivery for Public Sector & Defense, France | cohere | France | 0.086 | no | [link](https://jobs.ashbyhq.com/cohere/fc5cb642-23df-430e-ae84-67215384be1c) | 2026-11-19T23:37:02Z |
 | Applied AI Value Consultant | celonis | Remote, Canada | 0.086 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/8016645003?gh_jid=8016645003) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer - AML Tech | adyen | Amsterdam | 0.086 | no | [link](https://job-boards.greenhouse.io/adyen/jobs/8288674) | 2026-11-19T23:37:02Z |
 | Software Engineer Intern, Machine Learning (Summer 2027 - Toronto) | lyft | Toronto, Canada | 0.086 | no | [link](https://app.careerpuck.com/job-board/lyft/job/8802332002?gh_jid=8802332002) | 2026-11-19T23:37:02Z |
 | Account Executive, Product Sales (Data) | stripe | US-SF-HQ, US-NYC, US-CHI, US-SEA | 0.086 | no | [link](https://stripe.com/jobs/search?gh_jid=8190059) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, AI Platform & Agentic Apps | robinhood | Menlo Park, CA | 0.086 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8107212?t=gh_src=&gh_jid=8107212) | 2026-11-19T23:37:02Z |
 | Communications Manager, Claude Developer Platform | anthropic | San Francisco, CA / New York City, NY / Seattle, WA | 0.086 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5462557008) | 2026-11-19T23:37:02Z |
 | Lead AI Deployment Architect | celonis | Madrid, Spain | 0.086 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/6672115003?gh_jid=6672115003) | 2026-11-19T23:37:02Z |
 | Lead Deployment Architect - AI | celonis | Redwood City, US, California | 0.086 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/8173249003?gh_jid=8173249003) | 2026-11-19T23:37:02Z |
@@ -2201,9 +2316,7 @@
 | Enterprise AI Consultant | celonis | Munich, Germany | 0.086 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/7972958003?gh_jid=7972958003) | 2026-11-19T23:37:02Z |
 | Infrastructure Security Engineer | modal | New York, Stockholm, San Francisco | 0.086 | no | [link](https://jobs.ashbyhq.com/modal/8de60620-09bf-4905-910f-a290814a29ee) | 2026-11-19T23:54:57Z |
 | Sr People Business Partner — AI-Powered People Strategy, Global BP Team & Corporate Functions | zscaler | Santa Clara, California, USA | 0.086 | no | [link](https://job-boards.greenhouse.io/zscaler/jobs/5287746007) | 2026-11-19T23:37:02Z |
-| Staff Site Reliability Engineer - Monitoring and Anomaly Detection (Monetization) | gitlab | Bangalore, India | 0.086 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8615268002) | 2026-11-19T23:37:02Z |
 | Senior Customer Engineer, Enterprise AI  - Bay Area | cloudflare | Hybrid | 0.085 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8077614?gh_jid=8077614) | 2026-11-19T23:37:02Z |
-| Staff Site Reliability Engineer, Environment Automation | gitlab | Bangalore, India | 0.085 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8800489002) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Mobile (App Infrastructure) | affirm | Remote Canada | 0.085 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/7829429003) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Mobile (App Infrastructure) | affirm | Remote US | 0.085 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/7829427003) | 2026-11-19T23:37:02Z |
 | AI and Value Transformation Consultant - Defence & Government - SC cleared | celonis | London, United Kingdom | 0.085 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/7742457003?gh_jid=7742457003) | 2026-11-19T23:37:02Z |
@@ -2215,14 +2328,11 @@
 | Director of Engineering, Platform (Runtime & Stateful Systems) | sentry | San Francisco, California, Remote | 0.085 | no | [link](https://jobs.ashbyhq.com/sentry/b7c17591-c9f1-449a-b0c1-39f2d6ff650e) | 2026-11-19T23:37:02Z |
 | FP&A Analyst R&D | datadog | New York, New York, USA | 0.085 | no | [link](https://careers.datadoghq.com/detail/8204554/?gh_jid=8204554) | 2026-11-19T23:37:02Z |
 | Platform and Integration Engineer Security Telemetry | RedMimicry |  | 0.085 | no | [link](https://remoteOK.com/remote-jobs/remote-platform-and-integration-engineer-security-telemetry-redmimicry-1137465) | 2026-11-19T21:31:05Z |
-| Senior Machine Learning Engineer | cloudflare | Hybrid | 0.085 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8042034?gh_jid=8042034) | 2026-11-19T23:37:02Z |
 | Sr. Software Engineer – API & Auth Platform | betterment | Betterment HQ - New York City | 0.085 | no | [link](https://www.betterment.com/careers/current-openings/job?gh_jid=8212276&gh_jid=8212276) | 2026-11-19T23:37:02Z |
 | Senior AI Product Manager | scaleai | New York, NY; San Francisco, CA | 0.085 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4720501005) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Trust | airbnb | San Francisco, CA | 0.085 | no | [link](https://careers.airbnb.com/positions/8130355?gh_jid=8130355) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, AI Security | robinhood | Bellevue, WA; Menlo Park, CA | 0.085 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8334429?t=gh_src=&gh_jid=8334429) | 2026-11-19T23:37:02Z |
 | Engineering Manager, AI Platform & Agentic Apps | robinhood | Menlo Park, CA | 0.085 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8205579?t=gh_src=&gh_jid=8205579) | 2026-11-19T23:37:02Z |
 | Engineering Manager, Core Infrastructure | stripe | Bengaluru | 0.085 | no | [link](https://stripe.com/jobs/search?gh_jid=8386610) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer | epicgames | London,England,United Kingdom | 0.085 | no | [link](https://epicgames.com/careers/jobs/6117647004?gh_jid=6117647004) | 2026-11-19T23:37:02Z |
 | Senior Product Manager - Data Integrations | gitlab | Bangalore, India | 0.085 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8905040002) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Developer Infrastructure | sentry | San Francisco, California, Remote | 0.085 | no | [link](https://jobs.ashbyhq.com/sentry/35193bfb-bb6b-4479-85be-0945e5b94a3e) | 2026-11-19T23:37:02Z |
 | Staff Security Engineer, Enterprise AI | affirm | Remote Canada | 0.085 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/7994555003) | 2026-11-19T23:37:02Z |
@@ -2241,8 +2351,6 @@
 | Staff Software Engineer,  Infrastructure - Central Technology | riotgames | Los Angeles, USA | 0.085 | no | [link](https://www.riotgames.com/en/work-with-us/job/8234673?gh_jid=8234673) | 2026-11-19T23:37:02Z |
 | Associate (AI) Solution Consultant (Scale EMEA/French-Speaking) - Orbit Program | celonis | Madrid, Spain | 0.084 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/8014300003?gh_jid=8014300003) | 2026-11-19T23:37:02Z |
 | Lead Cloud Economics Specialist | celonis | Munich, Germany | 0.084 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/7802410003?gh_jid=7802410003) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Payments | airbnb | Remote-USA | 0.084 | no | [link](https://careers.airbnb.com/positions/7755758?gh_jid=7755758) | 2026-11-19T23:37:02Z |
-| Network Infrastructure Engineer, Global Network Infra (WAN) | openai | San Francisco, Remote | 0.084 | no | [link](https://jobs.ashbyhq.com/openai/9f7371c4-e306-4a45-a400-aa2843fabd85) | 2026-11-19T23:54:57Z |
 | Principal Analyst, Sales Compensation Systems & Administration | elastic | Costa Rica | 0.084 | no | [link](https://jobs.elastic.co/jobs?gh_jid=8303741&gh_jid=8303741) | 2026-11-19T23:37:02Z |
 | Staff+ Software Engineer, Safeguards Data | anthropic | New York City, NY | 0.084 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5379140008) | 2026-11-19T23:37:02Z |
 | AI & Value Transformation Consultant (Supply Chain & Manufacturing) | celonis | London, United Kingdom | 0.084 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/7742453003?gh_jid=7742453003) | 2026-11-19T23:37:02Z |
@@ -2252,9 +2360,7 @@
 | Staff Software Engineer, Backend Platform | robinhood | New York, NY | 0.084 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8266107?t=gh_src=&gh_jid=8266107) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Backend Platform | robinhood | Toronto, Canada | 0.084 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8244209?t=gh_src=&gh_jid=8244209) | 2026-11-19T23:37:02Z |
 | APAC Python | Kodland |  | 0.084 | no | [link](https://remoteOK.com/remote-jobs/remote-apac-python-kodland-1137534) | 2026-11-19T21:31:05Z |
-| Senior Machine Learning Engineer, Relevance | airbnb | United States | 0.084 | no | [link](https://careers.airbnb.com/positions/8351417?gh_jid=8351417) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, AI & Infrastructure Planning | cloudflare | Hybrid | 0.084 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8328562?gh_jid=8328562) | 2026-11-19T23:37:02Z |
-| Senior Staff SRE, Architecture Engineering: Hosted Runners | gitlab | Remote, Canada; Remote, United Kingdom; Remote, United States | 0.084 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8932489002) | 2026-11-19T23:37:02Z |
 | Staff Product Manager, Infrastructure | stripe | N/A | 0.084 | no | [link](https://stripe.com/jobs/search?gh_jid=8165265) | 2026-11-19T23:37:02Z |
 | AI Solutions Strategist | ramp | New York, NY (HQ), Remote | 0.084 | no | [link](https://jobs.ashbyhq.com/ramp/cbdf2857-1675-4b68-8cb5-2f92a20faa75) | 2026-11-19T23:54:57Z |
 | Data Science Manager, Risk | stripe | Bengaluru | 0.084 | no | [link](https://stripe.com/jobs/search?gh_jid=7923653) | 2026-11-19T23:37:02Z |
@@ -2269,21 +2375,16 @@
 | Staff Software Engineer, Security Platform | robinhood | Bellevue, WA; Menlo Park, CA | 0.084 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8167546?t=gh_src=&gh_jid=8167546) | 2026-11-19T23:37:02Z |
 | Engineering Manager, Mobile AI | notion | New York, New York, Remote | 0.084 | no | [link](https://jobs.ashbyhq.com/notion/3979a6f5-2abb-447b-bd3a-0565b06bae24) | 2026-11-19T23:54:57Z |
 | Staff+ Software Engineer, Data Infrastructure | anthropic | Remote-Friendly (Travel-Required) / San Francisco, CA / Seattle, WA / New York City, NY | 0.084 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5114768008) | 2026-11-19T23:37:02Z |
-| Senior Staff / Principal Machine Learning Engineer - Autonomy Behaviors | zoox | Foster City, CA | 0.084 | no | [link](https://jobs.lever.co/zoox/b30b28b0-fea9-4420-a61e-10309c3f7c52) | 2026-11-19T23:54:57Z |
 | Product Finance & Strategy, Claude Platform, Forecasting & Rhythms | anthropic | San Francisco, CA | 0.084 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5358096008) | 2026-11-19T23:37:02Z |
 | Machine Learning Intern 2027 (Dublin) | pinterest | Dublin, IE | 0.084 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8244922) | 2026-11-19T23:37:02Z |
 | Senior Strategic Presales and Solutions Consultant (AI) | celonis | Munich, Germany | 0.083 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/8204701003?gh_jid=8204701003) | 2026-11-19T23:37:02Z |
-| Software Engineer - Learned Trajectory Machine Learning Engineer | zoox | Foster City, CA | 0.083 | no | [link](https://jobs.lever.co/zoox/9176aa65-14e3-4f9d-98f9-e755e9777d67) | 2026-11-19T23:54:57Z |
 | Applied AI Engineer | elevenlabs | United Kingdom, Dublin, Spain, Hungary, Bulgaria, Germany, Poland, Italy, Netherlands, France, Remote | 0.083 | no | [link](https://jobs.ashbyhq.com/ElevenLabs/b8a111fa-9fd5-44d0-97ed-8fd1280be4ef) | 2026-11-19T23:54:57Z |
 | Product Manager, API Platform | airbnb | San Francisco, CA | 0.083 | no | [link](https://careers.airbnb.com/positions/8262207?gh_jid=8262207) | 2026-11-19T23:37:02Z |
 | Senior Analyst, Channel Strategy & Operations | asana | Chicago | 0.083 | no | [link](https://www.asana.com/jobs/apply/8335947?gh_jid=8335947) | 2026-11-19T23:37:02Z |
 | Senior Manager, Machine Learning Engineering | instacart | United States - Remote | 0.083 | no | [link](https://instacart.careers/job/?gh_jid=8263109) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Fulfillment | instacart | Canada - Remote (ON, AB, BC, or NS Only) | 0.083 | no | [link](https://instacart.careers/job/?gh_jid=8240307) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Fulfillment | instacart | United States - Remote | 0.083 | no | [link](https://instacart.careers/job/?gh_jid=8240305) | 2026-11-19T23:37:02Z |
 | Senior Platform Software Engineer I | braze | London | 0.083 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8246027) | 2026-11-19T23:37:02Z |
 | Sr Director, Head of Enterprise Applied AI | sofi | CA - San Francisco | 0.083 | no | [link](https://sofi.com/careers/job/7921209003?gh_jid=7921209003) | 2026-11-19T23:37:02Z |
 | Training: ML Framework Engineer | openai | San Francisco | 0.083 | no | [link](https://jobs.ashbyhq.com/openai/d8794980-1d3f-4d82-8b48-811449b6c492) | 2026-11-19T23:54:57Z |
-| Associate IT infrastructure Engineer | newrelic | Dublin, Ireland | 0.083 | no | [link](https://job-boards.greenhouse.io/newrelic/jobs/5481206008) | 2026-11-19T23:37:02Z |
 | Lead - Cloud & AI Partnerships Business Development | celonis | Redwood City, US, California | 0.083 | no | [link](https://job-boards.greenhouse.io/celonis/jobs/7822051003?gh_jid=7822051003) | 2026-11-19T23:37:02Z |
 | Sales Finance Analyst II | pinterest | New York, NY, USA; Hybrid | 0.083 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=7507652) | 2026-11-19T23:37:02Z |
 | Senior Platform Software Engineer II | braze | New York City | 0.083 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8039381) | 2026-11-19T23:37:02Z |
@@ -2293,8 +2394,6 @@
 | Engineering Manager, Core Infrastructure | tide | Serbia | 0.083 | no | [link](https://job-boards.greenhouse.io/tide/jobs/8036676003) | 2026-11-19T23:54:57Z |
 | Engineering Manager, Core Infrastructure | tide | Lithuania | 0.083 | no | [link](https://job-boards.greenhouse.io/tide/jobs/8036679003) | 2026-11-19T23:54:57Z |
 | KYB/AML Analyst, Sweden | ramp | Remote (Sweden) | 0.083 | no | [link](https://jobs.ashbyhq.com/ramp/50770187-f226-468a-823e-fe193287c59f) | 2026-11-19T23:54:57Z |
-| Senior Machine Learning Engineer - Embedded Insights | plaid | New York City Office, Seattle Office, San Francisco HQ, Remote | 0.083 | no | [link](https://jobs.ashbyhq.com/plaid/a1db9566-d51d-495e-9e87-4d57ac307d3c) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Query Intelligence | airbnb | United States | 0.083 | no | [link](https://careers.airbnb.com/positions/8065789?gh_jid=8065789) | 2026-11-19T23:37:02Z |
 | Data Science Leader, B2B Marketing & Demand Generation | openai | San Francisco | 0.083 | no | [link](https://jobs.ashbyhq.com/openai/145f2801-4c59-4e90-a847-32085d20511c) | 2026-11-19T23:54:57Z |
 | HRIS Analyst (Workday) | ramp | New York, NY (HQ), Remote | 0.083 | no | [link](https://jobs.ashbyhq.com/ramp/a11f7720-f3a8-4e86-9cc6-562bb11420b2) | 2026-11-19T23:54:57Z |
 | Senior Applied AI Engineer 2 | drata | Hybrid - San Francisco, Remote | 0.083 | no | [link](https://jobs.ashbyhq.com/drata/1846ef60-57d1-481e-b84e-edc3e64df9f1) | 2026-11-19T23:54:57Z |
@@ -2302,10 +2401,6 @@
 | Applied AI Architect, Cyber Specialist | anthropic | San Francisco, CA / New York City, NY | 0.082 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5445806008) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer - Data Governance | plaid | San Francisco HQ, Seattle Office, Remote | 0.082 | no | [link](https://jobs.ashbyhq.com/plaid/95225497-fc9b-4c5d-8df0-df98df219ae5) | 2026-11-19T23:37:02Z |
 | Senior Platform Manager, Data Products, Finance Accounting | airbnb | United States | 0.082 | no | [link](https://careers.airbnb.com/positions/8070705?gh_jid=8070705) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, ML Platform | braze | Chicago | 0.082 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8209434) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, ML Platform | braze | San Francisco | 0.082 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8209438) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, ML Platform | braze | New York City | 0.082 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8195997) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, ML Platform | braze | Austin | 0.082 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8209425) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, GTM AI Engineering | anthropic | Remote-Friendly (Travel-Required) / San Francisco, CA / Seattle, WA | 0.082 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5390966008) | 2026-11-19T23:37:02Z |
 | AMER Data Analyst - Sales Strategy and Operations | stripe | Chicago, US Remote, SF, NYC, Seattle | 0.082 | no | [link](https://stripe.com/jobs/search?gh_jid=8354566) | 2026-11-19T23:37:02Z |
 | Geotechnical Engineer, Data Center Development | openai | US - Remote | 0.082 | no | [link](https://jobs.ashbyhq.com/openai/c389205c-b163-402f-ab8f-674b7f260c9d) | 2026-11-19T23:54:57Z |
@@ -2315,15 +2410,12 @@
 | Staff Data Analyst | gitlab | Bangalore, India | 0.082 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8827370002) | 2026-11-19T23:37:02Z |
 | Analyst, Deal Operations | ramp | San Francisco, CA, Remote | 0.082 | no | [link](https://jobs.ashbyhq.com/ramp/7e531974-caac-46a2-804e-c6c3140bfda4) | 2026-11-19T23:54:57Z |
 | Machine Learning Intern 2027 (Toronto) | pinterest | Toronto, ON, CA | 0.082 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8138080) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Operations Research | instacart | United States - Remote | 0.082 | no | [link](https://instacart.careers/job/?gh_jid=7793089) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Ranking - Quora (Remote) | quora | Remote - Multiple Locations, United States, Ireland, Canada, & 13 other countries | 0.082 | no | [link](https://jobs.ashbyhq.com/quora/b9b477ad-4c43-49f0-b1fb-e7ee218686a7) | 2026-11-19T23:54:57Z |
 | Senior Technical Program Manager, AI Platform | sentry | San Francisco, California, Remote | 0.082 | no | [link](https://jobs.ashbyhq.com/sentry/278476b1-87c5-461f-ad7e-950cd31e5f31) | 2026-11-19T23:37:02Z |
 | AI Account Executive, Glass | ramp | New York, NY (HQ), London, UK, San Francisco, CA, Remote | 0.082 | no | [link](https://jobs.ashbyhq.com/ramp/883fbb33-65a9-4ace-97ad-2a1f588020c2) | 2026-11-19T23:54:57Z |
 | Applied AI Architect, Education | openai | London, UK, Remote | 0.082 | no | [link](https://jobs.ashbyhq.com/openai/98bffd0e-05cf-4748-93f1-b115c84e37b4) | 2026-11-19T23:54:57Z |
 | Senior AI Operations Engineer, Enterprise Tech | robinhood | Bellevue, WA; Menlo Park, CA; New York, NY | 0.082 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8348038?t=gh_src=&gh_jid=8348038) | 2026-11-19T23:37:02Z |
 | Finance and Strategy Data Analyst | stripe | Bengaluru | 0.082 | no | [link](https://stripe.com/jobs/search?gh_jid=8364868) | 2026-11-19T23:37:02Z |
 | Patient Care Specialist I | Boston Scientific |  | 0.082 | no | [link](https://remoteOK.com/remote-jobs/remote-patient-care-specialist-i-boston-scientific-1137719) | 2026-11-19T21:31:05Z |
-| Senior Forward Deployed Infrastructure Engineer | cloudflare | Hybrid | 0.082 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8256332?gh_jid=8256332) | 2026-11-19T23:37:02Z |
 | Applied AI Architect | openai | San Francisco | 0.082 | no | [link](https://jobs.ashbyhq.com/openai/98a36c10-3497-4955-9cc0-a6f211e4dc1b) | 2026-11-19T23:54:57Z |
 | Applied AI Architect | openai | Sydney, Australia, Remote | 0.082 | no | [link](https://jobs.ashbyhq.com/openai/b47aae11-78e1-4321-947a-94a2fa3e83b4) | 2026-11-19T23:54:57Z |
 | Applied AI Architect | openai | Delhi, India, Mumbai, India, Bangalore - Remote | 0.082 | no | [link](https://jobs.ashbyhq.com/openai/28cd6fe2-4096-426b-8b08-52a66458e2c6) | 2026-11-19T23:54:57Z |
@@ -2335,10 +2427,7 @@
 | Senior Software Engineer - Pipeline Infrastructure & Integration | zoox | Foster City, CA | 0.082 | no | [link](https://jobs.lever.co/zoox/2ff4b934-b823-4d33-a0c2-3372389aeef7) | 2026-11-19T23:54:57Z |
 | Corporate Security Infrastructure Project Manager, EMEA | stripe | London, Dublin | 0.082 | no | [link](https://stripe.com/jobs/search?gh_jid=8311071) | 2026-11-19T23:37:02Z |
 | Machine Learning Intern 2027 (Zurich) | pinterest | Zurich, CH | 0.082 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8214757) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Discovery Recommendations | epicgames | Cary,North Carolina,United States | 0.082 | no | [link](https://epicgames.com/careers/jobs/6180210004?gh_jid=6180210004) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Discovery Recommendations | epicgames | BLANK,BLANK,Multiple Locations | 0.082 | no | [link](https://epicgames.com/careers/jobs/6231410004?gh_jid=6231410004) | 2026-11-19T23:37:02Z |
 | Staff AI Research Engineer, Monetization | duolingo | New York, NY; Pittsburgh, PA | 0.082 | no | [link](https://careers.duolingo.com/jobs/8610345002?gh_jid=8610345002) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, Implicit Signals | openai | San Francisco, Remote | 0.081 | no | [link](https://jobs.ashbyhq.com/openai/a01fc9ed-de08-4326-9206-4ee3f08000dc) | 2026-11-19T23:54:57Z |
 | Director, Platform Sales | affirm | Remote US | 0.081 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8003795003) | 2026-11-19T23:37:02Z |
 | Government Relations Manager, AI | stripe | Washington DC-metro area | 0.081 | no | [link](https://stripe.com/jobs/search?gh_jid=8334539) | 2026-11-19T23:37:02Z |
 | PhD Machine Learning Internship 2027 (USA) | pinterest | San Francisco, CA, US; Palo Alto, CA, US; Seattle, WA, US; New York, NY, US | 0.081 | no | [link](https://www.pinterestcareers.com/jobs/?gh_jid=8140140) | 2026-11-19T23:37:02Z |
@@ -2360,9 +2449,7 @@
 | Compliance Analyst | palantir | Washington, D.C. | 0.081 | no | [link](https://jobs.lever.co/palantir/4d3986f0-4c01-4327-a0e4-e7d9bc7bc0c3) | 2026-11-19T23:37:02Z |
 | Compliance Analyst | palantir | New York, NY | 0.081 | no | [link](https://jobs.lever.co/palantir/c6f9eaaf-b397-476f-8b7d-c511cfb7e5c6) | 2026-11-19T23:37:02Z |
 | Senior Director, Clinical Data Management | abcellera | California | 0.081 | no | [link](https://job-boards.greenhouse.io/abcellera/jobs/8021010003) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, Ads - Quora (Remote) | quora | Remote - Multiple Locations, United States, Ireland, Canada, & 13 other countries | 0.081 | no | [link](https://jobs.ashbyhq.com/quora/0cf73c29-e74b-4eaf-8dd4-e864d88bcc35) | 2026-11-19T23:54:57Z |
 | Senior Manager, Platform Product Management (Payments) | airbnb | United States | 0.081 | no | [link](https://careers.airbnb.com/positions/8175521?gh_jid=8175521) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Recommendation Systems - Quora (Remote) | quora | Remote - Multiple Locations, United States, Ireland, Canada, & 13 other countries | 0.081 | no | [link](https://jobs.ashbyhq.com/quora/1027c20b-ae70-4455-91be-73aac13610b6) | 2026-11-19T23:54:57Z |
 | Technical Account Manager | DEUNA | Ciudad de México, Mexico | 0.081 | no | [link](https://remoteOK.com/remote-jobs/remote-technical-account-manager-deuna-1137482) | 2026-11-19T21:31:05Z |
 | Workplace Operations Analyst | palantir | Abu Dhabi, United Arab Emirates | 0.081 | no | [link](https://jobs.lever.co/palantir/e6be4159-c8d1-481d-ad15-13274861b795) | 2026-11-19T23:37:02Z |
 | Applied AI Architect - Tokyo | openai | Tokyo, Japan | 0.081 | no | [link](https://jobs.ashbyhq.com/openai/57cfe1d3-27b6-4761-909c-fec7829e9227) | 2026-11-19T23:54:57Z |
@@ -2375,7 +2462,6 @@
 | Director, Data Science | gitlab | Remote, Canada; Remote, United States | 0.081 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8931768002) | 2026-11-19T23:37:02Z |
 | Member of Technical Staff (Search Core, Indexing & Data Pipeline Stream) | perplexity | Belgrade, London, Dublin | 0.081 | no | [link](https://jobs.ashbyhq.com/Perplexity/89750227-f7fe-4e9f-bcdd-eada353163fd) | 2026-11-19T23:54:57Z |
 | Sales Finance Operations Analyst | palantir | Palo Alto, CA | 0.081 | no | [link](https://jobs.lever.co/palantir/d505f854-d339-448b-bf7e-46e2f32cff78) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer - Fraud | plaid | New York City Office, Seattle Office, San Francisco HQ, Remote | 0.081 | no | [link](https://jobs.ashbyhq.com/plaid/e9a9aeab-be90-43f3-b898-63a846cb5777) | 2026-11-19T23:37:02Z |
 | Senior/Staff Software Engineer - Machine Learning & System Optimization | zoox | Foster City, CA, Boston, MA, Seattle, WA | 0.081 | no | [link](https://jobs.lever.co/zoox/e1e3ddc4-b6cc-4873-87cf-bff2295109fb) | 2026-11-19T23:54:57Z |
 | Analyst, Early Career (Full Stack) | affirm | New York, New York, United States; San Francisco, California, United States | 0.081 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8039471003) | 2026-11-19T23:37:02Z |
 | Manager II, Engineering - AI DBM | datadog | New York, New York, USA | 0.081 | no | [link](https://careers.datadoghq.com/detail/8212114/?gh_jid=8212114) | 2026-11-19T23:37:02Z |
@@ -2395,7 +2481,6 @@
 | Senior Software Engineer, Replit Cloud | replit | Foster City, CA, Remote | 0.080 | no | [link](https://jobs.ashbyhq.com/replit/7fa1826e-d7fd-4837-8485-97de895ba7fc) | 2026-11-19T23:54:57Z |
 | Specialist Solutions Architect - AI/ML (Healthcare & Life Sciences) | databricks | United States | 0.080 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8717331002) | 2026-11-19T23:37:02Z |
 | Defensive Security Analyst | palantir | Washington, D.C. | 0.080 | no | [link](https://jobs.lever.co/palantir/bc803bd5-7793-452d-9ae5-9301ee24615a) | 2026-11-19T23:37:02Z |
-| Manager, Software Engineering - SRE Site Lead: Dublin ROC | riotgames | Dublin, Ireland | 0.080 | no | [link](https://www.riotgames.com/en/work-with-us/job/8385235?gh_jid=8385235) | 2026-11-19T23:37:02Z |
 | Senior/Staff Software Engineer, ML Inference Optimization | zoox | Foster City, CA, Seattle, WA | 0.080 | no | [link](https://jobs.lever.co/zoox/2ed8a665-cee8-4d70-bcb1-e96b6214b371) | 2026-11-19T23:54:57Z |
 | AI Strategist, Legal | perplexity | San Francisco, New York City | 0.080 | no | [link](https://jobs.ashbyhq.com/Perplexity/fb1815de-07d9-4933-8746-979dbcb00870) | 2026-11-19T23:54:57Z |
 | Accounting Analyst, Content Accounting | spotify | New York, NY | 0.080 | no | [link](https://jobs.lever.co/spotify/b24fe5e5-dcb2-4238-a883-5fdb6bd404db) | 2026-11-19T23:37:02Z |
@@ -2419,28 +2504,21 @@
 | Senior Product Manager, AI | brex | Seattle, Washington, United States | 0.079 | no | [link](https://www.brex.com/careers/8780828002?gh_jid=8780828002) | 2026-11-19T23:37:02Z |
 | Senior Product Manager, AI | brex | San Francisco, California, United States | 0.079 | no | [link](https://www.brex.com/careers/8780827002?gh_jid=8780827002) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer - Data Automation | klaviyo | Boston, MA | 0.079 | no | [link](https://www.klaviyo.com/careers/jobs/8012938003?gh_jid=8012938003) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer | coinbase | Remote - USA | 0.079 | no | [link](https://www.coinbase.com/careers/positions/8267151?gh_jid=8267151) | 2026-11-19T23:37:02Z |
 | Staff Product Manager, AI | brex | New York, New York, United States | 0.079 | no | [link](https://www.brex.com/careers/8780829002?gh_jid=8780829002) | 2026-11-19T23:37:02Z |
 | Technical Director - AI Roblox Studio | roblox | San Mateo, CA, United States | 0.079 | no | [link](https://careers.roblox.com/jobs/8046794?gh_jid=8046794) | 2026-11-19T23:37:02Z |
 | Applied AI Architect, Digital Natives | openai | San Francisco, Remote | 0.079 | no | [link](https://jobs.ashbyhq.com/openai/3a64da1c-bf29-4e52-baa3-a8f35f16ff74) | 2026-11-19T23:54:57Z |
 | Business Systems Analyst, ServiceNow | okta | Bengaluru, India | 0.079 | no | [link](https://www.okta.com/company/careers/opportunity/7727730?gh_jid=7727730) | 2026-11-19T23:37:02Z |
 | Lead SEC Analyst | gitlab | Remote, United States | 0.079 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8633807002) | 2026-11-19T23:37:02Z |
-| Senior Site Reliability Engineer, PaaS | algolia | Paris, France | 0.079 | no | [link](https://job-boards.greenhouse.io/algolia/jobs/6200275004) | 2026-11-19T23:37:02Z |
 | Account Executive, AI Sales | stripe | San Francisco, CA | 0.079 | no | [link](https://stripe.com/jobs/search?gh_jid=8332467) | 2026-11-19T23:37:02Z |
 | Applied AI Delivery Lead - London | openai | London, UK | 0.079 | no | [link](https://jobs.ashbyhq.com/openai/ec0aa7c7-8995-4e01-9939-594a94549f85) | 2026-11-19T23:54:57Z |
 | Machine Learning Fellow - Human Frontier Collective (Canada) | scaleai | Canada | 0.079 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4661650005) | 2026-11-19T23:37:02Z |
 | Operations Analyst - US Government Security | palantir | Palo Alto, CA | 0.079 | no | [link](https://jobs.lever.co/palantir/5f3f9547-2aea-4ac2-995d-e8fa53b16e39) | 2026-11-19T23:37:02Z |
 | Operations Analyst - US Government Security | palantir | Washington, D.C. | 0.079 | no | [link](https://jobs.lever.co/palantir/a468565d-8502-4baf-8788-b7ffe233b725) | 2026-11-19T23:37:02Z |
-| DevOps Engineer (Observability) | twilio | Remote - Ireland | 0.079 | no | [link](https://job-boards.greenhouse.io/twilio/jobs/8108771) | 2026-11-19T23:37:02Z |
 | Freelance Question Reviewers | AMBOSS | New York | 0.079 | no | [link](https://remoteOK.com/remote-jobs/remote-freelance-question-reviewers-amboss-1137791) | 2026-11-19T21:31:05Z |
 | Senior Software Engineer - Search Infrastructure | algolia | Paris, France | 0.079 | no | [link](https://job-boards.greenhouse.io/algolia/jobs/5256159004) | 2026-11-19T23:37:02Z |
-| Senior Site Reliability Engineer - Search | algolia | Paris, France | 0.079 | no | [link](https://job-boards.greenhouse.io/algolia/jobs/6187901004) | 2026-11-19T23:37:02Z |
 | Staff Product Designer, AI | brex | San Francisco, California, United States | 0.079 | no | [link](https://www.brex.com/careers/8616214002?gh_jid=8616214002) | 2026-11-19T23:37:02Z |
 | Benefits Analyst | gitlab | Bangalore, India | 0.079 | no | [link](https://job-boards.greenhouse.io/gitlab/jobs/8864819002) | 2026-11-19T23:37:02Z |
 | Principal Engineer, Core Infrastructure | klaviyo | Boston, MA | 0.079 | no | [link](https://www.klaviyo.com/careers/jobs/7559750003?gh_jid=7559750003) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer - Growth & Personalisation | deliveroo | London, England | 0.079 | no | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8202532) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer - Search | nextdoor | US Remote | 0.079 | no | [link](https://about.nextdoor.com/careers-list/?gh_jid=8399906) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer - Search | nextdoor | Dallas, TX | 0.079 | no | [link](https://about.nextdoor.com/careers-list/?gh_jid=8399912) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Application Infrastructure | toast | Remote, US | 0.079 | no | [link](https://careers.toasttab.com/jobs?gh_jid=8371715) | 2026-11-19T23:37:02Z |
 | Global Partnerships BD Lead | Fuku | Paris | 0.079 | no | [link](https://remoteOK.com/remote-jobs/remote-global-partnerships-bd-lead-fuku-1137796) | 2026-11-19T21:31:05Z |
 | Fraud Operations Analyst, Bridge (CDMX) | stripe | Mexico City | 0.079 | no | [link](https://stripe.com/jobs/search?gh_jid=8168550) | 2026-11-19T23:37:02Z |
@@ -2455,7 +2533,6 @@
 | Credit Risk Operations Analyst (CDMX) | stripe | Mexico City | 0.078 | no | [link](https://stripe.com/jobs/search?gh_jid=7456167) | 2026-11-19T23:37:02Z |
 | Senior Financial Analyst, Commercial Finance | mozilla | Remote Canada | 0.078 | no | [link](https://job-boards.greenhouse.io/mozilla/jobs/8384913) | 2026-11-19T23:37:02Z |
 | Senior Financial Analyst, Commercial Finance | mozilla | Remote US | 0.078 | no | [link](https://job-boards.greenhouse.io/mozilla/jobs/8325950) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer - Recommendations | deliveroo | London, England | 0.078 | no | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8261231) | 2026-11-19T23:37:02Z |
 | Senior Staff Software Engineer, Developer Infrastructure | robinhood | Menlo Park, CA; New York, NY | 0.078 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8189867?t=gh_src=&gh_jid=8189867) | 2026-11-19T23:37:02Z |
 | Staff Product Designer - UI Platform | okta | Bellevue, Washington; Chicago, Illinois; New York, New York; Toronto, Ontario, Canada; Washington, DC | 0.078 | no | [link](https://www.okta.com/company/careers/opportunity/8326116?gh_jid=8326116) | 2026-11-19T23:37:02Z |
 | Forward Deployed Engineer - ML | modal | New York, San Francisco, London | 0.078 | no | [link](https://jobs.ashbyhq.com/modal/9fadb51f-ce11-41b1-84d5-470e66cc8ee9) | 2026-11-19T23:54:57Z |
@@ -2465,17 +2542,14 @@
 | Senior Product Manager, Marketing AI | mongodb | Dublin, Ireland | 0.078 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8355989) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Financial Infrastructure | replit | Foster City, CA, Remote | 0.078 | no | [link](https://jobs.ashbyhq.com/replit/298db311-7d58-46f5-a6ec-8a10edcb43c2) | 2026-11-19T23:54:57Z |
 | Head of AMER Startups (AI Sales) | stripe | San Francisco | 0.078 | no | [link](https://stripe.com/jobs/search?gh_jid=8267847) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer II - Growth & Personalisation | deliveroo | London, England | 0.078 | no | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8202399) | 2026-11-19T23:37:02Z |
 | Member of Technical Staff (AI Software Engineer, Agent Engine) | perplexity | San Francisco | 0.078 | no | [link](https://jobs.ashbyhq.com/Perplexity/10a51134-6741-40ec-8cca-a8ac1534673b) | 2026-11-19T23:54:57Z |
 | Senior Financial Analyst, North America Sales & Operations Finance | flexport | San Francisco, California, United States | 0.078 | no | [link](https://job-boards.greenhouse.io/flexport/jobs/8025116) | 2026-11-19T23:37:02Z |
 | Strategic Accounts Sales Leader, AI GTM | stripe | San Francisco; New York | 0.078 | no | [link](https://stripe.com/jobs/search?gh_jid=8212325) | 2026-11-19T23:37:02Z |
 | AI Engineer Data APIs | Benzinga |  | 0.078 | no | [link](https://remoteOK.com/remote-jobs/remote-ai-engineer-data-apis-benzinga-1137224) | 2026-11-19T21:31:05Z |
 | Engineering Manager, Cloud Infrastructure | replit | Foster City, CA, Remote | 0.078 | no | [link](https://jobs.ashbyhq.com/replit/1015fa18-69d0-49e5-a785-afe5cbcc4760) | 2026-11-19T23:54:57Z |
 | Member of Technical Staff - ML Performance | modal | New York, San Francisco | 0.078 | no | [link](https://jobs.ashbyhq.com/modal/af17da5e-23ca-4802-854d-5f0546e1ed32) | 2026-11-19T23:54:57Z |
-| Senior Site Reliability Engineer | duolingo | New York, NY; Pittsburgh, PA | 0.078 | no | [link](https://careers.duolingo.com/jobs/8784381002?gh_jid=8784381002) | 2026-11-19T23:37:02Z |
 | Principal Software Engineer, Services/DevOps - Wild Rift | riotgames | Los Angeles, USA | 0.077 | no | [link](https://www.riotgames.com/en/work-with-us/job/8104538?gh_jid=8104538) | 2026-11-19T23:37:02Z |
 | Solutions Architect, AI | stripe | NYC, SF, or Chicago | 0.077 | no | [link](https://stripe.com/jobs/search?gh_jid=8248509) | 2026-11-19T23:37:02Z |
-| Staff Site Reliability Engineer - Release Engineering | plaid | San Francisco HQ, Seattle Office, Remote | 0.077 | no | [link](https://jobs.ashbyhq.com/plaid/07cde72b-a127-48a8-b01a-570de5768340) | 2026-11-19T23:37:02Z |
 | Strategic Account Executive, AI Sales | stripe | San Francisco, CA | 0.077 | no | [link](https://stripe.com/jobs/search?gh_jid=8194397) | 2026-11-19T23:37:02Z |
 | Accounting AI Solutions Lead | stripe | Seattle, San Francisco, New York | 0.077 | no | [link](https://stripe.com/jobs/search?gh_jid=8103750) | 2026-11-19T23:37:02Z |
 | Infrastructure Software Engineer | dropbox | Remote - Mexico | 0.077 | no | [link](https://jobs.dropbox.com/listing/7758123?gh_jid=7758123) | 2026-11-19T23:37:02Z |
@@ -2492,7 +2566,6 @@
 | Senior Engineering Manager - AI Foundations Team | toast | Dublin, Ireland | 0.077 | no | [link](https://careers.toasttab.com/jobs?gh_jid=8267171) | 2026-11-19T23:37:02Z |
 | Staff Engineer, Applied AI (Customer Agent) | klaviyo | Boston, MA | 0.077 | no | [link](https://www.klaviyo.com/careers/jobs/7993282003?gh_jid=7993282003) | 2026-11-19T23:37:02Z |
 | Engineering Manager, Infrastructure | sentry | San Francisco, California, Remote | 0.077 | no | [link](https://jobs.ashbyhq.com/sentry/ad10ec02-e439-4e2b-9f2b-d32b5a8a4b7a) | 2026-11-19T23:37:02Z |
-| Member of Technical Staff (Machine Learning Engineer, Ranking Quality - Search) | perplexity | Belgrade, London, Dublin, Remote | 0.077 | no | [link](https://jobs.ashbyhq.com/Perplexity/19d8bcfd-e493-4b3a-b8fd-11a2a6502da2) | 2026-11-19T23:54:57Z |
 | Site Reliability Operations Analyst - Legal | palantir | Washington, D.C. | 0.077 | no | [link](https://jobs.lever.co/palantir/4a9e0649-a925-4b25-914d-1eea058a3e01) | 2026-11-19T23:37:02Z |
 | Site Reliability Operations Analyst - Legal | palantir | New York, NY | 0.077 | no | [link](https://jobs.lever.co/palantir/773bb739-f011-4202-88d7-362a562df0d3) | 2026-11-19T23:37:02Z |
 | Sr. Staff Engineer, Applied AI (Customer Agent) | klaviyo | Boston, MA | 0.077 | no | [link](https://www.klaviyo.com/careers/jobs/7861870003?gh_jid=7861870003) | 2026-11-19T23:37:02Z |
@@ -2503,7 +2576,6 @@
 | QC Analyst II | abcellera | Vancouver | 0.077 | no | [link](https://job-boards.greenhouse.io/abcellera/jobs/8015819003) | 2026-11-19T23:37:02Z |
 | Senior Backend Engineer Build AI Agents | Salesforge |  | 0.077 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-backend-engineer-build-ai-agents-salesforge-1137114) | 2026-11-19T21:31:05Z |
 | Senior Data Science Manager, Growth | gusto | Denver, CO - Hybrid; New York, NY - Hybrid; San Francisco, CA - Hybrid | 0.077 | no | [link](https://job-boards.greenhouse.io/gusto/jobs/7357545) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer (Fraud) | affirm | Remote Canada | 0.077 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/7806920003) | 2026-11-19T23:37:02Z |
 | Staff Platform Manager - GTM & Ops Tooling | airbnb | United States | 0.077 | no | [link](https://careers.airbnb.com/positions/8163100?gh_jid=8163100) | 2026-11-19T23:37:02Z |
 | Staff+ Software Engineer, ML Sampling Path | anthropic | San Francisco, CA | 0.077 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5419868008) | 2026-11-19T23:37:02Z |
 | Accounts Receivable Analyst | stripe | SEA, NYC | 0.076 | no | [link](https://stripe.com/jobs/search?gh_jid=8375966) | 2026-11-19T23:37:02Z |
@@ -2531,7 +2603,6 @@
 | Applied AI Engineer, Codex Core Agent | openai | San Francisco, New York City, Seattle | 0.076 | no | [link](https://jobs.ashbyhq.com/openai/577e6673-0a4a-491b-9a0d-facbdd3bdf3c) | 2026-11-19T23:54:57Z |
 | Applied AI, Research Engineer | anthropic | San Francisco, CA / New York City, NY | 0.076 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5390811008) | 2026-11-19T23:37:02Z |
 | Forward Deployed AI Accelerator, Marketing | stripe | Seattle, San Francisco, New York, Chicago, Atlanta, Remote in the US, Canada | 0.076 | no | [link](https://stripe.com/jobs/search?gh_jid=7747640) | 2026-11-19T23:37:02Z |
-| Intermediate AI-Enabled DevOps Engineer | pointclickcare | Salt Lake City, UT | 0.076 | no | [link](https://jobs.lever.co/pointclickcare/94b85a28-9893-48c5-a2bb-a50175887ef1) | 2026-11-19T23:37:02Z |
 | Risk Operations Analyst | stripe | Chicago, Atlanta, US-Remote, Toro | 0.076 | no | [link](https://stripe.com/jobs/search?gh_jid=7230921) | 2026-11-19T23:37:02Z |
 | Senior Principal, GTM Data Operations | cloudflare | Hybrid | 0.076 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8257533?gh_jid=8257533) | 2026-11-19T23:37:02Z |
 | Senior Software Engineer, Applied AI (Customer Agent) | klaviyo | Boston, MA | 0.076 | no | [link](https://www.klaviyo.com/careers/jobs/7780009003?gh_jid=7780009003) | 2026-11-19T23:37:02Z |
@@ -2554,7 +2625,6 @@
 | Account Executive, AI Startups - Grower | stripe | San Francisco | 0.075 | no | [link](https://stripe.com/jobs/search?gh_jid=8238731) | 2026-11-19T23:37:02Z |
 | Member of Technical Staff (Software Engineer, Enterprise AI Products) | perplexity | San Francisco, Seattle, New York City | 0.075 | no | [link](https://jobs.ashbyhq.com/Perplexity/2c5fdd71-472a-4c62-bc53-deafb66e7941) | 2026-11-19T23:54:57Z |
 | SEO Full Stack Engineer | Treatwell |  | 0.075 | no | [link](https://remoteOK.com/remote-jobs/remote-seo-full-stack-engineer-treatwell-1137805) | 2026-11-19T21:31:05Z |
-| Senior Infrastructure Engineer - Network Infrastructure | plaid | New York City Office, Remote | 0.075 | no | [link](https://jobs.ashbyhq.com/plaid/a6324085-a7f8-4acd-9e36-a330a6249c4d) | 2026-11-19T23:37:02Z |
 | Systems Engineer, Tech Foundations (Jira cloud) | airbnb | Remote - Bangalore, India | 0.075 | no | [link](https://careers.airbnb.com/positions/8312713?gh_jid=8312713) | 2026-11-19T23:37:02Z |
 | Partner Development Manager, AI Partnerships | stripe | San Francisco; New York City | 0.075 | no | [link](https://stripe.com/jobs/search?gh_jid=8165269) | 2026-11-19T23:37:02Z |
 | Staff Engineer or Architect (AI Agentic Team) | trulioo | Vancouver, BC, San Diego, CA, San Francisco, CA, Remote | 0.075 | no | [link](https://jobs.ashbyhq.com/trulioo/ee957528-7ae9-46d8-8b17-e8cade14f815) | 2026-11-19T23:37:02Z |
@@ -2565,33 +2635,24 @@
 | Senior AI Programmer | epicgames | Cary,North Carolina,United States | 0.075 | no | [link](https://epicgames.com/careers/jobs/6242337004?gh_jid=6242337004) | 2026-11-19T23:37:02Z |
 | Senior AI Programmer | epicgames | BLANK,BLANK,Multiple Locations | 0.075 | no | [link](https://epicgames.com/careers/jobs/6242339004?gh_jid=6242339004) | 2026-11-19T23:37:02Z |
 | Senior AI Programmer | epicgames | Montreal,Quebec,Canada | 0.075 | no | [link](https://epicgames.com/careers/jobs/6261103004?gh_jid=6261103004) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Consumer | reddit | Remote - United States | 0.075 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/7747244) | 2026-11-19T23:37:02Z |
 | Staff+ Software Engineer, Claude App Infrastructure | anthropic | San Francisco, CA / New York City, NY / Seattle, WA | 0.075 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5065894008) | 2026-11-19T23:37:02Z |
 | Recruiter, Applied AI | anthropic | San Francisco, CA / New York City, NY | 0.075 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5475240008) | 2026-11-19T23:37:02Z |
 | Senior Product Manager, Signals & Data Products | cloudflare | Hybrid; In-Office | 0.075 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8349425?gh_jid=8349425) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, SecureAI | okta | Toronto, Ontario, Canada | 0.075 | no | [link](https://www.okta.com/company/careers/opportunity/8208359?gh_jid=8208359) | 2026-11-19T23:37:02Z |
 | Virtual Destination Wedding Coordinator | Destination Careers | Colorado | 0.075 | no | [link](https://remoteOK.com/remote-jobs/remote-virtual-destination-wedding-coordinator-destination-careers-1137611) | 2026-11-19T21:31:05Z |
 | Data Center Operations Engineer | cloudflare | In-Office | 0.075 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8369401?gh_jid=8369401) | 2026-11-19T23:37:02Z |
-| Senior SRE, Site Experience | reddit | Remote - United States | 0.075 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8369767) | 2026-11-19T23:37:02Z |
 | Applied AI Architects, Partner | anthropic | Seoul, South Korea | 0.075 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5432554008) | 2026-11-19T23:37:02Z |
 | Applied AI Architects, Partner | anthropic | Tokyo, Japan | 0.075 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5439499008) | 2026-11-19T23:37:02Z |
 | Sales Strategy & Operations Analyst | stripe | Chicago | 0.075 | no | [link](https://stripe.com/jobs/search?gh_jid=8164674) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer | twilio | Remote - Ontario, Canada (DNU) | 0.075 | no | [link](https://job-boards.greenhouse.io/twilio/jobs/8258581) | 2026-11-19T23:37:02Z |
 | Staff Machine Learning Systems Engineer | reddit | Remote - United States | 0.075 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/7731788) | 2026-11-19T23:37:02Z |
 | Clinical Systems Analyst | abcellera | Montreal | 0.075 | no | [link](https://job-boards.greenhouse.io/abcellera/jobs/8040726003) | 2026-11-19T23:37:02Z |
 | Corporate Accounting Analyst (Bangalore) | stripe | Bengaluru | 0.075 | no | [link](https://stripe.com/jobs/search?gh_jid=8273713) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer | klaviyo | Palo Alto, CA | 0.075 | no | [link](https://www.klaviyo.com/careers/jobs/7855802003?gh_jid=7855802003) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Environments Infrastructure | anthropic | San Francisco, CA / New York City, NY | 0.075 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5367436008) | 2026-11-19T23:37:02Z |
 | Data Annotation Specialist - German Writer/Translator | cohere | Canada, Calgary, Boston, Nashville, Richmond, Phoenix, Seattle, United States, Vancouver, North America / Utah, Ottawa, Toronto, Montreal, Remote | 0.074 | no | [link](https://jobs.ashbyhq.com/cohere/acec6038-117b-400b-92e3-0745fbb4cf53) | 2026-11-19T23:37:02Z |
 | Software Engineer, Research - Human Data | openai | San Francisco | 0.074 | no | [link](https://jobs.ashbyhq.com/openai/4d6a5951-9838-434c-830a-22cb938ea228) | 2026-11-19T23:54:57Z |
-| Staff Machine Learning Engineer (L4) | twilio | Remote - India | 0.074 | no | [link](https://job-boards.greenhouse.io/twilio/jobs/8258593) | 2026-11-19T23:37:02Z |
 | Systems Engineer - Data Security | cloudflare | Hybrid | 0.074 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8257140?gh_jid=8257140) | 2026-11-19T23:37:02Z |
 | Staff+ Software Engineer, Safeguards Infrastructure | anthropic | London, UK | 0.074 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5074908008) | 2026-11-19T23:37:02Z |
 | Strategy & Operations Coach APAC | Mento |  | 0.074 | no | [link](https://remoteOK.com/remote-jobs/remote-strategy-operations-coach-apac-mento-1137717) | 2026-11-19T21:31:05Z |
 | Applied AI Engineer, Startups | anthropic | London, UK | 0.074 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5432575008) | 2026-11-19T23:37:02Z |
-| Senior Staff SRE, Site Experience | reddit | Remote - United States | 0.074 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8369169) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, AI Security | reddit | Remote - United States | 0.074 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8203478) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Retrieval | reddit | Remote - United States | 0.074 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8178085) | 2026-11-19T23:37:02Z |
 | Applied AI Architect | anthropic | Seoul, South Korea | 0.074 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5476577008) | 2026-11-19T23:37:02Z |
 | Applied AI Architect | anthropic | Bangalore, India | 0.074 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5443882008) | 2026-11-19T23:37:02Z |
 | Applied AI Architect | anthropic | Tokyo, Japan | 0.074 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5076109008) | 2026-11-19T23:37:02Z |
@@ -2609,7 +2670,6 @@
 | Director, AI Infrastructure & Strategic Partnerships | singlestore | United States | 0.074 | no | [link](https://job-boards.greenhouse.io/singlestore/jobs/8336688) | 2026-11-19T23:37:02Z |
 | Software Engineer, Data Primitives | cloudflare | Hybrid | 0.074 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8398779?gh_jid=8398779) | 2026-11-19T23:37:02Z |
 | Applied AI Architect, Enterprise Tech | anthropic | San Francisco, CA / New York City, NY / Seattle, WA | 0.074 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5383335008) | 2026-11-19T23:37:02Z |
-| Senior Machine Learning Engineer, End-to-End Planning | lucidmotors | Newark, CA | 0.074 | no | [link](https://lucidmotors.com/careers/search/5194178007?gh_jid=5194178007) | 2026-11-19T23:54:57Z |
 | Senior Technical Recruiter, Data | robinhood | Toronto, Canada | 0.074 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8368340?t=gh_src=&gh_jid=8368340) | 2026-11-19T23:37:02Z |
 | Senior Technical Recruiter, Data | robinhood | Menlo Park, CA | 0.074 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8368338?t=gh_src=&gh_jid=8368338) | 2026-11-19T23:37:02Z |
 | Clinical Data Manager | Penumbra | Your Remote US Home Office | 0.074 | no | [link](https://remoteOK.com/remote-jobs/remote-clinical-data-manager-penumbra-1137550) | 2026-11-19T21:31:05Z |
@@ -2621,8 +2681,6 @@
 | Engineering Manager, Security (Cloud, Infrastructure & Application Security) | replit | Foster City, CA, Remote | 0.074 | no | [link](https://jobs.ashbyhq.com/replit/2b296184-4ef9-4587-98ec-cd20f39e003e) | 2026-11-19T23:54:57Z |
 | Federal Account Manager Client Relationships | Akicita Federal, LLC | Remote | 0.074 | no | [link](https://remoteOK.com/remote-jobs/remote-federal-account-manager-client-relationships-akicita-federal-llc-1137521) | 2026-11-19T21:31:05Z |
 | Senior Machine Learning Manager, Borrowing | monzo | Cardiff, London or Remote (UK) | 0.074 | no | [link](https://job-boards.greenhouse.io/monzo/jobs/7996955) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Ads ML Efficiency | reddit | Remote - United States | 0.074 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8247280) | 2026-11-19T23:37:02Z |
-| Staff Site Reliability Engineer, Federal (TS/SCI) | okta | Maryland; Washington, DC | 0.074 | no | [link](https://www.okta.com/company/careers/opportunity/8097489?gh_jid=8097489) | 2026-11-19T23:37:02Z |
 | Systems Engineer, Data Loss Prevention | cloudflare | Hybrid | 0.074 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8386246?gh_jid=8386246) | 2026-11-19T23:37:02Z |
 | [Paris] Applied AI Architect, Industries | anthropic | Paris, France | 0.074 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5482967008) | 2026-11-19T23:37:02Z |
 | Engineering Manager, Accounting Infrastructure and Systems | deliveroo | London, United Kingdom - Deliveroo | 0.074 | no | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8353559) | 2026-11-19T23:37:02Z |
@@ -2648,11 +2706,8 @@
 | Data Center Network Operations Engineer | cloudflare | Hybrid | 0.073 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8311376?gh_jid=8311376) | 2026-11-19T23:37:02Z |
 | Lead Analyst, Financial Crimes | chime | Chicago, IL, USA | 0.073 | no | [link](https://boards.greenhouse.io/chime/jobs/8779819002?gh_jid=8779819002) | 2026-11-19T23:37:02Z |
 | Software Engineer, Cloud Infrastructure | benchling | San Francisco, CA, Remote | 0.073 | no | [link](https://jobs.ashbyhq.com/benchling/7c32ac1e-3de3-462b-aa17-7618317f0da0) | 2026-11-19T23:37:02Z |
-| Staff Infrastructure Engineer, Cluster Infrastructure | anthropic | London, UK | 0.073 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5211297008) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Retrieval & Targeting | reddit | Remote - United States | 0.073 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8316086) | 2026-11-19T23:37:02Z |
 | Applied AI Architect, Startups | anthropic | San Francisco, CA / New York City, NY | 0.073 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5406982008) | 2026-11-19T23:37:02Z |
 | Applied AI Architect, Startups | anthropic | London, UK | 0.073 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5432573008) | 2026-11-19T23:37:02Z |
-| Staff TDI Site Reliability Engineer, Okta Federal | okta | Washington, DC | 0.073 | no | [link](https://www.okta.com/company/careers/opportunity/8073066?gh_jid=8073066) | 2026-11-19T23:37:02Z |
 | Applied AI Engineer, Startups (Physical AI) | anthropic | San Francisco, CA | 0.073 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5454673008) | 2026-11-19T23:37:02Z |
 | Staff FullStack Engineer, Secures AI | okta | Toronto, Ontario, Canada | 0.073 | no | [link](https://www.okta.com/company/careers/opportunity/8314936?gh_jid=8314936) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, AI Security | robinhood | Bellevue, WA; Menlo Park, CA | 0.073 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8214383?t=gh_src=&gh_jid=8214383) | 2026-11-19T23:37:02Z |
@@ -2671,8 +2726,6 @@
 | Staff+ Software Engineer, Infrastructure (Distributed Systems) | anthropic | San Francisco, CA / New York City, NY / Seattle, WA | 0.073 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/4970314008) | 2026-11-19T23:37:02Z |
 | Applied AI Architect, Strategic Enterprise Tech | anthropic | San Francisco, CA / New York City, NY / Seattle, WA | 0.072 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5409008008) | 2026-11-19T23:37:02Z |
 | Software Engineer, Monetization ML Infrastructure | openai | San Francisco, Remote | 0.072 | no | [link](https://jobs.ashbyhq.com/openai/348ac6bf-a5c3-43d1-a14a-5f1a3c8d90fa) | 2026-11-19T23:54:57Z |
-| Staff Machine Learning Engineer, Ads Forecasting & Scenarios | reddit | Remote - United States | 0.072 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8334138) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Generative AI (Auth0) | okta | Toronto, Ontario, Canada | 0.072 | no | [link](https://www.okta.com/company/careers/opportunity/8139696?gh_jid=8139696) | 2026-11-19T23:37:02Z |
 | Applied AI Architect, Public Sector | anthropic | Washington, DC | 0.072 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5382518008) | 2026-11-19T23:37:02Z |
 | Applied AI Engineer, Beneficial Deployments (Lab Automation) | anthropic | London, UK | 0.072 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5440821008) | 2026-11-19T23:37:02Z |
 | Technical Lead, AI Engineering (Sales, Service & Supply Chain) | lucidmotors | Newark, CA | 0.072 | no | [link](https://lucidmotors.com/careers/search/5252558007?gh_jid=5252558007) | 2026-11-19T23:54:57Z |
@@ -2685,31 +2738,20 @@
 | EWS Credit Disputes Governance Analyst | sofi | UT - Cottonwood Heights | 0.072 | no | [link](https://sofi.com/careers/job/8195920003?gh_jid=8195920003) | 2026-11-19T23:37:02Z |
 | Senior AI Development Lead | airbnb | United States | 0.072 | no | [link](https://careers.airbnb.com/positions/8401203?gh_jid=8401203) | 2026-11-19T23:37:02Z |
 | Senior Data Science Manager | deliveroo | London, United Kingdom | 0.072 | no | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8367228) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Ads Foundational Representations | reddit | Remote - United Kingdom | 0.072 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8018513) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Ads Foundational Representations | reddit | New York City, NY | 0.072 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8382925) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer, Ads Foundational Representations | reddit | Remote - The Netherlands | 0.072 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8018517) | 2026-11-19T23:37:02Z |
-| Staff Site Reliability Engineer | okta | Bengaluru, India | 0.072 | no | [link](https://www.okta.com/company/careers/opportunity/8242975?gh_jid=8242975) | 2026-11-19T23:37:02Z |
-| Staff Site Reliability Engineer | okta | Bellevue, WA, United States | 0.072 | no | [link](https://www.okta.com/company/careers/opportunity/8385706?gh_jid=8385706) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer, Developer Infrastructure (Test Infrastructure) | coinbase | Remote - USA | 0.072 | no | [link](https://www.coinbase.com/careers/positions/7964410?gh_jid=7964410) | 2026-11-19T23:37:02Z |
 | AI Content Reviewer Video Annotation | iMerit |  | 0.072 | no | [link](https://remoteOK.com/remote-jobs/remote-ai-content-reviewer-video-annotation-imerit-1137686) | 2026-11-19T21:31:05Z |
 | Senior Product Manager, Vehicle Data (Regional Growth) – Southeast Asia | geotab | Singapore City, Singapore - Singapore | 0.072 | no | [link](https://job-boards.greenhouse.io/geotab/jobs/5369451008) | 2026-11-19T23:37:02Z |
-| Software Engineer - Data Aquisition (systems) | openai | San Francisco | 0.072 | no | [link](https://jobs.ashbyhq.com/openai/70aaaafa-fe2f-4409-9a72-c0faf50d7d01) | 2026-11-19T23:54:57Z |
-| Staff Machine Learning Engineer, Ads Creative Effectiveness | reddit | Remote - United States | 0.072 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8250389) | 2026-11-19T23:37:02Z |
 | AI Support Engineer - Toronto (Weekend Shift) | openai | Ontario - Remote | 0.072 | no | [link](https://jobs.ashbyhq.com/openai/186bf7d1-0531-47fc-8e81-4429cbd3b5cb) | 2026-11-19T23:54:57Z |
 | Engineering Manager, Data Center Operations | cloudflare | Hybrid | 0.072 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8293647?gh_jid=8293647) | 2026-11-19T23:37:02Z |
 | Senior Sales Associate - CB Infrastructure | coinbase | Remote - USA | 0.072 | no | [link](https://www.coinbase.com/careers/positions/8328079?gh_jid=8328079) | 2026-11-19T23:37:02Z |
 | Applied AI Architect, Public Sector (State & Local Government) | anthropic | San Francisco, CA | 0.072 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5455618008) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, Monetization AI/ML | openai | San Francisco | 0.072 | no | [link](https://jobs.ashbyhq.com/openai/80f9f564-d789-47bc-91c3-3babf5a1a33d) | 2026-11-19T23:54:57Z |
 | Revenue Cycle Manager | Adaptive Innovations | Houston | 0.072 | no | [link](https://remoteOK.com/remote-jobs/remote-revenue-cycle-manager-adaptive-innovations-1137706) | 2026-11-19T21:31:05Z |
 | Lead Solutions Architect - Generative AI (EMEA Emerging DNB) | databricks | Remote - France | 0.071 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8892970002) | 2026-11-19T23:37:02Z |
 | Software Engineer, Manufacturing Infrastructure | openai | San Francisco, Remote | 0.071 | no | [link](https://jobs.ashbyhq.com/openai/3b08148d-085e-4835-9934-1b7f60e0fdce) | 2026-11-19T23:54:57Z |
 | Manager of Applied AI Architecture, Startups | anthropic | San Francisco, CA / New York City, NY | 0.071 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5446029008) | 2026-11-19T23:37:02Z |
-| Principal Machine Learning Engineer, SecureAI | okta | Toronto, Ontario, Canada | 0.071 | no | [link](https://www.okta.com/company/careers/opportunity/8208377?gh_jid=8208377) | 2026-11-19T23:37:02Z |
 | Applied AI Architect, Public Sector (GovTech) | anthropic | Washington, DC | 0.071 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5460211008) | 2026-11-19T23:37:02Z |
 | Strategy & Operations, Infrastructure | stripe | Remote US | 0.071 | no | [link](https://stripe.com/jobs/search?gh_jid=8171095) | 2026-11-19T23:37:02Z |
 | Senior Manager,  Finance & Strategy Data Science | robinhood | Menlo Park, CA; New York, NY | 0.071 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8180757?t=gh_src=&gh_jid=8180757) | 2026-11-19T23:37:02Z |
-| Staff  Site Reliability Engineer, Networking w/ active TS/SCI | okta | Maryland; Washington, DC | 0.071 | no | [link](https://www.okta.com/company/careers/opportunity/7575679?gh_jid=7575679) | 2026-11-19T23:37:02Z |
-| Staff Site Reliability Engineer - IDaaS | okta | Toronto, ON, Canada | 0.071 | no | [link](https://www.okta.com/company/careers/opportunity/8071442?gh_jid=8071442) | 2026-11-19T23:37:02Z |
 | Analyst, Banking Operations (Domestic) | brex | Salt Lake City, Utah, United States | 0.071 | no | [link](https://www.brex.com/careers/8923923002?gh_jid=8923923002) | 2026-11-19T23:37:02Z |
 | Analyst, Banking Operations (Domestic) | brex | New York, New York, United States | 0.071 | no | [link](https://www.brex.com/careers/8924533002?gh_jid=8924533002) | 2026-11-19T23:37:02Z |
 | Senior Applied Researcher – Healthcare AI & Generative AI (US) | pointclickcare | Remote - US | 0.071 | no | [link](https://jobs.lever.co/pointclickcare/2e2fd17b-7360-449b-9fd4-de722f49a51f) | 2026-11-19T23:37:02Z |
@@ -2717,13 +2759,10 @@
 | Sr. Fraud Analyst | betterment | Betterment HQ - New York City | 0.071 | no | [link](https://www.betterment.com/careers/current-openings/job?gh_jid=8041552&gh_jid=8041552) | 2026-11-19T23:37:02Z |
 | Risk Operations Analyst - Restricted Business Operations | stripe | Remote | 0.071 | no | [link](https://stripe.com/jobs/search?gh_jid=8175824) | 2026-11-19T23:37:02Z |
 | Senior Applied Researcher – Healthcare AI & Generative AI (CAD) | pointclickcare | Remote, Canada | 0.071 | no | [link](https://jobs.lever.co/pointclickcare/f898bbb1-6d98-4708-9762-414799038ea4) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer - Fraud | plaid | San Francisco HQ, Seattle Office, New York City Office, Remote | 0.071 | no | [link](https://jobs.ashbyhq.com/plaid/85cd5d07-9920-45fa-931a-daf8c3558e5b) | 2026-11-19T23:37:02Z |
 | Senior Machine Learning Programmer | epicgames | Montreal,Quebec,Canada | 0.071 | no | [link](https://epicgames.com/careers/jobs/6222447004?gh_jid=6222447004) | 2026-11-19T23:37:02Z |
 | Senior Machine Learning Programmer | epicgames | BLANK,BLANK,Multiple Locations | 0.071 | no | [link](https://epicgames.com/careers/jobs/6221662004?gh_jid=6221662004) | 2026-11-19T23:37:02Z |
-| Staff Machine Learning Engineer - Vision AI | toast | Remote, US | 0.071 | no | [link](https://careers.toasttab.com/jobs?gh_jid=8368738) | 2026-11-19T23:37:02Z |
 | Applied AI Architect, International Policy | anthropic | San Francisco, CA / New York City, NY | 0.071 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5473195008) | 2026-11-19T23:37:02Z |
 | Senior Cloud Partner Sales Manager (AWS & Microsoft Azure) | newrelic | Atlanta, Georgia, USA; Austin, Texas, USA; Charleston, South Carolina, USA; Chicago, Illinois, USA; Dallas, Texas, USA; Detroit, Michigan, USA; Houston, Texas, USA; Indianapolis, Indiana, USA; Las Vegas, Nevada, USA; Memphis, Tennessee, USA; Miami, Florida, USA; Orlando, Florida, USA; Phoenix, Arizona, USA; Provo, Utah, USA; Salt Lake City, Utah, USA | 0.071 | no | [link](https://job-boards.greenhouse.io/newrelic/jobs/5287057008) | 2026-11-19T23:37:02Z |
-| Staff Site Reliability Engineer, Security- GCP | okta | Bengaluru, India | 0.071 | no | [link](https://www.okta.com/company/careers/opportunity/6671260?gh_jid=6671260) | 2026-11-19T23:37:02Z |
 | Applied AI Architect, Digital Natives Business | anthropic | Munich, Germany | 0.070 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5226862008) | 2026-11-19T23:37:02Z |
 | Manager of Applied AI Architecture, Commercial | anthropic | San Francisco, CA / New York City, NY | 0.070 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5390865008) | 2026-11-19T23:37:02Z |
 | Senior Product Manager - Cloud Infrastructure | okta | Bellevue, Washington; Chicago, Illinois; New York, New York; San Francisco, California; Seattle, Washington; Washington, DC | 0.070 | no | [link](https://www.okta.com/company/careers/opportunity/8056315?gh_jid=8056315) | 2026-11-19T23:37:02Z |
@@ -2736,9 +2775,7 @@
 | Applied AI Architect, Beneficial Deployments (Non-Profits) | anthropic | San Francisco, CA / New York City, NY | 0.070 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5484035008) | 2026-11-19T23:37:02Z |
 | Senior Product Designer, Data | braze | Toronto | 0.070 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8211012) | 2026-11-19T23:37:02Z |
 | Senior Product Designer, Data | braze | Vancouver | 0.070 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8223381) | 2026-11-19T23:37:02Z |
-| EDA Cloud & Developer Infrastructure Engineer | openai | San Francisco, Remote | 0.070 | no | [link](https://jobs.ashbyhq.com/openai/4f2d9849-ad00-48d5-a22f-0cb943723999) | 2026-11-19T23:54:57Z |
 | Business Analyst (Mid-level) | sumup | São Paulo, São Paulo, Brazil | 0.070 | no | [link](https://sumup.com/careers/positions/8907441002?gh_jid=8907441002) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineering Intern (Masters/PhD) - Summer 2027 | riotgames | Los Angeles, USA | 0.070 | no | [link](https://www.riotgames.com/en/work-with-us/job/8356771?gh_jid=8356771) | 2026-11-19T23:37:02Z |
 | Senior Product Manager | Pencil | EMEA | 0.070 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-product-manager-pencil-1137705) | 2026-11-19T21:31:05Z |
 | Staff Product Manager, AI Builder Experience | mongodb | United States | 0.070 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8129885) | 2026-11-19T23:37:02Z |
 | Staff Product Manager, AI Builder Experience | mongodb | Toronto | 0.070 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8129887) | 2026-11-19T23:37:02Z |
@@ -2759,7 +2796,6 @@
 | Manager, Site Reliability Engineering | okta | Bellevue, Washington; Chicago, Illinois; San Francisco, California; Washington, DC | 0.069 | no | [link](https://www.okta.com/company/careers/opportunity/7977080?gh_jid=7977080) | 2026-11-19T23:37:02Z |
 | Principal Software Engineer, AI Tooling & Adoption | fivetran | Oakland, California, United States, AMER | 0.069 | no | [link](https://www.fivetran.com/careers/job?gh_jid=7812269003) | 2026-11-19T23:37:02Z |
 | Software Engineer, Cooperative AI | openai | San Francisco, Seattle | 0.069 | no | [link](https://jobs.ashbyhq.com/openai/7613aca3-9dd8-41cd-b114-06ef4de967a9) | 2026-11-19T23:54:57Z |
-| Manager, Site Reliability Engineer | okta | Bengaluru, India | 0.069 | no | [link](https://www.okta.com/company/careers/opportunity/7247309?gh_jid=7247309) | 2026-11-19T23:37:02Z |
 | Member of Technical Staff - Workers AI Applied Research | cloudflare | Hybrid | 0.069 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8043974?gh_jid=8043974) | 2026-11-19T23:37:02Z |
 | Staff Software Engineer - AI & Intelligent Tooling | plaid | San Francisco HQ, Seattle Office, New York City Office, Remote | 0.069 | no | [link](https://jobs.ashbyhq.com/plaid/41448609-24d6-44ea-a5ba-c87cf3dc3f0d) | 2026-11-19T23:37:02Z |
 | Senior Staff Software Developer, Core Infrastructure | robinhood | Toronto, Canada | 0.069 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8142278?t=gh_src=&gh_jid=8142278) | 2026-11-19T23:37:02Z |
@@ -2768,8 +2804,6 @@
 | Senior Named Account Executive (AI & Digital Natives) | cloudflare | Hybrid | 0.069 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8089141?gh_jid=8089141) | 2026-11-19T23:37:02Z |
 | Manager, Site Reliability Engineering (Auth0) | okta | New York, New York; Washington, DC | 0.069 | no | [link](https://www.okta.com/company/careers/opportunity/8160475?gh_jid=8160475) | 2026-11-19T23:37:02Z |
 | Cloud Security Lead | replit | Foster City, CA, Remote | 0.069 | no | [link](https://jobs.ashbyhq.com/replit/8027a0f4-4837-4e49-a4dd-8ad1bde23277) | 2026-11-19T23:54:57Z |
-| Internship - Search Machine Learning Engineer | perplexity | Belgrade | 0.069 | no | [link](https://jobs.ashbyhq.com/Perplexity/9246cf02-26fd-4ae8-90c5-639c6e85e9e2) | 2026-11-19T23:54:57Z |
-| Internship - Search Machine Learning Engineer | perplexity | London | 0.069 | no | [link](https://jobs.ashbyhq.com/Perplexity/71168628-1998-47d3-87a9-be7bc56a430d) | 2026-11-19T23:54:57Z |
 | Lead Solutions Architect - Generative AI (EMEA Emerging DNB) | databricks | Remote - Sweden | 0.069 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8892968002) | 2026-11-19T23:37:02Z |
 | AI Agent Security Architect | replit | Foster City, CA, Remote | 0.068 | no | [link](https://jobs.ashbyhq.com/replit/df7b6d30-9da1-4ace-8121-17c2aa55aa6f) | 2026-11-19T23:54:57Z |
 | Lead Data Analyst, Marketing (SEM) | rover | Barcelona | 0.068 | no | [link](https://jobs.lever.co/rover/39b3862d-7873-404c-8dc1-f95664ca5882) | 2026-11-19T23:54:57Z |
@@ -2812,7 +2846,6 @@
 | Customer Success Platform Administrator | braze | Chicago | 0.066 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8324953) | 2026-11-19T23:37:02Z |
 | Customer Success Platform Administrator | braze | San Francisco | 0.066 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8324950) | 2026-11-19T23:37:02Z |
 | Data Center OFE - Sourcing Lead, Data Center Power & Cooling | anthropic | Remote-Friendly, United States | 0.066 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5409569008) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer II (ROA + LTV ML) | affirm | Remote Canada | 0.066 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8033261003) | 2026-11-19T23:37:02Z |
 | Expert Talent Pool Physical AI | Clera |  | 0.066 | no | [link](https://remoteOK.com/remote-jobs/remote-expert-talent-pool-physical-ai-clera-1137799) | 2026-11-19T21:31:05Z |
 | Software Engineer, ChatGPT Infrastructure | openai | London, UK | 0.066 | no | [link](https://jobs.ashbyhq.com/openai/621bb104-9daa-4c9e-949a-03d5730334e8) | 2026-11-19T23:54:57Z |
 | Senior Principal Product Manager - Vision AI | toast | Remote, US | 0.066 | no | [link](https://careers.toasttab.com/jobs?gh_jid=8402925) | 2026-11-19T23:37:02Z |
@@ -2823,7 +2856,6 @@
 | Logistics Analyst II - Americas | sumup | São Paulo, Brazil | 0.066 | no | [link](https://sumup.com/careers/positions/8888634002?gh_jid=8888634002) | 2026-11-19T23:37:02Z |
 | Expert Talent Pool Feedback and Alignment | Clera |  | 0.065 | no | [link](https://remoteOK.com/remote-jobs/remote-expert-talent-pool-feedback-and-alignment-clera-1137798) | 2026-11-19T21:31:05Z |
 | Member of Technical Staff (Analyst, Search Crawler) | perplexity | Belgrade, London, Dublin, Remote | 0.065 | no | [link](https://jobs.ashbyhq.com/Perplexity/c20486f5-1e9c-436c-ba67-dc69842c221c) | 2026-11-19T23:54:57Z |
-| Staff Machine Learning Engineer – (ADAS/Autonomous Driving) | lucidmotors | Newark, CA | 0.065 | no | [link](https://lucidmotors.com/careers/search/4620390007?gh_jid=4620390007) | 2026-11-19T23:54:57Z |
 | Engineering Manager, Data Infrastructure | lucidmotors | Newark, CA | 0.065 | no | [link](https://lucidmotors.com/careers/search/5244108007?gh_jid=5244108007) | 2026-11-19T23:54:57Z |
 | Senior Specialist Global QMS | Orca Bio |  | 0.065 | no | [link](https://remoteOK.com/remote-jobs/remote-senior-specialist-global-qms-orca-bio-1137072) | 2026-11-19T21:31:05Z |
 | Member of Technical Staff, AI Products (Early Career - Industry) | perplexity | San Francisco | 0.065 | no | [link](https://jobs.ashbyhq.com/Perplexity/daa9120e-94ff-46e0-b4bd-4d2d290cb409) | 2026-11-19T23:54:57Z |
@@ -2836,13 +2868,11 @@
 | Forward Deployed AI Engineer, Travel Intelligence | hopper | US - Remote, Miami - Remote, New York - Remote, New Jersey - Remote, Austin - Remote, Boston - Remote, Dallas - Remote | 0.064 | no | [link](https://jobs.ashbyhq.com/hopper/1814729f-bf68-45cb-8710-aa733714a91b) | 2026-11-19T23:37:02Z |
 | Forward Deployed AI Engineer, Travel Intelligence | hopper | Canada - Remote, Toronto - Remote, Ontario - Remote, Alberta - Remote | 0.064 | no | [link](https://jobs.ashbyhq.com/hopper/7b406c91-9059-437c-9af7-a720b98ee253) | 2026-11-19T23:37:02Z |
 | Hardware Systems Engineer, AI Hardware | cloudflare | Hybrid | 0.064 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8325834?gh_jid=8325834) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, Safety and Customer Care AI | lyft | Toronto, Canada | 0.064 | no | [link](https://app.careerpuck.com/job-board/lyft/job/8684440002?gh_jid=8684440002) | 2026-11-19T23:37:02Z |
 | Product Manager, AI Applications | scaleai | Kuwait City, Kuwait | 0.064 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4751108005) | 2026-11-19T23:37:02Z |
 | Data Program Manager, Science | openai | San Francisco, Remote | 0.064 | no | [link](https://jobs.ashbyhq.com/openai/2bdd1b8b-2883-40fb-b006-583959ad4c5f) | 2026-11-19T23:54:57Z |
 | Entry Level Scheduling &amp; Coordinating Reservations Online | Destination Careers | South Carolina | 0.064 | no | [link](https://remoteOK.com/remote-jobs/remote-entry-level-scheduling-amp-coordinating-reservations-online-destination-careers-1137680) | 2026-11-19T21:31:05Z |
 | Product Manager, Multi-Cloud Growth - Google | anthropic | San Francisco, CA | 0.064 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5153924008) | 2026-11-19T23:37:02Z |
 | Safeguards Enforcement Analyst, Integrity & Authenticity | anthropic | San Francisco, CA / New York City, NY / Washington, DC | 0.064 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5311149008) | 2026-11-19T23:37:02Z |
-| Sr/Staff Perception Machine Learning Engineer | lucidmotors | Michigan, United States | 0.064 | no | [link](https://lucidmotors.com/careers/search/5197938007?gh_jid=5197938007) | 2026-11-19T23:54:57Z |
 | Anti-Money Laundering Analyst II | sumup | São Paulo, Brazil | 0.064 | no | [link](https://sumup.com/careers/positions/8596506002?gh_jid=8596506002) | 2026-11-19T23:37:02Z |
 | Software Engineer, Development Infrastructure | asana | Reykjavík | 0.064 | no | [link](https://www.asana.com/jobs/apply/8140029?gh_jid=8140029) | 2026-11-19T23:37:02Z |
 | Safeguards Enforcement Analyst, Access Controls & Identity | anthropic | San Francisco, CA / New York City, NY / Washington, DC | 0.064 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5319626008) | 2026-11-19T23:37:02Z |
@@ -2860,7 +2890,6 @@
 | Senior Technical Recruiter, Infrastructure | robinhood | Chicago, IL; Menlo Park, CA | 0.063 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8259694?t=gh_src=&gh_jid=8259694) | 2026-11-19T23:37:02Z |
 | Senior Technical Recruiter, Infrastructure | robinhood | Toronto, Canada | 0.063 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8259696?t=gh_src=&gh_jid=8259696) | 2026-11-19T23:37:02Z |
 | Field Engineer, Data Center Design and Engineering | anthropic | Remote-Friendly, United States | 0.063 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5466517008) | 2026-11-19T23:37:02Z |
-| Member of Technical Staff (Site Reliability Engineer, Search Crawler) | perplexity | London, Belgrade, Dublin | 0.063 | no | [link](https://jobs.ashbyhq.com/Perplexity/190962f1-a955-4690-8025-6943dcbf063c) | 2026-11-19T23:54:57Z |
 | Safeguards Enforcement Analyst, Bio Harms | anthropic | San Francisco, CA / New York City, NY / Washington, DC | 0.063 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5319696008) | 2026-11-19T23:37:02Z |
 | Staff Product Manager - AI & Data Foundations | plaid | San Francisco HQ, New York City Office, Remote | 0.063 | no | [link](https://jobs.ashbyhq.com/plaid/f1e8a2ca-d4cc-4b00-9548-c73bce9cf069) | 2026-11-19T23:37:02Z |
 | Software Engineer, Agent Infrastructure | openai | San Francisco, New York City, London, UK | 0.063 | no | [link](https://jobs.ashbyhq.com/openai/c1316397-25bb-4add-9e9d-0e3ea8ba929a) | 2026-11-19T23:54:57Z |
@@ -2889,10 +2918,6 @@
 | Manager, Machine Learning Engineering, Checkout | affirm | Remote UK | 0.061 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8013440003) | 2026-11-19T23:37:02Z |
 | Manager, Machine Learning Engineering, Checkout | affirm | Remote Spain | 0.061 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8041432003) | 2026-11-19T23:37:02Z |
 | Manager, Machine Learning Engineering, Checkout | affirm | Remote Poland | 0.061 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/8041423003) | 2026-11-19T23:37:02Z |
-| Pre-training Data Infrastructure Engineer | anthropic | San Francisco, CA | 0.061 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/4973067008) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer | reddit | Remote - Ontario, Canada | 0.061 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/7131934) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer | reddit | Remote - United States | 0.061 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/7131932) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, 3D Simulation | zoox | Foster City, CA, Seattle, WA | 0.061 | no | [link](https://jobs.lever.co/zoox/2d73563c-8039-4d1b-844c-3953259ba6b1) | 2026-11-19T23:54:57Z |
 | Payroll Analyst | perplexity | San Francisco, Remote (United States) | 0.061 | no | [link](https://jobs.ashbyhq.com/Perplexity/5080dab5-7eb7-4cb2-9e2c-c61531fd3ad1) | 2026-11-19T23:54:57Z |
 | Safeguards Enforcement Analyst, Account Takeover & Credential Abuse | anthropic | San Francisco, CA / New York City, NY / Washington, DC | 0.061 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5319624008) | 2026-11-19T23:37:02Z |
 | AI Support Engineer - Singapore (Weekend Shift) | openai | Singapore, Remote | 0.061 | no | [link](https://jobs.ashbyhq.com/openai/bfd83255-8491-4c92-be4d-04dd0911cbe6) | 2026-11-19T23:54:57Z |
@@ -2903,13 +2928,9 @@
 | AI Support Engineer - San Francisco (Weekend Shift) | openai | San Francisco | 0.060 | no | [link](https://jobs.ashbyhq.com/openai/99f823a1-66ec-44bd-ba30-d3645aa49d74) | 2026-11-19T23:54:57Z |
 | Engineering Manager, Amplify Engineering & AI Agents | klaviyo | Boston, MA | 0.060 | no | [link](https://www.klaviyo.com/careers/jobs/8004625003?gh_jid=8004625003) | 2026-11-19T23:37:02Z |
 | Data Science Manager - Fraud | plaid | New York City Office, Seattle Office, San Francisco HQ, Remote | 0.060 | no | [link](https://jobs.ashbyhq.com/plaid/55eacfa6-71e0-42ac-8788-04dc1e5fd694) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, Memory | epicgames | London,England,United Kingdom | 0.060 | no | [link](https://epicgames.com/careers/jobs/6141143004?gh_jid=6141143004) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, Memory | epicgames | Cary,North Carolina,United States | 0.060 | no | [link](https://epicgames.com/careers/jobs/6134271004?gh_jid=6134271004) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, Memory | epicgames | Porto Alegre,Rio Grande do Sul,Brazil | 0.060 | no | [link](https://epicgames.com/careers/jobs/6142418004?gh_jid=6142418004) | 2026-11-19T23:37:02Z |
 | Software Developer, Data Engineering | robinhood | Toronto, Canada | 0.060 | no | [link](https://boards.greenhouse.io/robinhood/jobs/5616144?t=gh_src=&gh_jid=5616144) | 2026-11-19T23:37:02Z |
 | AI Engineer – Forward Deployed Engineering (AI FDE), U.S. Public Sector (Federal Focus) | databricks | Maryland; Virginia; Washington, D.C. | 0.060 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8760167002) | 2026-11-19T23:37:02Z |
 | Software Engineer, Kernel Performance & AI Tooling | openai | San Francisco, Remote | 0.060 | no | [link](https://jobs.ashbyhq.com/openai/e9627fa6-ac76-4899-9a93-9251419e61a0) | 2026-11-19T23:54:57Z |
-| Staff SRE, Site Experience | reddit | Remote - United States | 0.060 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8018555) | 2026-11-19T23:37:02Z |
 | Software Engineer II, Support AI | toast | Remote, US | 0.060 | no | [link](https://careers.toasttab.com/jobs?gh_jid=8386144) | 2026-11-19T23:37:02Z |
 | Analyst II, Credit | affirm | Remote UK | 0.060 | no | [link](https://job-boards.greenhouse.io/affirm/jobs/7832318003) | 2026-11-19T23:37:02Z |
 | Staff Threat Analyst, Ads Fraud | reddit | Remote - United States | 0.060 | no | [link](https://job-boards.greenhouse.io/reddit/jobs/8189395) | 2026-11-19T23:37:02Z |
@@ -2920,18 +2941,15 @@
 | Principal Software Engineer - Big Data & Java | pointclickcare | Remote, USA | 0.059 | no | [link](https://jobs.lever.co/pointclickcare/27ea212e-092c-4567-bb56-fc17a71fcc4c) | 2026-11-19T23:37:02Z |
 | Principal Software Engineer - Big Data & Java | pointclickcare | Mississauga | 0.059 | no | [link](https://jobs.lever.co/pointclickcare/faff149d-3b2a-43e7-bcab-ee4a2f67dda0) | 2026-11-19T23:37:02Z |
 | Sr. AI Engineer | vanta | Remote U.S. | 0.059 | no | [link](https://jobs.ashbyhq.com/vanta/91c73485-5d0c-4272-9643-401ebcfff9d1) | 2026-11-19T23:54:57Z |
-| Intermediate Site Reliability Engineer (SRE) | pointclickcare | Salt Lake City, UT | 0.059 | no | [link](https://jobs.lever.co/pointclickcare/37553fe8-a0c4-41db-b0d4-4ad0ca7941af) | 2026-11-19T23:37:02Z |
 | AI Agent Support Specialist | vanta | Remote U.S. | 0.059 | no | [link](https://jobs.ashbyhq.com/vanta/f987d41a-d0e1-4260-9129-f64aee6122ae) | 2026-11-19T23:54:57Z |
 | Staff Product Manager, AI | robinhood | Menlo Park, CA | 0.059 | no | [link](https://boards.greenhouse.io/robinhood/jobs/8241579?t=gh_src=&gh_jid=8241579) | 2026-11-19T23:37:02Z |
 | Sr. Solutions Architect - AI Natives Business | databricks | San Francisco, California | 0.059 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8893720002) | 2026-11-19T23:37:02Z |
 | Director of Product Management and IT Operations | Self Bill Pro |  | 0.059 | no | [link](https://remoteOK.com/remote-jobs/remote-director-of-product-management-and-it-operations-self-bill-pro-1137536) | 2026-11-19T21:31:05Z |
 | Legal Counsel, AI & Legal Engineering | zapier | NAMER, Remote | 0.059 | no | [link](https://jobs.ashbyhq.com/zapier/04838dc8-0efa-4fe5-b705-c99f6b3f17c6) | 2026-11-19T23:54:57Z |
-| Machine Learning Infrastructure Engineer, Safeguards Research | anthropic | San Francisco, CA / New York City, NY | 0.059 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5364804008) | 2026-11-19T23:37:02Z |
 | Software Engineer, AI accelerator Runtime | openai | San Francisco, Remote | 0.059 | no | [link](https://jobs.ashbyhq.com/openai/9248eab6-74e0-4940-98eb-ca09b17da532) | 2026-11-19T23:54:57Z |
 | Staff Product Analyst (Workday Payroll, Absence & Time Tracking) | okta | Bellevue, Washington; Chicago, Illinois; San Francisco, California; Washington, DC | 0.059 | no | [link](https://www.okta.com/company/careers/opportunity/8159611?gh_jid=8159611) | 2026-11-19T23:37:02Z |
 | (US) Principal ML System Engineer | pointclickcare | Remote, USA | 0.059 | no | [link](https://jobs.lever.co/pointclickcare/423445e1-953c-45e2-a9ac-ce46598c89d7) | 2026-11-19T23:37:02Z |
 | Group Product Manager, AI Foundations | coinbase | Remote - USA | 0.059 | no | [link](https://www.coinbase.com/careers/positions/8351165?gh_jid=8351165) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer | coinbase | Remote - India | 0.059 | no | [link](https://www.coinbase.com/careers/positions/7985187?gh_jid=7985187) | 2026-11-19T23:37:02Z |
 | Engineering Manager, Inference Infrastructure | anthropic | San Francisco, CA / New York City, NY / Seattle, WA | 0.059 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5411560008) | 2026-11-19T23:37:02Z |
 | Sr. Principal AI Systems Architect | fivetran | Oakland, California, United States, AMER | 0.059 | no | [link](https://www.fivetran.com/careers/job?gh_jid=7651403003) | 2026-11-19T23:37:02Z |
 | Data Center Controls Engineer | anthropic | Remote-Friendly (Travel Required) / San Francisco, CA | 0.058 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5107890008) | 2026-11-19T23:37:02Z |
@@ -2939,15 +2957,10 @@
 | Product Manager of AI Applications, Global Public Sector | scaleai | Riyadh, Saudi Arabia | 0.058 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4650514005) | 2026-11-19T23:37:02Z |
 | US Remote Patient Care Advocate (Customer Service) | VXI Global Solutions | USA | 0.058 | no | [link](https://remotive.com/remote-jobs/customer-service/us-remote-patient-care-advocate-customer-service-2091168) | 2026-11-19T21:31:05Z |
 | Global Vendor Manager, Data Center Infrastructure | cloudflare | Hybrid | 0.058 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8328089?gh_jid=8328089) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer Intern | coinbase | Hybrid - San Francisco, CA | 0.058 | no | [link](https://www.coinbase.com/careers/positions/8175441?gh_jid=8175441) | 2026-11-19T23:37:02Z |
 | Staff Product Analyst, Finance Technologies (Order to Cash) | okta | San Francisco, California | 0.058 | no | [link](https://www.okta.com/company/careers/opportunity/7917957?gh_jid=7917957) | 2026-11-19T23:37:02Z |
 | Deal Desk Analyst | sumologic | Raleigh, North Carolina, United States | 0.058 | no | [link](https://job-boards.greenhouse.io/sumologic/jobs/8284409) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer 2 | twilio | Remote - US | 0.058 | no | [link](https://job-boards.greenhouse.io/twilio/jobs/8240487) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, Assistance Engineering | airbnb | China | 0.058 | no | [link](https://careers.airbnb.com/positions/7716341?gh_jid=7716341) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer, Assistance Engineering | airbnb | Remote-USA | 0.058 | no | [link](https://careers.airbnb.com/positions/7826337?gh_jid=7826337) | 2026-11-19T23:37:02Z |
 | Regional Director, AI Deployment, Federal | cursor | Remote, Washington, D.C. | 0.058 | no | [link](https://jobs.ashbyhq.com/cursor/f1857f79-e079-40d8-9a93-05edb771809b) | 2026-11-19T23:54:57Z |
 | Data Center Power Generation and Microgrids Engineer | anthropic | Remote-Friendly, United States | 0.058 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5468374008) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer (L3) | twilio | Remote - India | 0.058 | no | [link](https://job-boards.greenhouse.io/twilio/jobs/8258587) | 2026-11-19T23:37:02Z |
 | Data Center Mechanical Engineer | anthropic | Remote-Friendly, United States | 0.058 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5375376008) | 2026-11-19T23:37:02Z |
 | Analyst Relations Director | snyk | United States - Boston Office, Remote | 0.058 | no | [link](https://jobs.ashbyhq.com/Snyk/ae7e8deb-5a43-4e48-8450-913c187b69e9) | 2026-11-19T23:54:57Z |
 | Model Operations Lead, AI Gateway | cloudflare | In-Office | 0.058 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8319231?gh_jid=8319231) | 2026-11-19T23:37:02Z |
@@ -2970,15 +2983,12 @@
 | Research Program Manager, Data Acquisition | openai | San Francisco | 0.057 | no | [link](https://jobs.ashbyhq.com/openai/71004494-9a55-4ed5-b458-2ff475f0d881) | 2026-11-19T23:54:57Z |
 | ML/Research Engineer, Safeguards | anthropic | San Francisco, CA / New York City, NY | 0.057 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/4949336008) | 2026-11-19T23:37:02Z |
 | Director of IT and Workplace | Hippocratic AI | Menlo Park | 0.057 | no | [link](https://remoteOK.com/remote-jobs/remote-director-of-it-and-workplace-hippocratic-ai-1137530) | 2026-11-19T21:31:05Z |
-| Machine Learning Engineer, CX Intelligence | coinbase | Remote - Brazil | 0.057 | no | [link](https://www.coinbase.com/careers/positions/8031260?gh_jid=8031260) | 2026-11-19T23:37:02Z |
 | Principal Product Manager, Enterprise AI | okta | Bellevue, Washington; Chicago, Illinois; San Francisco, California | 0.057 | no | [link](https://www.okta.com/company/careers/opportunity/8332523?gh_jid=8332523) | 2026-11-19T23:37:02Z |
-| Principal, Machine Learning Engineer (L5) | twilio | Remote - India | 0.057 | no | [link](https://job-boards.greenhouse.io/twilio/jobs/8258597) | 2026-11-19T23:37:02Z |
 | Sr. Specialist Solutions Architect (AI/ML) | databricks | Singapore | 0.057 | no | [link](https://databricks.com/company/careers/open-positions/job?gh_jid=8762362002) | 2026-11-19T23:37:02Z |
 | Strategic Finance Analyst - 15 Month Contract | 1password | Remote (United States / Canada) | 0.057 | no | [link](https://jobs.ashbyhq.com/1password/6d3acd23-5a6d-4e38-bf5a-bee4d9a3460b) | 2026-11-19T23:54:57Z |
 | GTM Data Specialist, Consumption & Revenue Operations | cloudflare | Hybrid | 0.057 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/8301509?gh_jid=8301509) | 2026-11-19T23:37:02Z |
 | Enterprise AI Development Strategist | scaleai | New York, NY; San Francisco, CA | 0.057 | no | [link](https://job-boards.greenhouse.io/scaleai/jobs/4741087005) | 2026-11-19T23:37:02Z |
 | Group Product Manager, Core Infrastructure & Reliability | coinbase | Remote - USA | 0.056 | no | [link](https://www.coinbase.com/careers/positions/7997785?gh_jid=7997785) | 2026-11-19T23:37:02Z |
-| Principal Machine Learning Engineer, Vision AI | toast | Remote, US | 0.056 | no | [link](https://careers.toasttab.com/jobs?gh_jid=8368740) | 2026-11-19T23:37:02Z |
 | Data Science Intern | epicgames | Cary,North Carolina,United States | 0.056 | no | [link](https://epicgames.com/careers/jobs/6202675004?gh_jid=6202675004) | 2026-11-19T23:37:02Z |
 | Software Engineer - Crypto Data Foundations | coinbase | Remote - USA | 0.056 | no | [link](https://www.coinbase.com/careers/positions/8304038?gh_jid=8304038) | 2026-11-19T23:37:02Z |
 | Scaled Account Manager EMEA | DoiT | Estonia | 0.056 | no | [link](https://remoteOK.com/remote-jobs/remote-scaled-account-manager-emea-doit-1137795) | 2026-11-19T21:31:05Z |
@@ -3006,7 +3016,6 @@
 | Telecom and Mobility Management Analyst | deliveroo | London, United Kingdom | 0.055 | no | [link](https://job-boards.greenhouse.io/deliveroo/jobs/8337684) | 2026-11-19T23:37:02Z |
 | Software Engineer, HSM Infrastructure Security, Consumer Devices | openai | San Francisco | 0.055 | no | [link](https://jobs.ashbyhq.com/openai/a14780e7-0316-478c-8e6a-d7629c31c49d) | 2026-11-19T23:54:57Z |
 | Software Engineer, HSM Infrastructure Security, Consumer Devices | openai | Seattle | 0.055 | no | [link](https://jobs.ashbyhq.com/openai/96475a30-5aa1-4c56-802d-fe8a54c9cbd9) | 2026-11-19T23:54:57Z |
-| Machine Learning Engineer | lucidmotors | Southfield, MI | 0.055 | no | [link](https://lucidmotors.com/careers/search/5254390007?gh_jid=5254390007) | 2026-11-19T23:54:57Z |
 | Research Engineer, Machine Learning (Reinforcement Learning) | anthropic | London, UK | 0.055 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5115935008) | 2026-11-19T23:37:02Z |
 | Research Engineer, Machine Learning (Reinforcement Learning) | anthropic | San Francisco, CA / New York City, NY | 0.055 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/4613568008) | 2026-11-19T23:37:02Z |
 | Sales Operations Systems and Data Lead | braze | Chicago | 0.055 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8249906) | 2026-11-19T23:37:02Z |
@@ -3037,10 +3046,7 @@
 | Research Program Manager, Human Data Campaigns | openai | San Francisco, Remote | 0.054 | no | [link](https://jobs.ashbyhq.com/openai/5edd5a13-2fc9-427c-ad88-2b67c97a0afe) | 2026-11-19T23:54:57Z |
 | Software Engineer, Product Infrastructure - Agent Runtime | openai | San Francisco, Remote | 0.054 | no | [link](https://jobs.ashbyhq.com/openai/5ed99d32-eed1-4679-b7b4-037de073e57c) | 2026-11-19T23:54:57Z |
 | Data Science Intern [Summer 2027] | zoox | Foster City, CA, Boston, MA | 0.053 | no | [link](https://jobs.lever.co/zoox/85c6aec7-8da2-445d-9c4d-812365dbce97) | 2026-11-19T23:54:57Z |
-| Machine Learning Engineer - Income Insights | plaid | New York City Office, Remote | 0.053 | no | [link](https://jobs.ashbyhq.com/plaid/8d8378cf-edf2-4c86-afcc-49df91ece2e4) | 2026-11-19T23:37:02Z |
 | Data Center Infrastructure Management (DCIM) Administrator - Infrastructure Operations | cloudflare | Hybrid | 0.053 | no | [link](https://boards.greenhouse.io/cloudflare/jobs/7736431?gh_jid=7736431) | 2026-11-19T23:37:02Z |
-| Infrastructure Engineer, Privy | stripe | New York | 0.053 | no | [link](https://stripe.com/jobs/search?gh_jid=7462961) | 2026-11-19T23:37:02Z |
-| Perception Machine Learning Engineer – ADAS | lucidmotors | Southfield, MI | 0.053 | no | [link](https://lucidmotors.com/careers/search/5199878007?gh_jid=5199878007) | 2026-11-19T23:54:57Z |
 | Strategic Deals Lead, Compute & Infrastructure | anthropic | San Francisco, CA | 0.053 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5418014008) | 2026-11-19T23:37:02Z |
 | Technical Sourcer, AI | perplexity | San Francisco, Palo Alto | 0.053 | no | [link](https://jobs.ashbyhq.com/Perplexity/3d7ef710-b1f6-4a80-af57-946f9bccd35b) | 2026-11-19T23:54:57Z |
 | AI Infrastructure Operations, Demand Planning | anthropic | San Francisco, CA / New York City, NY | 0.053 | no | [link](https://job-boards.greenhouse.io/anthropic/jobs/5382750008) | 2026-11-19T23:37:02Z |
@@ -3055,7 +3061,6 @@
 | Principal Data Analyst | hubspotjobs | Remote - USA | 0.052 | no | [link](https://www.hubspot.com/careers/jobs/8164584?gh_jid=8164584) | 2026-11-19T23:37:02Z |
 | Contract Student Worker – AI Validation and Benchmarking Engineer (40hrs / week Full-Time) | zoox | Foster City, CA | 0.052 | no | [link](https://jobs.lever.co/zoox/cc43bf88-ed84-408f-a557-3d1c7263ddff) | 2026-11-19T23:54:57Z |
 | Datacenter Networking Technician, AI Compute Deployment - Stargate | openai | San Francisco | 0.052 | no | [link](https://jobs.ashbyhq.com/openai/3ca637f8-c0d6-4253-8568-1f31b02adf76) | 2026-11-19T23:54:57Z |
-| Manager, Machine Learning Engineer - Credit | plaid | New York City Office, Remote | 0.052 | no | [link](https://jobs.ashbyhq.com/plaid/77571da7-404a-49dc-9f98-b9b24df1dba2) | 2026-11-19T23:37:02Z |
 | Security Analyst - Governance, Risk, and Compliance | launchdarkly | Remote - US | 0.052 | no | [link](https://job-boards.greenhouse.io/launchdarkly/jobs/8039312003) | 2026-11-19T23:37:02Z |
 | Accounts Receivable Escalations Analyst | pointclickcare | Mississauga, Ontario | 0.052 | no | [link](https://jobs.lever.co/pointclickcare/dd8a5cee-054e-46fe-be82-f246d4dda50e) | 2026-11-19T23:37:02Z |
 | Home Lending Lead Compliance Analyst | wealthfront | Palo Alto, CA (Open to US-based Remote), Austin, TX, San Antonio, TX | 0.052 | no | [link](https://jobs.lever.co/wealthfront/02a09f4e-7de6-4251-a5ea-674398d0a708) | 2026-11-19T23:37:02Z |
@@ -3149,7 +3154,6 @@
 | Technical Producer II, Infrastructure - Central Technology | riotgames | Los Angeles, USA | 0.047 | no | [link](https://www.riotgames.com/en/work-with-us/job/8234677?gh_jid=8234677) | 2026-11-19T23:37:02Z |
 | Finance Contracts Analyst | pointclickcare | Mississauga, Ontario | 0.047 | no | [link](https://jobs.lever.co/pointclickcare/0672548f-e11e-4771-b8ca-ffc8b1ec422b) | 2026-11-19T23:37:02Z |
 | Feltsense AI Engineer | Silver.dev |  | 0.047 | no | [link](https://remoteOK.com/remote-jobs/remote-feltsense-ai-engineer-silver-dev-1137691) | 2026-11-19T21:31:05Z |
-| Site Reliability Engineer | geotab | Singapore City, Singapore - Singapore | 0.047 | no | [link](https://job-boards.greenhouse.io/geotab/jobs/5445656008) | 2026-11-19T23:37:02Z |
 | AI Support Engineer - Dublin | openai | Dublin, Ireland | 0.047 | no | [link](https://jobs.ashbyhq.com/openai/d5b65a7c-3294-453f-a674-4cb1c0e2aaa7) | 2026-11-19T23:54:57Z |
 | Analyst, Transportation & Supply Chain Strategy | flexport | Atlanta, Georgia, United States; Bellevue, Washington, United States; Chicago, Illinois, United States; Dallas, Texas, United States; Los Angeles, California, United States; New York City, New York, United States | 0.047 | no | [link](https://job-boards.greenhouse.io/flexport/jobs/8011615) | 2026-11-19T23:37:02Z |
 | Product Data Analyst | flexport | Shanghai, China | 0.047 | no | [link](https://job-boards.greenhouse.io/flexport/jobs/8040985) | 2026-11-19T23:37:02Z |
@@ -3208,7 +3212,6 @@
 | Financial Analyst, P&T | mongodb | New York City | 0.044 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8328622) | 2026-11-19T23:37:02Z |
 | AI Research Engineer, New PhD Graduate | duolingo | New York, NY; Pittsburgh, PA | 0.044 | no | [link](https://careers.duolingo.com/jobs/8881612002?gh_jid=8881612002) | 2026-11-19T23:37:02Z |
 | People Tech Business Systems Analyst | gusto | Atlanta, GA - Hybrid; Denver, CO - Hybrid; New York, NY - Hybrid; San Francisco, CA - Hybrid; Scottsdale, AZ - Hybrid | 0.043 | no | [link](https://job-boards.greenhouse.io/gusto/jobs/8257482) | 2026-11-19T23:37:02Z |
-| Principal Machine Learning Engineer- LLM Fine-tuning and Optimization | airbnb | United States | 0.043 | no | [link](https://careers.airbnb.com/positions/7955579?gh_jid=7955579) | 2026-11-19T23:37:02Z |
 | Manager EDI | Gravie |  | 0.043 | no | [link](https://remoteOK.com/remote-jobs/remote-manager-edi-gravie-1137804) | 2026-11-19T21:31:05Z |
 | Enhanced Due Diligence Investigations Analyst | gusto | Denver, CO - Hybrid | 0.043 | no | [link](https://job-boards.greenhouse.io/gusto/jobs/8275011) | 2026-11-19T23:37:02Z |
 | Analyst, Enforcement and Reporting (Fraud Reporting) - 6 month contract | tide | India, Hyderabad | 0.043 | no | [link](https://job-boards.greenhouse.io/tide/jobs/8031056003) | 2026-11-19T23:54:57Z |
@@ -3247,7 +3250,6 @@
 | CX Operations Analyst | braze | São Paulo | 0.041 | no | [link](https://job-boards.greenhouse.io/braze/jobs/8264994) | 2026-11-19T23:37:02Z |
 | Customer Success Operations Analyst | klaviyo | Boston, MA; Denver, CO; San Francisco, CA | 0.041 | no | [link](https://www.klaviyo.com/careers/jobs/8182739003?gh_jid=8182739003) | 2026-11-19T23:37:02Z |
 | Payroll Analyst II (Colombia and LATAM Payroll) | twilio | Remote - Mexico | 0.041 | no | [link](https://job-boards.greenhouse.io/twilio/jobs/8324443) | 2026-11-19T23:37:02Z |
-| Machine Learning Engineer - Subscriptions | spotify | London | 0.040 | no | [link](https://jobs.lever.co/spotify/19c12e29-b6d4-4d97-9053-48238fb7c381) | 2026-11-19T23:37:02Z |
 | Travel Support Specialist | Aisles &amp; Abroad | Seattle, Washington | 0.040 | no | [link](https://remoteOK.com/remote-jobs/remote-travel-support-specialist-aisles-amp-abroad-1137559) | 2026-11-19T21:31:05Z |
 | Cyber AI Partner Director, Americas | openai | US - Remote | 0.040 | no | [link](https://jobs.ashbyhq.com/openai/1ae6ff7f-5c0a-42cd-8231-00e69b39b02a) | 2026-11-19T23:54:57Z |
 | Technical Account Manager | Yuno | Brazil | 0.040 | no | [link](https://remoteOK.com/remote-jobs/remote-technical-account-manager-yuno-1137540) | 2026-11-19T21:31:05Z |
@@ -3271,7 +3273,6 @@
 | RE/RS, Data Understanding - Foundations | openai | Zurich, Switzerland, Remote | 0.037 | no | [link](https://jobs.ashbyhq.com/openai/5d1a6c05-e18b-43a2-8808-6498929ac253) | 2026-11-19T23:54:57Z |
 | Director, Internal AI Operations | launchdarkly | Remote - US | 0.037 | no | [link](https://job-boards.greenhouse.io/launchdarkly/jobs/8109676003) | 2026-11-19T23:37:02Z |
 | Accounting Operations | Plaid |  | 0.037 | no | [link](https://remoteOK.com/remote-jobs/remote-accounting-operations-plaid-1137554) | 2026-11-19T21:31:05Z |
-| Machine Learning Engineer - Ads | nextdoor | US Remote | 0.037 | no | [link](https://about.nextdoor.com/careers-list/?gh_jid=6005888) | 2026-11-19T23:37:02Z |
 | AI Deployment Manager | openai | San Francisco, New York City, Remote | 0.036 | no | [link](https://jobs.ashbyhq.com/openai/5d66a54f-ad89-4155-ac37-9dcd7d52db34) | 2026-11-19T23:54:57Z |
 | AI Deployment Manager - Builder | openai | New York City, San Francisco, Remote | 0.036 | no | [link](https://jobs.ashbyhq.com/openai/1790fe9e-2ac3-45df-894e-f731d243395f) | 2026-11-19T23:54:57Z |
 | AI Deployment Manager - Builder | openai | Singapore, Remote | 0.036 | no | [link](https://jobs.ashbyhq.com/openai/c2016d32-1994-471d-8900-1b49259c647c) | 2026-11-19T23:54:57Z |
@@ -3300,7 +3301,6 @@
 | Financial Crimes Analyst, Bulgaria | crypto | Sofia | 0.032 | no | [link](https://jobs.lever.co/crypto/19a72e17-85fc-44fa-b775-94372262af94) | 2026-11-19T23:54:57Z |
 | Partner Director, NTT Data Global | openai | New York City, San Francisco, Remote | 0.030 | no | [link](https://jobs.ashbyhq.com/openai/206bd77f-fdc1-438e-bb04-f226fa060637) | 2026-11-19T23:54:57Z |
 | Director, Strategic AI Partnerships | dropbox | Remote - US: San Francisco, CA | 0.029 | no | [link](https://jobs.dropbox.com/listing/8048844?gh_jid=8048844) | 2026-11-19T23:37:02Z |
-| Gestionnaire, Ingénierie de la fiabilité des sites (SRE) | lightspeedhq | Montreal, Remote | 0.029 | no | [link](https://jobs.ashbyhq.com/lightspeedhq/45e63872-1b53-46d4-9d3b-99ac19ca24f2) | 2026-11-19T23:37:02Z |
 | Enterprise Account Executive, AI Natives | mongodb | London | 0.027 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8147938) | 2026-11-19T23:37:02Z |
 | Enterprise Account Executive, AI Natives | mongodb | Berlin; Frankfurt; Munich | 0.027 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8147945) | 2026-11-19T23:37:02Z |
 | Enterprise Account Executive, AI Natives | mongodb | Stockholm | 0.027 | no | [link](https://www.mongodb.com/careers/job/?gh_jid=8148004) | 2026-11-19T23:37:02Z |
