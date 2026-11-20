@@ -1,0 +1,580 @@
+{
+ "schema": 3,
+ "generated_utc": "2026-11-20T04:23:58Z",
+ "commit": {
+  "sha": "3040d533ceab6e36f773e321dad642b51fe51362",
+  "short": "3040d53",
+  "subject": "eval: relabel462.py (EXP-020) and esci_framing.py (EXP-021 H-27)",
+  "ref": "refs/heads/main",
+  "repository": "FreecodersInc/a2179_monitor",
+  "run_id": "44673950148",
+  "run_attempt": "1",
+  "workflow": "experiments",
+  "actor": "leonid133",
+  "run_url": "https://github.com/FreecodersInc/a2179_monitor/actions/runs/44673950148"
+ },
+ "runner": {
+  "name": "a2179-gpu",
+  "os": "Linux",
+  "arch": "X64",
+  "python": "3.14.4",
+  "implementation": "CPython",
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "machine": "x86_64",
+  "cpu_count": 8,
+  "torch": "2.14.1+cu126",
+  "cuda_available": false,
+  "cuda_version": "12.6",
+  "device_name": null,
+  "device_count": 0,
+  "sentence_transformers": "5.7.0",
+  "transformers": "5.23.0"
+ },
+ "dense": {
+  "enabled": true,
+  "reason": "cpu (no CUDA device visible)",
+  "mode": "auto",
+  "hf_offline": true
+ },
+ "secrets": {
+  "GITHUB_TOKEN": "present",
+  "TG_BOT_TOKEN": "present",
+  "TG_CHAT_ID": "present"
+ },
+ "steps": [
+  {
+   "name": "setup_venv",
+   "cmd": [
+    "bash",
+    "ci/setup_venv.sh"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": null,
+   "duration_s": 1,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": null,
+   "stderr_tail": null
+  },
+  {
+   "name": "env_probe",
+   "cmd": [
+    "/home/vessyl-runner/a2179_monitor/.venv/bin/python",
+    "/home/vessyl-runner/a2179_monitor/actions-runner/~/a2179_monitor/a2179_monitor/a2179_monitor/ci/env_probe.py"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": false,
+   "duration_s": 13.32,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": null,
+   "stderr_tail": null
+  },
+  {
+   "name": "lint",
+   "cmd": [
+    "/home/vessyl-runner/a2179_monitor/.venv/bin/python",
+    "-m",
+    "compileall",
+    "-q",
+    "a2179",
+    "eval",
+    "ci",
+    "tests",
+    "monitor.py"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": false,
+   "duration_s": 0.65,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": null,
+   "stderr_tail": null
+  },
+  {
+   "name": "check_embedder",
+   "cmd": [
+    "/home/vessyl-runner/a2179_monitor/.venv/bin/python",
+    "monitor.py",
+    "--check-embedder"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": false,
+   "duration_s": 21.82,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": null,
+   "stderr_tail": null
+  },
+  {
+   "name": "eval[de_jobs]",
+   "cmd": [
+    "/home/vessyl-runner/a2179_monitor/.venv/bin/python",
+    "eval/run_eval.py",
+    "--target",
+    "de_jobs",
+    "--out-dir",
+    "ci_out/targets/de_jobs/eval",
+    "--config",
+    "ci_out/targets/de_jobs/eval/config.unused.json",
+    "--local-only"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": false,
+   "duration_s": 23.51,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": true,
+   "stderr_tail": null
+  },
+  {
+   "name": "sweep[de_jobs]",
+   "cmd": [
+    "/home/vessyl-runner/a2179_monitor/.venv/bin/python",
+    "eval/sweep.py",
+    "--target",
+    "de_jobs",
+    "--out",
+    "ci_out/targets/de_jobs/sweep/sweep.json",
+    "--dense-scores",
+    "ci_out/targets/de_jobs/sweep/dense_scores.jsonl",
+    "--compute-dense",
+    "--embedders",
+    "cached-small",
+    "--device",
+    "cpu"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": false,
+   "duration_s": 20.09,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": true,
+   "stderr_tail": null
+  },
+  {
+   "name": "review",
+   "cmd": [
+    "/home/vessyl-runner/a2179_monitor/.venv/bin/python",
+    "eval/review_run.py",
+    "--out-root",
+    "ci_out/reports",
+    "--date",
+    "2026-11-20",
+    "--cases",
+    "a2179_screen,de_jobs",
+    "--fetch",
+    "auto",
+    "--jobs-cache",
+    "/home/vessyl-runner/.cache/a2179-ci/jobs"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": false,
+   "duration_s": 9.56,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": true,
+   "stderr_tail": null
+  },
+  {
+   "name": "tg_integration",
+   "cmd": [
+    "/home/vessyl-runner/a2179_monitor/.venv/bin/python",
+    "-m",
+    "unittest",
+    "-v",
+    "integration.test_telegram"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": false,
+   "duration_s": 1.03,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": null,
+   "stderr_tail": null
+  }
+ ],
+ "metrics": {
+  "eval": null,
+  "sweep": null,
+  "ranking": null,
+  "review": {
+   "a2179_screen": {
+    "n": 331,
+    "n_matches": 23,
+    "date": "2026-11-20",
+    "notes": [
+     "listings=eval/candidates_2026-11-19.jsonl n=331"
+    ]
+   },
+   "de_jobs": {
+    "n": 3298,
+    "n_matches": 604,
+    "date": "2026-11-20",
+    "notes": [
+     "Remotive: 15 jobs (cache)",
+     "Remote OK: 97 jobs (cache)",
+     "Greenhouse: 2220 jobs (cache) (87 boards, 12817 openings, 2220 kept by the title prefilter)",
+     "Lever: 256 jobs (cache) (17 boards, 915 openings, 256 kept by the title prefilter)",
+     "Ashby: 749 jobs (cache) (51 boards, 3481 openings, 749 kept by the title prefilter)"
+    ]
+   }
+  },
+  "targets": {
+   "de_jobs": {
+    "eval": {
+     "dataset": {
+      "n": 462,
+      "positives": 213,
+      "negatives": 249,
+      "by_source": {
+       "real:remotive": 15,
+       "real:remoteok": 97,
+       "real:lever": 24,
+       "real:greenhouse": 247,
+       "real:ashby": 79
+      }
+     },
+     "embedder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+     "modes": {
+      "regex": {
+       "precision": 0.9688,
+       "recall": 0.5822,
+       "f1": 0.7273,
+       "tp": 124,
+       "fp": 4,
+       "fn": 89,
+       "tn": 245
+      },
+      "tfidf": {
+       "note": "no threshold reaches recall 1.0"
+      },
+      "hybrid_tfidf": {
+       "note": "no threshold reaches recall 1.0"
+      },
+      "embed": {
+       "note": "no threshold reaches recall 1.0"
+      },
+      "hybrid_embed": {
+       "note": "no threshold reaches recall 1.0"
+      }
+     },
+     "errors": {
+      "regex": [
+       19,
+       29,
+       33,
+       42,
+       92,
+       121,
+       122,
+       123,
+       124,
+       127,
+       129,
+       130,
+       131,
+       132,
+       133,
+       134,
+       135,
+       138,
+       139,
+       140,
+       143,
+       144,
+       145,
+       148,
+       150,
+       152,
+       153,
+       156,
+       157,
+       162,
+       172,
+       178,
+       179,
+       180,
+       182,
+       186,
+       189,
+       191,
+       195,
+       198,
+       199,
+       201,
+       202,
+       204,
+       205,
+       206,
+       207,
+       208,
+       210,
+       217,
+       218,
+       219,
+       224,
+       228,
+       239,
+       240,
+       245,
+       246,
+       280,
+       287,
+       315,
+       325,
+       327,
+       332,
+       333,
+       343,
+       344,
+       349,
+       359,
+       360,
+       368,
+       370,
+       373,
+       379,
+       380,
+       384,
+       387,
+       394,
+       398,
+       403,
+       404,
+       410,
+       412,
+       415,
+       418,
+       420,
+       422,
+       432,
+       435,
+       438,
+       441,
+       449,
+       452
+      ]
+     }
+    },
+    "sweep": {
+     "n": 462,
+     "dense_source": "ci_out/targets/de_jobs/sweep/dense_scores.jsonl",
+     "tfidf_2d": {},
+     "best_hybrid": null,
+     "variants": [
+      {
+       "variant": "regex",
+       "hybrid": false,
+       "P": 0.969,
+       "R": 0.582,
+       "F1": 0.727,
+       "tp": 124,
+       "fp": 4,
+       "fn": 89,
+       "tn": 245,
+       "errors": [
+        19,
+        29,
+        33,
+        42,
+        92,
+        121,
+        122,
+        123,
+        124,
+        127,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        138,
+        139,
+        140
+       ]
+      },
+      {
+       "variant": "tfidf (d=pos-neg)",
+       "hybrid": false,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "bm25 (d=pos-neg)",
+       "hybrid": false,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense (d=pos-neg)",
+       "hybrid": false,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense:mpnet (d=pos-neg)",
+       "hybrid": false,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense:e5-small (d=pos-neg)",
+       "hybrid": false,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense:e5-base (d=pos-neg)",
+       "hybrid": false,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense:e5-base-qp (d=pos-neg)",
+       "hybrid": false,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense:e5-base-noprefix (d=pos-neg)",
+       "hybrid": false,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense:bge-base-en (d=pos-neg)",
+       "hybrid": false,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense:e5-base-en (d=pos-neg)",
+       "hybrid": false,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "feat only",
+       "hybrid": false,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "rrf(dense,bm25)",
+       "hybrid": false,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "rrf(tfidf,bm25)",
+       "hybrid": false,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "tfidf (d=pos-neg)",
+       "hybrid": true,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "bm25 (d=pos-neg)",
+       "hybrid": true,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense (d=pos-neg)",
+       "hybrid": true,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense:mpnet (d=pos-neg)",
+       "hybrid": true,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense:e5-small (d=pos-neg)",
+       "hybrid": true,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense:e5-base (d=pos-neg)",
+       "hybrid": true,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense:e5-base-qp (d=pos-neg)",
+       "hybrid": true,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense:e5-base-noprefix (d=pos-neg)",
+       "hybrid": true,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense:bge-base-en (d=pos-neg)",
+       "hybrid": true,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "dense:e5-base-en (d=pos-neg)",
+       "hybrid": true,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "feat only",
+       "hybrid": true,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "rrf(dense,bm25)",
+       "hybrid": true,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      },
+      {
+       "variant": "rrf(tfidf,bm25)",
+       "hybrid": true,
+       "note": "no threshold reaches recall 1.0",
+       "errors": []
+      }
+     ]
+    }
+   }
+  }
+ },
+ "ok": true,
+ "tests_ok": null,
+ "workflow_in_sync": false,
+ "total_duration_s": 90.98
+}
