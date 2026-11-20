@@ -1,0 +1,551 @@
+{
+ "meta": {
+  "target": "de_jobs",
+  "n": 462,
+  "positives": 207,
+  "real_rows": 462,
+  "real_positives": 207,
+  "folds": 5,
+  "repeats": 12,
+  "seed": 0,
+  "tie": "sweep",
+  "min_recall": 0.9,
+  "dense_dir": "results/2026-11-19_927c7e7/targets/de_jobs"
+ },
+ "summary": {
+  "regex": {
+   "all_P": {
+    "mean": 0.978,
+    "sd": 0.0,
+    "min": 0.978,
+    "max": 0.978
+   },
+   "all_R": {
+    "mean": 0.435,
+    "sd": 0.0,
+    "min": 0.435,
+    "max": 0.435
+   },
+   "all_F1": {
+    "mean": 0.602,
+    "sd": 0.0,
+    "min": 0.602,
+    "max": 0.602
+   },
+   "all_fp": {
+    "mean": 2,
+    "sd": 0.0,
+    "min": 2,
+    "max": 2
+   },
+   "all_fn": {
+    "mean": 117,
+    "sd": 0.0,
+    "min": 117,
+    "max": 117
+   },
+   "real_P": {
+    "mean": 0.978,
+    "sd": 0.0,
+    "min": 0.978,
+    "max": 0.978
+   },
+   "real_R": {
+    "mean": 0.435,
+    "sd": 0.0,
+    "min": 0.435,
+    "max": 0.435
+   },
+   "real_F1": {
+    "mean": 0.602,
+    "sd": 0.0,
+    "min": 0.602,
+    "max": 0.602
+   },
+   "real_fp": {
+    "mean": 2,
+    "sd": 0.0,
+    "min": 2,
+    "max": 2
+   },
+   "real_fn": {
+    "mean": 117,
+    "sd": 0.0,
+    "min": 117,
+    "max": 117
+   }
+  },
+  "feat only": {
+   "all_P": {
+    "mean": 0.448,
+    "sd": 0.0,
+    "min": 0.448,
+    "max": 0.448
+   },
+   "all_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "all_F1": {
+    "mean": 0.619,
+    "sd": 0.0,
+    "min": 0.619,
+    "max": 0.619
+   },
+   "all_fp": {
+    "mean": 255,
+    "sd": 0.0,
+    "min": 255,
+    "max": 255
+   },
+   "all_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "real_P": {
+    "mean": 0.448,
+    "sd": 0.0,
+    "min": 0.448,
+    "max": 0.448
+   },
+   "real_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "real_F1": {
+    "mean": 0.619,
+    "sd": 0.0,
+    "min": 0.619,
+    "max": 0.619
+   },
+   "real_fp": {
+    "mean": 255,
+    "sd": 0.0,
+    "min": 255,
+    "max": 255
+   },
+   "real_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   }
+  },
+  "tfidf": {
+   "all_P": {
+    "mean": 0.448,
+    "sd": 0.0,
+    "min": 0.448,
+    "max": 0.448
+   },
+   "all_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "all_F1": {
+    "mean": 0.619,
+    "sd": 0.0,
+    "min": 0.619,
+    "max": 0.619
+   },
+   "all_fp": {
+    "mean": 255,
+    "sd": 0.0,
+    "min": 255,
+    "max": 255
+   },
+   "all_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "real_P": {
+    "mean": 0.448,
+    "sd": 0.0,
+    "min": 0.448,
+    "max": 0.448
+   },
+   "real_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "real_F1": {
+    "mean": 0.619,
+    "sd": 0.0,
+    "min": 0.619,
+    "max": 0.619
+   },
+   "real_fp": {
+    "mean": 255,
+    "sd": 0.0,
+    "min": 255,
+    "max": 255
+   },
+   "real_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   }
+  },
+  "tfidf+feat": {
+   "all_P": {
+    "mean": 0.448,
+    "sd": 0.0,
+    "min": 0.448,
+    "max": 0.448
+   },
+   "all_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "all_F1": {
+    "mean": 0.619,
+    "sd": 0.0,
+    "min": 0.619,
+    "max": 0.619
+   },
+   "all_fp": {
+    "mean": 255,
+    "sd": 0.0,
+    "min": 255,
+    "max": 255
+   },
+   "all_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "real_P": {
+    "mean": 0.448,
+    "sd": 0.0,
+    "min": 0.448,
+    "max": 0.448
+   },
+   "real_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "real_F1": {
+    "mean": 0.619,
+    "sd": 0.0,
+    "min": 0.619,
+    "max": 0.619
+   },
+   "real_fp": {
+    "mean": 255,
+    "sd": 0.0,
+    "min": 255,
+    "max": 255
+   },
+   "real_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   }
+  },
+  "bm25": {
+   "all_P": {
+    "mean": 0.448,
+    "sd": 0.0,
+    "min": 0.448,
+    "max": 0.448
+   },
+   "all_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "all_F1": {
+    "mean": 0.619,
+    "sd": 0.0,
+    "min": 0.619,
+    "max": 0.619
+   },
+   "all_fp": {
+    "mean": 255,
+    "sd": 0.0,
+    "min": 255,
+    "max": 255
+   },
+   "all_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "real_P": {
+    "mean": 0.448,
+    "sd": 0.0,
+    "min": 0.448,
+    "max": 0.448
+   },
+   "real_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "real_F1": {
+    "mean": 0.619,
+    "sd": 0.0,
+    "min": 0.619,
+    "max": 0.619
+   },
+   "real_fp": {
+    "mean": 255,
+    "sd": 0.0,
+    "min": 255,
+    "max": 255
+   },
+   "real_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   }
+  },
+  "bm25+feat": {
+   "all_P": {
+    "mean": 0.448,
+    "sd": 0.0,
+    "min": 0.448,
+    "max": 0.448
+   },
+   "all_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "all_F1": {
+    "mean": 0.619,
+    "sd": 0.0,
+    "min": 0.619,
+    "max": 0.619
+   },
+   "all_fp": {
+    "mean": 255,
+    "sd": 0.0,
+    "min": 255,
+    "max": 255
+   },
+   "all_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "real_P": {
+    "mean": 0.448,
+    "sd": 0.0,
+    "min": 0.448,
+    "max": 0.448
+   },
+   "real_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "real_F1": {
+    "mean": 0.619,
+    "sd": 0.0,
+    "min": 0.619,
+    "max": 0.619
+   },
+   "real_fp": {
+    "mean": 255,
+    "sd": 0.0,
+    "min": 255,
+    "max": 255
+   },
+   "real_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   }
+  },
+  "dense:minilm": {
+   "all_P": {
+    "mean": 0.448,
+    "sd": 0.0,
+    "min": 0.448,
+    "max": 0.448
+   },
+   "all_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "all_F1": {
+    "mean": 0.619,
+    "sd": 0.0,
+    "min": 0.619,
+    "max": 0.619
+   },
+   "all_fp": {
+    "mean": 255,
+    "sd": 0.0,
+    "min": 255,
+    "max": 255
+   },
+   "all_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "real_P": {
+    "mean": 0.448,
+    "sd": 0.0,
+    "min": 0.448,
+    "max": 0.448
+   },
+   "real_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "real_F1": {
+    "mean": 0.619,
+    "sd": 0.0,
+    "min": 0.619,
+    "max": 0.619
+   },
+   "real_fp": {
+    "mean": 255,
+    "sd": 0.0,
+    "min": 255,
+    "max": 255
+   },
+   "real_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   }
+  },
+  "dense:minilm+feat": {
+   "all_P": {
+    "mean": 0.448,
+    "sd": 0.0,
+    "min": 0.448,
+    "max": 0.448
+   },
+   "all_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "all_F1": {
+    "mean": 0.619,
+    "sd": 0.0,
+    "min": 0.619,
+    "max": 0.619
+   },
+   "all_fp": {
+    "mean": 255,
+    "sd": 0.0,
+    "min": 255,
+    "max": 255
+   },
+   "all_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "real_P": {
+    "mean": 0.448,
+    "sd": 0.0,
+    "min": 0.448,
+    "max": 0.448
+   },
+   "real_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "real_F1": {
+    "mean": 0.619,
+    "sd": 0.0,
+    "min": 0.619,
+    "max": 0.619
+   },
+   "real_fp": {
+    "mean": 255,
+    "sd": 0.0,
+    "min": 255,
+    "max": 255
+   },
+   "real_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   }
+  }
+ },
+ "paired": {
+  "tfidf+feat vs bm25+feat": {
+   "real_fp": {
+    "mean": 0,
+    "sd": 0.0,
+    "a_better": 0,
+    "tie": 12,
+    "b_better": 0,
+    "n": 12
+   },
+   "all_F1": {
+    "mean": 0.0,
+    "sd": 0.0,
+    "a_better": 0,
+    "tie": 12,
+    "b_better": 0,
+    "n": 12
+   }
+  },
+  "tfidf+feat vs dense:minilm+feat": {
+   "real_fp": {
+    "mean": 0,
+    "sd": 0.0,
+    "a_better": 0,
+    "tie": 12,
+    "b_better": 0,
+    "n": 12
+   },
+   "all_F1": {
+    "mean": 0.0,
+    "sd": 0.0,
+    "a_better": 0,
+    "tie": 12,
+    "b_better": 0,
+    "n": 12
+   }
+  }
+ }
+}

@@ -68,7 +68,7 @@ def apply_mm(x, lo, hi):
     return min(1.0, max(0.0, (x - lo) / (hi - lo))) if hi > lo else 0.0
 
 
-def pick(y, regex, gate, base, feat, tr, use_feat, tie="sweep"):
+def pick(y, regex, gate, base, feat, tr, use_feat, tie="sweep", min_recall=1.0):
     """(lam, t, lo, hi) chosen on tr only. base: raw channel or None (feat only).
     tie on F1: "sweep" = smallest lam, then strictest t (what eval/sweep.py does), "strict" = strictest t
     across all lam (larger lam wins, the feature channel dominates). EXP-004 reports both."""
@@ -79,7 +79,7 @@ def pick(y, regex, gate, base, feat, tr, use_feat, tie="sweep"):
         for t in sorted({s[i] for i in tr}, reverse=True):
             p = [regex[i] or (gate[i] and s[i] >= t) for i in tr]
             m = S.prf([y[i] for i in tr], p)
-            if m["R"] < 1.0:
+            if m["R"] < min_recall:   # 1.0 = the monitor rule; lower values are an ablation (EXP-006)
                 continue
             key = (m["F1"], -lam, t) if tie == "sweep" else (m["F1"], t, -lam)
             if best is None or key > best[0]:
@@ -97,7 +97,7 @@ def predict(regex, gate, base, feat, te, lam, t, lo, hi):
     return out
 
 
-def run(rows, channels, feat, regex, gate, k=5, repeats=20, seed=0, tie="sweep"):
+def run(rows, channels, feat, regex, gate, k=5, repeats=20, seed=0, tie="sweep", min_recall=1.0):
     y = [bool(r["label"]) for r in rows]
     real = [r.get("source") != "synthetic" for r in rows]
     groups = [normalize(r["title"])[:60] for r in rows]
@@ -113,7 +113,7 @@ def run(rows, channels, feat, regex, gate, k=5, repeats=20, seed=0, tie="sweep")
                 if name == "regex":
                     pred.update({i: bool(regex[i]) for i in te})
                     continue
-                ch = pick(y, regex, gate, base, feat, tr, use_feat, tie)
+                ch = pick(y, regex, gate, base, feat, tr, use_feat, tie, min_recall)
                 if ch is None:
                     pred.update({i: True for i in te})
                     continue
@@ -154,6 +154,8 @@ def main(argv=None):
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--out", default=str(ROOT / "reports" / "exp004"))
     ap.add_argument("--tie", choices=["sweep", "strict"], default="sweep")
+    ap.add_argument("--min-recall", type=float, default=1.0,
+                    help="recall the threshold must keep on the training part (1.0 = monitor rule)")
     ap.add_argument("--name", default="nested_cv", help="output file stem")
     a = ap.parse_args(argv)
     tg = load_target(a.target)
@@ -177,7 +179,7 @@ def main(argv=None):
     for k_, v in raw.items():
         channels[k_] = (v, False)
         channels[f"{k_}+feat"] = (v, True)
-    res = run(rows, channels, feat, sw.regex, sw.gate, a.folds, a.repeats, a.seed, a.tie)
+    res = run(rows, channels, feat, sw.regex, sw.gate, a.folds, a.repeats, a.seed, a.tie, a.min_recall)
     summ = summarise(res)
     pairs = {}
     for b in [c for c in channels if c.endswith("+feat") and c != "tfidf+feat"]:
@@ -186,10 +188,10 @@ def main(argv=None):
     out.mkdir(parents=True, exist_ok=True)
     meta = {"target": tg.name, "n": len(rows), "positives": sum(sw.y), "real_rows": sum(r.get("source") != "synthetic" for r in rows),
             "real_positives": sum(1 for r in rows if r.get("source") != "synthetic" and r["label"]),
-            "folds": a.folds, "repeats": a.repeats, "seed": a.seed, "tie": a.tie, "dense_dir": str(dd)}
+            "folds": a.folds, "repeats": a.repeats, "seed": a.seed, "tie": a.tie, "min_recall": a.min_recall, "dense_dir": str(dd)}
     (out / f"{a.name}.json").write_text(json.dumps({"meta": meta, "summary": summ, "paired": pairs}, indent=1), encoding="utf-8")
     lines = [f"# Nested CV, {tg.label}: {meta['n']} rows, {meta['positives']} positives "
-             f"({meta['real_positives']} of them real), {a.folds} folds x {a.repeats} repeats, seed {a.seed}, F1 ties: {a.tie}", "",
+             f"({meta['real_positives']} of them real), {a.folds} folds x {a.repeats} repeats, seed {a.seed}, F1 ties: {a.tie}, train recall >= {a.min_recall}", "",
              "Hybrid mode (regex OR gate and score >= t). t, lam and min-max chosen on the training folds only. "
              "mean ± sd over repeats of the pooled test folds.", "",
              "| channel | P | R | F1 | FP | FN | real P | real R | real FP | real FN |",

@@ -36,6 +36,15 @@ class TestNoLeak(unittest.TestCase):
         b = N.pick(y2, regex, gate, base2, feat, tr, True)
         self.assertEqual(a, b)
 
+    def test_min_recall_below_one_allows_a_stricter_threshold(self):
+        y = [1, 1, 1, 0, 0, 1]
+        base = [0.9, 0.8, 0.7, 0.6, 0.5, 0.1]   # one positive scores below every negative
+        regex, gate, feat = [False] * 6, [True] * 6, [0.0] * 6
+        tr = list(range(6))
+        full = N.pick(y, regex, gate, base, feat, tr, False)
+        part = N.pick(y, regex, gate, base, feat, tr, False, min_recall=0.75)
+        self.assertLess(full[1], part[1])   # recall 1.0 has to go down to the outlier
+
     def test_apply_mm_clips(self):
         self.assertEqual(N.apply_mm(5, 0, 1), 1.0)
         self.assertEqual(N.apply_mm(-1, 0, 1), 0.0)
