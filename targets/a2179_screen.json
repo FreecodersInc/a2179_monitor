@@ -207,6 +207,7 @@
    "Cover hard shell za MacBook Air 13 2020"
   ]
  },
+ "probe": {"positive": "LCD ekran za MacBook Air A2179 2020", "negative": "Futrola za MacBook Air A2179"},
  "defaults": {
   "target_usd": 20.0,
   "accept_a1932": true,

@@ -51,6 +51,8 @@ def with_target(base: dict, target_spec) -> dict:
 ENV_MAP = {
     "A2179_TARGET": ("target", str),
     "A2179_TARGET_USD": ("target_usd", float),
+    "A2179_TARGET_PRICE": ("target_price.amount", float),
+    "A2179_TARGET_CURRENCY": ("target_price.currency", str),
     "A2179_USD_PER_EUR": ("rates.usd_per_eur", float),
     "A2179_RSD_PER_EUR": ("rates.rsd_per_eur", float),
     "A2179_EMBEDDER": ("embedder.enabled", str),
@@ -86,8 +88,12 @@ def load_config(path: str = None) -> dict:
     user = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
     spec = os.environ.get("A2179_TARGET") or user.get("target") or BASE["target"]
     cfg = with_target(BASE, spec)
+    if "target_usd" in user and "target_price" not in user:
+        cfg.pop("target_price", None)   # T-005: an explicit old-style target_usd still wins over the profile
     _merge(cfg, user)
     cfg["target"] = spec
+    if os.environ.get("A2179_TARGET_USD") and not os.environ.get("A2179_TARGET_PRICE"):
+        cfg.pop("target_price", None)
     for env, (key, typ) in ENV_MAP.items():
         if os.environ.get(env):
             _set(cfg, key, typ(os.environ[env]))

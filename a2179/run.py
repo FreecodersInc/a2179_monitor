@@ -14,7 +14,7 @@ from . import parallel
 from .paginate import Pager
 from .parsers import Listing, parse_woo_product
 from .tracked import TrackedStore, settings as tracked_settings
-from .prices import to_usd
+from .prices import target_price_usd, to_usd
 from .embedder import load_similarity
 from .similarity import TfidfSim
 from .state import State
@@ -222,7 +222,7 @@ def run_once(cfg, log, dry_run=False, seed=False, no_embed=False, fetcher=None, 
     metrics.inc("listings.seen", len(listings))
 
     state = State(ddir / "state.sqlite", read_only=dry_run)
-    rates, target_usd = cfg["rates"], float(cfg["target_usd"])
+    rates, target_usd = cfg["rates"], target_price_usd(cfg)
     drop_pct = float(cfg.get("price_drop_min_pct", 3))
     on = cfg.get("alert_on", {})
     messages, matched = [], []

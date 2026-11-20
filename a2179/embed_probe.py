@@ -13,7 +13,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from a2179.embedder import (DEFAULT_MODEL, PROBE_MARK, EmbedderUnavailable, EmbedSim,  # noqa: E402
-                            _emb_cfg, _err_info, check_inprocess)
+                            _emb_cfg, _err_info, check_inprocess, probe_phrases)
 
 
 def probe(cfg: dict) -> dict:
@@ -23,8 +23,9 @@ def probe(cfg: dict) -> dict:
         sim = EmbedSim(e.get("model") or DEFAULT_MODEL, bool(e.get("local_only", False)),
                        device=e.get("device"), backend=e.get("backend"),
                        proto_prefix=e.get("proto_prefix", ""), text_prefix=e.get("text_prefix", ""))
-        a = sim.score("LCD ekran za MacBook Air A2179 2020")
-        sim.score("Futrola za MacBook Air A2179")
+        hi, lo = probe_phrases(cfg)
+        a = sim.score(hi)
+        sim.score(lo)
         return {"ok": True, "device": sim.device, "dim": int(sim.P.shape[1]), "load_s": round(sim.load_s, 2),
                 "cuda_hidden": sim.cpu_guard.get("cuda_hidden"), "patched": sim.cpu_guard.get("patched"),
                 "total_s": round(time.monotonic() - t0, 2), "sanity_pos": round(float(a[0]), 3)}

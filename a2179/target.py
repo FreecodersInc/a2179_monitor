@@ -93,6 +93,10 @@ class Target:
     defaults: dict = field(default_factory=dict)
     source: str = ""
     eval: dict = field(default_factory=dict)   # optional: data, features {display, other}, kinds
+    probe: tuple = ()   # T-005: (should score high, should score low) for the embedder check
+
+    def probe_phrases(self) -> tuple:
+        return tuple(self.probe) if len(self.probe) == 2 else (self.positive[0], self.negative[0])
 
     def tier(self, name):
         return next((m for m in self.rules.models if m.name == name), None)
@@ -132,7 +136,9 @@ def from_dict(d: dict, source: str = "") -> Target:
     name = d.get("name") or Path(source).stem or "custom"
     return Target(name=name, label=d.get("label") or name, description=d.get("description", ""),
                   rules=compile_rules(d["rules"]), positive=pos, negative=neg,
-                  defaults=dict(d.get("defaults") or {}), source=source, eval=dict(d.get("eval") or {}))
+                  defaults=dict(d.get("defaults") or {}), source=source, eval=dict(d.get("eval") or {}),
+                  probe=tuple((d.get("probe") or {}).get(k) for k in ("positive", "negative"))
+                  if (d.get("probe") or {}).get("positive") and (d.get("probe") or {}).get("negative") else ())
 
 
 def resolve(spec) -> Path:

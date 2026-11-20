@@ -567,8 +567,9 @@ def check_inprocess(cfg: dict, out=sys.stdout):
           f"patched: {', '.join(g.get('patched') or []) or 'nothing to patch'}")
     try:
         t1 = time.monotonic()
-        a = sim.score("LCD ekran za MacBook Air A2179 2020")
-        b = sim.score("Futrola za MacBook Air A2179")
+        hi, lo = probe_phrases(cfg)
+        a = sim.score(hi)
+        b = sim.score(lo)
         dim = sim.P.shape[1]
         p(f"encode:     ok, dim={dim}, dtype={sim.P.dtype}, {1000 * (time.monotonic() - t1) / 2:.0f} ms/text")
         p(f"sanity:     screen pos/neg={a[0]:.2f}/{a[1]:.2f}  case pos/neg={b[0]:.2f}/{b[1]:.2f}  "
@@ -583,6 +584,19 @@ def check_inprocess(cfg: dict, out=sys.stdout):
       f"({'calibrated' if th.get('calibrated') else 'NOT calibrated: run python eval/run_eval.py --write-thresholds'})")
     p(f"mode:       embed (device {sim.device})")
     return 0, {"ok": True, "device": sim.device, "dim": int(dim), "load_s": round(sim.load_s, 2)}
+
+
+PROBE_FALLBACK = ("LCD ekran za MacBook Air A2179 2020", "Futrola za MacBook Air A2179")
+
+
+def probe_phrases(cfg: dict) -> tuple:
+    """T-005: the sanity pair of the embedder check comes from the target profile ("probe", else the first
+    positive and negative prototype). The A2179 profile names its old pair, so its check does not change."""
+    try:
+        from .target import target_of
+        return target_of(cfg).probe_phrases()
+    except Exception:  # noqa: BLE001  a broken profile must not break the check itself
+        return PROBE_FALLBACK
 
 
 def _err_info(err: EmbedderUnavailable) -> dict:

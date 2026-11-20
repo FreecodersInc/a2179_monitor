@@ -77,3 +77,16 @@ def to_usd(amount: float, currency: str, rates: dict) -> Optional[float]:
     if cur == "RSD":
         return amount / rsd_per_eur * usd_per_eur
     return None
+
+
+def target_price_usd(cfg: dict) -> float:
+    """T-005: the alert target in USD. `target_price` {"amount", "currency"} (any of USD, EUR, RSD) from the
+    profile or config.json wins; `target_usd` is the old name and still works. An unknown currency is an error."""
+    tp = cfg.get("target_price")
+    if isinstance(tp, dict) and tp.get("amount") is not None:
+        cur = (tp.get("currency") or "USD").upper()
+        usd = to_usd(float(tp["amount"]), cur, cfg.get("rates") or {})
+        if usd is None:
+            raise ValueError(f"target_price.currency {cur!r}: expected USD, EUR or RSD")
+        return usd
+    return float(cfg["target_usd"])
