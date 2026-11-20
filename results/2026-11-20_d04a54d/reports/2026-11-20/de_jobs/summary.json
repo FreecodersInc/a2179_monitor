@@ -1,0 +1,19 @@
+{
+  "case": "de_jobs",
+  "date": "2026-11-20",
+  "n": 3298,
+  "n_matches": 209,
+  "notes": [
+    "Remotive: 15 jobs (cache)",
+    "Remote OK: 97 jobs (cache)",
+    "Greenhouse: 2220 jobs (cache) (87 boards, 12817 openings, 2220 kept by the title prefilter)",
+    "Lever: 256 jobs (cache) (17 boards, 915 openings, 256 kept by the title prefilter)",
+    "Ashby: 749 jobs (cache) (51 boards, 3481 openings, 749 kept by the title prefilter)"
+  ],
+  "files": [
+    "matches.csv",
+    "matches.md",
+    "all.csv",
+    "all.md"
+  ]
+}
