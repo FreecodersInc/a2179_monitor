@@ -1,0 +1,2726 @@
+{
+  "cap_mib": 50,
+  "gpu": {
+    "nvidia_smi": null,
+    "nvidia_smi_ok": false,
+    "torch_version": null,
+    "cuda_available": false,
+    "device_count": 0,
+    "device_name": null,
+    "note": "nvidia-smi not found; torch not importable: ModuleNotFoundError: No module named 'torch'"
+  },
+  "resources": {
+    "disk_free_mib": 101007.8,
+    "disk_total_mib": 130456.6,
+    "mem_total_mib": 16002.4,
+    "mem_available_mib": 11526.5
+  },
+  "models": [
+    {
+      "id": "cross-encoder/ms-marco-TinyBERT-L2-v2",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 17552980,
+      "primary_mib": 16.7,
+      "needed_bytes": 18498133,
+      "needed_mib": 17.6,
+      "fits_50_mib": true,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 787,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 17552980,
+          "mib": 16.7
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 132,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711396,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1330,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "cross-encoder/ms-marco-TinyBERT-L4-v2",
+      "fits_50_mib": false,
+      "error": "http 401"
+    },
+    {
+      "id": "cross-encoder/ms-marco-MiniLM-L-2-v2",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 62471772,
+      "primary_mib": 59.6,
+      "needed_bytes": 63416932,
+      "needed_mib": 60.5,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 794,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 62471772,
+          "mib": 59.6
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 132,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711396,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1330,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "cross-encoder/ms-marco-MiniLM-L-4-v2",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 76671186,
+      "primary_mib": 73.1,
+      "needed_bytes": 77616346,
+      "needed_mib": 74.0,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 794,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 76671186,
+          "mib": 73.1
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 132,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711396,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1330,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 90870598,
+      "primary_mib": 86.7,
+      "needed_bytes": 91815758,
+      "needed_mib": 87.6,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 794,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 90870598,
+          "mib": 86.7
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 132,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711396,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1330,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "cross-encoder/ms-marco-MiniLM-L-12-v2",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 133469020,
+      "primary_mib": 127.3,
+      "needed_bytes": 134414177,
+      "needed_mib": 128.2,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 791,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 133469020,
+          "mib": 127.3
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 132,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711396,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1330,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "cross-encoder/stsb-TinyBERT-L4",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 57414738,
+      "primary_mib": 54.8,
+      "needed_bytes": 58359751,
+      "needed_mib": 55.7,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 647,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 57414738,
+          "mib": 54.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 132,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711396,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1330,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "cross-encoder/nli-MiniLM2-L6-H768",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 328499560,
+      "primary_mib": 313.3,
+      "needed_bytes": 331111701,
+      "needed_mib": 315.8,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 875,
+          "mib": 0.0
+        },
+        {
+          "name": "merges.txt",
+          "bytes": 456356,
+          "mib": 0.4
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 328499560,
+          "mib": 313.3
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 239,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 1356048,
+          "mib": 1.3
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 330,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.json",
+          "bytes": 798293,
+          "mib": 0.8
+        }
+      ]
+    },
+    {
+      "id": "cross-encoder/nli-distilroberta-base",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 328499560,
+      "primary_mib": 313.3,
+      "needed_bytes": 333315825,
+      "needed_mib": 317.9,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 701,
+          "mib": 0.0
+        },
+        {
+          "name": "merges.txt",
+          "bytes": 456318,
+          "mib": 0.4
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 328499560,
+          "mib": 313.3
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 1008,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 3558642,
+          "mib": 3.4
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1303,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.json",
+          "bytes": 798293,
+          "mib": 0.8
+        }
+      ]
+    },
+    {
+      "id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 470592698,
+      "primary_mib": 448.8,
+      "needed_bytes": 492745974,
+      "needed_mib": 469.9,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 891,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 470592698,
+          "mib": 448.8
+        },
+        {
+          "name": "sentencepiece.bpe.model",
+          "bytes": 5069051,
+          "mib": 4.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 239,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 17082660,
+          "mib": 16.3
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 435,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "cross-encoder/mmarco-mMiniLMv2-L6-H384-v1",
+      "fits_50_mib": false,
+      "error": "http 401"
+    },
+    {
+      "id": "BAAI/bge-reranker-base",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 1112206140,
+      "primary_mib": 1060.7,
+      "needed_bytes": 1134374819,
+      "needed_mib": 1081.8,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 799,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 1112206140,
+          "mib": 1060.7
+        },
+        {
+          "name": "sentencepiece.bpe.model",
+          "bytes": 5069051,
+          "mib": 4.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 279,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 17098107,
+          "mib": 16.3
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 443,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "BAAI/bge-reranker-large",
+      "gated": false,
+      "library": "transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 2239618772,
+      "primary_mib": 2135.9,
+      "needed_bytes": 2261787453,
+      "needed_mib": 2157.0,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 801,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 2239618772,
+          "mib": 2135.9
+        },
+        {
+          "name": "sentencepiece.bpe.model",
+          "bytes": 5069051,
+          "mib": 4.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 279,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 17098107,
+          "mib": 16.3
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 443,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "BAAI/bge-reranker-v2-m3",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 2271071852,
+      "primary_mib": 2165.9,
+      "needed_bytes": 2293242108,
+      "needed_mib": 2187.0,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 795,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 2271071852,
+          "mib": 2165.9
+        },
+        {
+          "name": "sentencepiece.bpe.model",
+          "bytes": 5069051,
+          "mib": 4.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 964,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 17098273,
+          "mib": 16.3
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1173,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "jinaai/jina-reranker-v1-tiny-en",
+      "gated": false,
+      "library": "transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 66100274,
+      "primary_mib": 63.0,
+      "needed_bytes": 69324287,
+      "needed_mib": 66.1,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 1206,
+          "mib": 0.0
+        },
+        {
+          "name": "merges.txt",
+          "bytes": 336141,
+          "mib": 0.3
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 66100274,
+          "mib": 63.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 280,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 2030772,
+          "mib": 1.9
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1215,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.json",
+          "bytes": 854399,
+          "mib": 0.8
+        }
+      ]
+    },
+    {
+      "id": "jinaai/jina-reranker-v1-turbo-en",
+      "gated": false,
+      "library": "transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 75554746,
+      "primary_mib": 72.1,
+      "needed_bytes": 78778759,
+      "needed_mib": 75.1,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 1206,
+          "mib": 0.0
+        },
+        {
+          "name": "merges.txt",
+          "bytes": 336141,
+          "mib": 0.3
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 75554746,
+          "mib": 72.1
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 280,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 2030772,
+          "mib": 1.9
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1215,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.json",
+          "bytes": 854399,
+          "mib": 0.8
+        }
+      ]
+    },
+    {
+      "id": "jinaai/jina-reranker-v2-base-multilingual",
+      "gated": false,
+      "library": "transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 556892306,
+      "primary_mib": 531.1,
+      "needed_bytes": 573978254,
+      "needed_mib": 547.4,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 1102,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 556892306,
+          "mib": 531.1
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 964,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 17082734,
+          "mib": 16.3
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1148,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "mixedbread-ai/mxbai-rerank-xsmall-v1",
+      "gated": false,
+      "library": "transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 141685186,
+      "primary_mib": 135.1,
+      "needed_bytes": 150337710,
+      "needed_mib": 143.4,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 968,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 141685186,
+          "mib": 135.1
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 970,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 8649139,
+          "mib": 8.2
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1447,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "mixedbread-ai/mxbai-rerank-base-v1",
+      "gated": false,
+      "library": "transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 368870370,
+      "primary_mib": 351.8,
+      "needed_bytes": 377522893,
+      "needed_mib": 360.0,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 967,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 368870370,
+          "mib": 351.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 970,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 8649139,
+          "mib": 8.2
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1447,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "Alibaba-NLP/gte-multilingual-reranker-base",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 611934706,
+      "primary_mib": 583.6,
+      "needed_bytes": 629021525,
+      "needed_mib": 599.9,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 1494,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 611934706,
+          "mib": 583.6
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 964,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 17083021,
+          "mib": 16.3
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1340,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "MoritzLaurer/multilingual-MiniLMv2-L6-mnli-xnli",
+      "gated": false,
+      "library": "transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 427997022,
+      "primary_mib": 408.2,
+      "needed_bytes": 450150708,
+      "needed_mib": 429.3,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 1032,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 427997022,
+          "mib": 408.2
+        },
+        {
+          "name": "sentencepiece.bpe.model",
+          "bytes": 5069051,
+          "mib": 4.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 280,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 17082758,
+          "mib": 16.3
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 565,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+      "gated": false,
+      "library": "transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 557652046,
+      "primary_mib": 531.8,
+      "needed_bytes": 573986050,
+      "needed_mib": 547.4,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 1066,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 557652046,
+          "mib": 531.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 286,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 16331396,
+          "mib": 15.6
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1256,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "typeform/distilbert-base-uncased-mnli",
+      "gated": false,
+      "library": "transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 267835640,
+      "primary_mib": 255.4,
+      "needed_bytes": 268068294,
+      "needed_mib": 255.6,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 776,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 267835640,
+          "mib": 255.4
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 112,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 258,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "colbert-ir/colbertv2.0",
+      "gated": false,
+      "library": "transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 438349816,
+      "primary_mib": 418.0,
+      "needed_bytes": 439048665,
+      "needed_mib": 418.7,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 743,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 438349816,
+          "mib": 418.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 112,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 466081,
+          "mib": 0.4
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 405,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "answerdotai/answerai-colbert-small-v1",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 133610664,
+      "primary_mib": 127.4,
+      "needed_bytes": 134556207,
+      "needed_mib": 128.3,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 702,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 133610664,
+          "mib": 127.4
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 695,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711396,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1242,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "lightonai/GTE-ModernColBERT-v1",
+      "gated": false,
+      "library": "PyLate",
+      "primary": "model.safetensors",
+      "primary_bytes": 596076280,
+      "primary_mib": 568.5,
+      "needed_bytes": 599684415,
+      "needed_mib": 571.9,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 1374,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 694,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 596076280,
+          "mib": 568.5
+        },
+        {
+          "name": "modules.json",
+          "bytes": 216,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 53,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 581,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 3583846,
+          "mib": 3.4
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 21371,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "naver/splade-cocondenser-ensembledistil",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "pytorch_model.bin",
+      "primary_bytes": 438141995,
+      "primary_mib": 417.8,
+      "needed_bytes": 438841437,
+      "needed_mib": 418.5,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 670,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 274,
+          "mib": 0.0
+        },
+        {
+          "name": "modules.json",
+          "bytes": 274,
+          "mib": 0.0
+        },
+        {
+          "name": "pytorch_model.bin",
+          "bytes": 438141995,
+          "mib": 417.8
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 57,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 112,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 466081,
+          "mib": 0.4
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 466,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "naver/splade-v3",
+      "gated": "auto",
+      "library": "sentence-transformers",
+      "primary": "pytorch_model.bin",
+      "primary_bytes": 438144761,
+      "primary_mib": 417.8,
+      "needed_bytes": 439089696,
+      "needed_mib": 418.7,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 682,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 274,
+          "mib": 0.0
+        },
+        {
+          "name": "modules.json",
+          "bytes": 274,
+          "mib": 0.0
+        },
+        {
+          "name": "pytorch_model.bin",
+          "bytes": 438144761,
+          "mib": 417.8
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 57,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 125,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711649,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 366,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "naver/splade-v3-distilbert",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "pytorch_model.bin",
+      "primary_bytes": 267984305,
+      "primary_mib": 255.6,
+      "needed_bytes": 268929036,
+      "needed_mib": 256.5,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 524,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 274,
+          "mib": 0.0
+        },
+        {
+          "name": "modules.json",
+          "bytes": 274,
+          "mib": 0.0
+        },
+        {
+          "name": "pytorch_model.bin",
+          "bytes": 267984305,
+          "mib": 255.6
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 57,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 125,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711649,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 320,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "naver/splade-v3-lexical",
+      "gated": "auto",
+      "library": "sentence-transformers",
+      "primary": "pytorch_model.bin",
+      "primary_bytes": 438144761,
+      "primary_mib": 417.8,
+      "needed_bytes": 439089810,
+      "needed_mib": 418.7,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 682,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 274,
+          "mib": 0.0
+        },
+        {
+          "name": "modules.json",
+          "bytes": 388,
+          "mib": 0.0
+        },
+        {
+          "name": "pytorch_model.bin",
+          "bytes": 438144761,
+          "mib": 417.8
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 57,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 125,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711649,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 366,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "naver/splade_v2_distil",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "pytorch_model.bin",
+      "primary_bytes": 267985760,
+      "primary_mib": 255.6,
+      "needed_bytes": 268218766,
+      "needed_mib": 255.8,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 523,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 274,
+          "mib": 0.0
+        },
+        {
+          "name": "modules.json",
+          "bytes": 274,
+          "mib": 0.0
+        },
+        {
+          "name": "pytorch_model.bin",
+          "bytes": 267985760,
+          "mib": 255.6
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 57,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 112,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 258,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "naver/efficient-splade-VI-BT-large-query",
+      "gated": false,
+      "library": "transformers",
+      "primary": "pytorch_model.bin",
+      "primary_bytes": 17687268,
+      "primary_mib": 16.9,
+      "needed_bytes": 18386467,
+      "needed_mib": 17.5,
+      "fits_50_mib": true,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 699,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 274,
+          "mib": 0.0
+        },
+        {
+          "name": "modules.json",
+          "bytes": 108,
+          "mib": 0.0
+        },
+        {
+          "name": "pytorch_model.bin",
+          "bytes": 17687268,
+          "mib": 16.9
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 112,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 466081,
+          "mib": 0.4
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 417,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "naver/efficient-splade-VI-BT-large-doc",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "pytorch_model.bin",
+      "primary_bytes": 267982639,
+      "primary_mib": 255.6,
+      "needed_bytes": 268681791,
+      "needed_mib": 256.2,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 620,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 274,
+          "mib": 0.0
+        },
+        {
+          "name": "modules.json",
+          "bytes": 108,
+          "mib": 0.0
+        },
+        {
+          "name": "pytorch_model.bin",
+          "bytes": 267982639,
+          "mib": 255.6
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 112,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 466081,
+          "mib": 0.4
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 449,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 470641600,
+      "primary_mib": 448.8,
+      "needed_bytes": 484794173,
+      "needed_mib": 462.3,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 190,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 645,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 122,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 470641600,
+          "mib": 448.8
+        },
+        {
+          "name": "modules.json",
+          "bytes": 229,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 53,
+          "mib": 0.0
+        },
+        {
+          "name": "sentencepiece.bpe.model",
+          "bytes": 5069051,
+          "mib": 4.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 239,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 9081518,
+          "mib": 8.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 526,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 1112201288,
+      "primary_mib": 1060.7,
+      "needed_bytes": 1126353815,
+      "needed_mib": 1074.2,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 190,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 723,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 122,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 1112201288,
+          "mib": 1060.7
+        },
+        {
+          "name": "modules.json",
+          "bytes": 229,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 53,
+          "mib": 0.0
+        },
+        {
+          "name": "sentencepiece.bpe.model",
+          "bytes": 5069051,
+          "mib": 4.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 239,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 9081518,
+          "mib": 8.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 402,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "intfloat/multilingual-e5-small",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 470641600,
+      "primary_mib": 448.8,
+      "needed_bytes": 492795290,
+      "needed_mib": 470.0,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 200,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 655,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 470641600,
+          "mib": 448.8
+        },
+        {
+          "name": "modules.json",
+          "bytes": 387,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 57,
+          "mib": 0.0
+        },
+        {
+          "name": "sentencepiece.bpe.model",
+          "bytes": 5069051,
+          "mib": 4.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 167,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 17082730,
+          "mib": 16.3
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 443,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "intfloat/multilingual-e5-base",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 1112201288,
+      "primary_mib": 1060.7,
+      "needed_bytes": 1134355035,
+      "needed_mib": 1081.8,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 200,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 694,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 1112201288,
+          "mib": 1060.7
+        },
+        {
+          "name": "modules.json",
+          "bytes": 387,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 57,
+          "mib": 0.0
+        },
+        {
+          "name": "sentencepiece.bpe.model",
+          "bytes": 5069051,
+          "mib": 4.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 280,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 17082660,
+          "mib": 16.3
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 418,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "intfloat/multilingual-e5-large",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 2239611368,
+      "primary_mib": 2135.9,
+      "needed_bytes": 2261765112,
+      "needed_mib": 2157.0,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 201,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 690,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 2239611368,
+          "mib": 2135.9
+        },
+        {
+          "name": "modules.json",
+          "bytes": 387,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 57,
+          "mib": 0.0
+        },
+        {
+          "name": "sentencepiece.bpe.model",
+          "bytes": 5069051,
+          "mib": 4.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 280,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 17082660,
+          "mib": 16.3
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 418,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "intfloat/multilingual-e5-large-instruct",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 1119825680,
+      "primary_mib": 1067.9,
+      "needed_bytes": 1141981071,
+      "needed_mib": 1089.1,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 271,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 690,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 128,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 1119825680,
+          "mib": 1067.9
+        },
+        {
+          "name": "modules.json",
+          "bytes": 349,
+          "mib": 0.0
+        },
+        {
+          "name": "sentencepiece.bpe.model",
+          "bytes": 5069051,
+          "mib": 4.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 964,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 17082756,
+          "mib": 16.3
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1182,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "BAAI/bge-m3",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "pytorch_model.bin",
+      "primary_bytes": 2271145830,
+      "primary_mib": 2165.9,
+      "needed_bytes": 2293315801,
+      "needed_mib": 2187.1,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 191,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 687,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 123,
+          "mib": 0.0
+        },
+        {
+          "name": "modules.json",
+          "bytes": 349,
+          "mib": 0.0
+        },
+        {
+          "name": "pytorch_model.bin",
+          "bytes": 2271145830,
+          "mib": 2165.9
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 54,
+          "mib": 0.0
+        },
+        {
+          "name": "sentencepiece.bpe.model",
+          "bytes": 5069051,
+          "mib": 4.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 964,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 17098108,
+          "mib": 16.3
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 444,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "sentence-transformers/LaBSE",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 1883734344,
+      "primary_mib": 1796.5,
+      "needed_bytes": 1900941462,
+      "needed_mib": 1812.9,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 190,
+          "mib": 0.0
+        },
+        {
+          "name": "2_Dense/config.json",
+          "bytes": 114,
+          "mib": 0.0
+        },
+        {
+          "name": "2_Dense/model.safetensors",
+          "bytes": 2362528,
+          "mib": 2.3
+        },
+        {
+          "name": "config.json",
+          "bytes": 804,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 122,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 1883734344,
+          "mib": 1796.5
+        },
+        {
+          "name": "modules.json",
+          "bytes": 461,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 53,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 112,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 9621556,
+          "mib": 9.2
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 397,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 5220781,
+          "mib": 5.0
+        }
+      ]
+    },
+    {
+      "id": "BAAI/bge-base-en-v1.5",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 437955512,
+      "primary_mib": 417.7,
+      "needed_bytes": 438900399,
+      "needed_mib": 418.6,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 190,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 777,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 124,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 437955512,
+          "mib": 417.7
+        },
+        {
+          "name": "modules.json",
+          "bytes": 349,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 52,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 125,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711396,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 366,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "intfloat/e5-base-v2",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 437955512,
+      "primary_mib": 417.7,
+      "needed_bytes": 438900149,
+      "needed_mib": 418.6,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 200,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 650,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 437955512,
+          "mib": 417.7
+        },
+        {
+          "name": "modules.json",
+          "bytes": 387,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 57,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 125,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711396,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 314,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "sentence-transformers/all-MiniLM-L6-v2",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 90868376,
+      "primary_mib": 86.7,
+      "needed_bytes": 91567913,
+      "needed_mib": 87.3,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 190,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 612,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 116,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 90868376,
+          "mib": 86.7
+        },
+        {
+          "name": "modules.json",
+          "bytes": 349,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 53,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 112,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 466247,
+          "mib": 0.4
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 350,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "sentence-transformers/paraphrase-MiniLM-L3-v2",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 69569488,
+      "primary_mib": 66.3,
+      "needed_bytes": 70268893,
+      "needed_mib": 67.0,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 190,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 629,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 122,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 69569488,
+          "mib": 66.3
+        },
+        {
+          "name": "modules.json",
+          "bytes": 229,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 53,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 112,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 466248,
+          "mib": 0.4
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 314,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "sentence-transformers/paraphrase-MiniLM-L6-v2",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 90868373,
+      "primary_mib": 86.7,
+      "needed_bytes": 91567611,
+      "needed_mib": 87.3,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 190,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 629,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 122,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 90868373,
+          "mib": 86.7
+        },
+        {
+          "name": "modules.json",
+          "bytes": 229,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 53,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 112,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 466081,
+          "mib": 0.4
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 314,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "sentence-transformers/paraphrase-albert-small-v2",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 46741600,
+      "primary_mib": 44.6,
+      "needed_bytes": 48815030,
+      "needed_mib": 46.6,
+      "fits_50_mib": true,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 190,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 827,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 122,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 46741600,
+          "mib": 44.6
+        },
+        {
+          "name": "modules.json",
+          "bytes": 229,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 53,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 245,
+          "mib": 0.0
+        },
+        {
+          "name": "spiece.model",
+          "bytes": 760289,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 1311010,
+          "mib": 1.3
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 465,
+          "mib": 0.0
+        }
+      ]
+    },
+    {
+      "id": "TaylorAI/bge-micro-v2",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 34785664,
+      "primary_mib": 33.2,
+      "needed_bytes": 35732045,
+      "needed_mib": 34.1,
+      "fits_50_mib": true,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 270,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 745,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 123,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 34785664,
+          "mib": 33.2
+        },
+        {
+          "name": "modules.json",
+          "bytes": 229,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 53,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 228,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711661,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1564,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "TaylorAI/gte-tiny",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 45457576,
+      "primary_mib": 43.4,
+      "needed_bytes": 46403773,
+      "needed_mib": 44.3,
+      "fits_50_mib": true,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 190,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 669,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 123,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 45457576,
+          "mib": 43.4
+        },
+        {
+          "name": "modules.json",
+          "bytes": 229,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 53,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 228,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711661,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 1536,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "thenlper/gte-small",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 66746168,
+      "primary_mib": 63.7,
+      "needed_bytes": 67691071,
+      "needed_mib": 64.6,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 190,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 583,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 66746168,
+          "mib": 63.7
+        },
+        {
+          "name": "modules.json",
+          "bytes": 385,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 57,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 125,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711661,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 394,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "BAAI/bge-small-en-v1.5",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 133466304,
+      "primary_mib": 127.3,
+      "needed_bytes": 134411157,
+      "needed_mib": 128.2,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 190,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 743,
+          "mib": 0.0
+        },
+        {
+          "name": "config_sentence_transformers.json",
+          "bytes": 124,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 133466304,
+          "mib": 127.3
+        },
+        {
+          "name": "modules.json",
+          "bytes": 349,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 52,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 125,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711396,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 366,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "intfloat/e5-small-v2",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 133466304,
+      "primary_mib": 127.3,
+      "needed_bytes": 134410906,
+      "needed_mib": 128.2,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 200,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 615,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 133466304,
+          "mib": 127.3
+        },
+        {
+          "name": "modules.json",
+          "bytes": 387,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 57,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 125,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 711396,
+          "mib": 0.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 314,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 231508,
+          "mib": 0.2
+        }
+      ]
+    },
+    {
+      "id": "cointegrated/rubert-tiny2",
+      "gated": false,
+      "library": "sentence-transformers",
+      "primary": "model.safetensors",
+      "primary_bytes": 117529600,
+      "primary_mib": 112.1,
+      "needed_bytes": 120353908,
+      "needed_mib": 114.8,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "1_Pooling/config.json",
+          "bytes": 190,
+          "mib": 0.0
+        },
+        {
+          "name": "config.json",
+          "bytes": 693,
+          "mib": 0.0
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 117529600,
+          "mib": 112.1
+        },
+        {
+          "name": "modules.json",
+          "bytes": 349,
+          "mib": 0.0
+        },
+        {
+          "name": "sentence_bert_config.json",
+          "bytes": 54,
+          "mib": 0.0
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 112,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 1741842,
+          "mib": 1.7
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 401,
+          "mib": 0.0
+        },
+        {
+          "name": "vocab.txt",
+          "bytes": 1080667,
+          "mib": 1.0
+        }
+      ]
+    },
+    {
+      "id": "nreimers/mMiniLMv2-L6-H384",
+      "fits_50_mib": false,
+      "error": "http 401"
+    },
+    {
+      "id": "microsoft/Multilingual-MiniLM-L12-H384",
+      "gated": false,
+      "library": "transformers",
+      "primary": "pytorch_model.bin",
+      "primary_bytes": 470657952,
+      "primary_mib": 448.9,
+      "needed_bytes": 475727585,
+      "needed_mib": 453.7,
+      "fits_50_mib": false,
+      "files": [
+        {
+          "name": "config.json",
+          "bytes": 430,
+          "mib": 0.0
+        },
+        {
+          "name": "pytorch_model.bin",
+          "bytes": 470657952,
+          "mib": 448.9
+        },
+        {
+          "name": "sentencepiece.bpe.model",
+          "bytes": 5069051,
+          "mib": 4.8
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 150,
+          "mib": 0.0
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 2,
+          "mib": 0.0
+        }
+      ]
+    }
+  ]
+}

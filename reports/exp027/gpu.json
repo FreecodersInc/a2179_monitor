@@ -1,0 +1,9 @@
+{
+  "nvidia_smi": null,
+  "nvidia_smi_ok": false,
+  "torch_version": null,
+  "cuda_available": false,
+  "device_count": 0,
+  "device_name": null,
+  "note": "nvidia-smi not found; torch not importable: ModuleNotFoundError: No module named 'torch'"
+}
