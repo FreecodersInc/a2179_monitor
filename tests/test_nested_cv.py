@@ -54,6 +54,15 @@ class TestNoLeak(unittest.TestCase):
         self.assertEqual(h, [x for x in p if x in h])   # order kept
         self.assertEqual(len(N.subsample(p[:1], 0.1, 3)), 1)
 
+    def test_cap_train_is_stratified_and_seeded(self):
+        y = [True] * 20 + [False] * 80
+        tr = list(range(100))
+        c = N.cap_train(tr, y, 10, 7)
+        self.assertEqual(len(c), 10)
+        self.assertEqual(sum(y[i] for i in c), 2)
+        self.assertEqual(c, N.cap_train(tr, y, 10, 7))
+        self.assertEqual(N.cap_train(tr, y, 500, 7), tr)
+
     def test_apply_mm_clips(self):
         self.assertEqual(N.apply_mm(5, 0, 1), 1.0)
         self.assertEqual(N.apply_mm(-1, 0, 1), 0.0)

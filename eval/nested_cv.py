@@ -69,6 +69,18 @@ def subsample(protos, frac: float, seed: int) -> list:
     return [p for i, p in enumerate(protos) if i in keep]
 
 
+def cap_train(tr, y, cap: int, seed: int) -> list:
+    """Stratified random `cap` rows of the training part (EXP-008). Own RNG, so the folds stay the
+    same as without a cap."""
+    if cap >= len(tr):
+        return tr
+    rnd = random.Random(seed)
+    pos = [i for i in tr if y[i]]
+    neg = [i for i in tr if not y[i]]
+    kp = max(1, round(cap * len(pos) / len(tr)))
+    return sorted(rnd.sample(pos, min(kp, len(pos))) + rnd.sample(neg, min(cap - kp, len(neg))))
+
+
 def fit_mm(v, idx):
     lo, hi = min(v[i] for i in idx), max(v[i] for i in idx)
     return lo, hi
@@ -107,7 +119,7 @@ def predict(regex, gate, base, feat, te, lam, t, lo, hi):
     return out
 
 
-def run(rows, channels, feat, regex, gate, k=5, repeats=20, seed=0, tie="sweep", min_recall=1.0):
+def run(rows, channels, feat, regex, gate, k=5, repeats=20, seed=0, tie="sweep", min_recall=1.0, train_cap=0):
     y = [bool(r["label"]) for r in rows]
     real = [r.get("source") != "synthetic" for r in rows]
     groups = [normalize(r["title"])[:60] for r in rows]
@@ -120,6 +132,8 @@ def run(rows, channels, feat, regex, gate, k=5, repeats=20, seed=0, tie="sweep",
             for f in range(k):
                 te = F[f]
                 tr = [i for g in range(k) if g != f for i in F[g]]
+                if train_cap:
+                    tr = cap_train(tr, y, train_cap, (seed + rep) * 100 + f)
                 if name == "regex":
                     pred.update({i: bool(regex[i]) for i in te})
                     continue
@@ -167,6 +181,7 @@ def main(argv=None):
     ap.add_argument("--proto-frac", type=float, default=1.0,
                     help="share of the profile prototypes (each side) used by tfidf and bm25 (EXP-007)")
     ap.add_argument("--proto-seed", type=int, default=0)
+    ap.add_argument("--train-cap", type=int, default=0, help="choose t, lam, min-max on this many training rows (EXP-008)")
     ap.add_argument("--min-recall", type=float, default=1.0,
                     help="recall the threshold must keep on the training part (1.0 = monitor rule)")
     ap.add_argument("--name", default="nested_cv", help="output file stem")
@@ -193,7 +208,7 @@ def main(argv=None):
     for k_, v in raw.items():
         channels[k_] = (v, False)
         channels[f"{k_}+feat"] = (v, True)
-    res = run(rows, channels, feat, sw.regex, sw.gate, a.folds, a.repeats, a.seed, a.tie, a.min_recall)
+    res = run(rows, channels, feat, sw.regex, sw.gate, a.folds, a.repeats, a.seed, a.tie, a.min_recall, a.train_cap)
     summ = summarise(res)
     pairs = {}
     for b in [c for c in channels if c.endswith("+feat") and c != "tfidf+feat"]:
@@ -202,7 +217,7 @@ def main(argv=None):
     out.mkdir(parents=True, exist_ok=True)
     meta = {"target": tg.name, "n": len(rows), "positives": sum(sw.y), "real_rows": sum(r.get("source") != "synthetic" for r in rows),
             "real_positives": sum(1 for r in rows if r.get("source") != "synthetic" and r["label"]),
-            "folds": a.folds, "repeats": a.repeats, "seed": a.seed, "tie": a.tie, "min_recall": a.min_recall, "proto_frac": a.proto_frac, "proto_seed": a.proto_seed,
+            "folds": a.folds, "repeats": a.repeats, "seed": a.seed, "tie": a.tie, "min_recall": a.min_recall, "proto_frac": a.proto_frac, "train_cap": a.train_cap, "proto_seed": a.proto_seed,
             "prototypes": [len(pos_p), len(neg_p)], "dense_dir": str(dd)}
     (out / f"{a.name}.json").write_text(json.dumps({"meta": meta, "summary": summ, "paired": pairs}, indent=1), encoding="utf-8")
     lines = [f"# Nested CV, {tg.label}: {meta['n']} rows, {meta['positives']} positives "
