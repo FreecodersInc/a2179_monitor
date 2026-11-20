@@ -133,6 +133,10 @@
         "regex": "\\bdevops\\s*engineers?\\b|\\bplatform\\s*engineers?\\b|\\bsite\\s*reliability\\s*engineers?\\b|\\bsre\\b|\\bcloud\\s*engineers?\\b"
       },
       {
+        "name": "ml_sre_infra",
+        "regex": "\\bmachine\\s*learning\\s*(engineers?|engineering|programmers?|infrastructure)\\b|\\bml\\s*(engineers?|infrastructure|infra|systems?\\s*engineers?|platform)\\b|\\b(ai|ml)\\s*inference\\s*engineers?\\b|\\binfrastructure\\s*engineers?\\b|\\breliability\\s*engineer(s|ing)?\\b|\\bdevops\\b|\\bsre\\b|\\bsoftware\\s*engineer\\b.*\\b(platform|infrastructure|cloud)\\b|\\b(platform|infrastructure|cloud)\\b.*\\bsoftware\\s*engineer\\b|\\bcloud\\b.*\\barchitects?\\b|\\bsolutions?\\s*architects?\\b"
+      },
+      {
         "name": "lead",
         "regex": "\\b(staff|principal|lead|head)\\s+(data|platform|mlops|devops|ai)\\b|\\bsolution\\s*architects?\\b|\\bdata\\s*architects?\\b"
       }
@@ -172,7 +176,7 @@
       "sagemaker",
       "feast"
     ],
-    "strong_part": "\\b(apache\\s*spark|spark|airflow|dbt|kafka|snowflake|databricks|redshift)\\b|\\b(data|analytics|big\\s*data|etl|data\\s*platform)\\s*engineers?\\b",
+    "strong_part": "\\b(apache\\s*spark|spark|airflow|dbt|kafka|snowflake|databricks|redshift)\\b|\\b(data|analytics|big\\s*data|etl|data\\s*platform)\\s*engineers?\\b|\\b(site\\s*reliability|devops|mlops|machine\\s*learning|ml|data\\s*infrastructure|infrastructure|platform)\\s*engineers?\\b|\\bsre\\b",
     "donor_terms": [],
     "hard_excl": "\\b(bootcamps?|online\\s*course|certificate\\s*program|data\\s*entry|unpaid\\s*internships?|hiring\\s*our\\s*graduates)\\b",
     "soft_excl_terms": [
@@ -180,7 +184,8 @@
       "only excel",
       "power bi only",
       "tableau only"
-    ]
+    ],
+    "_note_2026_11_20": "Positives redefined with Leonid on 2026-11-20: SRE, DevOps, platform, infrastructure and ML engineer roles are positive (they match his experience). ml_sre_infra and the strong_part extension were written after looking at batch 2 (EXP-005), so numbers on eval/de_jobs/labeled.jsonl are in-sample. Data Science is a separate variant in EXP-009, not in this profile."
   },
   "prototypes": {
     "positive": [

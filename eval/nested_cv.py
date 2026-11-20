@@ -182,6 +182,7 @@ def main(argv=None):
                     help="share of the profile prototypes (each side) used by tfidf and bm25 (EXP-007)")
     ap.add_argument("--proto-seed", type=int, default=0)
     ap.add_argument("--train-cap", type=int, default=0, help="choose t, lam, min-max on this many training rows (EXP-008)")
+    ap.add_argument("--relabel-rx", default="", help="variant: rows whose title matches this regex count as positive (EXP-009 Data Science variant)")
     ap.add_argument("--min-recall", type=float, default=1.0,
                     help="recall the threshold must keep on the training part (1.0 = monitor rule)")
     ap.add_argument("--name", default="nested_cv", help="output file stem")
@@ -190,6 +191,12 @@ def main(argv=None):
     rows = [json.loads(l) for l in eval_data_path(tg).read_text(encoding="utf-8").splitlines() if l.strip()]
     for r in rows:
         r.setdefault("snippet", "")
+    if a.relabel_rx:
+        import re
+        rx = re.compile(a.relabel_rx, re.I)
+        for r in rows:
+            if rx.search(r["title"]):
+                r["label"] = 1
     sw = S.Sweep(rows, target=tg)
     texts = [f"{r['title']} {r['snippet']}".strip() for r in rows]
     pos_p, neg_p = subsample(tg.positive, a.proto_frac, a.proto_seed), subsample(tg.negative, a.proto_frac, a.proto_seed + 1000)
@@ -217,7 +224,7 @@ def main(argv=None):
     out.mkdir(parents=True, exist_ok=True)
     meta = {"target": tg.name, "n": len(rows), "positives": sum(sw.y), "real_rows": sum(r.get("source") != "synthetic" for r in rows),
             "real_positives": sum(1 for r in rows if r.get("source") != "synthetic" and r["label"]),
-            "folds": a.folds, "repeats": a.repeats, "seed": a.seed, "tie": a.tie, "min_recall": a.min_recall, "proto_frac": a.proto_frac, "train_cap": a.train_cap, "proto_seed": a.proto_seed,
+            "folds": a.folds, "repeats": a.repeats, "seed": a.seed, "tie": a.tie, "min_recall": a.min_recall, "proto_frac": a.proto_frac, "train_cap": a.train_cap, "relabel_rx": a.relabel_rx, "proto_seed": a.proto_seed,
             "prototypes": [len(pos_p), len(neg_p)], "dense_dir": str(dd)}
     (out / f"{a.name}.json").write_text(json.dumps({"meta": meta, "summary": summ, "paired": pairs}, indent=1), encoding="utf-8")
     lines = [f"# Nested CV, {tg.label}: {meta['n']} rows, {meta['positives']} positives "

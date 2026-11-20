@@ -18,6 +18,7 @@ import argparse
 import json
 import math
 import re
+import sys
 from collections import Counter
 from pathlib import Path
 
@@ -87,11 +88,43 @@ def view(rows, strata, pos):
     return out
 
 
+def ht_rules(rows, strata, pos, target="de_jobs", reps=1000, seed=0):
+    """Horvitz-Thompson estimate for a matcher that is re-run now (profile rules only, no model):
+    every labeled row of a stratum stands for pool / kept rows of it. P = TP / (TP + FP),
+    R = TP / (TP + FN) over the pool, 95% interval from a bootstrap inside each stratum."""
+    import random
+    from a2179.rules import classify
+    from a2179.target import load_target
+    tg = load_target(target)
+    by = {}
+    for r in rows:
+        m = classify(r["title"], "", target=tg).match
+        by.setdefault(r["stratum"], []).append((m, r["esci"] in pos))
+
+    def est(sample):
+        tp = fp = fn = 0.0
+        for s, xs in sample.items():
+            w = strata[s]["pool"] / len(xs)
+            tp += w * sum(1 for m, y in xs if m and y)
+            fp += w * sum(1 for m, y in xs if m and not y)
+            fn += w * sum(1 for m, y in xs if not m and y)
+        return (tp / (tp + fp) if tp + fp else 0.0), (tp / (tp + fn) if tp + fn else 0.0)
+
+    p, r = est(by)
+    rnd = random.Random(seed)
+    bs = [est({s: [rnd.choice(xs) for _ in xs] for s, xs in by.items()}) for _ in range(reps)]
+    q = lambda v, a: sorted(v)[int(a * (len(v) - 1))]  # noqa: E731
+    return {"precision": round(p, 3), "precision_ci95": [round(q([b[0] for b in bs], .025), 3), round(q([b[0] for b in bs], .975), 3)],
+            "recall": round(r, 3), "recall_ci95": [round(q([b[1] for b in bs], .025), 3), round(q([b[1] for b in bs], .975), 3)],
+            "matches_in_sample": sum(1 for xs in by.values() for m, _ in xs if m)}
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--labeled", default=str(ROOT / "eval" / "de_jobs" / "labeled.jsonl"))
     ap.add_argument("--strata", default=str(ROOT / "eval" / "de_jobs" / "to_label_strata.json"))
     ap.add_argument("--out", default=str(ROOT / "reports" / "exp005"))
+    ap.add_argument("--rules-now", action="store_true", help="also re-run the current profile rules on the batch (Horvitz-Thompson, EXP-009)")
     a = ap.parse_args(argv)
     rows = [json.loads(l) for l in Path(a.labeled).read_text(encoding="utf-8").splitlines() if l.strip()]
     rows = [r for r in rows if r.get("stratum")]
@@ -103,6 +136,9 @@ def main(argv=None):
            "E+S": view(rows, strata, {"E", "S"}), "E": view(rows, strata, {"E"}),
            "E+S_unsure_as_pos": view(flip_unsure(rows, "S"), strata, {"E", "S"}),
            "E+S_unsure_as_neg": view(flip_unsure(rows, "I"), strata, {"E", "S"})}
+    if a.rules_now:
+        sys.path.insert(0, str(ROOT))
+        res["rules_now"] = {"E+S": ht_rules(rows, strata, {"E", "S"}), "E": ht_rules(rows, strata, {"E"})}
     fam = {}
     for r in rows:
         f = fam.setdefault(family(r["title"]), Counter())
@@ -122,7 +158,13 @@ def main(argv=None):
     for k, v in res["families"].items():
         L.append(f"| {k} | {v['matcher_pos']} | {v['matcher_neg']} | {v['missed_pos']} | {v['ok_neg']} |")
     (out / "strata_eval.md").write_text("\n".join(L) + "\n", encoding="utf-8")
-    print(json.dumps({k: res[k] for k in ("E+S", "E")}, ensure_ascii=False))
+    if a.rules_now:
+        L += ["", "Правила профиля, перезапущенные сейчас (Horvitz-Thompson по стратам, bootstrap 95%):", "",
+              "| метки | P (95%) | R (95%) |", "|---|---|---|"]
+        for k, v in res["rules_now"].items():
+            L.append(f"| {k} | {v['precision']} ({v['precision_ci95'][0]}–{v['precision_ci95'][1]}) | {v['recall']} ({v['recall_ci95'][0]}–{v['recall_ci95'][1]}) |")
+        (out / "strata_eval.md").write_text("\n".join(L) + "\n", encoding="utf-8")
+    print(json.dumps({k: res[k] for k in ("E+S", "E", *(("rules_now",) if a.rules_now else ()))}, ensure_ascii=False))
     return 0
 
 

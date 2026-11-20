@@ -29,6 +29,9 @@ class TestParse(unittest.TestCase):
         self.assertNotIn("<p>", de.snippet)
         self.assertEqual(de.source, "remotive")
         self.assertEqual(de.fetched_at, "2026-11-19T21:00:00Z")
+        self.assertIn("Spark", de.text)  # full plain description for the CV distance score (T-024)
+        self.assertNotIn("<p>", de.text)
+        self.assertGreaterEqual(len(de.text), len(de.snippet.rstrip("…")))
 
     def test_remoteok_skips_legal_notice(self):
         got = J.parse_remoteok(ROK, fetched_at=J.iso(NOW), now=NOW)

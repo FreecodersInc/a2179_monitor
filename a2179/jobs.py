@@ -57,6 +57,7 @@ class Job:
     fetched_at: str = ""
     published_at: str = ""
     source_id: str = ""
+    text: str = ""   # plain description, capped at TEXT_CHARS (CV distance score, T-024); not shown in reports
 
     def to_dict(self):
         return asdict(self)
@@ -86,6 +87,14 @@ def parse_dt(value) -> Optional[dt.datetime]:
     if x.tzinfo is None:
         x = x.replace(tzinfo=dt.timezone.utc)
     return x.astimezone(dt.timezone.utc)
+
+
+TEXT_CHARS = 20000
+
+
+def text_of(text: str) -> str:
+    """Whole description as plain text, capped (T-024 needs skills and stack, not only the teaser)."""
+    return snippet_of(text, TEXT_CHARS)
 
 
 def snippet_of(text: str, n: int = SNIPPET_CHARS) -> str:
@@ -247,7 +256,7 @@ def parse_remotive(body: str, fetched_at: str = "", now=None, delay_s: int = PUB
             title=title,
             company=fix_text((j.get("company_name") or j.get("company") or "").strip()),
             location=fix_text((j.get("candidate_required_location") or j.get("location") or "").strip()),
-            snippet=snippet_of(j.get("description") or ""),
+            snippet=snippet_of(j.get("description") or ""), text=text_of(j.get("description") or ""),
             fetched_at=fetched_at,
             published_at=pub.strftime("%Y-%m-%dT%H:%M:%SZ") if pub else "",
             source_id=str(j.get("id") or ""),
@@ -289,7 +298,7 @@ def parse_remoteok(body: str, fetched_at: str = "", now=None) -> list[Job]:
             title=title,
             company=fix_text((j.get("company") or j.get("company_name") or "").strip()),
             location=fix_text((loc or "").strip()),
-            snippet=fix_text(snippet_of(j.get("description") or "")),
+            snippet=fix_text(snippet_of(j.get("description") or "")), text=fix_text(text_of(j.get("description") or "")),
             fetched_at=fetched_at,
             published_at=pub.strftime("%Y-%m-%dT%H:%M:%SZ") if pub else "",
             source_id=str(jid),

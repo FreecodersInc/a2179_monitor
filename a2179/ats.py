@@ -69,10 +69,11 @@ def keep_title(title: str) -> bool:
     return bool(TITLE_RX.search(title or ""))
 
 
-def _plain(text: str) -> str:
-    """Greenhouse sends escaped HTML: unescape, drop tags, unescape the text entities, then trim."""
+def _plain(text: str, n: int = 0) -> str:
+    """Greenhouse sends escaped HTML: unescape, drop tags, unescape the text entities, then trim
+    (n = 0: snippet length, else up to n chars, the full text for T-024)."""
     t = re.sub(r"<[^>]+>", " ", html.unescape(text or ""))
-    return J.snippet_of(html.unescape(t))
+    return J.snippet_of(html.unescape(t), n or J.SNIPPET_CHARS)
 
 
 def parse_greenhouse(body: str, company: str, fetched_at: str) -> list[J.Job]:
@@ -88,7 +89,8 @@ def parse_greenhouse(body: str, company: str, fetched_at: str) -> list[J.Job]:
         loc = (j.get("location") or {}).get("name", "") if isinstance(j.get("location"), dict) else ""
         pub = J.parse_dt(j.get("first_published") or j.get("updated_at"))
         out.append(J.Job(source="greenhouse", url=url, title=title, company=company, location=(loc or "").strip(),
-                         snippet=_plain(j.get("content") or ""), fetched_at=fetched_at,
+                         snippet=_plain(j.get("content") or ""), text=_plain(j.get("content") or "", J.TEXT_CHARS),
+                         fetched_at=fetched_at,
                          published_at=pub.strftime("%Y-%m-%dT%H:%M:%SZ") if pub else "", source_id=str(j.get("id", ""))))
     return out
 
@@ -110,6 +112,7 @@ def parse_lever(body: str, company: str, fetched_at: str) -> list[J.Job]:
         pub = J.parse_dt(int(j["createdAt"]) // 1000) if str(j.get("createdAt", "")).isdigit() else None
         out.append(J.Job(source="lever", url=url, title=title, company=company,
                          location=", ".join(str(x) for x in locs if x), snippet=_plain(j.get("descriptionPlain") or ""),
+                         text=_plain(" ".join([j.get("descriptionPlain") or ""] + [f"{x.get('text', '')} {x.get('content', '')}" for x in (j.get("lists") or []) if isinstance(x, dict)] + [j.get("additionalPlain") or ""]), J.TEXT_CHARS),
                          fetched_at=fetched_at, published_at=pub.strftime("%Y-%m-%dT%H:%M:%SZ") if pub else "",
                          source_id=str(j.get("id", ""))))
     return out
@@ -133,7 +136,7 @@ def parse_ashby(body: str, company: str, fetched_at: str) -> list[J.Job]:
             loc = f"{loc}, Remote" if loc else "Remote"
         pub = J.parse_dt(j.get("publishedAt"))
         out.append(J.Job(source="ashby", url=url, title=title, company=company, location=loc,
-                         snippet=_plain(j.get("descriptionPlain") or ""), fetched_at=fetched_at,
+                         snippet=_plain(j.get("descriptionPlain") or ""), text=_plain(j.get("descriptionPlain") or "", J.TEXT_CHARS), fetched_at=fetched_at,
                          published_at=pub.strftime("%Y-%m-%dT%H:%M:%SZ") if pub else "", source_id=str(j.get("id", ""))))
     return out
 
