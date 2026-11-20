@@ -49,15 +49,18 @@ def job_mode(a, cfg, log):
     al = Alerter(cfg, data_dir(cfg), log, dry_run=a.dry_run)
     al.label = "vacancies"
     while True:
+        if a.job_rerank:
+            cfg["job_rerank"] = a.job_rerank
         r = run_jobs(cfg, data_dir(cfg), al, dry_run=a.dry_run, seed=a.seed, top=a.top, min_score=a.min_score,
                      sources=[x for x in a.job_sources.split(",") if x])
         bad = [n["source"] for n in r["notes"] if not n.get("ok")]
         print(f"job mode: vacancies {r['jobs']} | new {r['new']} | pinged {len(r['picked'])}"
               + (f" | sources failed: {', '.join(bad)}" if bad else "")
-              + " | ranking aid, CV AUC 0.656 on fresh full-text labels")
+              + f" | {r.get('rerank', 'rerank off')} | ranking aid: fresh AUC cv_score 0.608, TinyBERT 0.787 (EXP-022)")
         if a.list:
             for j, s in r["ranked"][:max(a.top, 30)]:
-                print(f"  {s['score']:.2f} (cv {s['cv']:.2f}, feat {s['feat']:.2f})  {j.title[:70]} · {j.company}\n        {j.url}")
+                ce = f", rerank {s['ce']:.2f}" if "ce" in s else ""
+                print(f"  {s['score']:.2f} (cv {s['cv']:.2f}, feat {s['feat']:.2f}{ce})  {j.title[:70]} · {j.company}\n        {j.url}")
         if not a.every:
             return 0
         time.sleep(max(1.0, a.every * 60))
@@ -84,6 +87,9 @@ def main(argv=None):
     ap.add_argument("--target", default="", help="de_jobs = job mode: rank fresh vacancies by CV closeness")
     ap.add_argument("--top", type=int, default=10, help="job mode: ping at most N new vacancies per pass")
     ap.add_argument("--min-score", type=float, default=0.0, help="job mode: skip vacancies below this score")
+    ap.add_argument("--job-rerank", choices=["auto", "download", "off"], default=None,
+                    help="job mode: TinyBERT rerank of the titles (ADR-0036). auto = only if already cached, "
+                         "download = fetch once (18.5 MB, 50 MiB cap), off. With rerank the score is a rank mix in 0..1")
     ap.add_argument("--job-sources", default="remotive,remoteok,ats,arbeitnow,wwr,hn", help="job mode: comma separated sources")
     ap.add_argument("-v", "--verbose", action="store_true")
     argv = list(sys.argv[1:] if argv is None else argv)

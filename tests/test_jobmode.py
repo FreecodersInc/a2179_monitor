@@ -60,5 +60,40 @@ class JobMode(unittest.TestCase):
         self.assertFalse((self.d / "jobs_seen.json").exists())
 
 
+class Rerank(unittest.TestCase):
+    """ADR-0036 (H-43): rank mix of the base score and a title reranker, no model loaded here."""
+    def test_rank_mix_and_fields(self):
+        base = lambda j: {"cv": 0.5, "feat": 0.5, "score": {"https://x/1": 0.9, "https://x/2": 0.1, "https://x/3": 0.5}[j.url]}  # noqa: E731
+        fake = lambda titles: [3.0 if "MLOps" in t else 1.0 if "Data" in t else 0.0 for t in titles]  # noqa: E731  fake reranker for the mix only
+        ranked = JM.rank(jobs(), base, fake)
+        s = {j.url: s for j, s in ranked}
+        self.assertEqual(s["https://x/1"]["base"], 0.9)
+        self.assertIn("ce", s["https://x/3"])
+        # base ranks 1 > 3 > 2, reranker 3 first: mixed 1 and 3 tie at 0.75, 2 last
+        self.assertEqual(ranked[-1][0].url, "https://x/2")
+        self.assertEqual(s["https://x/1"]["score"], s["https://x/3"]["score"])
+        self.assertIn("реранк", JM.message(ranked[0][0], ranked[0][1]))
+
+    def test_off_and_unavailable_keep_old_ranking(self):
+        self.assertIsNone(JM.load_reranker("off")[0])
+        r, _ = self.__class__._run_off()
+        self.assertTrue(all("ce" not in s for _, s in r["ranked"]))
+        self.assertEqual(r["rerank"], "rerank off")
+
+    @staticmethod
+    def _run_off():
+        d = Path(tempfile.mkdtemp())
+        try:
+            al = FakeAlerter()
+            return JM.run_jobs({}, d, al, dry_run=True, collect=lambda: (jobs(), [])), al
+        finally:
+            shutil.rmtree(d, ignore_errors=True)
+
+    def test_same_model_and_query_as_exp022(self):
+        sys.path.insert(0, str(ROOT / "eval"))
+        import rerank_jobs as RJ
+        self.assertEqual((JM.RERANK_MODEL, JM.RERANK_QUERY, JM.RERANK_FILES), (RJ.MODEL, RJ.QUERY, RJ.FILES))
+
+
 if __name__ == "__main__":
     unittest.main()

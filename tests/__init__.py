@@ -13,3 +13,4 @@ os.environ["A2179_CI_MODE"] = "full"
 # no network from a test: the fetch request step (ADR-0022) stays off unless a test turns it on
 os.environ["A2179_CI_FETCH_LISTINGS"] = "off"
 os.environ["A2179_CI_RUNNER_EXP"] = "off"   # one-off runner experiments (EXP-021/22) never run from tests
+os.environ["A2179_JOB_RERANK"] = "off"     # ADR-0036: tests never load the cross-encoder
