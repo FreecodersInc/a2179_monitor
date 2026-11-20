@@ -61,14 +61,14 @@
 | [T-022](T-022_language-domain-control.md) | контроль: язык отдельно от домена (перевод сербских лотов A2179) | M-003 | todo | H-32 |
 | [T-023](T-023_holdout-check.md) | честная проверка no ML базы на свежем отложенном наборе (первой, до T-008 и T-009) | M-002 | in progress | EXP-003, H-30, H-31 |
 | [T-024](T-024_cv-distance.md) | расстояние вакансии до CV кандидата (главная задача кейса вакансий) | M-003 | in progress | H-35 |
-| [T-025](T-025_de-profile-v2-check.md) | профиль вакансий v2 (SRE, DevOps, ML engineer позитив) на свежей выборке | M-003 | todo | H-33, H-34 |
-| [T-026](T-026_operating-point.md) | рабочая точка и правило порога в профиле цели | M-002 | todo | H-03, H-21 |
-| [T-027](T-027_prototype-selection.md) | отбор прототипов для BM25 и tfidf без подбора на тесте | M-002 | todo | H-06, H-20 |
-| [T-028](T-028_fusion-cc-vs-rrf.md) | слияние каналов: convex combination против RRF (H-14, часть 1) | M-002 | todo | H-14, H-26 |
-| [T-029](T-029_more-embedders-on-jobs.md) | эмбеддеры кроме MiniLM на вакансиях | M-003 | blocked | H-30, H-31 |
+| [T-025](T-025_de-profile-v2-check.md) | профиль вакансий v2 (SRE, DevOps, ML engineer позитив) на свежей выборке | M-003 | done | H-33, H-34 |
+| [T-026](T-026_operating-point.md) | рабочая точка и правило порога в профиле цели | M-002 | done | H-03, H-21 |
+| [T-027](T-027_prototype-selection.md) | отбор прототипов для BM25 и tfidf без подбора на тесте | M-002 | done | H-06, H-20 |
+| [T-028](T-028_fusion-cc-vs-rrf.md) | слияние каналов: convex combination против RRF (H-14, часть 1) | M-002 | done | H-14, H-26 |
+| [T-029](T-029_more-embedders-on-jobs.md) | эмбеддеры кроме MiniLM на вакансиях | M-003 | in progress | H-30, H-31 |
 | [T-030](T-030_embedder-ensemble.md) | ансамбль эмбеддеров против лучшей одиночной модели | M-002 | blocked | H-36 |
-| [T-031](T-031_full-listing-cards.md) | матчер видит полную карточку объявления, а не только заголовок | M-002 | todo | H-38, H-31, H-08 |
-| [T-032](T-032_jobs-full-text-labels.md) | вакансии читаем целиком, метки и скоры по полному описанию | M-003 | todo | H-35, H-37, H-33, H-34 |
+| [T-031](T-031_full-listing-cards.md) | матчер видит полную карточку объявления, а не только заголовок | M-002 | blocked | H-38, H-31, H-08 |
+| [T-032](T-032_jobs-full-text-labels.md) | вакансии читаем целиком, метки и скоры по полному описанию | M-003 | done | H-35, H-37, H-33, H-34 |
 
 ### Что стоит на данных (blocked, 2026-11-20)
 | что | задача | гипотезы | что нужно |
