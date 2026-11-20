@@ -43,7 +43,9 @@ GetFn = Callable[[str], tuple]  # (status, text)
 # Hosts we are allowed to call. Anything else, including the blocked boards, is refused.
 ALLOWED_HOSTS = frozenset({"remotive.com", "www.remotive.com", "remoteok.com", "www.remoteok.com",
                            # public ATS job board APIs, one board per company (a2179/ats.py, ADR-0025)
-                           "boards-api.greenhouse.io", "api.lever.co", "api.ashbyhq.com"})
+                           "boards-api.greenhouse.io", "api.lever.co", "api.ashbyhq.com",
+                           # T-037: Arbeitnow free API, We Work Remotely RSS, HN search API (robots checked 2026-11-20)
+                           "www.arbeitnow.com", "weworkremotely.com", "hn.algolia.com"})
 
 
 @dataclass
@@ -306,7 +308,120 @@ def parse_remoteok(body: str, fetched_at: str = "", now=None) -> list[Job]:
     return out
 
 
+# T-037. Terms and robots, checked 2026-11-20:
+# * Arbeitnow (`/api/job-board-api`): free public API, no key, "please do not abuse, link back", robots
+#   allows everything. One page (300 newest jobs) a day, cached 24 h.
+# * We Work Remotely: RSS feeds, robots allows / (only account and admin paths are closed). One feed a day.
+# * HN «Ask HN: Who is hiring?»: the search API behind the HN footer (hn.algolia.com, no robots.txt, 404).
+#   Two calls a day: the latest thread of the whoishiring account, then its comments. Only top level
+#   comments are jobs. The HN user name of the poster is not kept.
+ARBEITNOW_URL = "https://www.arbeitnow.com/api/job-board-api"
+WWR_URL = "https://weworkremotely.com/categories/remote-programming-jobs.rss"
+HN_STORY_URL = "https://hn.algolia.com/api/v1/search_by_date?tags=story,author_whoishiring&hitsPerPage=5"
+HN_COMMENTS_URL = "https://hn.algolia.com/api/v1/search?tags=comment,story_{id}&hitsPerPage=1000"
+
+
+def _plain_html(s: str) -> str:
+    import html as H
+    return H.unescape(H.unescape(s or ""))
+
+
+def parse_arbeitnow(body: str, fetched_at: str = "", now=None) -> list[Job]:
+    fetched_at = fetched_at or iso(now)
+    try:
+        data = json.loads(body or "{}")
+    except ValueError:
+        return []
+    rows = data.get("data") if isinstance(data, dict) else None
+    out = []
+    for j in rows if isinstance(rows, list) else []:
+        if not isinstance(j, dict) or not j.get("url") or not j.get("title"):
+            continue
+        pub = parse_dt(j.get("created_at"))
+        loc = (j.get("location") or "").strip()
+        if j.get("remote") in (True, "true", "True") and "remote" not in loc.lower():
+            loc = (loc + ", Remote").strip(", ")
+        d = _plain_html(j.get("description"))
+        out.append(Job(source="arbeitnow", url=j["url"].strip(), title=j["title"].strip(),
+                       company=(j.get("company_name") or "").strip(), location=loc,
+                       snippet=snippet_of(d), text=text_of(d), fetched_at=fetched_at,
+                       published_at=pub.strftime("%Y-%m-%dT%H:%M:%SZ") if pub else "",
+                       source_id=str(j.get("slug") or "")))
+    return out
+
+
+def parse_wwr(body: str, fetched_at: str = "", now=None) -> list[Job]:
+    import email.utils
+    import xml.etree.ElementTree as ET
+    fetched_at = fetched_at or iso(now)
+    try:
+        root = ET.fromstring((body or "").encode("utf-8"))
+    except ET.ParseError:
+        return []
+    out = []
+    for it in root.iter("item"):
+        g = lambda k: (it.findtext(k) or "").strip()   # noqa: E731
+        raw, url = g("title"), g("link") or g("guid")
+        if not raw or not url.startswith("https://weworkremotely.com/"):
+            continue
+        company, _, title = raw.partition(": ")
+        if not title:
+            company, title = "", raw
+        try:
+            pub = email.utils.parsedate_to_datetime(g("pubDate")).astimezone(dt.timezone.utc)
+        except (TypeError, ValueError):
+            pub = None
+        d = g("description")
+        out.append(Job(source="wwr", url=url, title=title.strip(), company=company.strip(), location=g("region"),
+                       snippet=snippet_of(d), text=text_of(d), fetched_at=fetched_at,
+                       published_at=pub.strftime("%Y-%m-%dT%H:%M:%SZ") if pub else "",
+                       source_id=url.rsplit("/", 1)[-1]))
+    return out
+
+
+def hn_story_id(body: str) -> str:
+    try:
+        hits = json.loads(body or "{}").get("hits") or []
+    except (ValueError, AttributeError):
+        return ""
+    for h in hits:
+        if "who is hiring" in (h.get("title") or "").lower():
+            return str(h.get("objectID") or "")
+    return ""
+
+
+def parse_hn(body: str, fetched_at: str = "", now=None) -> list[Job]:
+    """Top level comments of a Who is hiring thread. First line «Company | Role | Location | ...»."""
+    fetched_at = fetched_at or iso(now)
+    try:
+        hits = json.loads(body or "{}").get("hits") or []
+    except (ValueError, AttributeError):
+        return []
+    out = []
+    for h in hits:
+        if str(h.get("parent_id")) != str(h.get("story_id")) or not h.get("comment_text"):
+            continue
+        html_ = _plain_html(h["comment_text"])
+        first = re.split(r"<p>|\n", html_, maxsplit=1)[0]
+        first = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", first)).strip()
+        if len(first) < 8:
+            continue
+        parts = [x.strip() for x in first.split("|")]
+        loc = next((x for x in parts[1:] if re.search(r"remote|onsite|on-site|hybrid|\b[A-Z][a-z]+, [A-Z]", x, re.I)), "")
+        pub = parse_dt(h.get("created_at"))
+        oid = str(h.get("objectID"))
+        out.append(Job(source="hn", url=f"https://news.ycombinator.com/item?id={oid}", title=first[:160],
+                       company=parts[0][:80] if len(parts) > 1 else "", location=loc[:120],
+                       snippet=snippet_of(html_), text=text_of(html_), fetched_at=fetched_at,
+                       published_at=pub.strftime("%Y-%m-%dT%H:%M:%SZ") if pub else "", source_id=oid))
+    return out
+
+
 SOURCES = {
+    "arbeitnow": {"url": ARBEITNOW_URL, "parse": parse_arbeitnow, "max_per_day": 2,
+                  "home": "https://www.arbeitnow.com", "label": "Arbeitnow"},
+    "wwr": {"url": WWR_URL, "parse": parse_wwr, "max_per_day": 2,
+            "home": "https://weworkremotely.com", "label": "We Work Remotely"},
     "remotive": {"url": REMOTIVE_URL, "parse": parse_remotive, "max_per_day": REMOTIVE_MAX_PER_DAY,
                  "home": REMOTIVE_HOME, "label": "Remotive"},
     "remoteok": {"url": REMOTEOK_URL, "parse": parse_remoteok, "max_per_day": 0,
@@ -329,8 +444,19 @@ def collect_jobs(cache_dir: Path, sources=("remotive", "remoteok"), fetch: str =
             jobs.extend(aj)
             notes.extend(an)
             continue
-        if name not in SOURCES:
+        if name not in SOURCES and name != "hn":
             notes.append({"source": name, "ok": False, "note": f"unknown job source {name}"})
+            continue
+        if name == "hn":   # two calls: latest thread id, then its comments
+            sb, sm = load_or_fetch("hn_story", HN_STORY_URL, cache_dir, fetch=fetch, get_fn=get_fn, now=now, max_per_day=2)
+            sid = hn_story_id(sb)
+            body, meta = load_or_fetch("hn", HN_COMMENTS_URL.format(id=sid), cache_dir, fetch=fetch, get_fn=get_fn,
+                                       now=now, max_per_day=2) if sid else ("", {"note": "hn: no Who is hiring thread", **sm})
+            parsed = parse_hn(body, fetched_at=meta.get("fetched_at") or iso(now)) if body else []
+            jobs.extend(parsed)
+            notes.append({"source": "hn", "ok": bool(parsed), "n": len(parsed), "from_cache": bool(meta.get("from_cache")),
+                          "status": meta.get("status"), "fetched_at": meta.get("fetched_at") or "", "note": meta.get("note") or "",
+                          "home": "https://news.ycombinator.com", "label": "HN Who is hiring", "thread": sid})
             continue
         spec = SOURCES[name]
         body, meta = load_or_fetch(name, spec["url"], cache_dir, fetch=fetch, get_fn=get_fn, now=now,

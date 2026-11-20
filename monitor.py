@@ -84,7 +84,7 @@ def main(argv=None):
     ap.add_argument("--target", default="", help="de_jobs = job mode: rank fresh vacancies by CV closeness")
     ap.add_argument("--top", type=int, default=10, help="job mode: ping at most N new vacancies per pass")
     ap.add_argument("--min-score", type=float, default=0.0, help="job mode: skip vacancies below this score")
-    ap.add_argument("--job-sources", default="remotive,remoteok,ats", help="job mode: comma separated sources")
+    ap.add_argument("--job-sources", default="remotive,remoteok,ats,arbeitnow,wwr,hn", help="job mode: comma separated sources")
     ap.add_argument("-v", "--verbose", action="store_true")
     argv = list(sys.argv[1:] if argv is None else argv)
     if argv[:1] == ["check"]:  # short alias: python monitor.py check

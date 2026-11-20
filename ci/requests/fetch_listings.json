@@ -1,7 +1,7 @@
 {
- "id": "a2179-fresh-2026-11-20-wide",
- "why": "T-023 / EXP-015: wider query set (screens, A1932, donors) toward >= 100 fresh real lots after the freeze, same polite fetcher",
- "queries_file": "ci/requests/kp_queries_wide.txt",
- "max_pages": 3,
- "time_budget_s": 1200
+ "id": "a2179-fresh-2026-11-20-syn",
+ "why": "T-023 / T-031 / H-38: synonyms, Cyrillic spellings and part numbers toward 15 real KP positives with cards, same polite fetcher, rows already labeled are dropped",
+ "queries_file": "ci/requests/kp_queries_syn.txt",
+ "max_pages": 2,
+ "time_budget_s": 900
 }

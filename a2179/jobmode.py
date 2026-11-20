@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT / "eval") not in sys.path:
     sys.path.insert(0, str(ROOT / "eval"))
 
-DEFAULT_SOURCES = ("remotive", "remoteok", "ats")
+DEFAULT_SOURCES = ("remotive", "remoteok", "ats", "arbeitnow", "wwr", "hn")   # T-037: the last three
 
 
 def scorer(target="de_jobs", cv_path: Path = ROOT / "cv" / "master_cv.md"):

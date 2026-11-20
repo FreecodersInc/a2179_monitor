@@ -1,0 +1,69 @@
+# monitor.py --target de_jobs --dry-run --list --top 10, 2026-11-20 ~04:45 CET, nothing sent
+job mode: vacancies 3855 | new 3855 | pinged 10 | ranking aid, CV AUC 0.656 on fresh full-text labels
+  0.99 (cv 0.98, feat 1.00)  Software Engineer - Data Platform · samsara
+        https://www.samsara.com/company/careers/roles/7992889?gh_jid=7992889
+  0.99 (cv 0.98, feat 1.00)  Software Engineer - Data Platform · samsara
+        https://www.samsara.com/company/careers/roles/7922530?gh_jid=7922530
+  0.96 (cv 0.93, feat 1.00)  Data Engineer · toast
+        https://careers.toasttab.com/jobs?gh_jid=8359240
+  0.96 (cv 0.92, feat 1.00)  Senior Data Engineer II · samsara
+        https://www.samsara.com/company/careers/roles/8039914?gh_jid=8039914
+  0.96 (cv 0.92, feat 1.00)  Sr. Data Analytics Engineer (R14153) · Oportun
+        https://weworkremotely.com/remote-jobs/oportun-sr-data-analytics-engineer-r14153
+  0.94 (cv 0.88, feat 1.00)  Principal Data Engineer, Personalization - Central Product Insights · riotgames
+        https://www.riotgames.com/en/work-with-us/job/8049834?gh_jid=8049834
+  0.93 (cv 0.86, feat 1.00)  Senior Data Engineer · Lemon.io
+        https://remotive.com/remote-jobs/data/senior-data-engineer-2091137
+  0.93 (cv 0.86, feat 1.00)  Senior Finance Analytics Engineer · faire
+        https://boards.greenhouse.io/faire/jobs/8828560002?gh_jid=8828560002
+  0.92 (cv 0.84, feat 1.00)  Data Engineer, Product · notion
+        https://jobs.ashbyhq.com/notion/73a71747-28d3-4dda-a718-77336056e687
+  0.92 (cv 0.84, feat 1.00)  Data Engineer · samsara
+        https://www.samsara.com/company/careers/roles/8141959?gh_jid=8141959
+  0.92 (cv 0.84, feat 1.00)  Data Engineer · samsara
+        https://www.samsara.com/company/careers/roles/8250423?gh_jid=8250423
+  0.92 (cv 0.84, feat 1.00)  Data Platform Engineer (Mid-Level) · sumup
+        https://sumup.com/careers/positions/8364212002?gh_jid=8364212002
+  0.92 (cv 0.84, feat 1.00)  Senior Data Engineer, Marketing & GTM · amplitude
+        https://jobs.ashbyhq.com/amplitude/32a5b52c-9e3b-46e2-8c3f-a843fa21bd48
+  0.92 (cv 0.84, feat 1.00)  Principal Data Engineer -Teamfight Tactics · riotgames
+        https://www.riotgames.com/en/work-with-us/job/8187622?gh_jid=8187622
+  0.92 (cv 0.84, feat 1.00)  Specialist Solutions Architect - Data Engineering · databricks
+        https://databricks.com/company/careers/open-positions/job?gh_jid=8870159002
+  0.92 (cv 0.83, feat 1.00)  Senior Solutions Architect (EDW Enterprise Data Warehouse Migrations) · databricks
+        https://databricks.com/company/careers/open-positions/job?gh_jid=8720251002
+  0.92 (cv 0.83, feat 1.00)  Senior Solutions Architect (EDW Enterprise Data Warehouse Migrations) · databricks
+        https://databricks.com/company/careers/open-positions/job?gh_jid=8720254002
+  0.92 (cv 0.83, feat 1.00)  Senior Solutions Architect (EDW Enterprise Data Warehouse Migrations) · databricks
+        https://databricks.com/company/careers/open-positions/job?gh_jid=8720252002
+  0.92 (cv 0.83, feat 1.00)  Senior Solutions Architect (EDW Enterprise Data Warehouse Migrations) · databricks
+        https://databricks.com/company/careers/open-positions/job?gh_jid=8720253002
+  0.92 (cv 0.83, feat 1.00)  Senior Solutions Architect (EDW Enterprise Data Warehouse Migrations) · databricks
+        https://databricks.com/company/careers/open-positions/job?gh_jid=8704938002
+  0.91 (cv 0.83, feat 1.00)  Manager – AI & Data Platform Engineering · zscaler
+        https://job-boards.greenhouse.io/zscaler/jobs/5268021007
+  0.91 (cv 0.82, feat 1.00)  Senior Product Analytics Engineer - Ads · faire
+        https://boards.greenhouse.io/faire/jobs/8804205002?gh_jid=8804205002
+  0.91 (cv 0.82, feat 1.00)  Staff Software Engineer, Ads Data Platform · instacart
+        https://instacart.careers/job/?gh_jid=8372848
+  0.91 (cv 0.82, feat 1.00)  Staff Software Engineer, Ads Data Platform · instacart
+        https://instacart.careers/job/?gh_jid=8372846
+  0.91 (cv 0.82, feat 1.00)  Senior Data Engineer- People Analytics · sofi
+        https://sofi.com/careers/job/7963974003?gh_jid=7963974003
+  0.91 (cv 0.82, feat 1.00)  Lead Engineer, Data Platform · tide
+        https://job-boards.greenhouse.io/tide/jobs/8096229003
+  0.90 (cv 0.81, feat 1.00)  Data Engineer · Addepto
+        https://remoteOK.com/remote-jobs/remote-data-engineer-addepto-1137714
+  0.90 (cv 0.81, feat 1.00)  Data Platform Engineer · clickhouse
+        https://jobs.ashbyhq.com/clickhouse/6d2d05da-c1f4-4ff6-9d02-a30306940857
+  0.90 (cv 0.81, feat 1.00)  Data Engineer · lyft
+        https://app.careerpuck.com/job-board/lyft/job/8931413002?gh_jid=8931413002
+  0.90 (cv 0.81, feat 1.00)  Data Engineer · sigmacomputing
+        https://job-boards.greenhouse.io/sigmacomputing/jobs/7809973003
+
+# per source (parsed / after dedup) and source mix of the top N
+{"remotive": 15, "remoteok": 97, "arbeitnow": 300, "wwr": 25, "hn": 239}
+[('greenhouse', 2187), ('ashby', 742), ('arbeitnow', 295), ('lever', 255), ('hn', 239), ('remoteok', 97), ('wwr', 25), ('remotive', 15)]
+10 [('greenhouse', 7), ('wwr', 1), ('remotive', 1), ('ashby', 1)]
+30 [('greenhouse', 24), ('ashby', 3), ('wwr', 1), ('remotive', 1), ('remoteok', 1)]
+100 [('greenhouse', 70), ('ashby', 19), ('arbeitnow', 4), ('remoteok', 2), ('lever', 2), ('wwr', 1), ('remotive', 1), ('hn', 1)]

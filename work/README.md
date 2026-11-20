@@ -73,7 +73,7 @@
 | [T-034](T-034_new-part-price-reference-aliexpress-temu.md) | AliExpress и Temu: справочная цена нового экрана и матрицы A2179 | M-001 | blocked | H-41 |
 | [T-035](T-035_ebay-price-comparison-shipping-rs.md) | eBay: только сравнение цены с доставкой в Сербию | M-001 | blocked | H-42 |
 | [T-036](T-036_monitor-job-mode.md) | режим вакансий в monitor.py: ранжирование по близости к CV | M-003 | done | H-35, H-37 |
-| [T-037](T-037_job-mode-sources-and-trial.md) | режим вакансий: Arbeitnow, WWR, HN и живой пробный прогон | M-003 | todo | H-35, H-37 |
+| [T-037](T-037_job-mode-sources-and-trial.md) | режим вакансий: Arbeitnow, WWR, HN и живой пробный прогон | M-003 | in progress | H-35, H-37 |
 
 ### Что стоит на данных (blocked, 2026-11-20)
 | что | задача | гипотезы | что нужно |
