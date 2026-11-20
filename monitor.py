@@ -13,6 +13,8 @@
   python monitor.py check             same as --check-embedder
   python monitor.py --check-embedder   diagnose the optional embedder (versions, cache, load, test encode)
   python monitor.py --require-embedder fail with exit code 3 instead of falling back to TF-IDF
+  python monitor.py --target de_jobs --dry-run --list   job mode (T-036): fresh vacancies ranked by
+                                    closeness to cv/master_cv.md + profile features, top new ones pinged
 """
 import argparse
 import sys
@@ -42,6 +44,25 @@ def load_dotenv(path: Path):
         os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
 
 
+def job_mode(a, cfg, log):
+    from a2179.jobmode import run_jobs
+    al = Alerter(cfg, data_dir(cfg), log, dry_run=a.dry_run)
+    al.label = "vacancies"
+    while True:
+        r = run_jobs(cfg, data_dir(cfg), al, dry_run=a.dry_run, seed=a.seed, top=a.top, min_score=a.min_score,
+                     sources=[x for x in a.job_sources.split(",") if x])
+        bad = [n["source"] for n in r["notes"] if not n.get("ok")]
+        print(f"job mode: vacancies {r['jobs']} | new {r['new']} | pinged {len(r['picked'])}"
+              + (f" | sources failed: {', '.join(bad)}" if bad else "")
+              + " | ranking aid, CV AUC 0.656 on fresh full-text labels")
+        if a.list:
+            for j, s in r["ranked"][:max(a.top, 30)]:
+                print(f"  {s['score']:.2f} (cv {s['cv']:.2f}, feat {s['feat']:.2f})  {j.title[:70]} · {j.company}\n        {j.url}")
+        if not a.every:
+            return 0
+        time.sleep(max(1.0, a.every * 60))
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description="MacBook Air A2179 display/lid market monitor (Serbia)")
     ap.add_argument("--config", help="path to config.json (default: ./config.json, else built-in defaults)")
@@ -60,6 +81,10 @@ def main(argv=None):
                     help="worker processes for fetching (default 3, env A2179_WORKERS; 0 = sequential)")
     ap.add_argument("--max-concurrency", type=int, metavar="M",
                     help="GET requests in flight in total over all workers (default 10, env A2179_MAX_CONCURRENCY)")
+    ap.add_argument("--target", default="", help="de_jobs = job mode: rank fresh vacancies by CV closeness")
+    ap.add_argument("--top", type=int, default=10, help="job mode: ping at most N new vacancies per pass")
+    ap.add_argument("--min-score", type=float, default=0.0, help="job mode: skip vacancies below this score")
+    ap.add_argument("--job-sources", default="remotive,remoteok,ats", help="job mode: comma separated sources")
     ap.add_argument("-v", "--verbose", action="store_true")
     argv = list(sys.argv[1:] if argv is None else argv)
     if argv[:1] == ["check"]:  # short alias: python monitor.py check
@@ -76,6 +101,10 @@ def main(argv=None):
         return 0
     if a.check_embedder:
         return check_embedder(cfg)
+    if a.target == "de_jobs":
+        return job_mode(a, cfg, log)
+    if a.target and a.target != "a2179_screen":
+        ap.error(f"unknown --target {a.target} (a2179_screen or de_jobs)")
     if a.workers is not None and a.workers < 0:
         ap.error("--workers must be 0 or more")
     if a.max_concurrency is not None and a.max_concurrency < 1:

@@ -73,8 +73,18 @@ python -m unittest discover -s tests -t .
 ```
 
 ## Монитор A2179: обычное использование
+
+### Режим вакансий по CV
+```bash
+python monitor.py --target de_jobs --dry-run --list   # свежие вакансии по близости к cv/master_cv.md, ничего не шлёт
+python monitor.py --target de_jobs --seed             # первый раз: запомнить текущие без уведомлений
+python monitor.py --target de_jobs --top 10           # прислать до 10 новых верхних (Telegram, если настроен)
+python monitor.py --target de_jobs --every 360 --min-score 0.6 --job-sources remotive,remoteok,ats
+```
+Источники: Remotive, Remote OK и публичные ATS доски (Greenhouse, Lever, Ashby). Arbeitnow, We Work Remotely и HN в плане (T-037). Скор = 0.5 · близость к CV + 0.5 · признаки профиля, уже виденные лежат в `data/jobs_seen.json`.
+**Честно:** на свежих вакансиях, размеченных по полному тексту, AUC близости к CV 0.656 (EXP-011). Пока это помощь в сортировке, а не судья: верхние смотреть глазами.
 Монитор объявлений: **экран (LCD панель) или крышка в сборе для MacBook Air 13" 2020 Intel A2179** в Сербии.
-Источники: KupujemProdajem (поиск), ifix.rs, ihelp.rs, laptop-punjaci.com (страницы товаров и поиск по сайту).
+Источники: KupujemProdajem (поиск), ifix.rs, ihelp.rs, laptop-punjaci.com (страницы товаров и поиск по сайту). В плане: Limundo и KupindO как второй источник б/у (T-033, с dev машины оба отвечают 403 или проверкой, ждём пробу с раннера). AliExpress и Temu только справочная цена новых экранов и матриц (T-034), eBay только сравнение цены с доставкой в Сербию (T-035), оба сейчас blocked по robots.txt. OLX и Allegro не берём.
 Без LLM. Фильтр гибридный: регулярки + похожесть на эталонные фразы (локальный эмбеддер HF, если установлен, иначе TF-IDF по символьным n-граммам).
 Приоритет полноты: лучше лишнее уведомление, чем пропущенное объявление.
 
