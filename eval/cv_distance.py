@@ -51,6 +51,22 @@ def term_rx(term: str) -> re.Pattern:
     return re.compile(rf"(?<![a-z0-9]){t}(?![a-z0-9])", re.I)
 
 
+def cv_stack_terms(md: str) -> list[str]:
+    """Variant B (EXP-010): stack terms from the "Technical and Delivery Skills" section of the master CV."""
+    a = md.index("## Technical and Delivery Skills")
+    b = md.index("\n## ", a + 5)
+    out = []
+    for line in md[a:b].splitlines():
+        if not line.startswith("- "):
+            continue
+        body = line.split(":**", 1)[-1]
+        for t in re.split(r"[,;]| and |/", body):
+            t = re.sub(r"\(.*?\)|\.$", "", t).strip(" .")
+            if 1 < len(t) <= 30:
+                out.append(t)
+    return out
+
+
 def stack_terms(skills: dict) -> list[re.Pattern]:
     sk = skills or {}
     terms = list(sk.get("plus", []))
@@ -125,9 +141,13 @@ def main(argv=None):
     ap.add_argument("--cache", default=str(ROOT / "data" / "cache" / "jobs"))
     ap.add_argument("--target", default="de_jobs")
     ap.add_argument("--out", default=str(ROOT / "reports" / "exp010"))
+    ap.add_argument("--stack-from", default="", help="variant B: stack terms from this CV markdown (cv/master_cv.md)")
     a = ap.parse_args(argv)
     tg = load_target(a.target)
-    stack = stack_terms(json.loads((ROOT / "targets" / f"{a.target}.json").read_text(encoding="utf-8")).get("skills", {}))
+    if a.stack_from:
+        stack = stack_terms({"plus": cv_stack_terms(Path(a.stack_from).read_text(encoding="utf-8"))})
+    else:
+        stack = stack_terms(json.loads((ROOT / "targets" / f"{a.target}.json").read_text(encoding="utf-8")).get("skills", {}))
     rows = [json.loads(l) for l in Path(a.labeled).read_text(encoding="utf-8").splitlines() if l.strip()]
     texts = job_texts(Path(a.cache))
     out = Path(a.out)
@@ -145,7 +165,7 @@ def main(argv=None):
             f.write(json.dumps(p) + "\n")
     y = [bool(r["label"]) for r in rows]
     grade = [{"E": 3, "S": 2, "C": 1, "I": 0}[r["esci"]] for r in rows]
-    res = {"rows": len(rows), "with_text": have, "weights": W,
+    res = {"stack_from": a.stack_from or "targets profile", "stack_terms": len(stack), "rows": len(rows), "with_text": have, "weights": W,
            "auc": {k: round(auc([p[k] for p in P], y), 3) for k in (*W, "cv_score")},
            "auc_with_text_only": round(auc([p["cv_score"] for p in P if p["has_text"]],
                                            [l for l, p in zip(y, P) if p["has_text"]]), 3),

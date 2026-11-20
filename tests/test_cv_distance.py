@@ -53,3 +53,14 @@ class TestProfileV2AndRulesNow(unittest.TestCase):
         self.assertEqual(r["matches_in_sample"], sum(1 for x in rows if classify(x["title"], "", target=tg).match))
         self.assertGreaterEqual(r["precision"], 0.0)
         self.assertLessEqual(r["recall"], 1.0)
+
+
+class TestCvStackTerms(unittest.TestCase):
+    def test_skills_section_terms(self):
+        md = "# x\n\n## Technical and Delivery Skills\n\n- **Data engineering:** Apache Spark, Airflow and ETL; S3.\n- **Cloud:** AWS/GCP\n\n## Professional Experience\n- **Not:** Excel\n"
+        self.assertEqual(C.cv_stack_terms(md), ["Apache Spark", "Airflow", "ETL", "S3", "AWS", "GCP"])
+
+    def test_master_cv_in_repo_has_skills(self):
+        p = ROOT / "cv" / "master_cv.md"
+        self.assertTrue(p.exists())
+        self.assertGreater(len(C.cv_stack_terms(p.read_text(encoding="utf-8"))), 30)
