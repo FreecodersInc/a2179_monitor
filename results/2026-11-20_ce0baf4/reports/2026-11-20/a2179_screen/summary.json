@@ -1,0 +1,15 @@
+{
+  "case": "a2179_screen",
+  "date": "2026-11-20",
+  "n": 331,
+  "n_matches": 23,
+  "notes": [
+    "listings=eval/candidates_2026-11-19.jsonl n=331"
+  ],
+  "files": [
+    "matches.csv",
+    "matches.md",
+    "all.csv",
+    "all.md"
+  ]
+}

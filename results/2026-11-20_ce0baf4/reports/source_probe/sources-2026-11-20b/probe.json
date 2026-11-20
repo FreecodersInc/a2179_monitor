@@ -1,0 +1,75 @@
+{
+ "id": "sources-2026-11-20b",
+ "rows": [
+  {
+   "url": "https://www.kupindo.com/",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": true,
+   "status": 200,
+   "bytes": 65025,
+   "title": "Kupovina preko interneta – Kupindo.com",
+   "verdict": "ok",
+   "forms": [
+    {
+     "action": "https://www.kupindo.com/pretraga.php",
+     "inputs": [
+      "bSearchBox",
+      "Pretraga"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.limundo.com/",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": true,
+   "status": 200,
+   "bytes": 93133,
+   "title": "Limundo - Sigurna kupoprodaja putem Internet aukcija",
+   "verdict": "ok",
+   "forms": [
+    {
+     "action": "https://www.limundo.com/pretraga",
+     "inputs": [
+      "type",
+      "sSort",
+      "sSmer",
+      "Okrug",
+      "Opstina",
+      "Okrug",
+      "fv",
+      "fa",
+      "txtCenaOd",
+      "txtCenaDo",
+      "txtProdavac",
+      "JeKOFP"
+     ]
+    },
+    {
+     "action": "https://www.limundo.com/Prijava",
+     "inputs": [
+      "_token",
+      "vremenska_zona",
+      "username",
+      "password",
+      "chbPrijavljen"
+     ]
+    },
+    {
+     "action": "https://www.limundo.com/register",
+     "inputs": [
+      "_token",
+      "ime",
+      "prezime",
+      "email",
+      "username",
+      "password",
+      "inputCheckPunoletan"
+     ]
+    }
+   ]
+  }
+ ]
+}
