@@ -18,6 +18,9 @@
 * Проход 2, по полному описанию (`Job.text`), поле `esci_text`. Тот же разметчик (бот), проход 2 видит проход 1, это записанная угроза.
 * Позитив по ADR-0028: E и S, SRE, DevOps, ML engineer позитив, Data Science C (вариант DS считается отдельно).
 
+### Рубрика прохода 1 (записана вместе с метками прохода 1)
+E: data engineer, analytics engineer, data platform, data infrastructure, data lakes. S: ML engineer, AI/ML engineer, SRE, DevOps, platform, cloud и infrastructure engineer, AI platform, applied AI engineer и applied AI или solution architect (его роли из CV). C: тот же домен, но не он: data scientist, analyst, research или applied scientist, менеджеры и директора инженерных команд, стажёры, new grad и junior, client или endpoint platform (IT), security. I: всё остальное (продажи, финансы, дизайн, юристы, фронтенд, full stack).
+
 ## Гипотезы (до прогона)
 1. **H-33 v2 честно**: правила v2 на невиденных строках, метки по тексту: P ≥ 0.70 и R по E+S ≥ 0.50. Опровержение: верхняя граница 95% R < 0.50 или P < 0.60.
 2. **H-34**: R правил v2 по строгому E ≥ 0.70, опровержение R < 0.60.
