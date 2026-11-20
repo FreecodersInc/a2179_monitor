@@ -98,6 +98,15 @@ class Collector(unittest.TestCase):
         self.assertEqual(f.calls, ["https://www.kupindo.com/robots.txt"])
 
 
+class Links(unittest.TestCase):
+    def test_no_member_search_or_paging_links(self):
+        got = U.category_links(["https://www.limundo.com/Clan/someone", "https://www.limundo.com/pretraga/x?a=1&amp;b=2",
+                                LI + "?&page=1", LI + "?type=list", KU + "/rss", KU + "_strana_2",
+                                "https://www.limundo.com/kupovina/Racunari-i-oprema/Apple/x/161000001",
+                                "https://www.limundo.com/Racunari-i-oprema/Apple/aukcije/g12_s99", LI, LI])
+        self.assertEqual(got, ["https://www.limundo.com/Racunari-i-oprema/Apple/aukcije/g12_s99", LI])
+
+
 class DailyRequest(unittest.TestCase):
     def test_once_per_day(self):
         import os

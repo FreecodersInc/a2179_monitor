@@ -7,18 +7,14 @@
    "status": 200,
    "verdict": "ok",
    "lots": 24,
-   "category_links": [
-    "https://www.kupindo.com/Racunari-i-oprema/Laptop-racunari-delovi-i-oprema/artikli/1469/rss"
-   ]
+   "category_links": []
   },
   {
    "url": "https://www.kupindo.com/Racunari-i-oprema/Laptop-racunari-delovi-i-oprema/artikli/1469_strana_2",
    "status": 200,
    "verdict": "ok",
    "lots": 24,
-   "category_links": [
-    "https://www.kupindo.com/Racunari-i-oprema/Laptop-racunari-delovi-i-oprema/artikli/1469/rss"
-   ]
+   "category_links": []
   },
   {
    "url": "https://www.limundo.com/Racunari-i-oprema/aukcije/g12",
@@ -26,14 +22,7 @@
    "verdict": "ok",
    "lots": 72,
    "category_links": [
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12",
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?type=list",
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?type=thumb",
-    "https://www.limundo.com/pretraga/mobile-filter?currPage=home&amp;NapPretKategorijaLimundo=12&amp;IDPodGrupa=0&amp;link=%2FRacunari-i-oprema%2Faukcije%2Fg12",
-    "https://www.limundo.com/Clan/aslaptopovi",
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=0",
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=1",
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=2"
+    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12"
    ]
   },
   {
@@ -42,14 +31,7 @@
    "verdict": "ok",
    "lots": 72,
    "category_links": [
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12",
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?page=1&amp;type=list",
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?page=1&amp;type=thumb",
-    "https://www.limundo.com/pretraga/mobile-filter?currPage=home&amp;NapPretKategorijaLimundo=12&amp;IDPodGrupa=0&amp;link=%2FRacunari-i-oprema%2Faukcije%2Fg12",
-    "https://www.limundo.com/Clan/aslaptopovi",
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=0",
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=1",
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=2"
+    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12"
    ]
   },
   {
@@ -58,14 +40,7 @@
    "verdict": "ok",
    "lots": 72,
    "category_links": [
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12",
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?page=2&amp;type=list",
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?page=2&amp;type=thumb",
-    "https://www.limundo.com/pretraga/mobile-filter?currPage=home&amp;NapPretKategorijaLimundo=12&amp;IDPodGrupa=0&amp;link=%2FRacunari-i-oprema%2Faukcije%2Fg12",
-    "https://www.limundo.com/Clan/aslaptopovi",
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=1",
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=2",
-    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=3"
+    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12"
    ]
   }
  ],

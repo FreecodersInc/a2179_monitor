@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import json
 import logging
+import re
 import sys
 import time
 import urllib.robotparser
@@ -29,6 +30,17 @@ from a2179.parsers import parse_used_listing, used_site  # noqa: E402
 from a2179.rules import classify  # noqa: E402
 from a2179.target import load_target  # noqa: E402
 from source_probe import links_of, verdict  # noqa: E402
+
+
+def category_links(links):
+    """Section links only: no lots, no member pages (seller names), no search, no paging or view switches."""
+    out = []
+    for x in links:
+        x = x.replace("&amp;", "&")
+        if (used_site(x) and not re.search(r"/kupovina/|/Clan/|/pretraga|/rss$|[?&](page|type)=|_strana_", x)
+                and not x.rsplit("/", 1)[-1][:1].isdigit() and x not in out):
+            out.append(x)
+    return out[:40]
 
 
 def collect(pages, fetcher, ua=DEFAULT_UA, target="a2179_screen", budget_s=240.0, clock=time.monotonic):
@@ -67,8 +79,7 @@ def collect(pages, fetcher, ua=DEFAULT_UA, target="a2179_screen", budget_s=240.0
                 else:
                     got = parse_used_listing(txt, u)
                     rec["lots"] = len(got)
-                    rec["category_links"] = [x for x in links_of(txt, u) if used_site(x) and "/kupovina/" not in x
-                                             and not x.rsplit("/", 1)[-1][:1].isdigit()][:40]
+                    rec["category_links"] = category_links(links_of(txt, u))
                     for r in got:
                         if r["id"] in seen:
                             continue
