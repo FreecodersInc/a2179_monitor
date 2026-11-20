@@ -1,0 +1,1 @@
+{"id": "kp-daily-v1", "queries_file": "ci/requests/kp_queries_daily.txt", "max_pages": 1, "time_budget_s": 300}

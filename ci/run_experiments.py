@@ -234,6 +234,72 @@ def used_step(py, out: Path, T, req):
     return rec
 
 
+def kp_daily_request(root=ROOT, date=None):
+    """T-031 / H-38: ci/requests/kp_daily.json {"id", "queries_file", "max_pages", "time_budget_s"} collects
+    KP once per UTC day (first CI run of the day), same polite fetcher as fetch_listings, KP only.
+    Fulfilled for the day when some results/<base>/reports/kp_daily/<date>/candidates.jsonl exists."""
+    p = Path(root) / "ci" / "requests" / "kp_daily.json"
+    if os.environ.get("A2179_CI_FETCH_LISTINGS", "auto") in ("off", "0", "no") or not p.is_file():
+        return None
+    req = json.loads(p.read_text(encoding="utf-8"))
+    date = date or time.strftime("%Y-%m-%d", time.gmtime())
+    if not req.get("queries_file") or any((Path(root) / "results").glob(f"*/reports/kp_daily/{date}/candidates.jsonl")):
+        return None
+    return {**req, "date": date}
+
+
+def kp_daily_step(py, out: Path, T, req):
+    d = out / "reports" / "kp_daily" / req["date"]
+    d.mkdir(parents=True, exist_ok=True)
+    cmd = [py, "eval/enrich.py", "collect", "--out", str(d / "candidates.jsonl"), "--shops", "none",
+           "--max-pages", str(int(req.get("max_pages", 1))), "--time-budget", str(float(req.get("time_budget_s", 300))),
+           "--queries", str(ROOT / req["queries_file"]), "--summary", str(d / "summary.json")]
+    rec = run("kp_daily", cmd, min(T, int(float(req.get("time_budget_s", 300))) + 120))
+    rec["advisory"] = True
+    return rec
+
+
+RUNNER_OUT = {"granularity": "granularity.json", "rerank_jobs": "rerank_jobs.json"}
+
+
+def runner_request(root=ROOT):
+    """EXP-021 H-24, EXP-022 H-43: ci/requests/runner_experiments.json {"id", "steps"} runs CPU experiments
+    that need the runner's model cache. Once per id and step: a step is done when its output file is in
+    some results/<base>/reports/runner_exp/<id>/."""
+    p = Path(root) / "ci" / "requests" / "runner_experiments.json"
+    if os.environ.get("A2179_CI_RUNNER_EXP", "auto") in ("off", "0", "no") or not p.is_file():
+        return None
+    req = json.loads(p.read_text(encoding="utf-8"))
+    rid = str(req.get("id", "")).strip()
+    todo = [s for s in req.get("steps", []) if s in RUNNER_OUT
+            and not any((Path(root) / "results").glob(f"*/reports/runner_exp/{rid}/{RUNNER_OUT[s]}"))]
+    return {**req, "id": rid, "steps": todo} if rid and todo else None
+
+
+def runner_steps(py, out: Path, T, req, dense):
+    d = out / "reports" / "runner_exp" / req["id"]
+    d.mkdir(parents=True, exist_ok=True)
+    recs = []
+    for s in req["steps"]:
+        if s in ("granularity", "rerank_jobs"):
+            if not dense:
+                recs.append({"name": f"runner_exp[{s}]", "cmd": None, "exit_code": None, "signal": None,
+                             "timed_out": False, "duration_s": 0, "ok": True, "skipped": "dense not available",
+                             "stdout_tail": "", "stderr_tail": "", "advisory": True})
+                continue
+        if s == "granularity":
+            rec = run("runner_exp[granularity]", [py, "eval/granularity.py", "--out", str(d),
+                                                  "--device", COMPUTE_ENV.get("A2179_DEVICE", "cpu")], min(T, 900))
+        else:
+            # the only download outside setup: eval/rerank_jobs.py checks the summed file size (Hub
+            # metadata) against 50 MiB first and writes blocked instead of downloading when over
+            rec = run("runner_exp[rerank_jobs]", [py, "eval/rerank_jobs.py", "--out", str(d)], min(T, 900),
+                      env={"HF_HUB_OFFLINE": "0", "TRANSFORMERS_OFFLINE": "0"})
+        rec["advisory"] = True
+        recs.append(rec)
+    return recs
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=str(ROOT / "ci_out"))
@@ -327,6 +393,9 @@ def main(argv=None):
     ureq = used_request()
     if ureq:   # once a day in any mode, also on a targeted run (light: robots + 5 pages)
         steps.append(used_step(py, out, T, ureq))
+    kreq = kp_daily_request()
+    if kreq:   # once a day in any mode, KP only, one page per query
+        steps.append(kp_daily_step(py, out, T, kreq))
 
     # charts + ranking metrics from the sweep scores, advisory: a failure here never turns CI red
     if want("plots") and os.environ.get("A2179_CI_PLOTS", "1") not in ("0", "false", "no") and (out / "sweep" / "sweep.json").is_file():
@@ -348,6 +417,11 @@ def main(argv=None):
         rec = run("review", rv, T)
         rec["advisory"] = True  # a missing cache or a failed API call must not turn CI red
         steps.append(rec)
+
+    # one-off CPU experiments on the runner's model cache (after review, so the jobs cache is fresh)
+    rreq = runner_request()
+    if rreq:
+        steps.extend(runner_steps(py, out, T, rreq, bool(info.get("torch") and info.get("sentence_transformers"))))
 
     # Telegram integration: only with both secrets, the only step that gets them
     have = redact.presence()

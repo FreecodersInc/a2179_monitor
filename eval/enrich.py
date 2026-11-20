@@ -437,6 +437,7 @@ def main(argv=None):
     c.add_argument("--workers", type=int, default=None)
     c.add_argument("--max-concurrency", type=int, default=None)
     c.add_argument("--time-budget", type=float, default=None, help="seconds")
+    c.add_argument("--summary", default=None, help="also write a JSON summary (pages per status, rows per query)")
     m = sub.add_parser("merge", help="append reviewed rows to labeled.jsonl")
     m.add_argument("--reviewed", required=True)
     m.add_argument("--labeled", default=str(LABELED))
@@ -474,6 +475,16 @@ def main(argv=None):
     rows, stats = build_candidates(found, cfg, Path(a.labeled), a.limit or None)
     paths = write_out(rows, out, a.csv)
     print(f"pages: {dict(summary)}")
+    if a.summary:
+        per_q = Counter(q for _, q in found)
+        Path(a.summary).parent.mkdir(parents=True, exist_ok=True)
+        Path(a.summary).write_text(json.dumps({
+            "queries": len(queries), "queries_with_rows": sum(1 for q in queries if per_q.get(q)),
+            "rows_per_query": {q: per_q.get(q, 0) for q in queries}, "pages": dict(summary),
+            "listings": len(found), "stats": dict(stats), "kp_blocked": any(k.startswith("kp:blocked") for k in summary),
+            "requests": metrics.counters.get("fetch.requests", 0) if not a.offline_html else 0,
+            "errors": metrics.counters.get("fetch.errors", 0) if not a.offline_html else 0},
+            ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"listings: {len(found)} | {dict(stats)}")
     if any(k.startswith("kp:blocked") for k in summary):
         print("KP отказал (403/капча): KP пропущен до следующего запуска, магазины собраны")
