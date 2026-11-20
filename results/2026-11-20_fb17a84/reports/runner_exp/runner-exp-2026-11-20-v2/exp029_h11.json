@@ -1,0 +1,33 @@
+{
+  "id": "runner-exp-2026-11-20-v2",
+  "exp": "EXP-029",
+  "hyp": "H-11",
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "dry_run": false,
+  "cuda": {
+    "torch": "2.14.1+cu126",
+    "cuda_available": true,
+    "device_count": 1,
+    "device_name": "NVIDIA GeForce MX130",
+    "cuda_version": "12.6"
+  },
+  "accept_lt": 0.0001,
+  "refute_ge": 0.001,
+  "status": "done",
+  "verdict_rule": "accepted if max|dcos|<1e-4, refuted if >=1e-3",
+  "n": 371,
+  "max_abs_dcos": 6.556510925292969e-07,
+  "mean_abs_dcos": 1.9785207558192333e-07,
+  "n_ge_1e-4": 0,
+  "n_ge_1e-3": 0,
+  "worst": {
+    "row_index": 246,
+    "sim_pos": 2.384185791015625e-07,
+    "sim_neg": 4.172325134277344e-07,
+    "d": 6.556510925292969e-07,
+    "i": 246
+  },
+  "suggested_verdict": "accepted",
+  "cuda_device": "NVIDIA GeForce MX130",
+  "duration_s": 52.9
+}
