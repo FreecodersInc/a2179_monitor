@@ -9,3 +9,5 @@ ci_out/
 # personal data (CVs, private profiles): never committed, the repo is public
 private/
 targets/*.local.json
+# project-local caches (HF models, CI scratch): never commit
+.cache/
