@@ -1,0 +1,110 @@
+{
+ "id": "sources-2026-11-20d",
+ "rows": [
+  {
+   "url": "https://www.kupindo.com/",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "robots_rules": [
+    "Disallow: /pretraga.php",
+    "Disallow: /pretragaLimundo.php",
+    "Disallow: /pretragaKupindo.php",
+    "Disallow: /KupiBezbedno",
+    "Disallow: /KupiBezbedno/",
+    "Disallow: /PostaviPitanje/",
+    "Disallow: /MojKupindo",
+    "Disallow: /MojKupindo/",
+    "Disallow: /*/Sledeci",
+    "Disallow: /*/Prethodni",
+    "Disallow: /Error404/",
+    "Disallow: /Error404",
+    "Disallow: /*/cena_DESC",
+    "Disallow: /*/cena_ASC",
+    "Disallow: /*/UbaciUListuZelja",
+    "Disallow: /Rss/",
+    "Disallow: /inc/ajx/*",
+    "Disallow: /Ref/*",
+    "Disallow: /Api/*",
+    "Disallow: /ref/*",
+    "Disallow: /api/*",
+    "Disallow: /kupljeno/*",
+    "Disallow: */FBApp"
+   ],
+   "allowed": true,
+   "status": 200,
+   "bytes": 65047,
+   "title": "Kupovina preko interneta – Kupindo.com",
+   "verdict": "ok",
+   "forms": [
+    {
+     "action": "https://www.kupindo.com/pretraga.php",
+     "inputs": [
+      "bSearchBox",
+      "Pretraga"
+     ]
+    }
+   ],
+   "links": [
+    "https://www.kupindo.com/Racunari-i-oprema/artikli/322"
+   ]
+  },
+  {
+   "url": "https://www.limundo.com/",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "robots_rules": [
+    "Disallow: /pretraga"
+   ],
+   "allowed": true,
+   "status": 200,
+   "bytes": 93158,
+   "title": "Limundo - Sigurna kupoprodaja putem Internet aukcija",
+   "verdict": "ok",
+   "forms": [
+    {
+     "action": "https://www.limundo.com/pretraga",
+     "inputs": [
+      "type",
+      "sSort",
+      "sSmer",
+      "Okrug",
+      "Opstina",
+      "Okrug",
+      "fv",
+      "fa",
+      "txtCenaOd",
+      "txtCenaDo",
+      "txtProdavac",
+      "JeKOFP",
+      "txtPretraga"
+     ]
+    },
+    {
+     "action": "https://www.limundo.com/Prijava",
+     "inputs": [
+      "_token",
+      "vremenska_zona",
+      "username",
+      "password",
+      "chbPrijavljen"
+     ]
+    },
+    {
+     "action": "https://www.limundo.com/register",
+     "inputs": [
+      "_token",
+      "ime",
+      "prezime",
+      "email",
+      "username",
+      "password",
+      "inputCheckPunoletan"
+     ]
+    }
+   ],
+   "links": [
+    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12"
+   ]
+  }
+ ]
+}
