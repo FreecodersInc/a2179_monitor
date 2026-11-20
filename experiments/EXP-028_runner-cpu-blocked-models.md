@@ -2,15 +2,15 @@
 
 | поле | значение |
 |---|---|
-| статус | planned |
-| вердикты | |
+| статус | done |
+| вердикты | H-04 refuted, H-13 refuted, H-19 accepted, H-23 refuted |
 | дата | 2026-11-20 |
 | автор | Grok Ebanutyi, ревью Лёня |
-| код (commit) | протокол `452287f`, код этого коммита |
-| данные | `eval/labeled.jsonl`, только реальные строки (source не synthetic), без синтетики |
+| код (commit) | протокол `452287f`, прогон `ac25fc3`, результаты `d481a5d` (`results/2026-11-20_ac25fc3`) |
+| данные | `eval/labeled.jsonl`, только реальные строки (source не synthetic): 371 строка, 17 позитивов, blob `89e2f32`, sha256 `f0248ee0b1dce32e0f794b0117f2e9b2fbabeadea925ba63ee2ec6c6f240abda` |
 | окружение | self-hosted раннер `a2179-gpu`, CPU, GPU скрыт (`CUDA_VISIBLE_DEVICES` пустой). Модели качает и гоняет только раннер |
 | seed | 0 для bootstrap |
-| артефакты | `results/<base>/reports/runner_exp/runner-exp-2026-11-20-v2/` |
+| артефакты | `results/2026-11-20_ac25fc3/reports/runner_exp/runner-exp-2026-11-20-v2/` (модели), MiniLM база: `results/2026-11-20_ac25fc3/dense_scores.jsonl` того же прогона CI |
 
 ## Вопрос и гипотеза (до прогона)
 
@@ -38,12 +38,25 @@ python eval/exp028_blocked_models.py --out reports/runner_exp/runner-exp-2026-11
 
 ## Результаты
 
-Не прогонялось. Запись сделана до прогона на раннере.
+Прогон на раннере `a2179-gpu`, CPU, коммит `ac25fc3`, артефакт `results/2026-11-20_ac25fc3/reports/runner_exp/runner-exp-2026-11-20-v2/exp028.json`. 371 реальная строка, 17 позитивов. Все четыре модели `done`. MiniLM на тех же строках взят из `dense_scores.jsonl` того же прогона CI (скор = pos − neg, та же функция `ranking_metrics`, что в `eval/exp028_blocked_models.py`). Текстов объявлений в артефакте нет.
+
+| канал | модель | P@R1 | P@R95 | R@npos | AP | duration_s |
+|---|---|---|---|---|---|---|
+| BM25 (база в артефакте) | лексика, sim_pos − sim_neg | 0.097 | 0.097 | 0.059 | 0.225 | – |
+| TF-IDF (база в артефакте) | лексика, sim_pos − sim_neg | 0.159 | 0.159 | 0.118 | 0.167 | – |
+| MiniLM (тот же прогон CI) | paraphrase-multilingual-MiniLM-L12-v2 | 0.067 | 0.067 | 0.118 | 0.129 | – |
+| H-04 NLI | MoritzLaurer/multilingual-MiniLMv2-L6-mnli-xnli | 0.046 | 0.046 | 0.000 | 0.039 | 42.5 |
+| H-13 mMARCO CE | cross-encoder/mmarco-mMiniLMv2-L12-H384-v1 | 0.110 | 0.110 | 0.000 | 0.117 | 388.2 |
+| H-19 SPLADE v3 | naver/splade-v3-distilbert | 0.097 | 0.097 | 0.294 | 0.368 | 38.8 |
+| H-23 ColBERT-small | answerdotai/answerai-colbert-small-v1 | 0.062 | 0.062 | 0.118 | 0.113 | 20.8 |
 
 ## Выводы
 
-После прогона на раннере.
+* **H-04 refuted.** NLI P@R1 0.046 против MiniLM 0.067 (прирост −0.021) и против BM25 0.097, оба < 0.05. NLI mMiniLM в монитор не берём.
+* **H-13 refuted.** mMARCO P@R95 0.110 против TF-IDF 0.159 из того же артефакта, прирост −0.049 < 0.02. Зарегистрированная база tfidf+feat в этом артефакте не посчитана, она могла быть только не ниже лексического TF-IDF, зазор бы не сократился. mMARCO L12 в монитор A2179 не берём.
+* **H-19 accepted.** SPLADE P@R1 0.097 как у BM25, прирост 0.000 ≤ 0.02 (опровержение было бы от +0.05). По AP SPLADE выше (0.368 против 0.225), но правило записано по P@R1. SPLADE в монитор не берём, остаётся BM25.
+* **H-23 refuted.** ColBERT P@R1 0.062 против MiniLM 0.067 на тех же 371 строке, прирост −0.005 < 0.03. ColBERT-small в монитор не берём.
 
 ## Угрозы валидности
 
-Реальные позитивы A2179 малочисленны. H-12 опровергнута, поэтому H-13 идёт по всему набору, не по объединению top-k. Библиотеки SPLADE/ColBERT на раннере могут отсутствовать, тогда соответствующая гипотеза останется без числа, не «refuted».
+Реальных позитивов 17, интервалы широкие. H-13 сравнивался с TF-IDF без признаков, потому что tfidf+feat в `exp028.json` нет. H-19 по P@R1 совпадает с BM25, при этом R@npos и AP у SPLADE выше, это не меняет заранее записанное правило. MiniLM для H-04 и H-23 взят из `dense_scores.jsonl` того же прогона, не из повторной загрузки модели внутри `exp028_blocked_models.py`.
