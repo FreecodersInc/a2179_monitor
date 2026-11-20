@@ -1,0 +1,131 @@
+{
+ "schema": 3,
+ "generated_utc": "2026-11-20T18:38:52Z",
+ "commit": {
+  "sha": "e0948b1fe88f9d390c5479240d641c9445f82e28",
+  "short": "e0948b1",
+  "subject": "EXP-027: no CUDA here, no complete CE/ColBERT/SPLADE or large dense under 50 MiB, statuses synced",
+  "ref": "refs/heads/main",
+  "repository": "FreecodersInc/a2179_monitor",
+  "run_id": "44794652043",
+  "run_attempt": "1",
+  "workflow": "experiments",
+  "actor": "leonid133",
+  "run_url": "https://github.com/FreecodersInc/a2179_monitor/actions/runs/44794652043"
+ },
+ "runner": {
+  "name": "a2179-gpu",
+  "os": "Linux",
+  "arch": "X64",
+  "python": "3.14.4",
+  "implementation": "CPython",
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "machine": "x86_64",
+  "cpu_count": 8,
+  "torch": "2.14.1+cu126",
+  "cuda_available": false,
+  "cuda_version": "12.6",
+  "device_name": null,
+  "device_count": 0,
+  "sentence_transformers": "5.7.0",
+  "transformers": "5.23.0"
+ },
+ "dense": {
+  "enabled": false,
+  "reason": "disabled (A2179_CI_DENSE=off)",
+  "mode": "off",
+  "hf_offline": true
+ },
+ "secrets": {
+  "GITHUB_TOKEN": "present",
+  "TG_BOT_TOKEN": "present",
+  "TG_CHAT_ID": "present"
+ },
+ "steps": [
+  {
+   "name": "setup_venv",
+   "cmd": [
+    "bash",
+    "ci/setup_venv.sh"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": null,
+   "duration_s": 1,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": null,
+   "stderr_tail": null
+  },
+  {
+   "name": "env_probe",
+   "cmd": [
+    "/home/vessyl-runner/a2179_monitor/.venv/bin/python",
+    "/home/vessyl-runner/a2179_monitor/actions-runner/~/a2179_monitor/a2179_monitor/a2179_monitor/ci/env_probe.py"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": false,
+   "duration_s": 23.45,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": null,
+   "stderr_tail": null
+  },
+  {
+   "name": "lint",
+   "cmd": [
+    "/home/vessyl-runner/a2179_monitor/.venv/bin/python",
+    "-m",
+    "compileall",
+    "-q",
+    "a2179",
+    "eval",
+    "ci",
+    "tests",
+    "monitor.py"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": false,
+   "duration_s": 0.75,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": null,
+   "stderr_tail": null
+  },
+  {
+   "name": "tg_integration",
+   "cmd": [
+    "/home/vessyl-runner/a2179_monitor/.venv/bin/python",
+    "-m",
+    "unittest",
+    "-v",
+    "integration.test_telegram"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": false,
+   "duration_s": 1.06,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": null,
+   "stderr_tail": null
+  }
+ ],
+ "metrics": {
+  "eval": null,
+  "sweep": null,
+  "ranking": null,
+  "review": null,
+  "targets": null
+ },
+ "ok": true,
+ "tests_ok": null,
+ "workflow_in_sync": false,
+ "total_duration_s": 26.26
+}
