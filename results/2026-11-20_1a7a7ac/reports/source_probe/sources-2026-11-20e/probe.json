@@ -1,0 +1,257 @@
+{
+ "id": "sources-2026-11-20e",
+ "rows": [
+  {
+   "url": "https://www.kupindo.com/Racunari-i-oprema/artikli/322",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "robots_rules": [
+    "Disallow: /pretraga.php",
+    "Disallow: /pretragaLimundo.php",
+    "Disallow: /pretragaKupindo.php",
+    "Disallow: /KupiBezbedno",
+    "Disallow: /KupiBezbedno/",
+    "Disallow: /PostaviPitanje/",
+    "Disallow: /MojKupindo",
+    "Disallow: /MojKupindo/",
+    "Disallow: /*/Sledeci",
+    "Disallow: /*/Prethodni",
+    "Disallow: /Error404/",
+    "Disallow: /Error404",
+    "Disallow: /*/cena_DESC",
+    "Disallow: /*/cena_ASC",
+    "Disallow: /*/UbaciUListuZelja",
+    "Disallow: /Rss/",
+    "Disallow: /inc/ajx/*",
+    "Disallow: /Ref/*",
+    "Disallow: /Api/*",
+    "Disallow: /ref/*",
+    "Disallow: /api/*",
+    "Disallow: /kupljeno/*",
+    "Disallow: */FBApp"
+   ],
+   "allowed": true,
+   "status": 200,
+   "bytes": 181913,
+   "title": "Računari i oprema - Kupindo.com",
+   "verdict": "ok",
+   "forms": [
+    {
+     "action": "https://www.kupindo.com/pretraga.php",
+     "inputs": [
+      "bSearchBox",
+      "Pretraga"
+     ]
+    },
+    {
+     "action": "/Racunari-i-oprema/artikli/322",
+     "inputs": [
+      "iStr"
+     ]
+    }
+   ],
+   "links": [
+    "https://www.kupindo.com/Racunari-i-oprema/artikli/322/rss",
+    "https://www.kupindo.com/Racunari-i-oprema/Desktop-racunari/artikli/18",
+    "https://www.kupindo.com/Racunari-i-oprema/Racunarske-komponente/artikli/337",
+    "https://www.kupindo.com/Racunari-i-oprema/Laptop-racunari-delovi-i-oprema/artikli/1469",
+    "https://www.kupindo.com/Racunari-i-oprema/Tableti-i-oprema/artikli/2207",
+    "https://www.kupindo.com/Racunari-i-oprema/Periferije/artikli/1941",
+    "https://www.kupindo.com/Racunari-i-oprema/Monitori/artikli/129",
+    "https://www.kupindo.com/Racunari-i-oprema/Mrezna-oprema/artikli/20",
+    "https://www.kupindo.com/Racunari-i-oprema/PC-gaming-oprema/artikli/1681",
+    "https://www.kupindo.com/Racunari-i-oprema/USB-flash-memorije/artikli/1717",
+    "https://www.kupindo.com/Racunari-i-oprema/Citaci-memorijskih-kartica/artikli/5453",
+    "https://www.kupindo.com/Racunari-i-oprema/Software/artikli/22",
+    "https://www.kupindo.com/Racunari-i-oprema/Domeni-i-hosting/artikli/326",
+    "https://www.kupindo.com/Racunari-i-oprema/Ostalo/artikli/629",
+    "https://www.kupindo.com/Kuleri/82878611_DeepCool-EA080-Fleksibilna-LED-traka-za-racunare",
+    "https://www.kupindo.com/Punjaci-za-laptop/79709433_asus-punjac-x712-x712ja-x515ea-x1500ea-original-novo",
+    "https://www.kupindo.com/Punjaci-za-laptop/83114043_Univerzalni-punjac-za-laptop-120w-2-u-1",
+    "https://www.kupindo.com/Hard-diskovi-i-SSD/60526861_MF-95-01-Gembird-Fioka-za-montazu-2-5-SSD-SATA-HDD-do-9-5mm-u-5-25-leziste-u-Laptop-umesto-optike",
+    "https://www.kupindo.com/showcontent/2143/Desktop-racunari/86018707_i7-3770-16gb-ddr3-rx-470-4-gb-256-bita-ssd-120gb-500-gb",
+    "https://www.kupindo.com/showcontent/2135/Punjaci-za-laptop/86016667_hp-elite-mini-punjac-600-g9-800-g9-400-g9-origin-novo",
+    "https://www.kupindo.com/showcontent/2135/Punjaci-za-laptop/86016527_dell-punjac-la90pm130-ha90pm180-90w-usb-c-original-novo",
+    "https://www.kupindo.com/showcontent/2139/Punjaci-za-laptop/86016043_hp-omni-punjac-100-5000-120-1000-original-novo",
+    "https://www.kupindo.com/Punjaci-za-laptop/86015079_hp-prodesk-punjac-260-405-600-g1-g2-g3-g4-g5-g6-novo",
+    "https://www.kupindo.com/Punjaci-za-laptop/86015019_hp-elitedesk-705-800-805-g1-g2-g3-g4-g5-g6-punjac-novo",
+    "https://www.kupindo.com/Desktop-racunari/86014587_Intel-i3-3250-3-5-GHz-8GBDDR3-SSD60GB-500GB-Asus-EN210",
+    "https://www.kupindo.com/Punjaci-za-laptop/86014463_hp-mini-400-g3-400-g9-805-g6-805-g8-punjac-orig-novo",
+    "https://www.kupindo.com/Laptopovi/86011139_Acer-Nitro-5-Gejmer-sa-GTX-1050",
+    "https://www.kupindo.com/Punjaci-za-laptop/86000179_Docking-Lenovo-ThinkPad-40A7-Pro-Dock-USB-3-DisplayLink",
+    "https://www.kupindo.com/Racunari-i-oprema/artikli/322_strana_2110",
+    "https://www.kupindo.com/Racunari-i-oprema/artikli/322_strana_2"
+   ],
+   "snapshot": "snap_01_kupindo.html"
+  },
+  {
+   "url": "https://www.limundo.com/Racunari-i-oprema/aukcije/g12",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "robots_rules": [
+    "Disallow: /pretraga"
+   ],
+   "allowed": true,
+   "status": 200,
+   "bytes": 758323,
+   "title": "Računari i oprema - Limundo.com",
+   "verdict": "ok",
+   "forms": [
+    {
+     "action": "https://www.limundo.com/pretraga",
+     "inputs": [
+      "type",
+      "sSort",
+      "sSmer",
+      "Okrug",
+      "Opstina",
+      "Okrug",
+      "fv",
+      "fa",
+      "txtCenaOd",
+      "txtCenaDo",
+      "txtProdavac",
+      "JeKOFP",
+      "txtPretraga"
+     ]
+    },
+    {
+     "action": "https://www.limundo.com/Prijava",
+     "inputs": [
+      "_token",
+      "vremenska_zona",
+      "username",
+      "password",
+      "chbPrijavljen"
+     ]
+    },
+    {
+     "action": "https://www.limundo.com/register",
+     "inputs": [
+      "_token",
+      "ime",
+      "prezime",
+      "email",
+      "username",
+      "password",
+      "inputCheckPunoletan"
+     ]
+    },
+    {
+     "action": "https://www.limundo.com/Paginacija/Desktop",
+     "inputs": [
+      "_token",
+      "lastPage",
+      "brStrane"
+     ]
+    },
+    {
+     "action": "https://www.limundo.com/Paginacija/Mobile",
+     "inputs": [
+      "_token",
+      "last_page",
+      "mobile_page"
+     ]
+    },
+    {
+     "action": "https://www.limundo.com/pretraga",
+     "inputs": [
+      "type",
+      "sSort",
+      "sSmer",
+      "JeKOFP",
+      "fa",
+      "fv",
+      "Okrug",
+      "Opstina",
+      "SamoKreditneKartice",
+      "naciniSlanja"
+     ]
+    }
+   ],
+   "links": [
+    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12",
+    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?type=list",
+    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?type=thumb",
+    "https://www.limundo.com/pretraga/mobile-filter?currPage=home&amp;NapPretKategorijaLimundo=12&amp;IDPodGrupa=0&amp;link=%2FRacunari-i-oprema%2Faukcije%2Fg12",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Kucista/Cooler-Master-MasterBox-TD500-Mesh-White-–-ARGB/161562723",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/HP-EliteBook-x360-1030-G7-i5-10210U-256GB-TOP/161601407",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Acer-Chromebook-13-i5-8250U-16GB-2K-IPS-TOP/161604123",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Lenovo-X13-Yoga-2u1-i5-1145G7-16GB-256GB-2K-IPS/161601703",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Graficke-kartice/GRAFICKA-KARTICA-SAPPHIRE-PULSE-RX580-8gb-ddr5-256Bit/161562495",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Tablet/iPad-8th-Generation-2020-32GB-A2270/161580367",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Zvucnici/Teufel-5-1/161474047",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Hard-diskovi/HARD-WD-Black-2-TB-–-3-5″-SATA-III-HDD-7200-64-MB/161563527",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Lenovo-X1-Carbon-Gen8-i7-10610U-512GB-16GB-TOP/161600803",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Lenovo-T460-i5-intel-1000GB-12GB-TOP/161605387",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/DELL-3340-i5-1335U-256GB-m2-8GB-LPDDR5-TOP/161602231",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Lenovo-Ideapad-3-i3-1115g4-128m-2-8GB-TOP/161603503",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Monitori/TFT-monitori/Dell-UltraSharp-U2412M-24-IPS-monitor/161691915",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Lenovo-Yoga-500-2u1-i5-6200U-128GB-Punjac-TOP/161605167",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Hard-diskovi/HDD-2-5-Toshiba-750Gb-100-100-/161419991",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Lenovo-Yoga-X390-i7-8665u-16GB-512GB-SSD-FHD-Touch/161680303",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Napajanja/NAPAJANJE-be-quiet-Straight-Power-E7-500-W-–-80-PLUS/161564207",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Mrezni-uredjaji/Wireless-ruter-i-AP/Cisco-Catalyst-CW9164I-E-Wi-Fi-6E-VRHUNSKI-AP/161595899",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Acer-V17-Nitro-i7-6700HQ-GeForce-960M-GEJMERSKI-LAPTOP/161597879",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Memorije/Kingston-HyperX-Beast-16-GB-2-×-8-GB-DDR3-1600-MHz-CL9/161563983",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/DELL-latitude-E7440-i5-Intel-8GB-500GB-TOP/161605823",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/DELL-latitude-E7270-i5-Intel-8GB-128GB-m-2-TOP/161605591",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Hard-diskovi/HDD-2-5-HGST-1Tb-100-89-/161420491",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/PC-gaming-oprema/Sony-PlayStation-2-Slim-PS2-2-komada-LOT-KONZOLA-OPIS/161572419",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/HP-250-G6-i3-6006U-2-00GHz-4GB-15-6-Win-11/161505167",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/PC-gaming-oprema/NITENDO-64-Originalni-Ketridz-Igrica-SUPER-MARIO/161535231",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Desktop-racunari/Bez-monitora/HighEnd-Gaming-PC-Ryzen-7-5700X-RX-5700-XT-VODENO/161340435",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Zvucnici/Vintage-zvucnik-Vermona-R-150-DDR/161479387",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/HP-255-G5/161660119",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Ostalo/Amazon-Fire-TV-Stick-HD-1st-Gen-–-Full-HD-1080p/161631771",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Dell-Latitude-5300-Intel-Core-i5-8365U-13-3-/161720975",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/HP-ProBook-650-G2-Intel-Core-i5-6300U-15-6-/161721331",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/HP-Laptop-17-by0802ng-Intel-Core-i5-8-gen-17-3-/161721531",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Apple/Apple-iPad-7-generacija-10-2-–-32GB-–-White/161705287",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Dell-Inspiron-1110-mini-laptop/161544727",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Dell-Latitude-E5550-Intel-Core-i5-5300U-4GB-RAM-15-6-/161721107",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/HP-EliteBook-850-G1-Intel-Core-i5-4300U-4GB-RAM-15-6-/161721295",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Dell-Latitude-3400-Intel-Core-i5-8-gen-14-/161721439",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Lenovo-ThinkPad-T460-Intel-Core-i5-6-gen-4GB-RAM-14-/161721387",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/HP-250-G6-Intel-Core-i5-7200U-15-6-/161721567",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/HP-Pavilion-Gaming-Laptop-15-ec0xxx/161532451",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Monitori/TFT-monitori/HP-Monitor-27-Inca-IPS-Ultra-SLIM/161588127",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Kucista/Thermaltake-Overseer-RX-I-–-Full-Tower-kuciste-HDD-Dock/161565027",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Lenovo-25-6-i7-8565-GTX1050-Rotirajuci-Tac-Ekran/161655307",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Tablet/Lenovo-Yoga-Tab-3-sa-rotirajucim-postoljem-465/161400815",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Hard-diskovi/Western-Digital-WD-AV-1-TB-–-3-5″-SATA-hard-disk/161565159",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Graficke-kartice/GRAFICKA-KARTICA-SAPPHIRE-PULSE-RX580-8gb-ddr5-256Bit/161562527",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Maticne-ploce/Gaming-ASUS-ROG-Maximus-XI-Formula/161632007",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Hard-diskovi/Toshiba-SSD-250GB-SATA-2-5-/161562583",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Hard-diskovi/2-x-SEAGATE-IRONWOLF-4TB-HDD/161598023",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Hard-diskovi/SAmsung-SSD-250GB-SATA-2-5-/161562591",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Hard-diskovi/Samsung-SSD-250GB-SATA-2-5-/161562607",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Hard-diskovi/Samsung-SSD-250GB-SATA-2-5-/161562783",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Hard-diskovi/SAMSUNG-840-pro-SSD-120GB-SATA-2-5-/161563759",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Hard-diskovi/KingFast-Ssd-F10-512Gb-Nov-Neotpakovan-Sata-III/161492415",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Desktop-racunari/Sa-monitorom/i5-7600k-gtx1070-16GB-SSD-256GB-1TB-LICNO-PREUZIMANJE-/161589399",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Hp-elitebook-folio-top/161593395",
+    "https://www.limundo.com/Clan/aslaptopovi",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Hard-diskovi/SAMSUNG-SSD-250GB-SATA-2-5-/161562763",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Desktop-racunari/Bez-monitora/Racunar-novije-generacije-stoji-dugo-netestiran-/161637771",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Tablet/Tablet-Lenovo-Tab-4-10-TB-X304F-520/161450199",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Tablet/Lenovo-IdeaPad-Duet-3-Chromebook-4-128/161514019",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Procesori/Intel-Core-i7-3770-–-LGA-1155-4-jezgra-8-niti-do-3-9Ghz/161563263",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Desktop-racunari/Bez-monitora/Gaming-racunar/161563259",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Laptop-i-tablet/Laptop/Lenovo-ThinkPad-E14-Gen3-Ryzen3-5300u-16gb-ram-256gb/161664575",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Desktop-racunari/Sa-monitorom/Apple-iMac-21-5-All-in-One-Racunar-Model-A1311/161611139",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Hard-diskovi/SSD-64-Gb-95-MF-03/161502951",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Procesori/Intel-Core-i5-4670K-–-LGA-1150-3-4–3-8-GH-4-jezgra/161562983",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Hard-diskovi/Intel-Enterprise-SSD-480GB-–-5-komada-–-SATA-III/161579211",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Ostalo/Metalni-teleskopski-stalci/161474807",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Hard-diskovi/MICRON-SSD-80GB-SATA-2-5-/161562831",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Maticne-ploce/MSI-Z87-G43-–-LGA-1150-DDR3-ATX-–-sa-zadnjim-limom/161563203",
+    "https://www.limundo.com/kupovina/Racunari-i-oprema/Komponente/Procesori/Intel-Core-i5-6400-–-4-jezgra-do-3-30-GHz-LGA1151/161563907",
+    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=0",
+    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=1",
+    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=2"
+   ],
+   "snapshot": "snap_02_limundo.html"
+  }
+ ]
+}
