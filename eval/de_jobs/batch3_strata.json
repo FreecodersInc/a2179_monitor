@@ -1,0 +1,15 @@
+{
+ "seed": 11,
+ "pool_file": "all.csv",
+ "pool_after_dedup": 2401,
+ "strata": {
+  "match": {
+   "pool": 299,
+   "kept": 75
+  },
+  "rest": {
+   "pool": 2102,
+   "kept": 75
+  }
+ }
+}
