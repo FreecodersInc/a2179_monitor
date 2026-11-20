@@ -6,6 +6,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 import datetime as dt
 from pathlib import Path
 
@@ -842,3 +843,29 @@ class TestSelectSteps(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestFetchRequest(unittest.TestCase):
+    def test_request_runs_once_and_never_in_tests_by_default(self):
+        import run_experiments as rx
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            (tmp / "ci" / "requests").mkdir(parents=True)
+            self.assertIsNone(rx.fetch_request(tmp))
+            (tmp / "ci" / "requests" / "fetch_listings.json").write_text('{"id": "r1", "max_pages": 2}')
+            self.assertIsNone(rx.fetch_request(tmp))          # tests: A2179_CI_FETCH_LISTINGS=off
+            with mock.patch.dict(os.environ, {"A2179_CI_FETCH_LISTINGS": "auto"}):
+                self.assertEqual(rx.fetch_request(tmp)["id"], "r1")
+                done = tmp / "results" / "2026-11-20_abc" / "reports" / "fresh_a2179" / "r1"
+                done.mkdir(parents=True)
+                (done / "candidates.jsonl").write_text("")
+                self.assertIsNone(rx.fetch_request(tmp))      # fulfilled
+            calls = []
+            with mock.patch.object(rx, "run", lambda name, cmd, timeout, env=None: calls.append((name, cmd, timeout)) or {"name": name, "ok": True}):
+                rec = rx.fetch_step("py", tmp / "out", 1800, {"id": "r2", "max_pages": 2, "time_budget_s": 60})
+            self.assertTrue(rec["advisory"])
+            name, cmd, timeout = calls[0]
+            self.assertEqual((name, timeout), ("fetch_listings", 360))
+            self.assertIn(str(tmp / "out" / "reports" / "fresh_a2179" / "r2" / "candidates.jsonl"), cmd)
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)

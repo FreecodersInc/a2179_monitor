@@ -169,3 +169,6 @@ concurrency:
   cancel-in-progress: true
 ```
 Тогда коммит только с документами раннер вообще не будит, а новый push отменяет идущий прогон старого.
+
+## Свежие объявления через CI (ADR-0022)
+Чтобы раннер собрал свежую пачку A2179, закоммить `ci/requests/fetch_listings.json` с новым `id` (`max_pages`, `time_budget_s` по желанию). Шаг `fetch_listings` отработает один раз и положит строки в `results/<base>/reports/fresh_a2179/<id>/candidates.jsonl` и `.csv`. Выключить: переменная `A2179_CI_FETCH_LISTINGS=off`.

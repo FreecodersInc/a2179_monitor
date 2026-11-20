@@ -10,3 +10,5 @@ os.environ["A2179_ATS_COMPANIES"] = "off"
 # run.sh tests must not depend on what the repo diff looks like right now (ADR-0026 select would skip
 # a docs-only HEAD and the run.sh tests would see no result file): force the full pipeline.
 os.environ["A2179_CI_MODE"] = "full"
+# no network from a test: the fetch request step (ADR-0022) stays off unless a test turns it on
+os.environ["A2179_CI_FETCH_LISTINGS"] = "off"

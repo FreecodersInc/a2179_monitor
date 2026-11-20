@@ -152,6 +152,38 @@ def target_steps(name, py, out, dense, offline, T):
     return steps
 
 
+REQUESTS = ROOT / "ci" / "requests"
+
+
+def fetch_request(root=ROOT):
+    """ADR-0022: a committed request ci/requests/fetch_listings.json {"id": ..., "max_pages": ..,
+    "time_budget_s": ..} asks the runner to collect fresh A2179 listings once. Fulfilled when some
+    results/<base>/reports/fresh_a2179/<id>/ is already in the repo. Returns the request or None."""
+    p = Path(root) / "ci" / "requests" / "fetch_listings.json"
+    if os.environ.get("A2179_CI_FETCH_LISTINGS", "auto") in ("off", "0", "no") or not p.is_file():
+        return None
+    req = json.loads(p.read_text(encoding="utf-8"))
+    rid = str(req.get("id", "")).strip()
+    if not rid or any((Path(root) / "results").glob(f"*/reports/fresh_a2179/{rid}/candidates.jsonl")):
+        return None
+    return {**req, "id": rid}
+
+
+def fetch_step(py, out: Path, T, req):
+    """Collect fresh listings with the monitor's own polite fetcher (eval/enrich.py collect: per host
+    pacer, KP stops at the first refusal, rows already labeled dropped). Raw rows land in
+    <out>/reports/fresh_a2179/<id>/ and write_results commits them under results/<base>/reports/.
+    Advisory: a refused site must not turn CI red."""
+    d = out / "reports" / "fresh_a2179" / req["id"]
+    d.mkdir(parents=True, exist_ok=True)
+    cmd = [py, "eval/enrich.py", "collect", "--out", str(d / "candidates.jsonl"), "--csv",
+           "--max-pages", str(int(req.get("max_pages", 3))),
+           "--time-budget", str(float(req.get("time_budget_s", 600)))]
+    rec = run("fetch_listings", cmd, min(T, int(float(req.get("time_budget_s", 600))) + 300))
+    rec["advisory"] = True
+    return rec
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=str(ROOT / "ci_out"))
@@ -235,6 +267,10 @@ def main(argv=None):
     # must not turn the A2179 run red. The default target above keeps its old paths.
     for name in other_targets(os.environ.get("A2179_CI_TARGETS", "a2179_screen,de_jobs")) if want("targets") else []:
         steps.extend(target_steps(name, py, out, dense, offline, T))
+
+    req = fetch_request()
+    if req and (want("fetch") or mode != "targeted"):
+        steps.append(fetch_step(py, out, T, req))
 
     # charts + ranking metrics from the sweep scores, advisory: a failure here never turns CI red
     if want("plots") and os.environ.get("A2179_CI_PLOTS", "1") not in ("0", "false", "no") and (out / "sweep" / "sweep.json").is_file():
