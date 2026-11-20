@@ -141,7 +141,11 @@ def target_steps(name, py, out, dense, offline, T):
         steps.append(rec)
     sw = [py, "eval/sweep.py", "--target", name, "--out", str(d / "sweep" / "sweep.json"),
           "--dense-scores", str(d / "sweep" / "dense_scores.jsonl")]
-    rec = run(f"sweep[{name}]", sw + ["--compute-dense"] if dense else sw, T)
+    # T-029: same extra embedders as the default target (cached-small, nothing downloaded),
+    # so de_jobs gets dense_scores_<model>.jsonl besides MiniLM
+    emb = ["--embedders", os.environ.get("A2179_CI_EMBEDDERS", "cached-small"),
+           "--device", COMPUTE_ENV.get("A2179_DEVICE", "cpu")]
+    rec = run(f"sweep[{name}]", sw + ["--compute-dense"] + emb if dense else sw, T)
     rec["advisory"] = True
     steps.append(rec)
     if dense and not rec["ok"]:

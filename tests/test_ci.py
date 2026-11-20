@@ -834,7 +834,7 @@ class TestSelectSteps(unittest.TestCase):
         self.assertIn("tests.test_jobs_label", d["tests"])
         self.assertEqual(d["steps"], ["review", "targets"])
         d = self.S.decide(["eval/nested_cv.py"])
-        self.assertEqual((d["tests"], d["steps"]), (["tests.test_nested_cv"], []))
+        self.assertEqual((d["tests"], d["steps"]), (["tests.test_nested_cv", "tests.test_nested_cv_fusion"], []))
 
     def test_forced_or_empty_is_full(self):
         self.assertEqual(self.S.decide(["docs/x.md"], forced="full")["mode"], "full")

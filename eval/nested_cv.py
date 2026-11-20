@@ -90,6 +90,33 @@ def apply_mm(x, lo, hi):
     return min(1.0, max(0.0, (x - lo) / (hi - lo))) if hi > lo else 0.0
 
 
+RRF_K = 60
+
+
+def _rank(v, ref):
+    """1 + number of reference values strictly above v (rank against the training part)."""
+    return 1 + sum(r > v for r in ref)
+
+
+def rrf(base, feat, tr, idx):
+    """EXP-012 / H-14: reciprocal rank fusion of a channel and feat, ranks relative to the training part, no lam."""
+    rb, rf = [base[i] for i in tr], [feat[i] for i in tr]
+    return {i: 1 / (RRF_K + _rank(base[i], rb)) + 1 / (RRF_K + _rank(feat[i], rf)) for i in idx}
+
+
+def pick_rrf(y, regex, gate, base, feat, tr, tie="sweep", min_recall=1.0):
+    s = rrf(base, feat, tr, tr)
+    best = None
+    for t in sorted(set(s.values()), reverse=True):
+        m = S.prf([y[i] for i in tr], [regex[i] or (gate[i] and s[i] >= t) for i in tr])
+        if m["R"] < min_recall:
+            continue
+        key = (m["F1"], t)
+        if best is None or key > best[0]:
+            best = (key, t)
+    return None if best is None else best[1]
+
+
 def pick(y, regex, gate, base, feat, tr, use_feat, tie="sweep", min_recall=1.0):
     """(lam, t, lo, hi) chosen on tr only. base: raw channel or None (feat only).
     tie on F1: "sweep" = smallest lam, then strictest t (what eval/sweep.py does), "strict" = strictest t
@@ -137,6 +164,14 @@ def run(rows, channels, feat, regex, gate, k=5, repeats=20, seed=0, tie="sweep",
                 if name == "regex":
                     pred.update({i: bool(regex[i]) for i in te})
                     continue
+                if name.endswith(":rrf"):
+                    t = pick_rrf(y, regex, gate, base, feat, tr, tie, min_recall)
+                    if t is None:
+                        pred.update({i: True for i in te})
+                        continue
+                    s_ = rrf(base, feat, tr, te)
+                    pred.update({i: bool(regex[i] or (gate[i] and s_[i] >= t)) for i in te})
+                    continue
                 ch = pick(y, regex, gate, base, feat, tr, use_feat, tie, min_recall)
                 if ch is None:
                     pred.update({i: True for i in te})
@@ -169,6 +204,16 @@ def paired(res, a, b, part="real", metric="fp"):
             "tie": sum(d == 0 for d in diff), "b_better": sum(d > 0 for d in diff), "n": len(diff)}
 
 
+def operating_point(tg) -> float:
+    """T-026: the working point lives in the profile (eval.operating_point.min_recall), 1.0 if absent."""
+    return float((tg.eval.get("operating_point") or {}).get("min_recall", 1.0))
+
+
+def build_text(title: str, body: str, title_weight: int = 1) -> str:
+    """H-16: title repeated title_weight times, then the body."""
+    return " ".join([title] * max(1, title_weight) + ([body] if body else [])).strip()
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--target", default="a2179_screen")
@@ -183,11 +228,18 @@ def main(argv=None):
     ap.add_argument("--proto-seed", type=int, default=0)
     ap.add_argument("--train-cap", type=int, default=0, help="choose t, lam, min-max on this many training rows (EXP-008)")
     ap.add_argument("--relabel-rx", default="", help="variant: rows whose title matches this regex count as positive (EXP-009 Data Science variant)")
-    ap.add_argument("--min-recall", type=float, default=1.0,
-                    help="recall the threshold must keep on the training part (1.0 = monitor rule)")
+    ap.add_argument("--min-recall", type=float, default=None,
+                    help="recall the threshold must keep on the training part; default: profile eval.operating_point.min_recall, else 1.0")
+    ap.add_argument("--rrf", action="store_true", help="add X+feat:rrf channels, reciprocal rank fusion (EXP-012, H-14)")
+    ap.add_argument("--title-weight", type=int, default=1, help="repeat the title this many times in the tfidf/bm25 text (EXP-012, H-16)")
+    ap.add_argument("--text-from-cache", action="store_true",
+                    help="tfidf/bm25 text = title + first 2000 chars of the cached description (jobs, by url)")
+    ap.add_argument("--cache", default=str(ROOT / "data" / "cache" / "jobs"))
     ap.add_argument("--name", default="nested_cv", help="output file stem")
     a = ap.parse_args(argv)
     tg = load_target(a.target)
+    if a.min_recall is None:
+        a.min_recall = operating_point(tg)
     rows = [json.loads(l) for l in eval_data_path(tg).read_text(encoding="utf-8").splitlines() if l.strip()]
     for r in rows:
         r.setdefault("snippet", "")
@@ -198,7 +250,15 @@ def main(argv=None):
             if rx.search(r["title"]):
                 r["label"] = 1
     sw = S.Sweep(rows, target=tg)
-    texts = [f"{r['title']} {r['snippet']}".strip() for r in rows]
+    body = [r["snippet"] for r in rows]
+    n_text = 0
+    if a.text_from_cache:
+        from a2179.jobs import collect_jobs
+        jobs, _ = collect_jobs(Path(a.cache), sources=("remotive", "remoteok", "ats"), fetch="never")
+        by = {j.url: (j.text or j.snippet) for j in jobs}
+        body = [(by.get(r.get("url", ""), "") or r["snippet"])[:2000] for r in rows]
+        n_text = sum(bool(by.get(r.get("url", ""))) for r in rows)
+    texts = [build_text(r["title"], b, a.title_weight) for r, b in zip(rows, body)]
     pos_p, neg_p = subsample(tg.positive, a.proto_frac, a.proto_seed), subsample(tg.negative, a.proto_frac, a.proto_seed + 1000)
     tf, bm = S.TfidfSim(pos_p, neg_p), S.BM25(pos_p, neg_p)
     frx = S.feature_rx(tg)
@@ -215,6 +275,8 @@ def main(argv=None):
     for k_, v in raw.items():
         channels[k_] = (v, False)
         channels[f"{k_}+feat"] = (v, True)
+        if a.rrf:
+            channels[f"{k_}+feat:rrf"] = (v, True)
     res = run(rows, channels, feat, sw.regex, sw.gate, a.folds, a.repeats, a.seed, a.tie, a.min_recall, a.train_cap)
     summ = summarise(res)
     pairs = {}
@@ -225,6 +287,7 @@ def main(argv=None):
     meta = {"target": tg.name, "n": len(rows), "positives": sum(sw.y), "real_rows": sum(r.get("source") != "synthetic" for r in rows),
             "real_positives": sum(1 for r in rows if r.get("source") != "synthetic" and r["label"]),
             "folds": a.folds, "repeats": a.repeats, "seed": a.seed, "tie": a.tie, "min_recall": a.min_recall, "proto_frac": a.proto_frac, "train_cap": a.train_cap, "relabel_rx": a.relabel_rx, "proto_seed": a.proto_seed,
+            "rrf": a.rrf, "title_weight": a.title_weight, "text_from_cache": a.text_from_cache, "rows_with_cached_text": n_text,
             "prototypes": [len(pos_p), len(neg_p)], "dense_dir": str(dd)}
     (out / f"{a.name}.json").write_text(json.dumps({"meta": meta, "summary": summ, "paired": pairs}, indent=1), encoding="utf-8")
     lines = [f"# Nested CV, {tg.label}: {meta['n']} rows, {meta['positives']} positives "

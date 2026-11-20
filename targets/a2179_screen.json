@@ -245,6 +245,7 @@
   }
  },
  "eval": {
-  "data": "eval/labeled.jsonl"
+  "data": "eval/labeled.jsonl",
+  "operating_point": {"min_recall": 1.0, "_note": "monitor rule: every positive kept on the training part (ADR-0020)"}
  }
 }

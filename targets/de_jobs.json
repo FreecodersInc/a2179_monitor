@@ -287,6 +287,10 @@
         ]
       }
     },
-    "_note": "features: a priori groups for the sweep feat channel (display = positive role words, other = negative title groups), a starting point, not tuned"
+    "_note": "features: a priori groups for the sweep feat channel (display = positive role words, other = negative title groups), a starting point, not tuned",
+    "operating_point": {
+      "min_recall": 0.0,
+      "_note": "no recall floor: max F1 on the training part (EXP-006 ablation, T-026)"
+    }
   }
 }
