@@ -1,0 +1,21 @@
+{
+ "stack_from": "cv/master_cv.md",
+ "stack_terms": 96,
+ "rows": 462,
+ "with_text": 462,
+ "weights": {
+  "skills": 0.3,
+  "stack": 0.3,
+  "domain": 0.25,
+  "seniority": 0.15
+ },
+ "auc": {
+  "skills": 0.718,
+  "stack": 0.773,
+  "domain": 0.931,
+  "seniority": 0.67,
+  "cv_score": 0.904
+ },
+ "auc_with_text_only": 0.904,
+ "spearman_grade": 0.772
+}
