@@ -1,0 +1,149 @@
+{
+ "schema": 3,
+ "generated_utc": "2026-11-20T00:14:43Z",
+ "commit": {
+  "sha": "a84a6794c17866e52b91436877274f9d0a57970a",
+  "short": "a84a679",
+  "subject": "EXP-008 (H-14 part 2): t and lam picked on 100 training rows hold on A2179 (tfidf+feat 0.916 vs 0.908), because the recall 1.0 rule rides on one or two hard positives. nested_cv --train-cap",
+  "ref": "refs/heads/main",
+  "repository": "FreecodersInc/a2179_monitor",
+  "run_id": "44644221660",
+  "run_attempt": "1",
+  "workflow": "experiments",
+  "actor": "leonid133",
+  "run_url": "https://github.com/FreecodersInc/a2179_monitor/actions/runs/44644221660"
+ },
+ "runner": {
+  "name": "a2179-gpu",
+  "os": "Linux",
+  "arch": "X64",
+  "python": "3.14.4",
+  "implementation": "CPython",
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "machine": "x86_64",
+  "cpu_count": 8,
+  "torch": "2.14.1+cu126",
+  "cuda_available": false,
+  "cuda_version": "12.6",
+  "device_name": null,
+  "device_count": 0,
+  "sentence_transformers": "5.7.0",
+  "transformers": "5.23.0"
+ },
+ "dense": {
+  "enabled": false,
+  "reason": "disabled (A2179_CI_DENSE=off)",
+  "mode": "off",
+  "hf_offline": true
+ },
+ "secrets": {
+  "GITHUB_TOKEN": "present",
+  "TG_BOT_TOKEN": "present",
+  "TG_CHAT_ID": "present"
+ },
+ "steps": [
+  {
+   "name": "setup_venv",
+   "cmd": [
+    "bash",
+    "ci/setup_venv.sh"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": null,
+   "duration_s": 1,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": null,
+   "stderr_tail": null
+  },
+  {
+   "name": "env_probe",
+   "cmd": [
+    "/home/vessyl-runner/a2179_monitor/.venv/bin/python",
+    "/home/vessyl-runner/a2179_monitor/actions-runner/~/a2179_monitor/a2179_monitor/a2179_monitor/ci/env_probe.py"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": false,
+   "duration_s": 13.22,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": null,
+   "stderr_tail": null
+  },
+  {
+   "name": "lint",
+   "cmd": [
+    "/home/vessyl-runner/a2179_monitor/.venv/bin/python",
+    "-m",
+    "compileall",
+    "-q",
+    "a2179",
+    "eval",
+    "ci",
+    "tests",
+    "monitor.py"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": false,
+   "duration_s": 0.52,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": null,
+   "stderr_tail": null
+  },
+  {
+   "name": "tests",
+   "cmd": [
+    "/home/vessyl-runner/a2179_monitor/.venv/bin/python",
+    "-m",
+    "unittest",
+    "tests.test_nested_cv"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": false,
+   "duration_s": 0.22,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": null,
+   "stderr_tail": null
+  },
+  {
+   "name": "tg_integration",
+   "cmd": [
+    "/home/vessyl-runner/a2179_monitor/.venv/bin/python",
+    "-m",
+    "unittest",
+    "-v",
+    "integration.test_telegram"
+   ],
+   "exit_code": 0,
+   "signal": null,
+   "timed_out": false,
+   "duration_s": 1.14,
+   "ok": true,
+   "fallback": null,
+   "skipped": null,
+   "advisory": null,
+   "stderr_tail": null
+  }
+ ],
+ "metrics": {
+  "eval": null,
+  "sweep": null,
+  "ranking": null,
+  "review": null,
+  "targets": null
+ },
+ "ok": true,
+ "tests_ok": true,
+ "workflow_in_sync": false,
+ "total_duration_s": 16.1
+}
