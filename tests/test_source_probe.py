@@ -46,6 +46,12 @@ class Probe(unittest.TestCase):
         self.assertNotIn("snapshot", rows[1])
         self.assertEqual([x.name for x in d.iterdir()], ["snap_01_a.html"])
 
+    def test_robots_rules_and_links(self):
+        self.assertEqual(P.robots_rules("User-agent: x\nDisallow: /a\nUser-agent: *\nDisallow: /pretraga # s\nAllow: /k"),
+                         ["Disallow: /pretraga", "Allow: /k"])
+        html = '<a href="/Racunari-i-oprema/Laptopovi/1">x</a><a href="https://other.rs/laptop">y</a><a href="/Auto">z</a>'
+        self.assertEqual(P.links_of(html, "https://a.rs/"), ["https://a.rs/Racunari-i-oprema/Laptopovi/1"])
+
     def test_forms(self):
         html = '<form action="/Pretraga.php" method="get"><input name="Pretraga"><input type="submit"></form>'
         self.assertEqual(P.forms_of(html), [{"action": "/Pretraga.php", "inputs": ["Pretraga"]}])

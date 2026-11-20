@@ -267,3 +267,55 @@ def parse_kp_search(html: str, base_url: str) -> list:
             seen.add(l.key)
             uniq.append(l)
     return uniq
+
+
+# T-031: full KP listing card. Only the fields the matcher needs, seller identity is never kept and
+# phone numbers and e-mails inside the description are masked.
+_PHONE = re.compile(r"(?<![\w+])(?:\+381|00381|0)[\s/.-]?\(?\d{2,3}\)?[\s/.-]?\d{3}[\s/.-]?\d{3,4}(?!\d)")
+_EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+")
+CARD_FIELDS = ("id", "name", "description", "price", "currency", "condition", "categoryName", "groupName")
+
+
+def mask_contacts(text: str) -> str:
+    return _PHONE.sub("[tel]", _EMAIL.sub("[email]", text or ""))
+
+
+def html_text(fragment: str) -> str:
+    t = BeautifulSoup(fragment or "", "html.parser").get_text(" ")
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def parse_kp_card(html: str, url: str = "") -> Optional[dict]:
+    """{"id", "title", "text", "price", "currency", "condition", "category"} from a KP ad page
+    (__NEXT_DATA__ initialReduxState.ad.byId), None if it is not an ad page."""
+    m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', html or "", re.S)
+    if not m:
+        return None
+    try:
+        by = json.loads(m.group(1))["props"]["initialReduxState"]["ad"]["byId"]
+    except (ValueError, KeyError, TypeError):
+        return None
+    want = re.search(r"/oglas/(\d+)", url or "")
+    ads = [a for k, a in by.items() if isinstance(a, dict) and (not want or str(k) == want.group(1))] or \
+        [a for a in by.values() if isinstance(a, dict)]
+    if not ads:
+        return None
+    a = ads[0]
+    return {"id": str(a.get("id", "")), "title": (a.get("name") or "").strip(),
+            "text": mask_contacts(html_text(a.get("description") or "")),
+            "price": parse_number(str(a.get("price"))) if a.get("price") not in (None, "") else None,
+            "currency": a.get("currency") or "", "condition": a.get("condition") or "",
+            "category": " / ".join(x for x in (a.get("categoryName"), a.get("groupName")) if x)}
+
+
+def sanitize_kp_card_html(html: str, url: str = "") -> str:
+    """A minimal fixture page: only CARD_FIELDS of the ad, contacts masked, no seller data."""
+    m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', html, re.S)
+    by = json.loads(m.group(1))["props"]["initialReduxState"]["ad"]["byId"]
+    want = re.search(r"/oglas/(\d+)", url or "")
+    k = want.group(1) if want and want.group(1) in by else next(iter(by))
+    ad = {f: by[k].get(f) for f in CARD_FIELDS}
+    ad["description"] = mask_contacts(ad.get("description") or "")
+    d = {"props": {"initialReduxState": {"ad": {"byId": {k: ad}}}}}
+    return ('<html><head><title>' + (ad.get("name") or "") + '</title></head><body><script id="__NEXT_DATA__" '
+            'type="application/json">' + json.dumps(d, ensure_ascii=False) + "</script></body></html>\n")

@@ -55,6 +55,33 @@ def forms_of(text: str) -> list[dict]:
     return out[:6]
 
 
+LINK_RX = re.compile(r"lapto|racunar|kompjuter|apple|macbook|delovi", re.I)
+
+
+def links_of(text: str, base: str) -> list[str]:
+    """Category links on a home page (laptops, computers, Apple, parts), to find listing pages robots allow."""
+    from urllib.parse import urljoin
+    out = []
+    for h in re.findall(r'<a\b[^>]*href\s*=\s*["\']([^"\'#]+)', text, re.I):
+        if LINK_RX.search(h):
+            v = urljoin(base, h)
+            if urlparse(v).netloc == urlparse(base).netloc and v not in out:
+                out.append(v)
+    return out[:40]
+
+
+def robots_rules(txt: str) -> list[str]:
+    """The Disallow / Allow lines of the * group, for the record (public file, no page text)."""
+    out, on = [], False
+    for line in txt.splitlines():
+        l = line.split("#", 1)[0].strip()
+        if l.lower().startswith("user-agent:"):
+            on = l.split(":", 1)[1].strip() == "*"
+        elif on and l.lower().startswith(("disallow:", "allow:", "crawl-delay:")):
+            out.append(l)
+    return out[:80]
+
+
 def probe(urls, fetcher, ua=DEFAULT_UA, save_dir: Path | None = None) -> list[dict]:
     robots, out = {}, []
     for u in urls:
@@ -66,9 +93,11 @@ def probe(urls, fetcher, ua=DEFAULT_UA, save_dir: Path | None = None) -> list[di
             if verdict(st, txt) == "ok" and "<html" not in txt[:500].lower():
                 rp = urllib.robotparser.RobotFileParser()
                 rp.parse(txt.splitlines())
-            robots[base] = {"status": st, "parsed": rp is not None, "rp": rp}
+            robots[base] = {"status": st, "parsed": rp is not None, "rp": rp, "rules": robots_rules(txt) if rp else []}
         r = robots[base]
         row = {"url": u, "robots_status": r["status"], "robots_parsed": r["parsed"]}
+        if r["rules"] and not any(o.get("robots_rules") for o in out if o["url"].startswith(base)):
+            row["robots_rules"] = r["rules"]
         if not r["parsed"]:
             row.update(allowed=None, status=None, verdict="blocked", why="robots.txt not readable (blocked or challenge)")
         elif not r["rp"].can_fetch(ua, u):
@@ -76,9 +105,14 @@ def probe(urls, fetcher, ua=DEFAULT_UA, save_dir: Path | None = None) -> list[di
         else:
             st, txt = fetcher.get(u, retry_403=0)
             row.update(allowed=True, status=st, bytes=len(txt), title=title_of(txt), verdict=verdict(st, txt), forms=forms_of(txt))
+            if p.path in ("", "/"):
+                row["links"] = links_of(txt, u)
             if save_dir is not None and row["verdict"] == "ok":   # snapshot for parser fixtures (T-033, T-031)
                 save_dir.mkdir(parents=True, exist_ok=True)
                 name = f"snap_{len(out) + 1:02d}_{p.netloc.removeprefix('www.').split('.')[0]}.html"
+                if "kupujemprodajem" in p.netloc and "/oglas/" in u:   # never keep seller data (T-031)
+                    from a2179.parsers import sanitize_kp_card_html
+                    txt = sanitize_kp_card_html(txt, u)
                 (save_dir / name).write_text(txt, encoding="utf-8")
                 row["snapshot"] = name
         out.append(row)
