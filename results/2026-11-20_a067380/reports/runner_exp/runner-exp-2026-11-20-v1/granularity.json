@@ -1,0 +1,51 @@
+{
+ "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+ "all": {
+  "n": 430,
+  "pos": 48,
+  "with_snippet": 21,
+  "base": 0.155,
+  "title": 0.154,
+  "max": 0.153,
+  "mean": 0.153,
+  "title_minus_base": -0.001,
+  "title_minus_base_ci95": [
+   -0.042,
+   0.031
+  ],
+  "max_minus_base": -0.002,
+  "max_minus_base_ci95": [
+   -0.005,
+   0.037
+  ],
+  "mean_minus_base": -0.002,
+  "mean_minus_base_ci95": [
+   -0.014,
+   0.038
+  ]
+ },
+ "real": {
+  "n": 371,
+  "pos": 17,
+  "with_snippet": 20,
+  "base": 0.067,
+  "title": 0.066,
+  "max": 0.066,
+  "mean": 0.066,
+  "title_minus_base": -0.001,
+  "title_minus_base_ci95": [
+   -0.001,
+   0.023
+  ],
+  "max_minus_base": -0.001,
+  "max_minus_base_ci95": [
+   -0.003,
+   0.02
+  ],
+  "mean_minus_base": -0.001,
+  "mean_minus_base_ci95": [
+   -0.002,
+   0.021
+  ]
+ }
+}

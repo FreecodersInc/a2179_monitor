@@ -1,0 +1,33 @@
+{
+ "queries": 13,
+ "queries_with_rows": 12,
+ "rows_per_query": {
+  "macbook air a2179": 30,
+  "a2179": 30,
+  "a2179 ekran": 4,
+  "a2179 displej": 0,
+  "a2179 lcd": 11,
+  "macbook air 2020 ekran": 5,
+  "macbook air 2020 lcd": 2,
+  "macbook air za delove": 30,
+  "macbook air delovi": 30,
+  "macbook air neispravan": 3,
+  "a1932 ekran": 3,
+  "macbook ekran": 30,
+  "lcd za macbook air": 22
+ },
+ "pages": {
+  "kp:200": 13
+ },
+ "listings": 200,
+ "stats": {
+  "already_labeled": 113,
+  "dup_in_run": 69,
+  "candidates": 18,
+  "priority_0": 1,
+  "priority_3": 17
+ },
+ "kp_blocked": false,
+ "requests": 13,
+ "errors": 0
+}

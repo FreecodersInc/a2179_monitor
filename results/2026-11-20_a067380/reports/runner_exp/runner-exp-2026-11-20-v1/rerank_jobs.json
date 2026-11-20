@@ -1,0 +1,117 @@
+{
+ "model": "cross-encoder/ms-marco-TinyBERT-L2-v2",
+ "query": "Data Engineer job: build data pipelines and a data platform with SQL, Python, Spark, Airflow, dbt, Kafka, Snowflake, Databricks on AWS",
+ "total_bytes": 18498133,
+ "labeled462": {
+  "rows": 462,
+  "title_only": {
+   "n": 462,
+   "pos": 211,
+   "cv_score": {
+    "auc": 0.885,
+    "spearman": 0.76
+   },
+   "ce": {
+    "auc": 0.862,
+    "spearman": 0.584,
+    "minus_cv_score": -0.023,
+    "minus_cv_score_ci95": [
+     -0.064,
+     0.019
+    ]
+   },
+   "fusion": {
+    "auc": 0.925,
+    "spearman": 0.766,
+    "minus_cv_score": 0.04,
+    "minus_cv_score_ci95": [
+     0.018,
+     0.066
+    ]
+   }
+  },
+  "with_text": 454,
+  "title_text": {
+   "n": 454,
+   "pos": 208,
+   "cv_score": {
+    "auc": 0.861,
+    "spearman": 0.69
+   },
+   "ce": {
+    "auc": 0.752,
+    "spearman": 0.373,
+    "minus_cv_score": -0.109,
+    "minus_cv_score_ci95": [
+     -0.163,
+     -0.06
+    ]
+   },
+   "fusion": {
+    "auc": 0.866,
+    "spearman": 0.637,
+    "minus_cv_score": 0.005,
+    "minus_cv_score_ci95": [
+     -0.02,
+     0.028
+    ]
+   }
+  }
+ },
+ "batch3": {
+  "rows": 150,
+  "title_only": {
+   "n": 150,
+   "pos": 64,
+   "cv_score": {
+    "auc": 0.608,
+    "spearman": 0.298
+   },
+   "ce": {
+    "auc": 0.787,
+    "spearman": 0.552,
+    "minus_cv_score": 0.179,
+    "minus_cv_score_ci95": [
+     0.093,
+     0.269
+    ]
+   },
+   "fusion": {
+    "auc": 0.748,
+    "spearman": 0.496,
+    "minus_cv_score": 0.14,
+    "minus_cv_score_ci95": [
+     0.086,
+     0.193
+    ]
+   }
+  },
+  "with_text": 148,
+  "title_text": {
+   "n": 148,
+   "pos": 64,
+   "cv_score": {
+    "auc": 0.625,
+    "spearman": 0.323
+   },
+   "ce": {
+    "auc": 0.717,
+    "spearman": 0.385,
+    "minus_cv_score": 0.092,
+    "minus_cv_score_ci95": [
+     -0.012,
+     0.195
+    ]
+   },
+   "fusion": {
+    "auc": 0.733,
+    "spearman": 0.445,
+    "minus_cv_score": 0.108,
+    "minus_cv_score_ci95": [
+     0.042,
+     0.17
+    ]
+   }
+  }
+ }
+}
