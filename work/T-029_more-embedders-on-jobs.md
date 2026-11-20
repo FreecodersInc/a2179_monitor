@@ -22,3 +22,5 @@ CI на вакансиях считает только MiniLM. Модели на
 ## Заметки и итог
 
 2026-11-20: target sweep в `ci/run_experiments.py` получил `--embedders cached-small`, как у цели по умолчанию. Скоры e5 и bge на вакансиях будут в results/ после прогона CI, сравнение ещё не сделано.
+
+2026-11-20, прогон 44654703917: e5, bge, mpnet на вакансиях посчитаны (видно в sweep.tables.md), но `ci/write_results.py` копировал из targets/ только dense_scores.jsonl. Починено, файлы dense_scores_<model>.jsonl цели теперь попадают в results/.

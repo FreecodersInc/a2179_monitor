@@ -128,6 +128,7 @@ class TestCiTargets(unittest.TestCase):
             shutil.copy(ROOT / "tests" / "fixtures" / "eval_report_99.json", d / "eval" / "eval_report.json")
             (d / "eval" / "eval_report.md").write_text("# Eval report: DE jobs\n")
             shutil.copy(ROOT / "tests" / "fixtures" / "sweep_99.json", d / "sweep" / "sweep.json")
+            (d / "sweep" / "dense_scores_e5-small.jsonl").write_text('{"id": 1}\n')   # T-029: extra embedders kept
             m = wr.target_metrics(tmp, [])
             self.assertIn("modes", m["de_jobs"]["eval"])
             self.assertIn("variants", m["de_jobs"]["sweep"])
@@ -137,6 +138,7 @@ class TestCiTargets(unittest.TestCase):
             out = wr.attach_reports(tmp, res)
             self.assertTrue((out / "targets" / "de_jobs" / "eval_report.md").is_file())
             self.assertFalse((out / "targets" / "de_jobs" / "sweep.json").exists())   # big file stays out
+            self.assertTrue((out / "targets" / "de_jobs" / "dense_scores_e5-small.jsonl").is_file())
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
 
