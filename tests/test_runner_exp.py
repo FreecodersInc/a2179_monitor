@@ -111,6 +111,34 @@ class Exp028DryRun(unittest.TestCase):
             (done / "exp028.json").write_text("{}")
             self.assertIsNone(R.runner_request(d))
 
+    def test_runner_request_exp029_is_one_shot_after_exp028(self):
+        with tempfile.TemporaryDirectory() as d, mock.patch.dict(os.environ, {"A2179_CI_RUNNER_EXP": "auto"}):
+            p = Path(d) / "ci" / "requests"
+            p.mkdir(parents=True)
+            (p / "runner_experiments.json").write_text(json.dumps({"id": "v2", "steps": ["exp028", "exp029"]}))
+            self.assertEqual(R.runner_request(d)["steps"], ["exp028", "exp029"])
+            done = Path(d) / "results" / "x" / "reports" / "runner_exp" / "v2"
+            done.mkdir(parents=True)
+            (done / "exp028.json").write_text("{}")
+            self.assertEqual(R.runner_request(d)["steps"], ["exp029"])
+            (done / "exp029_h11.json").write_text("{}")
+            self.assertIsNone(R.runner_request(d))
+
+    def test_exp029_step_unhides_cuda_exp028_hides_it(self):
+        with tempfile.TemporaryDirectory() as d, mock.patch.object(R, "run", return_value={"ok": True, "exit_code": 0}) as run:
+            R.COMPUTE_ENV.clear()
+            R.COMPUTE_ENV.update(R.compute_env({"A2179_CI_DEVICE": "cpu"}))
+            self.assertEqual(R.COMPUTE_ENV.get("CUDA_VISIBLE_DEVICES"), "")
+            R.runner_steps("python", Path(d), 60, {"id": "v2", "steps": ["exp028", "exp029"]}, dense=True)
+            names = [c.args[0] for c in run.call_args_list]
+            self.assertEqual(names, ["runner_exp[exp028]", "runner_exp[exp029]"])
+            env028 = run.call_args_list[0].kwargs["env"]
+            env029 = run.call_args_list[1].kwargs["env"]
+            self.assertEqual(env028.get("CUDA_VISIBLE_DEVICES"), "")
+            self.assertIsNone(env029.get("CUDA_VISIBLE_DEVICES"))
+            self.assertEqual(env029.get("A2179_DEVICE"), "cuda")
+            self.assertIn("eval/exp029_h11.py", run.call_args_list[1].args[1])
+
 
 class Exp029DryRun(unittest.TestCase):
     def test_dry_run_or_no_cuda_is_clean(self):

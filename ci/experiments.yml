@@ -1,9 +1,9 @@
 # Experiments on Leonid's self-hosted runner (ADR-0008, ADR-0009, docs/ci.md).
 #
-# THIN WRAPPER: this file only fetches the pushed commit and hands over to ci/run.sh
-# or, for H-11, ci/run_h11.sh. All logic lives in ci/. Source of truth: ci/experiments.yml,
-# active copy: .github/workflows/experiments.yml
-# (cp ci/experiments.yml .github/workflows/experiments.yml).
+# THIN WRAPPER: this file only fetches the pushed commit and hands over to ci/run.sh.
+# All logic (venv, tests, eval, sweep, results commit + push) lives in ci/, so changes
+# there need no new copy of this file. Source of truth: ci/experiments.yml, active copy:
+# .github/workflows/experiments.yml (cp ci/experiments.yml .github/workflows/experiments.yml).
 #
 # The git auth header lives only in this step's environment (GIT_CONFIG_*), nothing is stored.
 # No `uses:` at all: the FreecodersInc policy allows only actions owned by FreecodersInc
@@ -46,9 +46,12 @@ jobs:
       - name: Fetch the pushed commit and run ci/run.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # secrets by explicit name (not toJSON(secrets)), see docs/ci.md. More secrets without a
+          # workflow change: put them as JSON into the one secret A2179_CI_SECRETS.
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
           A2179_CI_SECRETS: ${{ secrets.A2179_CI_SECRETS }}
+          # every repository / environment variable, ci/run.sh picks the A2179_CI_* and HF_* ones
           A2179_CI_VARS: ${{ toJSON(vars) }}
           PYTHONUNBUFFERED: "1"
         run: |
@@ -64,37 +67,3 @@ jobs:
           git checkout -q -f -B main "$GITHUB_SHA"
           git clean -q -ffdx
           exec bash ci/run.sh
-
-  h11:
-    # EXP-029: CUDA vs CPU on the same self-hosted runner. GPU is not hidden here.
-    # Starts after the CPU job so both do not contend for the one machine.
-    needs: experiments
-    if: >-
-      github.repository == 'FreecodersInc/a2179_monitor' &&
-      github.event_name == 'push' &&
-      !contains(github.event.head_commit.message, '[skip ci]')
-    runs-on: [self-hosted, linux, a2179-gpu]
-    environment: experiment
-    timeout-minutes: 60
-    steps:
-      - name: Fetch the pushed commit and run ci/run_h11.sh
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
-          A2179_CI_SECRETS: ${{ secrets.A2179_CI_SECRETS }}
-          A2179_CI_VARS: ${{ toJSON(vars) }}
-          PYTHONUNBUFFERED: "1"
-        run: |
-          set -euo pipefail
-          export GIT_CONFIG_COUNT=1
-          export GIT_CONFIG_KEY_0="http.${GITHUB_SERVER_URL}/.extraheader"
-          export GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64 | tr -d '\n')"
-          cd "$GITHUB_WORKSPACE"
-          [ -d .git ] || git init -q .
-          git remote remove origin 2>/dev/null || true
-          git remote add origin "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
-          git fetch --no-tags --prune origin "+refs/heads/main:refs/remotes/origin/main" "$GITHUB_SHA"
-          git checkout -q -f -B main "$GITHUB_SHA"
-          git clean -q -ffdx
-          exec bash ci/run_h11.sh

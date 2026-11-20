@@ -60,8 +60,9 @@ def run(name, cmd, timeout, env=None, with_secrets=False):
     t0 = time.time()
     rec = {"name": name, "cmd": cmd, "exit_code": None, "signal": None, "timed_out": False}
     try:
-        p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, timeout=timeout,
-                           env={**step_env(with_secrets), **(env or {})})
+        merged = {**step_env(with_secrets), **(env or {})}
+        merged = {k: v for k, v in merged.items() if v is not None}  # None unsets, e.g. CUDA_VISIBLE_DEVICES
+        p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, timeout=timeout, env=merged)
         rec["exit_code"] = p.returncode
         if p.returncode < 0:
             try:
@@ -259,11 +260,11 @@ def kp_daily_step(py, out: Path, T, req):
     return rec
 
 
-RUNNER_OUT = {"granularity": "granularity.json", "rerank_jobs": "rerank_jobs.json", "exp028": "exp028.json"}
+RUNNER_OUT = {"granularity": "granularity.json", "rerank_jobs": "rerank_jobs.json", "exp028": "exp028.json", "exp029": "exp029_h11.json"}
 
 
 def runner_request(root=ROOT):
-    """EXP-021/022/028: ci/requests/runner_experiments.json {"id", "steps"} runs CPU experiments
+    """EXP-021/022/028/029: ci/requests/runner_experiments.json {"id", "steps"} runs runner experiments
     that need the runner's model cache. Once per id and step: a step is done when its output file is in
     some results/<base>/reports/runner_exp/<id>/."""
     p = Path(root) / "ci" / "requests" / "runner_experiments.json"
@@ -296,6 +297,12 @@ def runner_steps(py, out: Path, T, req, dense):
                       min(max(T, 5400), 7200),
                       env={"HF_HUB_OFFLINE": "0", "TRANSFORMERS_OFFLINE": "0", "CUDA_VISIBLE_DEVICES": "",
                            "A2179_DEVICE": "cpu"})
+        elif s == "exp029":
+            # EXP-029 / H-11: CUDA visible only here (None unsets the default hide). MiniLM cosine
+            # CPU vs CUDA at batch 1, then the script frees memory. No CUDA -> blocked, exit 0.
+            rec = run("runner_exp[exp029]", [py, "eval/exp029_h11.py", "--out", str(d)], min(T, 1800),
+                      env={"HF_HUB_OFFLINE": "0", "TRANSFORMERS_OFFLINE": "0",
+                           "CUDA_VISIBLE_DEVICES": None, "A2179_CI_DEVICE": "cuda", "A2179_DEVICE": "cuda"})
         else:
             # the only download outside setup: eval/rerank_jobs.py checks the summed file size (Hub
             # metadata) against 50 MiB first and writes blocked instead of downloading when over

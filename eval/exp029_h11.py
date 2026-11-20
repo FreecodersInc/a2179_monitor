@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "eval"))
 
-REQUEST_ID = "runner-exp-2026-11-20-h11"
+REQUEST_ID = "runner-exp-2026-11-20-v2"
 MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 ACCEPT = 1e-4
 REFUTE = 1e-3

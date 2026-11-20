@@ -334,15 +334,14 @@ class TestWorkflowText(unittest.TestCase):
         self.assertNotIn(".git/config", self.wf)
 
     def test_thin(self):
-        # two thin jobs: experiments (CPU, ci/run.sh) then h11 (CUDA, ci/run_h11.sh)
-        self.assertEqual(self.wf.count("- name:"), 2)
+        # one thin job: the wrapper only execs ci/run.sh. H-11 is a runner_experiments step, not a job.
+        self.assertEqual(self.wf.count("- name:"), 1)
         self.assertIn("A2179_CI_VARS: ${{ toJSON(vars) }}", self.wf)
         self.assertTrue(run_block(self.wf).rstrip().endswith("exec bash ci/run.sh"))
         self.assertNotIn("git config --", run_block(self.wf))  # token never written to .git/config
-        self.assertIn("  h11:\n", self.wf)
-        self.assertIn("needs: experiments", self.wf)
-        self.assertIn("exec bash ci/run_h11.sh", self.wf)
-        self.assertEqual(self.wf.count("runs-on: [self-hosted, linux, a2179-gpu]"), 2)
+        self.assertNotIn("exec bash ci/run_h11.sh", self.wf)
+        self.assertNotIn("  h11:\n", self.wf)
+        self.assertEqual(self.wf.count("runs-on: [self-hosted, linux, a2179-gpu]"), 1)
 
     @unittest.skipUnless(GIT, "git not installed")
     def test_bootstrap_checks_out_pushed_sha_and_execs_run_sh(self):
@@ -768,7 +767,9 @@ class TestRunSh(unittest.TestCase):
             env = {**os.environ, "A2179_CI_VARS": json.dumps({"A2179_CI_VENV": str(venv), "A2179_CI_DENSE": "off",
                                                              "A2179_CI_FETCH_JOBS": "never"}),
                    "A2179_CI_OUT": str(tmp / "out"), "A2179_CI_RESULTS_DIR": str(tmp / "results"),
-                   "A2179_CI_NO_PUSH": "1", "A2179_CI_SKIP_TESTS": "1", "GITHUB_SHA": ENV["GITHUB_SHA"]}
+                   "A2179_CI_NO_PUSH": "1", "A2179_CI_SKIP_TESTS": "1", "GITHUB_SHA": ENV["GITHUB_SHA"],
+                   # plumbing only: do not launch the one-shot runner experiments (they may fetch models)
+                   "A2179_CI_RUNNER_EXP": "off"}
             env.pop("GITHUB_PATH", None)
             p = subprocess.run(["bash", str(ROOT / "ci" / "run.sh")], cwd=tmp, env=env, capture_output=True,
                                text=True, timeout=300)

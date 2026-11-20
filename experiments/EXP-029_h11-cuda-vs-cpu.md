@@ -8,9 +8,9 @@
 | автор | Grok Ebanutyi, ревью Лёня |
 | код (commit) | протокол `452287f`, код этого коммита |
 | данные | `eval/labeled.jsonl`, только реальные строки, тексты заголовок плюс сниппет |
-| окружение | self-hosted раннер `a2179-gpu`. Отдельный job workflow с CUDA. Модель монитора, уже в кэше раннера, если есть |
+| окружение | self-hosted раннер `a2179-gpu`. Тот же job, шаг `exp029` в `ci/run_experiments.py` по заявке `ci/requests/runner_experiments.json` (после `exp028`, CUDA видна только на этом шаге). Модель монитора, уже в кэше раннера, если есть |
 | seed | детерминировано |
-| артефакты | `results/<base>/reports/runner_exp/runner-exp-2026-11-20-h11/` |
+| артефакты | `results/<base>/reports/runner_exp/runner-exp-2026-11-20-v2/` (`exp029_h11.json`) |
 
 ## Вопрос и гипотеза (до прогона)
 
@@ -22,15 +22,15 @@
 
 ## Условия и установка
 
-* Отдельный job в workflow, те же labels раннера: `self-hosted`, `linux`, `a2179-gpu`. GPU в этом job не скрываем.
-* Сначала проверка CUDA (`torch.cuda.is_available()` и имя устройства). Если CUDA нет, job заканчивается чисто: в артефакте `blocked`, причина «no CUDA», гипотеза не считается прогнанной, общий CI job экспериментов из-за этого красным не становится.
+* Тот же job и те же labels раннера (`self-hosted`, `linux`, `a2179-gpu`). Шаг `exp029` в `ci/run_experiments.py` сразу после CPU шага `exp028`, по той же заявке `runner-exp-2026-11-20-v2`. Отдельный job в workflow не нужен, YAML не копируем, `ci/run.sh` не трогаем. Перед шагом снимаем `CUDA_VISIBLE_DEVICES`, GPU виден только здесь.
+* Сначала проверка CUDA (`torch.cuda.is_available()` и имя устройства). Если CUDA нет, шаг пишет в артефакт `blocked` (причина «no CUDA»), гипотеза не считается прогнанной, общий CI job из-за этого красным не становится.
 * Одна модель, сначала encode на CPU, потом на CUDA, batch 1 (видеокарта ранняя, мало памяти). После прогона модель удаляем из памяти, `torch.cuda.empty_cache()`, GPU отпускаем.
 * Если модель уже в кэше HF раннера, ничего не качаем. Если нет, раннер может взять её сам. У нас локально модель не качаем и не гоняем.
 * Тексты объявлений в артефакты не пишем (ADR-0032).
 * Команда на раннере:
 
 ```bash
-python eval/exp029_h11.py --out reports/runner_exp/runner-exp-2026-11-20-h11
+python eval/exp029_h11.py --out reports/runner_exp/runner-exp-2026-11-20-v2
 ```
 
 `--dry-run` только проверяет CUDA и ничего не грузит.
