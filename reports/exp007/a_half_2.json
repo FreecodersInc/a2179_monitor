@@ -1,0 +1,415 @@
+{
+ "meta": {
+  "target": "a2179_screen",
+  "n": 430,
+  "positives": 48,
+  "real_rows": 371,
+  "real_positives": 17,
+  "folds": 5,
+  "repeats": 12,
+  "seed": 0,
+  "tie": "sweep",
+  "min_recall": 1.0,
+  "proto_frac": 0.5,
+  "proto_seed": 2,
+  "prototypes": [
+   8,
+   9
+  ],
+  "dense_dir": "/nonexistent"
+ },
+ "summary": {
+  "regex": {
+   "all_P": {
+    "mean": 0.939,
+    "sd": 0.0,
+    "min": 0.939,
+    "max": 0.939
+   },
+   "all_R": {
+    "mean": 0.958,
+    "sd": 0.0,
+    "min": 0.958,
+    "max": 0.958
+   },
+   "all_F1": {
+    "mean": 0.948,
+    "sd": 0.0,
+    "min": 0.948,
+    "max": 0.948
+   },
+   "all_fp": {
+    "mean": 3,
+    "sd": 0.0,
+    "min": 3,
+    "max": 3
+   },
+   "all_fn": {
+    "mean": 2,
+    "sd": 0.0,
+    "min": 2,
+    "max": 2
+   },
+   "real_P": {
+    "mean": 0.889,
+    "sd": 0.0,
+    "min": 0.889,
+    "max": 0.889
+   },
+   "real_R": {
+    "mean": 0.941,
+    "sd": 0.0,
+    "min": 0.941,
+    "max": 0.941
+   },
+   "real_F1": {
+    "mean": 0.914,
+    "sd": 0.0,
+    "min": 0.914,
+    "max": 0.914
+   },
+   "real_fp": {
+    "mean": 2,
+    "sd": 0.0,
+    "min": 2,
+    "max": 2
+   },
+   "real_fn": {
+    "mean": 1,
+    "sd": 0.0,
+    "min": 1,
+    "max": 1
+   }
+  },
+  "feat only": {
+   "all_P": {
+    "mean": 0.623,
+    "sd": 0.0,
+    "min": 0.623,
+    "max": 0.623
+   },
+   "all_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "all_F1": {
+    "mean": 0.768,
+    "sd": 0.0,
+    "min": 0.768,
+    "max": 0.768
+   },
+   "all_fp": {
+    "mean": 29,
+    "sd": 0.0,
+    "min": 29,
+    "max": 29
+   },
+   "all_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   },
+   "real_P": {
+    "mean": 0.405,
+    "sd": 0.0,
+    "min": 0.405,
+    "max": 0.405
+   },
+   "real_R": {
+    "mean": 1.0,
+    "sd": 0.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "real_F1": {
+    "mean": 0.576,
+    "sd": 0.0,
+    "min": 0.576,
+    "max": 0.576
+   },
+   "real_fp": {
+    "mean": 25,
+    "sd": 0.0,
+    "min": 25,
+    "max": 25
+   },
+   "real_fn": {
+    "mean": 0,
+    "sd": 0.0,
+    "min": 0,
+    "max": 0
+   }
+  },
+  "tfidf": {
+   "all_P": {
+    "mean": 0.573,
+    "sd": 0.02,
+    "min": 0.534,
+    "max": 0.61
+   },
+   "all_R": {
+    "mean": 0.977,
+    "sd": 0.006,
+    "min": 0.958,
+    "max": 0.979
+   },
+   "all_F1": {
+    "mean": 0.723,
+    "sd": 0.015,
+    "min": 0.691,
+    "max": 0.752
+   },
+   "all_fp": {
+    "mean": 35,
+    "sd": 2.858,
+    "min": 30,
+    "max": 41
+   },
+   "all_fn": {
+    "mean": 1.083,
+    "sd": 0.276,
+    "min": 1,
+    "max": 2
+   },
+   "real_P": {
+    "mean": 0.37,
+    "sd": 0.021,
+    "min": 0.333,
+    "max": 0.405
+   },
+   "real_R": {
+    "mean": 0.995,
+    "sd": 0.016,
+    "min": 0.941,
+    "max": 1.0
+   },
+   "real_F1": {
+    "mean": 0.538,
+    "sd": 0.022,
+    "min": 0.5,
+    "max": 0.576
+   },
+   "real_fp": {
+    "mean": 29,
+    "sd": 2.769,
+    "min": 25,
+    "max": 34
+   },
+   "real_fn": {
+    "mean": 0.083,
+    "sd": 0.276,
+    "min": 0,
+    "max": 1
+   }
+  },
+  "tfidf+feat": {
+   "all_P": {
+    "mean": 0.796,
+    "sd": 0.024,
+    "min": 0.77,
+    "max": 0.839
+   },
+   "all_R": {
+    "mean": 0.977,
+    "sd": 0.006,
+    "min": 0.958,
+    "max": 0.979
+   },
+   "all_F1": {
+    "mean": 0.877,
+    "sd": 0.014,
+    "min": 0.862,
+    "max": 0.904
+   },
+   "all_fp": {
+    "mean": 12.083,
+    "sd": 1.754,
+    "min": 9,
+    "max": 14
+   },
+   "all_fn": {
+    "mean": 1.083,
+    "sd": 0.276,
+    "min": 1,
+    "max": 2
+   },
+   "real_P": {
+    "mean": 0.627,
+    "sd": 0.039,
+    "min": 0.586,
+    "max": 0.708
+   },
+   "real_R": {
+    "mean": 0.995,
+    "sd": 0.016,
+    "min": 0.941,
+    "max": 1.0
+   },
+   "real_F1": {
+    "mean": 0.769,
+    "sd": 0.029,
+    "min": 0.739,
+    "max": 0.829
+   },
+   "real_fp": {
+    "mean": 10.167,
+    "sd": 1.675,
+    "min": 7,
+    "max": 12
+   },
+   "real_fn": {
+    "mean": 0.083,
+    "sd": 0.276,
+    "min": 0,
+    "max": 1
+   }
+  },
+  "bm25": {
+   "all_P": {
+    "mean": 0.796,
+    "sd": 0.015,
+    "min": 0.783,
+    "max": 0.825
+   },
+   "all_R": {
+    "mean": 0.977,
+    "sd": 0.006,
+    "min": 0.958,
+    "max": 0.979
+   },
+   "all_F1": {
+    "mean": 0.878,
+    "sd": 0.009,
+    "min": 0.87,
+    "max": 0.895
+   },
+   "all_fp": {
+    "mean": 12,
+    "sd": 1.155,
+    "min": 10,
+    "max": 13
+   },
+   "all_fn": {
+    "mean": 1.083,
+    "sd": 0.276,
+    "min": 1,
+    "max": 2
+   },
+   "real_P": {
+    "mean": 0.63,
+    "sd": 0.026,
+    "min": 0.607,
+    "max": 0.68
+   },
+   "real_R": {
+    "mean": 0.995,
+    "sd": 0.016,
+    "min": 0.941,
+    "max": 1.0
+   },
+   "real_F1": {
+    "mean": 0.771,
+    "sd": 0.018,
+    "min": 0.756,
+    "max": 0.81
+   },
+   "real_fp": {
+    "mean": 10,
+    "sd": 1.155,
+    "min": 8,
+    "max": 11
+   },
+   "real_fn": {
+    "mean": 0.083,
+    "sd": 0.276,
+    "min": 0,
+    "max": 1
+   }
+  },
+  "bm25+feat": {
+   "all_P": {
+    "mean": 0.815,
+    "sd": 0.018,
+    "min": 0.783,
+    "max": 0.855
+   },
+   "all_R": {
+    "mean": 0.977,
+    "sd": 0.006,
+    "min": 0.958,
+    "max": 0.979
+   },
+   "all_F1": {
+    "mean": 0.889,
+    "sd": 0.011,
+    "min": 0.87,
+    "max": 0.913
+   },
+   "all_fp": {
+    "mean": 10.667,
+    "sd": 1.247,
+    "min": 8,
+    "max": 13
+   },
+   "all_fn": {
+    "mean": 1.083,
+    "sd": 0.276,
+    "min": 1,
+    "max": 2
+   },
+   "real_P": {
+    "mean": 0.663,
+    "sd": 0.033,
+    "min": 0.607,
+    "max": 0.739
+   },
+   "real_R": {
+    "mean": 0.995,
+    "sd": 0.016,
+    "min": 0.941,
+    "max": 1.0
+   },
+   "real_F1": {
+    "mean": 0.795,
+    "sd": 0.024,
+    "min": 0.756,
+    "max": 0.85
+   },
+   "real_fp": {
+    "mean": 8.667,
+    "sd": 1.247,
+    "min": 6,
+    "max": 11
+   },
+   "real_fn": {
+    "mean": 0.083,
+    "sd": 0.276,
+    "min": 0,
+    "max": 1
+   }
+  }
+ },
+ "paired": {
+  "tfidf+feat vs bm25+feat": {
+   "real_fp": {
+    "mean": 1.5,
+    "sd": 1.32,
+    "a_better": 1,
+    "tie": 2,
+    "b_better": 9,
+    "n": 12
+   },
+   "all_F1": {
+    "mean": -0.01,
+    "sd": 0.01,
+    "a_better": 9,
+    "tie": 2,
+    "b_better": 1,
+    "n": 12
+   }
+  }
+ }
+}

@@ -45,6 +45,15 @@ class TestNoLeak(unittest.TestCase):
         part = N.pick(y, regex, gate, base, feat, tr, False, min_recall=0.75)
         self.assertLess(full[1], part[1])   # recall 1.0 has to go down to the outlier
 
+    def test_subsample_prototypes(self):
+        p = [f"p{i}" for i in range(15)]
+        self.assertEqual(N.subsample(p, 1.0, 0), p)
+        h = N.subsample(p, 0.5, 0)
+        self.assertEqual(len(h), 8)
+        self.assertEqual(h, N.subsample(p, 0.5, 0))
+        self.assertEqual(h, [x for x in p if x in h])   # order kept
+        self.assertEqual(len(N.subsample(p[:1], 0.1, 3)), 1)
+
     def test_apply_mm_clips(self):
         self.assertEqual(N.apply_mm(5, 0, 1), 1.0)
         self.assertEqual(N.apply_mm(-1, 0, 1), 0.0)

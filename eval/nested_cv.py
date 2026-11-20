@@ -59,6 +59,16 @@ def folds_grouped(y, groups, k, rnd):
     return out
 
 
+def subsample(protos, frac: float, seed: int) -> list:
+    """Seeded share of a prototype list, at least one, order kept (EXP-007)."""
+    protos = list(protos)
+    if frac >= 1.0:
+        return protos
+    k = max(1, round(len(protos) * frac))
+    keep = set(random.Random(seed).sample(range(len(protos)), k))
+    return [p for i, p in enumerate(protos) if i in keep]
+
+
 def fit_mm(v, idx):
     lo, hi = min(v[i] for i in idx), max(v[i] for i in idx)
     return lo, hi
@@ -154,6 +164,9 @@ def main(argv=None):
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--out", default=str(ROOT / "reports" / "exp004"))
     ap.add_argument("--tie", choices=["sweep", "strict"], default="sweep")
+    ap.add_argument("--proto-frac", type=float, default=1.0,
+                    help="share of the profile prototypes (each side) used by tfidf and bm25 (EXP-007)")
+    ap.add_argument("--proto-seed", type=int, default=0)
     ap.add_argument("--min-recall", type=float, default=1.0,
                     help="recall the threshold must keep on the training part (1.0 = monitor rule)")
     ap.add_argument("--name", default="nested_cv", help="output file stem")
@@ -164,7 +177,8 @@ def main(argv=None):
         r.setdefault("snippet", "")
     sw = S.Sweep(rows, target=tg)
     texts = [f"{r['title']} {r['snippet']}".strip() for r in rows]
-    tf, bm = S.TfidfSim(tg.positive, tg.negative), S.BM25(tg.positive, tg.negative)
+    pos_p, neg_p = subsample(tg.positive, a.proto_frac, a.proto_seed), subsample(tg.negative, a.proto_frac, a.proto_seed + 1000)
+    tf, bm = S.TfidfSim(pos_p, neg_p), S.BM25(pos_p, neg_p)
     frx = S.feature_rx(tg)
     feat = [(S.features(r["title"], r["snippet"], frx)[0] + 1) / 2 for r in rows]
     raw = {"tfidf": [p - n for p, n in (tf.score(t) for t in texts)],
@@ -188,7 +202,8 @@ def main(argv=None):
     out.mkdir(parents=True, exist_ok=True)
     meta = {"target": tg.name, "n": len(rows), "positives": sum(sw.y), "real_rows": sum(r.get("source") != "synthetic" for r in rows),
             "real_positives": sum(1 for r in rows if r.get("source") != "synthetic" and r["label"]),
-            "folds": a.folds, "repeats": a.repeats, "seed": a.seed, "tie": a.tie, "min_recall": a.min_recall, "dense_dir": str(dd)}
+            "folds": a.folds, "repeats": a.repeats, "seed": a.seed, "tie": a.tie, "min_recall": a.min_recall, "proto_frac": a.proto_frac, "proto_seed": a.proto_seed,
+            "prototypes": [len(pos_p), len(neg_p)], "dense_dir": str(dd)}
     (out / f"{a.name}.json").write_text(json.dumps({"meta": meta, "summary": summ, "paired": pairs}, indent=1), encoding="utf-8")
     lines = [f"# Nested CV, {tg.label}: {meta['n']} rows, {meta['positives']} positives "
              f"({meta['real_positives']} of them real), {a.folds} folds x {a.repeats} repeats, seed {a.seed}, F1 ties: {a.tie}, train recall >= {a.min_recall}", "",
