@@ -3,6 +3,7 @@
 | поле | значение |
 |---|---|
 | статус | done (dense часть только из прогона Лёни, кривые с dense не посчитаны) |
+| вердикты | H-01 partial |
 | дата | 2026-11-19 |
 | код (commit) | 7bd8ef1 (`eval/sweep.py`), прогон MiniLM: `eval/run_eval.py` у Лёни, коммит результатов 9973f89 |
 | данные | `eval/labeled.jsonl`, git blob 7dcab24ea726, sha256 ec5e2e9e0b6ecedf…, 99 строк (42 pos, 57 neg), из них 40 реальных и 59 синтетических |

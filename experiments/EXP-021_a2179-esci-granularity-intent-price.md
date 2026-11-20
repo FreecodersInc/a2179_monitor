@@ -2,7 +2,8 @@
 
 | поле | значение |
 |---|---|
-| статус | H-27 refuted, H-05 и H-09 не запускались, H-20 и H-13 blocked, H-24 refuted |
+| статус | done |
+| вердикты | H-27 refuted, H-24 refuted, H-05 waiting, H-09 waiting, H-20 blocked, H-13 blocked |
 | дата | 2026-11-20 |
 | автор | Grok Ebanutyi, ревью Лёня |
 | данные | `eval/labeled.jsonl` 430 строк (371 реальных), поле `kind` |

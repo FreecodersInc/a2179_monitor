@@ -3,6 +3,7 @@
 | поле | значение |
 |---|---|
 | статус | done (первый круг): сбор и ревью 3b678fa, прогон eval и sweep у Лёни ca9820f |
+| вердикты | H-08 partial, H-15 partial |
 | дата | 2026-11-19 |
 | код (commit) | ac0e7ce (`eval/enrich.py`) |
 | данные до | `eval/labeled.jsonl` blob 7dcab24ea726, 99 строк |

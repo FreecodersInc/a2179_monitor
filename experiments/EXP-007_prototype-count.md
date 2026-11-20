@@ -3,6 +3,7 @@
 | поле | значение |
 |---|---|
 | статус | done (гипотеза записана до прогона, ad5bcec) |
+| вердикты | H-06 inconclusive |
 | дата | 2026-11-20 |
 | автор | Grok Ebanutyi, ревью Лёня |
 | код (commit) | `eval/nested_cv.py --proto-frac` |

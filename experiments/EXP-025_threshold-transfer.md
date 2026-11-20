@@ -2,7 +2,8 @@
 
 | поле | значение |
 |---|---|
-| статус | H-03 accepted |
+| статус | done |
+| вердикты | H-03 accepted |
 | дата | 2026-11-20 |
 | автор | Grok Ebanutyi, ревью Лёня |
 | данные | 371 реальная строка A2179 (`eval/labeled.jsonl`), 462 вакансии (`eval/de_jobs/labeled.jsonl`, позитив E или S по `esci_text`) |

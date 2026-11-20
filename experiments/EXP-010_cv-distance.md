@@ -3,6 +3,7 @@
 | поле | значение |
 |---|---|
 | статус | done (заявлено в 1fc28ee до прогона) |
+| вердикты | H-35 accepted |
 | дата | 2026-11-20 |
 | автор | Grok Ebanutyi, ревью Лёня |
 | код (commit) | `eval/cv_distance.py`, канал `dense:cv` в `eval/nested_cv.py` |

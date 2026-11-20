@@ -2,22 +2,24 @@
 
 | поле | значение |
 |---|---|
-| статус | in progress |
+| статус | done |
+| эксперименты | EXP-018 |
+| условие |  |
 | майлстоун | M-003 |
 | ответственный | Grok Ebanutyi, ревью Лёня |
 | создана | 2026-11-19 |
-| закрыта | |
+| закрыта | 2026-11-20 |
 
 ## Цель
 Коллекторы Remotive, Remote OK, Arbeitnow, We Work Remotely RSS, HN API, HelloWorld.rs через общий лимитер, с выводом по ToS у каждого.
 
 ## Критерии приёмки
 - [x] ToS Remotive и Remote OK прочитаны, вывод ниже
-- [ ] ToS и robots.txt Arbeitnow, We Work Remotely, HN API, HelloWorld.rs
+- [x] ToS и robots.txt Arbeitnow, We Work Remotely, HN API (EXP-018), HelloWorld.rs robots.txt (ниже)
 - [x] Remotive не чаще 4 раз в день, кэш 24 часа, вакансии новее 24 часов отбрасываем, в отчёте ссылка назад и упоминание Remotive и Remote OK
 - [x] офлайн тесты на сохранённых ответах, никакой сети в `tests/` (`tests/test_jobs.py`, `tests/test_review.py`)
 - [x] LinkedIn, Indeed, Glassdoor не трогаем (код отказывается ходить на эти хосты)
-- [ ] Arbeitnow, We Work Remotely RSS, HN API, HelloWorld.rs ещё не подключены
+- [x] Arbeitnow, We Work Remotely RSS, HN API подключены (EXP-018), HelloWorld.rs проверен и не подключаем
 
 ## План
 1. По плану M-003, EXP запись до прогона.
@@ -42,4 +44,7 @@
 Первый сбор 2026-11-19 (4 прогона по 85 с, пока все доски не в кэше): 17 328 открытых вакансий на досках и в двух API, после префильтра 3337, после дедупа 3298, матчер дал 209. Toronto или Vancouver в локации у 173 (Toronto 125, Vancouver 48), из них match 6.
 
 ### Ещё не делали
-Arbeitnow, We Work Remotely RSS, HN API, HelloWorld.rs: ToS до кода ещё не закрыты, коллекторов нет.
+Arbeitnow, We Work Remotely RSS и HN API подключены в EXP-018.
+
+### HelloWorld.rs (2026-11-20)
+robots.txt разрешает `/posao/` и `/rss/`, запрещает `/konkurs/`, `/admin/`, `/auth/`. RSS `https://www.helloworld.rs/rss/` отдаёт 15 последних вакансий, только заголовок и компания, без описания, рынок Сербии. Страница `/uslovi-koriscenja` рендерится только через JS, текст условий прочитать не удалось. **Не подключаем:** цель вакансий Канада и EU remote на английском, а тут сербский рынок, 15 строк без текста, полный текст нужен по ADR-0032. Вернуться, если цель поменяется на Сербию.

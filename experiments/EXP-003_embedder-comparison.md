@@ -3,6 +3,7 @@
 | поле | значение |
 |---|---|
 | статус | done, результаты по порогам под подозрением (ADR-0020), чистая переоценка в [EXP-004](EXP-004_nested-cv.md) |
+| вердикты | H-17 refuted, H-30 inconclusive |
 | дата | 2026-11-19 |
 | автор | Grok Ebanutyi, ревью Лёня |
 | код (commit) | прогон 247d60c ([run 44623837237](https://github.com/FreecodersInc/a2179_monitor/actions/runs/44623837237)), те же числа в 2cf7478 и f9d2e2f. Реестр `eval/embedders.json`, `eval/sweep.py --embedders`, bootstrap в `eval/plots.py` |

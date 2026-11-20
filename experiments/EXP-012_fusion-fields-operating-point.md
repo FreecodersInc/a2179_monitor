@@ -3,6 +3,7 @@
 | поле | значение |
 |---|---|
 | статус | done (план записан до прогона) |
+| вердикты | H-14 refuted, H-16 partial |
 | дата | 2026-11-20 |
 | автор | Grok Ebanutyi, ревью Лёня |
 | код (commit) | `eval/nested_cv.py --rrf`, `--title-weight`, рабочая точка `eval.operating_point` в профилях |

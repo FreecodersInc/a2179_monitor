@@ -2,7 +2,8 @@
 
 | поле | значение |
 |---|---|
-| статус | H-12 refuted |
+| статус | done |
+| вердикты | H-12 refuted |
 | дата | 2026-11-20 |
 | автор | Grok Ebanutyi, ревью Лёня |
 | данные | 371 реальная строка из `eval/labeled.jsonl`, dense скоры `results/2026-11-20_a43706f/dense_scores.jsonl` (MiniLM из кэша CI) |

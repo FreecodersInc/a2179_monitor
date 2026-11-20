@@ -2,7 +2,8 @@
 
 | поле | значение |
 |---|---|
-| статус | H-44 accepted, проверка страт refuted |
+| статус | done (проверка страт refuted) |
+| вердикты | H-44 accepted |
 | дата | 2026-11-20 |
 | автор | Grok Ebanutyi, ревью Лёня |
 | данные | `eval/de_jobs/labeled.jsonl` 462 строки (`esci_text`, EXP-020), `eval/de_jobs/batch3.jsonl` 150 свежих (EXP-011), тексты из локального кэша вакансий |
