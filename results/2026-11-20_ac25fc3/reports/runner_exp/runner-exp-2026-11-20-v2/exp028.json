@@ -1,0 +1,163 @@
+{
+  "id": "runner-exp-2026-11-20-v2",
+  "exp": "EXP-028",
+  "device": "cpu",
+  "cuda_visible_devices": "",
+  "dry_run": false,
+  "n": 371,
+  "pos": 17,
+  "nli_hypothesis": "This listing sells a MacBook Air A2179 LCD screen. Ovaj oglas prodaje LCD ekran za MacBook Air A2179.",
+  "resources": {
+    "disk_free_mib": 31069.9,
+    "mem_available_mib": 14122,
+    "mem_total_mib": 17987
+  },
+  "baselines": {
+    "bm25": {
+      "scores_kind": "sim_pos-sim_neg",
+      "npos": 17,
+      "R@npos": 0.059,
+      "R@2npos": 0.529,
+      "P@R95": 0.097,
+      "P@R1": 0.097,
+      "depth@R1": 176,
+      "AP": 0.225,
+      "nDCG@npos": 0.038,
+      "MRR": 0.059
+    },
+    "tfidf": {
+      "scores_kind": "sim_pos-sim_neg",
+      "npos": 17,
+      "R@npos": 0.118,
+      "R@2npos": 0.353,
+      "P@R95": 0.159,
+      "P@R1": 0.159,
+      "depth@R1": 107,
+      "AP": 0.167,
+      "nDCG@npos": 0.09,
+      "MRR": 0.125
+    }
+  },
+  "models": [
+    {
+      "hyp": "H-04",
+      "id": "MoritzLaurer/multilingual-MiniLMv2-L6-mnli-xnli",
+      "kind": "nli",
+      "needed_mib": 429.3,
+      "status": "done",
+      "resources_before": {
+        "disk_free_mib": 31069.9,
+        "mem_available_mib": 14121,
+        "mem_total_mib": 17987
+      },
+      "metrics": {
+        "npos": 17,
+        "R@npos": 0.0,
+        "R@2npos": 0.059,
+        "P@R95": 0.046,
+        "P@R1": 0.046,
+        "depth@R1": 371,
+        "AP": 0.039,
+        "nDCG@npos": 0.0,
+        "MRR": 0.03
+      },
+      "duration_s": 42.5,
+      "cache_cleanup": "deleted 1 revision(s)",
+      "resources_after": {
+        "disk_free_mib": 31069.3,
+        "mem_available_mib": 13524,
+        "mem_total_mib": 17987
+      }
+    },
+    {
+      "hyp": "H-13",
+      "id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+      "kind": "ce",
+      "needed_mib": 469.9,
+      "status": "done",
+      "resources_before": {
+        "disk_free_mib": 31069.3,
+        "mem_available_mib": 13524,
+        "mem_total_mib": 17987
+      },
+      "metrics": {
+        "npos": 17,
+        "R@npos": 0.0,
+        "R@2npos": 0.176,
+        "P@R95": 0.11,
+        "P@R1": 0.11,
+        "depth@R1": 155,
+        "AP": 0.117,
+        "nDCG@npos": 0.0,
+        "MRR": 0.05
+      },
+      "duration_s": 388.2,
+      "cache_cleanup": "deleted 1 revision(s)",
+      "resources_after": {
+        "disk_free_mib": 31066.3,
+        "mem_available_mib": 13472,
+        "mem_total_mib": 17987
+      }
+    },
+    {
+      "hyp": "H-19",
+      "id": "naver/splade-v3-distilbert",
+      "kind": "splade",
+      "needed_mib": 256.5,
+      "status": "done",
+      "resources_before": {
+        "disk_free_mib": 31066.3,
+        "mem_available_mib": 13472,
+        "mem_total_mib": 17987
+      },
+      "metrics": {
+        "npos": 17,
+        "R@npos": 0.294,
+        "R@2npos": 0.471,
+        "P@R95": 0.097,
+        "P@R1": 0.097,
+        "depth@R1": 175,
+        "AP": 0.368,
+        "nDCG@npos": 0.415,
+        "MRR": 1.0
+      },
+      "duration_s": 38.8,
+      "cache_cleanup": "deleted 2 revision(s)",
+      "resources_after": {
+        "disk_free_mib": 31065.8,
+        "mem_available_mib": 13121,
+        "mem_total_mib": 17987
+      }
+    },
+    {
+      "hyp": "H-23",
+      "id": "answerdotai/answerai-colbert-small-v1",
+      "kind": "colbert",
+      "needed_mib": 128.3,
+      "status": "done",
+      "resources_before": {
+        "disk_free_mib": 31065.8,
+        "mem_available_mib": 13121,
+        "mem_total_mib": 17987
+      },
+      "metrics": {
+        "npos": 17,
+        "R@npos": 0.118,
+        "R@2npos": 0.235,
+        "P@R95": 0.062,
+        "P@R1": 0.062,
+        "depth@R1": 276,
+        "AP": 0.113,
+        "nDCG@npos": 0.09,
+        "MRR": 0.111
+      },
+      "duration_s": 20.8,
+      "cache_cleanup": "deleted 1 revision(s)",
+      "resources_after": {
+        "disk_free_mib": 31064.4,
+        "mem_available_mib": 13181,
+        "mem_total_mib": 17987
+      }
+    }
+  ]
+}
