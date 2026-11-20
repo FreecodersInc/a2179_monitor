@@ -1,0 +1,45 @@
+{
+ "id": "sources-2026-11-20",
+ "rows": [
+  {
+   "url": "https://www.kupindo.com/",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": true,
+   "status": 200,
+   "bytes": 64940,
+   "title": "Kupovina preko interneta – Kupindo.com",
+   "verdict": "ok"
+  },
+  {
+   "url": "https://www.kupindo.com/Racunari-i-oprema/pretraga?Pretraga=a2179",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": true,
+   "status": 200,
+   "bytes": 46829,
+   "title": "Greška - Kupindo.com",
+   "verdict": "ok"
+  },
+  {
+   "url": "https://www.limundo.com/",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": true,
+   "status": 200,
+   "bytes": 93278,
+   "title": "Limundo - Sigurna kupoprodaja putem Internet aukcija",
+   "verdict": "ok"
+  },
+  {
+   "url": "https://www.limundo.com/Racunari-i-oprema/pretraga?Pretraga=a2179",
+   "robots_status": 200,
+   "robots_parsed": true,
+   "allowed": true,
+   "status": 404,
+   "bytes": 48624,
+   "title": "Stranica nije pronađena - Limundo.com",
+   "verdict": "error"
+  }
+ ]
+}
