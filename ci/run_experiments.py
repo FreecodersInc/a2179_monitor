@@ -212,6 +212,28 @@ def probe_step(py, out: Path, T, req):
     return rec
 
 
+def used_request(root=ROOT, date=None):
+    """T-033 / EXP-017: ci/requests/used_sources_daily.json {"id", "pages": [..]} collects the Limundo
+    and KupindO category pages once per UTC day (CI runs only on push, so: the first run of the day).
+    Fulfilled for the day when some results/<base>/reports/used_sources/<date>/summary.json exists."""
+    p = Path(root) / "ci" / "requests" / "used_sources_daily.json"
+    if os.environ.get("A2179_CI_FETCH_LISTINGS", "auto") in ("off", "0", "no") or not p.is_file():
+        return None
+    req = json.loads(p.read_text(encoding="utf-8"))
+    date = date or time.strftime("%Y-%m-%d", time.gmtime())
+    if not req.get("pages") or any((Path(root) / "results").glob(f"*/reports/used_sources/{date}/summary.json")):
+        return None
+    return {**req, "date": date}
+
+
+def used_step(py, out: Path, T, req):
+    d = out / "reports" / "used_sources" / req["date"]
+    rec = run("used_sources", [py, "eval/used_sources.py", "--request", str(ROOT / "ci" / "requests" / "used_sources_daily.json"),
+                               "--out", str(d)], min(T, int(float(req.get("time_budget_s", 240))) + 120))
+    rec["advisory"] = True
+    return rec
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=str(ROOT / "ci_out"))
@@ -302,6 +324,9 @@ def main(argv=None):
     preq = probe_request()
     if preq and (want("fetch") or mode != "targeted"):
         steps.append(probe_step(py, out, T, preq))
+    ureq = used_request()
+    if ureq:   # once a day in any mode, also on a targeted run (light: robots + 5 pages)
+        steps.append(used_step(py, out, T, ureq))
 
     # charts + ranking metrics from the sweep scores, advisory: a failure here never turns CI red
     if want("plots") and os.environ.get("A2179_CI_PLOTS", "1") not in ("0", "false", "no") and (out / "sweep" / "sweep.json").is_file():

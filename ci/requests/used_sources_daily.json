@@ -1,0 +1,13 @@
+{
+ "id": "used-daily-v1",
+ "why": "T-033 / EXP-017 (H-40): newest lots of the computer category pages, search is disallowed by robots.txt. Once per UTC day, the first CI run of the day.",
+ "min_delay_s": 6,
+ "time_budget_s": 240,
+ "pages": [
+  "https://www.kupindo.com/Racunari-i-oprema/Laptop-racunari-delovi-i-oprema/artikli/1469",
+  "https://www.kupindo.com/Racunari-i-oprema/Laptop-racunari-delovi-i-oprema/artikli/1469_strana_2",
+  "https://www.limundo.com/Racunari-i-oprema/aukcije/g12",
+  "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=1",
+  "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=2"
+ ]
+}

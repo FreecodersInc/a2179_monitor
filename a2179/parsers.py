@@ -319,3 +319,65 @@ def sanitize_kp_card_html(html: str, url: str = "") -> str:
     d = {"props": {"initialReduxState": {"ad": {"byId": {k: ad}}}}}
     return ('<html><head><title>' + (ad.get("name") or "") + '</title></head><body><script id="__NEXT_DATA__" '
             'type="application/json">' + json.dumps(d, ensure_ascii=False) + "</script></body></html>\n")
+
+
+# T-033: Limundo / KupindO category listing pages (search is disallowed by their robots.txt, category
+# pages are allowed). One row per lot: id, url, title, price, currency, condition, category. The seller
+# block of a lot (user name, rating, avatar) is never read and never kept.
+_USED_ID = {"limundo": re.compile(r"/(\d{6,})/?$"), "kupindo": re.compile(r"/(\d{6,})_[^/]*$")}
+
+
+def used_site(url: str) -> Optional[str]:
+    h = urlparse(url or "").netloc.lower()
+    return next((s for s in _USED_ID if s in h), None)
+
+
+def parse_used_listing(html: str, base_url: str) -> list:
+    site = used_site(base_url)
+    if site is None:
+        return []
+    soup = _soup(html)
+    out, seen = [], set()
+    for it in soup.select("div.list-view-listing-item"):
+        a = it.select_one("h3 a[href]")
+        if a is None:
+            continue
+        url = urljoin(base_url, a["href"].strip())
+        m = _USED_ID[site].search(urlparse(url).path)
+        if not m or m.group(1) in seen:
+            continue
+        seen.add(m.group(1))
+        title = re.sub(r"\s+", " ", a.get_text(" ")).strip()
+        pe = it.select_one(".item-price strong") or it.select_one(".item-price")
+        pp = parse_price(pe.get_text(" ") if pe else "", "RSD")
+        cond = None
+        for li in it.select(".item-options li"):
+            t = re.sub(r"\s+", " ", li.get_text(" ")).strip()
+            if t.lower().startswith("stanje:"):
+                cond = t.split(":", 1)[1].strip() or None
+        parts = [p for p in urlparse(url).path.split("/") if p]
+        if site == "kupindo":
+            parts = [p for p in parts if p != "showcontent" and not p.isdigit()]
+            cat = parts[0] if len(parts) > 1 else None
+        else:
+            cat = "/".join(parts[1:-2]) or None   # kupovina/<group>/<sub>/<slug>/<id>
+        out.append({"id": f"{site}:{m.group(1)}", "url": url, "title": title,
+                    "price": pp.amount if pp else None, "currency": pp.currency if pp else None,
+                    "condition": cond, "category": cat, "source": site})
+    return out
+
+
+def sanitize_used_listing_html(html: str, base_url: str = "", limit: int = 0) -> str:
+    """Fixture form of a category page: only the lot blocks, without seller blocks, images and svg."""
+    soup = _soup(html)
+    items = soup.select("div.list-view-listing-item")
+    if limit:
+        items = items[:limit]
+    keep = []
+    for it in items:
+        for bad in it.select(".content-bottom, img, svg, script, .item-info-content"):
+            bad.decompose()
+        for a in it.select('a[href*="/Clan/"]'):
+            a.decompose()
+        keep.append(str(it))
+    return "<html><body>\n" + "\n".join(keep) + "\n</body></html>\n"

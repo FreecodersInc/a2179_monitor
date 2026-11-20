@@ -112,6 +112,9 @@ def probe(urls, fetcher, ua=DEFAULT_UA, save_dir: Path | None = None) -> list[di
                 if "kupujemprodajem" in p.netloc and "/oglas/" in u:   # never keep seller data (T-031)
                     from a2179.parsers import sanitize_kp_card_html
                     txt = sanitize_kp_card_html(txt, u)
+                elif "limundo" in p.netloc or "kupindo" in p.netloc:   # no seller blocks (T-033)
+                    from a2179.parsers import sanitize_used_listing_html
+                    txt = sanitize_used_listing_html(txt, u)
                 (save_dir / name).write_text(txt, encoding="utf-8")
                 row["snapshot"] = name
         out.append(row)
