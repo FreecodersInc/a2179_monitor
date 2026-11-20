@@ -1,0 +1,163 @@
+{
+ "rows": 462,
+ "fresh": 150,
+ "fresh_with_text": 150,
+ "pos": 211,
+ "fresh_pos": 64,
+ "nested_auc_mean": 0.916,
+ "nested_auc_range": [
+  0.901,
+  0.925
+ ],
+ "hand_auc": 0.88,
+ "train_auc_mean": 0.941,
+ "fit_all": {
+  "w": [
+   0,
+   2,
+   7,
+   1
+  ],
+  "sat": 20,
+  "train_auc": 0.94,
+  "domain": {
+   "ai_platform": 0.083,
+   "none": 0.168,
+   "devops": 0.929,
+   "lead": 0.1,
+   "strong": 0.973,
+   "data_scientist": 0.031,
+   "ml_sre_infra": 0.683,
+   "weak": 0.875
+  }
+ },
+ "fresh_auc_fitted": 0.69,
+ "fresh_auc_fitted_ci95": [
+  0.602,
+  0.775
+ ],
+ "fresh_auc_hand": 0.657,
+ "strata": {
+  "462_match": {
+   "n": 128,
+   "pos": 113,
+   "auc_hand": 0.876
+  },
+  "462_rest": {
+   "n": 334,
+   "pos": 98,
+   "auc_hand": 0.812
+  },
+  "fresh_match": {
+   "n": 75,
+   "pos": 33,
+   "auc_hand": 0.658
+  },
+  "fresh_rest": {
+   "n": 75,
+   "pos": 31,
+   "auc_hand": 0.688
+  }
+ },
+ "post_hoc_pos_rate_by_class": {
+  "ai_platform": {
+   "462": "1/17",
+   "fresh": "4/6"
+  },
+  "data_scientist": {
+   "462": "0/15",
+   "fresh": "0/4"
+  },
+  "devops": {
+   "462": "19/20",
+   "fresh": "18/31"
+  },
+  "lead": {
+   "462": "0/4",
+   "fresh": "0/1"
+  },
+  "ml_sre_infra": {
+   "462": "61/89",
+   "fresh": "25/58"
+  },
+  "none": {
+   "462": "37/222",
+   "fresh": "15/48"
+  },
+  "strong": {
+   "462": "90/92",
+   "fresh": "2/2"
+  },
+  "weak": {
+   "462": "3/3"
+  }
+ },
+ "post_hoc_auc_within_class": {
+  "462_ml_sre_infra": 0.714,
+  "462_devops": 1.0,
+  "462_none": 0.798,
+  "462_without_strong": {
+   "n": 370,
+   "auc_hand": 0.814
+  },
+  "fresh_ml_sre_infra": 0.701,
+  "fresh_devops": 0.489,
+  "fresh_none": 0.622,
+  "fresh_without_strong": {
+   "n": 148,
+   "auc_hand": 0.646
+  }
+ },
+ "picks_head": [
+  {
+   "w": [
+    0,
+    1,
+    8,
+    1
+   ],
+   "sat": 20,
+   "train_auc": 0.942
+  },
+  {
+   "w": [
+    0,
+    2,
+    7,
+    1
+   ],
+   "sat": 20,
+   "train_auc": 0.934
+  },
+  {
+   "w": [
+    0,
+    2,
+    7,
+    1
+   ],
+   "sat": 20,
+   "train_auc": 0.941
+  },
+  {
+   "w": [
+    0,
+    1,
+    8,
+    1
+   ],
+   "sat": 10,
+   "train_auc": 0.945
+  },
+  {
+   "w": [
+    0,
+    5,
+    4,
+    1
+   ],
+   "sat": 20,
+   "train_auc": 0.94
+  }
+ ]
+}
