@@ -1,0 +1,127 @@
+{
+ "rows": 462,
+ "with_text": 462,
+ "label_change": {
+  "any_grade": 110,
+  "rate": 0.238,
+  "binary_flip": 74,
+  "binary_rate": 0.16,
+  "rate_ci95": [
+   0.201,
+   0.277
+  ],
+  "matrix": {
+   "C->C": 36,
+   "C->E": 2,
+   "C->I": 26,
+   "C->S": 19,
+   "E->C": 1,
+   "E->E": 90,
+   "I->C": 2,
+   "I->I": 149,
+   "I->S": 15,
+   "S->C": 23,
+   "S->E": 8,
+   "S->I": 14,
+   "S->S": 77
+  },
+  "text_counts": {
+   "E": 100,
+   "S": 111,
+   "I": 189,
+   "C": 62
+  },
+  "title_counts": {
+   "E": 91,
+   "I": 166,
+   "S": 122,
+   "C": 83
+  }
+ },
+ "A_profile": {
+  "esci": {
+   "auc": 0.902,
+   "auc_ci95": [
+    0.873,
+    0.926
+   ],
+   "spearman": 0.776,
+   "spearman_ci95": [
+    0.739,
+    0.811
+   ],
+   "parts_auc": {
+    "skills": 0.718,
+    "stack": 0.805,
+    "domain": 0.931,
+    "seniority": 0.67
+   }
+  },
+  "esci_text": {
+   "auc": 0.88,
+   "auc_ci95": [
+    0.85,
+    0.909
+   ],
+   "spearman": 0.769,
+   "spearman_ci95": [
+    0.729,
+    0.808
+   ],
+   "parts_auc": {
+    "skills": 0.737,
+    "stack": 0.839,
+    "domain": 0.843,
+    "seniority": 0.728
+   }
+  },
+  "delta_auc_text_minus_title": -0.022,
+  "delta_ci95": [
+   -0.046,
+   0.003
+  ]
+ },
+ "B_cv": {
+  "esci": {
+   "auc": 0.904,
+   "auc_ci95": [
+    0.878,
+    0.928
+   ],
+   "spearman": 0.772,
+   "spearman_ci95": [
+    0.734,
+    0.806
+   ],
+   "parts_auc": {
+    "skills": 0.718,
+    "stack": 0.773,
+    "domain": 0.931,
+    "seniority": 0.67
+   }
+  },
+  "esci_text": {
+   "auc": 0.878,
+   "auc_ci95": [
+    0.847,
+    0.907
+   ],
+   "spearman": 0.759,
+   "spearman_ci95": [
+    0.719,
+    0.8
+   ],
+   "parts_auc": {
+    "skills": 0.737,
+    "stack": 0.793,
+    "domain": 0.843,
+    "seniority": 0.728
+   }
+  },
+  "delta_auc_text_minus_title": -0.027,
+  "delta_ci95": [
+   -0.052,
+   -0.001
+  ]
+ }
+}
