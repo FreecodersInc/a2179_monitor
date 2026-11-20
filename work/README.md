@@ -67,7 +67,7 @@
 | [T-028](T-028_fusion-cc-vs-rrf.md) | слияние каналов: convex combination против RRF (H-14, часть 1) | M-002 | done | H-14, H-26 |
 | [T-029](T-029_more-embedders-on-jobs.md) | эмбеддеры кроме MiniLM на вакансиях | M-003 | done | H-30, H-31 |
 | [T-030](T-030_embedder-ensemble.md) | ансамбль эмбеддеров против лучшей одиночной модели | M-002 | blocked | H-36 |
-| [T-031](T-031_full-listing-cards.md) | матчер видит полную карточку объявления, а не только заголовок | M-002 | blocked | H-38, H-31, H-08 |
+| [T-031](T-031_full-listing-cards.md) | матчер видит полную карточку объявления, а не только заголовок | M-002 | in progress | H-38, H-31, H-08 |
 | [T-032](T-032_jobs-full-text-labels.md) | вакансии читаем целиком, метки и скоры по полному описанию | M-003 | done | H-35, H-37, H-33, H-34 |
 | [T-033](T-033_second-used-source-limundo-kupindo.md) | Limundo и KupindO: второй источник б/у запчастей рядом с KP | M-001 | in progress | H-40 |
 | [T-034](T-034_new-part-price-reference-aliexpress-temu.md) | AliExpress и Temu: справочная цена нового экрана и матрицы A2179 | M-001 | blocked | H-41 |
