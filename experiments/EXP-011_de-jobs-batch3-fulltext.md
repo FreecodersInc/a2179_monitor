@@ -21,6 +21,9 @@
 ### Рубрика прохода 1 (записана вместе с метками прохода 1)
 E: data engineer, analytics engineer, data platform, data infrastructure, data lakes. S: ML engineer, AI/ML engineer, SRE, DevOps, platform, cloud и infrastructure engineer, AI platform, applied AI engineer и applied AI или solution architect (его роли из CV). C: тот же домен, но не он: data scientist, analyst, research или applied scientist, менеджеры и директора инженерных команд, стажёры, new grad и junior, client или endpoint platform (IT), security. I: всё остальное (продажи, финансы, дизайн, юристы, фронтенд, full stack).
 
+### Рубрика прохода 2 (по полному тексту)
+Те же классы, но решает текст. S только если обязанности про платформу, инфраструктуру, MLOps, продакшн LLM и агентов или архитектуру решений. Роль ML engineer, где основное это обучение моделей (ранжирование, рекомендации, CV, perception, моделирование рисков), уходит в C. Обязательный допуск (clearance) даёт C. Минимум «2+ years» не делает роль junior. Если заголовок говорит одно, а текст другое (full stack, а по факту бэкенд поиска и ingestion), решает текст.
+
 ## Гипотезы (до прогона)
 1. **H-33 v2 честно**: правила v2 на невиденных строках, метки по тексту: P ≥ 0.70 и R по E+S ≥ 0.50. Опровержение: верхняя граница 95% R < 0.50 или P < 0.60.
 2. **H-34**: R правил v2 по строгому E ≥ 0.70, опровержение R < 0.60.
