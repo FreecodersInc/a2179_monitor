@@ -228,7 +228,8 @@ Postgraduate research and teaching, 2008–2009. The qualification is in energy/
 
 ## Awards and Public Speaking
 
-- Won 1st place in an AWS DeepRacer competition in San Francisco in 2022 and trained and tuned the reinforcement-learning model for autonomous racing. With that model he reached the world finals at AWS re:Invent in Las Vegas, where Provectus placed 7th of 192 participants ([LinkedIn post, Dec 2021](https://www.linkedin.com/posts/lblokhin_provectus-awsdeepracer-reinvent2021-activity-6873670041045491713-iVoP)).
+- **1st place, AWS DeepRacer, San Francisco, April 2022.** Trained and tuned the reinforcement-learning model for autonomous racing. Proof: [LinkedIn Honors, photo with the trophy next to the 2nd and 3rd place](https://www.linkedin.com/in/lblokhin/overlay/Honor/720783033/treasury/?profileId=ACoAAB8-j-oBMXWTD_ozNl-Ot5ar2ehpt_oWtyo).
+- **AWS DeepRacer world finals, AWS re:Invent 2021 (Las Vegas, December 2021):** Provectus placed 7th of 192 participants ([LinkedIn post, Dec 2021](https://www.linkedin.com/posts/lblokhin_provectus-awsdeepracer-reinvent2021-activity-6873670041045491713-iVoP)).
 - **2nd place, AWS DeepRacer League at Amazon re:MARS 2022 (Las Vegas)**, together with Rinat Gareev, after the NASA team. Racing models he developed were also used by teammates. Source: Provectus, [“Amazon re:MARS 2022: A Quick Recap and the Provectus Experience”](https://provectus.com/blog/amazon-remars-2022-recap/) (July 7, 2022).
 - AWS DeepRacer credential: [credential.net](https://www.credential.net/36a719f7-0337-4670-b7f1-d38bd7af34ab).
 - Talks on feature stores, Apache Spark, Parquet, Mist, neural networks in Python and Scala/Python interoperability, listed below. Recordings are in Russian unless marked English.
@@ -259,6 +260,7 @@ Dates are the event dates from the event page or the video description, otherwis
 - Hydrosphere Mist (core developer): https://github.com/Hydrospheredata/mist
 - FlyWire VNC Matching Challenge: https://codex.flywire.ai/app/vnc_matching_challenge
 - Macuo, private RAG platform: https://macuo.globalnovatravel.com
+- AWS DeepRacer 1st place, San Francisco, April 2022 (LinkedIn Honors): https://www.linkedin.com/in/lblokhin/overlay/Honor/720783033/treasury/?profileId=ACoAAB8-j-oBMXWTD_ozNl-Ot5ar2ehpt_oWtyo
 - Provectus, re:MARS 2022 recap (DeepRacer 2nd place): https://provectus.com/blog/amazon-remars-2022-recap/
 - AWS DeepRacer credential: https://www.credential.net/36a719f7-0337-4670-b7f1-d38bd7af34ab
 - Talks playlist: https://www.youtube.com/playlist?list=PLyiZa9zMXnDUidEKCdAvL2t3s3rfO95HS
