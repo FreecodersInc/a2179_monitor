@@ -1,0 +1,7 @@
+{
+  "id": "t038-board-liveness",
+  "why": "T-038: once a day, re-check known boards, three failures in a row put a board to sleep. No Telegram alerts.",
+  "fails_to_sleep": 3,
+  "time_budget_s": 2400,
+  "delay_s": 0.35
+}

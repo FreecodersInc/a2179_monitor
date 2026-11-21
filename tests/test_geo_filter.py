@@ -22,6 +22,14 @@ class TestGeoFilter(unittest.TestCase):
     def test_title_country_goes_to_check(self):
         self.assertEqual(geo.verdict("Remote", "SRE — UK (Senior)")[0], "check")
 
+    def test_jetbrains_belgrade_has_no_special_case(self):
+        """T-038 control: a JetBrains Belgrade remote role uses the same rules as any other company."""
+        self.assertEqual(geo.verdict("Belgrade, Remote")[0], "keep")
+        self.assertEqual(geo.verdict("Belgrade, Serbia, Remote", "Software Engineer, JetBrains")[0], "keep")
+        src = Path(geo.__file__).read_text(encoding="utf-8").lower()
+        self.assertNotIn("jetbrains", src)
+        self.assertNotIn("jet brains", src)
+
 
 if __name__ == "__main__":
     unittest.main()

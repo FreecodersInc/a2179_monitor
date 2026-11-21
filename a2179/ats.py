@@ -1,9 +1,10 @@
-"""Public ATS job boards for the DE vacancies case (T-019, ADR-0025): Greenhouse, Lever, Ashby.
+"""Public ATS job boards for the DE vacancies case (T-019, T-038, ADR-0025): Greenhouse, Lever, Ashby, Workable.
 
 Each company publishes its own openings through a documented public JSON endpoint, no key, no login:
   * Greenhouse Job Board API  https://boards-api.greenhouse.io/v1/boards/<slug>/jobs?content=true
   * Lever Postings API         https://api.lever.co/v0/postings/<slug>?mode=json
   * Ashby Job Postings API     https://api.ashbyhq.com/posting-api/job-board/<slug>
+  * Workable widget API        https://apply.workable.com/api/v1/widget/accounts/<slug>
 The company list lives in targets/ats_companies.json, every slug checked with one request.
 
 Polite by construction: one request per board per 24 hours (the cache of a2179.jobs), a pause after
@@ -30,7 +31,8 @@ COMPANIES = ROOT / "targets" / "ats_companies.json"
 MAX_BYTES = 20 * 1024 * 1024   # big boards with descriptions (OpenAI, Palantir) run 5 to 15 MB
 DELAY_S = 1.0
 BUDGET_S = 300.0
-HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ashby": "api.ashbyhq.com"}
+HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ashby": "api.ashbyhq.com",
+         "workable": "apply.workable.com"}
 TOO_BIG = 413
 
 TITLE_RX = re.compile(
@@ -46,6 +48,8 @@ def board_url(ats: str, slug: str, content: bool = True) -> str:
         return f"https://{HOSTS[ats]}/v0/postings/{slug}?mode=json"
     if ats == "ashby":
         return f"https://{HOSTS[ats]}/posting-api/job-board/{slug}"
+    if ats == "workable":
+        return f"https://{HOSTS[ats]}/api/v1/widget/accounts/{slug}"
     raise ValueError(f"unknown ATS {ats}")
 
 
@@ -141,7 +145,44 @@ def parse_ashby(body: str, company: str, fetched_at: str) -> list[J.Job]:
     return out
 
 
-PARSE = {"greenhouse": parse_greenhouse, "lever": parse_lever, "ashby": parse_ashby}
+
+def parse_workable(body: str, company: str, fetched_at: str) -> list[J.Job]:
+    try:
+        data = json.loads(body or "{}")
+    except ValueError:
+        return []
+    jobs = data.get("jobs") if isinstance(data, dict) else (data if isinstance(data, list) else [])
+    out = []
+    for j in jobs or []:
+        if not isinstance(j, dict):
+            continue
+        title = (j.get("title") or "").strip()
+        url = (j.get("application_url") or j.get("url") or j.get("shortlink") or "").strip()
+        if not title or not url:
+            short = (j.get("shortcode") or "").strip()
+            if title and short:
+                url = f"https://apply.workable.com/{company}/j/{short}/"
+            else:
+                continue
+        loc = j.get("location")
+        if isinstance(loc, dict):
+            parts = [loc.get("city") or "", loc.get("region") or "", loc.get("country") or ""]
+            loc_s = ", ".join(x for x in parts if x)
+            if loc.get("telecommuting") or loc.get("telecommute"):
+                if "remote" not in loc_s.lower():
+                    loc_s = f"{loc_s}, Remote" if loc_s else "Remote"
+        else:
+            loc_s = (loc or "").strip()
+        pub = J.parse_dt(j.get("created_at") or j.get("published_on") or j.get("updated_at"))
+        desc = j.get("description") or j.get("descriptionPlain") or ""
+        out.append(J.Job(source="workable", url=url, title=title, company=company, location=loc_s,
+                         snippet=_plain(desc), text=_plain(desc, J.TEXT_CHARS), fetched_at=fetched_at,
+                         published_at=pub.strftime("%Y-%m-%dT%H:%M:%SZ") if pub else "",
+                         source_id=str(j.get("shortcode") or j.get("id") or "")))
+    return out
+
+
+PARSE = {"greenhouse": parse_greenhouse, "lever": parse_lever, "ashby": parse_ashby, "workable": parse_workable}
 
 
 def load_companies(path: Path | None = None) -> list[dict]:

@@ -42,10 +42,13 @@ GetFn = Callable[[str], tuple]  # (status, text)
 
 # Hosts we are allowed to call. Anything else, including the blocked boards, is refused.
 ALLOWED_HOSTS = frozenset({"remotive.com", "www.remotive.com", "remoteok.com", "www.remoteok.com",
-                           # public ATS job board APIs, one board per company (a2179/ats.py, ADR-0025)
+                           # public ATS job board APIs, one board per company (a2179/ats.py, ADR-0025, T-038)
                            "boards-api.greenhouse.io", "api.lever.co", "api.ashbyhq.com",
+                           "apply.workable.com",
                            # T-037: Arbeitnow free API, We Work Remotely RSS, HN search API (robots checked 2026-11-20)
-                           "www.arbeitnow.com", "weworkremotely.com", "hn.algolia.com"})
+                           "www.arbeitnow.com", "weworkremotely.com", "hn.algolia.com",
+                           # T-038 company lists, fetched only on the runner when building companies.csv
+                           "raw.githubusercontent.com", "yc-oss.github.io"})
 
 
 @dataclass

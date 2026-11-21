@@ -174,3 +174,9 @@ concurrency:
 Чтобы раннер собрал свежую пачку A2179, закоммить `ci/requests/fetch_listings.json` с новым `id` (`max_pages`, `time_budget_s` по желанию). Шаг `fetch_listings` отработает один раз и положит строки в `results/<base>/reports/fresh_a2179/<id>/candidates.jsonl` и `.csv`. Выключить: переменная `A2179_CI_FETCH_LISTINGS=off`.
 
 Разовые тяжёлые эксперименты на раннере (кэш моделей, CUDA) заказываются так же: `ci/requests/runner_experiments.json` с `id` и списком `steps` (`exp028`, `exp029` и т.д.). Каждый шаг один раз на `id`: когда в `results/*/reports/runner_exp/<id>/` уже есть его файл, шаг пропускается. Выключить: `A2179_CI_RUNNER_EXP=off`.
+
+## База компаний через CI (T-038)
+
+`companies.csv` собирается на раннере, не локально. Заявка `ci/requests/company_base.json` с новым `id` один раз запускает шаг `company_base` (`eval/t038_company_base.py`): списки remoteintech/remote-jobs и каталог YC, проба слагов Greenhouse, Lever, Ashby и Workable, вакансии с живых бордов, геофильтр (удалёнка из Сербии) и фильтр по CV, ранжирование ансамблем EXP-030. Результат: `results/<base>/reports/company_base/<id>/companies.csv`, `vacancies_ranked.csv`, `summary.json`. Алертов в Telegram нет. Выключить: `A2179_CI_COMPANY_BASE=off`.
+
+Ежедневная проверка живых бордов: `ci/requests/board_liveness_daily.json`, отчёт в `results/*/reports/company_base/liveness/<дата>/`. Три отказа подряд — борд уходит в спячку. Если в тот же день уже отработал `company_base`, дневная проверка не дублируется.

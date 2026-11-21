@@ -181,7 +181,7 @@ def attach_reports(ci_out: Path, result: Path) -> Path | None:
     pdir = ci_out / PLOTS
     pngs = sorted(pdir.glob("*.png")) if pdir.is_dir() else []
     pmd = pdir / "plots.md"
-    review = (ci_out / "reports").is_dir() and any((ci_out / "reports").rglob("matches.csv"))
+    review = (ci_out / "reports").is_dir() and any(f.is_file() for f in (ci_out / "reports").rglob("*"))
     tfiles = [p for p in sorted((ci_out / "targets").rglob("*")) if p.is_file() and (p.name in TARGET_REPORTS
                                                                       or (p.name.startswith("dense_scores_") and p.suffix == ".jsonl"))] \
         if (ci_out / "targets").is_dir() else []

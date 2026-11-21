@@ -115,12 +115,12 @@ class TestAts(unittest.TestCase):
         self.assertEqual(st["lever:acme"]["status"], 404)
         self.assertEqual(st["greenhouse:acme"]["status"], 200)
         self.assertNotIn("ashby:acme", st)              # stops at the first board that answers
-        self.assertEqual({k for k in st if k.endswith(":nope")}, {"greenhouse:nope", "lever:nope", "ashby:nope"})
+        self.assertEqual({k for k in st if k.endswith(":nope")}, {"greenhouse:nope", "lever:nope", "ashby:nope", "workable:nope"})
         lst = A.build_list(st)
         self.assertEqual([(c["ats"], c["slug"]) for c in lst["companies"]], [("greenhouse", "acme")])
 
     def test_hosts_allowed_and_tests_see_no_company_list(self):
-        for u in (A.board_url("greenhouse", "a"), A.board_url("lever", "a"), A.board_url("ashby", "a")):
+        for u in (A.board_url("greenhouse", "a"), A.board_url("lever", "a"), A.board_url("ashby", "a"), A.board_url("workable", "a")):
             J.assert_allowed(u)
         self.assertEqual(A.load_companies(), [])        # tests/__init__.py turns the real list off
 
@@ -132,6 +132,19 @@ class TestAts(unittest.TestCase):
         self.assertTrue(100 <= len(d["companies"]) <= 250)
         self.assertEqual(len({(c["ats"], c["slug"]) for c in d["companies"]}), len(d["companies"]))
         self.assertTrue(all(c["ats"] in A.PARSE for c in d["companies"]))
+
+    def test_parse_workable(self):
+        body = json.dumps({"jobs": [
+            {"title": "Data Engineer", "application_url": "https://apply.workable.com/delta/j/AB/",
+             "location": {"city": "Belgrade", "country": "Serbia", "telecommuting": True},
+             "created_at": "2026-11-01T00:00:00Z", "description": "<p>Spark</p>", "shortcode": "AB"},
+            {"title": "Office Manager", "application_url": "https://apply.workable.com/delta/j/CD/",
+             "location": "New York"}]})
+        jobs = A.parse_workable(body, "Delta", "2026-11-21T00:00:00Z")
+        self.assertEqual(len(jobs), 2)
+        self.assertEqual(jobs[0].location, "Belgrade, Serbia, Remote")
+        self.assertIn("Spark", jobs[0].snippet)
+        self.assertEqual(jobs[0].source, "workable")
 
 
 if __name__ == "__main__":

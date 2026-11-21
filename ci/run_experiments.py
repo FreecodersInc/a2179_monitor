@@ -260,6 +260,58 @@ def kp_daily_step(py, out: Path, T, req):
     return rec
 
 
+
+def company_base_request(root=ROOT):
+    """T-038: ci/requests/company_base.json {"id", ...} builds companies.csv on the runner once per id.
+    Fulfilled when some results/<base>/reports/company_base/<id>/summary.json exists."""
+    p = Path(root) / "ci" / "requests" / "company_base.json"
+    if os.environ.get("A2179_CI_COMPANY_BASE", "auto") in ("off", "0", "no") or not p.is_file():
+        return None
+    req = json.loads(p.read_text(encoding="utf-8"))
+    rid = str(req.get("id", "")).strip()
+    if not rid or any((Path(root) / "results").glob(f"*/reports/company_base/{rid}/summary.json")):
+        return None
+    return {**req, "id": rid}
+
+
+def company_base_step(py, out: Path, T, req):
+    d = out / "reports" / "company_base" / req["id"]
+    d.mkdir(parents=True, exist_ok=True)
+    cache = os.environ.get("A2179_JOBS_CACHE") or str(Path.home() / ".cache" / "a2179-ci" / "jobs")
+    timeout = min(max(T, int(float(req.get("time_budget_s", 7200))) + 300), 9000)
+    rec = run("company_base", [py, "eval/t038_company_base.py", "--mode", "build",
+                               "--request", str(ROOT / "ci" / "requests" / "company_base.json"),
+                               "--out", str(d), "--cache", cache], timeout)
+    rec["advisory"] = True
+    return rec
+
+
+def liveness_request(root=ROOT, date=None):
+    """T-038: ci/requests/board_liveness_daily.json, once per UTC day. Fulfilled when
+    results/<base>/reports/company_base/liveness/<date>/summary.json exists (the build step
+    also writes this stamp). No Telegram alerts."""
+    p = Path(root) / "ci" / "requests" / "board_liveness_daily.json"
+    if os.environ.get("A2179_CI_COMPANY_BASE", "auto") in ("off", "0", "no") or not p.is_file():
+        return None
+    req = json.loads(p.read_text(encoding="utf-8"))
+    date = date or time.strftime("%Y-%m-%d", time.gmtime())
+    if any((Path(root) / "results").glob(f"*/reports/company_base/liveness/{date}/summary.json")):
+        return None
+    return {**req, "date": date}
+
+
+def liveness_step(py, out: Path, T, req):
+    d = out / "reports" / "company_base" / "liveness" / req["date"]
+    d.mkdir(parents=True, exist_ok=True)
+    cache = os.environ.get("A2179_JOBS_CACHE") or str(Path.home() / ".cache" / "a2179-ci" / "jobs")
+    timeout = min(max(T, int(float(req.get("time_budget_s", 2400))) + 180), 3600)
+    rec = run("board_liveness", [py, "eval/t038_company_base.py", "--mode", "liveness",
+                                 "--request", str(ROOT / "ci" / "requests" / "board_liveness_daily.json"),
+                                 "--out", str(d), "--cache", cache], timeout)
+    rec["advisory"] = True
+    return rec
+
+
 RUNNER_OUT = {"exp030": "exp030.json", "granularity": "granularity.json", "rerank_jobs": "rerank_jobs.json", "exp028": "exp028.json", "exp029": "exp029_h11.json"}
 
 
@@ -439,6 +491,15 @@ def main(argv=None):
     rreq = runner_request()
     if rreq:
         steps.extend(runner_steps(py, out, T, rreq, bool(info.get("torch") and info.get("sentence_transformers"))))
+
+    # T-038 company base: heavy crawl on the runner, once per request id. Advisory.
+    # The build also stamps today's liveness folder, so the daily check is skipped that day.
+    breq = company_base_request()
+    if breq:
+        steps.append(company_base_step(py, out, T, breq))
+    lreq = liveness_request()
+    if lreq and not breq:
+        steps.append(liveness_step(py, out, T, lreq))
 
     # Telegram integration: only with both secrets, the only step that gets them
     have = redact.presence()
