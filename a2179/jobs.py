@@ -48,7 +48,7 @@ ALLOWED_HOSTS = frozenset({"remotive.com", "www.remotive.com", "remoteok.com", "
                            # T-037: Arbeitnow free API, We Work Remotely RSS, HN search API (robots checked 2026-11-20)
                            "www.arbeitnow.com", "weworkremotely.com", "hn.algolia.com",
                            # T-038 company lists, fetched only on the runner when building companies.csv
-                           "raw.githubusercontent.com", "yc-oss.github.io"})
+                           "raw.githubusercontent.com", "codeload.github.com", "yc-oss.github.io"})
 
 
 @dataclass

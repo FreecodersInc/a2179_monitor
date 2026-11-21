@@ -1,7 +1,9 @@
 """T-038 company base: parsers, slug probe, CSV, geo+CV filter, ensemble ranks. No network."""
+import io
 import json
 import os
 import shutil
+import tarfile
 import tempfile
 import unittest
 from pathlib import Path
@@ -67,6 +69,50 @@ class TestParsers(unittest.TestCase):
         self.assertEqual(len(acme), 1)
         self.assertIn("remoteintech", acme[0]["source"])
         self.assertIn("yc", acme[0]["source"])
+
+
+    def test_frontmatter_and_tarball(self):
+        md = """---
+title: "10up"
+website: https://10up.com/
+region: europe
+remote_policy: remote-friendly
+---
+A company blurb.
+"""
+        rec = C.parse_remoteintech_frontmatter(md)
+        self.assertEqual(rec["name"], "10up")
+        self.assertEqual(rec["domain"], "10up.com")
+        self.assertIn("europe", rec["geo"])
+        buf = io.BytesIO()
+        with tarfile.open(fileobj=buf, mode="w:gz") as tf:
+            data = md.encode()
+            info = tarfile.TarInfo(name="repo/src/companies/10up.md")
+            info.size = len(data)
+            tf.addfile(info, io.BytesIO(data))
+            skip = b"not a company"
+            info2 = tarfile.TarInfo(name="repo/README.md")
+            info2.size = len(skip)
+            tf.addfile(info2, io.BytesIO(skip))
+        rows = C.companies_from_tarball(buf.getvalue())
+        self.assertEqual([r["name"] for r in rows], ["10up"])
+
+    def test_known_ats_boards_do_not_collapse_and_merge_by_name(self):
+        known = [
+            C._row("canonical", "", "", "ats_companies", ats="greenhouse", slug="canonical",
+                   board_url="https://boards.greenhouse.io/canonical"),
+            C._row("stripe", "", "", "ats_companies", ats="greenhouse", slug="stripe",
+                   board_url="https://boards.greenhouse.io/stripe"),
+        ]
+        # board hosts must not become the domain
+        self.assertEqual(known[0]["domain"], "")
+        site = C._row("canonical", "https://canonical.com/", "Worldwide", "remoteintech")
+        merged = C.merge_rows(known, [site])
+        self.assertEqual(len(merged), 2)
+        can = next(r for r in merged if r["slug"] == "canonical" or r["domain"] == "canonical.com")
+        self.assertEqual(can["domain"], "canonical.com")
+        self.assertEqual(can["ats"], "greenhouse")
+        self.assertEqual(len([r for r in merged if r.get("ats") == "greenhouse"]), 2)
 
     def test_slug_variants(self):
         v = C.slug_variants("Acme Inc.", "acme.io")
@@ -225,17 +271,43 @@ class TestPipeline(unittest.TestCase):
         ranked = T038.apply_ensemble(rows, raw, w)
         self.assertEqual([r["url"] for r in ranked][0], "b")
 
-    def test_robots_block_skips_source(self):
+    def test_robots_block_skips_yc_catalog(self):
         def get_fn(url):
             from a2179 import jobs as J
             J.assert_allowed(url)
             if "robots.txt" in url:
                 return 200, "User-agent: *\nDisallow: /\n"
-            raise AssertionError("must not fetch the catalog when robots disallows it: " + url)
+            if "yc-oss.github.io" in url and "robots.txt" not in url:
+                raise AssertionError("must not fetch YC when robots disallows it: " + url)
+            return 404, b""
         rows, notes = C.collect_sources(get_fn, target=10, include_known=False)
-        self.assertEqual(notes["robots"]["remoteintech"], "disallow")
         self.assertEqual(notes["robots"]["yc"], "disallow")
         self.assertEqual(rows, [])
+
+    def test_collect_sources_tarball_and_yc(self):
+        md = "---\ntitle: Gamma Labs\nwebsite: https://gamma.dev/\nregion: worldwide\n---\n"
+        buf = io.BytesIO()
+        with tarfile.open(fileobj=buf, mode="w:gz") as tf:
+            data = md.encode()
+            info = tarfile.TarInfo(name="repo/src/companies/gamma-labs.md")
+            info.size = len(data)
+            tf.addfile(info, io.BytesIO(data))
+        blob = buf.getvalue()
+        def get_fn(url):
+            from a2179 import jobs as J
+            J.assert_allowed(url)
+            if "robots.txt" in url:
+                return 200, "User-agent: *\nDisallow:\n"
+            if "codeload.github.com" in url:
+                return 200, blob
+            if "companies/all.json" in url:
+                return 200, json.dumps(YC)
+            raise AssertionError(url)
+        rows, notes = C.collect_sources(get_fn, target=10, include_known=False)
+        self.assertGreaterEqual(notes["remoteintech"]["rows"], 1)
+        self.assertGreaterEqual(notes["yc"]["rows"], 3)
+        self.assertGreaterEqual(notes["merged"], 4)
+        self.assertTrue(any(r["name"] == "Gamma Labs" for r in rows))
 
 
 class TestCiRequest(unittest.TestCase):

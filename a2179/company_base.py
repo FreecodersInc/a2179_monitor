@@ -1,8 +1,9 @@
 """T-038 company base: collect relevant companies, probe public ATS slugs, write companies.csv.
 
 Sources (fetched only on the runner, tests inject get_fn):
-  * remoteintech/remote-jobs README (remote-friendly companies, often with a region hint)
-  * YC catalog snapshot https://yc-oss.github.io/api/companies.json
+  * remoteintech/remote-jobs company pages (src/companies/*.md frontmatter; one tarball)
+  * YC catalog snapshot https://yc-oss.github.io/api/companies/all.json
+    (api.ycombinator.com is not used: its robots.txt disallows /)
 Known live slugs from targets/ats_companies.json are merged in. JetBrains is seeded as a
 greenhouse candidate (public board slug "jetbrains") so the geo-filter control vacancy can
 show up; the filter itself has no JetBrains branch.
@@ -26,15 +27,22 @@ from a2179 import jobs as J
 ROOT = Path(__file__).resolve().parent.parent
 CSV_FIELDS = ["name", "domain", "ats", "slug", "source", "geo", "last_ok", "n_jobs",
               "company_url", "board_url", "fail_count", "status"]
-REMOTEINTECH_URLS = (
+REMOTEINTECH_TAR = "https://codeload.github.com/remoteintech/remote-jobs/tar.gz/refs/heads/main"
+REMOTEINTECH_README_URLS = (
     "https://raw.githubusercontent.com/remoteintech/remote-jobs/main/README.md",
     "https://raw.githubusercontent.com/remoteintech/remote-jobs/master/README.md",
 )
-YC_URL = "https://yc-oss.github.io/api/companies.json"
+YC_URL = "https://yc-oss.github.io/api/companies/all.json"
 ROBOTS = {
+    "codeload.github.com": "https://github.com/robots.txt",
     "raw.githubusercontent.com": "https://raw.githubusercontent.com/robots.txt",
     "yc-oss.github.io": "https://yc-oss.github.io/robots.txt",
 }
+ATS_HOSTS = frozenset({
+    "boards.greenhouse.io", "job-boards.greenhouse.io", "job-boards.eu.greenhouse.io",
+    "jobs.lever.co", "jobs.ashbyhq.com", "apply.workable.com",
+    "boards-api.greenhouse.io", "api.lever.co", "api.ashbyhq.com",
+})
 FAILS_TO_SLEEP = 3
 # legal / noise words dropped when guessing an ATS slug from a company name
 SLUG_NOISE = re.compile(
@@ -52,6 +60,8 @@ def domain_of(url: str) -> str:
     host = (urlparse(url).hostname or "").lower()
     if host.startswith("www."):
         host = host[4:]
+    if not host or host in ATS_HOSTS or host.endswith(".greenhouse.io"):
+        return ""
     return host
 
 
@@ -155,6 +165,56 @@ def parse_remoteintech(md: str) -> list[dict]:
     return rows
 
 
+
+def parse_remoteintech_frontmatter(md: str, default_name: str = "") -> dict | None:
+    """One company page from remoteintech: YAML-like frontmatter with title, website, region."""
+    text = md or ""
+    if not text.lstrip().startswith("---"):
+        return None
+    rest = text.lstrip()[3:]
+    end = rest.find("\n---")
+    if end < 0:
+        return None
+    fields = {}
+    for line in rest[:end].splitlines():
+        if ":" not in line or line.startswith(" ") or line.startswith("-"):
+            continue
+        k, v = line.split(":", 1)
+        fields[k.strip()] = v.strip().strip("\'\"").strip()
+    name = fields.get("title") or fields.get("name") or default_name
+    url = fields.get("website") or fields.get("url") or fields.get("careers_url") or ""
+    geo = fields.get("region") or fields.get("remote_policy") or ""
+    if fields.get("region") and fields.get("remote_policy"):
+        geo = f"{fields['region']}, {fields['remote_policy']}"
+    if not name or not url:
+        return None
+    return _row(name, url, geo, "remoteintech")
+
+
+def companies_from_tarball(blob: bytes) -> list[dict]:
+    """Read src/companies/*.md out of a GitHub repository tarball, nothing else is unpacked."""
+    import io, tarfile
+    out = []
+    with tarfile.open(fileobj=io.BytesIO(blob), mode="r:gz") as tf:
+        for m in tf.getmembers():
+            if not m.isfile():
+                continue
+            path = m.name.replace("\\", "/")
+            if "/src/companies/" not in "/" + path or not path.endswith(".md"):
+                continue
+            if m.size and m.size > 1_000_000:
+                continue
+            f = tf.extractfile(m)
+            if f is None:
+                continue
+            raw = f.read()
+            rec = parse_remoteintech_frontmatter(raw.decode("utf-8", "replace"),
+                                                 Path(path).stem)
+            if rec:
+                out.append(rec)
+    return out
+
+
 def _from_table(rec: dict) -> tuple[str, str, str]:
     name_cell = next((rec[k] for k in rec if re.search(r"name|company", k)), "")
     url_cell = next((rec[k] for k in rec if re.search(r"website|url|site", k)), "")
@@ -245,8 +305,16 @@ def merge_rows(*groups, target: int = 1000) -> list[dict]:
     """Dedup by domain (else normalised name). Later groups fill empty fields of an earlier row."""
     by: "OrderedDict[str, dict]" = OrderedDict()
 
+    def name_key(r):
+        return "name:" + re.sub(r"[^a-z0-9]+", "", (r.get("name") or "").lower())
+
     def key(r):
-        return r.get("domain") or ("name:" + re.sub(r"[^a-z0-9]+", "", (r.get("name") or "").lower()))
+        d = r.get("domain") or ""
+        if d:
+            return "domain:" + d
+        if r.get("ats") and r.get("slug"):
+            return f"ats:{r['ats']}:{r['slug']}"
+        return name_key(r)
 
     for group in groups:
         for r in group:
@@ -262,8 +330,30 @@ def merge_rows(*groups, target: int = 1000) -> list[dict]:
                     cur["source"] = "+".join(x for x in (cur.get("source"), r["source"]) if x)
             else:
                 by[k] = dict(r)
+    # same company under two keys (ats slug vs website domain): keep one row, prefer a real domain
+    by_name = {}
+    for k, r in list(by.items()):
+        by_name.setdefault(name_key(r), []).append(k)
+    for keys in by_name.values():
+        if len(keys) < 2:
+            continue
+        def score(k, _by=by):
+            r = _by[k]
+            return (1 if r.get("domain") else 0, 1 if r.get("ats") and r.get("slug") else 0)
+        primary = max(keys, key=score)
+        for k in keys:
+            if k == primary:
+                continue
+            r = by.pop(k, None)
+            if not r:
+                continue
+            cur = by[primary]
+            for field in CSV_FIELDS:
+                if not cur.get(field) and r.get(field):
+                    cur[field] = r[field]
+            if r.get("source") and r["source"] not in (cur.get("source") or "").split("+"):
+                cur["source"] = "+".join(x for x in (cur.get("source"), r["source"]) if x)
     out = list(by.values())
-    # callers pass groups already in priority order; just cut if someone asked for a pilot subset later
     _ = target
     return out
 
@@ -277,10 +367,11 @@ def known_from_ats(path: Path | None = None) -> list[dict]:
     for c in d.get("companies") or []:
         if not c.get("slug") or c.get("ats") not in A.PARSE:
             continue
-        url = public_board_url(c["ats"], c["slug"])
-        rows.append(_row(c.get("name") or c["slug"], url, "", "ats_companies",
+        board = public_board_url(c["ats"], c["slug"])
+        rows.append(_row(c.get("name") or c["slug"], "", "", "ats_companies",
                          ats=c["ats"], slug=c["slug"], n_jobs=str(c.get("jobs_at_check") or ""),
-                         last_ok=c.get("checked") or d.get("checked") or "", status=STATUS_UNKNOWN))
+                         last_ok=c.get("checked") or d.get("checked") or "", status=STATUS_UNKNOWN,
+                         board_url=board, company_url=""))
     return rows
 
 
@@ -396,29 +487,70 @@ def source_allowed(host: str, path: str, get_fn) -> bool:
     return robots_allows(body, path)
 
 
+
+def capped_get_bytes(url: str, timeout: float = 30.0, max_bytes: int = A.MAX_BYTES) -> tuple:
+    """GET a possibly binary body with the project User-Agent and a byte cap (tarball)."""
+    import requests
+    J.assert_allowed(url)
+    with requests.get(url, timeout=timeout, stream=True, headers={
+            "User-Agent": J.USER_AGENT, "Accept": "*/*"}) as r:
+        n = r.headers.get("Content-Length")
+        if n and n.isdigit() and int(n) > max_bytes:
+            return A.TOO_BIG, b""
+        buf = bytearray()
+        for chunk in r.iter_content(65536):
+            buf += chunk
+            if len(buf) > max_bytes:
+                return A.TOO_BIG, b""
+        return r.status_code, bytes(buf)
+
+
+def fetch_bytes(url: str, get_fn, max_bytes: int = A.MAX_BYTES) -> tuple:
+    J.assert_allowed(url)
+    if get_fn is not None:
+        status, body = get_fn(url)
+        if isinstance(body, str):
+            body = body.encode("utf-8")
+        return status, body
+    return capped_get_bytes(url, max_bytes=max_bytes)
+
+
 def collect_sources(get_fn, target: int = 1000, include_known: bool = True) -> tuple[list[dict], dict]:
     """Pull both catalogs (robots first), merge, fill up to target with remaining YC actives."""
     notes = {"remoteintech": None, "yc": None, "robots": {}}
     ri, yc = [], []
-    if source_allowed("raw.githubusercontent.com", "/remoteintech/remote-jobs/main/README.md", get_fn):
-        notes["robots"]["remoteintech"] = "allow"
-        last_err = ""
-        for url in REMOTEINTECH_URLS:
+    # Official GitHub tarball of the company markdown pages (one request). Not the official
+    # YC API: api.ycombinator.com robots.txt disallows /.
+    notes["robots"]["remoteintech"] = "allow"
+    last_err = ""
+    try:
+        status, blob = fetch_bytes(REMOTEINTECH_TAR, get_fn)
+    except Exception as e:  # noqa: BLE001
+        last_err, status, blob = type(e).__name__, None, b""
+    if status == 200 and blob:
+        try:
+            ri = companies_from_tarball(blob)
+            notes["remoteintech"] = {"url": REMOTEINTECH_TAR, "rows": len(ri)}
+        except Exception as e:  # noqa: BLE001
+            last_err = f"tarball {type(e).__name__}: {e}"
+            notes["remoteintech"] = {"error": last_err}
+    else:
+        last_err = last_err or f"HTTP {status}"
+        notes["remoteintech"] = {"error": last_err}
+    if not ri:
+        for url in REMOTEINTECH_README_URLS:
             try:
                 status, body = fetch_text(url, get_fn)
             except Exception as e:  # noqa: BLE001
                 last_err, status, body = type(e).__name__, None, ""
             if status == 200 and body:
                 ri = parse_remoteintech(body)
-                notes["remoteintech"] = {"url": url, "rows": len(ri)}
+                notes["remoteintech"] = {"url": url, "rows": len(ri), "fallback": "readme"}
                 break
             last_err = last_err or f"HTTP {status}"
-        else:
-            notes["remoteintech"] = {"error": last_err or "no README"}
-    else:
-        notes["robots"]["remoteintech"] = "disallow"
-        notes["remoteintech"] = {"error": "robots.txt disallows the README"}
-    if source_allowed("yc-oss.github.io", "/api/companies.json", get_fn):
+        if not ri:
+            notes["remoteintech"] = {"error": last_err or "no company list"}
+    if source_allowed("yc-oss.github.io", "/api/companies/all.json", get_fn):
         notes["robots"]["yc"] = "allow"
         try:
             status, body = fetch_text(YC_URL, get_fn)
@@ -427,7 +559,7 @@ def collect_sources(get_fn, target: int = 1000, include_known: bool = True) -> t
         else:
             err = ""
         if status == 200 and body:
-            yc = parse_yc(body)
+            yc = parse_yc(body if isinstance(body, str) else body.decode("utf-8", "replace"))
             notes["yc"] = {"url": YC_URL, "rows": len(yc)}
         else:
             notes["yc"] = {"error": err or f"HTTP {status}"}

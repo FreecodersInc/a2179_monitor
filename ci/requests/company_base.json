@@ -1,5 +1,5 @@
 {
-  "id": "t038-company-base-2026-11-21",
+  "id": "t038-company-base-2026-11-21-v2",
   "why": "T-038: on the runner, build companies.csv from remoteintech/remote-jobs and the YC catalog, probe Greenhouse, Lever, Ashby and Workable slugs, fetch vacancies, apply the Serbia-remote geo filter and the CV match, rank by the EXP-030 closeness ensemble.",
   "mode": "build",
   "time_budget_s": 7200,
