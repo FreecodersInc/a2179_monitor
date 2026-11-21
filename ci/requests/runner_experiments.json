@@ -1,2 +1,4 @@
-{"id": "runner-exp-2026-11-20-v2", "steps": ["exp028", "exp029"],
- "note": "EXP-028 CPU (H-04, H-13, H-19, H-23) then EXP-029 H-11. One-shot per step: if exp028.json already exists for this id, only exp029 runs. CUDA visible only for exp029."}
+{
+ "id": "exp030-all-embedders-cv-2026-11-21",
+ "steps": ["exp030"]
+}

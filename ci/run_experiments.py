@@ -260,7 +260,7 @@ def kp_daily_step(py, out: Path, T, req):
     return rec
 
 
-RUNNER_OUT = {"granularity": "granularity.json", "rerank_jobs": "rerank_jobs.json", "exp028": "exp028.json", "exp029": "exp029_h11.json"}
+RUNNER_OUT = {"exp030": "exp030.json", "granularity": "granularity.json", "rerank_jobs": "rerank_jobs.json", "exp028": "exp028.json", "exp029": "exp029_h11.json"}
 
 
 def runner_request(root=ROOT):
@@ -291,6 +291,10 @@ def runner_steps(py, out: Path, T, req, dense):
         if s == "granularity":
             rec = run("runner_exp[granularity]", [py, "eval/granularity.py", "--out", str(d),
                                                   "--device", COMPUTE_ENV.get("A2179_DEVICE", "cpu")], min(T, 900))
+        elif s == "exp030":
+            rec = run("runner_exp[exp030]", [py, "eval/exp030_cv_ensemble.py", "--out", str(d),
+                      "--review", str(out / "reports")], 5400,
+                      env={"CUDA_VISIBLE_DEVICES": "", "HF_HUB_OFFLINE": "1", "TRANSFORMERS_OFFLINE": "1"})
         elif s == "exp028":
             # EXP-028: CPU only, one model at a time, runner may fetch weights. GPU stays hidden.
             rec = run("runner_exp[exp028]", [py, "eval/exp028_blocked_models.py", "--out", str(d), "--device", "cpu"],

@@ -2,11 +2,60 @@
  "_doc": "Public ATS boards polled by a2179/ats.py (ADR-0025). Every slug answered 200 to one request on the checked date, candidates that answered 404 on all three ATS were dropped. Names and slugs from public knowledge, no personal data.",
  "checked": "2026-11-19",
  "counts": {
-  "greenhouse": 87,
+  "greenhouse": 94,
   "lever": 17,
   "ashby": 51
  },
  "companies": [
+  {
+   "slug": "canonical",
+   "ats": "greenhouse",
+   "name": "canonical",
+   "jobs_at_check": 318,
+   "checked": "2026-11-21"
+  },
+  {
+   "slug": "cribl",
+   "ats": "greenhouse",
+   "name": "cribl",
+   "jobs_at_check": 84,
+   "checked": "2026-11-21"
+  },
+  {
+   "slug": "impinj",
+   "ats": "greenhouse",
+   "name": "impinj",
+   "jobs_at_check": 0,
+   "checked": "2026-11-21"
+  },
+  {
+   "slug": "fastly",
+   "ats": "greenhouse",
+   "name": "fastly",
+   "jobs_at_check": 48,
+   "checked": "2026-11-21"
+  },
+  {
+   "slug": "purestorage",
+   "ats": "greenhouse",
+   "name": "purestorage",
+   "jobs_at_check": 401,
+   "checked": "2026-11-21"
+  },
+  {
+   "slug": "rubrik",
+   "ats": "greenhouse",
+   "name": "rubrik",
+   "jobs_at_check": 208,
+   "checked": "2026-11-21"
+  },
+  {
+   "slug": "axonius",
+   "ats": "greenhouse",
+   "name": "axonius",
+   "jobs_at_check": 20,
+   "checked": "2026-11-21"
+  },
   {
    "slug": "1password",
    "ats": "ashby",

@@ -124,6 +124,10 @@ def weights_mb(name):
 def cache_one(snapshot_download, name, dry=False):
     try:
         p = snapshot_download(name, local_files_only=True, allow_patterns=patterns(name))
+        # Hub can return an incomplete snapshot after an interrupted download.
+        from pathlib import Path
+        if not (Path(p) / patterns(name)[-1]).is_file() or not (Path(p) / "config.json").is_file():
+            raise FileNotFoundError("incomplete model snapshot")
         print(f"cache_model: {name} already cached in {p}")
         return 0
     except Exception:

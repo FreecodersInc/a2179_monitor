@@ -60,6 +60,11 @@ export A2179_CI_VENV="$VENV"
 if [[ -n "${A2179_CI_PYTHON:-}" ]]; then
   export A2179_CI_PYTHON="$(expand_home_path "$A2179_CI_PYTHON")"
 fi
+# A pending EXP-030 request opts this run into the full registry, including heavy models.
+if "$SYS_PY" -c 'from ci.run_experiments import runner_request; import sys; sys.exit("exp030" not in (runner_request() or {}).get("steps", []))'; then
+  export A2179_CI_MODELS="all,cross-encoder/ms-marco-TinyBERT-L2-v2,cross-encoder/mmarco-mMiniLMv2-L12-H384-v1"
+  export A2179_CI_EMBEDDERS=all
+fi
 t0=$(date +%s)
 bash ci/setup_venv.sh > >(tee "$OUT/setup.log") 2>&1
 setup_rc=$?
