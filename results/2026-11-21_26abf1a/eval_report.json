@@ -1,0 +1,2019 @@
+{
+  "target": "a2179_screen",
+  "dataset": {
+    "n": 430,
+    "positives": 48,
+    "negatives": 382,
+    "by_source": {
+      "kp_live_2026-11-19": 26,
+      "shop_live_2026-11-19": 12,
+      "synthetic": 59,
+      "kp_dryrun_2026-11-19": 2,
+      "real": 331
+    },
+    "by_lang": {
+      "sr": 407,
+      "en": 10,
+      "ru": 9,
+      "sr_cyr": 4
+    },
+    "by_kind": {
+      "donor": 10,
+      "whole_laptop": 3,
+      "service": 4,
+      "other_part": 39,
+      "display": 16,
+      "accessory": 12,
+      "lid": 15,
+      "a2337": 5,
+      "a1932_display": 3,
+      "other_model": 307,
+      "giveaway": 2,
+      "broken_screen_laptop": 2,
+      "wanted": 2,
+      "panel": 2,
+      "other": 8
+    }
+  },
+  "modes": {
+    "regex": {
+      "precision": 0.9388,
+      "recall": 0.9583,
+      "f1": 0.9485,
+      "tp": 46,
+      "fp": 3,
+      "fn": 2,
+      "tn": 379
+    },
+    "tfidf": {
+      "precision": 0.4103,
+      "recall": 1.0,
+      "f1": 0.5818,
+      "tp": 48,
+      "fp": 69,
+      "fn": 0,
+      "tn": 313,
+      "thresholds": {
+        "pos": 0.2,
+        "margin": 0.02
+      },
+      "ms_per_item": 2.65,
+      "twofold": {
+        "precision": 0.4327,
+        "recall": 0.9375,
+        "f1": 0.5921,
+        "tp": 45,
+        "fp": 59,
+        "fn": 3,
+        "tn": 323
+      }
+    },
+    "hybrid_tfidf": {
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8889,
+      "tp": 48,
+      "fp": 12,
+      "fn": 0,
+      "tn": 370,
+      "thresholds": {
+        "pos": 0.38,
+        "margin": 0.18
+      },
+      "ms_per_item": 2.65,
+      "twofold": {
+        "precision": 0.7966,
+        "recall": 0.9792,
+        "f1": 0.8785,
+        "tp": 47,
+        "fp": 12,
+        "fn": 1,
+        "tn": 370
+      }
+    },
+    "embed": {
+      "precision": 0.24,
+      "recall": 1.0,
+      "f1": 0.3871,
+      "tp": 48,
+      "fp": 152,
+      "fn": 0,
+      "tn": 230,
+      "thresholds": {
+        "pos": 0.66,
+        "margin": -0.06
+      },
+      "ms_per_item": 40.28,
+      "twofold": {
+        "precision": 0.2374,
+        "recall": 0.9792,
+        "f1": 0.3821,
+        "tp": 47,
+        "fp": 151,
+        "fn": 1,
+        "tn": 231
+      }
+    },
+    "hybrid_embed": {
+      "precision": 0.6234,
+      "recall": 1.0,
+      "f1": 0.768,
+      "tp": 48,
+      "fp": 29,
+      "fn": 0,
+      "tn": 353,
+      "thresholds": {
+        "pos": 0.84,
+        "margin": 0.0
+      },
+      "ms_per_item": 40.28,
+      "twofold": {
+        "precision": 0.7231,
+        "recall": 0.9792,
+        "f1": 0.8319,
+        "tp": 47,
+        "fp": 18,
+        "fn": 1,
+        "tn": 364
+      }
+    }
+  },
+  "generated": "2026-11-21 16:26 CET",
+  "embedder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "errors": {
+    "regex": [
+      [
+        62,
+        1,
+        "Prodajem LCD od Macbook Air 2020 (Intel i5), ispravan",
+        "model=weak; laptop_specs=i5"
+      ],
+      [
+        96,
+        0,
+        "MacBook Air A2179 ne pali, ekran razbijen",
+        "model=strong; donor=ne pali"
+      ],
+      [
+        107,
+        1,
+        "Macbook air 2019 komplet ekran",
+        "model=none; no A2179-compatible model"
+      ],
+      [
+        119,
+        0,
+        "MacBook Air M2 2022 DELOVI A2681 A1932",
+        "model=a1932; donor=delovi"
+      ],
+      [
+        120,
+        0,
+        "macbook air  pro orginalni delovi 2012-2020",
+        "model=weak; donor=delovi"
+      ]
+    ],
+    "tfidf": [
+      [
+        5,
+        0,
+        "Konektori MacBook Air a2179 (2020)",
+        0.251,
+        0.163
+      ],
+      [
+        7,
+        0,
+        "WiFi antene MacBook Air a2179 (2020)",
+        0.249,
+        0.161
+      ],
+      [
+        75,
+        0,
+        "MacBook Air 2020 i3 sa slomljenim ekranom, ostalo radi",
+        0.302,
+        0.159
+      ],
+      [
+        79,
+        0,
+        "Kaljeno staklo za ekran MacBook Air A2179",
+        0.27,
+        0.184
+      ],
+      [
+        88,
+        0,
+        "Tražim ekran za MacBook Air A2179",
+        0.37,
+        0.252
+      ],
+      [
+        90,
+        0,
+        "Kamera FaceTime HD za MacBook Air A2179",
+        0.212,
+        0.114
+      ],
+      [
+        92,
+        0,
+        "MacBook Air 13 2017 A1466 ekran",
+        0.291,
+        0.202
+      ],
+      [
+        93,
+        0,
+        "Šarke za ekran MacBook Air A2179",
+        0.399,
+        0.272
+      ],
+      [
+        94,
+        0,
+        "Lepak traka za LCD MacBook Air A2179",
+        0.282,
+        0.188
+      ],
+      [
+        96,
+        0,
+        "MacBook Air A2179 ne pali, ekran razbijen",
+        0.237,
+        0.156
+      ],
+      [
+        100,
+        0,
+        "Macbook AIR 13 Mid 2011 ispravan delovi",
+        0.61,
+        0.088
+      ],
+      [
+        101,
+        0,
+        "Macbook air 13 2012 A1466 komplet gornji deo sa ekranom",
+        0.587,
+        0.111
+      ],
+      [
+        102,
+        0,
+        "Macbook AIR A1278 2009 ispravan delovi",
+        0.57,
+        0.082
+      ],
+      [
+        103,
+        0,
+        "Macbook AIR 13 2021 za delove",
+        0.518,
+        0.158
+      ],
+      [
+        104,
+        0,
+        "MacBook Air A1237 za delove",
+        0.475,
+        0.125
+      ],
+      [
+        105,
+        0,
+        "Macbook air A1466 za delove",
+        0.469,
+        0.1
+      ],
+      [
+        106,
+        0,
+        "Apple Macbook Air 11\"  Mid 2012 A1465 displej LCD ekran",
+        0.467,
+        0.198
+      ],
+      [
+        108,
+        0,
+        "Macbook Air Mid 2012 - za delove",
+        0.444,
+        0.106
+      ],
+      [
+        109,
+        0,
+        "MacBook Air 13 Early 2014 ekran kompletan",
+        0.413,
+        0.166
+      ],
+      [
+        111,
+        0,
+        "Macbook AIR M5 - 16GB ram/ 1TB disk/ 15\" Retina ekran - NOVO",
+        0.324,
+        0.123
+      ],
+      [
+        127,
+        0,
+        "MacBook Air (13-inch, 2015) za delove",
+        0.376,
+        0.089
+      ],
+      [
+        128,
+        0,
+        "MacBook Air (13-inch, 2017) za delove",
+        0.376,
+        0.089
+      ],
+      [
+        129,
+        0,
+        "MacBook Air (11-inch, 2013) za delove",
+        0.375,
+        0.089
+      ],
+      [
+        132,
+        0,
+        "Zamenski LCD ekran za MacBook Air 10,1 Air 13\" NOVO",
+        0.367,
+        0.273
+      ],
+      [
+        133,
+        0,
+        "MacBook Air 13 Mid 2012God ekran/panel kompletan",
+        0.361,
+        0.15
+      ],
+      [
+        136,
+        0,
+        "MacBook Air A1304 pločica displej porta i audio",
+        0.354,
+        0.166
+      ],
+      [
+        137,
+        0,
+        "LCD panel za MacBook Air 15\" M2/M3/M4/M5",
+        0.352,
+        0.197
+      ],
+      [
+        139,
+        0,
+        "MacBook Air (13-inch, Mid 2012) za delove",
+        0.349,
+        0.083
+      ],
+      [
+        142,
+        0,
+        "Apple MacBook Air  11\" (Early 2015) za delove",
+        0.338,
+        0.08
+      ],
+      [
+        144,
+        0,
+        "Apple Macbook Air 13.3\" 2012 A1466 za delove",
+        0.331,
+        0.079
+      ],
+      [
+        145,
+        0,
+        "MacBook AIR M2 A2681 EMC 4074 #14 za delove",
+        0.327,
+        0.072
+      ],
+      [
+        147,
+        0,
+        "Apple Macbook Air A1304 EMC No 2334 za delove OCUVAN",
+        0.319,
+        0.08
+      ],
+      [
+        148,
+        0,
+        "Apple Macbook Air A1465 EMC2631 za delove",
+        0.317,
+        0.083
+      ],
+      [
+        150,
+        0,
+        "Ekran Komplet  za Macbook air  A1369  EMC2469",
+        0.317,
+        0.164
+      ],
+      [
+        151,
+        0,
+        "Apple Macbook Air A1466 EMC2559 za delove",
+        0.316,
+        0.067
+      ],
+      [
+        152,
+        0,
+        "MacBook Air 13” M3 2024 A3113 midnight EKRAN LCD",
+        0.315,
+        0.227
+      ],
+      [
+        153,
+        0,
+        "MacBook Air Core i5 1.7 11 (Mid-2012) ekran kompletan",
+        0.312,
+        0.127
+      ],
+      [
+        154,
+        0,
+        "MacBook Air 13 2013 delovi",
+        0.309,
+        0.122
+      ],
+      [
+        155,
+        0,
+        "Macbook Air 13 2017  delovi",
+        0.305,
+        0.12
+      ],
+      [
+        156,
+        0,
+        "MacBook Air 13 Mid 2012God ekran komplet sa kucistem",
+        0.304,
+        0.128
+      ],
+      [
+        160,
+        0,
+        "Ekran - LCD za Apple MacBook Air M3 13\" A3113 - zamenski HQ",
+        0.296,
+        0.214
+      ],
+      [
+        163,
+        0,
+        "Ekran - LCD za Apple MacBook Air M2 13\" A2681 - zamenski HQ",
+        0.292,
+        0.217
+      ],
+      [
+        164,
+        0,
+        "APPLE MacBook Air 13\" 2020 Retina mgn93mg/a",
+        0.29,
+        0.127
+      ],
+      [
+        165,
+        0,
+        "APPLE MacBook Air 13\" 2020 Retina mgna3mg/a",
+        0.29,
+        0.127
+      ],
+      [
+        166,
+        0,
+        "APPLE MacBook Air 13\" 2020 Retina mgne3mg/a",
+        0.29,
+        0.127
+      ],
+      [
+        167,
+        0,
+        "MacBook Pro - MacBook Air - Mac Mini - Neo - XDR Display",
+        0.29,
+        0.194
+      ],
+      [
+        171,
+        0,
+        "Macbook AIR 2014 2015 2017 ekran i delovi",
+        0.286,
+        0.162
+      ],
+      [
+        173,
+        0,
+        "MacBook Air 13 M2 za delove-rezervisan",
+        0.283,
+        0.129
+      ],
+      [
+        174,
+        0,
+        "MacBook Air A1466 delovi",
+        0.283,
+        0.112
+      ],
+      [
+        176,
+        0,
+        "Macbook Air 13 A1369 delovi",
+        0.279,
+        0.11
+      ],
+      [
+        179,
+        0,
+        "APPLE MacBook Air 13\" 2020 Retina mgn63mg/a Gray",
+        0.274,
+        0.161
+      ],
+      [
+        180,
+        0,
+        "Delovi za macbook air 13 2015 2017",
+        0.272,
+        0.106
+      ],
+      [
+        184,
+        0,
+        "APPLE MacBook Air 13\" 2020 Retina z1240006a Gray",
+        0.261,
+        0.153
+      ],
+      [
+        199,
+        0,
+        "Delovi za macbook air a1465 emc 2631",
+        0.233,
+        0.093
+      ],
+      [
+        200,
+        0,
+        "MacBook Air A1237 A1304 delovi",
+        0.233,
+        0.092
+      ],
+      [
+        203,
+        0,
+        "Delovi za Macbook air 2013 do 2017 godina",
+        0.225,
+        0.097
+      ],
+      [
+        204,
+        0,
+        "Ekran za Apple MacBook Air 13\" A1466 2017 (EMC 3178)",
+        0.223,
+        0.159
+      ],
+      [
+        206,
+        0,
+        "Delovi za apple  macbook air A1466 2017 K2",
+        0.22,
+        0.08
+      ],
+      [
+        207,
+        0,
+        "Delovi za macbook air 13 A1466 2012 do 2017 K1",
+        0.217,
+        0.094
+      ],
+      [
+        208,
+        0,
+        "MacBook Air 15” M5 ekran lcd midnight OEM SERVICE PACK",
+        0.217,
+        0.184
+      ],
+      [
+        209,
+        0,
+        "Delovi za Macbook air A1466 K2 od 2013 do 2017",
+        0.215,
+        0.093
+      ],
+      [
+        211,
+        0,
+        "Macbook Air A1369 EMC 2469 delovi",
+        0.214,
+        0.085
+      ],
+      [
+        212,
+        0,
+        "Delovi za Macbook air 13 A1466 2013 DO 2017 Kes 1",
+        0.21,
+        0.091
+      ],
+      [
+        214,
+        0,
+        "MacBook Air A1465 11\" (EMC 2558) delovi",
+        0.209,
+        0.083
+      ],
+      [
+        215,
+        0,
+        "Delovi za Macbook air 2012 11 A1465 EMC 2558",
+        0.208,
+        0.083
+      ],
+      [
+        219,
+        0,
+        "Apple Macbook Air 2013 i noviji delovi",
+        0.206,
+        0.104
+      ],
+      [
+        220,
+        0,
+        "Delovi za laptop macbook air od 13 do 2017  A1466",
+        0.206,
+        0.089
+      ],
+      [
+        221,
+        0,
+        "Delovi za Macbook air 11  A1370 EMC 2471 2011",
+        0.205,
+        0.075
+      ],
+      [
+        222,
+        0,
+        "Delovi za Macbook air 13  2013 do 2017 A1466 Kesa 2",
+        0.205,
+        0.088
+      ]
+    ],
+    "hybrid_tfidf": [
+      [
+        96,
+        0,
+        "MacBook Air A2179 ne pali, ekran razbijen",
+        0.237,
+        0.156
+      ],
+      [
+        100,
+        0,
+        "Macbook AIR 13 Mid 2011 ispravan delovi",
+        0.61,
+        0.088
+      ],
+      [
+        101,
+        0,
+        "Macbook air 13 2012 A1466 komplet gornji deo sa ekranom",
+        0.587,
+        0.111
+      ],
+      [
+        102,
+        0,
+        "Macbook AIR A1278 2009 ispravan delovi",
+        0.57,
+        0.082
+      ],
+      [
+        103,
+        0,
+        "Macbook AIR 13 2021 za delove",
+        0.518,
+        0.158
+      ],
+      [
+        104,
+        0,
+        "MacBook Air A1237 za delove",
+        0.475,
+        0.125
+      ],
+      [
+        105,
+        0,
+        "Macbook air A1466 za delove",
+        0.469,
+        0.1
+      ],
+      [
+        106,
+        0,
+        "Apple Macbook Air 11\"  Mid 2012 A1465 displej LCD ekran",
+        0.467,
+        0.198
+      ],
+      [
+        108,
+        0,
+        "Macbook Air Mid 2012 - za delove",
+        0.444,
+        0.106
+      ],
+      [
+        109,
+        0,
+        "MacBook Air 13 Early 2014 ekran kompletan",
+        0.413,
+        0.166
+      ],
+      [
+        119,
+        0,
+        "MacBook Air M2 2022 DELOVI A2681 A1932",
+        0.23,
+        0.255
+      ],
+      [
+        120,
+        0,
+        "macbook air  pro orginalni delovi 2012-2020",
+        0.185,
+        0.154
+      ]
+    ],
+    "embed": [
+      [
+        2,
+        0,
+        "Apple MacBook Air A2179 (2020) – Core i3 / 8GB RAM / 256GB S",
+        0.729,
+        0.767
+      ],
+      [
+        4,
+        0,
+        "Srafovi MacBook Air a2179 (2020)",
+        0.891,
+        0.91
+      ],
+      [
+        5,
+        0,
+        "Konektori MacBook Air a2179 (2020)",
+        0.876,
+        0.901
+      ],
+      [
+        6,
+        0,
+        "Kuler MacBook Air a2179 (2020)",
+        0.864,
+        0.896
+      ],
+      [
+        7,
+        0,
+        "WiFi antene MacBook Air a2179 (2020)",
+        0.712,
+        0.728
+      ],
+      [
+        8,
+        0,
+        "Donji poklopac MacBook Air a2179 (2020)",
+        0.911,
+        0.92
+      ],
+      [
+        9,
+        0,
+        "Tastatura sa palmrest MacBook Air a2179 (2020)",
+        0.86,
+        0.869
+      ],
+      [
+        13,
+        0,
+        "UK zastita za tastaturu za MacBook Air 13\" M1 A2337/A2179",
+        0.705,
+        0.761
+      ],
+      [
+        16,
+        0,
+        "Cover za Macbook Air 13 2018/2020 (A2337 M1 A2179 A1932) crn",
+        0.805,
+        0.813
+      ],
+      [
+        19,
+        0,
+        "Zamena ekrana za MacBook Air 2018-2020 A1932 / A2179 ORG",
+        0.815,
+        0.825
+      ],
+      [
+        22,
+        0,
+        "Cover za Macbook Air 13 2018/2020 (A2337 M1 A2179 A1932) crni",
+        0.846,
+        0.871
+      ],
+      [
+        30,
+        0,
+        "Zastita za ekran za MacBook Air 13″ (2018-2021) A1932 A2179 A2337 M1",
+        0.932,
+        0.933
+      ],
+      [
+        35,
+        0,
+        "Flet kabl do ploce za audio i power dugme MacBook Air Retina 13″ A1932 | A2179",
+        0.8,
+        0.796
+      ],
+      [
+        74,
+        0,
+        "MacBook Air 2020 i5 16GB 512GB, ekran bez ogrebotina",
+        0.843,
+        0.834
+      ],
+      [
+        75,
+        0,
+        "MacBook Air 2020 i3 sa slomljenim ekranom, ostalo radi",
+        0.877,
+        0.843
+      ],
+      [
+        77,
+        0,
+        "Punjač 30W za MacBook Air 2020",
+        0.8,
+        0.837
+      ],
+      [
+        79,
+        0,
+        "Kaljeno staklo za ekran MacBook Air A2179",
+        0.851,
+        0.842
+      ],
+      [
+        81,
+        0,
+        "Зарядка для MacBook Air A2179 30W",
+        0.894,
+        0.951
+      ],
+      [
+        83,
+        0,
+        "Тастатура за MacBook Air A2179",
+        0.935,
+        0.966
+      ],
+      [
+        87,
+        0,
+        "Kupujem MacBook Air A2179 u bilo kom stanju",
+        0.858,
+        0.905
+      ],
+      [
+        88,
+        0,
+        "Tražim ekran za MacBook Air A2179",
+        0.945,
+        0.915
+      ],
+      [
+        89,
+        0,
+        "Servis za MacBook: zamena LCD ekrana A2179 za 1h",
+        0.901,
+        0.895
+      ],
+      [
+        90,
+        0,
+        "Kamera FaceTime HD za MacBook Air A2179",
+        0.786,
+        0.717
+      ],
+      [
+        92,
+        0,
+        "MacBook Air 13 2017 A1466 ekran",
+        0.945,
+        0.934
+      ],
+      [
+        93,
+        0,
+        "Šarke za ekran MacBook Air A2179",
+        0.959,
+        0.964
+      ],
+      [
+        94,
+        0,
+        "Lepak traka za LCD MacBook Air A2179",
+        0.917,
+        0.915
+      ],
+      [
+        95,
+        0,
+        "Folija za ekran MacBook Air 13",
+        0.904,
+        0.935
+      ],
+      [
+        96,
+        0,
+        "MacBook Air A2179 ne pali, ekran razbijen",
+        0.889,
+        0.868
+      ],
+      [
+        100,
+        0,
+        "Macbook AIR 13 Mid 2011 ispravan delovi",
+        0.758,
+        0.765
+      ],
+      [
+        101,
+        0,
+        "Macbook air 13 2012 A1466 komplet gornji deo sa ekranom",
+        0.926,
+        0.924
+      ],
+      [
+        102,
+        0,
+        "Macbook AIR A1278 2009 ispravan delovi",
+        0.822,
+        0.876
+      ],
+      [
+        103,
+        0,
+        "Macbook AIR 13 2021 za delove",
+        0.8,
+        0.782
+      ],
+      [
+        104,
+        0,
+        "MacBook Air A1237 za delove",
+        0.928,
+        0.964
+      ],
+      [
+        105,
+        0,
+        "Macbook air A1466 za delove",
+        0.902,
+        0.936
+      ],
+      [
+        106,
+        0,
+        "Apple Macbook Air 11\"  Mid 2012 A1465 displej LCD ekran",
+        0.927,
+        0.905
+      ],
+      [
+        108,
+        0,
+        "Macbook Air Mid 2012 - za delove",
+        0.789,
+        0.802
+      ],
+      [
+        109,
+        0,
+        "MacBook Air 13 Early 2014 ekran kompletan",
+        0.875,
+        0.9
+      ],
+      [
+        111,
+        0,
+        "Macbook AIR M5 - 16GB ram/ 1TB disk/ 15\" Retina ekran - NOVO",
+        0.797,
+        0.782
+      ],
+      [
+        120,
+        0,
+        "macbook air  pro orginalni delovi 2012-2020",
+        0.717,
+        0.731
+      ],
+      [
+        122,
+        0,
+        "MacBook Air A1304  matična ploča neispravna",
+        0.876,
+        0.895
+      ],
+      [
+        125,
+        0,
+        "Macbook air 2019 tastatura / neispravna",
+        0.743,
+        0.747
+      ],
+      [
+        127,
+        0,
+        "MacBook Air (13-inch, 2015) za delove",
+        0.809,
+        0.819
+      ],
+      [
+        128,
+        0,
+        "MacBook Air (13-inch, 2017) za delove",
+        0.796,
+        0.812
+      ],
+      [
+        129,
+        0,
+        "MacBook Air (11-inch, 2013) za delove",
+        0.787,
+        0.799
+      ],
+      [
+        132,
+        0,
+        "Zamenski LCD ekran za MacBook Air 10,1 Air 13\" NOVO",
+        0.939,
+        0.925
+      ],
+      [
+        133,
+        0,
+        "MacBook Air 13 Mid 2012God ekran/panel kompletan",
+        0.831,
+        0.848
+      ],
+      [
+        136,
+        0,
+        "MacBook Air A1304 pločica displej porta i audio",
+        0.864,
+        0.852
+      ],
+      [
+        137,
+        0,
+        "LCD panel za MacBook Air 15\" M2/M3/M4/M5",
+        0.879,
+        0.89
+      ],
+      [
+        139,
+        0,
+        "MacBook Air (13-inch, Mid 2012) za delove",
+        0.795,
+        0.812
+      ],
+      [
+        142,
+        0,
+        "Apple MacBook Air  11\" (Early 2015) za delove",
+        0.81,
+        0.812
+      ],
+      [
+        144,
+        0,
+        "Apple Macbook Air 13.3\" 2012 A1466 za delove",
+        0.854,
+        0.893
+      ],
+      [
+        146,
+        0,
+        "MacBook Air 15” M2 2023 A2941 space gray EKRAN LCD",
+        0.884,
+        0.875
+      ],
+      [
+        148,
+        0,
+        "Apple Macbook Air A1465 EMC2631 za delove",
+        0.871,
+        0.908
+      ],
+      [
+        150,
+        0,
+        "Ekran Komplet  za Macbook air  A1369  EMC2469",
+        0.932,
+        0.911
+      ],
+      [
+        151,
+        0,
+        "Apple Macbook Air A1466 EMC2559 za delove",
+        0.875,
+        0.909
+      ],
+      [
+        152,
+        0,
+        "MacBook Air 13” M3 2024 A3113 midnight EKRAN LCD",
+        0.873,
+        0.866
+      ],
+      [
+        153,
+        0,
+        "MacBook Air Core i5 1.7 11 (Mid-2012) ekran kompletan",
+        0.863,
+        0.867
+      ],
+      [
+        154,
+        0,
+        "MacBook Air 13 2013 delovi",
+        0.812,
+        0.831
+      ],
+      [
+        155,
+        0,
+        "Macbook Air 13 2017  delovi",
+        0.791,
+        0.789
+      ],
+      [
+        156,
+        0,
+        "MacBook Air 13 Mid 2012God ekran komplet sa kucistem",
+        0.905,
+        0.92
+      ],
+      [
+        159,
+        0,
+        "Donji poklopac za Apple MacBook Air 13\" A1466 2017 (EMC 3178",
+        0.866,
+        0.92
+      ],
+      [
+        160,
+        0,
+        "Ekran - LCD za Apple MacBook Air M3 13\" A3113 - zamenski HQ",
+        0.938,
+        0.934
+      ],
+      [
+        161,
+        0,
+        "MacBook Air 11 A1370 late 2011 donji poklopac kucista",
+        0.888,
+        0.937
+      ],
+      [
+        162,
+        0,
+        "Zamena LCD / Ekrana za MacBook Air 13 M2 A2681 FULL ORG",
+        0.91,
+        0.904
+      ],
+      [
+        163,
+        0,
+        "Ekran - LCD za Apple MacBook Air M2 13\" A2681 - zamenski HQ",
+        0.947,
+        0.943
+      ],
+      [
+        164,
+        0,
+        "APPLE MacBook Air 13\" 2020 Retina mgn93mg/a",
+        0.834,
+        0.745
+      ],
+      [
+        165,
+        0,
+        "APPLE MacBook Air 13\" 2020 Retina mgna3mg/a",
+        0.815,
+        0.711
+      ],
+      [
+        166,
+        0,
+        "APPLE MacBook Air 13\" 2020 Retina mgne3mg/a",
+        0.81,
+        0.706
+      ],
+      [
+        167,
+        0,
+        "MacBook Pro - MacBook Air - Mac Mini - Neo - XDR Display",
+        0.778,
+        0.734
+      ],
+      [
+        169,
+        0,
+        "Apple 45W MagSafe 1 Punjac za Macbook Air - original",
+        0.794,
+        0.816
+      ],
+      [
+        170,
+        0,
+        "Zastita za ekran za MacBook Air 13\" (2018-2021)",
+        0.897,
+        0.896
+      ],
+      [
+        171,
+        0,
+        "Macbook AIR 2014 2015 2017 ekran i delovi",
+        0.849,
+        0.835
+      ],
+      [
+        173,
+        0,
+        "MacBook Air 13 M2 za delove-rezervisan",
+        0.844,
+        0.873
+      ],
+      [
+        174,
+        0,
+        "MacBook Air A1466 delovi",
+        0.913,
+        0.945
+      ],
+      [
+        176,
+        0,
+        "Macbook Air 13 A1369 delovi",
+        0.877,
+        0.927
+      ],
+      [
+        179,
+        0,
+        "APPLE MacBook Air 13\" 2020 Retina mgn63mg/a Gray",
+        0.816,
+        0.728
+      ],
+      [
+        180,
+        0,
+        "Delovi za macbook air 13 2015 2017",
+        0.775,
+        0.786
+      ],
+      [
+        181,
+        0,
+        "Zamena LCD / Ekrana za MacBook Air M3 A3113 FULL ORG",
+        0.903,
+        0.907
+      ],
+      [
+        184,
+        0,
+        "APPLE MacBook Air 13\" 2020 Retina z1240006a Gray",
+        0.861,
+        0.79
+      ],
+      [
+        191,
+        0,
+        "Bat za laptop Apple Macbok Air 13 Late 2018-Early 2020 A1932",
+        0.785,
+        0.801
+      ],
+      [
+        193,
+        0,
+        "Macbook Pro 13 2017 2 kom + Macbook Air 13 2018 DELOVI",
+        0.758,
+        0.759
+      ],
+      [
+        197,
+        0,
+        "MacBook AIR M2 A2681 Delovi Ekran/Baterija/Tastatura",
+        0.94,
+        0.916
+      ],
+      [
+        198,
+        0,
+        "Srafovi za tastaturu za Apple MacBook / Air / Pro / Retina 2",
+        0.736,
+        0.707
+      ],
+      [
+        200,
+        0,
+        "MacBook Air A1237 A1304 delovi",
+        0.909,
+        0.959
+      ],
+      [
+        203,
+        0,
+        "Delovi za Macbook air 2013 do 2017 godina",
+        0.715,
+        0.735
+      ],
+      [
+        204,
+        0,
+        "Ekran za Apple MacBook Air 13\" A1466 2017 (EMC 3178)",
+        0.918,
+        0.921
+      ],
+      [
+        205,
+        0,
+        "Zamena LCD / Ekrana za MacBook Air 2013-2017 A1466 FULL ORG",
+        0.899,
+        0.884
+      ],
+      [
+        206,
+        0,
+        "Delovi za apple  macbook air A1466 2017 K2",
+        0.782,
+        0.826
+      ],
+      [
+        207,
+        0,
+        "Delovi za macbook air 13 A1466 2012 do 2017 K1",
+        0.799,
+        0.846
+      ],
+      [
+        208,
+        0,
+        "MacBook Air 15” M5 ekran lcd midnight OEM SERVICE PACK",
+        0.737,
+        0.76
+      ],
+      [
+        209,
+        0,
+        "Delovi za Macbook air A1466 K2 od 2013 do 2017",
+        0.798,
+        0.845
+      ],
+      [
+        211,
+        0,
+        "Macbook Air A1369 EMC 2469 delovi",
+        0.851,
+        0.911
+      ],
+      [
+        212,
+        0,
+        "Delovi za Macbook air 13 A1466 2013 DO 2017 Kes 1",
+        0.798,
+        0.851
+      ],
+      [
+        213,
+        0,
+        "Srafovi za tastaturu za Macbook Air/Pro/Retina (2009-2015)",
+        0.758,
+        0.691
+      ],
+      [
+        214,
+        0,
+        "MacBook Air A1465 11\" (EMC 2558) delovi",
+        0.89,
+        0.931
+      ],
+      [
+        216,
+        0,
+        "Macbook air 11 2015 flet ekrana",
+        0.817,
+        0.792
+      ],
+      [
+        217,
+        0,
+        "Srafovi za tastaturu za Apple MacBook / Air / Pro / Retina 2016-2024",
+        0.753,
+        0.721
+      ],
+      [
+        219,
+        0,
+        "Apple Macbook Air 2013 i noviji delovi",
+        0.773,
+        0.78
+      ],
+      [
+        220,
+        0,
+        "Delovi za laptop macbook air od 13 do 2017  A1466",
+        0.765,
+        0.819
+      ],
+      [
+        222,
+        0,
+        "Delovi za Macbook air 13  2013 do 2017 A1466 Kesa 2",
+        0.795,
+        0.848
+      ],
+      [
+        224,
+        0,
+        "Delovi za laptop MacBook Air MacBook Pro više generacija",
+        0.797,
+        0.817
+      ],
+      [
+        225,
+        0,
+        "Ekran za Apple Macbook Air A1466 EMC 2559",
+        0.919,
+        0.9
+      ],
+      [
+        228,
+        0,
+        "Delovi za laptop MacBook Air A1466 od 2013 do 2017",
+        0.808,
+        0.861
+      ],
+      [
+        230,
+        0,
+        "Delovi za laptop Macbook air A1466 2013 do 2017  K2",
+        0.784,
+        0.838
+      ],
+      [
+        231,
+        0,
+        "Hitno! Apple Macbook Air 2.1 A1304 Delovi",
+        0.829,
+        0.843
+      ],
+      [
+        232,
+        0,
+        "MacBook Air 11 2012God i5-1.7Gh DELOVI",
+        0.846,
+        0.902
+      ],
+      [
+        233,
+        0,
+        "MacBook Air 11 A1370 late 2010 2011 delovi",
+        0.832,
+        0.872
+      ],
+      [
+        234,
+        0,
+        "MacBook Air A1304 mid 2008 -2009 ekran 13,3 incha",
+        0.818,
+        0.842
+      ],
+      [
+        235,
+        0,
+        "MacBook Air Core i7 1.8 11 (Mid-2011) DELOVI",
+        0.796,
+        0.844
+      ],
+      [
+        239,
+        0,
+        "Delovi za Macbook air A1466 K1 od 2013 do 2017 godiste",
+        0.808,
+        0.856
+      ],
+      [
+        241,
+        0,
+        "delovi za laptop Macbook air od 2013 do 2017 god A1466",
+        0.797,
+        0.84
+      ],
+      [
+        243,
+        0,
+        "Ekran za MacBook Air M2/M3 15\" A2941/A3114 - zamenski HQ",
+        0.921,
+        0.901
+      ],
+      [
+        244,
+        0,
+        "Flet kabl za trackpad i tastaturu za MacBook Air 13\" A1932",
+        0.752,
+        0.8
+      ],
+      [
+        245,
+        0,
+        "MacBook Air Core i5- 1.3Gh  13 Mid-2013 delovi",
+        0.808,
+        0.849
+      ],
+      [
+        246,
+        0,
+        "Ekran+kuciste za MACBOOK AIR 2011  A1369 EMC 2469",
+        0.78,
+        0.82
+      ],
+      [
+        247,
+        0,
+        "MacBook Air Core i5 1.6 11 Mid-2011 u DELOVIMA",
+        0.813,
+        0.845
+      ],
+      [
+        250,
+        0,
+        "MacBook Air Early 13 2014 i5 -DELOVI polovni",
+        0.85,
+        0.866
+      ],
+      [
+        255,
+        0,
+        "MacBook Air 13 A1377 Late 2010 Core 2 Duo 2.13Gh DELOVI",
+        0.773,
+        0.814
+      ],
+      [
+        260,
+        0,
+        "Apple MacBook Air A1245 A1304 i A1237 - razni delovi",
+        0.879,
+        0.93
+      ],
+      [
+        264,
+        0,
+        "Traka duplo lepljiva zvucnika za MacBook Air 13\" A1932",
+        0.748,
+        0.791
+      ],
+      [
+        266,
+        0,
+        "MacBook air i7-16gb-512hdd (2020)",
+        0.84,
+        0.859
+      ],
+      [
+        267,
+        0,
+        "Flet sa senzorom ugla ekrana za Apple MacBook Air 15\" A2941",
+        0.867,
+        0.858
+      ],
+      [
+        269,
+        0,
+        "Flet kabl za trackpad za Macbook Air 13\" M3/M4/M5",
+        0.743,
+        0.774
+      ],
+      [
+        272,
+        0,
+        "Futrola / Torba za Macbook Pro 14” ili MacBook Air 13” Thule",
+        0.766,
+        0.806
+      ],
+      [
+        273,
+        0,
+        "Futrola za MacBook Pro 14\" i MacBook Air 13\" THULE Gauntlet",
+        0.77,
+        0.814
+      ],
+      [
+        274,
+        0,
+        "MacBook Air Core i5 1.3 11 (Mid-2013)-DELOVI",
+        0.782,
+        0.838
+      ],
+      [
+        275,
+        0,
+        "Futrola za MacBook Pro i MacBook Air 13\"-14\" THULE Gauntlet",
+        0.779,
+        0.83
+      ],
+      [
+        279,
+        0,
+        "MacBook Air Core 2 Duo 1.4 11inch Late '10-DELOVI za laptop",
+        0.754,
+        0.756
+      ],
+      [
+        281,
+        0,
+        "Apple MacBook Air Core i5 1.6 11 Early 2015-DELOVI",
+        0.8,
+        0.839
+      ],
+      [
+        282,
+        0,
+        "Macbook Air / Pro zamena ekrana baterije tastaturi servis",
+        0.792,
+        0.826
+      ],
+      [
+        283,
+        0,
+        "MacBook Air 13 Early 2014 plocica za punjenje",
+        0.854,
+        0.886
+      ],
+      [
+        284,
+        0,
+        "UK Silikonska zastita za tastaturu za MacBook Air 13″ M1 A2337 | A2179 providna",
+        0.795,
+        0.834
+      ],
+      [
+        288,
+        0,
+        "Tastatura za Apple MacBook Air 13\" A1466 2017 (EMC 3178)",
+        0.874,
+        0.922
+      ],
+      [
+        289,
+        0,
+        "Sraf za MacBook Air/Pro SSD/WiFi T5",
+        0.74,
+        0.757
+      ],
+      [
+        291,
+        0,
+        "NVMe PCIe M.2 M SSD adapter za MacBook Pro i MacBook Air",
+        0.715,
+        0.716
+      ],
+      [
+        292,
+        0,
+        "GiGimundo LK10 USB3.0 Dock dva 4k ekrana na MacBook Air",
+        0.675,
+        0.658
+      ],
+      [
+        295,
+        0,
+        "Futrola za MacBook Pro 16\" i MacBook Air 15\" THULE Gauntlet",
+        0.771,
+        0.792
+      ],
+      [
+        297,
+        0,
+        "Konektor LVDS za MacBook Air 11\" A1465 13\" A1466 - HQ",
+        0.798,
+        0.848
+      ],
+      [
+        299,
+        0,
+        "Choetech usb C hub 7u2 5K60Hz za Macbook Pro i Macbook Air",
+        0.702,
+        0.717
+      ],
+      [
+        302,
+        0,
+        "Backlight cip IC LP8550 D68B za MacBook Air, MacBook Pro",
+        0.827,
+        0.842
+      ],
+      [
+        304,
+        0,
+        "MacBook Air kraljevo",
+        0.854,
+        0.854
+      ],
+      [
+        305,
+        0,
+        "Otkup MacBook Air / MacBook Air M4 Chip Kupujem",
+        0.726,
+        0.77
+      ],
+      [
+        306,
+        0,
+        "Osigurac za pozadinsko osvetljenje 0603 za Macbook Pro | MacBook Air",
+        0.768,
+        0.761
+      ],
+      [
+        307,
+        0,
+        "Adapter M.2 NVMe za MacBook Air i Pro",
+        0.756,
+        0.759
+      ],
+      [
+        309,
+        0,
+        "US silikonska zastita za tastaturu za Macbook Air 11\"",
+        0.729,
+        0.767
+      ],
+      [
+        311,
+        0,
+        "Bumper / zaštitni oklop THULE Vectros za MacBook Air 11\"",
+        0.683,
+        0.735
+      ],
+      [
+        312,
+        0,
+        "Adapter M.2 NVMe za MacBook Air i Pro - NOVO",
+        0.757,
+        0.758
+      ],
+      [
+        316,
+        0,
+        "US silikonska zastita za tastaturu za Macbook Air 11″",
+        0.733,
+        0.768
+      ],
+      [
+        318,
+        0,
+        "Otkup MacBook Air / MacBook M5 M4 Chip Kupujem",
+        0.725,
+        0.754
+      ],
+      [
+        321,
+        0,
+        "OTKUP Macbook AIR PRO M3/M4/M5 Novi Sad/NS Kupujem",
+        0.732,
+        0.788
+      ],
+      [
+        329,
+        0,
+        "MacBook Air 11 A1370  late 2010  wi fi & bluetooth kartica",
+        0.675,
+        0.727
+      ],
+      [
+        346,
+        0,
+        "Specijalizovani Servis MacBook Air računara",
+        0.844,
+        0.846
+      ]
+    ],
+    "hybrid_embed": [
+      [
+        74,
+        0,
+        "MacBook Air 2020 i5 16GB 512GB, ekran bez ogrebotina",
+        0.843,
+        0.834
+      ],
+      [
+        75,
+        0,
+        "MacBook Air 2020 i3 sa slomljenim ekranom, ostalo radi",
+        0.877,
+        0.843
+      ],
+      [
+        79,
+        0,
+        "Kaljeno staklo za ekran MacBook Air A2179",
+        0.851,
+        0.842
+      ],
+      [
+        88,
+        0,
+        "Tražim ekran za MacBook Air A2179",
+        0.945,
+        0.915
+      ],
+      [
+        89,
+        0,
+        "Servis za MacBook: zamena LCD ekrana A2179 za 1h",
+        0.901,
+        0.895
+      ],
+      [
+        92,
+        0,
+        "MacBook Air 13 2017 A1466 ekran",
+        0.945,
+        0.934
+      ],
+      [
+        94,
+        0,
+        "Lepak traka za LCD MacBook Air A2179",
+        0.917,
+        0.915
+      ],
+      [
+        96,
+        0,
+        "MacBook Air A2179 ne pali, ekran razbijen",
+        0.889,
+        0.868
+      ],
+      [
+        101,
+        0,
+        "Macbook air 13 2012 A1466 komplet gornji deo sa ekranom",
+        0.926,
+        0.924
+      ],
+      [
+        106,
+        0,
+        "Apple Macbook Air 11\"  Mid 2012 A1465 displej LCD ekran",
+        0.927,
+        0.905
+      ],
+      [
+        119,
+        0,
+        "MacBook Air M2 2022 DELOVI A2681 A1932",
+        0.87,
+        0.942
+      ],
+      [
+        120,
+        0,
+        "macbook air  pro orginalni delovi 2012-2020",
+        0.717,
+        0.731
+      ],
+      [
+        132,
+        0,
+        "Zamenski LCD ekran za MacBook Air 10,1 Air 13\" NOVO",
+        0.939,
+        0.925
+      ],
+      [
+        136,
+        0,
+        "MacBook Air A1304 pločica displej porta i audio",
+        0.864,
+        0.852
+      ],
+      [
+        146,
+        0,
+        "MacBook Air 15” M2 2023 A2941 space gray EKRAN LCD",
+        0.884,
+        0.875
+      ],
+      [
+        150,
+        0,
+        "Ekran Komplet  za Macbook air  A1369  EMC2469",
+        0.932,
+        0.911
+      ],
+      [
+        152,
+        0,
+        "MacBook Air 13” M3 2024 A3113 midnight EKRAN LCD",
+        0.873,
+        0.866
+      ],
+      [
+        160,
+        0,
+        "Ekran - LCD za Apple MacBook Air M3 13\" A3113 - zamenski HQ",
+        0.938,
+        0.934
+      ],
+      [
+        162,
+        0,
+        "Zamena LCD / Ekrana za MacBook Air 13 M2 A2681 FULL ORG",
+        0.91,
+        0.904
+      ],
+      [
+        163,
+        0,
+        "Ekran - LCD za Apple MacBook Air M2 13\" A2681 - zamenski HQ",
+        0.947,
+        0.943
+      ],
+      [
+        170,
+        0,
+        "Zastita za ekran za MacBook Air 13\" (2018-2021)",
+        0.897,
+        0.896
+      ],
+      [
+        171,
+        0,
+        "Macbook AIR 2014 2015 2017 ekran i delovi",
+        0.849,
+        0.835
+      ],
+      [
+        184,
+        0,
+        "APPLE MacBook Air 13\" 2020 Retina z1240006a Gray",
+        0.861,
+        0.79
+      ],
+      [
+        197,
+        0,
+        "MacBook AIR M2 A2681 Delovi Ekran/Baterija/Tastatura",
+        0.94,
+        0.916
+      ],
+      [
+        205,
+        0,
+        "Zamena LCD / Ekrana za MacBook Air 2013-2017 A1466 FULL ORG",
+        0.899,
+        0.884
+      ],
+      [
+        225,
+        0,
+        "Ekran za Apple Macbook Air A1466 EMC 2559",
+        0.919,
+        0.9
+      ],
+      [
+        243,
+        0,
+        "Ekran za MacBook Air M2/M3 15\" A2941/A3114 - zamenski HQ",
+        0.921,
+        0.901
+      ],
+      [
+        267,
+        0,
+        "Flet sa senzorom ugla ekrana za Apple MacBook Air 15\" A2941",
+        0.867,
+        0.858
+      ],
+      [
+        304,
+        0,
+        "MacBook Air kraljevo",
+        0.854,
+        0.854
+      ]
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+requirements.txt unchanged, skip pip
+requirements-embed.txt unchanged, skip pip
+cache_model: 13 model(s), ~12669 MB of weight files (tokenizers on top, already cached skipped)
+cache_model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 already cached in /home/vessyl-runner/.cache/huggingface/hub/models--sentence-transformers--paraphrase-multilingual-MiniLM-L12-v2/snapshots/e8f8c211226b894fcb81acc59f3b34ba3efd5f42
+cache_model: sentence-transformers/paraphrase-multilingual-mpnet-base-v2 already cached in /home/vessyl-runner/.cache/huggingface/hub/models--sentence-transformers--paraphrase-multilingual-mpnet-base-v2/snapshots/4328cf26390c98c5e3c738b4460a05b95f4911f5
+cache_model: intfloat/multilingual-e5-small already cached in /home/vessyl-runner/.cache/huggingface/hub/models--intfloat--multilingual-e5-small/snapshots/614241f622f53c4eeff9890bdc4f31cfecc418b3
+cache_model: intfloat/multilingual-e5-base already cached in /home/vessyl-runner/.cache/huggingface/hub/models--intfloat--multilingual-e5-base/snapshots/d128750597153bb5987e10b1c3493a34e5a4502a
+cache_model: intfloat/multilingual-e5-large already cached in /home/vessyl-runner/.cache/huggingface/hub/models--intfloat--multilingual-e5-large/snapshots/3d7cfbdacd47fdda877c5cd8a79fbcc4f2a574f3
+cache_model: intfloat/multilingual-e5-large-instruct already cached in /home/vessyl-runner/.cache/huggingface/hub/models--intfloat--multilingual-e5-large-instruct/snapshots/274baa43b0e13e37fafa6428dbc7938e62e5c439
+cache_model: BAAI/bge-m3 already cached in /home/vessyl-runner/.cache/huggingface/hub/models--BAAI--bge-m3/snapshots/5617a9f61b028005a4858fdac845db406aefb181
+cache_model: sentence-transformers/LaBSE already cached in /home/vessyl-runner/.cache/huggingface/hub/models--sentence-transformers--LaBSE/snapshots/836121a0533e5664b21c7aacc5d22951f2b8b25b
+
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]
+cache_model: djovak/embedic-base failed: GatedRepoError: 401 Client Error. (Request ID: Root=1-6b01b601-3934361a32eec38c3142c18b;f7bd86f8-e3b9-411d-b109-59077326ac9b)
+
+Cannot access gated repo for url https://huggingface.co/djovak/embedic-base/resolve/dc23610bc5abad02baf1f6c7d7d62c5f846dad5b/config.json.
+Access to model djovak/embedic-base is restricted. 
+cache_model: BAAI/bge-base-en-v1.5 already cached in /home/vessyl-runner/.cache/huggingface/hub/models--BAAI--bge-base-en-v1.5/snapshots/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a
+cache_model: intfloat/e5-base-v2 already cached in /home/vessyl-runner/.cache/huggingface/hub/models--intfloat--e5-base-v2/snapshots/f52bf8ec8c7124536f0efb74aca902b2995e5bcd
+cache_model: cross-encoder/ms-marco-TinyBERT-L2-v2 already cached in /home/vessyl-runner/.cache/huggingface/hub/models--cross-encoder--ms-marco-TinyBERT-L2-v2/snapshots/81d1926f67cb8eee2c2be17ca9f793c7c3bd20cc
+cache_model: cross-encoder/mmarco-mMiniLMv2-L12-H384-v1 already cached in /home/vessyl-runner/.cache/huggingface/hub/models--cross-encoder--mmarco-mMiniLMv2-L12-H384-v1/snapshots/1427fd652930e4ba29e8149678df786c240d8825
+::warning::model cache step failed (exit 5), dense steps will fall back
+Python 3.14.4

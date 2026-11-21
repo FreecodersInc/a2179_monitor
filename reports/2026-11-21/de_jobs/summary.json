@@ -1,14 +1,14 @@
 {
   "case": "de_jobs",
   "date": "2026-11-21",
-  "n": 3319,
-  "n_matches": 594,
+  "n": 3489,
+  "n_matches": 608,
   "notes": [
-    "Remotive: 16 jobs",
-    "Remote OK: 100 jobs",
-    "Greenhouse: 2224 jobs (87 boards, 12882 openings, 2224 kept by the title prefilter)",
-    "Lever: 256 jobs (cache) (17 boards, 915 openings, 256 kept by the title prefilter)",
-    "Ashby: 761 jobs (51 boards, 3478 openings, 761 kept by the title prefilter)"
+    "Remotive: 16 jobs (cache)",
+    "Remote OK: 100 jobs (cache)",
+    "Greenhouse: 2407 jobs (cache) (94 boards, 13961 openings, 2407 kept by the title prefilter)",
+    "Lever: 251 jobs (cache) (17 boards, 913 openings, 251 kept by the title prefilter)",
+    "Ashby: 761 jobs (cache) (51 boards, 3478 openings, 761 kept by the title prefilter)"
   ],
   "files": [
     "matches.csv",

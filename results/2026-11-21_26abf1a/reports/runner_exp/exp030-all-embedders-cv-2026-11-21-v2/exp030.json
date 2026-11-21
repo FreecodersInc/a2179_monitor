@@ -1,0 +1,64 @@
+{
+  "coverage": {
+    "vacancies": 3489,
+    "labeled": 462,
+    "batch3": 150
+  },
+  "new_urls": 180,
+  "weights": {
+    "cv_score": 0.3333333333333333,
+    "tinybert": 0.3333333333333333,
+    "minilm": 0.03333333333333333,
+    "mpnet": 0.03333333333333333,
+    "e5-small": 0.03333333333333333,
+    "e5-base": 0.011111111111111112,
+    "e5-base-qp": 0.011111111111111112,
+    "e5-base-noprefix": 0.011111111111111112,
+    "e5-large": 0.03333333333333333,
+    "e5-large-instruct": 0.03333333333333333,
+    "bge-m3": 0.03333333333333333,
+    "labse": 0.03333333333333333,
+    "bge-base-en": 0.03333333333333333,
+    "e5-base-en": 0.03333333333333333
+  },
+  "auc": {
+    "vacancies": null,
+    "labeled": {
+      "cv_score": 0.8848964332244482,
+      "minilm": 0.7587281206925851,
+      "mpnet": 0.7227393742565283,
+      "e5-small": 0.7062933101716358,
+      "e5-base": 0.7382791110439758,
+      "e5-base-qp": 0.7000623100016994,
+      "e5-base-noprefix": 0.7607862389305338,
+      "e5-large": 0.7553105115084685,
+      "e5-large-instruct": 0.7800645758199429,
+      "bge-m3": 0.7912992579445253,
+      "labse": 0.760937293480108,
+      "bge-base-en": 0.7808764940239044,
+      "e5-base-en": 0.7499858386359775,
+      "tinybert": 0.861634032590019,
+      "ensemble": 0.9132758067257039
+    },
+    "batch3": {
+      "cv_score": 0.607921511627907,
+      "minilm": 0.7156613372093024,
+      "mpnet": 0.7616279069767442,
+      "e5-small": 0.6662427325581395,
+      "e5-base": 0.7245639534883721,
+      "e5-base-qp": 0.6804142441860465,
+      "e5-base-noprefix": 0.7467296511627907,
+      "e5-large": 0.6113735465116279,
+      "e5-large-instruct": 0.7174781976744186,
+      "bge-m3": 0.759265988372093,
+      "labse": 0.7867005813953488,
+      "bge-base-en": 0.7129360465116279,
+      "e5-base-en": 0.7345566860465116,
+      "tinybert": 0.7868822674418605,
+      "ensemble": 0.7741642441860465
+    }
+  },
+  "errors": {
+    "embedic-base": "OSError: We couldn't connect to 'https://huggingface.co' to load the files, and couldn't find them in the cached files.\nCheck your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'."
+  }
+}
