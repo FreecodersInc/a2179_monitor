@@ -301,7 +301,7 @@ def drop_private(rec: dict) -> dict:
     return {k: rec.get(k, "") for k in CSV_FIELDS}
 
 
-def merge_rows(*groups, target: int = 1000) -> list[dict]:
+def merge_rows(*groups) -> list[dict]:
     """Dedup by domain (else normalised name). Later groups fill empty fields of an earlier row."""
     by: "OrderedDict[str, dict]" = OrderedDict()
 
@@ -353,9 +353,7 @@ def merge_rows(*groups, target: int = 1000) -> list[dict]:
                     cur[field] = r[field]
             if r.get("source") and r["source"] not in (cur.get("source") or "").split("+"):
                 cur["source"] = "+".join(x for x in (cur.get("source"), r["source"]) if x)
-    out = list(by.values())
-    _ = target
-    return out
+    return list(by.values())
 
 
 def known_from_ats(path: Path | None = None) -> list[dict]:
@@ -515,8 +513,8 @@ def fetch_bytes(url: str, get_fn, max_bytes: int = A.MAX_BYTES) -> tuple:
     return capped_get_bytes(url, max_bytes=max_bytes)
 
 
-def collect_sources(get_fn, target: int = 1000, include_known: bool = True) -> tuple[list[dict], dict]:
-    """Pull both catalogs (robots first), merge, fill up to target with remaining YC actives."""
+def collect_sources(get_fn, include_known: bool = True) -> tuple[list[dict], dict]:
+    """Pull both catalogs (robots first) and merge every row the sources give. No size cap."""
     notes = {"remoteintech": None, "yc": None, "robots": {}}
     ri, yc = [], []
     # Official GitHub tarball of the company markdown pages (one request). Not the official
@@ -570,7 +568,7 @@ def collect_sources(get_fn, target: int = 1000, include_known: bool = True) -> t
     rest = [r for r in yc if r not in pref and str(r.get("_status") or "active").lower() in {"active", "public", ""}]
     other = [r for r in yc if r not in pref and r not in rest]
     known = (known_from_ats() + [jetbrains_seed()]) if include_known else []
-    merged = merge_rows(known, ri, pref, rest, other, target=target)
+    merged = merge_rows(known, ri, pref, rest, other)
     notes["merged"] = len(merged)
     return merged, notes
 

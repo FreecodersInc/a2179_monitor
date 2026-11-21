@@ -63,7 +63,7 @@ class TestParsers(unittest.TestCase):
         self.assertFalse(C.yc_preferred(next(r for r in yc if r["name"] == "DeadCo")))
         ri = C.parse_remoteintech(RI)
         extra = [C._row(f"Co{i}", f"https://co{i}.example.com", "Remote", "yc") for i in range(1200)]
-        merged = C.merge_rows(ri, yc, extra, target=1000)
+        merged = C.merge_rows(ri, yc, extra)
         self.assertGreaterEqual(len(merged), 1000)
         acme = [r for r in merged if r["domain"] == "acme.io"]
         self.assertEqual(len(acme), 1)
@@ -240,14 +240,14 @@ class TestPipeline(unittest.TestCase):
                                  for u in titles}}, {}, {}
 
         # skip real source merge of 162 boards: patch collect_sources
-        def sources(get_fn, target=1000, include_known=True):
+        def sources(get_fn, include_known=True):
             return companies_src, {"remoteintech": {"rows": 3}, "yc": {"rows": 4}}
 
         out = self.tmp / "out"
         out.mkdir()
         with mock.patch.object(C, "collect_sources", sources):
             summary = T038.run_build(out, self.tmp / "cache",
-                                     {"time_budget_s": 20, "delay_s": 0, "cv_min": 0.25, "target_companies": 2},
+                                     {"time_budget_s": 20, "delay_s": 0, "cv_min": 0.25},
                                      get_fn=get_fn, sleep_fn=lambda s: None, collect=collect,
                                      score_fn=score, dense_fn=dense)
         self.assertTrue((out / "companies.csv").is_file())
@@ -280,7 +280,7 @@ class TestPipeline(unittest.TestCase):
             if "yc-oss.github.io" in url and "robots.txt" not in url:
                 raise AssertionError("must not fetch YC when robots disallows it: " + url)
             return 404, b""
-        rows, notes = C.collect_sources(get_fn, target=10, include_known=False)
+        rows, notes = C.collect_sources(get_fn, include_known=False)
         self.assertEqual(notes["robots"]["yc"], "disallow")
         self.assertEqual(rows, [])
 
@@ -303,7 +303,7 @@ class TestPipeline(unittest.TestCase):
             if "companies/all.json" in url:
                 return 200, json.dumps(YC)
             raise AssertionError(url)
-        rows, notes = C.collect_sources(get_fn, target=10, include_known=False)
+        rows, notes = C.collect_sources(get_fn, include_known=False)
         self.assertGreaterEqual(notes["remoteintech"]["rows"], 1)
         self.assertGreaterEqual(notes["yc"]["rows"], 3)
         self.assertGreaterEqual(notes["merged"], 4)

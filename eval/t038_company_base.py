@@ -236,11 +236,10 @@ def run_build(out: Path, cache: Path, req: dict, get_fn=None, sleep_fn=time.slee
     t0 = clock()
     budget = float(req.get("time_budget_s") or 7200)
     delay = float(req.get("delay_s") or 0.35)
-    target = int(req.get("target_companies") or 1000)
     cv_min = float(req.get("cv_min") or 0.25)
     checked = J.iso(now)[:10]
     src_notes = {}
-    rows, src_notes = C.collect_sources(get_fn, target=target, include_known=True)
+    rows, src_notes = C.collect_sources(get_fn, include_known=True)
     if req.get("pilot"):
         n = int(req.get("pilot_n") or 40)
         known = [r for r in rows if r.get("source") in {"ats_companies", "t038-seed", "ats_companies+t038-seed"}

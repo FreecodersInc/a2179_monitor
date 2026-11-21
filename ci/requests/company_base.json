@@ -4,6 +4,5 @@
   "mode": "build",
   "time_budget_s": 7200,
   "delay_s": 0.35,
-  "target_companies": 1000,
   "cv_min": 0.25
 }
