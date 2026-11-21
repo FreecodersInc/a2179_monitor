@@ -1,0 +1,145 @@
+{
+ "from": "build",
+ "companies": 4,
+ "live_boards": 4,
+ "live_by_ats": {
+  "greenhouse": 2,
+  "ashby": 1,
+  "lever": 1
+ },
+ "sleeping": 0,
+ "no_board": 0,
+ "vacancies_fetched": 63,
+ "geo_keep_check": 44,
+ "cv_match": 29,
+ "ranked": 29,
+ "weights": {
+  "cv_score": 0.3333333333333333,
+  "tinybert": 0.3333333333333333,
+  "minilm": 0.03333333333333333,
+  "mpnet": 0.03333333333333333,
+  "e5-small": 0.03333333333333333,
+  "e5-base": 0.011111111111111112,
+  "e5-base-qp": 0.011111111111111112,
+  "e5-base-noprefix": 0.011111111111111112,
+  "e5-large": 0.03333333333333333,
+  "e5-large-instruct": 0.03333333333333333,
+  "bge-m3": 0.03333333333333333,
+  "labse": 0.03333333333333333,
+  "bge-base-en": 0.03333333333333333,
+  "e5-base-en": 0.03333333333333333
+ },
+ "cv_source": "master_cv",
+ "source_notes": {
+  "remoteintech": {
+   "url": "https://raw.githubusercontent.com/remoteintech/remote-jobs/main/README.md",
+   "rows": 0
+  },
+  "yc": {
+   "error": "HTTP 404"
+  },
+  "robots": {
+   "remoteintech": "allow",
+   "yc": "allow"
+  },
+  "merged": 4
+ },
+ "fetch_notes": [
+  {
+   "source": "greenhouse",
+   "ok": true,
+   "n": 51,
+   "from_cache": false,
+   "status": 200,
+   "fetched_at": "2026-11-21T20:33:42Z",
+   "boards": 2,
+   "boards_ok": 2,
+   "note": "2 boards, 322 openings, 51 kept by the title prefilter",
+   "home": "https://boards-api.greenhouse.io",
+   "label": "Greenhouse",
+   "boards_detail": [
+    {
+     "ats": "greenhouse",
+     "slug": "canonical",
+     "status": 200,
+     "all": 318,
+     "kept": 51,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "jetbrains",
+     "status": 200,
+     "all": 4,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    }
+   ]
+  },
+  {
+   "source": "lever",
+   "ok": true,
+   "n": 0,
+   "from_cache": true,
+   "status": 200,
+   "fetched_at": "2026-11-21T20:33:42Z",
+   "boards": 1,
+   "boards_ok": 1,
+   "note": "1 boards, 4 openings, 0 kept by the title prefilter",
+   "home": "https://api.lever.co",
+   "label": "Lever",
+   "boards_detail": [
+    {
+     "ats": "lever",
+     "slug": "binance",
+     "status": 200,
+     "all": 4,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    }
+   ]
+  },
+  {
+   "source": "ashby",
+   "ok": true,
+   "n": 12,
+   "from_cache": true,
+   "status": 200,
+   "fetched_at": "2026-11-21T20:33:42Z",
+   "boards": 1,
+   "boards_ok": 1,
+   "note": "1 boards, 81 openings, 12 kept by the title prefilter",
+   "home": "https://api.ashbyhq.com",
+   "label": "Ashby",
+   "boards_detail": [
+    {
+     "ats": "ashby",
+     "slug": "1password",
+     "status": 200,
+     "all": 81,
+     "kept": 12,
+     "from_cache": true,
+     "note": ""
+    }
+   ]
+  }
+ ],
+ "ensemble_errors": {
+  "embedic-base": "OSError: We couldn't connect to 'https://huggingface.co' to load the files, and couldn't find them in the cached files.\nCheck your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'."
+ },
+ "cv_path_present": true,
+ "geo_counts": {
+  "keep": 42,
+  "check": 2,
+  "cut": 19
+ },
+ "cv_min": 0.25,
+ "checked": "2026-11-21",
+ "probe_keys": 4,
+ "live_seeded_known": 4,
+ "budget_s": 7200.0,
+ "elapsed_s": 130.1
+}

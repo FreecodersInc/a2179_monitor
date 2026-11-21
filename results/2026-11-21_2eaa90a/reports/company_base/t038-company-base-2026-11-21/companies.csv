@@ -1,0 +1,5 @@
+name,domain,ats,slug,source,geo,last_ok,n_jobs,company_url,board_url,fail_count,status
+canonical,boards.greenhouse.io,greenhouse,canonical,ats_companies,,2026-11-21,318,https://boards.greenhouse.io/canonical,https://boards.greenhouse.io/canonical,0,live
+1password,jobs.ashbyhq.com,ashby,1password,ats_companies,,2026-11-21,,https://jobs.ashbyhq.com/1password,https://jobs.ashbyhq.com/1password,0,live
+binance,jobs.lever.co,lever,binance,ats_companies,,2026-11-21,1,https://jobs.lever.co/binance,https://jobs.lever.co/binance,0,live
+JetBrains,jetbrains.com,greenhouse,jetbrains,t038-seed,"Belgrade, Serbia",2026-11-21,4,https://www.jetbrains.com/,https://boards.greenhouse.io/jetbrains,0,live
