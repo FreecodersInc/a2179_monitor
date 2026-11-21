@@ -1,0 +1,20 @@
+{
+ "source": "reports/2026-11-21/de_jobs/matches.csv",
+ "n": 608,
+ "keep": 22,
+ "check": 30,
+ "cut": 556,
+ "reasons": {
+  "onsite": 410,
+  "remote_us_canada": 133,
+  "remote_eu_country": 28,
+  "remote_open": 22,
+  "remote_india": 6,
+  "remote_apac": 3,
+  "remote_latam": 3,
+  "remote_unclear": 1,
+  "remote_open_title_country": 1,
+  "remote_other_country": 1
+ },
+ "note": "location field only; job body (work authorization, timezone) not checked"
+}
