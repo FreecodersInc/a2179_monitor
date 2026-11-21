@@ -1,7 +1,7 @@
 {
- "id": "a2179-fresh-2026-11-20-syn",
- "why": "T-023 / T-031 / H-38: synonyms, Cyrillic spellings and part numbers toward 15 real KP positives with cards, same polite fetcher, rows already labeled are dropped",
- "queries_file": "ci/requests/kp_queries_syn.txt",
- "max_pages": 2,
- "time_budget_s": 900
+ "id": "a2179-holdout-2026-11-21-wide",
+ "why": "T-023 / H-31: collect the next post-freeze holdout batch with the established wide query set. Deduplicate against earlier holdouts and obtain independent manual labels before scoring; this collection alone is not a hypothesis verdict.",
+ "queries_file": "ci/requests/kp_queries_wide.txt",
+ "max_pages": 1,
+ "time_budget_s": 600
 }
