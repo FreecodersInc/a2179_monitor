@@ -2,7 +2,7 @@
 
 Файл генерирует `python3 eval/status_check.py --write` из `experiments/HYPOTHESES.md` (таблица итогов), строк `| вердикты |` в `experiments/EXP-*.md` и шапок `work/T-*.md`. Руками не править, CI падает, если он разошёлся с источниками (`tests/test_status_sync.py`).
 
-Гипотезы: accepted 5, refuted 12, mixed 1, partial 4, inconclusive 2, waiting 11, blocked 9, proposed 1. Задачи: done 15, review 2, partial 9, waiting 6, blocked 5.
+Гипотезы: accepted 5, refuted 12, mixed 1, partial 4, inconclusive 2, waiting 11, blocked 9, proposed 1. Задачи: done 15, review 2, partial 9, waiting 6, blocked 5, todo 1.
 
 ## Гипотезы
 | id | статус | где | вывод | решение для приложения или что нужно, чтобы закрыть |
@@ -93,3 +93,4 @@
 | [T-035](T-035_ebay-price-comparison-shipping-rs.md) | blocked | – | robots eBay, ключи API |
 | [T-036](T-036_monitor-job-mode.md) | done | EXP-022 | – |
 | [T-037](T-037_job-mode-sources-and-trial.md) | waiting | EXP-018 | P@10 по оценкам Лёни за 2 недели |
+| [T-038](T-038_company-base-growth.md) | todo | – | несколько сотен живых бордов в data/companies.csv, JetBrains Белград проходит гео фильтр |
