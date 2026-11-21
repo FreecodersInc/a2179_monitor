@@ -1,0 +1,3798 @@
+{
+ "from": "build",
+ "companies": 6926,
+ "live_boards": 408,
+ "live_by_ats": {
+  "greenhouse": 173,
+  "ashby": 110,
+  "lever": 59,
+  "workable": 66
+ },
+ "sleeping": 0,
+ "no_board": 571,
+ "vacancies_fetched": 4478,
+ "geo_keep_check": 881,
+ "cv_match": 312,
+ "ranked": 312,
+ "weights": {
+  "cv_score": 0.3333333333333333,
+  "tinybert": 0.3333333333333333,
+  "minilm": 0.03333333333333333,
+  "mpnet": 0.03333333333333333,
+  "e5-small": 0.03333333333333333,
+  "e5-base": 0.011111111111111112,
+  "e5-base-qp": 0.011111111111111112,
+  "e5-base-noprefix": 0.011111111111111112,
+  "e5-large": 0.03333333333333333,
+  "e5-large-instruct": 0.03333333333333333,
+  "bge-m3": 0.03333333333333333,
+  "labse": 0.03333333333333333,
+  "bge-base-en": 0.03333333333333333,
+  "e5-base-en": 0.03333333333333333
+ },
+ "cv_source": "master_cv",
+ "source_notes": {
+  "remoteintech": {
+   "url": "https://codeload.github.com/remoteintech/remote-jobs/tar.gz/refs/heads/main",
+   "rows": 876
+  },
+  "yc": {
+   "url": "https://yc-oss.github.io/api/companies/all.json",
+   "rows": 6406
+  },
+  "robots": {
+   "remoteintech": "allow",
+   "yc": "allow"
+  },
+  "merged": 6926
+ },
+ "fetch_notes": [
+  {
+   "source": "greenhouse",
+   "ok": true,
+   "n": 2516,
+   "from_cache": false,
+   "status": 200,
+   "fetched_at": "2026-11-21T22:05:37Z",
+   "boards": 173,
+   "boards_ok": 173,
+   "note": "173 boards, 14598 openings, 2516 kept by the title prefilter",
+   "home": "https://boards-api.greenhouse.io",
+   "label": "Greenhouse",
+   "boards_detail": [
+    {
+     "ats": "greenhouse",
+     "slug": "cribl",
+     "status": 200,
+     "all": 84,
+     "kept": 9,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "impinj",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "purestorage",
+     "status": 200,
+     "all": 401,
+     "kept": 73,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "rubrik",
+     "status": 200,
+     "all": 208,
+     "kept": 37,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "axonius",
+     "status": 200,
+     "all": 20,
+     "kept": 2,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "abcellera",
+     "status": 200,
+     "all": 37,
+     "kept": 10,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "adyen",
+     "status": 200,
+     "all": 241,
+     "kept": 42,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "affirm",
+     "status": 200,
+     "all": 222,
+     "kept": 43,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "airtable",
+     "status": 200,
+     "all": 11,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "anthropic",
+     "status": 200,
+     "all": 633,
+     "kept": 207,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "attentive",
+     "status": 200,
+     "all": 29,
+     "kept": 13,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "betterment",
+     "status": 200,
+     "all": 26,
+     "kept": 5,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "braze",
+     "status": 200,
+     "all": 344,
+     "kept": 33,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "carta",
+     "status": 200,
+     "all": 80,
+     "kept": 3,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "celonis",
+     "status": 200,
+     "all": 262,
+     "kept": 63,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "chime",
+     "status": 200,
+     "all": 80,
+     "kept": 29,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "cloudflare",
+     "status": 200,
+     "all": 503,
+     "kept": 70,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "cockroachlabs",
+     "status": 200,
+     "all": 12,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "collibra",
+     "status": 200,
+     "all": 22,
+     "kept": 2,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "contentful",
+     "status": 200,
+     "all": 50,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "databricks",
+     "status": 200,
+     "all": 897,
+     "kept": 150,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "deliveroo",
+     "status": 200,
+     "all": 189,
+     "kept": 20,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "duolingo",
+     "status": 200,
+     "all": 54,
+     "kept": 8,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "geotab",
+     "status": 200,
+     "all": 60,
+     "kept": 9,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "getyourguide",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "hubspotjobs",
+     "status": 200,
+     "all": 141,
+     "kept": 8,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "later",
+     "status": 200,
+     "all": 33,
+     "kept": 8,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "launchdarkly",
+     "status": 200,
+     "all": 33,
+     "kept": 5,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "lucidmotors",
+     "status": 200,
+     "all": 496,
+     "kept": 20,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "lyft",
+     "status": 200,
+     "all": 148,
+     "kept": 42,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "mejuri",
+     "status": 200,
+     "all": 175,
+     "kept": 1,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "monzo",
+     "status": 200,
+     "all": 59,
+     "kept": 15,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "n26",
+     "status": 200,
+     "all": 23,
+     "kept": 5,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "narvar",
+     "status": 200,
+     "all": 4,
+     "kept": 1,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "newrelic",
+     "status": 200,
+     "all": 42,
+     "kept": 2,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "nextdoor",
+     "status": 200,
+     "all": 24,
+     "kept": 7,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "nubank",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "pinterest",
+     "status": 200,
+     "all": 174,
+     "kept": 62,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "remotecom",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "riotgames",
+     "status": 200,
+     "all": 202,
+     "kept": 34,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "robinhood",
+     "status": 200,
+     "all": 163,
+     "kept": 31,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "roblox",
+     "status": 200,
+     "all": 260,
+     "kept": 76,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "samsara",
+     "status": 200,
+     "all": 288,
+     "kept": 32,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "sigmacomputing",
+     "status": 200,
+     "all": 83,
+     "kept": 11,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "sofi",
+     "status": 200,
+     "all": 53,
+     "kept": 17,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "squarespace",
+     "status": 200,
+     "all": 20,
+     "kept": 4,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "starburst",
+     "status": 200,
+     "all": 36,
+     "kept": 4,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "sumologic",
+     "status": 200,
+     "all": 26,
+     "kept": 4,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "sumup",
+     "status": 200,
+     "all": 318,
+     "kept": 16,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "thinkific",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "traderepublic",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "unbounce",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "wikimedia",
+     "status": 200,
+     "all": 12,
+     "kept": 3,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "yext",
+     "status": 200,
+     "all": 29,
+     "kept": 6,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "yugabyte",
+     "status": 200,
+     "all": 21,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "zscaler",
+     "status": 200,
+     "all": 386,
+     "kept": 73,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "jetbrains",
+     "status": 200,
+     "all": 4,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "acquia",
+     "status": 200,
+     "all": 6,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "aha",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "appen",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "appinio",
+     "status": 200,
+     "all": 8,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "asana",
+     "status": 200,
+     "all": 111,
+     "kept": 21,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "axios",
+     "status": 200,
+     "all": 29,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "bandzoogle",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "corp",
+     "status": 200,
+     "all": 1,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "beyond",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "bitwarden",
+     "status": 200,
+     "all": 40,
+     "kept": 5,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "brave",
+     "status": 200,
+     "all": 9,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "cabify",
+     "status": 200,
+     "all": 45,
+     "kept": 9,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "calendly",
+     "status": 200,
+     "all": 4,
+     "kept": 2,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "canonical",
+     "status": 200,
+     "all": 318,
+     "kept": 51,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "chainguard",
+     "status": 200,
+     "all": 109,
+     "kept": 6,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "circleci",
+     "status": 200,
+     "all": 14,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "civicactions",
+     "status": 200,
+     "all": 1,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "coalition",
+     "status": 200,
+     "all": 44,
+     "kept": 14,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "coinbase",
+     "status": 200,
+     "all": 252,
+     "kept": 74,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "comet",
+     "status": 200,
+     "all": 1,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "consensys",
+     "status": 200,
+     "all": 12,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "coursera",
+     "status": 200,
+     "all": 34,
+     "kept": 6,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "customerio",
+     "status": 200,
+     "all": 22,
+     "kept": 4,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "dashlane",
+     "status": 200,
+     "all": 13,
+     "kept": 4,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "datacamp",
+     "status": 200,
+     "all": 38,
+     "kept": 20,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "datadog",
+     "status": 200,
+     "all": 382,
+     "kept": 35,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "discord",
+     "status": 200,
+     "all": 29,
+     "kept": 12,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "doximity",
+     "status": 200,
+     "all": 12,
+     "kept": 4,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "dropbox",
+     "status": 200,
+     "all": 47,
+     "kept": 16,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "ebury",
+     "status": 200,
+     "all": 162,
+     "kept": 30,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "elastic",
+     "status": 200,
+     "all": 382,
+     "kept": 84,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "epicgames",
+     "status": 200,
+     "all": 138,
+     "kept": 34,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "equalexperts",
+     "status": 200,
+     "all": 17,
+     "kept": 8,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "ergeon",
+     "status": 200,
+     "all": 1,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "eyeo",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "fastly",
+     "status": 200,
+     "all": 48,
+     "kept": 11,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "figma",
+     "status": 200,
+     "all": 147,
+     "kept": 32,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "fingerprint",
+     "status": 200,
+     "all": 20,
+     "kept": 6,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "fleetio",
+     "status": 200,
+     "all": 17,
+     "kept": 3,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "flip",
+     "status": 200,
+     "all": 15,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "generalassembly",
+     "status": 200,
+     "all": 27,
+     "kept": 4,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "gitlab",
+     "status": 200,
+     "all": 246,
+     "kept": 32,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "godaddy",
+     "status": 200,
+     "all": 19,
+     "kept": 7,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "gohiring",
+     "status": 200,
+     "all": 4,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "grafanalabs",
+     "status": 200,
+     "all": 140,
+     "kept": 26,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "gremlin",
+     "status": 200,
+     "all": 3,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "honeycomb",
+     "status": 200,
+     "all": 19,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "hudl",
+     "status": 200,
+     "all": 46,
+     "kept": 9,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "ifit",
+     "status": 200,
+     "all": 24,
+     "kept": 9,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "inter",
+     "status": 200,
+     "all": 98,
+     "kept": 35,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "intercom",
+     "status": 200,
+     "all": 120,
+     "kept": 28,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "karat",
+     "status": 200,
+     "all": 11,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "keen",
+     "status": 200,
+     "all": 1,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "kentik",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "khanacademy",
+     "status": 200,
+     "all": 3,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "klaviyo",
+     "status": 200,
+     "all": 126,
+     "kept": 28,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "knack",
+     "status": 200,
+     "all": 1,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "kona",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "labelbox",
+     "status": 200,
+     "all": 13,
+     "kept": 4,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "launchpotato",
+     "status": 200,
+     "all": 13,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "liveperson",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "locusrobotics",
+     "status": 200,
+     "all": 8,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "mattermost",
+     "status": 200,
+     "all": 10,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "medium",
+     "status": 200,
+     "all": 2,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "mercari",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "metalab",
+     "status": 200,
+     "all": 4,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "mixmax",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "modernhealth",
+     "status": 200,
+     "all": 4,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "mongodb",
+     "status": 200,
+     "all": 417,
+     "kept": 56,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "mozilla",
+     "status": 200,
+     "all": 138,
+     "kept": 11,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "muckrack",
+     "status": 200,
+     "all": 6,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "nearform",
+     "status": 200,
+     "all": 23,
+     "kept": 6,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "netlify",
+     "status": 200,
+     "all": 6,
+     "kept": 1,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "noredink",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "nuharborsecurity",
+     "status": 200,
+     "all": 2,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "octopusdeploy",
+     "status": 200,
+     "all": 5,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "oddball",
+     "status": 200,
+     "all": 15,
+     "kept": 6,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "okta",
+     "status": 200,
+     "all": 372,
+     "kept": 74,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "openzeppelin",
+     "status": 200,
+     "all": 6,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "packlink",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "pagerduty",
+     "status": 200,
+     "all": 48,
+     "kept": 10,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "paypay",
+     "status": 200,
+     "all": 87,
+     "kept": 9,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "platformsh",
+     "status": 200,
+     "all": 8,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "raft",
+     "status": 200,
+     "all": 34,
+     "kept": 4,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "solutions",
+     "status": 200,
+     "all": 13,
+     "kept": 3,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "reddit",
+     "status": 200,
+     "all": 148,
+     "kept": 61,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "rocketchat",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "scandit",
+     "status": 200,
+     "all": 11,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "seatgeek",
+     "status": 200,
+     "all": 36,
+     "kept": 6,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "securityscorecard",
+     "status": 200,
+     "all": 10,
+     "kept": 3,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "smugmug",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "stackexchange",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "status",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "stitchfix",
+     "status": 200,
+     "all": 13,
+     "kept": 6,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "stone",
+     "status": 200,
+     "all": 300,
+     "kept": 6,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "streamnative",
+     "status": 200,
+     "all": 2,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "stripe",
+     "status": 200,
+     "all": 778,
+     "kept": 113,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "tailscale",
+     "status": 200,
+     "all": 89,
+     "kept": 6,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "teravision",
+     "status": 200,
+     "all": 4,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "ghost",
+     "status": 200,
+     "all": 5,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "thorn",
+     "status": 200,
+     "all": 3,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "thrivemarket",
+     "status": 200,
+     "all": 18,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "tide",
+     "status": 200,
+     "all": 84,
+     "kept": 24,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "toast",
+     "status": 200,
+     "all": 326,
+     "kept": 21,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "turing",
+     "status": 200,
+     "all": 31,
+     "kept": 16,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "twilio",
+     "status": 200,
+     "all": 109,
+     "kept": 14,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "udacity",
+     "status": 200,
+     "all": 22,
+     "kept": 11,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "upwork",
+     "status": 200,
+     "all": 4,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "valimail",
+     "status": 200,
+     "all": 4,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "verve",
+     "status": 200,
+     "all": 36,
+     "kept": 6,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "voxmedia",
+     "status": 200,
+     "all": 21,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "wizeline",
+     "status": 200,
+     "all": 32,
+     "kept": 8,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "xpinc",
+     "status": 200,
+     "all": 109,
+     "kept": 4,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "zenrows",
+     "status": 200,
+     "all": 2,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "turing",
+     "status": 200,
+     "all": 31,
+     "kept": 16,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "greenhouse",
+     "slug": "medium",
+     "status": 200,
+     "all": 2,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    }
+   ]
+  },
+  {
+   "source": "lever",
+   "ok": true,
+   "n": 617,
+   "from_cache": false,
+   "status": 200,
+   "fetched_at": "2026-11-21T22:05:37Z",
+   "boards": 59,
+   "boards_ok": 59,
+   "note": "59 boards, 2777 openings, 617 kept by the title prefilter",
+   "home": "https://api.lever.co",
+   "label": "Lever",
+   "boards_detail": [
+    {
+     "ats": "lever",
+     "slug": "binance",
+     "status": 200,
+     "all": 4,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "crypto",
+     "status": 200,
+     "all": 90,
+     "kept": 27,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "highspot",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "outreach",
+     "status": 200,
+     "all": 17,
+     "kept": 4,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "palantir",
+     "status": 200,
+     "all": 308,
+     "kept": 77,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "pointclickcare",
+     "status": 200,
+     "all": 87,
+     "kept": 33,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "rover",
+     "status": 200,
+     "all": 23,
+     "kept": 8,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "shieldai",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "tealbook",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "wattpad",
+     "status": 200,
+     "all": 20,
+     "kept": 2,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "waveapps",
+     "status": 200,
+     "all": 9,
+     "kept": 3,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "wealthfront",
+     "status": 200,
+     "all": 20,
+     "kept": 6,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "wealthsimple",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "whoop",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "zoox",
+     "status": 200,
+     "all": 244,
+     "kept": 58,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "15five",
+     "status": 200,
+     "all": 4,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "90seconds",
+     "status": 200,
+     "all": 8,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "activecampaign",
+     "status": 200,
+     "all": 8,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "bazaarvoice",
+     "status": 200,
+     "all": 11,
+     "kept": 3,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "aerostrat",
+     "status": 200,
+     "all": 3,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "anomali",
+     "status": 200,
+     "all": 7,
+     "kept": 5,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "articulate",
+     "status": 200,
+     "all": 2,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "bluecatnetworks",
+     "status": 200,
+     "all": 24,
+     "kept": 7,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "bounteous",
+     "status": 200,
+     "all": 34,
+     "kept": 8,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "britecore",
+     "status": 200,
+     "all": 9,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "caremessage",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "charitywater",
+     "status": 200,
+     "all": 6,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "collabora",
+     "status": 200,
+     "all": 2,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "dronedeploy",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "extremenetworks",
+     "status": 200,
+     "all": 71,
+     "kept": 38,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "findem",
+     "status": 200,
+     "all": 7,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "fly",
+     "status": 200,
+     "all": 2,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "gojob",
+     "status": 200,
+     "all": 79,
+     "kept": 5,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "graylog",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "heetch",
+     "status": 200,
+     "all": 26,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "kinsta",
+     "status": 200,
+     "all": 3,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "kraken",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "logrocket",
+     "status": 200,
+     "all": 8,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "marcopolo",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "mindful",
+     "status": 200,
+     "all": 11,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "tri",
+     "status": 200,
+     "all": 49,
+     "kept": 16,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "myollie",
+     "status": 200,
+     "all": 1,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "olo",
+     "status": 200,
+     "all": 15,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "palantir",
+     "status": 200,
+     "all": 308,
+     "kept": 77,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "paytm",
+     "status": 200,
+     "all": 199,
+     "kept": 12,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "prominentedge",
+     "status": 200,
+     "all": 3,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "rackspace",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "redoxengine",
+     "status": 200,
+     "all": 3,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "renofi",
+     "status": 200,
+     "all": 3,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "sonatype",
+     "status": 200,
+     "all": 13,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "spotify",
+     "status": 200,
+     "all": 91,
+     "kept": 33,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "spreedly",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "sysdig",
+     "status": 200,
+     "all": 35,
+     "kept": 5,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "teamsnap",
+     "status": 200,
+     "all": 7,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "toptal",
+     "status": 200,
+     "all": 25,
+     "kept": 5,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "truelogicsoftware",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "veeva",
+     "status": 200,
+     "all": 860,
+     "kept": 171,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "verygoodsecurity",
+     "status": 200,
+     "all": 18,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "lever",
+     "slug": "webfx",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    }
+   ]
+  },
+  {
+   "source": "ashby",
+   "ok": true,
+   "n": 1541,
+   "from_cache": false,
+   "status": 200,
+   "fetched_at": "2026-11-21T22:05:37Z",
+   "boards": 110,
+   "boards_ok": 110,
+   "note": "110 boards, 5558 openings, 1541 kept by the title prefilter",
+   "home": "https://api.ashbyhq.com",
+   "label": "Ashby",
+   "boards_detail": [
+    {
+     "ats": "ashby",
+     "slug": "bolt",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "clickhouse",
+     "status": 200,
+     "all": 205,
+     "kept": 70,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "cursor",
+     "status": 200,
+     "all": 89,
+     "kept": 13,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "drata",
+     "status": 200,
+     "all": 24,
+     "kept": 1,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "elevenlabs",
+     "status": 200,
+     "all": 122,
+     "kept": 8,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "harvey",
+     "status": 200,
+     "all": 388,
+     "kept": 60,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "hex",
+     "status": 200,
+     "all": 42,
+     "kept": 7,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "klue",
+     "status": 200,
+     "all": 6,
+     "kept": 2,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "koho",
+     "status": 200,
+     "all": 9,
+     "kept": 1,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "ledger",
+     "status": 200,
+     "all": 17,
+     "kept": 3,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "lightspeedhq",
+     "status": 200,
+     "all": 127,
+     "kept": 17,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "materialize",
+     "status": 200,
+     "all": 4,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "mercury",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "miro",
+     "status": 200,
+     "all": 13,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "modal",
+     "status": 200,
+     "all": 52,
+     "kept": 9,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "montecarlodata",
+     "status": 200,
+     "all": 11,
+     "kept": 1,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "motherduck",
+     "status": 200,
+     "all": 6,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "niantic",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "notion",
+     "status": 200,
+     "all": 170,
+     "kept": 17,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "openai",
+     "status": 200,
+     "all": 851,
+     "kept": 255,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "perplexity",
+     "status": 200,
+     "all": 151,
+     "kept": 42,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "pinecone",
+     "status": 200,
+     "all": 8,
+     "kept": 2,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "prefect",
+     "status": 200,
+     "all": 5,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "sentry",
+     "status": 200,
+     "all": 42,
+     "kept": 12,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "snyk",
+     "status": 200,
+     "all": 39,
+     "kept": 3,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "sonder",
+     "status": 200,
+     "all": 4,
+     "kept": 1,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "trulioo",
+     "status": 200,
+     "all": 28,
+     "kept": 5,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "visier",
+     "status": 200,
+     "all": 1,
+     "kept": 1,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "1password",
+     "status": 200,
+     "all": 81,
+     "kept": 12,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "airbyte",
+     "status": 200,
+     "all": 14,
+     "kept": 6,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "airgarage",
+     "status": 200,
+     "all": 22,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "alan",
+     "status": 200,
+     "all": 135,
+     "kept": 12,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "andela",
+     "status": 200,
+     "all": 5,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "appcues",
+     "status": 200,
+     "all": 1,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "astronomer",
+     "status": 200,
+     "all": 21,
+     "kept": 7,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "betterup",
+     "status": 200,
+     "all": 8,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "buffer",
+     "status": 200,
+     "all": 2,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "calibre",
+     "status": 200,
+     "all": 2,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "capchase",
+     "status": 200,
+     "all": 7,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "checkly",
+     "status": 200,
+     "all": 2,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "chromatic",
+     "status": 200,
+     "all": 6,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "clickup",
+     "status": 200,
+     "all": 48,
+     "kept": 10,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "close",
+     "status": 200,
+     "all": 3,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "cloudbees",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "dave",
+     "status": 200,
+     "all": 10,
+     "kept": 4,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "deel",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "docker",
+     "status": 200,
+     "all": 50,
+     "kept": 10,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "doit",
+     "status": 200,
+     "all": 1033,
+     "kept": 665,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "envoy",
+     "status": 200,
+     "all": 23,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "gitbook",
+     "status": 200,
+     "all": 3,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "glitch",
+     "status": 200,
+     "all": 15,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "gridium",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "gruntwork",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "headway",
+     "status": 200,
+     "all": 94,
+     "kept": 13,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "helpscout",
+     "status": 200,
+     "all": 5,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "hopper",
+     "status": 200,
+     "all": 29,
+     "kept": 12,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "hubstaff",
+     "status": 200,
+     "all": 1,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "infinite",
+     "status": 200,
+     "all": 3,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "influxdata",
+     "status": 200,
+     "all": 8,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "instructure",
+     "status": 200,
+     "all": 54,
+     "kept": 7,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "joor",
+     "status": 200,
+     "all": 2,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "kestra",
+     "status": 200,
+     "all": 4,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "kindred",
+     "status": 200,
+     "all": 6,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "lifen",
+     "status": 200,
+     "all": 7,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "lightspeedhq",
+     "status": 200,
+     "all": 127,
+     "kept": 17,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "linear",
+     "status": 200,
+     "all": 32,
+     "kept": 2,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "litmus",
+     "status": 200,
+     "all": 34,
+     "kept": 3,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "luxor",
+     "status": 200,
+     "all": 4,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "mapbox",
+     "status": 200,
+     "all": 40,
+     "kept": 11,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "meridianlink",
+     "status": 200,
+     "all": 27,
+     "kept": 13,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "mux",
+     "status": 200,
+     "all": 2,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "nerdwallet",
+     "status": 200,
+     "all": 28,
+     "kept": 5,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "netris",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "nuna",
+     "status": 200,
+     "all": 5,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "openrouter",
+     "status": 200,
+     "all": 28,
+     "kept": 4,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "payscale",
+     "status": 200,
+     "all": 9,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "percona",
+     "status": 200,
+     "all": 12,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "plaid",
+     "status": 200,
+     "all": 147,
+     "kept": 33,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "pleo",
+     "status": 200,
+     "all": 33,
+     "kept": 4,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "posthog",
+     "status": 200,
+     "all": 9,
+     "kept": 3,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "prelude",
+     "status": 200,
+     "all": 13,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "primer",
+     "status": 200,
+     "all": 15,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "procurify",
+     "status": 200,
+     "all": 10,
+     "kept": 1,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "quora",
+     "status": 200,
+     "all": 8,
+     "kept": 6,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "railway",
+     "status": 200,
+     "all": 7,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "ramp",
+     "status": 200,
+     "all": 187,
+     "kept": 22,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "raycast",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "render",
+     "status": 200,
+     "all": 37,
+     "kept": 8,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "replit",
+     "status": 200,
+     "all": 38,
+     "kept": 14,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "resend",
+     "status": 200,
+     "all": 13,
+     "kept": 4,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "revenuecat",
+     "status": 200,
+     "all": 10,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "sardine",
+     "status": 200,
+     "all": 40,
+     "kept": 5,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "searchapi",
+     "status": 200,
+     "all": 12,
+     "kept": 2,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "spruce",
+     "status": 200,
+     "all": 6,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "stickermule",
+     "status": 200,
+     "all": 3,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "supabase",
+     "status": 200,
+     "all": 80,
+     "kept": 19,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "svix",
+     "status": 200,
+     "all": 3,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "ycombinator",
+     "status": 200,
+     "all": 8,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "temporal",
+     "status": 200,
+     "all": 92,
+     "kept": 19,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "testgorilla",
+     "status": 200,
+     "all": 3,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "planet",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "vercel",
+     "status": 200,
+     "all": 0,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "virtahealth",
+     "status": 200,
+     "all": 22,
+     "kept": 6,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "workos",
+     "status": 200,
+     "all": 26,
+     "kept": 5,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "yazio",
+     "status": 200,
+     "all": 2,
+     "kept": 1,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "zapier",
+     "status": 200,
+     "all": 9,
+     "kept": 3,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "zip",
+     "status": 200,
+     "all": 111,
+     "kept": 10,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "zip",
+     "status": 200,
+     "all": 111,
+     "kept": 10,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "infinite",
+     "status": 200,
+     "all": 3,
+     "kept": 0,
+     "from_cache": true,
+     "note": ""
+    },
+    {
+     "ats": "ashby",
+     "slug": "litmus",
+     "status": 200,
+     "all": 34,
+     "kept": 3,
+     "from_cache": true,
+     "note": ""
+    }
+   ]
+  },
+  {
+   "source": "workable",
+   "ok": false,
+   "n": 0,
+   "from_cache": false,
+   "status": null,
+   "fetched_at": "2026-11-21T22:05:37Z",
+   "boards": 66,
+   "boards_ok": 0,
+   "note": "66 boards, 0 openings, 0 kept by the title prefilter",
+   "home": "https://apply.workable.com",
+   "label": "Workable",
+   "boards_detail": [
+    {
+     "ats": "workable",
+     "slug": "10up",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "37signals",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "3blocks",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "42technologies",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "ably",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "adhocteam",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "adeva",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "adzuna",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "aerolab",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "ae",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "aiir",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "akamai",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "akka",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "algorand",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "alice",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "alight",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "alley",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "allydvm",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "engineering",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "amazon",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "animalz",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "argyle",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "artlogic",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "atento",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "atlassian",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "carecru",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "cartstack",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "casumo",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "chainlink-labs",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "chargify",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "chef",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "cloudera",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "cloudlinux",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "compuco",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "continu",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "conversio",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "convert",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "coodesh",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "core-apps",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "coreos",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "dealdash",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "delighted",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "edgar",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "edify",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "elsewhen",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "embraer",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "employmenthero",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "encora",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "epam",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "factorialhr",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "ffw-agency",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "filament",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "fis-global",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "fiverr",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "fullfabric",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "ghost-inspector",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "hanzo",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "hashicorp",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "heroku",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "honeybadger",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "hotjar",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "hubspot",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "huggingface",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "hugo",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "humanmade",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    },
+    {
+     "ats": "workable",
+     "slug": "alice",
+     "status": 429,
+     "all": 0,
+     "kept": 0,
+     "from_cache": false,
+     "note": ""
+    }
+   ]
+  }
+ ],
+ "ensemble_errors": {
+  "embedic-base": "OSError: We couldn't connect to 'https://huggingface.co' to load the files, and couldn't find them in the cached files.\nCheck your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'."
+ },
+ "cv_path_present": true,
+ "geo_counts": {
+  "keep": 141,
+  "check": 740,
+  "cut": 3597
+ },
+ "cv_min": 0.25,
+ "checked": "2026-11-21",
+ "probe_keys": 4939,
+ "live_seeded_known": 408,
+ "budget_s": 7200.0,
+ "elapsed_s": 4651.1
+}
