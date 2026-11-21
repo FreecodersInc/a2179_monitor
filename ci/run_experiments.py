@@ -293,7 +293,7 @@ def runner_steps(py, out: Path, T, req, dense):
                                                   "--device", COMPUTE_ENV.get("A2179_DEVICE", "cpu")], min(T, 900))
         elif s == "exp030":
             rec = run("runner_exp[exp030]", [py, "eval/exp030_cv_ensemble.py", "--out", str(d),
-                      "--review", str(out / "reports")], 5400,
+                      "--review", str(out / "reports")], 9000,
                       env={"CUDA_VISIBLE_DEVICES": "", "HF_HUB_OFFLINE": "1", "TRANSFORMERS_OFFLINE": "1"})
         elif s == "exp028":
             # EXP-028: CPU only, one model at a time, runner may fetch weights. GPU stays hidden.

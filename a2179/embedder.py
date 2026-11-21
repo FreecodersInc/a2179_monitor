@@ -230,6 +230,8 @@ class EmbedSim:
             raise
         except Exception as e:
             raise classify_load_error(e, model_name) from e
+        if self.device == "cpu" and model_name == "intfloat/multilingual-e5-large-instruct" and os.environ.get("A2179_CPU_FP32") == "1":
+            self.model.float()  # fp16 checkpoint on the runner's AVX2 CPU
         self.load_s = time.monotonic() - t0
         self._kw = {"normalize_embeddings": True, "convert_to_numpy": True, "show_progress_bar": False,
                     "batch_size": int(batch_size or os.environ.get("A2179_EMBED_BATCH") or 32)}

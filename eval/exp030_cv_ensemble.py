@@ -2,11 +2,12 @@
 import argparse
 import csv
 import gc
+import hashlib
+import os
 import json
 import sys
 from pathlib import Path
 
-import numpy as np
 from scipy.stats import rankdata
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,7 +38,11 @@ def write_csv(path, rows):
 def cosine(model, query, titles):
     from sentence_transformers import SentenceTransformer
     encoder = SentenceTransformer(model["id"], device="cpu", local_files_only=True)
-    q = encoder.encode([model["text_prefix"] + query], normalize_embeddings=True)[0]
+    prefix = model["text_prefix"]
+    if model["short"] == "e5-large-instruct":
+        encoder.float()
+        prefix = "Instruct: Given a candidate resume, retrieve relevant job titles.\nQuery: "
+    q = encoder.encode([prefix + query], normalize_embeddings=True)[0]
     documents = encoder.encode([model["proto_prefix"] + t for t in titles], batch_size=16,
                                normalize_embeddings=True, show_progress_bar=False)
     return documents @ q
@@ -69,7 +74,7 @@ def main():
     args = ap.parse_args()
     out = args.out
     live = csv_rows(max(args.review.glob("????-??-??/de_jobs/all.csv")))
-    previous = csv_rows(max((ROOT / "reports").glob("????-??-??/de_jobs/all.csv")))
+    previous = csv_rows(ROOT / "results/2026-11-21_beb1925/reports/2026-11-21/de_jobs/all.csv")
     seen = {r["url"] for r in previous}
     for r in live:
         r["new_since_previous_report"] = int(r["url"] not in seen)
@@ -91,7 +96,19 @@ def main():
     for model in models:
         name = model["short"]
         try:
-            raw[name] = dict(zip(titles, map(float, cosine(model, query, titles)), strict=True))
+            # Resume title scores on retries. Include the encoder protocol and CV in the key.
+            cache = Path(os.environ["A2179_DENSE_CACHE"]) / "exp030"
+            cache.mkdir(parents=True, exist_ok=True)
+            digest = hashlib.sha256(json.dumps([2, model, query]).encode()).hexdigest()
+            file = cache / (digest + ".json")
+            scores = json.loads(file.read_text()) if file.exists() else {}
+            missing = [t for t in titles if t not in scores]
+            if missing:
+                scores.update(zip(missing, map(float, cosine(model, query, missing)), strict=True))
+                tmp = file.with_suffix(".tmp")
+                tmp.write_text(json.dumps(scores))
+                tmp.replace(file)
+            raw[name] = scores
             sweep.compute_dense(holdout, out / f"holdout_{name}.jsonl", model["id"], model["proto_prefix"],
                                 model["text_prefix"], local_only=True, device="cpu", pos=pos, neg=neg)
         except Exception as exc:

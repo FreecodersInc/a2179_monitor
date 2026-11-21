@@ -503,6 +503,11 @@ class TestTelegramIntegration(unittest.TestCase):
 
 
 class TestCacheModel(unittest.TestCase):
+    def setUp(self):
+        self.snapshot = Path(self.enterContext(tempfile.TemporaryDirectory()))
+        for filename in ("config.json", "model.safetensors", "pytorch_model.bin"):
+            (self.snapshot / filename).touch()
+
     def run_with(self, fake, env, argv=None):
         import importlib
         import types
@@ -511,6 +516,7 @@ class TestCacheModel(unittest.TestCase):
         mod.snapshot_download = fake
         old_mod, old_env = sys.modules.get("huggingface_hub"), dict(os.environ)
         sys.modules["huggingface_hub"] = mod
+        os.environ.pop("A2179_CI_MODELS", None)
         os.environ.update(env)
         try:
             return importlib.reload(cache_model).main(argv)
@@ -527,7 +533,7 @@ class TestCacheModel(unittest.TestCase):
 
         def fake(name, local_files_only=False, **kw):
             calls.append(local_files_only)
-            return "/hf/x"
+            return str(self.snapshot)
         self.assertEqual(self.run_with(fake, {"A2179_CI_MODEL": "m", "HF_HUB_OFFLINE": "0"}), 0)
         self.assertEqual(calls, [True])
 
@@ -538,7 +544,7 @@ class TestCacheModel(unittest.TestCase):
             calls.append(local_files_only)
             if local_files_only:
                 raise FileNotFoundError(name)
-            return "/hf/x"
+            return str(self.snapshot)
         self.assertEqual(self.run_with(fake, {"A2179_CI_MODEL": "m", "HF_HUB_OFFLINE": "1"}), 4)
         self.assertEqual(calls, [True])
         self.assertEqual(self.run_with(fake, {"A2179_CI_MODEL": "m", "HF_HUB_OFFLINE": "0"}), 0)
@@ -551,7 +557,7 @@ class TestCacheModel(unittest.TestCase):
             seen.append((name, local_files_only, tuple(allow_patterns or ())))
             if local_files_only and name == "BAAI/bge-m3":
                 raise FileNotFoundError(name)
-            return "/hf/x"
+            return str(self.snapshot)
         rc = self.run_with(fake, {"A2179_CI_MODELS": "e5-base, BAAI/bge-m3", "HF_HUB_OFFLINE": "0"})
         self.assertEqual(rc, 0)
         self.assertEqual([x[0] for x in seen], ["intfloat/multilingual-e5-base", "BAAI/bge-m3", "BAAI/bge-m3"])
@@ -567,7 +573,7 @@ class TestCacheModel(unittest.TestCase):
             seen.append(name)
             if name == "bad/model":
                 raise RuntimeError("401 gated")
-            return "/hf/x"
+            return str(self.snapshot)
         self.assertEqual(self.run_with(fake, {"A2179_CI_MODELS": "bad/model,e5-small", "HF_HUB_OFFLINE": "0"}), 5)
         self.assertIn("intfloat/multilingual-e5-small", seen)
 
