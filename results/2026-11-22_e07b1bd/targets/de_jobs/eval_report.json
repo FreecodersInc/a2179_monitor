@@ -1,0 +1,611 @@
+{
+  "target": "de_jobs",
+  "dataset": {
+    "n": 462,
+    "positives": 213,
+    "negatives": 249,
+    "by_source": {
+      "real:remotive": 15,
+      "real:remoteok": 97,
+      "real:lever": 24,
+      "real:greenhouse": 247,
+      "real:ashby": 79
+    },
+    "by_lang": {
+      "en": 462
+    },
+    "by_kind": {
+      "esci_E": 91,
+      "esci_I": 166,
+      "esci_S": 122,
+      "esci_C": 83
+    }
+  },
+  "modes": {
+    "regex": {
+      "precision": 0.9688,
+      "recall": 0.5822,
+      "f1": 0.7273,
+      "tp": 124,
+      "fp": 4,
+      "fn": 89,
+      "tn": 245
+    },
+    "tfidf": {
+      "note": "no threshold reaches recall 1.0"
+    },
+    "hybrid_tfidf": {
+      "note": "no threshold reaches recall 1.0"
+    },
+    "embed": {
+      "note": "no threshold reaches recall 1.0"
+    },
+    "hybrid_embed": {
+      "note": "no threshold reaches recall 1.0"
+    }
+  },
+  "generated": "2026-11-22 03:04 CET",
+  "embedder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "errors": {
+    "regex": [
+      [
+        19,
+        1,
+        "Cloud Engineer Automation",
+        "model=devops; no part term"
+      ],
+      [
+        29,
+        1,
+        "Senior Agentic AI Engineer NDA",
+        "model=ai_platform; no part term"
+      ],
+      [
+        33,
+        1,
+        "Platform and Integration Engineer Security Telemetry",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        42,
+        1,
+        "AI Engineer Data APIs",
+        "model=ai_platform; no part term"
+      ],
+      [
+        92,
+        1,
+        "Feltsense AI Engineer",
+        "model=ai_platform; no part term"
+      ],
+      [
+        121,
+        1,
+        "Senior Software Engineer, Platform",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        122,
+        1,
+        "Senior Software Engineer, Platform",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        123,
+        1,
+        "Senior Software Engineer, Platform",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        124,
+        1,
+        "Senior Software Engineer, Core Platform",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        127,
+        1,
+        "Staff Software Engineer, Platform Infrastructure",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        129,
+        1,
+        "Staff Software Engineer, Platform Infrastructure - Dublin",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        130,
+        1,
+        "Staff Software Engineer, Platform Infrastructure - London",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        131,
+        1,
+        "Senior Solutions Architect (EDW Enterprise Data Warehouse Migrations)",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        132,
+        1,
+        "Senior Solutions Architect (EDW Enterprise Data Warehouse Migrations)",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        133,
+        1,
+        "Senior Solutions Architect (EDW Enterprise Data Warehouse Migrations)",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        134,
+        1,
+        "Senior Solutions Architect (EDW Enterprise Data Warehouse Migrations)",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        135,
+        1,
+        "Senior Solutions Architect (EDW Enterprise Data Warehouse Migrations)",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        138,
+        1,
+        "Senior Software Engineer (Data Platform)",
+        "model=strong; no part term"
+      ],
+      [
+        139,
+        1,
+        "Staff Software Engineer (Data Platform)",
+        "model=strong; no part term"
+      ],
+      [
+        140,
+        1,
+        "Senior Specialist Solutions Engineer (Infrastructure & Platform)",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        143,
+        1,
+        "Applied AI Engineer",
+        "model=ai_platform; no part term"
+      ],
+      [
+        144,
+        0,
+        "Senior Mobile Cross Platform Engineer",
+        "model=devops; strong_part=platform engineer"
+      ],
+      [
+        145,
+        1,
+        "Staff Software Engineer - AI Research Infrastructure",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        148,
+        1,
+        "Specialist Solutions Architect - Data Engineering",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        150,
+        1,
+        "Staff Software Engineer - Data Platform",
+        "model=strong; no part term"
+      ],
+      [
+        152,
+        1,
+        "Staff Software Engineer - Security Infrastructure",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        153,
+        1,
+        "Staff Software Engineer - Security Infrastructure",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        156,
+        1,
+        "Senior Staff Software Engineer - Security Infrastructure",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        157,
+        1,
+        "Senior Staff Software Engineer - Security Infrastructure",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        162,
+        1,
+        "Senior Software Engineer - Infrastructure and Tools",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        172,
+        1,
+        "Sr Platform Monitoring Engineer",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        178,
+        1,
+        "Senior Software Engineer - Multi Cloud Efficiency",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        179,
+        1,
+        "Staff Software Engineer - Multi Cloud Efficiency",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        180,
+        1,
+        "Staff Backend Software Engineer- (AI Platform)",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        182,
+        1,
+        "Senior Software Engineer - Backend Infrastructure",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        186,
+        1,
+        "AI Forward Deployed Engineer",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        189,
+        1,
+        "Senior Software Engineer (Backend) - AI/ML Environments",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        191,
+        1,
+        "AI Engineer – Forward Deployed Engineering (AI FDE)",
+        "model=ai_platform; no part term"
+      ],
+      [
+        195,
+        1,
+        "Specialist Solutions Architect - Azure Infrastructure & AI Platform",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        198,
+        1,
+        "Director of Engineering (Data Infrastructure)",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        199,
+        1,
+        "Senior Specialist Solutions Architect (AI/ML)",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        201,
+        1,
+        "Evergreen - AI Engineer, AI FDE",
+        "model=ai_platform; no part term"
+      ],
+      [
+        202,
+        1,
+        "Member of Technical Staff (AI Inference Engineer)",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        204,
+        1,
+        "Senior AI Engineer - FDE (Forward Deployed Engineer)",
+        "model=ai_platform; no part term"
+      ],
+      [
+        205,
+        1,
+        "AI Engineer - FDE (Forward Deployed Engineer)",
+        "model=ai_platform; no part term"
+      ],
+      [
+        206,
+        1,
+        "Software Engineer, Data Infrastructure",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        207,
+        1,
+        "Senior Manager, Data Engineering - Valorant",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        208,
+        1,
+        "Member of Technical Staff (AI Inference Engineer)",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        210,
+        1,
+        "Specialist Solutions Architect (Data Warehousing)",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        217,
+        1,
+        "Specialist Solutions Architect - AI/ML",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        218,
+        1,
+        "Specialist Solutions Architect - AI/ML",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        219,
+        1,
+        "Specialist Solutions Architect - AI/ML",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        224,
+        1,
+        "Sr. Specialist Solutions Architect - Platform Security and Cloud Infrastructure",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        228,
+        1,
+        "Data Engineering Intern - Summer 2027",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        239,
+        0,
+        "Sr. Software Engineer- Databricks AI",
+        "model=weak; strong_part=databricks"
+      ],
+      [
+        240,
+        0,
+        "Staff Software Engineer- Databricks AI",
+        "model=weak; strong_part=databricks"
+      ],
+      [
+        245,
+        1,
+        "Senior Software Engineer, Data Platform",
+        "model=strong; no part term"
+      ],
+      [
+        246,
+        1,
+        "Software Engineer, Infrastructure",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        280,
+        1,
+        "Senior Software Engineer - Cloud Infrastructure - (Canada Remote)",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        287,
+        1,
+        "Staff Software Engineer (Query Infrastructure)",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        315,
+        1,
+        "Director, GTM AI Engineering",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        325,
+        1,
+        "Applied AI Engineer, Codex",
+        "model=ai_platform; no part term"
+      ],
+      [
+        327,
+        1,
+        "Sr. Staff Software Engineer, Cloud Networking & Datapath",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        332,
+        1,
+        "Applied AI Engineer, Codex",
+        "model=ai_platform; no part term"
+      ],
+      [
+        333,
+        1,
+        "Manager, Site Reliability Engineering",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        343,
+        1,
+        "Principal Engineer, AI Platform",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        344,
+        1,
+        "Senior Backend Engineer - ClickPipes Platform",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        349,
+        1,
+        "Principal AI Engineer - Context - Agents and Context",
+        "model=ai_platform; no part term"
+      ],
+      [
+        359,
+        1,
+        "Senior Machine Learning Systems Engineer, ML Platform",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        360,
+        1,
+        "Senior Software Engineer, Data Platform",
+        "model=strong; no part term"
+      ],
+      [
+        368,
+        1,
+        "Senior Software Engineer, GenAI Platform",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        370,
+        1,
+        "Senior Cloud Security Engineer",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        373,
+        1,
+        "Senior Staff Software Engineer, Data Platform",
+        "model=strong; no part term"
+      ],
+      [
+        379,
+        1,
+        "Distinguished Engineer, Machine Learning - Economy",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        380,
+        1,
+        "Backend Software Engineer - Infrastructure",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        384,
+        1,
+        "Backend Software Engineer - Infrastructure, Foundations",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        387,
+        1,
+        "Staff Software Engineer, Core Infrastructure",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        394,
+        0,
+        "Network Infrastructure Engineer, Global Network Infra (WAN)",
+        "model=ml_sre_infra; strong_part=infrastructure engineer"
+      ],
+      [
+        398,
+        1,
+        "Applied AI Engineer",
+        "model=ai_platform; no part term"
+      ],
+      [
+        403,
+        1,
+        "Software Engineer, Infrastructure Security",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        404,
+        1,
+        "Senior Software Engineer, Replit Cloud",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        410,
+        1,
+        "Solutions Architect, AI",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        412,
+        1,
+        "Staff Software Engineer - Data Infrastructure",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        415,
+        1,
+        "Staff+ Software Engineer, ML Sampling Path",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        418,
+        1,
+        "Applied AI Engineer, Codex Core Agent",
+        "model=ai_platform; no part term"
+      ],
+      [
+        420,
+        1,
+        "Applied AI Architect",
+        "model=none; no matching engineering or data role"
+      ],
+      [
+        422,
+        1,
+        "Applied AI Engineer, Commercial",
+        "model=ai_platform; no part term"
+      ],
+      [
+        432,
+        1,
+        "Software Engineer, CI/CD & ML Infrastructure",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        435,
+        1,
+        "(Canada) Principal ML System Engineer",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        438,
+        1,
+        "Software Engineer, Data Infrastructure",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        441,
+        1,
+        "Principal Software Engineer - Big Data & Java",
+        "model=weak; no part term"
+      ],
+      [
+        449,
+        1,
+        "Software Engineer, HSM Infrastructure Security, Consumer Devices",
+        "model=ml_sre_infra; no part term"
+      ],
+      [
+        452,
+        1,
+        "Machine Learning Programmer, Memory",
+        "model=ml_sre_infra; no part term"
+      ]
+    ]
+  }
+}

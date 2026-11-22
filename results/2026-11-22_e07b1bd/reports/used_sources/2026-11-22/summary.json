@@ -1,0 +1,60 @@
+{
+ "date": "2026-11-22",
+ "request": "used-daily-v1",
+ "pages": [
+  {
+   "url": "https://www.kupindo.com/Racunari-i-oprema/Laptop-racunari-delovi-i-oprema/artikli/1469",
+   "status": 200,
+   "verdict": "ok",
+   "lots": 24,
+   "category_links": []
+  },
+  {
+   "url": "https://www.kupindo.com/Racunari-i-oprema/Laptop-racunari-delovi-i-oprema/artikli/1469_strana_2",
+   "status": 200,
+   "verdict": "ok",
+   "lots": 24,
+   "category_links": []
+  },
+  {
+   "url": "https://www.limundo.com/Racunari-i-oprema/aukcije/g12",
+   "status": 200,
+   "verdict": "ok",
+   "lots": 72,
+   "category_links": [
+    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12"
+   ]
+  },
+  {
+   "url": "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=1",
+   "status": 200,
+   "verdict": "ok",
+   "lots": 72,
+   "category_links": [
+    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12"
+   ]
+  },
+  {
+   "url": "https://www.limundo.com/Racunari-i-oprema/aukcije/g12?&page=2",
+   "status": 200,
+   "verdict": "ok",
+   "lots": 72,
+   "category_links": [
+    "https://www.limundo.com/Racunari-i-oprema/aukcije/g12"
+   ]
+  }
+ ],
+ "by_source": {
+  "kupindo": {
+   "lots": 48,
+   "rule_match": 0,
+   "rule_gate": 0
+  },
+  "limundo": {
+   "lots": 144,
+   "rule_match": 0,
+   "rule_gate": 0
+  }
+ },
+ "matches": []
+}
